@@ -44,63 +44,23 @@
     <mkdir dir="${site}/cd"/>
     <copy todir="${site}" preservelastmodified="true">
       <fileset dir=".">
-				<exclude name="**/*.xml"/>
-				<exclude name="**/*.ocd"/>
-				<exclude name="**/*-merge.rdf"/>
-				<exclude name="**/*.xhtml"/>
-				<exclude name="**/*.sts"/>
+	<exclude name="**/*.xml"/>
+	<exclude name="**/*.ocd"/>
+	<exclude name="**/*-merge.rdf"/>
+	<exclude name="**/*.xhtml"/>
+	<exclude name="**/*.sts"/>
         <exclude name="target/**"/>
-        <!-- <include name="**/*.jpg"/>
-        <include name="**/*.jpeg"/>
-        <include name="**/*.js"/>
-        <include name="**/*.css"/>
-        <include name="**/*.ps"/>
-        <include name="**/*.pdf"/>
-        <include name="**/*.mml"/>
-        <include name="**/*.dtd"/>
-        <include name="**/*.png"/>
-        <include name="**/*.gif"/>
-        <include name="**/*.jpg"/>
-        <include name="**/*.htm"/>
-        <include name="**/*.html"/>
-        <include name="**/*.xsl"/>
-        <include name="**/*.tgz"/>
-        <include name="**/*.zip"/>
-				<include name="**/*.gz"/> -->
       </fileset>
-      <fileset dir="."><!-- partiular xml files -->
-        <include name="standard/*/openmath2rnc.xml"/>
-        <include name="standard/*/omstd20.xml"/>
-      </fileset>
-      <!-- <fileset dir="../wwwmass">
-				<exclude name="**/*.xml"/>
-				<exclude name="**/*.ocd"/>
-				<exclude name="**/*.xhtml"/>
-				<exclude name="**/*.sts"/>
-      </fileset> -->
     </copy>
-    <!-- copy .htaccess files (redirects etc.) -->
-<!--     <copy tofile="${site}/.htaccess" file="dot_htaccess"/>
-     <copy tofile="${site}/cd/.htaccess" file="dot_htaccess_cd"/>-->
   </target>
   
   <target name="cds-xslt"
           description="Does all transformations for the cds-presentation.">
     
-    <!-- entry page -->
-    <xslt 
-      in="index.xml"
-      force="${doForceXSL}"
-      out="${site}/cd/index.html"
-      style="${lib}/stylesheets/html/om-page.xsl"
-      processor='${xslt.processor}'
-      classpathref='xslt.classpath'
-    />
-    
     <!-- CD output: xhtml files -->
     <xslt 
-      basedir="cd" 
-      destdir="${site}/cd"
+      basedir="cd/Official" 
+      destdir="${site}/cd/Official"
       style="${lib}/xsl/cd.xsl" 
       extension=".xhtml"
       force="${doForceXSL}"
@@ -109,18 +69,31 @@
       <factory name="net.sf.saxon.TransformerFactoryImpl"/>
       <include name="*.ocd"/>
     </xslt>
-    <!-- CD output: RDF/XML files -->
+
     <xslt 
-      basedir="cd" 
-      destdir="${site}/cd"
-      style="${ocd-rdf-style}" 
-      extension=".rdf"
+      basedir="cd/experimental" 
+      destdir="${site}/cd/experimental"
+      style="${lib}/xsl/cd.xsl" 
+      extension=".xhtml"
       force="${doForceXSL}"
       classpathref='xslt2.classpath'
      >
       <factory name="net.sf.saxon.TransformerFactoryImpl"/>
       <include name="*.ocd"/>
     </xslt>
+
+    <xslt 
+      basedir="cd/contrib" 
+      destdir="${site}/cd/contrib"
+      style="${lib}/xsl/cd.xsl" 
+      extension=".xhtml"
+      force="${doForceXSL}"
+      classpathref='xslt2.classpath'
+     >
+      <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+      <include name="*.ocd"/>
+    </xslt>
+
     <!-- copy .ocd files -->
     <copy todir="${site}/cd">
       <fileset dir="cd">
@@ -128,6 +101,7 @@
       </fileset>
     </copy>
     <!-- omcd files -->
+
     <xslt 
       basedir="cd"
       destdir="${site}/cd"
