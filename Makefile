@@ -1,4 +1,4 @@
-cDIRS = cd cdgroups
+DIRS = cd cdgroups sts
 OCD = $(shell ls cd/*/*.ocd)
 CDS = $(OCD:%.ocd=%)
 SAXON = java -jar lib/saxon/saxon9he.jar
@@ -29,4 +29,4 @@ symbols.md: cds.xml lib/xsl/index.xsl
 	xsltproc -o $@ lib/xsl/index.xsl $<
 
 echo:
-	@echo $(notdir $(CDS))
+	@echo $(OCD)

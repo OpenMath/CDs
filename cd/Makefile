@@ -1,5 +1,6 @@
-DIRS = cd sts
-INSTALL = ../site
+DIRS = Official experimental contrib
+BASE = ..
+INSTALL = $(BASE)/site
 
 all:
 	@for d in $(DIRS); do (cd $$d && $(MAKE) -$(MAKEFLAGS) $@) done 	

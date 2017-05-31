@@ -23,15 +23,15 @@
 </xsl:template>
 
 <xsl:template mode="attrib" match="om:OMATP/om:OMS" priority="0.4">
-  <xsl:message>[attrib: <xsl:value-of
-       select="@cd"/>:<xsl:value-of select="@name"/>]</xsl:message>
+<!--  <xsl:message>[attrib: <xsl:value-of
+       select="@cd"/>:<xsl:value-of select="@name"/>]</xsl:message>-->
 <xsl:apply-templates mode="attrib" select="(following-sibling::*[position() mod
 2 = 0]|../../*[2])[1]"/>
 </xsl:template>
 
 <xsl:template mode="attrib" match="om:OMATTR/*">
-  <xsl:message>[attributed: <xsl:value-of
-       select="name()"/>]</xsl:message>
+<!--   <xsl:message>[attributed: <xsl:value-of
+       select="name()"/>]</xsl:message>-->
  <xsl:apply-templates select="."/>
 </xsl:template>
 

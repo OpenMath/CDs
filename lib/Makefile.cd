@@ -13,7 +13,7 @@ $(HTML): %.xhtml: %.ocd $(LIB)/xsl/cd.xsl
 	$(SAXON) -s:$< -xsl:$(LIB)/xsl/cd.xsl -o:$@
 
 $(OMCD): %.omcd: %.ocd $(LIB)/xsl/cd2om.xsl
-	$(SAXON) -s:$< -xsl:$(LIB)/xsl/cd2om.xsl -o:$@
+	xsltproc -o $@ $(LIB)/xsl/cd2om.xsl $<
 
 install: all
 	mkdir -p $(INSTALL) || true
