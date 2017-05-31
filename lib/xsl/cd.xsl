@@ -9,7 +9,7 @@
 >
 
 
-<xsl:import href="verb.xsl"/>
+<!-- <xsl:import href="verb.xsl"/> already imported by om2popcorn.xsl-->
 <xsl:import href="om2pmml.xsl"/>
 <xsl:import href="om2popcorn.xsl"/>
 <xsl:import href="om2cmml.xsl"/>
