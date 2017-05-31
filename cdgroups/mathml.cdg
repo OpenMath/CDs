@@ -1,0 +1,128 @@
+<CDGroup  xmlns="http://www.openmath.org/OpenMathCDG">
+<CDGroupName>mathml</CDGroupName>
+<CDGroupVersion> 2 </CDGroupVersion>
+<CDGroupRevision> 0 </CDGroupRevision>
+<CDGroupURL>
+http://www.openmath.org/cdfiles/cdgroups/mathml.ocd</CDGroupURL>
+<CDGroupDescription> MathML compatibility CD Group </CDGroupDescription>
+<CDComment>This is the first version of the Core CD group.
+It was created by D Carlisle based on MathML CD Group.</CDComment>
+<CDComment>Algebra</CDComment>
+<CDGroupMember>
+<CDName>alg1</CDName>
+<CDURL>http://www.openmath.org/cd/alg1.ocd</CDURL></CDGroupMember>
+<CDComment>Arithmetic</CDComment>
+<CDGroupMember>
+<CDName>arith1</CDName>
+<CDURL>http://www.openmath.org/cd/arith1.ocd</CDURL></CDGroupMember>
+<CDComment>Constructor for Floating Point Numbers</CDComment>
+<CDGroupMember>
+<CDName>bigfloat1</CDName>
+<CDURL>http://www.openmath.org/cd/bigfloat1.ocd</CDURL></CDGroupMember>
+<CDComment>Calculus</CDComment>
+<CDGroupMember>
+<CDName>calculus1</CDName>
+<CDURL>http://www.openmath.org/cd/calculus1.ocd</CDURL></CDGroupMember>
+<CDComment>Operations on and constructors for complex numbers</CDComment>
+<CDGroupMember>
+<CDName>complex1</CDName>
+<CDURL>http://www.openmath.org/cd/complex1.ocd</CDURL></CDGroupMember>
+<CDComment>Functions on functions</CDComment>
+<CDGroupMember>
+<CDName>fns1</CDName>
+<CDURL>http://www.openmath.org/cd/fns1.ocd</CDURL></CDGroupMember>
+<CDComment>Integer arithmetic</CDComment>
+<CDGroupMember>
+<CDName>integer1</CDName>
+<CDURL>http://www.openmath.org/cd/integer1.ocd</CDURL></CDGroupMember>
+<CDComment>Intervals</CDComment>
+<CDGroupMember>
+<CDName>interval1</CDName>
+<CDURL>http://www.openmath.org/cd/interval1.ocd</CDURL></CDGroupMember>
+<CDComment>Linear Algebra - vector &amp; matrix constructors, those symbols which are independant of orientation, but in MathML</CDComment>
+<CDGroupMember>
+<CDName>linalg1</CDName>
+<CDURL>http://www.openmath.org/cd/linalg1.ocd</CDURL></CDGroupMember>
+<CDComment>Linear Algebra - vector &amp; matrix constructors, those symbols which are dependant of orientation, and in MathML</CDComment>
+<CDGroupMember>
+<CDName>linalg2</CDName>
+<CDURL>http://www.openmath.org/cd/linalg2.ocd</CDURL></CDGroupMember>
+<CDComment>Limits of unary functions</CDComment>
+<CDGroupMember>
+<CDName>limit1</CDName>
+<CDURL>http://www.openmath.org/cd/limit1.ocd</CDURL></CDGroupMember>
+<CDComment>List constructors</CDComment>
+<CDGroupMember>
+<CDName>list1</CDName>
+<CDURL>http://www.openmath.org/cd/list1.ocd</CDURL></CDGroupMember>
+<CDComment>Basic logical operators</CDComment>
+<CDGroupMember>
+<CDName>logic1</CDName>
+<CDURL>http://www.openmath.org/cd/logic1.ocd</CDURL></CDGroupMember>
+<CDComment>
+MathML Numerical Types
+</CDComment>
+<CDGroupMember>
+<CDName>mathmltypes</CDName>
+<CDURL>http://www.openmath.org/cd/mathmltypes.ocd</CDURL>
+</CDGroupMember>
+<CDComment>Minima and maxima</CDComment>
+<CDGroupMember>
+<CDName>minmax1</CDName>
+<CDURL>http://www.openmath.org/cd/minmax1.ocd</CDURL></CDGroupMember>
+<CDComment>Multset-theoretic operators and constructors</CDComment>
+<CDGroupMember>
+<CDName>multiset1</CDName>
+<CDURL>http://www.openmath.org/cd/multiset1.ocd</CDURL></CDGroupMember>
+<CDComment>Symbols for creating numbers, including some defined constants
+(which can be seen as nullary constructors)</CDComment>
+<CDGroupMember>
+<CDName>nums1</CDName>
+<CDURL>http://www.openmath.org/cd/nums1.ocd</CDURL></CDGroupMember>
+<CDComment>Symbols for creating piecewise definitions</CDComment>
+<CDGroupMember>
+<CDName>piece1</CDName>
+<CDURL>http://www.openmath.org/cd/piece1.ocd</CDURL></CDGroupMember>
+<CDComment>The basic quantifiers forall and exists.</CDComment>
+<CDGroupMember>
+<CDName>quant1</CDName>
+<CDURL>http://www.openmath.org/cd/quant1.ocd</CDURL></CDGroupMember>
+<CDComment>Common arithmetic relations</CDComment>
+<CDGroupMember>
+<CDName>relation1</CDName>
+<CDURL>http://www.openmath.org/cd/relation1.ocd</CDURL></CDGroupMember>
+<CDComment>Number sets</CDComment>
+<CDGroupMember>
+<CDName>setname1</CDName>
+<CDURL>http://www.openmath.org/cd/setname1.ocd</CDURL></CDGroupMember>
+<CDComment>Rounding</CDComment>
+<CDGroupMember>
+<CDName>rounding1</CDName>
+<CDURL>http://www.openmath.org/cd/rounding1.ocd</CDURL></CDGroupMember>
+<CDComment>Set-theoretic operators and constructors</CDComment>
+<CDGroupMember>
+<CDName>set1</CDName>
+<CDURL>http://www.openmath.org/cd/set1.ocd</CDURL></CDGroupMember>
+<CDComment>Basic data orientated statistical operators</CDComment>
+<CDGroupMember>
+<CDName>s_data1</CDName>
+<CDURL>http://www.openmath.org/cd/s_data1.ocd</CDURL></CDGroupMember>
+<CDComment>Basic random variable orientated statistical operators</CDComment>
+<CDGroupMember>
+<CDName>s_dist1</CDName>
+<CDURL>http://www.openmath.org/cd/s_dist1.ocd</CDURL></CDGroupMember>
+<CDComment>Basic transcendental functions</CDComment>
+<CDGroupMember>
+<CDName>transc1</CDName>
+<CDURL>http://www.openmath.org/cd/transc1.ocd</CDURL></CDGroupMember>
+<CDComment>Vector calculus functions</CDComment>
+<CDGroupMember>
+<CDName>veccalc1</CDName>
+<CDURL>http://www.openmath.org/cd/veccalc1.ocd</CDURL></CDGroupMember>
+<CDComment>Alternative encoding symbols for compatibility with the MathML
+Semantic mapping constructs.</CDComment>
+<CDGroupMember>
+<CDName>altenc</CDName>
+<CDURL>http://www.openmath.org/cd/altenc.ocd</CDURL></CDGroupMember>
+</CDGroup>
+

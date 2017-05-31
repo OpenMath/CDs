@@ -1,0 +1,35 @@
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="minmax">
+<CDSStatus> official </CDSStatus>
+
+<CDSComment>
+Date:  1999-04-13
+Author: David Carlisle
+</CDSComment>
+
+<Signature name="min" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+  <OMS name="mapsto" cd="sts" />
+   <OMA>
+    <OMS name="nary" cd="sts" />
+     <OMV name="OrderedSet" />
+   </OMA>
+  <OMV name="OrderedSet" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="max" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+  <OMS name="mapsto" cd="sts" />
+   <OMA>
+    <OMS name="nary" cd="sts" />
+     <OMV name="OrderedSet" />
+   </OMA>
+  <OMV name="OrderedSet" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+</CDSignatures>

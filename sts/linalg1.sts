@@ -1,0 +1,86 @@
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="linalg1">
+<CDSStatus> official </CDSStatus>
+
+<CDSComment>
+Date:  1999-04-13
+Author: David Carlisle
+</CDSComment>
+
+<Signature name="determinant">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMV name="SquareMatrix"/>
+    <OMS name="CommutativeRing" cd="sts"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="transpose">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMV name="Matrix"/>
+    <OMV name="Matrix"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+
+<Signature name="vector_selector">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMV name="PositiveInteger" />
+    <OMS name="Object" cd="sts"/>
+    <OMS name="Object" cd="sts"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="matrix_selector">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMV name="PositiveInteger" />
+    <OMV name="PositiveInteger" />
+    <OMV name="Matrix"/>
+    <OMS name="Object" cd="sts"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="vectorproduct">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMV name="ThreeVector"/>
+    <OMV name="ThreeVector"/>
+    <OMV name="ThreeVector"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="scalarproduct">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMV name="Vector"/>
+    <OMV name="Vector"/>
+    <OMV name="Scalar"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="outerproduct">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMV name="Vector"/>
+    <OMV name="Vector"/>
+    <OMV name="Matrix"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+</CDSignatures>

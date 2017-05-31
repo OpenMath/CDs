@@ -1,0 +1,169 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDName> units_us1 </CDName>
+<CDURL> http://www.openmath.org/cd/units_us1.ocd </CDURL>
+<CDReviewDate> 2006-08-27 </CDReviewDate>
+<CDStatus> experimental </CDStatus>
+<CDDate> 2004-08-27 </CDDate>
+<CDVersion> 3 </CDVersion>
+<CDRevision> 0 </CDRevision>
+
+
+<Description>
+This CD defines symbols to represent U.S. customary unit measures.
+</Description>
+
+<CDDefinition>
+<Name> foot_us_survey </Name>
+<Description>
+This symbol represents the measure of one U.S. Survey foot.
+</Description>
+<CMP> 1 U.S. Survey foot = 1200/3937 metres </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS name="eq" cd="relation1"/>
+    <OMA>
+      <OMS name="times" cd="arith1"/>
+      <OMI> 1 </OMI>
+      <OMS name="foot_us_survey" cd="units_us1"/>
+    </OMA>
+    <OMA>
+      <OMS name="times" cd="arith1"/>
+      <OMA>
+        <OMS name="divide" cd="arith1"/>
+        <OMI> 1200 </OMI>
+        <OMI> 3937 </OMI>
+      </OMA>
+      <OMS name="metre" cd="units_metric1"/>
+    </OMA>
+  </OMA>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> yard_us_survey </Name>
+<Description>
+This symbol represents the measure of one U.S. Survey yard.
+</Description>
+<CMP> 1 U.S. Survey yard = 3 U.S. Survey feet </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS name="eq" cd="relation1"/>
+    <OMA>
+      <OMS name="times" cd="arith1"/>
+      <OMI> 1 </OMI>
+      <OMS name="yard_us_survey" cd="units_us1"/>
+    </OMA>
+    <OMA>
+      <OMS name="times" cd="arith1"/>
+      <OMI> 3 </OMI>
+      <OMS name="foot_us_survey" cd="units_us1"/>
+    </OMA>
+  </OMA>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> mile_us_survey </Name>
+<Description>
+This symbol represents the measure of one U.S. Survey mile.
+</Description>
+<CMP> 1 U.S. Survey mile = 5280 U.S. Survey feet </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS name="eq" cd="relation1"/>
+    <OMA>
+      <OMS name="times" cd="arith1"/>
+      <OMI> 1 </OMI>
+      <OMS name="mile_us_survey" cd="units_us1"/>
+    </OMA>
+    <OMA>
+      <OMS name="times" cd="arith1"/>
+      <OMI> 5280 </OMI>
+      <OMS name="foot_us_survey" cd="units_us1"/>
+    </OMA>
+  </OMA>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> acre_us_survey </Name>
+<Description>
+This symbol represents the measure of one U.S. Survey acre.
+</Description>
+<CMP> 1 U.S. Survey acre = 4840 square U.S. Survey yards </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS name="eq" cd="relation1"/>
+    <OMA>
+      <OMS name="times" cd="arith1"/>
+      <OMI> 1 </OMI>
+      <OMS name="acre_us_survey" cd="units_us1"/>
+    </OMA>
+    <OMA>
+      <OMS name="times" cd="arith1"/>
+      <OMI> 4840 </OMI>
+      <OMA>
+        <OMS name="times" cd="arith1"/>
+        <OMS name="yard_us_survey" cd="units_us1"/>
+        <OMS name="yard_us_survey" cd="units_us1"/>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> pint_us_dry </Name>
+<Description>
+This symbol represents the measure of one U.S. dry pint.
+</Description>
+
+<CMP> 1 U.S. dry pint = 0.5506104713575 litres </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS name="eq" cd="relation1"/>
+    <OMA>
+      <OMS name="times" cd="arith1"/>
+      <OMI> 1 </OMI>
+      <OMS name="pint_us_dry" cd="units_us1"/>
+    </OMA>
+    <OMA>
+      <OMS name="times" cd="arith1"/>
+      <OMF dec="0.551"/>
+      <OMS name="litre" cd="units_metric1"/>
+    </OMA>
+  </OMA>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> pint_us_liquid </Name>
+<Description>
+This symbol represents the measure of one U.S. liquid pint.
+</Description>
+
+<CMP> 1 U.S. liquid pint = 0.473176473 litres </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS name="eq" cd="relation1"/>
+    <OMA>
+      <OMS name="times" cd="arith1"/>
+      <OMI> 1 </OMI>
+      <OMS name="pint_us_liquid" cd="units_us1"/>
+    </OMA>
+    <OMA>
+      <OMS name="times" cd="arith1"/>
+      <OMF dec="0.473"/>
+      <OMS name="litre" cd="units_metric1"/>
+    </OMA>
+  </OMA>
+</OMOBJ></FMP>
+</CDDefinition>
+
+</CD>

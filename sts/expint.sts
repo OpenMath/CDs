@@ -1,0 +1,45 @@
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="expint" >
+<CDSStatus> official </CDSStatus>
+
+<CDSComment>
+Date:  2002-09-17
+Author: James Davenport
+</CDSComment>
+
+<Signature name="Ei" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMS name="NumericalValue" cd="sts" />
+    <OMS name="NumericalValue" cd="sts" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="li" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMS name="NumericalValue" cd="sts" />
+    <OMS name="NumericalValue" cd="sts" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="E" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+   <OMS name="N" cd="setname1" />
+   <OMA>
+     <OMS name="mapsto" cd="sts" />
+     <OMS name="NumericalValue" cd="sts" />
+     <OMS name="NumericalValue" cd="sts" />
+   </OMA>
+ </OMA>
+</OMOBJ>
+</Signature>
+
+
+</CDSignatures>
+

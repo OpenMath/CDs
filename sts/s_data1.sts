@@ -1,0 +1,96 @@
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="s_data1">
+<CDSStatus> official </CDSStatus>
+
+<CDSComment>
+Date:  1999-04-13
+Author: David Carlisle
+</CDSComment>
+
+<Signature name="mean" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+  <OMS name="mapsto" cd="sts" />
+   <OMA>
+    <OMS name="nary" cd="sts" />
+     <OMS name="NumericalValue" cd="sts" />
+   </OMA>
+  <OMS name="NumericalValue" cd="sts" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+
+<Signature name="sdev" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+  <OMS name="mapsto" cd="sts" />
+  <OMS name="NumericalValue" cd="sts" />
+   <OMA>
+    <OMS name="nary" cd="sts" />
+     <OMS name="NumericalValue" cd="sts" />
+   </OMA>
+  <OMS name="NumericalValue" cd="sts" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+
+
+<Signature name="variance" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+  <OMS name="mapsto" cd="sts" />
+  <OMS name="NumericalValue" cd="sts" />
+   <OMA>
+    <OMS name="nary" cd="sts" />
+     <OMS name="NumericalValue" cd="sts" />
+   </OMA>
+  <OMS name="NumericalValue" cd="sts" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+
+
+<Signature name="mode" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+  <OMS name="mapsto" cd="sts" />
+   <OMA>
+    <OMS name="nary" cd="sts" />
+     <OMS name="NumericalValue" cd="sts" />
+   </OMA>
+  <OMS name="NumericalValue" cd="sts" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="median" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+  <OMS name="mapsto" cd="sts" />
+   <OMA>
+    <OMS name="nary" cd="sts" />
+     <OMS name="NumericalValue" cd="sts" />
+   </OMA>
+  <OMS name="NumericalValue" cd="sts" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+
+<Signature name="moment" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+  <OMS name="NumericalValue" cd="sts" />
+  <OMS name="NumericalValue" cd="sts" />
+   <OMA>
+    <OMS name="nary" cd="sts" />
+     <OMS name="NumericalValue" cd="sts" />
+   </OMA>
+ </OMA>
+</OMOBJ>
+</Signature>
+
+</CDSignatures>

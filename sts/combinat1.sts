@@ -1,0 +1,70 @@
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="combinat1">
+<CDSStatus> official </CDSStatus>
+<Signature name="binomial">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMS name="N" cd="setname1"/>
+    <OMS name="N" cd="setname1"/>
+    <OMS name="N" cd="setname1"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="multinomial">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+  <OMA>
+      <OMS name="nary" cd="sts"/>
+    <OMS name="N" cd="setname1"/>
+    </OMA>
+    <OMS name="N" cd="setname1"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="Stirling1">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMS name="N" cd="setname1"/>
+    <OMS name="N" cd="setname1"/>
+    <OMS name="N" cd="setname1"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="Stirling2">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMS name="N" cd="setname1"/>
+    <OMS name="N" cd="setname1"/>
+    <OMS name="N" cd="setname1"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="Fibonacci">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMS name="N" cd="setname1"/>
+    <OMS name="N" cd="setname1"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="Bell">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMS name="N" cd="setname1"/>
+    <OMS name="N" cd="setname1"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+</CDSignatures>
+

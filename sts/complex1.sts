@@ -1,0 +1,66 @@
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="complex1">
+<CDSStatus> official </CDSStatus>
+
+<Signature name="conjugate">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+  <OMS name="mapsto" cd="sts"/>
+  <OMS name="C" cd="setname1"/> 
+  <OMS name="C" cd="setname1"/> 
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="complex_cartesian" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMS name="NumericalValue" cd="sts" />
+    <OMS name="NumericalValue" cd="sts" />
+    <OMS name="C" cd="setname1" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="real" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMS name="C" cd="setname1" />
+    <OMS name="NumericalValue" cd="sts" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="imaginary" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMS name="C" cd="setname1" />
+    <OMS name="NumericalValue" cd="sts" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="complex_polar" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMV name="PositiveReal" />
+    <OMS name="R" cd="setname1" />
+    <OMS name="C" cd="setname1" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="argument" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMS name="C" cd="setname1" />
+    <OMS name="R" cd="setname1" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+</CDSignatures>

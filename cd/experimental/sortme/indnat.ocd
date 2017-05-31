@@ -1,0 +1,138 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+
+  <CDName> indnat </CDName>
+<CDBase>http://www.openmath.org/cd</CDBase>
+  <CDURL>  http://www.openmath.org/cd/indnat.ocd </CDURL>
+  <CDDate>2004-03-30</CDDate>
+  <CDReviewDate>2006-03-30</CDReviewDate>
+  <CDStatus> experimental </CDStatus>
+  <CDVersion>2</CDVersion>	
+  <CDRevision>0</CDRevision>	
+
+  <Description> 
+     Inductive definition of natural numbers
+     Initial version: O.C (Jan. 2000)
+    </Description>
+
+
+  <CDDefinition>
+    <Name> indNat </Name>
+<Role>constant</Role> 
+    <Description> Attribution tag to denote the
+    type of inductively defined natural numbers. It is also denoted as
+    setname1:N.
+    </Description>
+  </CDDefinition>
+
+  
+
+  <CDDefinition>
+    <Name> zero </Name>
+<Role>constant</Role>
+    <Description> The natural number 0, also constant base function
+          for the inductive definition of the type of natural numbers
+        </Description>
+  </CDDefinition>
+
+  <CDDefinition>
+    <Name> succ </Name>
+<Role>application</Role>
+    <Description> Successor function on the natural number. 
+           Constructor for the inductively defined natural numbers. 
+           Takes argument a a natural number and returns a natural
+           number.
+        </Description>
+  </CDDefinition>
+
+  <CDDefinition>
+    <Name> plus </Name>
+<Role>application</Role>
+    <Description> Addition of natural numbers defined recursively
+           by using the successor.
+        </Description>
+    <Example>        
+        <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+	<OMA><OMS name="eq" cd="relation1"/>
+	  <OMA><OMS cd="indnat" name="plus"/>
+	    <OMV name="n"/>
+	    <OMA><OMS name="succ" cd="indnat"/> 
+	      <OMV name="m"/>
+	    </OMA>
+	  </OMA>
+	  <OMA><OMS name="succ" cd="indnat"/> 
+	    <OMA><OMS cd="indnat" name="plus"/>
+	      <OMV name="n"/>                        
+	      <OMV name="m"/>
+	    </OMA>
+	  </OMA>
+	</OMA>
+      </OMOBJ>
+        </Example>
+
+  </CDDefinition>
+
+  <CDDefinition>
+    <Name> times </Name>
+<Role>application</Role>
+    <Description> Multiplication of natural numbers defined recursively
+           by using the successor and plus.
+        </Description>
+    <Example>        
+        <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+	<OMA><OMS name="eq" cd="relation1"/>
+	  <OMA><OMS cd="indnat" name="times"/>
+	    <OMV name="n"/>
+	    <OMA>
+	      <OMS name="succ" cd="indnat"/> 
+	      <OMV name="m"/>
+	    </OMA>
+	  </OMA>
+	  <OMA><OMS cd="indnat" name="plus"/>
+	    <OMA><OMS cd="indnat" name="times"/>
+	      <OMV name="n"/>
+	      <OMV name="m"/>
+	    </OMA>
+	    <OMV name="n"/>                
+	  </OMA>
+	</OMA>
+      </OMOBJ>
+        </Example>
+
+  </CDDefinition>
+
+  
+
+</CD>

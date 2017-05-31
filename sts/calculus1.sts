@@ -1,0 +1,111 @@
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="calculus1" >
+<CDSStatus> official </CDSStatus>
+
+<CDSComment>
+Date:  1999-04-13
+Author: David Carlisle
+</CDSComment>
+
+
+<Signature name="diff" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+  <OMS name="mapsto" cd="sts" />
+  <OMA>
+   <OMS name="mapsto" cd="sts" />
+   <OMS name="Object" cd="sts" />
+   <OMS name="Object" cd="sts" />
+  </OMA>
+  <OMA>
+   <OMS name="mapsto" cd="sts" />
+   <OMS name="Object" cd="sts" />
+   <OMS name="Object" cd="sts" />
+  </OMA>
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="nthdiff" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+  <OMS name="mapsto" cd="sts" />
+  <OMS name="Z" cd="setname1" />
+  <OMA>
+   <OMS name="mapsto" cd="sts" />
+   <OMS name="Object" cd="sts" />
+   <OMS name="Object" cd="sts" />
+  </OMA>
+  <OMA>
+   <OMS name="mapsto" cd="sts" />
+   <OMS name="Object" cd="sts" />
+   <OMS name="Object" cd="sts" />
+  </OMA>
+ </OMA>
+</OMOBJ>
+</Signature>
+
+
+
+
+
+<Signature name="partialdiff" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">                         
+ <OMA>                         
+  <OMS name="mapsto" cd="sts" />
+  <OMV name="VariableList" />  
+  <OMA>                         
+   <OMS name="mapsto" cd="sts" />
+   <OMA>                         
+    <OMS name="nary" cd="sts"/>
+    <OMS name="Object" cd="sts"/>
+   </OMA>
+   <OMS name="Object" cd="sts"/>
+  </OMA>
+  <OMA>                         
+   <OMS name="mapsto" cd="sts" />
+   <OMA>                         
+    <OMS name="nary" cd="sts"/>
+    <OMS name="Object" cd="sts"/>
+   </OMA>
+   <OMS name="Object" cd="sts"/>
+  </OMA>
+ </OMA>
+</OMOBJ>
+</Signature>
+
+
+<Signature name="int" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+  <OMS name="mapsto" cd="sts" />
+  <OMA>
+   <OMS name="mapsto" cd="sts" />
+   <OMS name="Object" cd="sts" />
+   <OMS name="Object" cd="sts" />
+  </OMA>
+  <OMA>
+   <OMS name="mapsto" cd="sts" />
+   <OMS name="Object" cd="sts" />
+   <OMS name="Object" cd="sts" />
+  </OMA>
+ </OMA>
+</OMOBJ>
+</Signature>
+
+
+<Signature name="defint" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts" />
+    <OMV name="RangeOfIntegration" />
+    <OMA>
+      <OMS name="mapsto" cd="sts" />
+      <OMS name="Object" cd="sts" />
+      <OMS name="Object" cd="sts" />
+    </OMA>
+    <OMS name="Object" cd="sts" />
+  </OMA>
+</OMOBJ>
+</Signature>
+
+</CDSignatures>

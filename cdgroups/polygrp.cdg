@@ -1,0 +1,52 @@
+<CDGroup  xmlns="http://www.openmath.org/OpenMathCDG">
+<CDGroupName>polygrp</CDGroupName>
+<CDGroupVersion> 2 </CDGroupVersion>
+<CDGroupRevision> 1 </CDGroupRevision>
+<CDGroupURL>
+http://www.openmath.org/cdfiles/cdgroups/polygrp.cdg
+</CDGroupURL>
+<CDGroupDescription> Polynomial CD Group </CDGroupDescription>
+
+<CDGroupMember>
+<CDComment> cd containing constructors for the different types of opnodes </CDComment>
+<CDName>opnode</CDName>
+<CDURL>http://www.openmath.org/cd/opnode.ocd</CDURL>
+</CDGroupMember>
+
+<CDGroupMember>
+<CDComment> General cd for polynomials  </CDComment>
+<CDName>poly</CDName>
+<CDURL>http://www.openmath.org/cd/poly.ocd</CDURL>
+</CDGroupMember>
+
+<CDGroupMember>
+<CDComment> Polynomials specified in a dense representation </CDComment>
+<CDName>polyd</CDName>
+<CDURL>http://www.openmath.org/cd/polyd.ocd</CDURL>
+</CDGroupMember>
+
+<CDGroupMember>
+<CDComment> Polynomials specified in a recursive representation </CDComment>
+<CDName>polyr</CDName>
+<CDURL>http://www.openmath.org/cd/polyr.ocd</CDURL>
+</CDGroupMember>
+
+<CDGroupMember>
+<CDComment> Polynomials specified in a straight line program representation </CDComment>
+<CDName>polyslp</CDName>
+<CDURL>http://www.openmath.org/cd/polyslp.ocd</CDURL>
+</CDGroupMember>
+
+<CDGroupMember>
+<CDComment> Univariate Polynomials </CDComment>
+<CDName>polyu</CDName>
+<CDURL>http://www.openmath.org/cd/polyu.ocd</CDURL>
+</CDGroupMember>
+
+<CDGroupMember>
+<CDComment> A small type system for polynomial rings </CDComment>
+<CDName>polysts</CDName>
+<CDURL>http://www.openmath.org/cd/polysts.ocd</CDURL>
+</CDGroupMember>
+
+</CDGroup>

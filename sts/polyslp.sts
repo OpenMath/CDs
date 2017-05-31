@@ -1,0 +1,180 @@
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="polyslp">
+<CDSStatus> official </CDSStatus>
+
+<CDSComment>
+Date:  2000-02-11
+Author: Bill Naylor
+</CDSComment>
+
+<Signature name="prog_body">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMV name="SLInstructionList"/>
+    <OMV name="SLProgram"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="op_node">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMS name="Object" cd="sts"/>
+    <OMS name="N" cd="setName1"/>
+    <OMS name="N" cd="setName1"/>
+    <OMV name="SLPInstruction"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="inp_node">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMV name="PolynomialVariable"/>
+    <OMV name="SLPInstruction"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="const_node">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMV name="Ring"/>
+    <OMV name="SLPInstruction"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="quotient">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMV name="SLPPolynomial"/>
+    <OMV name="SLPPolynomial"/>
+    <OMV name="SLPPolynomial"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="length">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMV name="SLPPolynomial"/>
+    <OMS name="N" cd="setName1"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="depth">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMV name="SLPPolynomial"/>
+    <OMS name="N" cd="setName1"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="slp_degree">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMV name="SLPPolynomial"/>
+    <OMS name="N" cd="setName1"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="return_node">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMV name="SLPPolynomial"/>
+    <OMV name="SLPInstruction"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="node_selector">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMV name="SLPPolynomial"/>
+    <OMS name="N" cd="setName1"/>
+    <OMV name="SLPInstruction"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="left_ref">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMV name="SLPInstruction"/>
+    <OMS name="N" cd="setName1"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="right_ref">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMV name="SLPInstruction"/>
+    <OMS name="N" cd="setName1"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="monte_carlo_eq">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMV name="SLPPolynomial"/>
+    <OMV name="SLPPolynomial"/>
+    <OMS name="float" cd="ecc"/>
+    <OMS name="Prop" cd="typesorts"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="polynomial_SLP">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMA>
+      <OMS name="structure" cd="sts"/>
+      <OMS name="polynomial_ring" cd="polysts"/>
+    </OMA>
+    <OMV name="SLProgram"/>
+    <OMV name="SLPPolynomial"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="poly_ring_SLP">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMA>
+      <OMS name="structure" cd="sts"/>
+      <OMV name="Ring"/>
+    </OMA>
+    <OMA>
+      <OMS name="nary" cd="sts"/>
+      <OMV name="PolynomialVariable"/>
+    </OMA>
+    <OMA>
+      <OMS name="structure" cd="sts"/>
+      <OMS name="polynomial_ring" cd="polysts"/>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+</CDSignatures>
+

@@ -1,0 +1,76 @@
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="mathmltypes">
+<CDSStatus> official </CDSStatus>
+
+<Signature name="type">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMS name="attribution" cd="sts"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="integer_type">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMV name="MathMLNumericType"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="real_type">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMV name="MathMLNumericType"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="rational_type">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMV name="MathMLNumericType"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="complex_cartesian_type">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMV name="MathMLNumericType"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="complex_polar_type">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMV name="MathMLNumericType"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="constant_type">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMV name="MathMLNumericType"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="vector_type">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMV name="MathMLType"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="list_type">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMV name="MathMLType"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="set_type">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMV name="MathMLType"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="matrix_type">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMV name="MathMLType"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="fn_type">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMV name="MathMLType"/>
+</OMOBJ>
+</Signature>
+
+</CDSignatures>

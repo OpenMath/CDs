@@ -1,0 +1,88 @@
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="relation1">
+<CDSStatus> official </CDSStatus>
+
+<CDSComment>
+Date:  1999-04-13
+Author: David Carlisle
+</CDSComment>
+
+<Signature name="eq" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMS name="Object" cd="sts" />
+    <OMS name="Object" cd="sts" />
+    <OMS cd="setname2" name="Boolean" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+
+<Signature name="lt" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMV name="OrderedSet" />
+    <OMV name="OrderedSet" />
+    <OMS cd="setname2" name="Boolean" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="gt" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMV name="OrderedSet" />
+    <OMV name="OrderedSet" />
+    <OMS cd="setname2" name="Boolean" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+
+<Signature name="neq" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMS name="Object" cd="sts" />
+    <OMS name="Object" cd="sts" />
+    <OMS cd="setname2" name="Boolean" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="leq" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMV name="OrderedSet" />
+    <OMV name="OrderedSet" />
+    <OMS cd="setname2" name="Boolean" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="geq" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMV name="OrderedSet" />
+    <OMV name="OrderedSet" />
+    <OMS cd="setname2" name="Boolean" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="approx" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMS name="NumericalValue" cd="sts" />
+    <OMS name="NumericalValue" cd="sts" />
+    <OMS cd="setname2" name="Boolean" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+</CDSignatures>

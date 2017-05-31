@@ -1,0 +1,58 @@
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="permgrp">
+<CDSStatus> official </CDSStatus>
+
+<CDSComment>
+Date:  1999-04-29
+Author: David Carlisle
+</CDSComment>
+
+
+<Signature name="orbit" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMV name="PermutationGroup" />
+    <OMV name="PositiveInteger" />
+    <OMV name="Set" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+
+<Signature name="stabilizer" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+   <OMA>
+     <OMS name="structure" cd="sts"/>
+     <OMV name="PermutationGroup" />
+   </OMA>
+   <OMV name="PermutationGroup" />
+    <OMV name="Set" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+
+<Signature name="is_transitive" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMV name="PermutationGroup" />
+    <OMV name="Boolean" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="is_primitive" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMV name="PermutationGroup" />
+    <OMV name="Boolean" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+</CDSignatures>
+

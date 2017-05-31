@@ -1,0 +1,61 @@
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="metasig">
+<CDSStatus> official </CDSStatus>
+
+
+<Signature name="CDSignatures">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+  <OMS name="mapsto" cd="sts" />
+   <OMA>
+    <OMS name="nary" cd="sts" />
+     <OMV name="CDSTopLevelEntry" />
+    </OMA>
+  <OMV name="Signatures" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="CDSComment">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMV name="String" />
+    <OMV name="SigTopLevelEntry" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="CDSReviewDate">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMV name="String" />
+    <OMV name="SigTopLevelEntry" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="CDSStatus">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMV name="String" />
+    <OMV name="SigTopLevelEntry" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="Signature">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+  <OMS name="mapsto" cd="sts" />
+   <OMA>
+    <OMS name="nary" cd="sts" />
+     <OMV name="CDSTopLevelEntry" />
+    </OMA>
+  <OMV name="SigTopLevelEntry" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+</CDSignatures>

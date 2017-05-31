@@ -1,0 +1,49 @@
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="rounding1">
+<CDSStatus> official </CDSStatus>
+
+<CDSComment>
+Date:  1999-07-27
+Author: James Davenport
+</CDSComment>
+
+<Signature name="ceiling" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMS name="R" cd="setname1" />
+    <OMS name="Z" cd="setname1" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="floor" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMS name="R" cd="setname1" />
+    <OMS name="Z" cd="setname1" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="trunc" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMS name="R" cd="setname1" />
+    <OMS name="Z" cd="setname1" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="round" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMS name="R" cd="setname1" />
+    <OMS name="Z" cd="setname1" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+</CDSignatures>

@@ -1,0 +1,80 @@
+
+<CDGroup  xmlns="http://www.openmath.org/OpenMathCDG">
+<CDGroupName>types2</CDGroupName>
+<CDGroupVersion>2</CDGroupVersion>
+<CDGroupRevision>0</CDGroupRevision>
+<CDGroupURL>
+http://www.openmath.org/cdfiles/cdgroups/types2.cdg</CDGroupURL>
+<CDGroupDescription>Types CD Group</CDGroupDescription>
+
+
+<CDComment>
+Small Type System
+</CDComment>
+<CDGroupMember>
+<CDName>sts</CDName>
+<CDURL>http://www.openmath.org/cd/sts.ocd</CDURL>
+</CDGroupMember>
+
+<CDComment>
+MathML Numerical Types
+</CDComment>
+<CDGroupMember>
+<CDName>mathmltypes</CDName>
+<CDURL>http://www.openmath.org/cd/mathmltypes.ocd</CDURL>
+</CDGroupMember>
+
+<CDComment>Calculus of Constructions</CDComment>
+<CDGroupMember>
+<CDName>cc</CDName>
+<CDURL> http://www.openmath.org/cd/cc.ocd</CDURL>
+</CDGroupMember>
+
+
+<CDComment>Type Sorts</CDComment>
+<CDGroupMember>
+<CDName>typesorts</CDName>
+<CDURL>http://www.openmath.org/cd/typesorts.ocd</CDURL>
+</CDGroupMember>
+
+<CDComment>Lambda Calculus</CDComment>
+<CDGroupMember>
+<CDName>lc</CDName>
+<CDURL>http://www.openmath.org/cd/lc.ocd</CDURL>
+</CDGroupMember>
+
+
+<CDComment>Sigma Types</CDComment>
+<CDGroupMember>
+<CDName>sigma</CDName>
+<CDURL>http://www.openmath.org/cd/sigma.ocd</CDURL>
+</CDGroupMember>
+
+
+<CDComment>Typing Attributes</CDComment>
+<CDGroupMember>
+<CDName>ecc</CDName>
+<CDURL>http://www.openmath.org/cd/ecc.ocd</CDURL>
+</CDGroupMember>
+
+<CDComment>Typing Attributes</CDComment>
+<CDGroupMember>
+<CDName>icc</CDName>
+<CDURL>http://www.openmath.org/cd/icc.ocd</CDURL>
+</CDGroupMember>
+
+<CDComment>Types for Basic OpenMath Objects</CDComment>
+<CDGroupMember>
+<CDName>omtypes</CDName>
+<CDURL>http://www.openmath.org/cd/omtypes.ocd</CDURL>
+</CDGroupMember>
+
+
+<CDComment>Type coercions</CDComment>
+<CDGroupMember>
+<CDName>coercions</CDName>
+<CDURL>http://www.openmath.org/cd/coercions.ocd</CDURL>
+</CDGroupMember>
+
+</CDGroup>
+

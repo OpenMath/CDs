@@ -1,0 +1,66 @@
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="gcd1">
+<CDSStatus> official </CDSStatus>
+
+<CDSComment>
+Date:  2000-03-10
+Author: W.A.Naylor
+</CDSComment>
+
+<Signature name="gcd">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMA>
+      <OMS name="nassoc" cd="sts"/>
+      <OMV name="EuclideanRing"/>
+    </OMA>
+    <OMV name="EuclideanRing"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="lcm">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMA>
+      <OMS name="nassoc" cd="sts"/>
+      <OMV name="EuclideanRing"/>
+    </OMA>
+    <OMV name="EuclideanRing"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="characteristic">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMS name="P" cd="setname2"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="quotient">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMV name="EuclideanRing"/>
+    <OMV name="EuclideanRing"/>
+    <OMV name="EuclideanRing"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="remainder">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMV name="EuclideanRing"/>
+    <OMV name="EuclideanRing"/>
+    <OMV name="EuclideanRing"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+</CDSignatures>

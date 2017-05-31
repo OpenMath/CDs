@@ -1,0 +1,159 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+
+<CDName> altenc </CDName>
+<CDBase>http://www.openmath.org/cd</CDBase>
+<CDURL> http://www.openmath.org/cd/altenc.ocd </CDURL>
+<CDReviewDate>2006-03-30</CDReviewDate>
+<CDStatus> official </CDStatus>
+<CDDate>2004-05-23</CDDate>
+<CDVersion>3</CDVersion>
+<CDRevision>1</CDRevision>
+
+<Description> 
+A CD of alternative encoding symbols 
+
+This CD is motivated in part by a desire to maintain compatibility
+with the MathML semantics element,
+
+In order for it to be possible for OpenMath to express symbols in an
+alternative encoding (this facilitates the exact translation and
+representation of objects) we use the OpenMath attribution nodes
+(which performs a similar role to the MathML semantics nodes). The
+formats and descriptions of common syntaxes are held in this CD; at
+present this only includes LaTeX and MathML.
+</Description>
+
+
+<CDComment>
+Alternative encodings in OpenMath are dealt with by using OMATTR
+symbols together with the alternative encoding placed in a string.
+The string encoding must be valid XML, and so non-XML valid characters
+must themselves be encoded as suggested in "Draft of the OpenMath
+Standard".
+
+For alternative encodings to be represented in OpenMath, one must
+define a symbol to describe the encoding.
+</CDComment>
+
+<CDDefinition>
+<Name> MathML_encoding </Name>
+<Role>attribution</Role>
+<Description>
+A symbol which heads a piece of MathML encoding in an attribution. The
+MathML encoding is an XML encoding, and the details may be found at:
+http://www.w3.org/Math/Overview.html
+</Description>
+
+<Example>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMATTR>
+  <OMATP>
+
+    <OMS cd="altenc" name="MathML_encoding"/>
+    <OMFOREIGN encoding="MathML-Presentation">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mi>sin</mi><mfenced><mn>1.5</mn></mfenced>
+      </math>
+    </OMFOREIGN>
+    <OMS cd="altenc" name="LaTeX_encoding"/>
+    <OMSTR>
+    \sin(1.5)
+    </OMSTR>
+
+  </OMATP>
+
+  <OMA>
+    <OMS cd="transc1" name="sin"/>
+    <OMF dec="1.5"/>
+  </OMA>
+
+</OMATTR>
+</OMOBJ>
+</Example>
+
+<Example>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMATTR>
+<OMATP>
+ <OMS cd="altenc" name="MathML_encoding"/>
+ <OMFOREIGN encoding="MathML-Presentaion">
+  <mrow xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn mathcolor="green">3</mn>
+  </mrow>
+  </OMFOREIGN>
+</OMATP>
+ <OMA>
+   <OMS cd="arith1"  name="plus"/>
+   <OMI>1</OMI>
+   <OMI>2</OMI>
+ </OMA>
+</OMATTR>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> LaTeX_encoding </Name>
+<Role>attribution</Role>
+<Description>
+A symbol which heads a piece of LaTeX encoding in an attribution.
+</Description>
+
+<Example>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMATTR>
+  <OMATP>
+
+    <OMS cd="altenc" name="LaTeX_encoding"/>
+    <OMSTR>
+    \sin(1.5)
+    </OMSTR>
+
+  </OMATP>
+
+  <OMA>
+    <OMS cd="transc1" name="sin"/>
+    <OMF dec="1.5"/>
+  </OMA>
+
+</OMATTR>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+</CD>

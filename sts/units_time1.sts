@@ -1,0 +1,46 @@
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="units_time1">
+<CDSStatus> experimental </CDSStatus>
+
+<Signature name="second" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="dimensions1" name="time"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="minute" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="dimensions1" name="time"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="hour" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="dimensions1" name="time"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="day" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="dimensions1" name="time"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="week" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="dimensions1" name="time"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="calendar_month" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="dimensions1" name="time"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="calendar_year" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="dimensions1" name="time"/>
+</OMOBJ>
+</Signature>
+
+</CDSignatures>

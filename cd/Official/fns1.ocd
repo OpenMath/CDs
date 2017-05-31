@@ -1,0 +1,459 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+
+<CDName> fns1 </CDName>
+<CDBase>http://www.openmath.org/cd</CDBase>
+<CDURL> http://www.openmath.org/cd/fns1.ocd </CDURL>
+<CDReviewDate>2006-03-30</CDReviewDate>
+<CDDate>2004-03-30</CDDate>
+<CDVersion>3</CDVersion>
+<CDRevision>0</CDRevision>
+<CDStatus> official </CDStatus>
+
+<Description>
+    This CD is intended to be `compatible' with the corresponding
+    elements in Content MathML.
+
+    In this CD we give a set of functions concerning functions
+    themselves. Functions can be constructed from expressions via a
+    lambda expression. Also there are basic function functions like
+    compose, etc.
+</Description>
+
+<CDDefinition>
+<Name> domainofapplication </Name>
+<Role>application</Role>
+<Description> 
+The domainofapplication element denotes the domain over which a given 
+function is being applied. It is intended in MathML to be a more general 
+alternative to specification of this domain using
+such quantifier elements as bvar, lowlimit or condition. 
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name> domain </Name>
+<Role>application</Role>
+<Description> 
+This symbol denotes the domain of a given function, which is the set of
+values it is defined over.
+</Description>
+
+<CMP>
+x is in the domain of f if and only if 
+there exists a y in the range of f and f(x) = y
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="logic1" name="equivalent"/>
+    <OMA>
+      <OMS cd="set1" name="in"/>
+      <OMV name="x"/>
+      <OMA>
+        <OMS cd="fns1" name="domain"/>
+	<OMV name="f"/>
+      </OMA>
+    </OMA>
+    <OMBIND>
+      <OMS cd="quant1" name="exists"/>
+      <OMBVAR>
+        <OMV name="y"/>
+      </OMBVAR>
+      <OMA>
+        <OMS cd="logic1" name="and"/>
+        <OMA>
+          <OMS cd="set1" name="in"/>
+	  <OMV name="y"/>
+	  <OMA>
+            <OMS cd="fns1" name="range"/>
+	    <OMV name="f"/>
+	  </OMA>
+        </OMA>
+	<OMA>
+	  <OMS cd="relation1" name="eq"/>
+	  <OMA>
+	    <OMV name="f"/>
+	    <OMV name="x"/>
+	  </OMA>
+	  <OMV name="y"/>
+	</OMA>
+      </OMA>
+    </OMBIND>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> range </Name>
+<Role>application</Role>
+<Description>
+This symbol denotes the range of a function, that is a set that the
+function will map to. The single argument should be the function whos
+range is being queried. It should be noted that this is not necessarily
+equal to the image, it is merely required to contain the image.
+</Description>
+
+<CMP>
+the range of f is a subset of the image of f
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="set1" name="subset"/>
+    <OMA>
+      <OMS cd="fns1" name="range"/>
+      <OMV name="f"/>
+    </OMA>
+    <OMA>
+      <OMS cd="fns1" name="image"/>
+      <OMV name="f"/>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> image </Name>
+<Role>application</Role>
+<Description> 
+This symbol denotes the image of a given function, which is the set of
+values the domain of the given function maps to.
+</Description>
+
+<CMP> x in the domain of f implies f(x) is in the image f </CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="logic1" name="implies"/>
+    <OMA>
+      <OMS cd="set1" name="in"/>
+      <OMV name="x"/>
+      <OMA>
+	<OMS cd="fns1" name="domain"/>
+	<OMV name="f"/>
+      </OMA>
+    </OMA>
+    <OMA>
+      <OMS cd="set1" name="in"/>
+      <OMA>
+        <OMV name="f"/>
+	<OMV name="x"/>
+      </OMA>
+      <OMA>
+        <OMS cd="fns1" name="image"/>
+	<OMV name="f"/>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> identity </Name>
+<Role>application</Role>
+<Description> 
+The identity function, it takes one argument and returns the same value.
+</Description>
+
+<CMP> for all x | identity(x)=x </CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMBIND>
+    <OMS cd="quant1" name="forall"/>
+    <OMBVAR>
+      <OMV name="x"/>
+    </OMBVAR>
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="fns1" name="identity"/>
+        <OMV name="x"/>
+      </OMA>
+      <OMV name="x"/>
+    </OMA>
+  </OMBIND>
+</OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> left_inverse </Name>
+<Role>application</Role>
+<Description> 
+This symbol is used to describe the left inverse of its argument (a
+function). This inverse may only be partially defined because the
+function may not have been surjective. If the function is not
+surjective the left inverse function is
+ill-defined without further stipulations. No other assumptions are made on
+the semantics of this left inverse.
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name> right_inverse </Name>
+<Role>application</Role>
+<Description> 
+This symbol is used to describe the right inverse of its argument (a
+function). This inverse may only be partially defined because the
+function may not have been surjective. If the function is not
+surjective the right inverse function is
+ill-defined without further stipulations. No other assumptions are made on
+the semantics of this right inverse.
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name> inverse </Name>
+<Role>application</Role>
+<Description> 
+This symbol is used to describe the inverse of its argument (a
+function). This inverse may only be partially defined because the
+function may not have been surjective. If the function is not
+surjective the inverse function is
+ill-defined without further stipulations. No assumptions are made on
+the semantics of this inverse.
+</Description>
+
+<CMP> 
+(inverse(f))(f(x)) = x if f is injective,
+that is
+(for all x,y | f(x) = f(y) implies x=y) implies (inverse(f))(f(z)) = z
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMA>
+  <OMS cd="logic1" name="implies"/>
+  <OMBIND>
+    <OMS cd="quant1" name="forall"/>
+    <OMBVAR>
+      <OMV name="x"/>
+      <OMV name="y"/>
+    </OMBVAR>
+    <OMA>
+      <OMS cd="logic1" name="implies"/>
+      <OMA>
+        <OMS cd="relation1" name="eq"/>
+        <OMA>
+          <OMV name="f"/>
+	  <OMV name="x"/>
+        </OMA>
+        <OMA>
+          <OMV name="f"/>
+          <OMV name="y"/>
+        </OMA>
+      </OMA>
+      <OMA>
+        <OMS cd="relation1" name="eq"/>
+        <OMV name="x"/>
+        <OMV name="y"/>
+      </OMA>
+    </OMA>
+  </OMBIND>
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMA>
+        <OMS cd="fns1" name="inverse"/>
+        <OMV name="f"/>
+      </OMA>
+      <OMA>
+        <OMV name="f"/>
+        <OMV name="z"/>
+      </OMA>
+    </OMA>
+    <OMV name="z"/>
+  </OMA>
+</OMA>
+</OMOBJ>
+</FMP>
+
+<CMP>
+f(inverse(f(y))=y if f is defined at inverse(f)(y)
+that is, 
+if there exists an x s.t. inverse(f)(y) = x then this implies
+f(inverse(f)(y)) = y
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="logic1" name="implies"/>
+       <OMBIND>
+        <OMS cd="quant1" name="exists"/>
+	<OMBVAR>
+	  <OMV name="x"/>
+	</OMBVAR>
+	<OMA>
+	  <OMS cd="relation1" name="eq"/>
+	  <OMA>
+	    <OMA>
+	      <OMS cd="fns1" name="inverse"/>
+	      <OMV name="f"/>
+	    </OMA>
+	    <OMV name="y"/>
+	  </OMA>
+	  <OMV name="x"/>
+	</OMA>
+      </OMBIND>
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMV name="f"/>
+	<OMA>
+	  <OMA>
+	    <OMS cd="fns1" name="inverse"/>
+	    <OMV name="f"/>
+	  </OMA>
+	  <OMV name="y"/>
+	</OMA>
+      </OMA>
+      <OMV name="y"/>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> left_compose </Name>
+<Role>application</Role>
+<Description> 
+This symbol represents the function which forms the left-composition
+of its two (function) arguments.
+</Description>
+<CMP> for all f,g,x | left_compose(f,g)(x) = f(g(x)) </CMP>
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMBIND>
+  <OMS cd="quant1" name="forall"/>
+  <OMBVAR>
+    <OMV name="f"/>
+    <OMV name="g"/>
+    <OMV name="x"/>
+  </OMBVAR>
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMA>
+        <OMS cd="fns1" name="left_compose"/>
+        <OMV name="f"/>
+        <OMV name="g"/>
+      </OMA>
+      <OMV name="x"/>
+    </OMA>
+    <OMA>
+      <OMV name="f"/>
+      <OMA>
+        <OMV name="g"/>
+        <OMV name="x"/>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMBIND>
+</OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> lambda </Name>
+<Role>binder</Role>
+<Description>
+This symbol is used to represent anonymous functions as lambda expansions. 
+It is used in a binder that takes two further arguments, the first of which
+is a list of variables, and the second of which is an expression, and it
+forms the function which is the lambda extraction of the expression
+</Description>
+<Example>
+An example to show the connection between curried and uncurried
+applications of a binary function f 
+(lambda(x,y).(f))(a,b)= (lambda(x).((lambda(y).(f))(b)))(a)
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMBIND>
+  <OMS cd="quant1" name="forall"/>
+  <OMBVAR>
+    <OMV name="a"/>
+    <OMV name="b"/>
+  </OMBVAR>
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMBIND>
+        <OMS cd="fns1" name="lambda"/>
+        <OMBVAR>
+          <OMV name="x"/>
+          <OMV name="y"/>
+        </OMBVAR>
+        <OMV name="f"/>
+      </OMBIND>
+      <OMV name="a"/>
+      <OMV name="b"/>
+    </OMA>
+    <OMA>
+      <OMBIND>
+        <OMS cd="fns1" name="lambda"/>
+        <OMBVAR>
+          <OMV name="x"/>
+        </OMBVAR>
+        <OMA>
+          <OMBIND>
+            <OMS cd="fns1" name="lambda"/>
+            <OMBVAR>
+              <OMV name="y"/>
+            </OMBVAR>
+            <OMV name="f"/>
+          </OMBIND>
+          <OMV name="b"/>
+        </OMA>
+      </OMBIND>
+      <OMV name="a"/>
+    </OMA>
+  </OMA>
+</OMBIND>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+</CD>

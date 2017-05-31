@@ -1,0 +1,337 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+
+<CDName> rounding1 </CDName>
+<CDBase>http://www.openmath.org/cd</CDBase>
+<CDURL> http://www.openmath.org/cd/rounding1.ocd </CDURL>
+<CDReviewDate>2006-03-30</CDReviewDate>
+<CDStatus> official </CDStatus>
+<CDDate>2004-03-30</CDDate>
+<CDVersion>3</CDVersion>
+<CDRevision>1</CDRevision>
+<Description> 
+A CD of basic rounding concepts
+</Description>
+<CDComment>
+Written by James Davenport, inspired by the need from bigfloat.ocd.
+Finished 1999-10-24.
+</CDComment>
+
+<CDDefinition>
+<Name> ceiling </Name>
+<Role>application</Role>
+<Description>
+The round up (to +infinity) operation.
+</Description>
+<CMP> for all x | ceiling(x)-1 &lt; x &lt;= ceiling x </CMP>
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMBIND>
+    <OMS cd="quant1" name="forall"/>
+    <OMBVAR>
+       <OMV name="x"/>
+    </OMBVAR>
+    <OMA>
+      <OMS cd="logic1" name="and"/>
+      <OMA>
+        <OMS cd="relation1" name="lt"/>
+        <OMA>
+          <OMS cd="arith1" name="minus"/>
+          <OMA>
+            <OMS cd="rounding1" name="ceiling"/>
+            <OMV name="x"/>
+          </OMA>
+          <OMS cd="alg1" name="one"/>
+        </OMA>
+        <OMV name="x"/>
+      </OMA>
+      <OMA>
+        <OMS cd="relation1" name="leq"/>
+        <OMV name="x"/>
+        <OMA>
+          <OMS cd="rounding1" name="ceiling"/>
+          <OMV name="x"/>
+        </OMA>
+      </OMA>
+    </OMA>
+  </OMBIND>
+</OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> floor </Name>
+<Role>application</Role>
+<Description>
+The round down (to -infinity) operation.
+</Description>
+<CMP> for all x | floor(x) &lt;= x &lt; floor(x)+1 </CMP>
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMBIND>
+    <OMS cd="quant1" name="forall"/>
+    <OMBVAR>
+       <OMV name="x"/>
+    </OMBVAR>
+    <OMA>
+      <OMS cd="logic1" name="and"/>
+      <OMA>
+        <OMS cd="relation1" name="lt"/>
+        <OMV name="x"/>
+        <OMA>
+          <OMS cd="arith1" name="plus"/>
+          <OMA>
+            <OMS cd="rounding1" name="floor"/>
+            <OMV name="x"/>
+          </OMA>
+          <OMS cd="alg1" name="one"/>
+        </OMA>
+      </OMA>
+      <OMA>
+        <OMS cd="relation1" name="leq"/>
+        <OMA>
+          <OMS cd="rounding1" name="floor"/>
+          <OMV name="x"/>
+        </OMA>
+        <OMV name="x"/>
+      </OMA>
+    </OMA>
+  </OMBIND>
+</OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> trunc </Name>
+<Role>application</Role>
+<Description>
+The round to zero operation.
+</Description>
+
+<CMP> for all x | trunc(x) &lt;= x &lt; trunc(x)+1 (x&gt;0) </CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMBIND>
+    <OMS cd="quant1" name="forall"/>
+    <OMBVAR>
+       <OMV name="x"/>
+    </OMBVAR>
+    <OMA>
+      <OMS cd="logic1" name="implies"/>
+      <OMA>
+        <OMS cd="relation1" name="geq"/>
+        <OMV name="x"/>
+        <OMS cd="alg1" name="zero"/>
+      </OMA>
+      <OMA>
+        <OMS cd="logic1" name="and"/>
+        <OMA>
+          <OMS cd="relation1" name="lt"/>
+          <OMV name="x"/>
+          <OMA>
+            <OMS cd="arith1" name="plus"/>
+            <OMA>
+              <OMS cd="rounding1" name="trunc"/>
+              <OMV name="x"/>
+            </OMA>
+            <OMS cd="alg1" name="one"/>
+          </OMA>
+        </OMA>
+        <OMA>
+          <OMS cd="relation1" name="leq"/>
+          <OMA>
+            <OMS cd="rounding1" name="trunc"/>
+            <OMV name="x"/>
+          </OMA>
+          <OMV name="x"/>
+        </OMA>
+      </OMA>
+    </OMA>
+  </OMBIND>
+</OMOBJ>
+</FMP>
+
+<CMP> for all x | trunc(x) &gt;= x &gt; trunc(x)-1 (x&lt;0) </CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMBIND>
+    <OMS cd="quant1" name="forall"/>
+    <OMBVAR>
+       <OMV name="x"/>
+    </OMBVAR>
+      <OMA>
+        <OMS cd="logic1" name="implies"/>
+        <OMA>
+          <OMS cd="relation1" name="leq"/>
+          <OMV name="x"/>
+          <OMS cd="alg1" name="zero"/>
+        </OMA>
+        <OMA>
+          <OMS cd="logic1" name="and"/>
+          <OMA>
+            <OMS cd="relation1" name="gt"/>
+            <OMV name="x"/>
+            <OMA>
+              <OMS cd="arith1" name="minus"/>
+              <OMA>
+                <OMS cd="rounding1" name="trunc"/>
+                <OMV name="x"/>
+              </OMA>
+              <OMS cd="alg1" name="one"/>
+            </OMA>
+          </OMA>
+          <OMA>
+            <OMS cd="relation1" name="geq"/>
+            <OMA>
+              <OMS cd="rounding1" name="trunc"/>
+              <OMV name="x"/>
+            </OMA>
+            <OMV name="x"/>
+          </OMA>
+        </OMA>
+      </OMA>
+  </OMBIND>
+</OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> round </Name>
+<Role>application</Role>
+<Description>
+The round to nearest operation.
+</Description>
+
+<CMP> for all x | x &lt;= round(x)+1/2 and x &gt;= round(x)-1/2 </CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMBIND>
+    <OMS cd="quant1" name="forall"/>
+    <OMBVAR>
+       <OMV name="x"/>
+    </OMBVAR>
+    <OMA>
+      <OMS cd="logic1" name="and"/>
+      <OMA>
+        <OMS cd="relation1" name="leq"/>
+        <OMV name="x"/>
+        <OMA>
+          <OMS cd="arith1" name="plus"/>
+          <OMA>
+            <OMS cd="rounding1" name="round"/>
+            <OMV name="x"/>
+          </OMA>
+          <OMA>
+            <OMS cd="arith1" name="divide"/>
+            <OMS cd="alg1" name="one"/>
+	    <OMI> 2 </OMI>
+          </OMA>
+        </OMA>
+      </OMA>
+      <OMA>
+        <OMS cd="relation1" name="geq"/>
+        <OMV name="x"/>
+        <OMA>
+          <OMS cd="arith1" name="minus"/>
+          <OMA>
+            <OMS cd="rounding1" name="round"/>
+            <OMV name="x"/>
+          </OMA>
+          <OMA>
+            <OMS cd="arith1" name="divide"/>
+            <OMS cd="alg1" name="one"/>
+	    <OMI> 2 </OMI>
+          </OMA>
+        </OMA>
+      </OMA>
+    </OMA>
+  </OMBIND>
+</OMOBJ>
+</FMP>
+
+<CMP> for all x | Also round to even in event of a tie </CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMBIND>
+    <OMS cd="quant1" name="forall"/>
+    <OMBVAR>
+       <OMV name="x"/>
+    </OMBVAR>
+    <OMA>
+      <OMS cd="logic1" name="implies"/>
+      <OMA>
+        <OMS cd="logic1" name="and"/>
+	<OMA>
+	  <OMS cd="logic1" name="not"/>
+	  <OMA>
+	    <OMS cd="set1" name="in"/>
+	    <OMV name="x"/>
+	    <OMS cd="setname1" name="Z"/>
+	  </OMA>
+	</OMA>
+        <OMA>
+          <OMS cd="set1" name="in"/>
+          <OMA>
+	    <OMS cd="arith1" name="times"/>
+  	    <OMV name="x"/>
+	    <OMI> 2 </OMI>
+  	  </OMA>
+	  <OMS cd="setname1" name="Z"/>
+        </OMA>
+      </OMA>
+      <OMA>
+        <OMS cd="set1" name="in"/>
+        <OMA>
+          <OMS cd="arith1" name="divide"/>
+          <OMA>
+            <OMS cd="rounding1" name="round"/>
+            <OMV name="x"/>
+          </OMA>
+	  <OMI> 2 </OMI>
+        </OMA>
+        <OMS cd="setname1" name="Z"/>
+      </OMA>
+    </OMA>
+  </OMBIND>
+</OMOBJ>
+</FMP>
+
+</CDDefinition>
+
+</CD>

@@ -1,0 +1,44 @@
+
+<page>
+
+<page-title>OpenMath Content Dictionaries</page-title>
+
+<h2>About</h2>
+<p>A content dictionary is the declaration of a collection of symbols, their names, descriptions,
+  and rules. A published CD allows multiple parties to "speak the same OpenMath language".
+  An example of CD is <a href="../cd/setname1">setname1</a> which indicates the semantic
+  of such symbols as N, the set of natural numbers.</p>
+<p>CDs are grouped in CD-groups. or example, the <a href="../cdgroups/mathml.html"
+  >MathML CD group</a> collects the <i>core CDs</i>, all content-dictionaries 
+  described in the OpenMath standard deemed compatible with the 
+  <a href="http://www.w3.org/TR/MathML2/">MathML specification</a>.</p>
+  
+<h2>CD indexes</h2>
+  
+<h3 style="text-align:left"><a href="../cdgroups.html">CD Groups</a></h3>
+<p>A list of all Content Dictionary Groups available on this server.</p>
+
+<h3 style="text-align:left"><a href="../cdnames.html">All CDs by Name</a></h3>
+<p>A list of all Content Dictionaries (including contributed Dictionaries).</p>
+
+<h3 style="text-align:left"><a href="../contributed.html">CD Contributions</a></h3>
+<p>Content Dictionaries submitted by the public applying
+the <a href="../cd-contribution-form.html">contribution workflow</a>.</p>
+
+<h3 style="text-align:left"><a href="../cdindex.html">Index of all Symbols</a></h3>
+<p>A list of all symbols defined in any Content Dictionary (including contributed Dictionaries).</p>
+
+<h3 style="text-align:left"><a href="../cds.tar.gz">Archive of All CDs</a></h3>
+<p>A gzipped compressed tarball of all content-dictionaries.</p>
+
+<!-- Wiki no longer works, don't have resources to maintain this obsolete software.  –Christoph Lange, 2013-02-21 -->
+<!--
+<h2>OpenMath Content Dictionaries Wiki</h2>
+<h3 style="text-align:left"><a href="http://wiki.openmath.org/index.jsp?title=List%20of%20all%20OpenMath%202%20symbols">Index of all Symbols (alternative)</a></h3>
+<p>A list of all symbols defined in any Content Dictionary 
+ (including contributed Dictionaries), browsable in the <a href="http://wiki.openmath.org">OpenMath wiki</a>.</p>
+
+<h3 style="text-align:left"><a href="http://wiki.openmath.org/?title=OpenMath_2_CDs">CD wiki</a></h3>
+<p>Browse and discuss the CDs in our wiki!</p>
+-->
+</page>

@@ -1,0 +1,40 @@
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="units_us1">
+<CDSStatus> experimental </CDSStatus>
+
+<Signature name="foot_us_survey" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="dimensions1" name="length"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="yard_us_survey" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="dimensions1" name="length"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="mile_us_survey" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="dimensions1" name="length"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="acre_us_survey" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="dimensions1" name="area"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="pint_us_dry" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="dimensions1" name="volume"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="pint_us_liquid" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="dimensions1" name="volume"/>
+</OMOBJ>
+</Signature>
+
+</CDSignatures>

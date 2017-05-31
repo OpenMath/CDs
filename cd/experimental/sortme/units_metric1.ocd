@@ -1,0 +1,293 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDName> units_metric1 </CDName>
+<CDURL> http://www.openmath.org/cd/units_metric1.ocd </CDURL>
+<CDReviewDate> 2006-08-27 </CDReviewDate>
+<CDStatus> experimental </CDStatus>
+<CDDate> 2004-08-27 </CDDate>
+<CDVersion> 3 </CDVersion>
+<CDRevision> 0 </CDRevision>
+
+
+<Description> 
+This CD defines symbols to represent the basic physical units in the SI
+(syst\'eme international) system of units. It should probably be renamed
+units_si.
+</Description>
+
+<CDDefinition>
+<Name> metre </Name>
+<Description>
+This symbol represents the measure of one metre. This is the standard
+SI unit measure for physical distance.
+</Description>
+<CMP> This is a base unit for the SI system </CMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> metre_sqrd </Name>
+<Description>
+This symbol represents the measure of one metre squared. This is the
+standard SI measure for physical area.
+</Description>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS name="eq" cd="relation1"/>
+  <OMS name="metre_sqrd" cd="units_metric1"/>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMS name="metre" cd="units_metric1"/>
+    <OMS name="metre" cd="units_metric1"/>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> litre </Name>
+<Description>
+This symbol represents the measure of one litre. This is a standard
+metric measure for physical volume.
+</Description>
+<CMP> A litre is, since 1964, a cubic decimetre, or a thousandth of a cubic 
+      metre, as the FMP below states. </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS name="eq" cd="relation1"/>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMI> 1 </OMI>
+    <OMS name="litre" cd="units_metric1"/>
+  </OMA>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMF dec="0.001"/>
+    <OMA>
+      <OMS name="power" cd="arith1"/>
+      <OMS name="metre" cd="units_metric1"/>
+      <OMI> 3 </OMI>
+    </OMA>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> litre_pre1964 </Name>
+<Description>
+This symbol represents the previous (1901-1964) measure of one litre. This 
+used to be a standard metric measure for physical volume.
+</Description>
+<CMP> A litre is, since 1901 and until 1964, the volume occupied by a 
+      kilogramme of water at maximum density and standard pressure. 
+      The difference is about 0.0028%. </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS name="eq" cd="relation1"/>
+    <OMA>
+      <OMS name="times" cd="arith1"/>
+      <OMI> 1 </OMI>
+      <OMS name="litre_pre1964" cd="units_metric1"/>
+    </OMA>
+    <OMA>
+      <OMS name="times" cd="arith1"/>
+      <OMF dec="1.000028"/>
+      <OMS name="litre" cd="units_metric1"/>
+    </OMA>
+  </OMA>
+</OMOBJ></FMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> metres_per_second </Name>
+<Description>
+This symbol represents the measure of one metre per second. This is
+the standard SI measure for speed.
+</Description>
+
+<CMP> 1 metres_per_second = 1 metre in 1 second </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS name="eq" cd="relation1"/>
+  <OMS name="metres_per_second" cd="units_metric1"/>
+  <OMA>
+    <OMS name="divide" cd="arith1"/> 
+    <OMS name="metre" cd="units_metric1"/> 
+    <OMS name="second" cd="units_time1"/> 
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> metres_per_second_sqrd </Name>
+<Description>
+This symbol represents the measure of one metre per second
+squared. This is the standard SI measure for acceleration.
+</Description>
+
+<CMP> 1 metres_per_second_sqrd = 1 metres_per_second (change) in 1 second </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS name="eq" cd="relation1"/>
+  <OMS name="metres_per_second_sqrd" cd="units_metric1"/>
+  <OMA>
+    <OMS name="divide" cd="arith1"/> 
+    <OMS name="metres_per_second" cd="units_metric1"/> 
+    <OMS name="second" cd="units_time1"/> 
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> second </Name>
+<Description>
+This symbol represents the measure of one second. This is the standard
+SI measure for time.
+</Description>
+<CMP> The Si unit is the same as the UTC unit, to which we refer </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS name="eq" cd="relation1"/>
+  <OMS name="second" cd="units_metric1"/>
+  <OMS name="second" cd="units_time1"/>
+</OMA>
+</OMOBJ></FMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> gramme </Name>
+<Description>
+  This symbol represents the measure of one gramme. This is not quite the
+  standard SI measure for mass, which is the kilogramme, but OpenMath 
+  chooses to regard the gramme as standard, otherwise one would have to call
+  it the milli-kilogramme.
+</Description>
+
+<CMP> This is a basic unit of the SI system </CMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> Newton </Name>
+<Description>
+This symbol represents the measure of one Newton. This is the standard
+SI measure for force.
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name> Joule </Name>
+<Description>
+This symbol represents the measure of one Joule. This is the standard
+SI measure for energy.
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name> Watt </Name>
+<Description>
+This symbol represents the measure of one Watt. This is the standard
+SI measure for power.
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name> degree_Kelvin </Name>
+<Description>
+This symbol represents the measure of one degree Kelvin. This is a standard
+SI measure for temperature relative to absolute zero.
+</Description>
+
+<CMP> 1 degree Kelvin = 1 - 273.15 degrees Celsius </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS name="eq" cd="relation1"/>
+    <OMA>
+      <OMS name="times" cd="arith1"/>
+      <OMI> 1 </OMI>
+      <OMS name="degree_Kelvin" cd="units_metric1"/>
+    </OMA>
+    <OMA>
+      <OMS name="minus" cd="arith1"/>
+      <OMS name="degree_Celsius" cd="units_metric1"/>
+      <OMF dec="273.15"/>
+    </OMA>
+  </OMA>
+</OMOBJ></FMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> degree_Celsius </Name>
+<Description>
+This symbol represents the measure of one degree Celsius. This is a standard
+metric measure for temperature.
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name> Pascal </Name>
+<Description>
+This symbol represents the measure of one Newton per square metre.
+This is the standard SI measure for pressure.
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name> Newton_per_sqr_metre </Name>
+<Description>
+This symbol represents the measure of one Newton per square metre.
+This is another (deprecated in OpenMath) name for the  standard SI measure
+for pressure, the Pascal.
+</Description>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS name="eq" cd="relation1"/>
+    <OMS name="Newton_per_sqr_metre" cd="units_metric1"/>
+    <OMS name="Pascal" cd="units_metric1"/>
+  </OMA>
+</OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> Coulomb </Name>
+<Description>
+This symbol represents the measure of one Coulomb. This is the standard
+SI measure for charge.
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name> amp </Name>
+<Description>
+This symbol represents the measure of one amp. This is the standard
+SI measure for current.
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name> volt </Name>
+<Description>
+This symbol represents the measure of one volt. This is the standard
+SI measure for voltage.
+</Description>
+</CDDefinition>
+
+</CD>

@@ -1,0 +1,64 @@
+<xsl:stylesheet version="2.0"
+ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+ xmlns:xs="http://www.w3.org/2001/XMLSchema"
+ xmlns:f="http://fxsl.sf.net/"
+ exclude-result-prefixes="f xs"
+ >
+ 
+ <xsl:import href="../f/func-apply.xsl"/>
+ 
+  <xsl:function name="f:binSearch" as="xs:boolean">
+   <xsl:param name="pSeq" as="item()+"/>
+   <xsl:param name="pVal" as="item()"/>
+   <xsl:sequence select="f:binSearch($pSeq,$pVal,1,count($pSeq))"/>
+</xsl:function>
+ 
+  <xsl:function name="f:binSearch" as="xs:boolean">
+   <xsl:param name="pEq" as="element()?"/>
+   <xsl:param name="pLt" as="element()?"/>
+   <xsl:param name="pSeq" as="item()+"/>
+   <xsl:param name="pVal" as="item()"/>
+   <xsl:param name="pStart" as="item()"/>
+   <xsl:param name="pEnd" as="item()"/>
+
+   <xsl:sequence select=
+     "if($pStart gt $pEnd) then false()
+       else
+       if(empty(($pEq, $pLt)[2]))
+        then f:binSearch($pSeq, $pVal, $pStart, $pEnd)
+        else 
+          for $mid in ($pStart + $pEnd) idiv 2,
+               $sVal in $pSeq[$mid] 
+             return
+               if(f:apply($pEq,$sVal,$pVal) = true()) then true()
+               else
+                if(f:apply($pLt,$sVal,$pVal) = true())
+                  then f:binSearch($pEq,$pLt,$pSeq,$pVal,$mid+1,$pEnd)
+                else 
+                  f:binSearch($pEq,$pLt,$pSeq,$pVal,$pStart,$mid - 1)
+     "
+   />
+  </xsl:function>
+
+ <xsl:function name="f:binSearch" as="xs:boolean">
+   <xsl:param name="pSeq" as="item()+"/>
+   <xsl:param name="pVal" as="item()"/>
+   <xsl:param name="pStart" as="item()"/>
+   <xsl:param name="pEnd" as="item()"/>
+   
+   <xsl:sequence select=
+    "if($pStart gt $pEnd) then false()
+       else
+        for $mid in ($pStart + $pEnd) idiv 2,
+             $sVal in $pSeq[$mid] 
+           return
+             if($sVal eq $pVal) then true()
+             else
+                if($sVal lt $pVal)
+                   then f:binSearch($pSeq, $pVal, $mid+1, $pEnd)
+                else 
+                  f:binSearch($pSeq, $pVal, $pStart, $mid - 1)
+       "/>
+ </xsl:function>
+ 
+</xsl:stylesheet>

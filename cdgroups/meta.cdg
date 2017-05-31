@@ -1,0 +1,31 @@
+
+<CDGroup  xmlns="http://www.openmath.org/OpenMathCDG">
+<CDGroupName>meta</CDGroupName>
+<CDGroupVersion> 2 </CDGroupVersion>
+<CDGroupRevision> 0 </CDGroupRevision>
+<CDGroupURL>
+http://www.openmath.org/cdfiles/cdgroups/meta.cdg</CDGroupURL>
+<CDGroupDescription>Meta CD Group</CDGroupDescription>
+<CDComment>This is the first version of the Core CD group.
+It was created by D Carlisle based on MathML CD Group.</CDComment>
+
+<CDComment>Constructs for building CDs</CDComment>
+<CDGroupMember>
+<CDName>meta</CDName>
+<CDURL>http://www.openmath.org/cd/meta.ocd</CDURL>
+</CDGroupMember>
+
+<CDComment>Constructs for building CD Signatures</CDComment>
+<CDGroupMember>
+<CDName>metasig</CDName>
+<CDURL>http://www.openmath.org/cd/metasig.ocd</CDURL>
+</CDGroupMember>
+
+<CDComment>Constructs for building CD Groups</CDComment>
+<CDGroupMember>
+<CDName>metagrp</CDName>
+<CDURL>http://www.openmath.org/cd/metagrp.ocd</CDURL>
+</CDGroupMember>
+
+</CDGroup>
+

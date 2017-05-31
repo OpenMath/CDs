@@ -1,0 +1,238 @@
+<parseTables>
+  <!-- All grammar rules are coded in this section -->
+	<rules>
+	  <r left="$accept" length="2">
+	    <right>OBJECT</right>
+	    <right>$end</right>
+	  </r>
+
+	  <r left="OBJECT" length="2">
+	    <right>{</right>
+	    <right>}</right>
+	  </r>
+
+	  <r left="OBJECT" length="3">
+	    <right>{</right>
+	    <right>MEMBERS</right>
+	    <right>}</right>
+	  </r>
+
+	  <r left="MEMBERS" length="1">
+	    <right>PAIR</right>
+	  </r>
+
+	  <r left="MEMBERS" length="3">
+	    <right>MEMBERS</right>
+	    <right>,</right>
+	    <right>PAIR</right>
+	  </r>
+
+	  <r left="PAIR" length="3">
+	    <right>STRING</right>
+	    <right>:</right>
+	    <right>VALUE</right>
+	  </r>
+
+	  <r left="ARRAY" length="2">
+	    <right>[</right>
+	    <right>]</right>
+	  </r>
+
+	  <r left="ARRAY" length="3">
+	    <right>[</right>
+	    <right>ELEMENTS</right>
+	    <right>]</right>
+	  </r>
+
+	  <r left="ELEMENTS" length="1">
+	    <right>VALUE</right>
+	  </r>
+
+	  <r left="ELEMENTS" length="3">
+	    <right>ELEMENTS</right>
+	    <right>,</right>
+	    <right>VALUE</right>
+	  </r>
+
+	  <r left="VALUE" length="1">
+	    <right>STRING</right>
+	  </r>
+
+	  <r left="VALUE" length="1">
+	    <right>NUMBER</right>
+	  </r>
+
+	  <r left="VALUE" length="1">
+	    <right>OBJECT</right>
+	  </r>
+
+	  <r left="VALUE" length="1">
+	    <right>ARRAY</right>
+	  </r>
+
+	  <r left="VALUE" length="1">
+	    <right>TRUE</right>
+	  </r>
+
+	  <r left="VALUE" length="1">
+	    <right>FALSE</right>
+	  </r>
+
+	  <r left="VALUE" length="1">
+	    <right>NULL</right>
+	  </r>
+	</rules>
+<!--
+       All actions: (state, TSymb) ==> (sN | rK | acc)
+       where 's' = 'shift and 'r' = 'reduce'          
+-->
+	<actionTable>
+	  <state number="0">
+	    <symbol act="s1">{</symbol>
+	  </state>
+	  <state number="1">
+	    <symbol act="s3">STRING</symbol>
+	    <symbol act="s4">}</symbol>
+	  </state>
+	  <state number="2">
+	    <symbol act="acc">$end</symbol>
+	  </state>
+	  <state number="3">
+	    <symbol act="s7">:</symbol>
+	  </state>
+	  <state number="4">
+	    <symbol act="r1">.</symbol>
+	  </state>
+	  <state number="5">
+	    <symbol act="s8">}</symbol>
+	    <symbol act="s9">,</symbol>
+	  </state>
+	  <state number="6">
+	    <symbol act="r3">.</symbol>
+	  </state>
+	  <state number="7">
+	    <symbol act="s10">STRING</symbol>
+	    <symbol act="s11">NUMBER</symbol>
+	    <symbol act="s12">TRUE</symbol>
+	    <symbol act="s13">FALSE</symbol>
+	    <symbol act="s14">NULL</symbol>
+	    <symbol act="s1">{</symbol>
+	    <symbol act="s15">[</symbol>
+	  </state>
+	  <state number="8">
+	    <symbol act="r2">.</symbol>
+	  </state>
+	  <state number="9">
+	    <symbol act="s3">STRING</symbol>
+	  </state>
+	  <state number="10">
+	    <symbol act="r10">.</symbol>
+	  </state>
+	  <state number="11">
+	    <symbol act="r11">.</symbol>
+	  </state>
+	  <state number="12">
+	    <symbol act="r14">.</symbol>
+	  </state>
+	  <state number="13">
+	    <symbol act="r15">.</symbol>
+	  </state>
+	  <state number="14">
+	    <symbol act="r16">.</symbol>
+	  </state>
+	  <state number="15">
+	    <symbol act="s10">STRING</symbol>
+	    <symbol act="s11">NUMBER</symbol>
+	    <symbol act="s12">TRUE</symbol>
+	    <symbol act="s13">FALSE</symbol>
+	    <symbol act="s14">NULL</symbol>
+	    <symbol act="s1">{</symbol>
+	    <symbol act="s15">[</symbol>
+	    <symbol act="s20">]</symbol>
+	  </state>
+	  <state number="16">
+	    <symbol act="r12">.</symbol>
+	  </state>
+	  <state number="17">
+	    <symbol act="r5">.</symbol>
+	  </state>
+	  <state number="18">
+	    <symbol act="r13">.</symbol>
+	  </state>
+	  <state number="19">
+	    <symbol act="r4">.</symbol>
+	  </state>
+	  <state number="20">
+	    <symbol act="r6">.</symbol>
+	  </state>
+	  <state number="21">
+	    <symbol act="r8">.</symbol>
+	  </state>
+	  <state number="22">
+	    <symbol act="s23">,</symbol>
+	    <symbol act="s24">]</symbol>
+	  </state>
+	  <state number="23">
+	    <symbol act="s10">STRING</symbol>
+	    <symbol act="s11">NUMBER</symbol>
+	    <symbol act="s12">TRUE</symbol>
+	    <symbol act="s13">FALSE</symbol>
+	    <symbol act="s14">NULL</symbol>
+	    <symbol act="s1">{</symbol>
+	    <symbol act="s15">[</symbol>
+	  </state>
+	  <state number="24">
+	    <symbol act="r7">.</symbol>
+	  </state>
+	  <state number="25">
+	    <symbol act="r9">.</symbol>
+	  </state>
+	</actionTable>
+  <!-- All reductions: (state, NTSymb) ==> ruleN -->
+	<gotoTable>
+	  <state number="0" NT="OBJECT" newState="2"/>
+	  <state number="1" NT="MEMBERS" newState="5"/>
+	  <state number="1" NT="PAIR" newState="6"/>
+	  <state number="7" NT="OBJECT" newState="16"/>
+	  <state number="7" NT="VALUE" newState="17"/>
+	  <state number="7" NT="ARRAY" newState="18"/>
+	  <state number="9" NT="PAIR" newState="19"/>
+	  <state number="15" NT="OBJECT" newState="16"/>
+	  <state number="15" NT="VALUE" newState="21"/>
+	  <state number="15" NT="ARRAY" newState="18"/>
+	  <state number="15" NT="ELEMENTS" newState="22"/>
+	  <state number="23" NT="OBJECT" newState="16"/>
+	  <state number="23" NT="VALUE" newState="25"/>
+	  <state number="23" NT="ARRAY" newState="18"/>
+	</gotoTable>
+<!--
+       All symbols (terminal (T) or non-terminal (NT)
+       are coded in this section 
+-->
+	<symbols>
+	  <terminal>
+	    <s>$end</s>
+	    <s>error</s>
+	    <s>STRING</s>
+	    <s>NUMBER</s>
+	    <s>TRUE</s>
+	    <s>FALSE</s>
+	    <s>NULL</s>
+	    <s>{</s>
+	    <s>}</s>
+	    <s>,</s>
+	    <s>:</s>
+	    <s>[</s>
+	    <s>]</s>
+	  </terminal>
+	  <nonTerminal>
+	    <v>$accept</v>
+	    <v>OBJECT</v>
+	    <v>MEMBERS</v>
+	    <v>PAIR</v>
+	    <v>VALUE</v>
+	    <v>ARRAY</v>
+	    <v>ELEMENTS</v>
+	  </nonTerminal>
+	</symbols>
+</parseTables>

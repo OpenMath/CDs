@@ -1,0 +1,378 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+
+<CDName> relation1 </CDName>
+<CDBase>http://www.openmath.org/cd</CDBase>
+<CDURL> http://www.openmath.org/cd/relation1.ocd </CDURL>
+<CDReviewDate>2006-03-30</CDReviewDate>
+<CDDate>2004-03-30</CDDate>
+<CDVersion>3</CDVersion>
+<CDRevision>0</CDRevision>
+<CDStatus> official </CDStatus>
+
+<Description>
+    This CD holds the common arithmetic relations. It is intended
+    to be `compatible' with the appropriate MathML elements.
+</Description>
+
+<CDDefinition>
+<Name> eq </Name>
+<Role>application</Role>
+<Description> 
+This symbol represents the binary equality function.
+</Description>
+<CMP>
+a=b and b=c implies a=c
+</CMP>
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMA>
+  <OMS cd="logic1" name="implies"/>
+  <OMA>
+    <OMS cd="logic1" name="and"/>
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMV name="a"/>
+      <OMV name="b"/>
+    </OMA>
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMV name="b"/>
+      <OMV name="c"/>
+    </OMA>
+  </OMA>
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMV name="a"/>
+    <OMV name="c"/>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+
+<Example>
+An example which represents the statement 1 + 2 = 3.
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMS cd="arith1" name="plus"/>
+      <OMI> 1 </OMI>
+      <OMI> 2 </OMI>
+    </OMA>
+    <OMI> 3 </OMI>
+  </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> lt </Name>
+<Role>application</Role>
+<Description>
+This symbol represents the binary less than function which returns
+true if the first argument is less than the second, it returns false
+otherwise.
+</Description>
+<CMP>
+a&lt;b and b&lt;c implies a&lt;c
+</CMP>
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMA>
+  <OMS cd="logic1" name="implies"/>
+  <OMA>
+    <OMS cd="logic1" name="and"/>
+    <OMA>
+      <OMS cd="relation1" name="lt"/>
+      <OMV name="a"/>
+      <OMV name="b"/>
+    </OMA>
+    <OMA>
+      <OMS cd="relation1" name="lt"/>
+      <OMV name="b"/>
+      <OMV name="c"/>
+    </OMA>
+  </OMA>
+  <OMA>
+    <OMS cd="relation1" name="lt"/>
+    <OMV name="a"/>
+    <OMV name="c"/>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+
+<Example>
+An example which represents the statement 1 + 2 &lt; 4
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="lt"/>
+    <OMA>
+      <OMS cd="arith1" name="plus"/>
+      <OMI> 1 </OMI>
+      <OMI> 2 </OMI>
+    </OMA>
+    <OMI> 4 </OMI>
+  </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> gt </Name>
+<Role>application</Role>
+<Description> 
+This symbol represents the binary greater than function which returns
+true if the first argument is greater than the second, it returns false
+otherwise.
+</Description>
+<CMP>
+a&gt;b and b&gt;c implies a&gt;c
+</CMP>
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMA>
+  <OMS cd="logic1" name="implies"/>
+  <OMA>
+    <OMS cd="logic1" name="and"/>
+    <OMA>
+      <OMS cd="relation1" name="gt"/>
+      <OMV name="a"/>
+      <OMV name="b"/>
+    </OMA>
+    <OMA>
+      <OMS cd="relation1" name="gt"/>
+      <OMV name="b"/>
+      <OMV name="c"/>
+    </OMA>
+  </OMA>
+  <OMA>
+    <OMS cd="relation1" name="gt"/>
+    <OMV name="a"/>
+    <OMV name="c"/>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+
+<Example>
+An example which represents the statement 1 + 2 &gt; 2
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="gt"/>
+    <OMA>
+      <OMS cd="arith1" name="plus"/>
+      <OMI> 1 </OMI>
+      <OMI> 2 </OMI>
+    </OMA>
+    <OMI> 2 </OMI>
+  </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> neq </Name>
+<Role>application</Role>
+<Description> 
+This symbol represents the binary inequality function.
+</Description>
+
+<CMP> it is not true that a=/b and b=/c implies a=/c </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMA>
+  <OMS cd="logic1" name="not"/>
+  <OMA>
+    <OMS cd="logic1" name="implies"/>
+    <OMA>
+      <OMS cd="logic1" name="and"/>
+      <OMA>
+        <OMS cd="relation1" name="neq"/>
+	<OMV name="a"/>
+	<OMV name="b"/>
+      </OMA>
+      <OMA>
+        <OMS cd="relation1" name="neq"/>
+	<OMV name="b"/>
+	<OMV name="c"/>
+      </OMA>
+    </OMA>
+    <OMA>
+      <OMS cd="relation1" name="neq"/>
+      <OMV name="a"/>
+      <OMV name="c"/>
+    </OMA>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+<Example>
+An example which represents the statement 1 + 2 not = 2
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="neq"/>
+    <OMA>
+      <OMS cd="arith1" name="plus"/>
+      <OMI> 1 </OMI>
+      <OMI> 2 </OMI>
+    </OMA>
+    <OMI> 2 </OMI>
+  </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> leq </Name>
+<Role>application</Role>
+<Description> 
+This symbol represents the binary less than or equal to function which returns
+true if the first argument is less than or equal to the second, it
+returns false otherwise.
+</Description>
+<CMP>
+a&lt;=b and b&lt;=c implies a&lt;=c
+</CMP>
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMA>
+  <OMS cd="logic1" name="implies"/>
+  <OMA>
+    <OMS cd="logic1" name="and"/>
+    <OMA>
+      <OMS cd="relation1" name="leq"/>
+      <OMV name="a"/>
+      <OMV name="b"/>
+    </OMA>
+    <OMA>
+      <OMS cd="relation1" name="leq"/>
+      <OMV name="b"/>
+      <OMV name="c"/>
+    </OMA>
+  </OMA>
+  <OMA>
+    <OMS cd="relation1" name="leq"/>
+    <OMV name="a"/>
+    <OMV name="c"/>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+
+<Example>
+An example which represents the statement 1 + 2 &lt;= 4
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="leq"/>
+    <OMA>
+      <OMS cd="arith1" name="plus"/>
+      <OMI> 1 </OMI>
+      <OMI> 2 </OMI>
+    </OMA>
+    <OMI> 4 </OMI>
+  </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> geq </Name>
+<Role>application</Role>
+<Description> 
+This symbol represents the binary greater than or equal to function
+which returns true if the first argument is greater than or equal to
+the second, it returns false otherwise.
+</Description>
+<CMP>
+a&gt;=b and b&gt;=c implies a&gt;=c
+</CMP>
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMA>
+  <OMS cd="logic1" name="implies"/>
+  <OMA>
+    <OMS cd="logic1" name="and"/>
+    <OMA>
+      <OMS cd="relation1" name="geq"/>
+      <OMV name="a"/>
+      <OMV name="b"/>
+    </OMA>
+    <OMA>
+      <OMS cd="relation1" name="geq"/>
+      <OMV name="b"/>
+      <OMV name="c"/>
+    </OMA>
+  </OMA>
+  <OMA>
+    <OMS cd="relation1" name="geq"/>
+    <OMV name="a"/>
+    <OMV name="c"/>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+
+<Example>
+An example which represents the statement 1 + 2 &gt;= 3
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="geq"/>
+    <OMA>
+      <OMS cd="arith1" name="plus"/>
+      <OMI> 1 </OMI>
+      <OMI> 2 </OMI>
+    </OMA>
+    <OMI> 3 </OMI>
+  </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> approx </Name>
+<Role>application</Role>
+<Description> 
+This symbol is used to denote the approximate equality of its two arguments.
+</Description>
+
+<Example>
+\pi is approximately 355/113
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="approx"/>
+    <OMS cd="nums1" name="pi"/>
+    <OMA>
+      <OMS cd="nums1" name="rational"/>
+      <OMI> 355 </OMI>
+      <OMI> 113 </OMI>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+</CD>

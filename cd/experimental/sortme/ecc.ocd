@@ -1,0 +1,168 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+
+
+    <CDName> ecc </CDName>
+<CDBase>http://www.openmath.org/cd</CDBase>
+    <CDURL> http://http://www.openmath.org/cd/ecc.ocd </CDURL>
+    <CDReviewDate>2006-03-30</CDReviewDate>
+    <CDStatus> experimental </CDStatus>
+    <CDDate>2004-03-30</CDDate>
+    <CDVersion>2</CDVersion>
+    <CDRevision>0</CDRevision>
+    <Description>
+    Extended Calculus of Constructions Primitives
+    Initial version: O. Caprotti (July 1, 1999)
+    Revised: O. Caprotti (September 8, 1999)
+   </Description>
+    
+  
+   <CDDefinition>
+        <Name> type </Name>
+<Role>semantic-attribution</Role>
+        <Description> Attribution tag to denote type-judgement
+        </Description>
+    </CDDefinition>
+
+   <CDDefinition>
+        <Name> typecoerce </Name>
+<Role>semantic-attribution</Role>
+        <Description> Attribution tag to denote type-judgement with coercion
+        </Description>
+    </CDDefinition>
+
+ 
+
+ <CDDefinition>
+        <Name> SigmaType </Name>
+<Role>binder</Role>
+        <Description> The binder symbol used to construct the
+  	type of Cartesian products.  The (either plain or attributed)
+  	variables might occur in the body \OM\ object.
+         </Description>
+    </CDDefinition>
+
+ 
+<CDDefinition>
+        <Name> Pair </Name>
+<Role>application</Role>
+        <Description> The pairing constructor. It takes two 
+               OpenMath objects as first element and second 
+               element of the pair, and a third optional 
+               OpenMath object that represents the type of 
+               the pair.  
+        </Description>    
+    <Example>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+    <OMA>
+    <OMS cd="ecc" name="Pair"/>
+    <OMI>0</OMI>
+    <OMI>1</OMI>
+    </OMA>
+    </OMOBJ>
+    </Example>
+    </CDDefinition>
+
+<CDDefinition>
+        <Name> PairProj1 </Name>
+<Role>application</Role>
+        <Description> The first projection function that extracts the first
+	component of a Pair. It satisfies the sigma-reduction rule.
+        </Description>
+        <Example>
+	<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+	<OMA><OMS cd="relation1" name="eq"/>
+	<OMA><OMS cd="ecc" name="PairProj1"/>
+	<OMA><OMS cd="ecc" name="Pair"/>
+	     <OMI>0</OMI>
+             <OMI>1</OMI>
+	</OMA>
+	</OMA>
+	<OMI>0</OMI>
+	</OMA>
+	</OMOBJ>	
+	</Example>
+    </CDDefinition>
+
+<CDDefinition>
+        <Name> PairProj2 </Name>
+<Role>application</Role>
+        <Description> The second projection function that extracts the second
+	component of a Pair. It satisfies sigma-reduction rule.
+        </Description>
+        <Example>
+	<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+	<OMA><OMS cd="relation1" name="eq"/>
+	<OMA><OMS cd="ecc" name="PairProj2"/>
+	<OMA><OMS cd="ecc" name="Pair"/>
+	     <OMI>0</OMI>
+             <OMI>1</OMI>
+	</OMA>
+	</OMA>
+	<OMI>1</OMI>
+	</OMA>
+	</OMOBJ>	
+	</Example>
+
+    </CDDefinition>
+
+
+<CDDefinition>
+        <Name> Tuple </Name>
+<Role>application</Role> 
+	<Description> The n-ary tupling constructor when n&gt;2.  The
+        arguments are the element of the tuple. Tuple objects can also
+        be constructed by successive nesting of Pair.
+        </Description>	
+	<Example>
+	<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+	<OMA><OMS cd="relation1" name="eq"/>
+	     <OMA><OMS cd="ecc" name="Pair"/>
+	          <OMI>0</OMI>
+	          <OMA><OMS cd="ecc" name="Pair"/>
+                  <OMI>1</OMI>
+	          <OMI>2</OMI>
+	          </OMA>
+	     </OMA>
+       	     <OMA><OMS cd="ecc" name="Tuple"/>
+	          <OMI>0</OMI>	
+		  <OMI>1</OMI>	
+		  <OMI>2</OMI>
+             </OMA>
+	</OMA>
+	</OMOBJ>		
+	</Example>	
+    </CDDefinition>
+</CD>

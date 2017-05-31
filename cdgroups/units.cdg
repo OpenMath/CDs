@@ -1,0 +1,42 @@
+<CDGroup  xmlns="http://www.openmath.org/OpenMathCDG">
+<CDGroupName>units</CDGroupName>
+<CDGroupVersion> 1 </CDGroupVersion>
+<CDGroupRevision> 0 </CDGroupRevision>
+<CDGroupURL>
+http://www.openmath.org/cdfiles/cdgroups/units.cdg</CDGroupURL>
+<CDGroupDescription> This CD group contains cds describing units and dimensions</CDGroupDescription>
+
+<CDGroupMember>
+<CDName>dimensions1</CDName>
+<CDURL>http://www.openmath.org/cd/dimensions1.ocd</CDURL></CDGroupMember>
+
+<CDGroupMember>
+<CDName>units_imperial1</CDName>
+<CDURL>http://www.openmath.org/cd/units_imperial1.ocd</CDURL></CDGroupMember>
+
+<CDGroupMember>
+<CDName>units_metric1</CDName>
+<CDURL>http://www.openmath.org/cd/units_metric1.ocd</CDURL></CDGroupMember>
+
+<CDGroupMember>
+<CDName>units_ops1</CDName>
+<CDURL>http://www.openmath.org/cd/units_ops1.ocd</CDURL></CDGroupMember>
+
+<CDGroupMember>
+<CDName>units_siprefix1</CDName>
+<CDURL>http://www.openmath.org/cd/units_siprefix1.ocd</CDURL></CDGroupMember>
+
+<CDGroupMember>
+<CDName>units_sts1</CDName>
+<CDURL>http://www.openmath.org/cd/units_sts1.ocd</CDURL></CDGroupMember>
+
+<CDGroupMember>
+<CDName>units_time1</CDName>
+<CDURL>http://www.openmath.org/cd/units_time1.ocd</CDURL></CDGroupMember>
+
+<CDGroupMember>
+<CDName>units_us1</CDName>
+<CDURL>http://www.openmath.org/cd/units_us1.ocd</CDURL></CDGroupMember>
+
+
+</CDGroup>

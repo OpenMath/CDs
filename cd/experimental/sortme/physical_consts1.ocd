@@ -1,0 +1,522 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+
+<CDName> physical_consts1 </CDName>
+<CDBase>http://www.openmath.org/cd</CDBase>
+<CDURL> http://www.openmath.org/cd/physical_consts1.ocd </CDURL>
+<CDReviewDate>2006-03-30</CDReviewDate>
+<CDStatus> experimental </CDStatus>
+<CDDate>2005-05-28</CDDate>
+<CDVersion>3</CDVersion>
+<CDRevision>1</CDRevision>
+
+<Description> 
+This CD defines symbols which represent some elementary physical constants.
+</Description>
+
+<CDDefinition>
+<Name> absolute_zero </Name>
+<Role>constant</Role>
+<Description>
+This symbol represents the absolute zero of temperature, synonymous
+with the object of that temperature having zero latent heat.
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name> zero_Celsius </Name>
+<Role>constant</Role>
+<Description>
+This symbol represents the zero of the Celsius temperature scale.
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name> zero_Fahrenheit </Name>
+<Role>constant</Role>
+<Description>
+This symbol represents the zero of the Fahrenheit temperature scale.
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name> light_year </Name>
+<Role>constant</Role>
+<Description>
+This symbol represents the distant for which a beam of light would
+take a year to traverse, in a vacuum.
+</Description>
+
+<CMP> one light year is approximately 9221136415095314 metres </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="approx"/>
+    <OMS cd="physical_consts1" name="light_year"/>
+    <OMA>
+      <OMS cd="arith1" name="times"/>
+      <OMI> 9221136415095314 </OMI>
+      <OMS cd="units_metric1" name="metre"/>
+    </OMA>
+  </OMA>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> speed_of_light </Name>
+<Role>constant</Role>
+<Description>
+This symbol represents the speed of light in a vacuum. It is
+approximately 299792458 metres per second.
+</Description>
+<CMP> The speed of light is approximately 299792458 metres per second </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="approx"/>
+    <OMS cd="physical_consts1" name="speed_of_light"/>
+    <OMA>
+      <OMS cd="arith1" name="times"/>
+      <OMI> 299792458 </OMI>
+      <OMS cd="units_metric1" name="metres_per_second"/>
+    </OMA>
+  </OMA>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> Planck_constant </Name>
+<Role>constant</Role>
+<Description>
+This symbol represents the fundamental constant equal to the ratio of
+the energy of a quantum of energy to its frequency. It is
+approximately equal to 6.6260755*10^(-34) +/- 4.0*10^(-40) Joule seconds.
+</Description>
+<CMP>
+The Planck constant is 6.6260755*10^(-34) +/- 4.0*10^(-40) Joule
+seconds 
+
+this is equivalent to
+
+There exists P s.t. 
+  6.626075... -4.0... &lt; P 
+    and
+  6.626075... +4.0... &gt; P
+    and
+  Planck constant = P*Joule*second
+</CMP>
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMBIND>
+  <OMS cd="quant1" name="exists"/>
+  <OMBVAR>
+    <OMV name="P"/>
+  </OMBVAR>
+  <OMA>
+    <OMS cd="logic1" name="and"/>
+    <OMA>
+      <OMS cd="relation1" name="lt"/>
+      <OMA>
+        <OMS cd="arith1" name="minus"/>
+        <OMA>
+          <OMS cd="bigfloat1" name="bigfloat"/>
+          <OMF dec="6.6260755"/><OMI>10</OMI><OMI>-34</OMI>
+        </OMA>
+        <OMA>
+          <OMS cd="bigfloat1" name="bigfloat"/>
+          <OMF dec="4.0"/><OMI>10</OMI><OMI>-40</OMI>
+        </OMA>
+      </OMA>
+      <OMV name="P"/>
+    </OMA>
+    <OMA>
+      <OMS cd="relation1" name="gt"/>
+      <OMA>
+        <OMS cd="arith1" name="plus"/>
+        <OMA>
+          <OMS cd="bigfloat1" name="bigfloat"/>
+          <OMF dec="6.6260755"/><OMI>10</OMI><OMI>-34</OMI>
+        </OMA>
+        <OMA>
+          <OMS cd="bigfloat1" name="bigfloat"/>
+          <OMF dec="4.0"/><OMI>10</OMI><OMI>-40</OMI>
+        </OMA>
+      </OMA>
+      <OMV name="P"/>
+    </OMA>
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMS cd="physical_consts1" name="Planck_constant"/>
+      <OMA>
+        <OMS cd="arith1" name="times"/>
+        <OMV name="P"/>
+        <OMV name="Joule"/> 
+        <OMS cd="units_metric1" name="second"/>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMBIND>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> mole </Name>
+<Role>constant</Role>
+<Description>
+This symbol represents the number of atoms in one gramme of carbon(12).
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name> gravitational_constant </Name>
+<Role>constant</Role>
+<Description>
+This symbol represents the constant of proportionality in Newtons law
+of universal gravitation which states; Two bodies attract each other
+with equal and opposite forces; the magnitude of this force is
+proportional to the product of the two masses and is also proportional
+to the inverse square of the distance between the centers of mass of
+the two bodies. It is approximately equal to: 6.672*10^(-11) Newton
+square metres per kilogramme squared.
+</Description>
+<CMP>
+The gravitational constant is approximately 6.672*10^(-11) Newton
+square metres per kilogramme squared
+</CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="approx"/>
+    <OMS cd="physical_consts1" name="gravitational_constant"/>
+    <OMA>
+      <OMS cd="arith1" name="times"/>
+      <OMA>
+        <OMS cd="bigfloat1" name="bigfloat"/>
+        <OMF dec="6.672"/>
+        <OMI>10</OMI><OMI>-11</OMI>
+      </OMA>
+      <OMS cd="units_metric1" name="Newton"/>
+      <OMA>
+        <OMS cd="arith1" name="divide"/>
+        <OMS cd="units_metric1" name="metre_sqrd"/>
+        <OMA>
+          <OMS cd="arith1" name="power"/>
+          <OMA>
+            <OMS cd="arith1" name="times"/>
+            <OMI>1000</OMI><OMS cd="units_metric1" name="gramme"/>
+          </OMA>
+          <OMI>2</OMI>
+        </OMA>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> Avogadros_constant </Name>
+<Role>constant</Role>
+<Description>
+This symbol represents the number of atoms in 12 grammes of pure
+carbon(12). It is approximately 6.0221367*10^(23) +/- 3.6*10^(17).
+</Description>
+<CMP>
+Avogadros constant is 6.0221367*10^(23) +/- 3.6*10^(17).
+</CMP>
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMA>
+  <OMS cd="logic1" name="and"/>
+  <OMA>
+    <OMS cd="relation1" name="lt"/>
+    <OMA>
+      <OMS cd="arith1" name="minus"/>
+      <OMA>
+        <OMS cd="bigfloat1" name="bigfloat"/>
+        <OMF dec="6.0221367"/><OMI>10</OMI><OMI>23</OMI>
+      </OMA>
+      <OMA>
+        <OMS cd="bigfloat1" name="bigfloat"/>
+        <OMF dec="3.6"/><OMI>10</OMI><OMI>17</OMI>
+      </OMA>
+    </OMA>
+    <OMS cd="physical_consts1" name="Avogadros_constant"/>
+  </OMA>
+  <OMA>
+    <OMS cd="relation1" name="gt"/>
+    <OMA>
+      <OMS cd="arith1" name="plus"/>
+      <OMA>
+        <OMS cd="bigfloat1" name="bigfloat"/>
+        <OMF dec="6.0221367"/><OMI>10</OMI><OMI>23</OMI>
+      </OMA>
+      <OMA>
+        <OMS cd="bigfloat1" name="bigfloat"/>
+        <OMF dec="3.6"/><OMI>10</OMI><OMI>17</OMI>
+      </OMA>
+    </OMA>
+    <OMS cd="physical_consts1" name="Avogadros_constant"/>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> Faradays_constant </Name>
+<Role>constant</Role>
+<Description>
+This symbol represents the electric charge carried by one mole of
+electrons. It is approximately 96485.309 +/- 0.029 Coulombs per mole.
+</Description>
+<CMP>
+Faradays constant is 96485.309 +/- 0.029 Coulombs per mole.
+</CMP>
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMBIND>
+  <OMS cd="quant1" name="exists"/>
+  <OMBVAR>
+    <OMV name="F"/>
+  </OMBVAR>
+  <OMA>
+    <OMS cd="logic1" name="and"/>
+    <OMA>
+      <OMS cd="relation1" name="lt"/>
+      <OMA>
+        <OMS cd="arith1" name="minus"/>
+        <OMF dec="96485.309"/><OMF dec="0.029"/>
+      </OMA>
+      <OMV name="F"/>
+    </OMA>
+    <OMA>
+      <OMS cd="relation1" name="gt"/>
+      <OMA>
+        <OMS cd="arith1" name="plus"/>
+        <OMF dec="96485.309"/><OMF dec="0.029"/>
+      </OMA>
+      <OMV name="F"/>
+    </OMA>
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMS cd="physical_consts1" name="Faradays_constant"/>
+      <OMA>
+        <OMS cd="arith1" name="times"/>
+        <OMV name="F"/>
+        <OMS cd="units_metric1" name="Coulomb"/>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMBIND>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> gas_constant </Name>
+<Role>constant</Role>
+<Description>
+This symbol represents the constant which is equal to the ratio of the
+pressure times the volume and the temperature of an ideal gas. It is
+approximately 8.31451 +/- 7.0*10^(-05) Joules per mole per Kelvin.
+</Description>
+<CMP>
+The gas constant is  8.31451 +/- 7.0*10^(-05) Joules per
+mole per Kelvin.
+</CMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> Loschmidt_constant </Name>
+<Role>constant</Role>
+<Description>
+This symbol represents the number of particles per unit volume of an
+ideal gas at standard temperature and pressure. It is approximately
+2.686763 * 10^(25) +/- 2.3 * 10^(20) per metre cubed. 
+</Description>
+<CMP>
+The Loschmidt constant is 2.686763 * 10^(25) +/- 2.3 *
+10^(20) per metre cubed.
+</CMP>
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMBIND>
+  <OMS cd="quant1" name="exists"/>
+  <OMBVAR>
+    <OMV name="L"/>
+  </OMBVAR>
+  <OMA>
+    <OMS cd="logic1" name="and"/>
+    <OMA>
+      <OMS cd="relation1" name="lt"/>
+      <OMA>
+        <OMS cd="arith1" name="minus"/>
+        <OMA>
+          <OMS cd="bigfloat1" name="bigfloat"/>
+          <OMF dec="2.686763"/><OMI>10</OMI><OMI>25</OMI>
+        </OMA>
+        <OMA>
+          <OMS cd="bigfloat1" name="bigfloat"/>
+          <OMF dec="2.3"/><OMI>10</OMI><OMI>20</OMI>
+        </OMA>
+      </OMA>
+      <OMV name="L"/>
+    </OMA>
+    <OMA>
+      <OMS cd="relation1" name="gt"/>
+      <OMA>
+        <OMS cd="arith1" name="plus"/>
+        <OMA>
+          <OMS cd="bigfloat1" name="bigfloat"/>
+          <OMF dec="2.686763"/><OMI>10</OMI><OMI>25</OMI>
+        </OMA>
+        <OMA>
+          <OMS cd="bigfloat1" name="bigfloat"/>
+          <OMF dec="2.3"/><OMI>10</OMI><OMI>20</OMI>
+        </OMA>
+      </OMA>
+      <OMV name="L"/>
+    </OMA>
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMS cd="physical_consts1" name="Loschmidt_constant"/>
+      <OMA>
+        <OMS cd="arith1" name="divide"/>
+        <OMV name="L"/>
+        <OMA>
+          <OMS cd="arith1" name="power"/>
+          <OMS cd="units_metric1" name="metre"/>
+          <OMI>3</OMI>
+        </OMA>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMBIND>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> magnetic_constant </Name>
+<Role>constant</Role>
+<Description>
+This symbol represents the ratio of the magnetic flux density in a
+substance to the external field strength for vacuum. It is equal to 
+4 pi x 10^(-7) H/m.
+</Description>
+<CMP>
+The magnetic constant is equal to 4 pi x 10^(-7) H/m.
+</CMP>
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMA>
+  <OMS cd="relation1" name="eq"/>
+  <OMS cd="physical_consts1" name="magnetic_constant"/>
+  <OMA>
+    <OMS cd="arith1" name="times"/>
+    <OMS cd="nums1" name="pi"/>
+    <OMA>
+      <OMS cd="bigfloat1" name="bigfloat"/>
+      <OMI>4</OMI><OMI>10</OMI><OMI>-7</OMI>
+    </OMA>
+    <OMA>
+      <OMS cd="arith1" name="divide"/>
+      <OMV name="H"/>
+      <OMS cd="units_metric1" name="metre"/>
+    </OMA>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> Boltzmann_constant </Name>
+<Role>constant</Role>
+<Description>
+A constant which describes the relationship between temperature and kinetic energy for
+molecules in an ideal gas. It is approximately 1.380658*10^(-23)
+ +/- 1.2*10^(-28) Joules per Kelvin.
+</Description>
+<CMP>
+The Boltzmann constant is equal to 1.380658*10^(-23) +/- 1.2*10^(-28)
+Joules per Kelvin.
+</CMP>
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMBIND>
+  <OMS cd="quant1" name="exists"/>
+  <OMBVAR>
+    <OMV name="B"/>
+  </OMBVAR>
+  <OMA>
+    <OMS cd="logic1" name="and"/>
+    <OMA>
+      <OMS cd="relation1" name="lt"/>
+      <OMA>
+        <OMS cd="arith1" name="minus"/>
+        <OMA>
+          <OMS cd="bigfloat1" name="bigfloat"/>
+          <OMF dec="1.380658"/><OMI>10</OMI><OMI>-23</OMI>
+        </OMA>
+        <OMA>
+          <OMS cd="bigfloat1" name="bigfloat"/>
+          <OMF dec="1.2"/><OMI>10</OMI><OMI>-28</OMI>
+        </OMA>
+      </OMA>
+      <OMV name="B"/>
+    </OMA>
+    <OMA>
+      <OMS cd="relation1" name="gt"/>
+      <OMA>
+        <OMS cd="arith1" name="plus"/>
+        <OMA>
+          <OMS cd="bigfloat1" name="bigfloat"/>
+          <OMF dec="1.380658"/><OMI>10</OMI><OMI>-23</OMI>
+        </OMA>
+        <OMA>
+          <OMS cd="bigfloat1" name="bigfloat"/>
+          <OMF dec="1.2"/><OMI>10</OMI><OMI>-28</OMI>
+        </OMA>
+      </OMA>
+      <OMV name="B"/>
+    </OMA>
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMS cd="physical_consts1" name="Boltzmann_constant"/>
+      <OMA>
+        <OMS cd="arith1" name="times"/>
+        <OMV name="B"/>
+        <OMA>
+          <OMS cd="arith1" name="divide"/>
+          <OMV name="Joules"/>
+          <OMS cd="units_metric1" name="degree_Kelvin"/>
+        </OMA>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMBIND>
+</OMOBJ></FMP>
+</CDDefinition>
+</CD>

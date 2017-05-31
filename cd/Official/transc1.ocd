@@ -1,0 +1,1849 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+
+<CDName> transc1 </CDName>
+<CDBase>http://www.openmath.org/cd</CDBase>
+<CDURL> http://www.openmath.org/cd/transc1.ocd </CDURL>
+<CDReviewDate>2006-03-30</CDReviewDate>
+<CDDate>2004-03-30</CDDate>
+<CDVersion>3</CDVersion>
+<CDRevision>0</CDRevision>
+<CDStatus> official </CDStatus>
+
+<Description>
+    This CD holds the definitions of many transcendental
+    functions. They are defined as in Abromowitz and Stegun (ninth 
+    printing on), with precise reductions to logs in the case of 
+    inverse functions.
+
+    Note that, if signed zeros are supported, some strict 
+    inequalities have to become weak
+.
+    It is intended to be `compatible' with the MathML elements
+    denoting trancendental functions.
+    Some additional functions are in the CD transc2.    
+</Description>
+
+<CDDefinition>
+<Name> log </Name>
+<Role>application</Role>
+<Description> 
+This symbol represents a binary log function; the first argument is the base,
+to which the second argument is log'ed.
+It is defined in Abramowitz and Stegun, Handbook of Mathematical
+Functions, section 4.1
+</Description>
+<CMP>
+  a^b = c implies log_a c = b
+</CMP>
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+    <OMA>
+      <OMS cd="logic1" name="implies"/>
+      <OMA>
+        <OMS cd="relation1" name="eq"/>
+        <OMA>
+          <OMS cd="arith1" name="power"/>
+          <OMV name="a"/>
+          <OMV name="b"/>
+        </OMA>
+        <OMV name="c"/>
+      </OMA>
+      <OMA>
+        <OMS cd="relation1" name="eq"/>
+        <OMA>
+          <OMS cd="transc1" name="log"/>
+          <OMV name="a"/>
+          <OMV name="c"/>
+        </OMA>
+        <OMV name="b"/>
+      </OMA>
+    </OMA>
+  </OMOBJ>
+</FMP>
+
+<Example>
+log 100 to base 10 (which is 2).
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="transc1" name="log"/>
+    <OMF dec="10"/>
+    <OMF dec="100"/>
+  </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> ln </Name>
+<Role>application</Role>
+<Description> 
+This symbol represents the ln function (natural logarithm) as
+described in Abramowitz and Stegun, section 4.1. It takes one
+argument.  Note the description in the CMP/FMP of the branch cut.  If
+signed zeros are in use, the inequality needs to be non-strict.
+</Description>
+
+<CMP>
+-pi &lt; Im ln x &lt;= pi
+</CMP>
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+    <OMA>
+      <OMS name="and" cd="logic1"/>
+      <OMA>
+        <OMS name="lt" cd="relation1"/>
+        <OMA>
+          <OMS name="unary_minus" cd="arith1"/>
+          <OMS name="pi" cd="nums1"/>
+        </OMA>
+        <OMA>
+          <OMS name="imaginary" cd="complex1"/>
+          <OMA>
+            <OMS name="ln" cd="transc1"/>
+            <OMV name="x"/>
+          </OMA>
+        </OMA>
+      </OMA>
+      <OMA>
+        <OMS name="leq" cd="relation1"/>
+        <OMA>
+          <OMS name="imaginary" cd="complex1"/>
+          <OMA>
+            <OMS name="ln" cd="transc1"/>
+            <OMV name="x"/>
+          </OMA>
+        </OMA>
+        <OMS name="pi" cd="nums1"/>
+      </OMA>
+    </OMA>
+  </OMOBJ>
+</FMP>
+
+<Example>
+ln 1 (which is 0).
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="transc1" name="ln"/>
+    <OMF dec="1"/>
+  </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> exp </Name>
+<Role>application</Role>
+<Description> 
+This symbol represents the exponentiation function as described in
+Abramowitz and Stegun, section 4.2. It takes one argument.
+</Description>
+<CMP> for all k if k is an integer then e^(z+2*pi*k*i)=e^z </CMP>
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMBIND>
+  <OMS cd="quant1" name="forall"/>
+  <OMBVAR>
+    <OMV name="k"/>
+  </OMBVAR>
+  <OMA>
+    <OMS cd="logic1" name="implies"/>
+    <OMA>
+      <OMS cd="set1" name="in"/>
+      <OMV name="k"/>
+      <OMS cd="setname1" name="Z"/>
+    </OMA>
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="transc1" name="exp"/>
+	<OMA>
+	  <OMS cd="arith1" name="plus"/>
+	  <OMV name="z"/>
+	  <OMA>
+	    <OMS cd="arith1" name="times"/>
+	    <OMI>2</OMI>
+	    <OMS cd="nums1" name="pi"/>
+	    <OMV name="k"/>
+	    <OMS cd="nums1" name="i"/>
+	  </OMA>
+	</OMA>
+      </OMA>
+      <OMA>
+        <OMS cd="transc1" name="exp"/>
+	<OMV name="z"/>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMBIND>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> sin </Name>
+<Role>application</Role>
+<Description> 
+This symbol represents the sin function as described in Abramowitz and
+Stegun, section 4.3. It takes one argument.
+</Description>
+
+<CMP>
+sin(x) = (exp(ix)-exp(-ix))/2i
+</CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS name="sin" cd="transc1"/>
+        <OMV name="x"/>
+      </OMA>
+      <OMA>
+        <OMS name="divide" cd="arith1"/>
+        <OMA>
+          <OMS name="minus" cd="arith1"/>
+          <OMA>
+            <OMS name="exp" cd="transc1"/>
+            <OMA>
+              <OMS name="times" cd="arith1"/>
+              <OMS name="i" cd="nums1"/>
+              <OMV name="x"/>
+            </OMA>
+          </OMA>
+          <OMA>
+            <OMS name="exp" cd="transc1"/>
+            <OMA>
+              <OMS name="times" cd="arith1"/>
+              <OMA>
+                <OMS name="unary_minus" cd="arith1"/>
+                <OMS name="i" cd="nums1"/>
+              </OMA>
+              <OMV name="x"/>
+            </OMA>
+          </OMA>
+        </OMA>
+        <OMA>
+          <OMS name="times" cd="arith1"/>
+          <OMI>2</OMI>
+          <OMS name="i" cd="nums1"/>
+        </OMA>
+      </OMA>
+    </OMA>
+  </OMOBJ>
+</FMP>
+
+<CMP>
+sin(A + B) = sin A cos B + cos A sin B
+</CMP>
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="transc1" name="sin"/>
+        <OMA>
+	  <OMS cd="arith1" name="plus"/>
+	  <OMV name="A"/>
+    	  <OMV name="B"/>
+        </OMA>
+      </OMA>
+      <OMA>
+	<OMS cd="arith1" name="plus"/>
+	<OMA>
+	  <OMS cd="arith1" name="times"/>
+	  <OMA>
+	    <OMS cd="transc1" name="sin"/>
+	    <OMV name="A"/>
+	  </OMA>
+	  <OMA>
+	    <OMS cd="transc1" name="cos"/>
+	    <OMV name="B"/>
+	  </OMA>
+	</OMA>
+	<OMA>
+	  <OMS cd="arith1" name="times"/>
+	  <OMA>
+	    <OMS cd="transc1" name="cos"/>
+	    <OMV name="A"/>
+	  </OMA>
+	  <OMA>
+	    <OMS cd="transc1" name="sin"/>
+	    <OMV name="B"/>
+	  </OMA>
+	</OMA>
+      </OMA>
+    </OMA>
+  </OMOBJ>
+</FMP>
+
+<CMP>
+sin A = - sin(-A)
+</CMP>
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="transc1" name="sin"/>
+	<OMV name="A"/>
+      </OMA>
+      <OMA>
+        <OMS cd="arith1" name="unary_minus"/>
+	<OMA>
+	  <OMS cd="transc1" name="sin"/>
+	  <OMA>
+	    <OMS cd="arith1" name="unary_minus"/>
+	    <OMV name="A"/>
+	  </OMA>
+	</OMA>
+      </OMA>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> cos </Name>
+<Role>application</Role>
+<Description> 
+This symbol represents the cos function as described in Abramowitz and
+Stegun, section 4.3. It takes one argument.
+</Description>
+
+<CMP>
+cos(x) = (exp(ix)+exp(-ix))/2
+</CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS name="cos" cd="transc1"/>
+        <OMV name="x"/>
+      </OMA>
+      <OMA>
+        <OMS name="divide" cd="arith1"/>
+        <OMA>
+          <OMS name="plus" cd="arith1"/>
+          <OMA>
+            <OMS name="exp" cd="transc1"/>
+            <OMA>
+              <OMS name="times" cd="arith1"/>
+              <OMS name="i" cd="nums1"/>
+              <OMV name="x"/>
+            </OMA>
+          </OMA>
+          <OMA>
+            <OMS name="exp" cd="transc1"/>
+            <OMA>
+              <OMS name="times" cd="arith1"/>
+              <OMA>
+                <OMS name="unary_minus" cd="arith1"/>
+                <OMS name="i" cd="nums1"/>
+              </OMA>
+              <OMV name="x"/>
+            </OMA>
+          </OMA>
+        </OMA>
+        <OMI>2</OMI>
+      </OMA>
+    </OMA>
+  </OMOBJ>
+</FMP>
+
+<CMP>
+cos 2A = cos^2 A - sin^2 A
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMS cd="transc1" name="cos"/>
+      <OMA>
+        <OMS cd="arith1" name="times"/>
+	<OMI> 2 </OMI>
+	<OMV name="A"/>
+      </OMA>
+    </OMA>
+    <OMA>
+      <OMS cd="arith1" name="minus"/>
+      <OMA>
+        <OMS cd="arith1" name="power"/>
+	<OMA>
+	  <OMS cd="transc1" name="cos"/>
+	  <OMV name="A"/>
+	</OMA>
+	<OMI> 2 </OMI>
+      </OMA>
+      <OMA>
+        <OMS cd="arith1" name="power"/>
+	<OMA>
+	  <OMS cd="transc1" name="sin"/>
+	  <OMV name="A"/>
+	</OMA>
+	<OMI> 2 </OMI>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+<CMP>
+cos A = cos(-A)
+</CMP>
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMS cd="transc1" name="cos"/>
+      <OMV name="A"/>
+    </OMA>
+    <OMA>
+      <OMS cd="transc1" name="cos"/>
+      <OMA>
+        <OMS cd="arith1" name="unary_minus"/>
+	<OMV name="A"/>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> tan </Name>
+<Role>application</Role>
+<Description> 
+This symbol represents the tan function as described in Abramowitz and
+Stegun, section 4.3. It takes one argument.
+</Description>
+<CMP>
+tan A = sin A / cos A
+</CMP>
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMA>
+  <OMS cd="relation1" name="eq"/>
+  <OMA>
+    <OMS cd="transc1" name="tan"/>
+    <OMV name="A"/>
+  </OMA>
+  <OMA>
+    <OMS cd="arith1" name="divide"/>
+    <OMA>
+      <OMS cd="transc1" name="sin"/>
+      <OMV name="A"/>
+    </OMA>
+    <OMA>
+      <OMS cd="transc1" name="cos"/>
+      <OMV name="A"/>
+    </OMA>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> sec </Name>
+<Role>application</Role>
+<Description> 
+This symbol represents the sec function as described in Abramowitz and
+Stegun, section 4.3. It takes one argument.
+</Description>
+<CMP>
+sec A = 1/cos A
+</CMP>
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMA>
+  <OMS cd="relation1" name="eq"/>
+  <OMA>
+    <OMS cd="transc1" name="sec"/><OMV name="A"/>
+  </OMA>
+  <OMA>
+    <OMS cd="arith1" name="divide"/>
+    <OMS cd="alg1" name="one"/>
+    <OMA>
+      <OMS cd="transc1" name="cos"/>
+      <OMV name="A"/>
+    </OMA>
+  </OMA>
+</OMA>
+</OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> csc </Name>
+<Role>application</Role>
+<Description> 
+This symbol represents the csc function as described in Abramowitz and
+Stegun, section 4.3. It takes one argument.
+</Description>
+<CMP>
+csc A = 1/sin A
+</CMP>
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMA>
+  <OMS cd="relation1" name="eq"/>
+  <OMA>
+    <OMS cd="transc1" name="csc"/><OMV name="A"/>
+  </OMA>
+  <OMA>
+    <OMS cd="arith1" name="divide"/>
+    <OMS cd="alg1" name="one"/>
+    <OMA>
+      <OMS cd="transc1" name="sin"/>
+      <OMV name="A"/>
+    </OMA>
+  </OMA>
+</OMA>
+</OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> cot </Name>
+<Role>application</Role>
+<Description> 
+This symbol represents the cot function as described in Abramowitz and
+Stegun, section 4.3. It takes one argument.
+</Description>
+<CMP>
+cot A = 1/tan A
+</CMP>
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMA>
+  <OMS cd="relation1" name="eq"/>
+  <OMA>
+    <OMS cd="transc1" name="cot"/><OMV name="A"/>
+  </OMA>
+  <OMA>
+    <OMS cd="arith1" name="divide"/>
+    <OMS cd="alg1" name="one"/>
+    <OMA>
+      <OMS cd="transc1" name="tan"/>
+      <OMV name="A"/>
+    </OMA>
+  </OMA>
+</OMA>
+</OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> sinh </Name>
+<Role>application</Role>
+<Description> 
+This symbol represents the sinh function as described in Abramowitz
+and Stegun, section 4.5. It takes one argument.
+</Description>
+<CMP> sinh A = 1/2 * (e^A - e^(-A)) </CMP>
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMA>
+  <OMS cd="relation1" name="eq"/>
+  <OMA>
+    <OMS cd="transc1" name="sinh"/>
+    <OMV name="A"/>
+  </OMA>
+  <OMA>
+    <OMS cd="arith1" name="times"/>
+    <OMA>
+      <OMS cd="nums1" name="rational"/>
+      <OMS cd="alg1" name="one"/>
+      <OMI> 2 </OMI>
+    </OMA>
+    <OMA>
+      <OMS cd="arith1" name="minus"/>
+      <OMA>
+        <OMS cd="arith1" name="power"/>
+	<OMS cd="nums1" name="e"/>
+	<OMV name="A"/>
+      </OMA>
+      <OMA>
+        <OMS cd="arith1" name="power"/>
+	<OMS cd="nums1" name="e"/>
+	<OMA>
+	  <OMS cd="arith1" name="unary_minus"/>
+	  <OMV name="A"/>
+	</OMA>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> cosh </Name>
+<Role>application</Role>
+<Description> 
+This symbol represents the cosh function as described in Abramowitz
+and Stegun, section 4.5. It takes one argument.
+</Description>
+<CMP> cosh A = 1/2 * (e^A + e^(-A)) </CMP>
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMA>
+  <OMS cd="relation1" name="eq"/>
+  <OMA>
+    <OMS cd="transc1" name="cosh"/>
+    <OMV name="A"/>
+  </OMA>
+  <OMA>
+    <OMS cd="arith1" name="times"/>
+    <OMA>
+      <OMS cd="nums1" name="rational"/>
+      <OMS cd="alg1" name="one"/>
+      <OMI> 2 </OMI>
+    </OMA>
+    <OMA>
+      <OMS cd="arith1" name="plus"/>
+      <OMA>
+        <OMS cd="arith1" name="power"/>
+	<OMS cd="nums1" name="e"/>
+	<OMV name="A"/>
+      </OMA>
+      <OMA>
+        <OMS cd="arith1" name="power"/>
+	<OMS cd="nums1" name="e"/>
+	<OMA>
+	  <OMS cd="arith1" name="unary_minus"/>
+	  <OMV name="A"/>
+	</OMA>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> tanh </Name>
+<Role>application</Role>
+<Description> 
+This symbol represents the tanh function as described in Abramowitz
+and Stegun, section 4.5. It takes one argument.
+</Description>
+<CMP> tanh A = sinh A / cosh A </CMP>
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMA>
+  <OMS cd="relation1" name="eq"/>
+  <OMA>
+    <OMS cd="transc1" name="tanh"/>
+    <OMV name="A"/>
+  </OMA>
+  <OMA>
+    <OMS cd="arith1" name="divide"/>
+    <OMA>
+      <OMS cd="transc1" name="sinh"/>
+      <OMV name="A"/>
+    </OMA>
+    <OMA>
+      <OMS cd="transc1" name="cosh"/>
+      <OMV name="A"/>
+    </OMA>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> sech </Name>
+<Role>application</Role>
+<Description> 
+This symbol represents the sech function as described in Abramowitz
+and Stegun, section 4.5. It takes one argument.
+</Description>
+<CMP> sech A = 1/cosh A </CMP>
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMA>
+  <OMS cd="relation1" name="eq"/>
+  <OMA>
+    <OMS cd="transc1" name="sech"/><OMV name="A"/>
+  </OMA>
+  <OMA>
+    <OMS cd="arith1" name="divide"/>
+    <OMS cd="alg1" name="one"/>
+    <OMA>
+      <OMS cd="transc1" name="cosh"/>
+      <OMV name="A"/>
+    </OMA>
+  </OMA>
+</OMA>
+</OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> csch </Name>
+<Role>application</Role>
+<Description> 
+This symbol represents the csch function as described in Abramowitz
+and Stegun, section 4.5. It takes one argument.
+</Description>
+<CMP> csch A = 1/sinh A </CMP>
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMA>
+  <OMS cd="relation1" name="eq"/>
+  <OMA>
+    <OMS cd="transc1" name="csch"/><OMV name="A"/>
+  </OMA>
+  <OMA>
+    <OMS cd="arith1" name="divide"/>
+    <OMS cd="alg1" name="one"/>
+    <OMA>
+      <OMS cd="transc1" name="sinh"/>
+      <OMV name="A"/>
+    </OMA>
+  </OMA>
+</OMA>
+</OMOBJ>
+</FMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> coth </Name>
+<Role>application</Role>
+<Description> 
+This symbol represents the coth function as described in Abramowitz
+and Stegun, section 4.5. It takes one argument.
+</Description>
+<CMP> coth A = 1/tanh A </CMP>
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMA>
+  <OMS cd="relation1" name="eq"/>
+  <OMA>
+    <OMS cd="transc1" name="coth"/><OMV name="A"/>
+  </OMA>
+  <OMA>
+    <OMS cd="arith1" name="divide"/>
+    <OMS cd="alg1" name="one"/>
+    <OMA>
+      <OMS cd="transc1" name="tanh"/>
+      <OMV name="A"/>
+    </OMA>
+  </OMA>
+</OMA>
+</OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> arcsin </Name>
+<Role>application</Role>
+<Description> 
+This symbol represents the arcsin function. This is the inverse of the
+sin function as described in Abramowitz and Stegun, section 4.4. It
+takes one argument.
+</Description>
+
+<CMP>
+arcsin(z) = -i ln (sqrt(1-z^2)+iz)
+</CMP>
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+    <OMA>
+      <OMS name="eq" cd="relation1"/>
+      <OMA>
+        <OMS name="arcsin" cd="transc1"/>
+        <OMV name="z"/>
+      </OMA>
+      <OMA>
+        <OMS name="times" cd="arith1"/>
+        <OMA>
+          <OMS name="unary_minus" cd="arith1"/>
+          <OMS name="i" cd="nums1"/>
+        </OMA>
+        <OMA>
+          <OMS name="ln" cd="transc1"/>
+          <OMA>
+            <OMS name="plus" cd="arith1"/>
+            <OMA>
+              <OMS name="root" cd="arith1"/>
+              <OMA>
+                <OMS name="minus" cd="arith1"/>
+                <OMS name="one" cd="alg1"/>
+                <OMA>
+                  <OMS name="power" cd="arith1"/>
+                  <OMV name="z"/>
+                  <OMI> 2 </OMI>
+                </OMA>
+              </OMA>
+              <OMI> 2 </OMI>
+            </OMA>
+            <OMA>
+              <OMS name="times" cd="arith1"/>
+              <OMS name="i" cd="nums1"/>
+              <OMV name="z"/>
+            </OMA>
+          </OMA>
+        </OMA>
+      </OMA>
+    </OMA>
+  </OMOBJ>
+</FMP>
+
+<CMP> x in [-(pi/2),(pi/2)] implies arcsin(sin x) = x </CMP>
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMA>
+  <OMS cd="logic1" name="implies"/>
+  <OMA>
+    <OMS cd="set1" name="in"/>
+    <OMV name="x"/>
+    <OMA>
+      <OMS cd="interval1" name="interval_cc"/>
+      <OMA>
+        <OMS cd="arith1" name="unary_minus"/>
+	<OMA>
+	  <OMS cd="arith1" name="divide"/>
+	  <OMS cd="nums1" name="pi"/>
+	  <OMI> 2 </OMI>
+	</OMA>
+      </OMA>
+      <OMA>
+        <OMS cd="arith1" name="divide"/>
+	<OMS cd="nums1" name="pi"/>
+	<OMI> 2 </OMI>
+      </OMA>
+    </OMA>
+  </OMA>
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMS cd="transc1" name="arcsin"/>
+      <OMA>
+        <OMS cd="transc1" name="sin"/>
+	<OMV name="x"/>
+      </OMA>
+    </OMA>
+    <OMV name="x"/>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> arccos </Name>
+<Role>application</Role>
+<Description> 
+This symbol represents the arccos function. This is the inverse of the
+cos function as described in Abramowitz and Stegun, section 4.4. It
+takes one argument. 
+</Description>
+
+<CMP> arccos(z) = -i ln(z+i \sqrt(1-z^2)) </CMP>
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMS cd="transc1" name="arccos"/>
+      <OMV name="z"/>
+    </OMA>
+    <OMA>
+      <OMS cd="arith1" name="times"/>
+      <OMA>
+        <OMS cd="arith1" name="unary_minus"/>
+	<OMS cd="nums1" name="i"/>
+      </OMA>
+      <OMA>
+        <OMS cd="transc1" name="ln"/>
+	<OMA>
+	  <OMS cd="arith1" name="plus"/>
+	  <OMV name="z"/>
+	  <OMA>
+	    <OMS cd="arith1" name="times"/>
+	    <OMS cd="nums1" name="i"/>
+	    <OMA>
+	      <OMS cd="arith1" name="root"/>
+	      <OMA>
+	        <OMS cd="arith1" name="minus"/>
+		<OMS cd="alg1" name="one"/>
+		<OMA>
+		  <OMS cd="arith1" name="power"/>
+		  <OMV name="z"/>
+		  <OMI> 2 </OMI>
+		</OMA>
+	      </OMA>
+	      <OMI> 2 </OMI>
+	    </OMA>
+	  </OMA>
+	</OMA>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+<CMP> x in [0,pi] implies arccos(cos x) = x </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMA>
+  <OMS cd="logic1" name="implies"/>
+  <OMA>
+    <OMS cd="set1" name="in"/>
+    <OMV name="x"/>
+    <OMA>
+      <OMS cd="interval1" name="interval_cc"/>
+      <OMS cd="alg1" name="zero"/>
+      <OMS cd="nums1" name="pi"/>
+    </OMA>
+  </OMA>
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMS cd="transc1" name="arccos"/>
+      <OMA>
+        <OMS cd="transc1" name="cos"/>
+	<OMV name="x"/>
+      </OMA>
+    </OMA>
+    <OMV name="x"/>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> arctan </Name>
+<Role>application</Role>
+<Description> 
+This symbol represents the arctan function. This is the inverse of the
+tan function as described in Abramowitz and Stegun, section 4.4. It
+takes one argument.
+</Description>
+
+<CMP>
+arctan(z) = (i/2)ln((1-iz)/(1+iz))
+</CMP>
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+    <OMA>
+      <OMS name="eq" cd="relation1"/>
+      <OMA>
+        <OMS name="arctan" cd="transc1"/>
+        <OMV name="z"/>
+      </OMA>
+      <OMA>
+        <OMS name="times" cd="arith1"/>
+        <OMA>
+          <OMS name="divide" cd="arith1"/>
+          <OMS name="i" cd="nums1"/>
+          <OMI> 2 </OMI>
+        </OMA>
+        <OMA>
+          <OMS name="ln" cd="transc1"/>
+	  <OMA>
+            <OMS name="divide" cd="arith1"/>
+            <OMA>
+              <OMS name="minus" cd="arith1"/>
+              <OMS name="one" cd="alg1"/>
+              <OMA>
+                <OMS name="times" cd="arith1"/>
+                <OMS name="i" cd="nums1"/>
+                <OMV name="z"/>
+              </OMA>
+            </OMA>
+            <OMA>
+              <OMS name="plus" cd="arith1"/>
+              <OMS name="one" cd="alg1"/>
+              <OMA>
+                <OMS name="times" cd="arith1"/>
+                <OMS name="i" cd="nums1"/>
+                <OMV name="z"/>
+              </OMA>
+            </OMA>
+          </OMA>
+        </OMA>
+      </OMA>
+    </OMA>
+  </OMOBJ>
+</FMP>
+
+<CMP> x in (-(pi/2),(pi/2)) implies arctan(tan x) = x </CMP>
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMA>
+  <OMS cd="logic1" name="implies"/>
+  <OMA>
+    <OMS cd="set1" name="in"/>
+    <OMV name="x"/>
+    <OMA>
+      <OMS cd="interval1" name="interval_oo"/>
+      <OMA>
+        <OMS cd="arith1" name="unary_minus"/>
+	<OMA>
+	  <OMS cd="arith1" name="divide"/>
+	  <OMS cd="nums1" name="pi"/>
+	  <OMI> 2 </OMI>
+	</OMA>
+      </OMA>
+      <OMA>
+        <OMS cd="arith1" name="divide"/>
+	<OMS cd="nums1" name="pi"/>
+	<OMI> 2 </OMI>
+      </OMA>
+    </OMA>
+  </OMA>
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMS cd="transc1" name="arctan"/>
+      <OMA>
+        <OMS cd="transc1" name="tan"/>
+	<OMV name="x"/>
+      </OMA>
+    </OMA>
+    <OMV name="x"/>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> arcsec </Name>
+<Role>application</Role>
+<Description> 
+This symbol represents the arcsec function as described in Abramowitz
+and Stegun, section 4.4.
+</Description>
+
+<CMP> arcsec(z) = -i ln(1/z + i \sqrt(1-1/z^2)) </CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMS cd="transc1" name="arcsec"/>
+      <OMV name="z"/>
+    </OMA>
+    <OMA>
+      <OMS cd="arith1" name="times"/>
+      <OMA>
+        <OMS cd="arith1" name="unary_minus"/>
+	<OMS cd="nums1" name="i"/>
+      </OMA>
+      <OMA>
+        <OMS cd="transc1" name="ln"/>
+	<OMA>
+	  <OMS cd="arith1" name="plus"/>
+	  <OMA>
+	    <OMS cd="arith1" name="divide"/>
+	    <OMS cd="alg1" name="one"/>
+	    <OMV name="z"/>
+	  </OMA>
+	  <OMA>
+	    <OMS cd="arith1" name="times"/>
+	    <OMS cd="nums1" name="i"/>
+	    <OMA>
+	      <OMS cd="arith1" name="root"/>
+	      <OMA>
+	        <OMS cd="arith1" name="minus"/>
+		<OMS cd="alg1" name="one"/>
+		<OMA>
+		  <OMS cd="arith1" name="divide"/>
+		  <OMS cd="alg1" name="one"/>
+		  <OMA>
+		    <OMS cd="arith1" name="power"/>
+		    <OMV name="z"/>
+		    <OMI> 2 </OMI>
+		  </OMA>
+		</OMA>
+	      </OMA>
+	      <OMI> 2 </OMI>
+	    </OMA>
+	  </OMA>
+	</OMA>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+<CMP> for all z | arcsec z = i * arcsech z </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMBIND>
+  <OMS cd="quant1" name="forall"/>
+  <OMBVAR>
+    <OMV name="z"/>
+  </OMBVAR>
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMS cd="transc1" name="arcsec"/>
+      <OMV name="z"/>
+    </OMA>
+    <OMA>
+      <OMS cd="arith1" name="times"/>
+      <OMS cd="nums1" name="i"/>
+      <OMA>
+        <OMS cd="transc1" name="arcsech"/>
+	<OMV name="z"/>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMBIND>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> arccsc </Name>
+<Role>application</Role>
+<Description> 
+This symbol represents the arccsc function as described in Abramowitz
+and Stegun, section 4.4.
+</Description>
+
+<CMP> arccsc(z) = -i ln(i/z + \sqrt(1 - 1/z^2)) </CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMS cd="transc1" name="arccsc"/>
+      <OMV name="z"/>
+    </OMA>
+    <OMA>
+      <OMS cd="arith1" name="times"/>
+      <OMA>
+        <OMS cd="arith1" name="unary_minus"/>
+	<OMS cd="nums1" name="i"/>
+      </OMA>
+      <OMA>
+        <OMS cd="transc1" name="ln"/>
+	<OMA>
+	  <OMS cd="arith1" name="plus"/>
+	  <OMA>
+	    <OMS cd="arith1" name="divide"/>
+	    <OMS cd="nums1" name="i"/>
+	    <OMV name="z"/>
+	  </OMA>
+	  <OMA>
+	    <OMS cd="arith1" name="root"/>
+	    <OMA>
+	      <OMS cd="arith1" name="minus"/>
+	      <OMS cd="alg1" name="one"/>
+	      <OMA>
+		<OMS cd="arith1" name="divide"/>
+		<OMS cd="alg1" name="one"/>
+		<OMA>
+		  <OMS cd="arith1" name="power"/>
+		  <OMV name="z"/>
+		  <OMI> 2 </OMI>
+		</OMA>
+	      </OMA>
+	    </OMA>
+	    <OMI> 2 </OMI>
+	  </OMA>
+	</OMA>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+<CMP> arccsc(z) = i * arccsch(i * z) </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMA>
+  <OMS cd="relation1" name="eq"/>
+  <OMA>
+    <OMS cd="transc1" name="arccsc"/>
+    <OMV name="z"/>
+  </OMA>
+  <OMA>
+    <OMS cd="arith1" name="times"/>
+    <OMS cd="nums1" name="i"/>
+    <OMA>
+      <OMS cd="transc1" name="arccsch"/>
+      <OMA>
+        <OMS cd="arith1" name="times"/>
+        <OMS cd="nums1" name="i"/>
+	<OMV name="z"/>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+
+<CMP> arccsc(-z) = - arccsc(z) </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMA>
+  <OMS cd="relation1" name="eq"/>
+  <OMA>
+    <OMS cd="transc1" name="arccsc"/>
+    <OMA>
+      <OMS cd="arith1" name="unary_minus"/>
+      <OMV name="z"/>
+    </OMA>
+  </OMA>
+  <OMA>
+    <OMS cd="arith1" name="unary_minus"/>
+    <OMA>
+      <OMS cd="transc1" name="arccsc"/>
+      <OMV name="z"/>
+    </OMA>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> arccot </Name>
+<Role>application</Role>
+<Description> 
+This symbol represents the arccot function as described in Abramowitz
+and Stegun, section 4.4.
+</Description>
+
+<CMP> arccot(-z) = - arccot(z) </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMA>
+  <OMS cd="relation1" name="eq"/>
+  <OMA>
+    <OMS cd="transc1" name="arccot"/>
+    <OMA>
+      <OMS cd="arith1" name="unary_minus"/>
+      <OMV name="z"/>
+    </OMA>
+  </OMA>
+  <OMA>
+    <OMS cd="arith1" name="unary_minus"/>
+    <OMA>
+      <OMS cd="transc1" name="arccot"/>
+      <OMV name="z"/>
+    </OMA>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+
+<CMP> arccot(x) = (i/2) * ln ((x - i)/(x + i)) </CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMS cd="transc1" name="arccot"/>
+      <OMV name="x"/>
+    </OMA>
+    <OMA>
+      <OMS cd="arith1" name="times"/>
+      <OMA>
+        <OMS cd="arith1" name="divide"/>
+	<OMS cd="nums1" name="i"/>
+	<OMI> 2 </OMI>
+      </OMA>
+      <OMA>
+        <OMS cd="transc1" name="ln"/>
+        <OMA>
+          <OMS cd="arith1" name="divide"/>
+	  <OMA>
+	    <OMS cd="arith1" name="minus"/>
+	    <OMV name="x"/>
+	    <OMS cd="nums1" name="i"/>
+	  </OMA>
+	  <OMA>
+	    <OMS cd="arith1" name="plus"/>
+	    <OMV name="x"/>
+	    <OMS cd="nums1" name="i"/>
+	  </OMA>
+        </OMA>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> arcsinh </Name>
+<Role>application</Role>
+<Description> 
+This symbol represents the arcsinh function as described in Abramowitz
+and Stegun, section 4.6.
+</Description>
+
+<CMP> arcsinh z = ln(z + \sqrt(1+z^2)) </CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMS cd="transc1" name="arcsinh"/>
+      <OMV name="z"/>
+    </OMA>
+    <OMA>
+      <OMS cd="transc1" name="ln"/>
+      <OMA>
+        <OMS cd="arith1" name="plus"/>
+	<OMV name="z"/>
+	<OMA>
+	  <OMS cd="arith1" name="root"/>
+	  <OMA>
+	    <OMS cd="arith1" name="plus"/>
+	    <OMS cd="alg1" name="one"/>
+	    <OMA>
+	      <OMS cd="arith1" name="power"/>
+	      <OMV name="z"/>
+	      <OMI> 2 </OMI>
+	    </OMA>
+	  </OMA>
+	  <OMI> 2 </OMI>
+	</OMA>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+<CMP> arcsinh(z) = - i * arcsin(i * z) </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMA>
+  <OMS cd="relation1" name="eq"/>
+  <OMA>
+    <OMS cd="transc1" name="arcsinh"/>
+    <OMV name="z"/>
+  </OMA>
+  <OMA>
+    <OMS cd="arith1" name="times"/>
+    <OMA>
+      <OMS cd="arith1" name="unary_minus"/>
+      <OMS cd="nums1" name="i"/>
+    </OMA>
+    <OMA>
+      <OMS cd="transc1" name="arcsin"/>
+      <OMA>
+        <OMS cd="arith1" name="times"/>
+	<OMS cd="nums1" name="i"/>
+	<OMV name="z"/>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> arccosh </Name>
+<Role>application</Role>
+<Description> 
+This symbol represents the arccosh function as described in Abramowitz
+and Stegun, section 4.6.
+</Description>
+
+<CMP> arccosh(z) = 2*ln(\sqrt((z+1)/2) + \sqrt((z-1)/2)) </CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMS cd="transc1" name="arccosh"/>
+      <OMV name="z"/>
+    </OMA>
+    <OMA>
+      <OMS cd="arith1" name="times"/>
+      <OMI> 2 </OMI>
+      <OMA>
+        <OMS cd="transc1" name="ln"/>
+	<OMA>
+	  <OMS cd="arith1" name="plus"/>
+	  <OMA>
+	    <OMS cd="arith1" name="root"/>
+	    <OMA>
+	      <OMS cd="arith1" name="divide"/>
+	      <OMA>
+	        <OMS cd="arith1" name="plus"/>
+		<OMV name="z"/>
+		<OMS cd="alg1" name="one"/>
+	      </OMA>
+	      <OMI> 2 </OMI>
+	    </OMA>
+	    <OMI> 2 </OMI>
+	  </OMA>
+	  <OMA>
+	    <OMS cd="arith1" name="root"/>
+	    <OMA>
+	      <OMS cd="arith1" name="divide"/>
+	      <OMA>
+	        <OMS cd="arith1" name="minus"/>
+		<OMV name="z"/>
+		<OMS cd="alg1" name="one"/>
+	      </OMA>
+	      <OMI> 2 </OMI>
+	    </OMA>
+	    <OMI> 2 </OMI>
+	  </OMA>
+	</OMA>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+<CMP> arccosh z = i * (pi - arccos z) </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMA>
+  <OMS cd="relation1" name="eq"/>
+  <OMA>
+    <OMS cd="transc1" name="arccosh"/>
+    <OMV name="z"/>
+  </OMA>
+  <OMA>
+    <OMS cd="arith1" name="times"/>
+    <OMS cd="nums1" name="i"/>
+    <OMA>
+      <OMS cd="arith1" name="minus"/>
+      <OMS cd="nums1" name="pi"/>
+      <OMA>
+	<OMS cd="transc1" name="arccos"/>
+	<OMV name="z"/>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> arctanh </Name>
+<Role>application</Role>
+<Description> 
+This symbol represents the arctanh function as described in Abramowitz
+and Stegun, section 4.6.
+</Description>
+
+<CMP> arctanh(z) = - i * arctan(i * z) </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMA>
+  <OMS cd="relation1" name="eq"/>
+  <OMA>
+    <OMS cd="transc1" name="arctanh"/>
+    <OMV name="z"/>
+  </OMA>
+  <OMA>
+    <OMS cd="arith1" name="times"/>
+    <OMA>
+      <OMS cd="arith1" name="unary_minus"/>
+	<OMS cd="nums1" name="i"/>
+    </OMA>
+    <OMA>
+      <OMS cd="transc1" name="arctan"/>
+      <OMA>
+        <OMS cd="arith1" name="times"/>
+	<OMS cd="nums1" name="i"/>
+	<OMV name="z"/>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+
+<CMP> for all x where 0 &lt;= x^2 &lt; 1 |
+arctanh(x) = 1/2 * ln((1 + x)/(1 - x))
+</CMP>
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMBIND>
+  <OMS cd="quant1" name="forall"/>
+  <OMBVAR>
+    <OMV name="x"/>
+  </OMBVAR>
+  <OMA>
+    <OMS cd="logic1" name="implies"/>
+    <OMA>
+      <OMS cd="logic1" name="and"/>
+      <OMA>
+        <OMS cd="relation1" name="leq"/>
+	<OMS cd="alg1" name="zero"/>
+	<OMA>
+	  <OMS cd="arith1" name="power"/>
+	  <OMV name="x"/>
+	  <OMI> 2 </OMI>
+	</OMA>
+      </OMA>
+      <OMA>
+        <OMS cd="relation1" name="lt"/>
+	<OMA>
+	  <OMS cd="arith1" name="power"/>
+	  <OMV name="x"/>
+	  <OMI> 2 </OMI>
+	</OMA>
+	<OMS cd="alg1" name="one"/>
+      </OMA>
+    </OMA>
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="transc1" name="arctanh"/>
+	<OMV name="x"/>
+      </OMA>
+      <OMA>
+        <OMS cd="arith1" name="times"/>
+        <OMA>
+          <OMS cd="nums1" name="rational"/>
+          <OMI> 1 </OMI>
+          <OMI> 2 </OMI>
+        </OMA>
+        <OMA>
+          <OMS cd="transc1" name="ln"/>
+          <OMA>
+            <OMS cd="arith1" name="divide"/>
+	    <OMA>
+	      <OMS cd="arith1" name="plus"/>
+	      <OMV name="x"/>
+	      <OMS cd="alg1" name="one"/>
+	    </OMA>
+	    <OMA>
+	      <OMS cd="arith1" name="minus"/>
+	      <OMS cd="alg1" name="one"/>
+	      <OMV name="x"/>
+	    </OMA>
+          </OMA>
+        </OMA>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMBIND>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> arcsech </Name>
+<Role>application</Role>
+<Description> 
+This symbol represents the arcsech function as described in Abramowitz
+and Stegun, section 4.6.
+</Description>
+
+<CMP> arcsech(z) = 2 ln(\sqrt((1+z)/(2z)) + \sqrt((1-z)/(2z))) </CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMS cd="transc1" name="arcsech"/>
+      <OMV name="z"/>
+    </OMA>
+    <OMA>
+      <OMS cd="arith1" name="times"/>
+      <OMI> 2 </OMI>
+      <OMA>
+        <OMS cd="transc1" name="ln"/>
+	<OMA>
+	  <OMS cd="arith1" name="plus"/>
+	  <OMA>
+	    <OMS cd="arith1" name="root"/>
+	    <OMA>
+	      <OMS cd="arith1" name="divide"/>
+	      <OMA>
+	        <OMS cd="arith1" name="plus"/>
+		<OMS cd="alg1" name="one"/>
+		<OMV name="z"/>
+	      </OMA>
+	      <OMA>
+	        <OMS cd="arith1" name="times"/>
+		<OMI> 2 </OMI>
+		<OMV name="z"/>
+	      </OMA>
+	    </OMA>
+	    <OMI> 2 </OMI>
+	  </OMA>
+	  <OMA>
+	    <OMS cd="arith1" name="root"/>
+	    <OMA>
+	      <OMS cd="arith1" name="divide"/>
+	      <OMA>
+	        <OMS cd="arith1" name="minus"/>
+		<OMS cd="alg1" name="one"/>
+		<OMV name="z"/>
+	      </OMA>
+	      <OMA>
+	        <OMS cd="arith1" name="times"/>
+		<OMI> 2 </OMI>
+		<OMV name="z"/>
+	      </OMA>
+	    </OMA>
+	    <OMI> 2 </OMI>
+	  </OMA>
+	</OMA>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+<CMP> for all x in (0..1] | arcsech x = ln(1/x + (1/(x^2) - 1)^(1/2)) </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMBIND>
+  <OMS cd="quant1" name="forall"/>
+  <OMBVAR>
+    <OMV name="x"/>
+  </OMBVAR>
+  <OMA>
+    <OMS cd="logic1" name="implies"/>
+    <OMA>
+      <OMS cd="set1" name="in"/>
+      <OMV name="x"/>
+      <OMA>
+        <OMS cd="interval1" name="interval_oc"/>
+	<OMI> 0 </OMI> <OMI> 1 </OMI>
+      </OMA>
+    </OMA>
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="transc1" name="arcsech"/>
+	<OMV name="x"/>
+      </OMA>
+      <OMA>
+        <OMS cd="transc1" name="ln"/>
+	<OMA>
+	  <OMS cd="arith1" name="plus"/>
+	  <OMA>
+	    <OMS cd="arith1" name="divide"/>
+	    <OMS cd="alg1" name="one"/>
+	    <OMV name="x"/>
+	  </OMA>
+	  <OMA>
+	    <OMS cd="arith1" name="power"/>
+	    <OMA>
+	      <OMS cd="arith1" name="minus"/>
+	      <OMA>
+	        <OMS cd="arith1" name="divide"/>
+		<OMS cd="alg1" name="one"/>
+		<OMA>
+		  <OMS cd="arith1" name="power"/>
+		  <OMV name="x"/>
+		  <OMI> 2 </OMI>
+		</OMA>
+	      </OMA>
+	      <OMS cd="alg1" name="one"/>
+	    </OMA>
+	    <OMA>
+	      <OMS cd="nums1" name="rational"/>
+	      <OMI> 1 </OMI> <OMI> 2 </OMI>
+	    </OMA>
+	  </OMA>
+	</OMA>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMBIND>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> arccsch </Name>
+<Role>application</Role>
+<Description> 
+This symbol represents the arccsch function as described in Abramowitz
+and Stegun, section 4.6.
+</Description>
+
+<CMP> arccsch(z) = ln(1/z + \sqrt(1+(1/z)^2)) </CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMS cd="transc1" name="arccsch"/>
+      <OMV name="z"/>
+    </OMA>
+    <OMA>
+      <OMS cd="transc1" name="ln"/>
+      <OMA>
+        <OMS cd="arith1" name="plus"/>
+	<OMA>
+	  <OMS cd="arith1" name="divide"/>
+	  <OMS cd="alg1" name="one"/>
+	  <OMV name="z"/>
+	</OMA>
+	<OMA>
+	  <OMS cd="arith1" name="root"/>
+	  <OMA>
+	    <OMS cd="arith1" name="plus"/>
+	    <OMS cd="alg1" name="one"/>
+	    <OMA>
+	      <OMS cd="arith1" name="power"/>
+	      <OMA>
+	        <OMS cd="arith1" name="divide"/>
+		<OMS cd="alg1" name="one"/>
+		<OMV name="z"/>
+	      </OMA>
+	      <OMI> 2 </OMI>
+	    </OMA>
+	  </OMA>
+	  <OMI> 2 </OMI>
+	</OMA>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+<CMP> arccsch(z) = i * arccsc(i * z) </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMA>
+  <OMS cd="relation1" name="eq"/>
+  <OMA>
+    <OMS cd="transc1" name="arccsch"/>
+    <OMV name="z"/>
+  </OMA>
+  <OMA>
+    <OMS cd="arith1" name="times"/>
+    <OMS cd="nums1" name="i"/>
+    <OMA>
+      <OMS cd="transc1" name="arccsc"/>
+      <OMA>
+        <OMS cd="arith1" name="times"/>
+	<OMS cd="nums1" name="i"/>
+	<OMV name="z"/>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> arccoth </Name>
+<Role>application</Role>
+<Description> 
+This symbol represents the arccoth function as described in Abramowitz
+and Stegun, section 4.6.
+</Description>
+
+<CMP> arccoth(z) = (ln(-1-z)-ln(1-z))/2 </CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMS cd="transc1" name="arccoth"/>
+      <OMV name="z"/>
+    </OMA>
+    <OMA>
+      <OMS cd="arith1" name="divide"/>
+      <OMA>
+        <OMS cd="arith1" name="minus"/>
+        <OMA>
+          <OMS cd="transc1" name="ln"/>
+          <OMA>
+            <OMS cd="arith1" name="minus"/>
+	    <OMA>
+	      <OMS cd="arith1" name="unary_minus"/>
+	      <OMS cd="alg1" name="one"/>
+	    </OMA>
+	    <OMV name="z"/>
+          </OMA>
+        </OMA>
+        <OMA>
+          <OMS cd="transc1" name="ln"/>
+          <OMA>
+            <OMS cd="arith1" name="minus"/>
+	    <OMS cd="alg1" name="one"/>
+	    <OMV name="z"/>
+          </OMA>
+        </OMA>
+      </OMA>
+      <OMI> 2 </OMI>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+<CMP> for all z | if z is not zero then arccoth(z) = i * arccot(i * z) </CMP>
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMBIND>
+  <OMS cd="quant1" name="forall"/>
+  <OMBVAR>
+    <OMV name="z"/>
+  </OMBVAR>
+  <OMA>
+    <OMS cd="logic1" name="implies"/>
+    <OMA>
+      <OMS cd="relation1" name="neq"/>
+      <OMV name="z"/>
+      <OMS cd="alg1" name="zero"/>
+    </OMA>
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="transc1" name="arccoth"/>
+	<OMV name="z"/>
+      </OMA>
+      <OMA>
+        <OMS cd="arith1" name="times"/>
+	<OMS cd="nums1" name="i"/>
+        <OMA>
+          <OMS cd="transc1" name="arccot"/>
+	  <OMA>
+            <OMS cd="arith1" name="times"/>
+	    <OMS cd="nums1" name="i"/>
+	    <OMV name="z"/>
+          </OMA>
+        </OMA>
+      </OMA> 
+    </OMA>
+  </OMA>
+</OMBIND>
+</OMOBJ></FMP>
+</CDDefinition>
+
+</CD>

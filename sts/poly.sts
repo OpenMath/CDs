@@ -1,0 +1,229 @@
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="poly">
+<CDSStatus> official </CDSStatus>
+
+<CDSComment>
+Date:  2004-02-01
+Author: James Davenport
+</CDSComment>
+
+<Signature name="power" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMS name="polynomial_ring" cd="polysts" />
+    <OMS name="Z" cd="setname1" />
+    <OMV name="PolynomialPower" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="factored" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMA>
+      <OMS name="nary" cd="sts" />
+       <OMV name="PolynomialPower" />
+    </OMA>
+    <OMV name="FactoredPolynomial" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="squarefreed" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMA>
+      <OMS name="nary" cd="sts" />
+       <OMV name="PolynomialPower" />
+    </OMA>
+    <OMV name="FactoredPolynomial" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="partially_factored" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMA>
+      <OMS name="nary" cd="sts" />
+       <OMV name="PolynomialPower" />
+    </OMA>
+    <OMV name="FactoredPolynomial" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="expand" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+   <OMV name="FactoredPolynomial" />
+   <OMS name="polynomial_ring" cd="polysts" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="degree" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMS name="polynomial_ring" cd="polysts" />
+    <OMS name="N" cd="setname1" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="degree_wrt" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+   <OMS name="polynomial_ring" cd="polysts" />
+   <OMV name="PolynomialVariable"/>
+   <OMS name="N" cd="setname1" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="leading_coefficient" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+   <OMS name="polynomial_ring" cd="polysts" />
+   <OMV name="PolynomialVariable"/>
+   <OMS name="polynomial_ring" cd="polysts" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="coefficient" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+   <OMS name="polynomial_ring" cd="polysts" />
+   <OMV name="ListPolynomialVariable"/>
+   <OMV name="ListExponents"/>
+   <OMS name="polynomial_ring" cd="polysts" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="factor" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+   <OMS name="polynomial_ring" cd="polysts" />
+   <OMV name="FactoredPolynomial" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="squarefree" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMS name="polynomial_ring" cd="polysts" />
+    <OMV name="FactoredPolynomial" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="gcd" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMA>
+      <OMS name="nassoc" cd="sts" />
+       <OMS name="polynomial_ring" cd="polysts" />
+    </OMA>
+    <OMS name="polynomial_ring" cd="polysts" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="lcm" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMA>
+      <OMS name="nassoc" cd="sts" />
+       <OMS name="polynomial_ring" cd="polysts" />
+    </OMA>
+    <OMS name="polynomial_ring" cd="polysts" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="discriminant" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMS name="polynomial_ring" cd="polysts" />
+    <OMV name="PolynomialVariable" />
+    <OMS name="polynomial_ring" cd="polysts" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="resultant" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMS name="polynomial_ring" cd="polysts" />
+    <OMS name="polynomial_ring" cd="polysts" />
+    <OMV name="PolynomialVariable" />
+    <OMS name="polynomial_ring" cd="polysts" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+
+<Signature name="convert" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMV name="Polynomial1" />
+    <OMA>
+      <OMS name="structure" cd="sts" />
+       <OMS name="polynomial_ring" cd="polysts" />
+    </OMA>
+    <OMS name="polynomial_ring" cd="polysts" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="coefficient_ring" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMV name="Polynomial" />
+    <OMV name="CoefficientRing" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="evaluate" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMV name="Polynomial" />
+    <OMS name="NumericalValue" cd="sts"/> 
+    <OMS name="NumericalValue" cd="sts"/> 
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="evaluate" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMV name="Polynomial" />
+    <OMV name="Vector"/>
+    <OMS name="NumericalValue" cd="sts"/> 
+ </OMA>
+</OMOBJ>
+</Signature>
+
+</CDSignatures>

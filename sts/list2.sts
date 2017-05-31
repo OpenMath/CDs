@@ -1,0 +1,89 @@
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="list2">
+<CDSStatus> official </CDSStatus>
+
+<CDSComment>
+Date:  2002-05-26
+Author: David Carlisle
+</CDSComment>
+
+<Signature name="list_selector" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+  <OMS name="mapsto" cd="sts" />
+  <OMV name="PositiveInteger"/>
+  <OMV name="List" />
+  <OMS name="Object" cd="sts" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="first" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+  <OMS name="mapsto" cd="sts" />
+  <OMV name="List" />
+  <OMS name="Object" cd="sts" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="rest" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+  <OMS name="mapsto" cd="sts" />
+  <OMV name="List" />
+  <OMV name="List" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+
+<Signature name="cons" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+  <OMS name="mapsto" cd="sts" />
+  <OMS name="Object" cd="sts" />
+  <OMV name="List" />
+  <OMV name="List" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="nil" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMV name="List"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="append" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+  <OMS name="mapsto" cd="sts" />
+  <OMV name="List" />
+  <OMV name="List" />
+  <OMV name="List" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="reverse" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+  <OMS name="mapsto" cd="sts" />
+  <OMV name="List" />
+  <OMV name="List" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="size" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMV name="List" />
+    <OMV name="CardinalNumber" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+</CDSignatures>

@@ -1,0 +1,3 @@
+krextor-xslt is a static copy of the Krextor XML->RDF extraction library that we need for extracting RDF descriptions from the OpenMath CDs.  We maintain a static copy here, as we can't use Subversion externals on our server.  Please update from time to time using:
+
+svn export --force https://svn.kwarc.info/repos/swim/projects/krextor/trunk/src/xslt krextor-xslt

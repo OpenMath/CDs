@@ -1,0 +1,163 @@
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="multiset1">
+<CDSStatus> official </CDSStatus>
+
+<CDSComment>
+Date:  20003-19-21
+Author: David Carlisle
+</CDSComment>
+
+<Signature name="cartesian_product">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS cd="sts" name="mapsto"/>
+    <OMA>
+      <OMS cd="sts" name="nary"/>
+      <OMA>
+        <OMS cd="sts" name="structure"/>
+	<OMV name="Multiset"/>
+      </OMA>
+    </OMA>
+    <OMA>
+      <OMS cd="sts" name="structure"/>
+      <OMV name="Multiset1"/>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="emptyset" >
+ <OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+    <OMV name="Multiset"/>
+ </OMOBJ>
+</Signature>
+
+<Signature name="multiset" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+  <OMS name="mapsto" cd="sts" />
+   <OMA>
+    <OMS name="nary" cd="sts" />
+     <OMS name="Object" cd="sts" />
+   </OMA>
+  <OMV name="Multiset" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="intersect" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMA>
+     <OMS name="nassoc" cd="sts" />
+     <OMV name="Multiset" />
+    </OMA>
+    <OMV name="Multiset" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="union" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMA>
+     <OMS name="nassoc" cd="sts" />
+     <OMV name="Multiset" />
+    </OMA>
+    <OMV name="Multiset" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="setdiff" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMV name="Multiset" />
+    <OMV name="Multiset" />
+    <OMV name="Multiset" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+
+<Signature name="subset" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMV name="Multiset" />
+    <OMV name="Multiset" />
+    <OMS cd="setname2" name="Boolean" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+
+<Signature name="in" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMS name="Object" cd="sts" />
+    <OMV name="Multiset" />
+    <OMS cd="setname2" name="Boolean" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="notin" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMS name="Object" cd="sts" />
+    <OMV name="Multiset" />
+    <OMS cd="setname2" name="Boolean" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+
+<Signature name="prsubset" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMV name="Multiset" />
+    <OMV name="Multiset" />
+    <OMS cd="setname2" name="Boolean" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="notsubset" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMV name="Multiset" />
+    <OMV name="Multiset" />
+    <OMS cd="setname2" name="Boolean" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="notprsubset" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMV name="Multiset" />
+    <OMV name="Multiset" />
+    <OMS cd="setname2" name="Boolean" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="size" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMV name="Multiset" />
+    <OMV name="CardinalNumber" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+</CDSignatures>

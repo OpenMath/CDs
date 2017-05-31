@@ -1,0 +1,114 @@
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="units_metric1">
+<CDSStatus> experimental </CDSStatus>
+
+
+<Signature name="metre" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="dimensions1" name="length"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="metre_sqrd" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="dimensions1" name="area"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="litre" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="dimensions1" name="volume"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="litre_pre1964" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="dimensions1" name="volume"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="metres_per_second" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="dimensions1" name="speed"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="metres_per_second_sqrd" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="dimensions1" name="acceleration"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="second" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="dimensions1" name="time"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="gramme" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="dimensions1" name="mass"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="Newton" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="dimensions1" name="force"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="Joule" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="dimensions1" name="energy"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="Watt" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="dimensions1" name="power"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="degree_Kelvin" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="dimensions1" name="temperature"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="degree_Celsius" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="dimensions1" name="temperature"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="Pascal" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="dimensions1" name="pressure"/>
+</OMOBJ>
+</Signature>
+
+<!-- Next one is deprecated -->
+<Signature name="Newton_per_sqr_metre" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="dimensions1" name="pressure"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="Coulomb" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="dimensions1" name="charge"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="amp" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="dimensions1" name="current"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="volt" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="dimensions1" name="voltage"/>
+</OMOBJ>
+</Signature>
+
+</CDSignatures>

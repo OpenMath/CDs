@@ -1,0 +1,21 @@
+About the fxsl directory
+========================
+
+The FXSL library by Dimitre Novatchev is distributed under a license that you
+can find in the COPYING file.  Using this software implies you are bound by
+this license.
+
+For you convenience, we bundle FXSL with Krextor.  Every once a while, we
+update to the latest version.  This bundled version is not guaranteed to be up
+to date.
+
+For more details about FXSL and obtaining the latest version, please see
+https://sourceforge.net/projects/fxsl/ and http://fxsl.sourceforge.net/
+
+Any trouble with the runnable capabilities of _this_ installation should be
+reported on the Krextor Trac at https://trac.kwarc.info/krextor/, not to the
+FXSL developers.
+
+Christoph Lange, November 26, 2008
+ch.lange@jacobs-university.de
+

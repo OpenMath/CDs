@@ -1,0 +1,117 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+
+<CDName> arith2 </CDName>
+<CDBase>http://www.openmath.org/cd</CDBase>
+<CDURL> http://www.openmath.org/cd/arith2.ocd </CDURL>
+<CDReviewDate>2006-03-30</CDReviewDate>
+<CDStatus> experimental </CDStatus>
+<CDDate>2004-03-30</CDDate>
+<CDVersion>2</CDVersion>
+<CDRevision>0</CDRevision>
+<Description>
+Further to the basic arithmetic functions, we define some more common
+arithmetic operations. This includes a commutative times which
+exhibits the use of inheritance within the CD's.
+</Description>
+
+
+<CDDefinition>
+<Name> times </Name>
+<Role>application</Role>
+<Description>
+The symbol representing an n-ary multiplication function inheriting
+from the times in arith1, but with the extra property that here it must
+be commutative.
+</Description>
+<CMP> for all a,b | a * b = b * a </CMP>
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+    <OMBIND>
+      <OMS cd="quant1" name="forall"/>
+      <OMBVAR>
+         <OMV name="a"/>
+         <OMV name="b"/>
+      </OMBVAR>
+      <OMA>
+        <OMS cd="relation1" name="eq"/>
+        <OMA>
+          <OMS cd="arith2" name="times"/>
+          <OMV name="a"/>
+          <OMV name="b"/>
+        </OMA>
+        <OMA>
+          <OMS cd="arith2" name="times"/>
+          <OMV name="b"/>
+          <OMV name="a"/>
+        </OMA>
+      </OMA>
+    </OMBIND>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> inverse </Name>
+<Role>application</Role>
+<Description>
+A unary operator which represents the inverse of an element of a set. This
+symbol could be used to represent additive or multiplicative inverses.
+</Description>
+<CMP> inverse(inverse(a))=a </CMP>
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+    <OMBIND>
+      <OMS cd="quant1" name="forall"/>
+      <OMBVAR>
+         <OMV name="a"/>
+      </OMBVAR>
+      <OMA>
+        <OMS cd="relation1" name="eq"/>
+        <OMA>
+          <OMS cd="arith2" name="inverse"/>
+          <OMA>
+            <OMS cd="arith2" name="inverse"/>
+            <OMV name="a"/>
+          </OMA>
+        </OMA>
+        <OMV name="a"/>
+      </OMA>
+    </OMBIND>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+</CD>

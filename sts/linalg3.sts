@@ -1,0 +1,48 @@
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="linalg3">
+<CDSStatus> official </CDSStatus>
+
+<CDSComment>
+Date:  1999-04-13
+Author: David Carlisle
+</CDSComment>
+
+<Signature name="vector" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+  <OMS name="mapsto" cd="sts" />
+   <OMA>
+    <OMS name="nary" cd="sts" />
+     <OMV name="AbelianGroupMult" />
+   </OMA>
+  <OMV name="Vector"/>
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="matrix" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+  <OMS name="mapsto" cd="sts" />
+   <OMA>
+    <OMS name="nary" cd="sts" />
+     <OMV name="MatrixRow"/>
+   </OMA>
+  <OMV name="Matrix"/>
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="matrixcolumn" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+  <OMS name="mapsto" cd="sts" />
+   <OMA>
+    <OMS name="nary" cd="sts" />
+     <OMV name="Ring"/>
+   </OMA>
+  <OMS name="MatrixRow" cd="sts" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+</CDSignatures>

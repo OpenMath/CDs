@@ -1,0 +1,23 @@
+<CDGroup  xmlns="http://www.openmath.org/OpenMathCDG">
+<CDGroupName>fns</CDGroupName>
+<CDGroupVersion> 2 </CDGroupVersion>
+<CDGroupRevision> 0 </CDGroupRevision>
+<CDGroupURL>
+	http://www.openmath.org/cdfiles/cdgroups/fns.cdg
+</CDGroupURL>
+<CDGroupDescription>
+Basic Operations on functions 
+</CDGroupDescription>
+
+<CDGroupMember>
+<CDName>fns1</CDName>
+<CDURL> http://www.openmath.org/cd/fns1.ocd</CDURL>
+</CDGroupMember>
+
+<CDGroupMember>
+<CDName>fns2</CDName>
+<CDURL> http://www.openmath.org/cd/fns2.ocd</CDURL>
+</CDGroupMember>
+
+</CDGroup>
+

@@ -1,0 +1,98 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+
+<CDName> permgrp </CDName>
+<CDBase>http://www.openmath.org/cd</CDBase>
+<CDURL> http://www.openmath.org/cd/permgrp.ocd </CDURL>
+<CDReviewDate>2006-03-30</CDReviewDate>
+<CDDate>2004-03-30</CDDate>
+<CDVersion>3</CDVersion>
+<CDRevision>0</CDRevision>
+<CDStatus> experimental </CDStatus>
+<Description> A CD of functions for permutation groups   </Description>
+<CDComment>
+Written by A. Solomon on 1998-11-19
+Modified by David Carlisle 1999-04-28
+</CDComment>
+
+
+
+<CDDefinition>
+<Name> orbit </Name>
+<Role>application</Role>
+<Description>
+The binary function whose value is the set of integers which 
+are in the orbit of the second argument under the action of the first
+argument which is a permutation group.
+</Description>
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> stabilizer </Name>
+<Role>application</Role>
+<Description>
+The first argument is a permutation group, the second is 
+some object (point or set) upon which the first argument acts.
+The value is the subgroup of the first argument which 
+stabilize the second argument.
+</Description>
+</CDDefinition>
+
+
+
+<CDDefinition>
+<Name> is_transitive </Name>
+<Role>application</Role>
+<Description>
+The unary function whose value is true iff the permutation group argument acts
+transitively.
+</Description>
+</CDDefinition>
+
+
+
+<CDDefinition>
+<Name> is_primitive </Name>
+<Role>application</Role>
+<Description>
+The unary function whose value is true iff its permutation group argument acts
+primitively.
+</Description>
+</CDDefinition>
+
+
+
+</CD>

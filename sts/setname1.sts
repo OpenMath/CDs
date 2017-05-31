@@ -1,0 +1,46 @@
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="setname1">
+<CDSStatus> official </CDSStatus>
+<CDSComment>
+ Written by JHD 1999-11-19, using the "structure"
+ construct added to STS.
+ Revised by W.A. Naylor on 2000-02-02, splitting setname into setname1 and 
+ setname2, this sts contains signatures for N, Z, Q, R, C and H.
+</CDSComment>
+
+<Signature name="P" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMV name="Set"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="N" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMV name="Set"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="Z" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMV name="EuclideanRing"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="Q" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMV name="Field"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="R" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMV name="Field"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="C" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMV name="Field"/>
+</OMOBJ>
+</Signature>
+
+</CDSignatures>

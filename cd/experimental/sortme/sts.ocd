@@ -1,0 +1,278 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+
+<CDName>sts</CDName>
+<CDBase>http://www.openmath.org/cd</CDBase>
+<CDURL> http://www.openmath.org/cd/sts.ocd </CDURL>
+<CDReviewDate>2006-03-30</CDReviewDate>
+<CDDate>2004-03-30</CDDate>
+<CDVersion>4</CDVersion>
+<CDRevision>0</CDRevision>
+<CDStatus> official </CDStatus>
+
+<Description> 
+Definitions of the symbols used by the OpenMath Small Type System.
+</Description>
+
+
+<CDDefinition>
+<Name> type </Name>
+<Role>semantic-attribution</Role>
+<Description> 
+A symbol to be used within an OpenMath attribute to specify the type of
+the object.
+</Description>
+
+<Example>
+The variable z is attributed with a type for complex numbers.
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMATTR>
+    <OMATP>
+       <OMS cd="sts" name="type"/>
+       <OMS name="C" cd="setname1"/>
+    </OMATP>
+    <OMV name="z"/>
+  </OMATTR>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+
+<CDDefinition>
+<Name>mapsto</Name>
+<Role>application</Role>
+<Description>
+This symbol represents the construction of a function type.
+
+The first n-1 children denote the types of the arguments,
+the last denotes the return type.
+</Description>
+<Example>
+The signature of the power function: (Real , Integer) -&gt; Real
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="sts" name="mapsto"/>
+    <OMS cd="setname1" name="R"/>
+    <OMS cd="setname1" name="Z"/>
+    <OMS cd="setname1" name="R"/>
+  </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name>nary</Name>
+<Role>application</Role>
+<Description>
+Constructs a child of mapsto which denotes an arbitrary number of
+copies of the argument of nary.
+</Description>
+<Example>
+The signature for list, an n-ary function:
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+ <OMA>
+  <OMS name="mapsto" cd="sts"/>
+   <OMA>
+     <OMS name="nary" cd="sts"/>
+     <OMS name="Object" cd="sts"/>
+   </OMA>
+  <OMS name="Object" cd="sts"/>
+ </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+
+<CDDefinition>
+<Name>nassoc</Name>
+<Role>application</Role>
+<Description> 
+Constructs a child of mapsto which denotes an arbitrary number of
+copies of the argument of nassoc. The operator is associative on these
+arguments which means that repeated uses may be flattened/unflattened.
+</Description>
+<Example>
+The signature for plus, an associative n-ary function:
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMA>
+      <OMS name="nassoc" cd="sts"/> 
+      <OMV name="AbelianSemiGroup"/>
+    </OMA>
+    <OMV name="AbelianSemiGroup"/>
+  </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name>error</Name>
+<Role>constant</Role>
+<Description>
+The error symbol is the 'return type' of error symbols in the error
+signature file.
+</Description>
+<Example>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="sts" name="mapsto"/>
+    <OMV name="OMSymbol"/>
+    <OMS name="error" cd="sts"/>
+  </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name>structure</Name>
+<Role>application</Role>
+<Description> 
+The structure element is used to represent a structure of a particular
+(algebraic) type.
+</Description>
+<Example>
+The signature of a function which given a set will return an element
+of that set:
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="sts" name="mapsto"/>
+    <OMA>
+      <OMS cd="sts" name="structure"/>
+      <OMV name="set"/>
+    </OMA>
+    <OMV name="set"/>
+  </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+
+<CDDefinition>
+<Name>binder</Name>
+<Role>constant</Role>
+<Description>
+An `OMBIND' object has three parts: a "binder" such as "lambda" or
+"for all", a (list of) bound variables, and an expression.  The use of
+`binder' in a signature indicates that we are describing something
+which can only be used as the first child of an OMBIND construct.
+</Description>
+<Example>
+The signature of forall is:
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+ <OMS name="binder" cd="sts"/>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name>attribution</Name>
+<Role>constant</Role>
+<Description>
+An `attribution' object consists of pairs of keys and values.  The use
+of the symbol `attribution' in a signature indicates that the symbol
+is to be used as a key.
+</Description>
+<Example>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+ <OMS name="attribution" cd="sts"/>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+
+<CDDefinition>
+<Name>Object</Name>
+<Role>constant</Role>
+<Description>
+Denotes any OpenMath object.
+</Description>
+<Example>
+The signature for list, to show that list has the signature:
+ Object* -&gt; Object
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+ <OMA>
+  <OMS name="mapsto" cd="sts"/>
+   <OMA>
+     <OMS name="nary" cd="sts"/>
+     <OMS name="Object" cd="sts"/>
+   </OMA>
+  <OMS name="Object" cd="sts"/>
+ </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name>NumericalValue</Name>
+<Role>constant</Role>
+<Description>
+Denotes an OpenMath object that is to be thought of as something that
+represents a numerical value, or a numerical value.
+</Description>
+<Example>
+The generic signature for the function power:
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+ <OMA>
+  <OMS name="mapsto" cd="sts"/>
+  <OMS name="NumericalValue" cd="sts"/> 
+  <OMS name="NumericalValue" cd="sts"/> 
+  <OMS name="NumericalValue" cd="sts"/> 
+ </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name>SetNumericalValue</Name>
+<Role>constant</Role>
+<Description>
+Denotes an OpenMath object that is to be thought of as something that
+represents a set of numerical values, or a set of numerical values.
+</Description>
+<Example>
+The generic signature for the function arctan from transc3:
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+ <OMA>
+  <OMS name="mapsto" cd="sts"/>
+  <OMS name="NumericalValue" cd="sts"/> 
+  <OMS name="SetNumericalValue" cd="sts"/> 
+ </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+
+</CD>

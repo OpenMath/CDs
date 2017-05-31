@@ -1,0 +1,231 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+
+   <CDName> polyr </CDName>
+<CDBase>http://www.openmath.org/cd</CDBase> 
+   <CDURL> http://www.openmath.org/cd/polyd.ocd </CDURL>
+   <CDReviewDate>2006-03-30</CDReviewDate> 
+   <CDDate>2004-03-30</CDDate> 
+   <CDStatus> experimental </CDStatus>
+   <CDVersion>3</CDVersion>
+   <CDRevision>0</CDRevision>
+   <Description>
+     This CD contains operators to deal with polynomials and more precisely 
+     Recursive Polynomials.
+     Note that polynomials are regarded as univariates in their most
+     significant variable (as defined by the order in PolynomialRingR:
+     the first variable to appear is the most significant),
+     with monomials in decreasing order of exponent, and coefficients
+     being polynomials in the rest of the variables. This means that 
+     polynomials have a unique representation, except for the fact that
+     yz \in Z[x,y,z] could also be represented as x^0yz. This latter is
+     discouraged, but currently not expressly forbidden.
+   </Description>
+
+<CDComment>
+Original OpenMath v1.1 Poly 1997
+Update to Current Format 1999-07-07 DPC
+Move the names of rings to setname1.ocd 1999-11-09 JHD
+Delete those items moved to the new poly.ocd 1999-11-14 JHD
+Convert to recursive polynomials 1999-11-20 JHD
+</CDComment>
+
+<CDComment>
+     Definition of data-structure constructors
+</CDComment>
+
+<CDComment>
+     The polynomial x^2*y^6 + 3*y^5 can be conceptually encoded as
+     poly_r_rep(x,
+           term(2,poly_r_rep(y,
+                            term(6,1))),
+           term(0,poly_r_rep(y,
+                            term(5,3))))
+     It lies in polynomial_ring_r(Z,x,y) (and other rings, of course)
+
+     The polynomial 2*y^3*z^5 + x + 1 can be conceptually encoded as
+     poly_r_rep(x,
+           term(1,1),
+           term(0,poly_r_rep(y,
+                            term(3,poly_r_rep(z,
+                                             term(5,2))),
+                            term(0,1))))
+</CDComment>
+
+    <CDDefinition>
+       <Name> term </Name>
+<Role>application</Role>
+       <Description>
+          A constructor for monomials, that is products of powers and
+          elements of the base ring.
+          First argument is from N (the exponent of the variable
+          implied by an outer poly_r_rep)
+          second argument is a coefficient (from the ground field, or a
+          polynomial in lesser variables).
+       </Description>
+    </CDDefinition>
+
+    <CDDefinition>
+       <Name> poly_r_rep </Name>
+<Role>application</Role>
+       <Description>
+         A constructor for the representation of polynomials.
+         The first argument is the polynomial variable, the rest are
+         monomials (in decreasing order of exponent). 
+       </Description>
+       <Example>
+
+         The polynomial x^2*y^6 + 3*x^0*y^5 = x^2*y^6 + 3*y^5 may be 
+         encoded as:
+
+         <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+           <OMA>
+             <OMS name="poly_r_rep" cd="polyr"/>
+             <OMV name="x"/>
+             <OMA>
+               <OMS name="term" cd="polyr"/>
+               <OMI> 2 </OMI>
+               <OMA>
+                 <OMS name="poly_r_rep" cd="polyr"/>
+                 <OMV name="y"/>
+                 <OMA>
+                   <OMS name="term" cd="polyr"/>
+                   <OMI> 6 </OMI>
+                   <OMI> 1 </OMI>
+                 </OMA>
+               </OMA>
+             </OMA>
+             <OMA>
+               <OMS name="term" cd="polyr"/>
+               <OMI> 0 </OMI>
+               <OMA>
+                 <OMS name="poly_r_rep" cd="polyr"/>
+                 <OMV name="y"/>
+                 <OMA>
+                   <OMS name="term" cd="polyr"/>
+                   <OMI> 5 </OMI>
+                   <OMI> 3 </OMI>
+                 </OMA>
+               </OMA>
+             </OMA>
+           </OMA>
+         </OMOBJ>
+       </Example>
+    </CDDefinition>
+
+    <CDDefinition>
+       <Name> polynomial_r </Name>
+<Role>application</Role>
+       <Description>
+         The constructor of Recursive Polynomials. The first argument
+         is the polynomial ring containing the polynomial and the second
+         is a "poly_r_rep". 
+       </Description>
+
+       <Example>
+         The polynomial x^2*y^6 + 3*x^0*y^5 = x^2*y^6 + 3*y^5 in the 
+         polynomial ring with the integers as the coefficient ring and 
+         variables x,y in that order may be encoded as:
+
+         <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+           <OMA>
+             <OMS name="polynomial_r" cd="polyr"/>
+             <OMA>
+               <OMS name="polynomial_ring_r" cd="polyr"/>
+               <OMS name="Z" cd="setname1"/>
+               <OMV name="x"/>
+               <OMV name="y"/>
+             </OMA>
+             <OMA>
+               <OMS name="poly_r_rep" cd="polyr"/>
+               <OMV name="x"/>
+               <OMA>
+                 <OMS name="term" cd="polyr"/>
+                 <OMI> 2 </OMI>
+                 <OMA>
+                   <OMS name="poly_r_rep" cd="polyr"/>
+                   <OMV name="y"/>
+                   <OMA>
+                     <OMS name="term" cd="polyr"/>
+                     <OMI> 6 </OMI>
+                     <OMI> 1 </OMI>
+                   </OMA>
+                 </OMA>
+               </OMA>
+               <OMA>
+                 <OMS name="term" cd="polyr"/>
+                 <OMI> 0 </OMI>
+                 <OMA>
+                   <OMS name="poly_r_rep" cd="polyr"/>
+                   <OMV name="y"/>
+                   <OMA>
+                     <OMS name="term" cd="polyr"/>
+                     <OMI> 5 </OMI>
+                     <OMI> 3 </OMI>
+                   </OMA>
+                 </OMA>
+               </OMA>
+             </OMA>
+           </OMA>
+         </OMOBJ>
+       </Example>
+    </CDDefinition>
+
+<CDComment>
+    Polynomial ring constructor
+</CDComment>
+
+
+    <CDDefinition>
+       <Name> polynomial_ring_r </Name>
+<Role>application</Role>
+       <Description> 
+         The constructor of a recursive polynomial ring. The first argument
+         is a ring (the ring of the coefficients), the rest are the 
+         variables (in order).
+       </Description>
+       <Example>
+         <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+           <OMA>
+             <OMS name="polynomial_ring_r" cd="polyr"/>
+             <OMS name="Z" cd="setname1"/>
+             <OMV name="x"/>
+             <OMV name="y"/>
+           </OMA>
+         </OMOBJ>
+       </Example>
+    </CDDefinition>
+
+</CD>

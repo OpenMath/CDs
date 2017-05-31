@@ -1,0 +1,96 @@
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="logic1">
+<CDSStatus> official </CDSStatus>
+
+<CDSComment>
+Date:  1999-07-01
+Author: David Carlisle
+</CDSComment>
+
+<Signature name="equivalent" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMS cd="setname2" name="Boolean" />
+    <OMS cd="setname2" name="Boolean" />
+    <OMS cd="setname2" name="Boolean" />
+ </OMA>
+</OMOBJ>
+
+</Signature>
+
+<Signature name="not" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMS cd="setname2" name="Boolean" />
+    <OMS cd="setname2" name="Boolean" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="and" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+  <OMS name="mapsto" cd="sts" />
+   <OMA>
+    <OMS name="nassoc" cd="sts" />
+     <OMS cd="setname2" name="Boolean" />
+   </OMA>
+  <OMS cd="setname2" name="Boolean" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+
+<Signature name="xor" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+  <OMS name="mapsto" cd="sts" />
+   <OMA>
+    <OMS name="nassoc" cd="sts" />
+     <OMS cd="setname2" name="Boolean" />
+    </OMA>
+  <OMS cd="setname2" name="Boolean" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="or" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+  <OMS name="mapsto" cd="sts" />
+   <OMA>
+    <OMS name="nassoc" cd="sts" />
+     <OMS cd="setname2" name="Boolean" />
+    </OMA>
+  <OMS cd="setname2" name="Boolean" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+
+<Signature name="implies" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMS cd="setname2" name="Boolean" />
+    <OMS cd="setname2" name="Boolean" />
+    <OMS cd="setname2" name="Boolean" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+
+<Signature name="true" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMS cd="setname2" name="Boolean" />
+</OMOBJ>
+</Signature>
+
+<Signature name="false" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMS cd="setname2" name="Boolean" />
+</OMOBJ>
+</Signature>
+
+</CDSignatures>

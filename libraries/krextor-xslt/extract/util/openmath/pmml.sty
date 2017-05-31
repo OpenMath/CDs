@@ -1,0 +1,97 @@
+\input{defs.sty}
+\input{csscolor.sty}
+\RequirePackage{bm}
+
+\long\def\mo#1{{#1}}
+
+\long\def\mn#1{{#1}}
+
+
+\def\ding#1{?}
+\def\downslopeellipsis{?}
+
+\long\def\miinitial#1{{#1}}
+\long\def\mitailed#1{{#1}}
+\long\def\milooped#1{{#1}}
+\long\def\mistretched#1{{#1}}
+
+\long\def\mi#1{{#1}}
+\long\def\miscript#1{\mathcal{#1}}
+\long\def\midoublestruck#1{\mathbb{#1}}
+\long\def\minormal#1{\mathrm{#1}}
+\long\def\mibold#1{\bm{#1}}
+\long\def\miitalic#1{\mathit{#1}}
+\long\def\mibolditalic#1{\bm{\mathit{#1}}}
+\long\def\miboldscript#1{\bm{\mathcal{#1}}}
+\long\def\mifraktur#1{\bm{\mathfrak{#1}}}
+\long\def\miboldfraktur#1{\bm{\mathfrak{#1}}}
+\long\def\misansserif#1{\mathsf{#1}}
+\long\def\miboldsansserif#1{\bm{\mathsf{#1}}}
+\long\def\mimonospace#1{\mathtt{#1}}
+\long\def\misansserifitalic#1{\mathit{#1}}
+\long\def\misansserifbolditalic#1{\bm{\mathit{#1}}}
+
+
+
+\let\endcell&
+\catcode`\&\active
+
+\let\lt<
+\let\gt>
+
+\def&#1#2;{\relax\expandafter\ifx
+ \csname uc#2\endcsname\relax
+    \typeout{UC: bad: #2}%
+    \ensuremath{\langle#2\rangle}%
+   \else
+    \typeout{UC: good #2 \expandafter\meaning\csname uc#2\endcsname}%
+    \csname uc#2\expandafter\endcsname
+   \fi}
+
+\def\mathscr{\mathcal}
+\def\textasciimacron{{hat}}
+\let\ampersand\&
+\@namedef{ucmp}{\ampersand}
+\@namedef{uc8289}{}
+\@namedef{uc8290}{}
+\@namedef{uc8518}{d}
+\@namedef{uc8519}{e}
+\@namedef{uc8520}{i}
+\@namedef{uc65080}{\overbrace{}}
+\@namedef{uc773}{\overline{}}
+\@namedef{uc818}{\_}
+
+
+
+
+\let\stripPT\strip@pt
+\def\menclosebox#1#2{%
+\setbox0\hbox{\fboxrule0pt\fbox{$#1$}}%
+\edef\height{\strip@pt\ht0 \space}%
+\edef\depth{-\strip@pt\dp0 \space}%
+\edef\width{\strip@pt\wd0 \space}%
+\dimen@\ht0
+\advance\dimen@-\dp0
+\divide\dimen@\tw@
+\edef\hheight{\strip@pt\dimen@\space}%
+\dimen@\wd0
+\divide\dimen@\tw@
+\edef\hwidth{\strip@pt\dimen@\space}%
+#2%
+{\box\z@}}
+
+
+
+\def\c@lor@error#1{%
+  \@latex@warning{Undefined color #1}\@ehd}
+
+
+\def\texttildelow {?}
+
+\AtBeginDocument{%
+\catcode`\#12
+\catcode`\%12
+\catcode`\^12
+\catcode`\_12
+
+}

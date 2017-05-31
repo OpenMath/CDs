@@ -1,0 +1,172 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+
+
+<CDName> metagrp </CDName>
+<CDBase>http://www.openmath.org/cd</CDBase>
+
+<CDReviewDate>2006-03-30</CDReviewDate>
+<CDDate>2004-03-30</CDDate>
+<CDVersion>3</CDVersion>
+<CDRevision>0</CDRevision>
+<CDStatus> official </CDStatus>
+<CDURL> http://www.openmath.org/cd/metagrp.ocd </CDURL>
+
+<Description> 
+This is a content dictionary to represent Content Dictionary
+Group Files, so that they may be encoded as OpenMath
+Objects, which is a possible way of passing this information between
+OpenMath Applications.
+</Description>
+
+
+<CDComment>
+1999-05-04 First Draft. David Carlisle
+</CDComment>
+
+
+<CDDefinition>
+<Name> CDGroupName </Name>
+<Role>application</Role>
+<Description>
+This symbol represents the element of a CDGroup which describes the
+name of that CDGroup, it has one argument that should be a string
+corresponding to the name. The syntactical requirements are given in
+the OpenMath standard.
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name> CDGroupVersion </Name>
+<Role>application</Role>
+<Description>
+</Description>
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> CDGroupURL </Name>
+<Role>application</Role>
+<Description>
+This symbol represents the element of a CDGroup which describes the
+CDGroupURL element. It has one string argument which should describe
+the URL for that CDGroup, not necessarily for the member Content
+Dictionaries, The syntactical requirements are given in the OpenMath
+standard.
+</Description>
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> CDGroupDescription </Name>
+<Role>application</Role>
+<Description>
+This symbol represents the element of a CDGroup which describes the
+CDGroupDescription element. It has one string argument, this should be
+the contents of the CDGroupDescription element intended to describe
+the mathematical area of the CDGroup.
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name> CDComment </Name>
+<Role>application</Role>
+<Description>
+This symbol is used to represent the element of a CDGroup which
+explains some aspect of the corresponding content dictionary. It
+should have one string argument which makes that explanation.
+</Description>
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> CDGroupMember </Name>
+<Role>application</Role>
+<Description>
+This symbol represents the element of a CDGroup which describes each
+CDGroupMember element. It has one string argument, this should be the
+contents of the intended CDGroupMember element of the CDGroup. This
+should be used to identify each member of the CDGroup.
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name> CDName </Name>
+<Role>application</Role>
+<Description>
+This symbol represents the element of a CDGroup which describes each
+CDName element. It has one string argument, this should be the string
+corresponding to the name of a content dictionary which is in this CDGroup.
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name> CDVersion</Name>
+<Role>application</Role>
+<Description>
+This symbol represents the element of a CDGroup which describes each
+CDVersion element. It has one integral argument, this should specify
+which version of the content dictionary is to be taken as member of
+the CDGroup. The element is optional. In case it is missing, the last
+version is the one included in the CDGroup.
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name> CDURL </Name>
+<Role>application</Role>
+<Description>
+This symbol represents the element of a CDGroup which describes each
+CDURL element. It has one string argument, this should be the string
+corresponding to the contents of the CDURL element for each Content
+Dictionary in the CDGroup. The element is optional, in case it is
+missing, the location of the CDGroup identified by the element
+CDGroupURL is assumed.
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name> CDGroup </Name>
+<Role>application</Role>
+<Description>
+This symbol represents the outermost element of a CDGroup. It has an
+arbitrary number of arguments which may be elements of type
+corresponding to the other symbols defined in this file.
+</Description>
+</CDDefinition>
+
+
+
+</CD>

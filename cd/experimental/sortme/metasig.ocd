@@ -1,0 +1,128 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+
+
+<CDName> metasig </CDName>
+<CDBase>http://www.openmath.org/cd</CDBase>
+
+<CDReviewDate>2006-03-30</CDReviewDate>
+<CDDate>2004-03-30</CDDate>
+<CDVersion>3</CDVersion>
+<CDRevision>0</CDRevision>
+<CDStatus> official </CDStatus>
+<CDURL> http://www.openmath.org/cd/metasig.ocd </CDURL>
+
+<Description> 
+This is a content dictionary to represent Content Dictionary
+Signature Files, so that they may be encoded as OpenMath
+Objects, which is a possible way of passing this information between
+OpenMath Applications.
+</Description>
+
+
+
+<CDComment>
+1999-05-04 First Draft. David Carlisle
+</CDComment>
+
+
+<CDDefinition>
+<Name> CDSignatures </Name>
+<Role>application</Role>
+<Description>
+This symbol is used to represent the outermost element of the
+Signature File which is characterized by two required attributes that
+identify the type system and the Content Dictionary whose signatures
+are defined. The value of the XML attribute 'type' is the name of the
+Content Dictionary or of the CDGroup that represents the type
+system. The value of the XML attribute 'cd' is the name of the Content
+Dictionary whose symbols are assigned signatures in this Signature
+File. It has an arbitrary number of arguments which may be
+elements of type corresponding to the other symbols defined in this file.
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name> CDSComment </Name>
+<Role>application</Role>
+<Description>
+This symbol is used to represent the element of a signature file which
+explains some aspect of that signature file. It should have one string
+argument which makes that explanation.
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name> CDSReviewDate </Name>
+<Role>application</Role>
+<Description>
+This symbol is used to represent the element of a signature file which
+specifies the earliest possible revision date of the signature
+file. It should have one string argument which specifies that date. The
+date should be in the format YYYY-MM-DD, e.g. 2000-02-29.
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name> CDSStatus </Name>
+<Role>application</Role>
+<Description>
+This symbol is used to represent the element of a signature file which
+specifies the status of that signature file. It should have one
+string argument, which should be one of 'official' (approved by the
+OpenMath Society according to the procedure outlined in the OpenMath
+standard), 'experimental' (currently being tested), 'private' (used by
+a private group of OpenMath users) or 'obsolete' (an obsolete
+signature file, kept only for archival purposes).
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name> Signature </Name>
+<Role>application</Role>
+<Description>
+This symbol is used to represent the element of a signature file which
+specifies the signature of a symbol. It should take two string children, the
+first should be the symbol who's signature is being specified, the
+second should be an 'OMOBJ' element which specifies the
+signature. Additionally the second argument should specify an object
+which must represent a valid type in the type system identified by the
+XML attribute 'type' corresponding to the element which corresponds to
+the symbol 'CDSignatures' enclosing this symbol.
+</Description>
+</CDDefinition>
+
+
+</CD>

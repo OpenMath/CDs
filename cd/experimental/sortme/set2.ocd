@@ -1,0 +1,203 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+
+<CDName> set2 </CDName>
+<CDBase>http://www.openmath.org/cd</CDBase>
+<CDURL> http://www.openmath.org/cd/set2.ocd </CDURL>
+<CDReviewDate>2006-03-30</CDReviewDate>
+<CDDate>2004-03-30</CDDate>
+<CDVersion>3</CDVersion>
+<CDRevision>0</CDRevision>
+<CDStatus> experimental </CDStatus>
+<Description>
+    This CD defines more set functions;
+</Description>
+
+
+<CDDefinition>
+<Name> lift_binary </Name>
+<Role>application</Role>
+<Description> 
+This symbol denotes the lift of a binary operator on elements of X to a 
+component-wise operators on subsets of X.
+</Description>
+
+<Example>
+{1,2} + {2,3} = {3,4,5}
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMA>
+        <OMS cd="set2" name="lift_binary"/>
+	<OMS cd="arith1" name="plus"/>
+      </OMA>
+      <OMA>
+        <OMS cd="set1" name="set"/>
+        <OMI> 1 </OMI>
+        <OMI> 2 </OMI>
+      </OMA>
+      <OMA>
+        <OMS cd="set1" name="set"/>
+        <OMI> 2 </OMI>
+        <OMI> 3 </OMI>
+      </OMA>
+    </OMA>
+    <OMA>
+      <OMS cd="set1" name="set"/>
+      <OMI> 3 </OMI>
+      <OMI> 4 </OMI>
+      <OMI> 5 </OMI>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</Example>
+
+<CMP>
+A lift_binary(op) B = { a op b: a in A and B in B }
+</CMP>
+
+<CDComment>
+Note that, to write this as an FMP, we have to assume a universal U such that
+A, B and A lift_binary(op) B are subsets of U.
+</CDComment>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="logic1" name="implies"/>
+    <OMA>
+      <OMS cd="logic1" name="and"/>
+      <OMA>
+        <OMS cd="set1" name="subset"/>
+	<OMV name="A"/>
+	<OMV name="U"/>
+      </OMA>
+      <OMA>
+        <OMS cd="set1" name="subset"/>
+	<OMV name="B"/>
+	<OMV name="U"/>
+      </OMA>
+      <OMBIND>
+	<OMS cd="quant1" name="forall"/>
+	<OMBVAR>
+	  <OMV name="x"/>
+	  <OMV name="y"/>
+	</OMBVAR>
+	<OMA>
+          <OMS cd="logic1" name="implies"/>
+	  <OMA>
+            <OMS cd="logic1" name="and"/>
+	    <OMA>
+              <OMS cd="set1" name="in"/>
+	      <OMV name="x"/>
+	      <OMV name="U"/>
+	    </OMA>
+	    <OMA>
+              <OMS cd="set1" name="in"/>
+	      <OMV name="y"/>
+	      <OMV name="U"/>
+	    </OMA>
+	  </OMA>
+	  <OMA>
+            <OMS cd="set1" name="in"/>
+	    <OMA>
+	      <OMV name="op"/>
+	      <OMV name="x"/>
+	      <OMV name="y"/>
+	    </OMA>
+	    <OMV name="U"/>
+	  </OMA>
+	</OMA>
+      </OMBIND>
+    </OMA>
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMA>
+	  <OMS cd="set2" name="lift_binary"/>
+	  <OMV name="op"/>
+        </OMA>
+	<OMV name="A"/>
+	<OMV name="B"/>
+      </OMA>
+      <OMA>
+        <OMS cd="set1" name="suchthat"/>
+	<OMV name="U"/>
+	<OMBIND>
+	  <OMS cd="fns1" name="lambda"/>
+	  <OMBVAR>
+	    <OMV name="c"/>
+	  </OMBVAR>
+  	  <OMBIND>
+	    <OMS cd="quant1" name="exists"/>
+	    <OMBVAR>
+	      <OMV name="a"/>
+	      <OMV name="b"/>
+	    </OMBVAR>
+	    <OMA>
+	      <OMS cd="logic1" name="and"/>
+	      <OMA>
+	        <OMS cd="set1" name="in"/>
+		<OMV name="a"/>
+		<OMV name="A"/>
+	      </OMA>
+	      <OMA>
+	        <OMS cd="set1" name="in"/>
+		<OMV name="b"/>
+		<OMV name="B"/>
+	      </OMA>
+	      <OMA>
+	        <OMS cd="relation1" name="eq"/>
+		<OMV name="c"/>
+		<OMA>
+		  <OMV name="op"/>
+		  <OMV name="a"/>
+		  <OMV name="b"/>
+		</OMA>
+	      </OMA>
+	    </OMA>
+	  </OMBIND>
+	</OMBIND>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+</CDDefinition>
+
+</CD>

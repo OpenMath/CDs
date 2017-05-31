@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="OpenMath Website" default="main" basedir="."> 
+  
+  <target name="main" 
+          depends="link-others, cds-xslt, archive-cds-and-presentation"/>
+  <target name="light"
+          depends="cds-xslt, archive-cds-and-presentation"/>
+  
+  <property name="site" value="target/site"/>
+  <property name="cdfiles" value="."/>
+  <property name="doForceXSL" value="false"/>
+  
+  <!-- define processor that will be used for xslt tranformations -->
+  <property 
+    name='xslt.processor'
+    value='org.xmLP.ant.taskdefs.optional.Xalan2Liaison'
+  />
+  <path id='xslt.classpath'>
+    <fileset dir='libraries/mtxslt'>
+      <include name='*.jar'/>
+    </fileset>
+    <fileset dir='libraries/xalan'>
+      <include name='*.jar'/>
+    </fileset>
+  </path>
+  
+  <!-- define processor that will be used for XSLT 2 tranformations -->
+  <property 
+    name='xslt2.processor'
+    value='trax'
+  />
+  <path id='xslt2.classpath'>
+    <fileset dir='libraries/saxon'>
+      <include name='*.jar'/>
+    </fileset>
+  </path>
+
+  <!-- OCD → RDF/XML translation for linked data publication -->
+  <property name="ocd-rdf-style" value="libraries/krextor-xslt/transform-ocd..rdf-xml.xsl"/>
+  
+  <target name="link-others"
+          description="Copies all static resources.">
+    <mkdir dir="${site}"/>
+    <mkdir dir="${site}/cd"/>
+    <copy todir="${site}" preservelastmodified="true">
+      <fileset dir=".">
+				<exclude name="**/*.xml"/>
+				<exclude name="**/*.ocd"/>
+				<exclude name="**/*-merge.rdf"/>
+				<exclude name="**/*.xhtml"/>
+				<exclude name="**/*.sts"/>
+        <exclude name="target/**"/>
+        <!-- <include name="**/*.jpg"/>
+        <include name="**/*.jpeg"/>
+        <include name="**/*.js"/>
+        <include name="**/*.css"/>
+        <include name="**/*.ps"/>
+        <include name="**/*.pdf"/>
+        <include name="**/*.mml"/>
+        <include name="**/*.dtd"/>
+        <include name="**/*.png"/>
+        <include name="**/*.gif"/>
+        <include name="**/*.jpg"/>
+        <include name="**/*.htm"/>
+        <include name="**/*.html"/>
+        <include name="**/*.xsl"/>
+        <include name="**/*.tgz"/>
+        <include name="**/*.zip"/>
+				<include name="**/*.gz"/> -->
+      </fileset>
+      <fileset dir="."><!-- partiular xml files -->
+        <include name="standard/*/openmath2rnc.xml"/>
+        <include name="standard/*/omstd20.xml"/>
+      </fileset>
+      <!-- <fileset dir="../wwwmass">
+				<exclude name="**/*.xml"/>
+				<exclude name="**/*.ocd"/>
+				<exclude name="**/*.xhtml"/>
+				<exclude name="**/*.sts"/>
+      </fileset> -->
+    </copy>
+    <!-- copy .htaccess files (redirects etc.) -->
+<!--     <copy tofile="${site}/.htaccess" file="dot_htaccess"/>
+     <copy tofile="${site}/cd/.htaccess" file="dot_htaccess_cd"/>-->
+  </target>
+  
+  <target name="cds-xslt"
+          description="Does all transformations for the cds-presentation.">
+    
+    <!-- entry page -->
+    <xslt 
+      in="${cdfiles}/index.xml"
+      force="${doForceXSL}"
+      out="${site}/cd/index.html"
+      style="stylesheets/html/om-page.xsl"
+      processor='${xslt.processor}'
+      classpathref='xslt.classpath'
+    />
+    
+    <!-- CD output: xhtml files -->
+    <xslt 
+      basedir="${cdfiles}/cd" 
+      destdir="${site}/cd"
+      style="${cdfiles}/xsl/cd.xsl" 
+      extension=".xhtml"
+      force="${doForceXSL}"
+      classpathref='xslt2.classpath'
+     >
+      <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+      <include name="*.ocd"/>
+    </xslt>
+    <!-- CD output: RDF/XML files -->
+    <xslt 
+      basedir="${cdfiles}/cd" 
+      destdir="${site}/cd"
+      style="${ocd-rdf-style}" 
+      extension=".rdf"
+      force="${doForceXSL}"
+      classpathref='xslt2.classpath'
+     >
+      <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+      <include name="*.ocd"/>
+    </xslt>
+    <!-- copy .ocd files -->
+    <copy todir="${site}/cd">
+      <fileset dir="${cdfiles}/cd">
+        <include name="*.ocd"/>
+      </fileset>
+    </copy>
+    <!-- omcd files -->
+    <xslt 
+      basedir="${cdfiles}/cd"
+      destdir="${site}/cd"
+      style="${cdfiles}/xsl/cd2om.xsl"
+      extension=".omcd"
+      force="${doForceXSL}"
+      processor='${xslt.processor}'
+      classpathref='xslt.classpath'
+    >
+      <include name="*.ocd"/>
+    </xslt>	
+    <!-- sts output: html files -->
+    <xslt 
+      basedir="${cdfiles}/sts"
+      destdir="${site}/sts"
+      force="${doForceXSL}"
+      style="${cdfiles}/xsl/sts2html.xsl"
+      extension=".xhtml"
+      processor='${xslt.processor}'
+      classpathref='xslt.classpath'
+    >
+      <include name="*.sts"/>
+    </xslt>
+    <copy todir="${site}/sts">
+      <fileset dir="${cdfiles}/sts">
+        <include name="*.sts"/>
+      </fileset>
+    </copy>
+    
+    <!-- cd groups -->
+		<!-- TODO: make each CD-group also present a list of symbols -->
+    <xslt 
+      basedir="${cdfiles}/cdgroups"
+      destdir="${site}/cdgroups"
+      force="${doForceXSL}"
+      style="${cdfiles}/xsl/cdgroup.xsl"
+      processor='${xslt.processor}'
+      classpathref='xslt.classpath'
+    >
+      <include name="*.cdg"/>
+    </xslt>
+    <xslt 
+      in="${cdfiles}/cdgroups.xml"
+      out="${site}/cdgroups.html"
+      force="${doForceXSL}"
+      style="stylesheets/html/om-page.xsl"
+      processor='${xslt.processor}'
+      classpathref='xslt.classpath'
+    />
+		<copy todir="${site}/cdgroups">
+			<fileset dir="${cdfiles}/cdgroups">
+	      <include name="*.cdg"/>
+		  </fileset>
+    </copy>
+    
+    <!-- cd index: symbols by symbol-name -->
+    <xslt 
+      in="${cdfiles}/cdindex.xml"
+      out="${site}/cdindex.html"
+      force="${doForceXSL}"
+      style="${cdfiles}/xsl/index.xsl"
+      processor='${xslt.processor}'
+      classpathref='xslt.classpath'
+    />
+    <!-- cd index: cds by cd-names -->
+    <xslt 
+      in="${cdfiles}/cdindex.xml"
+      out="${site}/cdnames.html"
+      style="${cdfiles}/xsl/cdnames.xsl"
+      force="${doForceXSL}"
+      processor='${xslt.processor}'
+      classpathref='xslt.classpath'
+    />
+    <!-- cd index: cds by symbol-names, all CDs ???  -->
+    <xslt 
+      in="${cdfiles}/cdindex.xml"
+      out="${site}/cdnamess.html"
+      style="${cdfiles}/xsl/cdnamess.xsl"
+      force="${doForceXSL}"
+      processor='${xslt.processor}'
+      classpathref='xslt.classpath'
+    />
+  </target>	
+  
+  <target name="archive-cds-and-presentation">
+    <tar compression="gzip" destfile="${site}/cds.tar.gz">
+      <tarfileset dir="${site}">
+        <include name="cd/**/*"/>
+        <include name="cd*.html"/>
+        <include name="sts/**/*"/>
+        <include name="xsl/**/*"/>
+      </tarfileset>
+    </tar>
+  </target>
+  
+  <target name='clean'>
+    <delete dir='target'/>
+  </target>
+  
+  
+</project>

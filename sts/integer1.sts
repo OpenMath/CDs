@@ -1,0 +1,53 @@
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="integer1">
+<CDSStatus> official </CDSStatus>
+
+<CDSComment>
+Date:  1999-04-13
+Author: David Carlisle
+</CDSComment>
+
+<Signature name="factorof">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS cd="sts" name="factorof"/>
+    <OMS name="Z" cd="setname1" />
+    <OMS name="Z" cd="setname1" />
+    <OMS name="B" cd="setname2" />
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="factorial" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMS name="N" cd="setname1" />
+    <OMS name="N" cd="setname1" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+
+<Signature name="quotient" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMS name="Z" cd="setname1" />
+    <OMS name="Z" cd="setname1" />
+    <OMS name="Z" cd="setname1" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="remainder" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMS name="Z" cd="setname1" />
+    <OMS name="Z" cd="setname1" />
+    <OMS name="Z" cd="setname1" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+</CDSignatures>

@@ -1,0 +1,161 @@
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="linalg5">
+<CDSStatus> official </CDSStatus>
+<CDSComment> Written by W. Naylor 2000-03-14 </CDSComment>
+
+<Signature name="diagonal_matrix">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMA>
+      <OMS name="nary" cd="sts"/>
+      <OMS name="Object" cd="sts"/>
+    </OMA>
+    <OMV name="Matrix"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="identity">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMS name="N" cd="setname1"/>
+    <OMV name="Matrix"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="zero">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMS name="N" cd="setname1"/>
+    <OMS name="N" cd="setname1"/>
+    <OMV name="Matrix"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="scalar">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMS name="N" cd="setname1"/>
+    <OMS name="NumericalValue" cd="sts"/>
+    <OMV name="Matrix"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="constant">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMS name="N" cd="setname1"/>
+    <OMS name="NumericalValue" cd="sts"/>
+    <OMV name="Matrix"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="banded">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMV name="VectorOfVector"/>
+    <OMV name="Matrix"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="symmetric">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMV name="VectorOfVector"/>
+    <OMV name="Matrix"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="skew-symmetric">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMV name="VectorOfVector"/>
+    <OMV name="Matrix"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="hermitian">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMV name="VectorOfVector"/>
+    <OMV name="Matrix"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="anti-hermitian">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMV name="VectorOfVector"/>
+    <OMV name="Matrix"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="upper-triangular">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMV name="VectorOfVector"/>
+    <OMV name="Matrix"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="lower-triangular">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMV name="VectorOfVector"/>
+    <OMV name="Matrix"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="upper-Hessenberg">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMV name="VectorOfVector"/>
+    <OMV name="Matrix"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="lower-Hessenberg">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMV name="VectorOfVector"/>
+    <OMV name="Matrix"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="tridiagonal">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMV name="VectorOfVector"/>
+    <OMV name="Matrix"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+</CDSignatures>

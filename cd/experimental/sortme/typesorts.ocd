@@ -1,0 +1,112 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+
+
+<CDName> typesorts </CDName>
+<CDBase>http://www.openmath.org/cd</CDBase>
+<CDURL> http://www.openmath.org/cd/typesorts.ocd </CDURL>
+<CDReviewDate>2006-03-30</CDReviewDate>
+<CDStatus> experimental </CDStatus>
+<CDDate>2004-03-30</CDDate>
+<CDVersion>2</CDVersion>
+<CDRevision>0</CDRevision>
+
+<Description> 
+Type Sorts as used in the Calculus of 
+Constructions and in its Extensions.
+ 
+Initial version: O. Caprotti 
+</Description>
+
+
+<CDComment>        	
+	Definition of type constant for Propositions and Sets
+</CDComment>
+
+
+<CDDefinition>
+        <Name> Prop </Name>
+<Role>constant</Role>
+        <Description> The type of propositions
+        </Description>
+        <Example><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd"><OMATTR>
+                     <OMATP>
+                     <OMS cd="cc" name="type"/>
+                     <OMS cd="typesorts" name="Prop"/>
+                     </OMATP>
+                     <OMS cd="logic1" name="true"/>  
+              </OMATTR>
+              </OMOBJ> 
+        </Example>
+    </CDDefinition>
+
+<CDDefinition>
+        <Name> Type0 </Name>
+<Role>constant</Role>
+        <Description> The type of sets in a hierarchy of types.
+        </Description>
+        <Example><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+              <OMATTR>
+                     <OMATP>
+                     <OMS cd="ecc" name="type"/>
+                     <OMS cd="typesorts" name="Type0"/>
+                     </OMATP>
+                    <OMS cd="typesorts" name="Prop"/>
+              </OMATTR>
+              </OMOBJ> 
+        </Example>
+    </CDDefinition>
+
+
+<CDDefinition>
+        <Name> Type </Name>
+<Role>constant</Role>
+        <Description> The cumulative type of the type of sets 
+	              in a hierarchy of types.
+        </Description>
+         <Example><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd"><OMATTR>
+                     <OMATP>
+                     <OMS cd="icc" name="type"/>
+                     <OMS cd="typesorts" name="Type"/>
+                     </OMATP>
+                    <OMS cd="typesorts" name="Type0"/>
+              </OMATTR>
+              </OMOBJ> 
+        </Example>
+    </CDDefinition>
+ 
+
+
+</CD>

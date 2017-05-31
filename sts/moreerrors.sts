@@ -1,0 +1,58 @@
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="moreerrors">
+<CDSStatus> official </CDSStatus>
+
+<CDSComment>
+Date:  2000-03-22
+Author: Bill Naylor
+</CDSComment>
+<Signature name="encodingError">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS cd="sts" name="mapsto"/>
+    <OMS cd="omtypes" name="string"/>
+    <OMS cd="sts" name="error"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="algorithm">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS cd="sts" name="mapsto"/>
+    <OMS cd="omtypes" name="string"/>
+    <OMS cd="sts" name="error"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="limitation">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS cd="sts" name="mapsto"/>
+    <OMS cd="omtypes" name="string"/>
+    <OMS cd="sts" name="error"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="unexpected">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS cd="sts" name="mapsto"/>
+    <OMS cd="omtypes" name="string"/>
+    <OMS cd="sts" name="error"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="asynchronousError">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS cd="sts" name="mapsto"/>
+    <OMS cd="omtypes" name="string"/>
+    <OMS cd="sts" name="error"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+</CDSignatures>

@@ -1,0 +1,107 @@
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="metagrp">
+<CDSStatus> official </CDSStatus>
+
+<Signature name="CDGroupName">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMV name="String" />
+    <OMV name="CDGroupTopLevelEntry" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="CDGroupVersion">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMS cd="setname1" name="Z" />
+    <OMV name="CDGroupTopLevelEntry" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="CDGroupURL">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMV name="String" />
+    <OMV name="CDGroupTopLevelEntry" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="CDGroupDescription">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMV name="String" />
+    <OMV name="CDGroupTopLevelEntry" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="CDComment">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMV name="String" />
+    <OMV name="CDGroupTopLevelEntry" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="CDGroupMember">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMV name="String" />
+    <OMV name="CDGroupTopLevelEntry" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="CDName">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMV name="String" />
+    <OMV name="CDTopLevelEntry" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="CDVersion">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMV name="String" />
+    <OMV name="CDTopLevelEntry" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="CDURL">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMV name="String" />
+    <OMV name="CDTopLevelEntry" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="CDGroup">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+  <OMS name="mapsto" cd="sts" />
+   <OMA>
+    <OMS name="nary" cd="sts" />
+     <OMV name="CDSTopLevelEntry" />
+    </OMA>
+  <OMV name="CDGroup" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+</CDSignatures>

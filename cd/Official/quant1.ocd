@@ -1,0 +1,172 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+
+<CDName> quant1 </CDName>
+<CDBase>http://www.openmath.org/cd</CDBase>
+<CDURL> http://www.openmath.org/cd/quant1.ocd </CDURL>
+<CDReviewDate>2006-03-30</CDReviewDate>
+<CDDate>2004-05-11</CDDate>
+<CDVersion>3</CDVersion>
+<CDRevision>1</CDRevision>
+<CDStatus> official </CDStatus>
+<Description>
+    This CD holds the definitions of the basic universal ("for all")
+    quantifier and existential ("there exists") quantifier. It is
+    intended to be `compatible' with the MathML elements representing
+    these quantifiers. 
+</Description>
+
+
+<CDDefinition>
+<Name> forall </Name>
+<Role>binder</Role>
+<Description> 
+This symbol represents the universal ("for all") quantifier which takes two
+arguments. It must be placed within an OMBIND element. The first argument is the
+bound variables (placed within an OMBVAR element), and the second is an expression. 
+</Description>
+<Example>
+An example to represent the statement for all real x, |sin(x)| &lt;= 1
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMBIND>
+    <OMS cd="quant1" name="forall"/>
+    <OMBVAR>
+      <OMV name="x"/>
+    </OMBVAR>
+    <OMA>
+    <OMS name="implies" cd="logic1"/>
+    <OMA>
+      <OMS name="in" cd="set1"/>
+      <OMV name="x"/>
+      <OMS name="R" cd="setname1"/>
+    </OMA>
+    <OMA>
+      <OMS cd="relation1" name="leq"/>
+      <OMA>
+        <OMS cd="arith1" name="abs"/>
+        <OMA>
+          <OMS cd="transc1" name="sin"/>
+          <OMV name="x"/>
+        </OMA>
+      </OMA>
+      <OMF dec="1.0"/>
+    </OMA>
+    </OMA>
+  </OMBIND>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> exists </Name>
+<Role>binder</Role>
+<Description> 
+This symbol represents the existential ("there exists") quantifier
+which takes two arguments. It must be placed within an OMBIND element. The first
+argument is the bound variables (placed within an OMBVAR element), and the second
+is an expression.
+</Description>
+<Example>
+An example  which represents the statement that there is no solution
+to x^n+y^n=z^n for n&gt;2, that is:
+it is not true that there exists x,y,z,n | n&gt;2 and x^n+y^n=z^n
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="logic1" name="not"/>
+    <OMBIND>
+      <OMS cd="quant1" name="exists"/>
+      <OMBVAR>
+        <OMV name="x"/>
+        <OMV name="y"/>
+        <OMV name="z"/>
+        <OMV name="n"/>
+      </OMBVAR>
+      <OMA>
+        <OMS cd="logic1" name="and"/>
+        <OMA>
+          <OMS name="in" cd="set1"/>
+          <OMV name="x"/>
+          <OMS name="Z" cd="setname1"/>
+        </OMA>
+        <OMA>
+          <OMS name="in" cd="set1"/>
+          <OMV name="y"/>
+          <OMS name="Z" cd="setname1"/>
+        </OMA>
+        <OMA>
+          <OMS name="in" cd="set1"/>
+          <OMV name="z"/>
+          <OMS name="Z" cd="setname1"/>
+        </OMA>
+        <OMA>
+          <OMS name="in" cd="set1"/>
+          <OMV name="n"/>
+          <OMS name="Z" cd="setname1"/>
+        </OMA>
+        <OMA>
+          <OMS cd="relation1" name="gt"/>
+          <OMV name="n"/>
+          <OMI> 2 </OMI>
+        </OMA>
+        <OMA>
+          <OMS cd="relation1" name="eq"/>
+          <OMA>
+            <OMS cd="arith1" name="plus"/>
+            <OMA>
+               <OMS cd="arith1" name="power"/>
+               <OMV name="x"/>
+               <OMV name="n"/>
+            </OMA>
+            <OMA>
+               <OMS cd="arith1" name="power"/>
+               <OMV name="y"/>
+               <OMV name="n"/>
+            </OMA>
+          </OMA>
+          <OMA>
+             <OMS cd="arith1" name="power"/>
+             <OMV name="z"/>
+             <OMV name="n"/>
+          </OMA>
+        </OMA>
+      </OMA>
+    </OMBIND>
+  </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+</CD>

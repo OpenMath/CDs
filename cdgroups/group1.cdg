@@ -1,0 +1,64 @@
+
+<CDGroup  xmlns="http://www.openmath.org/OpenMathCDG">
+<CDGroupName>group1</CDGroupName>
+<CDGroupVersion> 2 </CDGroupVersion>
+<CDGroupRevision> 0 </CDGroupRevision>
+<CDGroupURL>
+http://www.openmath.org/cdfiles/cdgroups/group1.cdg</CDGroupURL>
+<CDGroupDescription>Group Theory CD Group</CDGroupDescription>
+
+
+<CDComment>
+A CD of functions for group theory
+</CDComment>
+<CDGroupMember>
+<CDName>group1</CDName>
+<CDURL>http://www.openmath.org/cd/group1.ocd</CDURL>
+</CDGroupMember>
+<CDComment>
+A CD of functions for group theory
+</CDComment>
+<CDGroupMember>
+<CDName>group2</CDName>
+<CDURL>http://www.openmath.org/cd/group2.ocd</CDURL>
+</CDGroupMember>
+<CDComment>
+A CD of functions for group theory
+</CDComment>
+<CDGroupMember>
+<CDName>group3</CDName>
+<CDURL>http://www.openmath.org/cd/group3.ocd</CDURL>
+</CDGroupMember>
+<CDComment>
+A CD of functions for group theory
+</CDComment>
+<CDGroupMember>
+<CDName>group4</CDName>
+<CDURL>http://www.openmath.org/cd/group4.ocd</CDURL>
+</CDGroupMember>
+<CDComment>
+A CD of functions for group theory
+</CDComment>
+<CDGroupMember>
+<CDName>group5</CDName>
+<CDURL>http://www.openmath.org/cd/group5.ocd</CDURL>
+</CDGroupMember>
+
+<CDComment>
+A CD of names of common groups
+</CDComment>
+<CDGroupMember>
+<CDName>groupname1</CDName>
+<CDURL>http://www.openmath.org/cd/groupname1.ocd</CDURL>
+</CDGroupMember>
+
+<CDComment>
+A CD of functions for permutation groups 
+</CDComment>
+<CDGroupMember>
+<CDName>permgrp</CDName>
+<CDURL>http://www.openmath.org/cd/permgrp.ocd</CDURL>
+</CDGroupMember>
+
+</CDGroup>
+

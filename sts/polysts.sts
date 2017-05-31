@@ -1,0 +1,13 @@
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="polysts">
+<CDSStatus> official </CDSStatus>
+<CDSComment>
+  1999-11-20 by JHD 
+</CDSComment>
+
+<Signature name="polynomial_ring">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMV name="Ring"/>
+</OMOBJ>
+</Signature>
+
+</CDSignatures>

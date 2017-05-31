@@ -1,0 +1,94 @@
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="fns2">
+<CDSStatus> official </CDSStatus>
+
+<CDSComment>
+Date:  1999-04-13
+Author: David Carlisle
+</CDSComment>
+
+<Signature name="domain" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMA>
+     <OMS name="mapsto" cd="sts" />
+      <OMS name="Object" cd="sts" />
+      <OMS name="Object" cd="sts" />
+    </OMA>
+    <OMS name="Object" cd="sts" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="image" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMA>
+     <OMS name="mapsto" cd="sts" />
+      <OMS name="Object" cd="sts" />
+      <OMS name="Object" cd="sts" />
+    </OMA>
+    <OMS name="Object" cd="sts" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+
+<Signature name="kernel" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMA>
+     <OMS name="mapsto" cd="sts" />
+      <OMS name="Object" cd="sts" />
+      <OMS name="Object" cd="sts" />
+    </OMA>
+    <OMS name="Object" cd="sts" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="apply_to_list" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">                         
+ <OMA>                         
+  <OMS name="mapsto" cd="sts" />
+  <OMA>                         
+   <OMS name="mapsto" cd="sts" />
+   <OMA>                         
+    <OMS name="nary" cd="sts"/>
+    <OMS name="Object" cd="sts"/>
+   </OMA>
+   <OMS name="Object" cd="sts"/>
+  </OMA>
+  <OMV name="ObjectList" />  
+  <OMS name="Object" cd="sts"/>
+ </OMA>                         
+</OMOBJ>
+</Signature>
+
+<Signature name="right_compose" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMA>
+     <OMS name="mapsto" cd="sts" />
+      <OMS name="Object" cd="sts" />
+      <OMS name="Object" cd="sts" />
+    </OMA>
+    <OMA>
+     <OMS name="mapsto" cd="sts" />
+      <OMS name="Object" cd="sts" />
+      <OMS name="Object" cd="sts" />
+    </OMA>
+    <OMA>
+     <OMS name="mapsto" cd="sts" />
+      <OMS name="Object" cd="sts" />
+      <OMS name="Object" cd="sts" />
+    </OMA>
+ </OMA>
+</OMOBJ>
+</Signature>
+
+
+</CDSignatures>

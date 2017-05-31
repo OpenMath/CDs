@@ -1,0 +1,176 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+
+<CDName> moreerrors </CDName>
+<CDBase>http://www.openmath.org/cd</CDBase>
+<CDURL> http://www.openmath.org/cd/moreerrors.ocd </CDURL>
+<CDReviewDate>2006-03-30</CDReviewDate>
+<CDStatus> experimental </CDStatus>
+<CDDate>2004-03-30</CDDate>
+<CDVersion>2</CDVersion>
+<CDRevision>0</CDRevision>
+
+<CDDefinition>
+<Name> encodingError </Name>
+<Role>error</Role>
+<Description>
+This symbol represents the error which is returned when an application
+detects a lexical or syntactic error. It should have one argument
+which is a string, which should explain the error that occurred.
+</Description>
+
+<Example>
+An application returns an 'encoding error'
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OME>
+    <OMS cd="moreerrors" name="encodingError"/>
+    <OMSTR>
+      The symbol &lt;OMS cd='arith1' name='plus'/&gt; may not take a String
+as first argument
+    </OMSTR>
+  </OME>
+  </OMOBJ>
+</Example>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> algorithm </Name>
+<Role>error</Role>
+<Description>
+This symbol represents the error which is returned when an application
+raises an error due to algorithmic restrictions of the
+implementations. This includes operations not implemented or partially
+implemented, divisions by zero and other domain errors. It will have
+at least one argument, which is a string describing the problem. It
+may have a second argument which is relevant to the error.
+</Description>
+
+<Example>
+An application returns an 'algorithm' error
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OME>
+    <OMS cd="moreerrors" name="algorithm"/>
+    <OMSTR>
+multiplication by $\sqrt{-1}$ has not been implemented
+    </OMSTR>
+  </OME>
+  </OMOBJ>
+</Example>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> limitation </Name>
+<Role>error</Role>
+<Description>
+This symbol represents the error which is returned when an application
+reads an error caused by the limitations of an implementation when
+dealing with OpenMath objects such as limits on the size of objects or
+on the kind of objects manipulated. This can include limits on the
+size of a bytearray or integer, a limit on the number of arguments of
+an application or the inability to deal with Unicode characters
+outside ISO latin 1. It will have at least one argument, which is a
+string describing the problem. It may have a second argument which is
+relevant to the error.
+</Description>
+
+<Example>
+An application returns a 'limitation' error
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OME>
+    <OMS cd="moreerrors" name="limitation"/>
+    <OMSTR>
+Integers $&gt; 2^{32}-1$ are meaningless to this application
+    </OMSTR>
+  </OME>
+  </OMOBJ>
+</Example>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> unexpected </Name>
+<Role>error</Role>
+<Description>
+This symbol represents the error which is returned when an application
+reads an error caused by an unexpected problem. It will have
+at least one argument, which is a string describing the problem. It
+may have a second argument which is relevant to the error.
+</Description>
+
+<Example>
+An application returns an 'unexpected' error
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OME>
+    <OMS cd="moreerrors" name="unexpected"/>
+    <OMSTR>
+A kill was executed on the process whilst it was evaluating the expression
+    </OMSTR>
+    <OMA>
+      <OMS cd="arith1" name="plus"/>
+      <OMI>1</OMI><OMI>1</OMI>
+    </OMA>
+  </OME>
+  </OMOBJ>
+</Example>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> asynchronousError </Name>
+<Role>error</Role>
+<Description>
+This symbol represents the error which is returned when an application
+encounters some asynchronous error, for example if a limit in memory
+has been reached, or an error has occurred in some system call (I/O
+error, disk full, machine down). It should have one argument, which is
+a string describing the problem.
+</Description>
+
+<Example>
+An application returns an 'asynchronousError' error
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OME>
+    <OMS cd="moreerrors" name="asynchronousError"/>
+    <OMSTR>
+A 'disk-full' error occured 
+    </OMSTR>
+  </OME>
+  </OMOBJ>
+</Example>
+</CDDefinition>
+
+</CD>

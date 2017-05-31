@@ -1,0 +1,23 @@
+<CDGroup  xmlns="http://www.openmath.org/OpenMathCDG">
+<CDGroupName>arith</CDGroupName>
+<CDGroupVersion> 2 </CDGroupVersion>
+<CDGroupRevision> 0 </CDGroupRevision>
+<CDGroupURL>
+	http://www.openmath.org/cdfiles/cdgroups/arith.cdg
+</CDGroupURL>
+<CDGroupDescription>
+Basic Arithmetic functions
+</CDGroupDescription>
+
+<CDGroupMember>
+<CDName>arith1</CDName>
+<CDURL> http://www.openmath.org/cd/arith1.ocd</CDURL>
+</CDGroupMember>
+
+<CDGroupMember>
+<CDName>arith2</CDName>
+<CDURL> http://www.openmath.org/cd/arith2.ocd</CDURL>
+</CDGroupMember>
+
+</CDGroup>
+

@@ -1,0 +1,154 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+
+<CDName>       relation0    </CDName>
+<CDBase>http://www.openmath.org/cd</CDBase>
+<CDURL> 
+               http://www.openmath.org/cd/relation0.ocd 
+</CDURL>
+<CDReviewDate>2006-03-30</CDReviewDate>
+<CDStatus>     experimental </CDStatus>
+<CDDate>2004-03-30</CDDate>
+<CDVersion>2</CDVersion>
+<CDRevision>0</CDRevision>
+<Description> 
+    Binary relations properties, equivalence relation, orders, up
+    to the definition of a setoid as a set with an equivalence relations
+    defined on its elements.		
+    Initial version: O. Caprotti
+</Description>
+    
+
+
+<CDDefinition>
+ <Name> relation </Name>
+<Role>application</Role>
+<Description> Type constructor; returns the type of binary relations on a set.
+</Description>	
+<CMP>Is defined as "[A:Set] A -&gt; A -&gt; Prop" </CMP>
+
+</CDDefinition>
+
+
+<CDDefinition>
+ <Name> reflexive </Name>
+<Role>application</Role>
+<Description> Proposition; the type of reflexive binary relations.
+</Description>	
+<CMP>Defined as [A:symtype][R: (relation A)](x:A)(R x x)</CMP>
+</CDDefinition>
+
+<CDDefinition>
+ <Name> irreflexive </Name>
+<Role>application</Role>
+<Description> Proposition; the type of irreflexive binary relations.
+</Description>	
+<CMP>Defined as  [A:symtype][R: (relation A)](x:A) ~(R x x)</CMP>
+
+
+</CDDefinition>
+
+
+<CDDefinition>
+ <Name> transitive </Name>
+<Role>application</Role>
+<Description> Proposition; the type of transitive binary relations.
+</Description>	
+<CMP>Defined as [A:symtype][R: (relation A)](x,y,z:A)(R x y) -&gt; (R y z) -&gt; (R x z)</CMP>
+</CDDefinition>
+
+
+<CDDefinition>
+ <Name> symmetric </Name>
+<Role>application</Role>
+<Description> Proposition; the type of symmetric binary relations.
+</Description>	
+<CMP>Defined as [A:symtype][R: (relation A)](x,y:A)(R x y) -&gt; (R y x)</CMP>
+</CDDefinition>
+
+<CDDefinition>
+ <Name> antisymmetric </Name>
+<Role>application</Role>
+<Description> Proposition; the type of antisymmetric binary relations.
+</Description>	
+<CMP> Defined as [A:symtype][R: (relation A)](x,y:A)(R x y) -&gt; (R y x) -&gt; (relation1::eq x y)</CMP>
+</CDDefinition>
+
+<CDDefinition>
+ <Name> partial_equivalence </Name>
+<Role>application</Role>
+<Description> Proposition; the type of partial_equivalence relations, 
+              namely relations that are symmetric, and transitive.
+</Description>	
+<CMP>Defined as [A:symtype][R: (relation A)] (symmetric R) /\ (transitive R)</CMP>
+</CDDefinition>
+
+<CDDefinition>
+ <Name> equivalence </Name>
+<Role>application</Role>
+<Description> Proposition; the type of equivalence relations, 
+              namely relations that are reflexive, symmetric and transitive.
+</Description>	
+<CMP>Defined as [A:symtype][R: (relation A)] (reflexive R) /\ (symmetric R) /\ (transitive R)</CMP>
+</CDDefinition>
+
+<CDDefinition>
+ <Name> order </Name>
+<Role>application</Role>
+<Description> Proposition; the type of order relations, 
+              namely relations that are reflexive, antisymmetric and transitive.
+</Description>	
+<CMP>Defined as [A:symtype][R: (relation A)] (reflexive R) /\ (antisymmetric R) /\ (transitive R)</CMP>
+</CDDefinition>
+
+<CDDefinition>
+ <Name> strict_order </Name>
+<Role>application</Role>
+<Description> Proposition; the type of strict order relations, 
+              namely relations that are irreflexive, antisymmetric and transitive.
+</Description>	
+<CMP>Defined as  [A:symtype][R: (relation A)] (irreflexive R) /\ (antisymmetric R) /\ (transitive R)</CMP>
+</CDDefinition>
+
+<CDDefinition>
+ <Name> pre_order </Name>
+<Role>application</Role>
+<Description> Proposition; the type of preorder relations, 
+              namely relations that are reflexive and transitive.
+</Description>	
+<CMP>Defined as  [A:symtype][R: (relation A)] (reflexive R) /\ (transitive R)</CMP>
+</CDDefinition>
+
+</CD>

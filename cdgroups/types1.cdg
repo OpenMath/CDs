@@ -1,0 +1,30 @@
+
+<CDGroup  xmlns="http://www.openmath.org/OpenMathCDG">
+<CDGroupName>types1</CDGroupName>
+<CDGroupVersion> 2 </CDGroupVersion>
+<CDGroupRevision> 0 </CDGroupRevision>
+<CDGroupURL>
+http://www.openmath.org/cdfiles/cdgroups/types1.ocd</CDGroupURL>
+<CDGroupDescription>Types1 CD Group</CDGroupDescription>
+<CDComment>
+David Carlisle 1999-05-04
+</CDComment>
+
+<CDComment>
+Small Type System
+</CDComment>
+<CDGroupMember>
+<CDName>sts</CDName>
+<CDURL>http://www.openmath.org/cd/sts.ocd</CDURL>
+</CDGroupMember>
+
+<CDComment>
+MathML Numerical Types
+</CDComment>
+<CDGroupMember>
+<CDName>mathmltypes</CDName>
+<CDURL>http://www.openmath.org/cd/mathmltypes.ocd</CDURL>
+</CDGroupMember>
+
+</CDGroup>
+

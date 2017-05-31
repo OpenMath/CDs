@@ -1,0 +1,34 @@
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="arith2">
+<CDSStatus> official </CDSStatus>
+
+<CDSComment>
+Date:  1999-04-13
+Author: David Carlisle
+</CDSComment>
+
+<Signature name="times">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+  <OMS name="mapsto" cd="sts"/>
+  <OMA>
+   <OMS name="nassoc" cd="sts"/> 
+   <OMV name="AbelianSemiGroup"/>
+  </OMA>
+  <OMV name="AbelianSemiGroup"/>
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="inverse" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+  <OMS name="mapsto" cd="sts" />
+  <OMV name="Group" />
+  <OMV name="Group" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+
+</CDSignatures>
+

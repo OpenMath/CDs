@@ -1,0 +1,75 @@
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="veccalc1">
+<CDSStatus> official </CDSStatus>
+
+<Signature name="divergence">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMA>
+      <OMS name="mapsto" cd="sts"/>
+      <OMV name="Vector"/>
+      <OMV name="Vector"/>
+    </OMA>
+    <OMA>
+      <OMS name="mapsto" cd="sts"/>
+      <OMV name="Vector"/>
+      <OMV name="Scalar"/>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="grad">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMA>
+      <OMS name="mapsto" cd="sts"/>
+      <OMV name="Vector"/>
+      <OMV name="Scalar"/>
+    </OMA>
+    <OMA>
+      <OMS name="mapsto" cd="sts"/>
+      <OMV name="Vector"/>
+      <OMV name="Vector"/>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="curl">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMA>
+      <OMV name="ThreeVector"/>
+      <OMV name="ThreeVector"/>
+    </OMA>
+    <OMA>
+      <OMS name="mapsto" cd="sts"/>
+      <OMV name="ThreeVector"/>
+      <OMV name="ThreeVector"/>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="Laplacian">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMA>
+      <OMS name="mapsto" cd="sts"/>
+      <OMV name="Vector"/>
+      <OMV name="Scalar"/>
+    </OMA>
+    <OMA>
+      <OMS name="mapsto" cd="sts"/>
+      <OMV name="Vector"/>
+      <OMV name="Scalar"/>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+</CDSignatures>

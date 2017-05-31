@@ -1,0 +1,190 @@
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="group1">
+<CDSStatus> official </CDSStatus>
+
+<CDSComment>
+Date:  1999-04-29
+Author: David Carlisle
+</CDSComment>
+
+<Signature name="declare_group" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+  <OMS name="mapsto" cd="sts" />
+  <OMV name="Set"/>
+  <OMA>
+    <OMS name="mapsto" cd="sts" />
+    <OMV name="SetElement"/>
+    <OMV name="SetElement"/>
+    <OMV name="SetElement"/>
+  </OMA>
+  <OMA>
+    <OMS name="mapsto" cd="sts" />
+    <OMV name="SetElement"/>
+    <OMV name="SetElement"/>
+  </OMA>
+  <OMV name="SetElement"/>
+  <OMV name="Group" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="is_abelian" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMV name="Group" />
+    <OMS cd="setname2" name="Boolean" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+
+<Signature name="group" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+  <OMS name="mapsto" cd="sts" />
+   <OMA>
+    <OMS name="nary" cd="sts" />
+     <OMV name="GroupGenerators" />
+    </OMA>
+  <OMV name="Group" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+
+<Signature name="element_set" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMV name="Group" />
+    <OMV name="Set" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+
+<Signature name="is_subgroup" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMV name="Group" />
+    <OMV name="Group" />
+    <OMS cd="setname2" name="Boolean" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+
+<Signature name="right_transversal" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMV name="Group" />
+    <OMV name="Group" />
+    <OMV name="Set" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+
+<Signature name="normal_closure" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMV name="Group" />
+    <OMV name="Group" />
+    <OMV name="Group" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+
+<Signature name="is_normal" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMV name="Group" />
+    <OMV name="Group" />
+    <OMS cd="setname2" name="Boolean" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+
+<Signature name="quotient_group" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMV name="Group" />
+    <OMV name="Group" />
+    <OMV name="Group" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+
+<Signature name="conjugacy_class" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+   <OMA>
+     <OMS name="structure" cd="sts"/>
+     <OMV name="Group" />
+   </OMA>
+   <OMV name="Group" />
+   <OMV name="Set" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+
+<Signature name="derived_subgroup" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMV name="Group" />
+    <OMV name="Group" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+
+<Signature name="sylow_subgroup" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMV name="Group" />
+    <OMS name="P" cd="setname1" />
+    <OMV name="PGroup" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="character_table_of_group" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMV name="Group" />
+    <OMV name="CharacterTable" /> 
+	</OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="character_table" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMV name="List" />
+    <OMV name="List" />
+    <OMV name="List" />
+    <OMV name="List" />
+    <OMV name="Matrix" />
+    <OMV name="CharacterTable" /> 
+ </OMA>
+</OMOBJ>
+</Signature>
+
+
+</CDSignatures>
+

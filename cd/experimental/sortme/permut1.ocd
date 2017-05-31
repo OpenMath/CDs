@@ -1,0 +1,163 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+
+<CDName> permut1 </CDName>
+<CDBase>http://www.openmath.org/cd</CDBase>
+<CDURL> http://www.openmath.org/cd/permut1.ocd </CDURL>
+<CDReviewDate>2006-03-30</CDReviewDate>
+<CDStatus> experimental </CDStatus>
+<CDDate>2004-03-30</CDDate>
+<CDVersion>3</CDVersion>
+<CDRevision>0</CDRevision>
+<Description> A CD of functions for permutations </Description>
+<CDComment>
+Written by A. Solomon on 1998-11-19
+Modified by David Carlisle 1999-04-28
+Renamed from comb to permut1 1999-05-19
+Modified by A. Solomon to remove ambiguity from definition 
+of Permutation as reported by JHD 2000-02-05.
+</CDComment>
+
+<CDDefinition>
+<Name> permutation </Name>
+<Role>application</Role>
+<Description>
+The n-ary constructor permutation. The arguments are the integers 
+1 .. n in some order.  permutation(p1, ..., pn) is the function 
+which takes 1 to p1, 2 to p2 and so on.
+</Description>
+<CMP>permutation(2,3,...,n, 1)^n = permutation()</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="logic1" name="and"/>
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="fns2" name="apply_to_list"/>
+	<OMS cd="permut1" name="permutation"/>
+	<OMV name="l"/>
+      </OMA>
+      <OMA>
+        <OMS cd="permut1" name="permutation"/>
+      </OMA>
+    </OMA>
+    <OMA>
+      <OMS cd="logic1" name="implies"/>
+      <OMA>
+        <OMS cd="set1" name="in"/>
+	<OMV name="i"/>
+	<OMA>
+	  <OMS cd="interval1" name="integer_interval"/>
+	  <OMS cd="alg1" name="one"/>
+	  <OMA>
+	    <OMS cd="arith1" name="minus"/>
+	    <OMV name="n"/>
+	    <OMS cd="alg1" name="one"/>
+	  </OMA>
+	</OMA>
+      </OMA>
+      <OMA>
+        <OMS cd="relation1" name="eq"/>
+	<OMA>
+	  <OMS cd="linalg1" name="vector_selector"/>
+	  <OMA>
+	    <OMS cd="fns2" name="apply_to_list"/>
+	    <OMS cd="linalg2" name="vector"/>
+	    <OMV name="l"/>
+	  </OMA>
+	  <OMV name="i"/>
+	</OMA>
+	<OMA>
+	  <OMS cd="arith1" name="plus"/>
+	  <OMV name="i"/>
+	  <OMS cd="alg1" name="one"/>
+	</OMA>
+      </OMA>
+    </OMA>
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="linalg1" name="vector_selector"/>
+	<OMA>
+          <OMS cd="fns2" name="apply_to_list"/>
+	  <OMS cd="linalg2" name="vector"/>
+	  <OMV name="l"/>
+        </OMA>
+	<OMV name="n"/>
+      </OMA>
+      <OMS cd="alg1" name="one"/>
+    </OMA>
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMV name="n"/>
+      <OMA>
+        <OMS cd="linalg4" name="size"/>
+	<OMA>
+	  <OMS cd="fns2" name="apply_to_list"/>
+	  <OMS cd="linalg2" name="vector"/>
+	  <OMV name="l"/>
+	</OMA>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+<Example>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+        <OMA>
+                <OMS cd="relation1" name="eq"/>
+                <OMA>
+                        <OMS cd="arith1" name="power"/>
+                        <OMA>
+                                <OMS cd="permut1" name="permutation"/>
+                                <OMI> 2 </OMI>
+                                <OMI> 3 </OMI>
+                                <OMI> 1 </OMI>
+                        </OMA>
+                        <OMI> 3 </OMI>
+                </OMA>
+                <OMA>
+                        <OMS cd="permut1" name="permutation"/>
+                        
+                </OMA>
+        </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+</CD>

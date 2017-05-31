@@ -1,0 +1,124 @@
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="units_siprefix1">
+<CDSStatus> experimental </CDSStatus>
+
+<Signature name="yotta" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="units_sts" name="unit_prefix"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="zetta" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="units_sts" name="unit_prefix"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="exa" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="units_sts" name="unit_prefix"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="peta" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="units_sts" name="unit_prefix"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="tera" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="units_sts" name="unit_prefix"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="giga" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="units_sts" name="unit_prefix"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="mega" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="units_sts" name="unit_prefix"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="kilo" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="units_sts" name="unit_prefix"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="hecto" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="units_sts" name="unit_prefix"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="deka" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="units_sts" name="unit_prefix"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="deci" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="units_sts" name="unit_prefix"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="centi" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="units_sts" name="unit_prefix"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="milli" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="units_sts" name="unit_prefix"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="micro" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="units_sts" name="unit_prefix"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="nano" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="units_sts" name="unit_prefix"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="pico" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="units_sts" name="unit_prefix"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="femto" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="units_sts" name="unit_prefix"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="atto" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="units_sts" name="unit_prefix"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="zepto" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="units_sts" name="unit_prefix"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="yocto" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="units_sts" name="unit_prefix"/>
+</OMOBJ>
+</Signature>
+
+</CDSignatures>

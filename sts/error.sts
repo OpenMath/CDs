@@ -1,0 +1,39 @@
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="error">
+<CDSStatus> official </CDSStatus>
+
+<CDSComment>
+Date:  2000-03-21
+Author: Bill Naylor
+</CDSComment>
+
+<Signature name="unhandled_symbol">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS cd="sts" name="mapsto"/>
+    <OMV name="OMSymbol"/>
+    <OMS name="error" cd="sts"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="unexpected_symbol">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS cd="sts" name="mapsto"/>
+    <OMV name="OMSymbol"/>
+    <OMS name="error" cd="sts"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="unsupported_CD">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS cd="sts" name="mapsto"/>
+    <OMV name="OMSymbol"/>
+    <OMS name="error" cd="sts"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+</CDSignatures>

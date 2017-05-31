@@ -1,0 +1,22 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDName>units_sts</CDName>
+<CDURL> http://www.openmath.org/cd/units_sts.ocd </CDURL>
+<CDReviewDate> 2004-04-01 </CDReviewDate>
+<CDDate> 2003-08-21 </CDDate>
+<CDVersion> 1 </CDVersion>
+<CDRevision> 0 </CDRevision>
+<CDStatus> experimental </CDStatus>
+
+<Description> 
+  This CD holds the units and dimension symbols used by the OpenMath Small
+  Type System, when handling units and dimensions.
+</Description>
+
+<CDDefinition>
+  <Name> unit_prefix </Name>
+  <Description> 
+    The type of all unit prefixes, such as "kilo".
+  </Description>
+</CDDefinition>
+
+</CD>

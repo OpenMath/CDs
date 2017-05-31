@@ -1,0 +1,48 @@
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="ecc">
+<CDSStatus> official </CDSStatus>
+<CDSComment>
+  Not done yet
+</CDSComment>
+
+<Signature name="type">
+</Signature>
+
+<Signature name="omtype">
+</Signature>
+
+<Signature name="symtype">
+</Signature>
+
+<Signature name="integer">
+</Signature>
+
+<Signature name="float">
+</Signature>
+
+<Signature name="string">
+</Signature>
+
+<Signature name="bytearray">
+</Signature>
+
+<Signature name="prop">
+</Signature>
+
+<Signature name="PiType">
+</Signature>
+
+<Signature name="SigmaType">
+</Signature>
+
+<Signature name="Lambda">
+</Signature>
+
+<Signature name="Pair">
+</Signature>
+
+<Signature name="PairProj1">
+</Signature>
+
+<Signature name="PairProj2">
+</Signature>
+</CDSignatures>

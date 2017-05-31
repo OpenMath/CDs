@@ -1,0 +1,1108 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+
+<CDName> linalg5 </CDName>
+<CDBase>http://www.openmath.org/cd</CDBase>
+<CDURL> http://www.openmath.org/cd/linalg5.ocd </CDURL>
+<CDReviewDate>2006-03-30</CDReviewDate>
+<CDDate>2004-05-11</CDDate>
+<CDVersion>3</CDVersion>
+<CDRevision>1</CDRevision>
+<CDStatus> experimental </CDStatus>
+<Description>
+This CD contains symbols which represent a number of special types of
+matrix. 
+</Description>
+
+<CDDefinition>
+<Name> identity </Name>
+<Role>application</Role>
+<Description>
+This symbol denotes a unary function which is used to construct an
+(nxn) identity matrix where n is the single positive integral argument.
+</Description>
+<CMP>
+for all M | identity(rowcount M) * M = M * identity(columncount M) = M
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMBIND>
+    <OMS cd="quant1" name="forall"/>
+    <OMBVAR>
+      <OMV name="M"/>
+    </OMBVAR>
+    <OMA>
+      <OMS cd="logic1" name="and"/>
+      <OMA>
+        <OMS cd="relation1" name="eq"/>
+        <OMA>
+          <OMS cd="arith1" name="times"/>
+	  <OMA>
+	    <OMS cd="linalg5" name="identity"/>
+	    <OMA>
+	      <OMS cd="linalg4" name="rowcount"/>
+	      <OMV name="M"/>
+	    </OMA>
+	  </OMA>
+	  <OMV name="M"/>
+        </OMA>
+        <OMV name="M"/>
+      </OMA>
+      <OMA>
+        <OMS cd="relation1" name="eq"/>
+        <OMA>
+          <OMS cd="arith1" name="times"/>
+	  <OMV name="M"/>
+	  <OMA>
+	    <OMS cd="linalg5" name="identity"/>
+	    <OMA>
+	      <OMS cd="linalg4" name="columncount"/>
+	      <OMV name="M"/>
+	    </OMA>
+	  </OMA>
+        </OMA>
+        <OMV name="M"/>
+      </OMA>
+    </OMA>
+  </OMBIND>
+</OMOBJ>
+</FMP>
+
+<Example>
+A representation of the 2x2 identity matrix [[1,0],[0,1]]
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="linalg5" name="identity"/>
+    <OMI> 2 </OMI>
+  </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> zero </Name>
+<Role>application</Role>
+<Description>
+This symbol denotes a function with two integral arguments m,n which
+is used to construct an (mxn) zero matrix.
+</Description>
+<CMP>
+for all M | M + zero(rowcount M,columncount M) = M
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMBIND>
+    <OMS cd="quant1" name="forall"/>
+    <OMBVAR>
+      <OMV name="M"/>
+    </OMBVAR>
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="arith1" name="plus"/>
+        <OMV name="M"/>
+        <OMA>
+          <OMS cd="linalg5" name="zero"/>
+	  <OMA>
+	    <OMS cd="linalg4" name="rowcount"/>
+	    <OMV name="M"/>
+	  </OMA>
+	  <OMA>
+	    <OMS cd="linalg4" name="columncount"/>
+	    <OMV name="M"/>
+	  </OMA>
+        </OMA>
+      </OMA>
+      <OMV name="M"/>
+    </OMA>
+  </OMBIND>
+</OMOBJ>
+</FMP>
+
+<CMP>
+for all M | 
+zero(rowcount M,rowcount M) * M = M * zero(columncount M,columncount M) = 
+zero(rowcount M,columncount M)
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMBIND>
+    <OMS cd="quant1" name="forall"/>
+    <OMBVAR>
+      <OMV name="M"/>
+    </OMBVAR>
+    <OMA>
+      <OMS cd="logic1" name="and"/>
+      <OMA>
+        <OMS cd="relation1" name="eq"/>
+        <OMA>
+          <OMS cd="arith1" name="times"/>
+	  <OMA>
+	    <OMS cd="linalg5" name="zero"/>
+	    <OMA>
+	      <OMS cd="linalg4" name="rowcount"/>
+	      <OMV name="M"/>
+	    </OMA>
+	    <OMA>
+	      <OMS cd="linalg4" name="rowcount"/>
+	      <OMV name="M"/>
+	    </OMA>
+	  </OMA>
+	  <OMV name="M"/>
+        </OMA>
+        <OMA>
+          <OMS cd="linalg5" name="zero"/>
+	  <OMA>
+	    <OMS cd="linalg4" name="rowcount"/>
+	    <OMV name="M"/>
+	  </OMA>
+	  <OMA>
+	    <OMS cd="linalg4" name="columncount"/>
+	    <OMV name="M"/>
+	  </OMA>
+        </OMA>
+      </OMA>
+      <OMA>
+        <OMS cd="relation1" name="eq"/>
+        <OMA>
+          <OMS cd="arith1" name="times"/>
+	  <OMV name="M"/>
+	  <OMA>
+	    <OMS cd="linalg5" name="zero"/>
+	    <OMA>
+	      <OMS cd="linalg4" name="columncount"/>
+	      <OMV name="M"/>
+	    </OMA>
+	    <OMA>
+	      <OMS cd="linalg4" name="columncount"/>
+	      <OMV name="M"/>
+	    </OMA>
+	  </OMA>
+        </OMA>
+        <OMA>
+          <OMS cd="linalg5" name="zero"/>
+	  <OMA>
+	    <OMS cd="linalg4" name="rowcount"/>
+	    <OMV name="M"/>
+	  </OMA>
+	  <OMA>
+	    <OMS cd="linalg4" name="columncount"/>
+	    <OMV name="M"/>
+	  </OMA>
+        </OMA>
+      </OMA>
+    </OMA>
+  </OMBIND>
+</OMOBJ>
+</FMP>
+
+<Example>
+A representation of the 2x2 zero matrix [[0,0],[0,0]]
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="linalg5" name="zero"/>
+    <OMI> 2 </OMI>
+    <OMI> 2 </OMI>
+  </OMA>
+</OMOBJ>
+
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> diagonal_matrix </Name>
+<Role>application</Role>
+<Description>
+This symbol denotes an n_ary function which is used to construct an
+(nxn) diagonal matrix, that is a matrix where every non-diagonal
+element is zero, the diagonal elements are equal to the n arguments.
+</Description>
+<CMP> given a diagonal matrix, it is equal to its transpose </CMP>
+
+<Example>
+The diagonal matrix with diagonal elements [1,2,3]
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="linalg5" name="diagonal_matrix"/>
+    <OMI> 1 </OMI>
+    <OMI> 2 </OMI>
+    <OMI> 3 </OMI>
+  </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> scalar </Name>
+<Role>application</Role>
+<Description>
+This symbol represents a matrix which is a scalar constant times the
+identity matrix. It should take two arguments, the first  
+specifes the number of rows and columns in the matrix respectively and
+the third specifies the scalar multiplier.
+</Description>
+
+<CMP>
+ the scalar matrix of size n, where the scalar multiple is s
+ = s * identity(n)
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMS cd="linalg5" name="scalar"/>
+      <OMV name="n"/>
+      <OMV name="s"/>
+    </OMA>
+    <OMA>
+      <OMS cd="arith1" name="times"/>
+      <OMV name="s"/>
+      <OMA>
+        <OMS cd="linalg5" name="identity"/>
+	<OMV name="n"/>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+<Example>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+    <OMA>
+      <OMS cd="linalg5" name="scalar"/>
+      <OMI>4</OMI>
+      <OMF dec="1.5"/>
+    </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> constant </Name>
+<Role>application</Role>
+<Description>
+This symbol represents a matrix which has all entries of the same
+value. It takes two arguments, the first is the size of the matrix,
+the second is the constant which determines every element.
+</Description>
+
+<CMP> the rank of a non-zero constant matrix = 1 </CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="logic1" name="implies"/>
+    <OMA>
+      <OMS cd="relation1" name="neq"/>
+      <OMV name="v"/>
+      <OMS cd="alg1" name="zero"/>
+    </OMA>
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="linalg4" name="rank"/>
+        <OMA>
+          <OMS cd="linalg5" name="constant"/>
+	  <OMV name="n"/>
+	  <OMV name="v"/>
+        </OMA>
+      </OMA>
+      <OMS cd="alg1" name="one"/>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> banded </Name>
+<Role>application</Role>
+<Description>
+This symbol represents a (p,q) banded matrix, it takes one
+argument. A (p,q) banded matrix should always be square. The lower non-zero
+subdiagonal is the first element of the argument, whilst the highest non-zero
+super-diagonal is given by the last element of the argument. The
+argument determines the band of possibly non-zero entries which 
+are positioned around the diagonal. It should be a vector of vectors,
+we note that they will not all be the same length, however the length
+of the vectors determine p and q. The longest element specifies the
+diagonal of the matrix and hence the size of the matrix. Every element
+not in the band is zero.
+</Description>
+
+<Example>
+A specification of the (2,1) banded matrix:
+[
+[1  2  3  0  0]
+[4  5  6  7  0]
+[0  8  9  10 11]
+[0  0  12 13 14]
+[0  0  0  15 16]]
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="linalg5" name="banded"/>
+    <OMA>
+      <OMS cd="linalg2" name="vector"/>
+      <OMA>
+        <OMS cd="linalg2" name="vector"/>
+	<OMI>4</OMI> <OMI>8</OMI> <OMI>12</OMI> <OMI>15</OMI>
+      </OMA>
+      <OMA>
+        <OMS cd="linalg2" name="vector"/>
+	<OMI>1</OMI> <OMI>5</OMI> <OMI>9</OMI> <OMI>13</OMI> <OMI>16</OMI>
+      </OMA>
+      <OMA>
+        <OMS cd="linalg2" name="vector"/>
+	<OMI>2</OMI> <OMI>6</OMI> <OMI>10</OMI> <OMI>14</OMI>
+      </OMA>
+      <OMA>
+        <OMS cd="linalg2" name="vector"/>
+	<OMI>3</OMI> <OMI>7</OMI> <OMI>11</OMI>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> symmetric </Name>
+<Role>application</Role>
+<Description>
+This symbol represents a symmetric matrix, it takes one argument. The
+argument should be a vector of vectors of elements of the matrix. For
+j&gt;=i the ij'th element of the matrix is the (j-i+1)'th element of the i'th
+element of the argument. This determines the upper triangle of the
+matrix, the lower triangle is specified by the rule M = transpose M.
+</Description>
+
+<CMP>
+ the sum of a symmetric matrix and its transpose is symmetric
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMS cd="arith1" name="plus"/>
+      <OMA>
+        <OMS cd="linalg5" name="symmetric"/>
+	<OMV name="VV1"/>
+      </OMA>
+      <OMA>
+        <OMS cd="linalg1" name="transpose"/>
+	<OMA>
+	  <OMS cd="linalg5" name="symmetric"/>
+	  <OMV name="VV1"/>
+	</OMA>
+      </OMA>
+    </OMA>
+    <OMA>
+      <OMS cd="linalg5" name="symmetric"/>
+      <OMV name="VV2"/>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+<CMP> for a symmetric matrix M, M = transpose M </CMP>
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMS cd="linalg5" name="symmetric"/>
+      <OMV name="VV"/>
+    </OMA>
+    <OMA>
+      <OMS cd="linalg1" name="transpose"/>
+      <OMA>
+        <OMS cd="linalg5" name="symmetric"/>
+        <OMV name="VV"/>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+<CMP>
+the dimension of a symmetric matrix = the length of the vector
+which defines it
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMS cd="linalg4" name="rowcount"/>
+      <OMA>
+        <OMS cd="linalg5" name="symmetric"/>
+	<OMV name="VV"/>
+      </OMA>
+    </OMA>
+    <OMA>
+      <OMS cd="linalg4" name="size"/>
+      <OMV name="VV"/>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+<Example>
+An example to represent the symmetric matrix:
+[[1,2,3,4]
+ [2,5,6,7]
+ [3,6,8,9]
+ [4,7,9,10]]
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="linalg5" name="symmetric"/>
+    <OMA>
+      <OMS cd="linalg2" name="vector"/>
+      <OMA>
+        <OMS cd="linalg2" name="vector"/>
+	<OMI> 1 </OMI>	
+	<OMI> 2 </OMI>	
+	<OMI> 3 </OMI>	
+	<OMI> 4 </OMI>	
+      </OMA>
+      <OMA>
+        <OMS cd="linalg2" name="vector"/>
+	<OMI> 5 </OMI>	
+	<OMI> 6 </OMI>	
+	<OMI> 7 </OMI>	
+      </OMA>
+      <OMA>
+        <OMS cd="linalg2" name="vector"/>
+	<OMI> 8 </OMI>	
+	<OMI> 9 </OMI>	
+      </OMA>
+      <OMA>
+        <OMS cd="linalg2" name="vector"/>
+	<OMI> 10 </OMI>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> skew-symmetric </Name>
+<Role>application</Role>
+<Description>
+This symbol represents a skew-symmetric matrix, it takes one
+argument. The argument should be a vector of vectors of elements of
+the matrix. For j&gt;i the ij'th element of the matrix is the (j-i+1)'th
+element of the i'th element of the argument. This determines the
+elements above the diagonal of the matrix, the elements below the
+diagonal of the matrix must conform to the rule M = - transpose
+M. This rule implies that the elements on the diagonal must be equal
+to 0, therefore we do not include these in the argument.
+</Description>
+
+<CMP> The elements on the diagonal of a skew-symmetric matrix are zero </CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMS cd="linalg1" name="matrix_selector"/>
+      <OMV name="i"/>
+      <OMV name="i"/>
+      <OMA>
+        <OMS cd="linalg5" name="skew-symmetric"/>
+	<OMV name="VV"/>
+      </OMA>
+    </OMA>
+    <OMS cd="alg1" name="zero"/>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+<CMP> for a skew-symmetric matrix M, M = - transpose M </CMP>
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMS cd="linalg5" name="skew-symmetric"/>
+      <OMV name="VV"/>
+    </OMA>
+    <OMA>
+      <OMS cd="arith1" name="unary_minus"/>
+      <OMA>
+        <OMS cd="linalg1" name="transpose"/>
+        <OMA>
+          <OMS cd="linalg5" name="skew-symmetric"/>
+          <OMV name="VV"/>
+        </OMA>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+<Example>
+An example to represent the skew-symmetric matrix:
+[[ 0, 2, 3, 4]
+ [-2, 0, 6, 7]
+ [-3,-6, 0, 9]
+ [-4,-7,-9, 0]]
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="linalg5" name="skew-symmetric"/>
+    <OMA>
+      <OMS cd="linalg2" name="vector"/>
+      <OMA>
+        <OMS cd="linalg2" name="vector"/>
+	<OMI> 2 </OMI>	
+	<OMI> 3 </OMI>	
+	<OMI> 4 </OMI>	
+      </OMA>
+      <OMA>
+        <OMS cd="linalg2" name="vector"/>
+	<OMI> 6 </OMI>	
+	<OMI> 7 </OMI>	
+      </OMA>
+      <OMA>
+        <OMS cd="linalg2" name="vector"/>
+	<OMI> 9 </OMI>	
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> Hermitian </Name>
+<Role>application</Role>
+<Description>
+This symbol represents a Hermitian matrix, it takes one
+argument. The argument should be a vector of vectors of values which
+determine the upper triangle of the matrix. The lower triangle of the
+matrix is specified by the following relation: M^* = transpose(M),
+were M^* denotes the matrix consisting of all the complex conjugates
+of M.
+</Description>
+
+<CMP>
+The complex conjugate of a Hermitian matrix equals its transpose
+</CMP>
+
+<CMP> The diagonal elements of a Hermitian matrix will be real </CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="set1" name="in"/>
+    <OMA>
+      <OMS cd="linalg1" name="matrix_selector"/>
+      <OMV name="i"/>
+      <OMV name="i"/>
+      <OMA>
+        <OMS cd="linalg5" name="Hermitian"/>
+	<OMV name="VV"/>
+      </OMA>
+    </OMA>
+    <OMS cd="setname1" name="R"/>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+<Example>
+An example to describe the Hermitian matrix:
+[[1   , 2+2i]
+ [2-2i, 3   ]]
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="linalg5" name="Hermitian"/>
+    <OMA>
+      <OMS cd="linalg2" name="vector"/>
+      <OMA>
+        <OMS cd="linalg2" name="vector"/>
+	<OMA>
+	  <OMS cd="complex1" name="complex_cartesian"/>
+	  <OMI> 1 </OMI><OMI> 0 </OMI>
+	</OMA>
+	<OMA>
+	  <OMS cd="complex1" name="complex_cartesian"/>
+	  <OMI> 2 </OMI><OMI> 2 </OMI>
+	</OMA>
+      </OMA>
+      <OMA>
+        <OMS cd="linalg2" name="vector"/>
+	<OMA>
+	  <OMS cd="complex1" name="complex_cartesian"/>
+	  <OMI> 3 </OMI><OMI> 0 </OMI>
+	</OMA>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> anti-Hermitian </Name>
+<Role>application</Role>
+<Description>
+This symbol represents an anti-Hermitian matrix, it takes one
+argument. The argument should be a vector of vectors of values which
+determine the upper triangle of the matrix. The lower triangle of the
+matrix is specified by the following relation: - M^* = transpose(M),
+were M^* denotes the matrix consisting of all the complex conjugates
+of M. This rules implies that the main diagonal is zero, therefore the
+argument should not include it.
+</Description>
+
+<CMP>
+The complex conjugate of an anti-Hermitian matrix equals minus its transpose
+</CMP>
+
+<CMP> an anti-hermitian matrix will have zero on the diagonal </CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMS cd="linalg1" name="matrix_selector"/>
+      <OMV name="i"/>
+      <OMV name="i"/>
+      <OMA>
+        <OMS cd="linalg5" name="anti-Hermitian"/>
+	<OMV name="VV"/>
+      </OMA>
+    </OMA>
+    <OMS cd="alg1" name="zero"/>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+<Example>
+An example to describe the anti-Hermitian matrix:
+[[0    , 1+i]
+ [-1+i , 0  ]]
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="linalg5" name="anti-Hermitian"/>
+    <OMA>
+      <OMS cd="linalg2" name="vector"/>
+    <OMA>
+      <OMS cd="linalg2" name="vector"/>
+      <OMA>
+        <OMS cd="complex1" name="complex_cartesian"/>
+	<OMI> 1 </OMI><OMI> 1 </OMI>
+      </OMA>
+    </OMA>
+  </OMA>
+  </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> upper-triangular </Name>
+<Role>application</Role>
+<Description>
+This symbol represents an upper-triangular matrix, it takes one
+argument. The argument should be a vector of vectors of elements of
+the matrix.
+</Description>
+
+<CMP> the product of two upper-triangular matrices is upper-triangular </CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMS cd="linalg5" name="upper-triangular"/>
+      <OMV name="VV1"/>
+    </OMA>
+    <OMA>
+      <OMS cd="arith1" name="times"/>
+      <OMA>
+        <OMS cd="linalg5" name="upper-triangular"/>
+	<OMV name="VV2"/>
+      </OMA>
+      <OMA>
+        <OMS cd="linalg5" name="upper-triangular"/>
+	<OMV name="VV3"/>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+<Example>
+An example to describe the upper triangular matrix:
+[[1,2,3]
+ [0,4,5]
+ [0,0,6]]
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="linalg5" name="upper-triangular"/>
+    <OMA>
+      <OMS cd="linalg2" name="vector"/>
+      <OMA>
+        <OMS cd="linalg2" name="vector"/>
+	<OMI> 1 </OMI><OMI> 2 </OMI><OMI> 3 </OMI>
+      </OMA>
+      <OMA>
+        <OMS cd="linalg2" name="vector"/>
+	<OMI> 4 </OMI><OMI> 5 </OMI>
+      </OMA>
+      <OMA>
+        <OMS cd="linalg2" name="vector"/>
+	<OMI> 6 </OMI>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> lower-triangular </Name>
+<Role>application</Role>
+<Description>
+This symbol represents a lower-triangular matrix, it takes one
+argument. The argument should be a vector of vectors of elements of
+the matrix.
+</Description>
+
+<CMP> the product of two lower-triangular matrices is lower-triangular </CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMS cd="linalg5" name="lower-triangular"/>
+      <OMV name="VV1"/>
+    </OMA>
+    <OMA>
+      <OMS cd="arith1" name="times"/>
+      <OMA>
+        <OMS cd="linalg5" name="lower-triangular"/>
+	<OMV name="VV2"/>
+      </OMA>
+      <OMA>
+        <OMS cd="linalg5" name="lower-triangular"/>
+	<OMV name="VV3"/>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+<Example>
+An example to describe the lower triangular matrix:
+[[1,0,0]
+ [2,3,0]
+ [4,5,6]]
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="linalg5" name="lower-triangular"/>
+    <OMA>
+      <OMS cd="linalg2" name="vector"/>
+      <OMA>
+        <OMS cd="linalg2" name="vector"/>
+	<OMI> 1 </OMI>
+      </OMA>
+      <OMA>
+        <OMS cd="linalg2" name="vector"/>
+	<OMI> 2 </OMI><OMI> 3 </OMI>
+      </OMA>
+      <OMA>
+        <OMS cd="linalg2" name="vector"/>
+	<OMI> 4 </OMI><OMI> 5 </OMI><OMI> 6 </OMI>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> upper-Hessenberg </Name>
+<Role>application</Role>
+<Description>
+This symbol represents an upper-Hessenberg matrix, it takes one argument,
+the argument is a vector of vectors representing the non-zero
+elements. The first element of the argument specifies the value of the
+first subdiagonal, the subsequent elements specify the value of the
+diagonal and subsequent super-diagonals, all other elements are zero.
+</Description>
+
+<Example>
+A specification of an upper-Hessenberg matrix of dimension 5:
+
+[[1  2  3  0  0]
+ [4  5  6  7  0]
+ [0  8  9  10 11]
+ [0  0  12 13 14]
+ [0  0  0  15 16]]
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="linalg5" name="upper-Hessenberg"/>
+    <OMA>
+      <OMS cd="linalg2" name="vector"/>
+      <OMA>
+        <OMS cd="linalg2" name="vector"/>
+	<OMI>4</OMI> <OMI>8</OMI> <OMI>12</OMI> <OMI>15</OMI>
+      </OMA>
+      <OMA>
+        <OMS cd="linalg2" name="vector"/>
+	<OMI>1</OMI> <OMI>5</OMI> <OMI>9</OMI> <OMI>13</OMI> <OMI>16</OMI>
+      </OMA>
+      <OMA>
+        <OMS cd="linalg2" name="vector"/>
+	<OMI>2</OMI> <OMI>6</OMI> <OMI>10</OMI> <OMI>14</OMI>
+      </OMA>
+      <OMA>
+        <OMS cd="linalg2" name="vector"/>
+	<OMI>3</OMI> <OMI>7</OMI> <OMI>11</OMI>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</Example>
+
+<CMP> the transpose of an upper-Hessenberg matrix is lower-Hessenberg </CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMS cd="linalg1" name="transpose"/>
+      <OMA>
+        <OMS cd="linalg5" name="upper-Hessenberg"/>
+	<OMV name="VV1"/>
+      </OMA>
+    </OMA>
+    <OMA>
+      <OMS cd="linalg5" name="lower-Hessenberg"/>
+      <OMV name="VV2"/>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> lower-Hessenberg </Name>
+<Role>application</Role>
+<Description>
+This symbol represents a lower-Hessenberg matrix, it takes one argument,
+the argument is a vector of vectors representing the non-zero
+elements. The first element of the argument specifies the value of the
+first super-diagonal, the subsequent elements specify the value of the
+diagonal and subsequent subdiagonals, all other elements are zero.
+</Description>
+
+<Example>
+A specification of a lower-Hessenberg matrix of dimension 5:
+
+[[1  2  0  0  0]
+ [3  4  5  0  0]
+ [6  7  8  9  0]
+ [0  10 11 12 13]
+ [0  0  14 15 16]]
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="linalg5" name="lower-Hessenberg"/>
+    <OMA>
+      <OMS cd="linalg2" name="vector"/>
+      <OMA>
+        <OMS cd="linalg2" name="vector"/>
+	<OMI>2</OMI> <OMI>5</OMI> <OMI>9</OMI> <OMI>13</OMI>
+      </OMA>
+      <OMA>
+        <OMS cd="linalg2" name="vector"/>
+	<OMI>1</OMI> <OMI>4</OMI> <OMI>8</OMI> <OMI>12</OMI> <OMI>16</OMI>
+      </OMA>
+      <OMA>
+        <OMS cd="linalg2" name="vector"/>
+	<OMI>3</OMI> <OMI>7</OMI> <OMI>11</OMI> <OMI>15</OMI>
+      </OMA>
+      <OMA>
+        <OMS cd="linalg2" name="vector"/>
+	<OMI>6</OMI> <OMI>10</OMI> <OMI>14</OMI>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</Example>
+
+<CMP> the transpose of a lower-Hessenberg matrix is upper-Hessenberg </CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMS cd="linalg1" name="transpose"/>
+      <OMA>
+        <OMS cd="linalg5" name="lower-Hessenberg"/>
+	<OMV name="VV1"/>
+      </OMA>
+    </OMA>
+    <OMA>
+      <OMS cd="linalg5" name="upper-Hessenberg"/>
+      <OMV name="VV2"/>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> tridiagonal </Name>
+<Role>application</Role>
+<Description>
+This symbol represents a tridiagonal matrix, it takes one argument
+which should be a vector of vectors which should have three elements.
+These should be vectors representing the sub-diagonal, the diagonal
+and the super-diagonal in that order.
+</Description>
+
+<CMP> a tridiagonal matrix is a (1,1) banded matrix </CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="logic1" name="and"/>
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="linalg4" name="size"/>
+	<OMV name="VV"/>
+      </OMA>
+      <OMI> 3 </OMI>
+    </OMA>
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="linalg4" name="size"/>
+	<OMA>
+	  <OMS cd="linalg1" name="vector_selector"/>
+	  <OMI> 2 </OMI>
+	  <OMV name="VV"/>
+	</OMA>
+      </OMA>
+      <OMA>
+        <OMS cd="arith1" name="plus"/>
+	<OMA>
+          <OMS cd="linalg4" name="size"/>
+	  <OMA>
+	    <OMS cd="linalg1" name="vector_selector"/>
+	    <OMI> 1 </OMI>
+	    <OMV name="VV"/>
+	  </OMA>
+	</OMA>
+	<OMI> 1 </OMI>
+      </OMA>
+    </OMA>
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="linalg5" name="tridiagonal"/>
+	<OMV name="VV"/>
+      </OMA>
+      <OMA>
+        <OMS cd="linalg5" name="banded"/>
+	<OMV name="VV"/>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+<CMP> The product of two tridiagonal matrices is tridiagonal </CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMS cd="arith1" name="times"/>
+      <OMA>
+        <OMS cd="linalg5" name="tridiagonal"/>
+	<OMV name="VV1"/>
+      </OMA>
+      <OMA>
+        <OMS cd="linalg5" name="tridiagonal"/>
+	<OMV name="VV2"/>
+      </OMA>
+    </OMA>
+    <OMA>
+      <OMS cd="linalg5" name="tridiagonal"/>
+      <OMV name="VV3"/>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+</CDDefinition>
+
+</CD>

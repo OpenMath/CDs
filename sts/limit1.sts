@@ -1,0 +1,49 @@
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="limit1">
+<CDSStatus> official </CDSStatus>
+
+<CDSComment>
+Date:  1999-04-13
+Author: James Davenport
+</CDSComment>
+
+<Signature name="limit">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/> 
+    <OMS name="NumericalValue" cd="sts"/>
+    <OMV name="TendsTo"/>
+    <OMA>
+      <OMS name="mapsto" cd="sts"/> 
+      <OMS name="NumericalValue" cd="sts"/>
+      <OMS name="NumericalValue" cd="sts"/>
+    </OMA>
+    <OMS name="NumericalValue" cd="sts"/>
+  </OMA> 
+</OMOBJ>
+</Signature>
+
+<Signature name="both_sides">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+    <OMV name="TendsTo"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="above">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+    <OMV name="TendsTo"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="below">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+    <OMV name="TendsTo"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="null">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+    <OMV name="TendsTo"/>
+</OMOBJ>
+</Signature>
+
+</CDSignatures>

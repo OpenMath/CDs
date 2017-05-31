@@ -1,0 +1,80 @@
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="linalg4">
+<CDSStatus> official </CDSStatus>
+<CDSComment> Written by N. Hur (02/02/2000) </CDSComment>
+<CDSComment> Updated by W.A.Naylor adding rowcount, columncount and
+changing zero to make binary also making some other changes
+(23/02/2000) </CDSComment>
+
+<Signature name="size">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMV name="Vector"/>
+    <OMS name="N" cd="setname1"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="rank">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMV name="Matrix"/>
+    <OMS name="N" cd="setname1"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="rowcount">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMV name="Matrix"/>
+    <OMS name="N" cd="setname1"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="columncount">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMV name="Matrix"/>
+    <OMS name="N" cd="setname1"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="eigenvector">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMV name="Matrix"/>
+    <OMV name="Index"/>
+    <OMV name="NumericalValue"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="eigenvalue">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMV name="Matrix"/>
+    <OMV name="Index"/>
+    <OMV name="NumericalValue"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="characteristic_eqn">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMV name="Matrix"/>
+    <OMV name="Polynomial"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+</CDSignatures>
+

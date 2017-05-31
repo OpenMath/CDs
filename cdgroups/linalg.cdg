@@ -1,0 +1,46 @@
+<CDGroup  xmlns="http://www.openmath.org/OpenMathCDG">
+<CDGroupName>linalg</CDGroupName>
+<CDGroupVersion> 2 </CDGroupVersion>
+<CDGroupRevision> 0 </CDGroupRevision>
+<CDGroupURL>
+http://www.openmath.org/cdfiles/cdgroups/linalg.cdg
+</CDGroupURL>
+<CDGroupDescription>Linear Algebra CD Group</CDGroupDescription>
+<CDComment>
+This is the first version of the Linear Algebra CD group.
+</CDComment>
+
+<CDGroupMember>
+<CDName>linalg1</CDName>
+<CDURL>http://www.openmath.org/cd/linalg1.ocd</CDURL>
+</CDGroupMember>
+<CDComment> Linear Algebra cd containing MathML compliant symbols</CDComment>
+
+<CDGroupMember>
+<CDName>linalg2</CDName>
+<CDURL>http://www.openmath.org/cd/linalg2.ocd</CDURL>
+</CDGroupMember>
+<CDComment> Linear Algebra cd row oriented constructors </CDComment>
+
+<CDGroupMember>
+<CDName>linalg3</CDName>
+<CDURL>http://www.openmath.org/cd/linalg3.ocd</CDURL>
+</CDGroupMember>
+<CDComment> Linear Algebra cd column oriented constructors </CDComment>
+
+<CDGroupMember>
+<CDName>linalg4</CDName>
+<CDURL>http://www.openmath.org/cd/linalg4.ocd</CDURL>
+</CDGroupMember>
+<CDComment> Linear Algebra cd containing non-MathML symbols </CDComment>
+
+<CDGroupMember>
+<CDName>linalg5</CDName>
+<CDURL>http://www.openmath.org/cd/linalg5.ocd</CDURL>
+</CDGroupMember>
+<CDComment> 
+Linear Algebra cd containing constructors for certain special 
+matrices 
+</CDComment>
+</CDGroup>
+

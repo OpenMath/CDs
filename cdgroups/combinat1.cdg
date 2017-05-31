@@ -1,0 +1,28 @@
+
+<CDGroup  xmlns="http://www.openmath.org/OpenMathCDG">
+<CDGroupName>combinat1</CDGroupName>
+<CDGroupVersion>1</CDGroupVersion>
+<CDGroupRevision>1</CDGroupRevision>
+<CDGroupURL>
+http://www.openmath.org/cdfiles/cdgroups/combinat1.cdg</CDGroupURL>
+<CDGroupDescription>Combinatorics CD Group</CDGroupDescription>
+
+
+<CDComment>
+A CD of functions for combinatorics
+</CDComment>
+<CDGroupMember>
+<CDName>combinat1</CDName>
+<CDURL>http://www.openmath.org/cd/combinat1.ocd</CDURL>
+</CDGroupMember>
+
+<CDComment>
+A CD of functions for permutations
+</CDComment>
+<CDGroupMember>
+<CDName>permut1</CDName>
+<CDURL>http://www.openmath.org/cd/permut1.ocd</CDURL>
+</CDGroupMember>
+
+</CDGroup>
+

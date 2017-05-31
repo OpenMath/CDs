@@ -1,0 +1,681 @@
+
+
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDName> units_siprefix1 </CDName>
+<CDURL> http://www.openmath.org/cd/units_binaryprefix1.ocd </CDURL>
+<CDReviewDate> 2006-08-27 </CDReviewDate>
+<CDStatus> experimental </CDStatus>
+<CDDate> 2004-08-27 </CDDate>
+<CDVersion> 1 </CDVersion>
+<CDRevision> 0 </CDRevision>
+
+
+<Description> 
+This CD defines symbols for the SI prefixes to indicate multiplication
+by a power of 10.
+</Description>
+
+
+    <CDDefinition>
+      <Name> yotta </Name>
+      <Description>
+This symbol represents the fact that the subsequent unit has been 
+  effectively multiplied by $10^24$
+      </Description>
+      <CMP> This is unit multiplication by  $10^24$</CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS name="eq" cd="relation1"/>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMI> 1 </OMI>
+    <OMA>
+      <OMS name="prefix" cd="units_ops1"/>
+      <OMS name="yotta" cd="units_siprefix1"/>
+      <OMV name="unit"/>
+    </OMA>
+  </OMA>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMA>
+      <OMS name="power" cd="arith1"/>
+      <OMI> 10 </OMI>
+      <OMI> 24 </OMI>
+    </OMA>
+    <OMV name="unit"/>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+    </CDDefinition>
+  
+    <CDDefinition>
+      <Name> zetta </Name>
+      <Description>
+This symbol represents the fact that the subsequent unit has been 
+  effectively multiplied by $10^21$
+      </Description>
+      <CMP> This is unit multiplication by  $10^21$</CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS name="eq" cd="relation1"/>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMI> 1 </OMI>
+    <OMA>
+      <OMS name="prefix" cd="units_ops1"/>
+      <OMS name="zetta" cd="units_siprefix1"/>
+      <OMV name="unit"/>
+    </OMA>
+  </OMA>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMA>
+      <OMS name="power" cd="arith1"/>
+      <OMI> 10 </OMI>
+      <OMI> 21 </OMI>
+    </OMA>
+    <OMV name="unit"/>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+    </CDDefinition>
+  
+    <CDDefinition>
+      <Name> exa </Name>
+      <Description>
+This symbol represents the fact that the subsequent unit has been 
+  effectively multiplied by $10^18$
+      </Description>
+      <CMP> This is unit multiplication by  $10^18$</CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS name="eq" cd="relation1"/>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMI> 1 </OMI>
+    <OMA>
+      <OMS name="prefix" cd="units_ops1"/>
+      <OMS name="exa" cd="units_siprefix1"/>
+      <OMV name="unit"/>
+    </OMA>
+  </OMA>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMA>
+      <OMS name="power" cd="arith1"/>
+      <OMI> 10 </OMI>
+      <OMI> 18 </OMI>
+    </OMA>
+    <OMV name="unit"/>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+    </CDDefinition>
+  
+    <CDDefinition>
+      <Name> peta </Name>
+      <Description>
+This symbol represents the fact that the subsequent unit has been 
+  effectively multiplied by $10^15$
+      </Description>
+      <CMP> This is unit multiplication by  $10^15$</CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS name="eq" cd="relation1"/>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMI> 1 </OMI>
+    <OMA>
+      <OMS name="prefix" cd="units_ops1"/>
+      <OMS name="peta" cd="units_siprefix1"/>
+      <OMV name="unit"/>
+    </OMA>
+  </OMA>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMA>
+      <OMS name="power" cd="arith1"/>
+      <OMI> 10 </OMI>
+      <OMI> 15 </OMI>
+    </OMA>
+    <OMV name="unit"/>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+    </CDDefinition>
+  
+    <CDDefinition>
+      <Name> tera </Name>
+      <Description>
+This symbol represents the fact that the subsequent unit has been 
+  effectively multiplied by $10^12$
+      </Description>
+      <CMP> This is unit multiplication by  $10^12$</CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS name="eq" cd="relation1"/>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMI> 1 </OMI>
+    <OMA>
+      <OMS name="prefix" cd="units_ops1"/>
+      <OMS name="tera" cd="units_siprefix1"/>
+      <OMV name="unit"/>
+    </OMA>
+  </OMA>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMA>
+      <OMS name="power" cd="arith1"/>
+      <OMI> 10 </OMI>
+      <OMI> 12 </OMI>
+    </OMA>
+    <OMV name="unit"/>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+    </CDDefinition>
+  
+    <CDDefinition>
+      <Name> giga </Name>
+      <Description>
+This symbol represents the fact that the subsequent unit has been 
+  effectively multiplied by $10^9$
+      </Description>
+      <CMP> This is unit multiplication by  $10^9$</CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS name="eq" cd="relation1"/>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMI> 1 </OMI>
+    <OMA>
+      <OMS name="prefix" cd="units_ops1"/>
+      <OMS name="giga" cd="units_siprefix1"/>
+      <OMV name="unit"/>
+    </OMA>
+  </OMA>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMA>
+      <OMS name="power" cd="arith1"/>
+      <OMI> 10 </OMI>
+      <OMI> 9 </OMI>
+    </OMA>
+    <OMV name="unit"/>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+    </CDDefinition>
+  
+    <CDDefinition>
+      <Name> mega </Name>
+      <Description>
+This symbol represents the fact that the subsequent unit has been 
+  effectively multiplied by $10^6$
+      </Description>
+      <CMP> This is unit multiplication by  $10^6$</CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS name="eq" cd="relation1"/>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMI> 1 </OMI>
+    <OMA>
+      <OMS name="prefix" cd="units_ops1"/>
+      <OMS name="mega" cd="units_siprefix1"/>
+      <OMV name="unit"/>
+    </OMA>
+  </OMA>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMA>
+      <OMS name="power" cd="arith1"/>
+      <OMI> 10 </OMI>
+      <OMI> 6 </OMI>
+    </OMA>
+    <OMV name="unit"/>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+    </CDDefinition>
+  
+    <CDDefinition>
+      <Name> kilo </Name>
+      <Description>
+This symbol represents the fact that the subsequent unit has been 
+  effectively multiplied by $1000$
+      </Description>
+      <CMP> This is unit multiplication by  $1000$</CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS name="eq" cd="relation1"/>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMI> 1 </OMI>
+    <OMA>
+      <OMS name="prefix" cd="units_ops1"/>
+      <OMS name="kilo" cd="units_siprefix1"/>
+      <OMV name="unit"/>
+    </OMA>
+  </OMA>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMA>
+      <OMS name="power" cd="arith1"/>
+      <OMI> 10 </OMI>
+      <OMI> 3 </OMI>
+    </OMA>
+    <OMV name="unit"/>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+    </CDDefinition>
+  
+    <CDDefinition>
+      <Name> hecto </Name>
+      <Description>
+This symbol represents the fact that the subsequent unit has been 
+  effectively multiplied by $100$
+      </Description>
+      <CMP> This is unit multiplication by  $100$</CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS name="eq" cd="relation1"/>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMI> 1 </OMI>
+    <OMA>
+      <OMS name="prefix" cd="units_ops1"/>
+      <OMS name="hecto" cd="units_siprefix1"/>
+      <OMV name="unit"/>
+    </OMA>
+  </OMA>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMA>
+      <OMS name="power" cd="arith1"/>
+      <OMI> 10 </OMI>
+      <OMI> 2 </OMI>
+    </OMA>
+    <OMV name="unit"/>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+    </CDDefinition>
+  
+    <CDDefinition>
+      <Name> deka </Name>
+      <Description>
+This symbol represents the fact that the subsequent unit has been 
+  effectively multiplied by $10$
+      </Description>
+      <CMP> This is unit multiplication by  $10$</CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS name="eq" cd="relation1"/>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMI> 1 </OMI>
+    <OMA>
+      <OMS name="prefix" cd="units_ops1"/>
+      <OMS name="deka" cd="units_siprefix1"/>
+      <OMV name="unit"/>
+    </OMA>
+  </OMA>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMA>
+      <OMS name="power" cd="arith1"/>
+      <OMI> 10 </OMI>
+      <OMI> 1 </OMI>
+    </OMA>
+    <OMV name="unit"/>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+    </CDDefinition>
+  
+    <CDDefinition>
+      <Name> deci </Name>
+      <Description>
+This symbol represents the fact that the subsequent unit has been 
+  effectively multiplied by $0.1$
+      </Description>
+      <CMP> This is unit multiplication by  $0.1$</CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS name="eq" cd="relation1"/>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMI> 1 </OMI>
+    <OMA>
+      <OMS name="prefix" cd="units_ops1"/>
+      <OMS name="deci" cd="units_siprefix1"/>
+      <OMV name="unit"/>
+    </OMA>
+  </OMA>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMA>
+      <OMS name="power" cd="arith1"/>
+      <OMI> 10 </OMI>
+      <OMI> -1 </OMI>
+    </OMA>
+    <OMV name="unit"/>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+    </CDDefinition>
+  
+    <CDDefinition>
+      <Name> centi </Name>
+      <Description>
+This symbol represents the fact that the subsequent unit has been 
+  effectively multiplied by $0.01$
+      </Description>
+      <CMP> This is unit multiplication by  $0.01$</CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS name="eq" cd="relation1"/>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMI> 1 </OMI>
+    <OMA>
+      <OMS name="prefix" cd="units_ops1"/>
+      <OMS name="centi" cd="units_siprefix1"/>
+      <OMV name="unit"/>
+    </OMA>
+  </OMA>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMA>
+      <OMS name="power" cd="arith1"/>
+      <OMI> 10 </OMI>
+      <OMI> -2 </OMI>
+    </OMA>
+    <OMV name="unit"/>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+    </CDDefinition>
+  
+    <CDDefinition>
+      <Name> milli </Name>
+      <Description>
+This symbol represents the fact that the subsequent unit has been 
+  effectively multiplied by $0.001$
+      </Description>
+      <CMP> This is unit multiplication by  $0.001$</CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS name="eq" cd="relation1"/>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMI> 1 </OMI>
+    <OMA>
+      <OMS name="prefix" cd="units_ops1"/>
+      <OMS name="milli" cd="units_siprefix1"/>
+      <OMV name="unit"/>
+    </OMA>
+  </OMA>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMA>
+      <OMS name="power" cd="arith1"/>
+      <OMI> 10 </OMI>
+      <OMI> -3 </OMI>
+    </OMA>
+    <OMV name="unit"/>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+    </CDDefinition>
+  
+    <CDDefinition>
+      <Name> micro </Name>
+      <Description>
+This symbol represents the fact that the subsequent unit has been 
+  effectively multiplied by $10^-6$
+      </Description>
+      <CMP> This is unit multiplication by  $10^-6$</CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS name="eq" cd="relation1"/>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMI> 1 </OMI>
+    <OMA>
+      <OMS name="prefix" cd="units_ops1"/>
+      <OMS name="micro" cd="units_siprefix1"/>
+      <OMV name="unit"/>
+    </OMA>
+  </OMA>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMA>
+      <OMS name="power" cd="arith1"/>
+      <OMI> 10 </OMI>
+      <OMI> -6 </OMI>
+    </OMA>
+    <OMV name="unit"/>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+    </CDDefinition>
+  
+    <CDDefinition>
+      <Name> nano </Name>
+      <Description>
+This symbol represents the fact that the subsequent unit has been 
+  effectively multiplied by $10^-9$
+      </Description>
+      <CMP> This is unit multiplication by  $10^-9$</CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS name="eq" cd="relation1"/>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMI> 1 </OMI>
+    <OMA>
+      <OMS name="prefix" cd="units_ops1"/>
+      <OMS name="nano" cd="units_siprefix1"/>
+      <OMV name="unit"/>
+    </OMA>
+  </OMA>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMA>
+      <OMS name="power" cd="arith1"/>
+      <OMI> 10 </OMI>
+      <OMI> -9 </OMI>
+    </OMA>
+    <OMV name="unit"/>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+    </CDDefinition>
+  
+    <CDDefinition>
+      <Name> pico </Name>
+      <Description>
+This symbol represents the fact that the subsequent unit has been 
+  effectively multiplied by $10^-12$
+      </Description>
+      <CMP> This is unit multiplication by  $10^-12$</CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS name="eq" cd="relation1"/>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMI> 1 </OMI>
+    <OMA>
+      <OMS name="prefix" cd="units_ops1"/>
+      <OMS name="pico" cd="units_siprefix1"/>
+      <OMV name="unit"/>
+    </OMA>
+  </OMA>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMA>
+      <OMS name="power" cd="arith1"/>
+      <OMI> 10 </OMI>
+      <OMI> -12 </OMI>
+    </OMA>
+    <OMV name="unit"/>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+    </CDDefinition>
+  
+    <CDDefinition>
+      <Name> femto </Name>
+      <Description>
+This symbol represents the fact that the subsequent unit has been 
+  effectively multiplied by $10^-15$
+      </Description>
+      <CMP> This is unit multiplication by  $10^-15$</CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS name="eq" cd="relation1"/>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMI> 1 </OMI>
+    <OMA>
+      <OMS name="prefix" cd="units_ops1"/>
+      <OMS name="femto" cd="units_siprefix1"/>
+      <OMV name="unit"/>
+    </OMA>
+  </OMA>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMA>
+      <OMS name="power" cd="arith1"/>
+      <OMI> 10 </OMI>
+      <OMI> -15 </OMI>
+    </OMA>
+    <OMV name="unit"/>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+    </CDDefinition>
+  
+    <CDDefinition>
+      <Name> atto </Name>
+      <Description>
+This symbol represents the fact that the subsequent unit has been 
+  effectively multiplied by $10^-18$
+      </Description>
+      <CMP> This is unit multiplication by  $10^-18$</CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS name="eq" cd="relation1"/>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMI> 1 </OMI>
+    <OMA>
+      <OMS name="prefix" cd="units_ops1"/>
+      <OMS name="atto" cd="units_siprefix1"/>
+      <OMV name="unit"/>
+    </OMA>
+  </OMA>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMA>
+      <OMS name="power" cd="arith1"/>
+      <OMI> 10 </OMI>
+      <OMI> -18 </OMI>
+    </OMA>
+    <OMV name="unit"/>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+    </CDDefinition>
+  
+    <CDDefinition>
+      <Name> zepto </Name>
+      <Description>
+This symbol represents the fact that the subsequent unit has been 
+  effectively multiplied by $10^-21$
+      </Description>
+      <CMP> This is unit multiplication by  $10^-21$</CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS name="eq" cd="relation1"/>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMI> 1 </OMI>
+    <OMA>
+      <OMS name="prefix" cd="units_ops1"/>
+      <OMS name="zepto" cd="units_siprefix1"/>
+      <OMV name="unit"/>
+    </OMA>
+  </OMA>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMA>
+      <OMS name="power" cd="arith1"/>
+      <OMI> 10 </OMI>
+      <OMI> -21 </OMI>
+    </OMA>
+    <OMV name="unit"/>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+    </CDDefinition>
+  
+    <CDDefinition>
+      <Name> yocto </Name>
+      <Description>
+This symbol represents the fact that the subsequent unit has been 
+  effectively multiplied by $10^-24$
+      </Description>
+      <CMP> This is unit multiplication by  $10^-24$</CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS name="eq" cd="relation1"/>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMI> 1 </OMI>
+    <OMA>
+      <OMS name="prefix" cd="units_ops1"/>
+      <OMS name="yocto" cd="units_siprefix1"/>
+      <OMV name="unit"/>
+    </OMA>
+  </OMA>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMA>
+      <OMS name="power" cd="arith1"/>
+      <OMI> 10 </OMI>
+      <OMI> -24 </OMI>
+    </OMA>
+    <OMV name="unit"/>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+    </CDDefinition>
+  
+
+</CD>
+  

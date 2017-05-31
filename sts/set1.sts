@@ -1,0 +1,199 @@
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="set1">
+<CDSStatus> official </CDSStatus>
+
+<CDSComment>
+Date:  1999-04-13
+Author: David Carlisle
+</CDSComment>
+
+<Signature name="cartesian_product">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS cd="sts" name="mapsto"/>
+    <OMA>
+      <OMS cd="sts" name="nary"/>
+      <OMA>
+        <OMS cd="sts" name="structure"/>
+	<OMV name="Set"/>
+      </OMA>
+    </OMA>
+    <OMA>
+      <OMS cd="sts" name="structure"/>
+      <OMV name="Set1"/>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="map">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+  <OMS cd="sts" name="mapsto"/>
+    <OMA>
+      <OMS cd="sts" name="mapsto"/>
+      <OMS cd="sts" name="Object"/>
+      <OMS cd="sts" name="Object"/>
+    </OMA>
+    <OMV name="Set"/>
+    <OMV name="Set"/>
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="suchthat">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+  <OMS cd="sts" name="mapsto"/>
+    <OMA>
+      <OMS name="structure" cd="sts"/>
+      <OMV name="Set"/>
+    </OMA>
+    <OMA>
+      <OMS name="mapsto" cd="sts"/>
+      <OMV name="Set"/>
+      <OMS name="Boolean" cd="setname2"/>
+    </OMA>
+    <OMA>
+      <OMS name="structure" cd="sts"/>
+      <OMV name="Set"/>
+    </OMA>
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="emptyset" >
+ <OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+   <OMV name="Set"/>
+ </OMOBJ>
+</Signature>
+
+<Signature name="size" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMV name="Set" />
+    <OMV name="CardinalNumber" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="set" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+  <OMS name="mapsto" cd="sts" />
+   <OMA>
+    <OMS name="nary" cd="sts" />
+     <OMS name="Object" cd="sts" />
+   </OMA>
+  <OMV name="Set" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="intersect" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMA>
+     <OMS name="nassoc" cd="sts" />
+     <OMV name="Set" />
+    </OMA>
+    <OMV name="Set" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="union" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMA>
+     <OMS name="nassoc" cd="sts" />
+     <OMV name="Set" />
+    </OMA>
+    <OMV name="Set" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="setdiff" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMV name="Set" />
+    <OMV name="Set" />
+    <OMV name="Set" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+
+<Signature name="subset" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMV name="Set" />
+    <OMV name="Set" />
+    <OMS cd="setname2" name="Boolean" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+
+<Signature name="in" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMS name="Object" cd="sts" />
+    <OMV name="Set" />
+    <OMS cd="setname2" name="Boolean" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="notin" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMS name="Object" cd="sts" />
+    <OMV name="Set" />
+    <OMS cd="setname2" name="Boolean" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+
+<Signature name="prsubset" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMV name="Set" />
+    <OMV name="Set" />
+    <OMS cd="setname2" name="Boolean" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="notsubset" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMV name="Set" />
+    <OMV name="Set" />
+    <OMS cd="setname2" name="Boolean" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="notprsubset" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMV name="Set" />
+    <OMV name="Set" />
+    <OMS cd="setname2" name="Boolean" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+</CDSignatures>

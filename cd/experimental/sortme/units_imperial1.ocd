@@ -1,0 +1,303 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDName> units_imperial1 </CDName>
+<CDURL> http://www.openmath.org/cd/units_imperial1.ocd </CDURL>
+<CDReviewDate> 2006-08-27 </CDReviewDate>
+<CDStatus> experimental </CDStatus>
+<CDDate> 2004-08-27 </CDDate>
+<CDVersion> 3 </CDVersion>
+<CDRevision> 0 </CDRevision>
+
+
+<Description> 
+This CD defines symbols to represent imperial standard measures.
+</Description>
+
+<CDDefinition>
+<Name> foot </Name>
+<Description>
+This symbol represents the measure of one foot. This is the standard
+imperial measure for distance.
+</Description>
+<CMP> 1 foot = 0.3048 metres </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS name="eq" cd="relation1"/>
+    <OMA>
+      <OMS name="times" cd="arith1"/>
+      <OMI> 1 </OMI>
+      <OMS name="foot" cd="units_imperial1"/>
+    </OMA>
+    <OMA>
+      <OMS name="times" cd="arith1"/>
+      <OMF dec="0.3048"/>
+      <OMS name="metre" cd="units_metric1"/>
+    </OMA>
+  </OMA>
+</OMOBJ></FMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> yard </Name>
+<Description>
+This symbol represents the measure of one yard. This is a
+standard imperial measure for distance, defined in terms of the foot.
+</Description>
+<CMP> 1 yard = 3 feet </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS name="eq" cd="relation1"/>
+    <OMA>
+      <OMS name="times" cd="arith1"/>
+      <OMI> 1 </OMI>
+      <OMS name="yard" cd="units_imperial1"/>
+    </OMA>
+    <OMA>
+      <OMS name="times" cd="arith1"/>
+      <OMI> 3 </OMI>
+      <OMS name="foot" cd="units_imperial1"/>
+    </OMA>
+  </OMA>
+</OMOBJ></FMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> mile </Name>
+<Description>
+This symbol represents the measure of one (land, or statute) mile. This is a
+standard imperial measure for distance, defined in terms of the foot.
+</Description>
+<CMP> 1 mile = 5280 feet </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS name="eq" cd="relation1"/>
+    <OMA>
+      <OMS name="times" cd="arith1"/>
+      <OMI> 1 </OMI>
+      <OMS name="mile" cd="units_imperial1"/>
+    </OMA>
+    <OMA>
+      <OMS name="times" cd="arith1"/>
+      <OMI> 5280 </OMI>
+      <OMS name="foot" cd="units_imperial1"/>
+    </OMA>
+  </OMA>
+</OMOBJ></FMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> acre </Name>
+<Description>
+This symbol represents the measure of one acre. This is a standard
+imperial measure for area.
+</Description>
+<CMP> 1 acre = 4840 square yards </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS name="eq" cd="relation1"/>
+    <OMA>
+      <OMS name="times" cd="arith1"/>
+      <OMI> 1 </OMI>
+      <OMS name="acre" cd="units_imperial1"/>
+    </OMA>
+    <OMA>
+      <OMS name="times" cd="arith1"/>
+      <OMI> 4840 </OMI>
+      <OMA>
+        <OMS name="times" cd="arith1"/>
+        <OMS name="yard" cd="units_imperial1"/>
+        <OMS name="yard" cd="units_imperial1"/>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ></FMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> pint </Name>
+<Description>
+This symbol represents the measure of one (imperial) pint. This is the standard
+imperial measure for volume. See units_us1 for the U.S. pint.
+</Description>
+
+<CMP> 1 pint = 0.568 litres </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS name="eq" cd="relation1"/>
+    <OMA>
+      <OMS name="times" cd="arith1"/>
+      <OMI> 1 </OMI>
+      <OMS name="pint" cd="units_imperial1"/>
+    </OMA>
+    <OMA>
+      <OMS name="times" cd="arith1"/>
+      <OMF dec="0.568"/>
+      <OMS name="litre" cd="units_metric1"/>
+    </OMA>
+  </OMA>
+</OMOBJ></FMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> miles_per_hr </Name>
+<Description>
+This symbol represents the measure of one mile per hour. This is a standard
+imperial measure for speed.
+</Description>
+<CMP> 1 miles_per_hr = 1 mile in 1 hour </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS name="eq" cd="relation1"/>
+  <OMS name="miles_per_hr" cd="units_imperial1"/>
+  <OMA>
+    <OMS name="divide" cd="arith1"/> 
+    <OMS name="mile" cd="units_imperial1"/> 
+    <OMS name="hour" cd="units_time1"/> 
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> miles_per_hr_sqrd </Name>
+<Description>
+This symbol represents the measure of one mile per hour
+squared. This is a standard imperial measure for acceleration.
+</Description>
+<CMP> 1 miles_per_hr_sqrd = 1 mile_per_hr (change) in 1 hour </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS name="eq" cd="relation1"/>
+  <OMS name="miles_per_hr_sqrd" cd="units_imperial1"/>
+  <OMA>
+    <OMS name="divide" cd="arith1"/> 
+    <OMS name="miles_per_hr" cd="units_imperial1"/> 
+    <OMS name="hour" cd="units_time1"/> 
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> pound_mass </Name>
+<Description>
+This symbol represents the measure of the mass which weighs one pound
+under the influence of standard gravity.
+</Description>
+
+<CMP> 1 pound = 0.45359237 kilograms </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS name="eq" cd="relation1"/>
+    <OMA>
+      <OMS name="times" cd="arith1"/>
+      <OMI> 1 </OMI>
+      <OMS name="pound_mass" cd="units_imperial1"/>
+    </OMA>
+    <OMA>
+      <OMS name="times" cd="arith1"/>
+      <OMF dec="453.59"/>
+      <OMS name="gramme" cd="units_metric1"/>
+    </OMA>
+  </OMA>
+</OMOBJ></FMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> pound_force </Name>
+<Description>
+This symbol represents the measure of force of one pound.
+</Description>
+
+<CMP> 1 pound force = 4.44822 Newtons </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS name="eq" cd="relation1"/>
+    <OMA>
+      <OMS name="times" cd="arith1"/>
+      <OMI> 1 </OMI>
+      <OMS name="pound_force" cd="units_imperial1"/>
+    </OMA>
+    <OMA>
+      <OMS name="times" cd="arith1"/>
+      <OMF dec="4.448"/>
+      <OMS name="Newton" cd="units_metric1"/>
+    </OMA>
+  </OMA>
+</OMOBJ></FMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> degree_Fahrenheit </Name>
+<Description>
+This symbol represents the measure of one degree Fahrenheit. This is
+the standard imperial measure for temperature.
+</Description>
+
+<CMP> 1 degree Fahrenheit = 0.5556*(1-32) degrees Celsius </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS name="eq" cd="relation1"/>
+    <OMA>
+      <OMS name="times" cd="arith1"/>
+      <OMI> 1 </OMI>
+      <OMS name="degree_Fahrenheit" cd="units_imperial1"/>
+    </OMA>
+    <OMA>
+		  <OMS name="times" cd="arith1"/>
+		  <OMF dec="0.5556"/>
+			<OMA>
+        <OMS name="minus" cd="arith1"/>
+				<OMS name="degree_Celsius" cd="units_metric1"/>
+  			<OMI> 32 </OMI>
+			</OMA>
+    </OMA>
+  </OMA>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> bar </Name>
+<Description>
+This symbol represents the measure of one bar. This is the standard
+imperial measure for pressure.
+</Description>
+
+<CMP> 1 bar = 100 000 Pascals </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS name="eq" cd="relation1"/>
+    <OMA>
+      <OMS name="times" cd="arith1"/>
+      <OMI> 1 </OMI>
+      <OMS name="bar" cd="units_imperial1"/>
+    </OMA>
+    <OMA>
+      <OMS name="times" cd="arith1"/>
+      <OMI> 100000 </OMI>
+      <OMS name="Pascal" cd="units_metric1"/>
+    </OMA>
+  </OMA>
+</OMOBJ></FMP>
+
+</CDDefinition>
+
+</CD>

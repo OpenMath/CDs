@@ -1,0 +1,468 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+
+<CDName> complex1 </CDName>
+<CDBase>http://www.openmath.org/cd</CDBase>
+<CDURL> http://www.openmath.org/cd/complex1.ocd </CDURL>
+<CDReviewDate>2006-03-30</CDReviewDate>
+<CDDate>2004-03-30</CDDate>
+<CDVersion>3</CDVersion>
+<CDRevision>0</CDRevision>
+<CDStatus> official </CDStatus>
+<Description>
+    This CD is intended to be `compatible' with the MathML view of
+    operations on and constructors for  complex numbers.
+</Description>
+
+<CDDefinition>
+<Name> complex_cartesian </Name>
+<Role>application</Role>
+<Description> 
+This symbol represents a constructor function for complex numbers
+specified as the Cartesian coordinates of the relevant point on the
+complex plane. It takes two arguments, the first is a number x to
+denote the real part and the second a number y to denote the imaginary
+part of the complex number x + i y. (Where i is the square root of -1.)
+</Description>
+<CMP>
+for all x,y | complex_cartesian(x,y) = x + iy
+</CMP>
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+    <OMBIND>
+      <OMS cd="quant1" name="forall"/>
+      <OMBVAR>
+        <OMV name="x"/>
+        <OMV name="y"/>
+      </OMBVAR>
+      <OMA>
+        <OMS cd="relation1" name="eq"/>
+        <OMA>
+          <OMS cd="complex1" name="complex_cartesian"/>
+          <OMV name="x"/>
+          <OMV name="y"/>
+        </OMA>
+        <OMA>
+          <OMS cd="arith1" name="plus"/>
+          <OMV name="x"/>
+          <OMA>
+            <OMS cd="arith1" name="times"/>
+            <OMS cd="nums1" name="i"/>
+            <OMV name="y"/>
+          </OMA>
+        </OMA>
+      </OMA>
+    </OMBIND>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> real </Name>
+<Role>application</Role>
+<Description> 
+This represents the real part of a complex number
+</Description> 
+<CMP>
+ for all x,y | x = real(x+iy)
+</CMP>
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+    <OMBIND>
+      <OMS cd="quant1" name="forall"/>
+      <OMBVAR>
+        <OMV name="x"/>
+        <OMV name="y"/>
+      </OMBVAR>
+      <OMA>
+        <OMS cd="relation1" name="eq"/>
+        <OMV name="x"/>
+        <OMA>
+          <OMS name="real" cd="complex1"/>
+          <OMA>
+            <OMS name="complex_cartesian" cd="complex1"/>
+            <OMV name="x"/>
+            <OMV name="y"/>
+          </OMA>
+        </OMA>
+      </OMA>
+    </OMBIND>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> imaginary </Name>
+<Role>application</Role>
+<Description> 
+This represents the imaginary part of a complex number
+</Description> 
+<CMP>
+for all x,y | y = imaginary(x+iy)
+</CMP>
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+    <OMBIND>
+      <OMS cd="quant1" name="forall"/>
+      <OMBVAR>
+        <OMV name="x"/>
+        <OMV name="y"/>
+      </OMBVAR>
+      <OMA>
+        <OMS cd="relation1" name="eq"/>
+        <OMV name="y"/>
+        <OMA>
+          <OMS name="imaginary" cd="complex1"/>
+          <OMA>
+            <OMS name="complex_cartesian" cd="complex1"/>
+            <OMV name="x"/>
+            <OMV name="y"/>
+          </OMA>
+        </OMA>
+      </OMA>
+    </OMBIND>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> complex_polar </Name>
+<Role>application</Role>
+<Description> 
+This symbol represents a constructor function for complex numbers
+specified as the polar coordinates of the relevant point on the complex
+plane. It takes two arguments, the first is a nonnegative number r to
+denote the magnitude and the second a number theta (given in radians)
+to denote the argument of the complex number r e^(i theta). (i and
+e are defined as in this CD).
+</Description>
+
+<CMP>
+for all r,a | complex_polar(r,a) = r*e^(a*i)
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMBIND>
+    <OMS cd="quant1" name="forall"/>
+    <OMBVAR>
+      <OMV name="r"/>
+      <OMV name="a"/>
+    </OMBVAR>
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="complex1" name="complex_polar"/>
+        <OMV name="r"/>
+        <OMV name="a"/>
+      </OMA>
+      <OMA>
+        <OMS cd="arith1" name="times"/>
+	<OMV name="r"/>
+	<OMA>
+	  <OMS cd="transc1" name="exp"/>
+	  <OMA>
+	    <OMS cd="arith1" name="times"/>
+	    <OMV name="a"/>
+	    <OMS cd="nums1" name="i"/>
+	  </OMA>
+	</OMA>
+      </OMA>
+    </OMA>
+  </OMBIND>
+</OMOBJ>
+</FMP>
+
+<CMP>
+for all x,y,r,a |
+(r sin a = y and r cos a = x) implies (complex_polar(r,a) = 
+complex_cartesian(x,y)
+</CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMBIND>
+  <OMS cd="quant1" name="forall"/>
+  <OMBVAR>
+    <OMV name="x"/>
+    <OMV name="y"/>
+    <OMV name="r"/>
+    <OMV name="a"/>
+  </OMBVAR>
+  <OMA>
+    <OMS cd="logic1" name="implies"/>
+    <OMA>
+      <OMS cd="logic1" name="and"/>
+      <OMA>
+        <OMS cd="relation1" name="eq"/>
+        <OMA>
+          <OMS cd="arith1" name="times"/>
+	  <OMV name="r"/>
+	  <OMA>
+	    <OMS cd="transc1" name="sin"/>
+	    <OMV name="a"/>
+	  </OMA>
+        </OMA>
+	<OMV name="y"/>
+      </OMA>
+      <OMA>
+        <OMS cd="relation1" name="eq"/>
+        <OMA>
+          <OMS cd="arith1" name="times"/>
+	  <OMV name="r"/>
+	  <OMA>
+	    <OMS cd="transc1" name="cos"/>
+	    <OMV name="a"/>
+	  </OMA>
+        </OMA>
+	<OMV name="x"/>
+      </OMA>
+    </OMA>
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="complex1" name="complex_polar"/>
+        <OMV name="r"/>
+        <OMV name="a"/>
+      </OMA>
+      <OMA>
+        <OMS cd="complex1" name="complex_cartesian"/>
+        <OMV name="x"/>
+        <OMV name="y"/>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMBIND>
+</OMOBJ></FMP>
+
+<CMP> for all x | if a is a real number and k is an integer then
+  complex_polar(x,a) = complex_polar(x,a+2*pi*k) </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMBIND>
+  <OMS cd="quant1" name="forall"/>
+  <OMBVAR>
+    <OMV name="x"/>
+  </OMBVAR>
+  <OMA>
+    <OMS cd="logic1" name="implies"/>
+    <OMA>
+      <OMS cd="logic1" name="and"/>
+      <OMA>
+        <OMS cd="set1" name="in"/>
+	<OMV name="a"/>
+	<OMS cd="setname1" name="R"/>
+      </OMA>
+      <OMA>
+        <OMS cd="set1" name="in"/>
+	<OMV name="k"/>
+	<OMS cd="setname1" name="Z"/>
+      </OMA>
+    </OMA>
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="complex1" name="complex_polar"/>
+	<OMV name="x"/>
+	<OMV name="a"/>
+      </OMA>
+      <OMA>
+        <OMS cd="complex1" name="complex_polar"/>
+	<OMV name="x"/>
+	<OMA>
+	  <OMS cd="arith1" name="plus"/>
+	  <OMV name="a"/>
+	  <OMA>
+	    <OMS cd="arith1" name="times"/>
+	    <OMI> 2 </OMI>
+	    <OMS cd="nums1" name="pi"/>
+	    <OMV name="k"/>
+	  </OMA>
+	</OMA>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMBIND>
+</OMOBJ></FMP>
+
+<Example> i = complex_polar(1,pi/2) 
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd"><OMA>
+  <OMS cd="relation1" name="eq"/>
+  <OMS cd="nums1" name="i"/>
+  <OMA>
+    <OMS cd="complex1" name="complex_polar"/>
+    <OMS cd="alg1" name="one"/>
+    <OMA>
+      <OMS cd="arith1" name="divide"/>
+      <OMS cd="nums1" name="pi"/>
+      <OMI> 2 </OMI>
+    </OMA>
+  </OMA>
+</OMA></OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> argument </Name>
+<Role>application</Role>
+<Description>
+This symbol represents the unary function which returns the argument
+of a complex number, viz. the angle which a straight line drawn from
+the number to zero makes with the Real line (measured
+anti-clockwise). The argument to the symbol is the complex number whos
+argument is being taken.
+</Description>
+
+<CMP> for all r,a | argument(complex_polar(r,a)=a) </CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMBIND>
+    <OMS cd="quant1" name="forall"/>
+    <OMBVAR>
+      <OMV name="r"/>
+      <OMV name="a"/>
+    </OMBVAR>
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="complex1" name="argument"/>
+        <OMA>
+          <OMS cd="complex1" name="complex_polar"/>
+          <OMV name="r"/>
+          <OMV name="a"/>
+        </OMA>
+      </OMA>
+      <OMV name="a"/>
+    </OMA>
+  </OMBIND>
+</OMOBJ>
+</FMP>
+
+<CMP> the argument of x+i*y = arctan(y/x) (if x is positive) </CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="logic1" name="implies"/>
+    <OMA>
+      <OMS cd="relation1" name="gt"/>
+      <OMV name="x"/>
+      <OMS cd="alg1" name="zero"/>
+    </OMA>
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="complex1" name="argument"/>
+        <OMA>
+          <OMS cd="complex1" name="complex_cartesian"/>
+          <OMV name="x"/>
+          <OMV name="y"/>
+        </OMA>
+      </OMA>
+      <OMA>
+        <OMS cd="transc1" name="arctan"/>
+        <OMA>
+          <OMS cd="arith1" name="divide"/>
+	  <OMV name="y"/>
+	  <OMV name="x"/>
+        </OMA>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+<CMP>
+  the argument of x+i*y = arctan(y,x) (two-argument arctan from transc2)
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMS cd="complex1" name="argument"/>
+      <OMA>
+        <OMS cd="complex1" name="complex_cartesian"/>
+        <OMV name="x"/>
+        <OMV name="y"/>
+      </OMA>
+    </OMA>
+    <OMA>
+      <OMS cd="transc2" name="arctan"/>
+      <OMV name="y"/>
+      <OMV name="x"/>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> conjugate </Name>
+<Role>application</Role>
+<Description> 
+A unary operator representing the complex conjugate of its argument.
+</Description>
+<CMP>
+ if a is a complex number then (conjugate(a) + a) is a real number
+</CMP>
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="logic1" name="implies"/>
+    <OMA>
+      <OMS cd="set1" name="in"/>
+      <OMV name="a"/>
+      <OMS cd="setname1" name="C"/>
+    </OMA>
+    <OMA>
+      <OMS cd="set1" name="in"/>
+      <OMA>
+        <OMS cd="arith1" name="plus"/>
+        <OMA>
+          <OMS cd="complex1" name="conjugate"/>
+          <OMV name="a"/>
+        </OMA>
+        <OMV name="a"/>
+      </OMA>
+      <OMS cd="setname1" name="R"/>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+</CDDefinition>
+
+</CD>

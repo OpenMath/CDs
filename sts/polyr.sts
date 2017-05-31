@@ -1,0 +1,68 @@
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="polyr">
+<CDSStatus> official </CDSStatus>
+
+<CDSComment>
+Date:  1999-11-14
+Author: James Davenport
+</CDSComment>
+
+<Signature name="term" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMS name="N" cd="setname1"/>
+    <OMV name="PolynomialR"/>
+    <OMV name="MonomialR"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="poly_r_rep" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMV name="PolynomialVariable" />
+    <OMA>
+      <OMS name="nary" cd="sts"/>
+      <OMV name="MonomialR"/>
+    </OMA>
+    <OMV name="PolyRrep" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="polynomial_r" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+   <OMA>
+     <OMS name="structure" cd="sts" />
+     <OMS name="polynomial_ring" cd="polysts"/>
+   </OMA>
+   <OMV name="PolyRrep"/>
+   <OMS name="polynomial_ring" cd="polysts" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="polynomial_ring_r" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+   <OMA>
+     <OMS name="structure" cd="sts"/>
+     <OMV name="Ring"/>
+   </OMA>
+   <OMA>
+     <OMS name="nary" cd="sts"/>
+     <OMV name="PolynomialVariable"/>
+   </OMA>
+   <OMA>
+     <OMS name="structure" cd="sts"/>
+     <OMS name="polynomial_ring" cd="polysts"/>
+   </OMA>
+ </OMA>
+</OMOBJ>
+</Signature>
+
+</CDSignatures>

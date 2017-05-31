@@ -1,0 +1,44 @@
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="opnode">
+<CDSStatus> official </CDSStatus>
+
+<CDSComment>
+Date:  2000-02-11
+Author: Bill Naylor
+</CDSComment>
+
+<Signature name="plus">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMS cd="sts" name="Object"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="minus">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMS cd="sts" name="Object"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="times">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMS cd="sts" name="Object"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="divide">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMS cd="sts" name="Object"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="return">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS cd="sts" name="mapsto"/>
+    <OMV name="SLPInstruction"/>
+    <OMV name="SLPPolynomial"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+</CDSignatures>
+

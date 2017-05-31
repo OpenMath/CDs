@@ -1,0 +1,50 @@
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="s_dist1">
+<CDSStatus> official </CDSStatus>
+
+<CDSComment>
+Date:  2000-04-05
+Author: Bill Naylor
+</CDSComment>
+
+<Signature name="mean">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMV name="Distribution"/>
+    <OMV name="Object"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="sdev">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMV name="Distribution"/>
+    <OMV name="Object"/>    
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="variance">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMV name="Distribution"/>
+    <OMV name="Object"/>    
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="moment">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMS name="Z" cd="setname1"/>
+    <OMS name="R" cd="setname1"/>
+    <OMV name="Distribution"/>
+    <OMV name="Object"/>    
+  </OMA>
+</OMOBJ>
+</Signature>
+</CDSignatures>

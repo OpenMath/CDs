@@ -1,0 +1,22 @@
+About the saxon directory
+=========================
+
+The Saxon XSLT processor of Michael Kay is distributed under a license that you
+can find in the COPYING file.  Using this software implies you are bound by
+this license.
+
+For you convenience, we bundle Saxon with Krextor.  Every once a while, we update to the latest version.
+
+For more details about Saxon and obtaining the latest version, please see:
+
+* http://www.saxonica.com (commercial, schema-aware version)
+* http://saxon.sourceforge.net/ (open-source version without schema support;
+  the one used here)
+
+Any trouble with the runnable capabilities of _this_ installation should be
+reported on the Krextor Trac at http://trac.kwarc.info/krextor/, not to the
+Saxon developers.
+
+Christoph Lange, 2011-07-22
+ch.lange@jacobs-university.de
+

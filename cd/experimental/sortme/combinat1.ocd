@@ -1,0 +1,555 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+
+<CDName> combinat1 </CDName>
+<CDBase>http://www.openmath.org/cd</CDBase>
+<CDURL> http://www.openmath.org/cd/combinat1.ocd </CDURL>
+<CDReviewDate>2006-03-30</CDReviewDate>
+<CDDate>2004-03-30</CDDate>
+<CDVersion>3</CDVersion>
+<CDRevision>0</CDRevision>
+<CDStatus> experimental </CDStatus>
+<Description>
+This CD defines some basic combinatorics definitions.
+</Description>
+<CDComment>
+Written by S. Dalmas (INRIA Sophia Antipolis) for the Esprit OpenMath
+project. 
+</CDComment>
+
+<CDDefinition>
+<Name> binomial </Name>
+<Role>application</Role>
+<Description>
+The binomial coefficients. binomial(n, m) is the number of ways of choosing m
+objects from a collection of n distinct objects without regard to the order.
+</Description>
+
+<CMP>
+binomial(n,m) = n!/(m!*(n-m)!)
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMS cd="combinat1" name="binomial"/>
+      <OMV name="n"/>
+      <OMV name="m"/>
+    </OMA>
+    <OMA>
+      <OMS cd="arith1" name="divide"/>
+      <OMA>
+        <OMS cd="integer1" name="factorial"/>
+        <OMV name="n"/>
+      </OMA>
+      <OMA>
+        <OMS cd="arith1" name="times"/>
+        <OMA>
+          <OMS cd="integer1" name="factorial"/>
+	  <OMV name="m"/>
+        </OMA>
+        <OMA>
+          <OMS cd="integer1" name="factorial"/>
+	  <OMA>
+	    <OMS cd="arith1" name="minus"/>
+	    <OMV name="n"/>
+	    <OMV name="m"/>
+	  </OMA>
+        </OMA>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+<Example>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMA>
+  <OMS cd="relation1" name="eq"/>
+  <OMA> 
+    <OMS cd="combinat1" name="binomial"/>
+    <OMI> 4 </OMI>
+    <OMI> 2 </OMI>
+  </OMA>
+  <OMI> 6 </OMI>
+</OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> multinomial </Name>
+<Role>application</Role>
+<Description>
+The multinomial coefficient, multinomial(n, n1, ... nk) is the number of
+ways of choosing ni objects of type i (i from 1 to k) without regard to
+order, in such a way that the total number of objects chosen is n.
+multinomial(n, n1, ... nk) is equal to n!/(n1!*n2! ...*nk!).
+</Description>
+
+<CMP>
+multinomial(n, n1, ... nk) is equal to n!/(n1!*n2! ...*nk!) where n=n1+...+nk
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="logic1" name="and"/>
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="fns2" name="apply_to_list"/>
+	<OMS cd="combinat1" name="multinomial"/>
+	<OMA>
+	  <OMS cd="list2" name="cons"/>
+	  <OMV name="n"/>
+	  <OMV name="nList"/>
+	</OMA>
+      </OMA>
+      <OMA>
+        <OMS cd="arith1" name="divide"/>
+	<OMA>
+	  <OMS cd="integer1" name="factorial"/>
+	  <OMV name="n"/>
+	</OMA>
+        <OMA>
+          <OMS cd="fns2" name="apply_to_list"/>
+          <OMS cd="arith1" name="times"/>
+          <OMV name="nList2"/>
+        </OMA>
+      </OMA>
+    </OMA>
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="linalg1" name="vector_selector"/>
+	<OMV name="i"/>
+	<OMA>
+	  <OMS cd="fns2" name="apply_to_list"/>
+	  <OMS cd="linalg2" name="vector"/>
+	  <OMV name="nlist2"/>
+	</OMA>
+      </OMA>
+      <OMA>
+        <OMS cd="integer1" name="factorial"/>
+	<OMA>
+	  <OMS cd="linalg1" name="vector_selector"/>
+	  <OMV name="i"/>
+	  <OMA>
+	    <OMS cd="fns2" name="apply_to_list"/>
+	    <OMS cd="linalg2" name="vector"/>
+	    <OMV name="nList"/>
+	  </OMA>
+	</OMA>
+      </OMA>
+    </OMA>
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMV name="n"/>
+      <OMA>
+        <OMS cd="fns2" name="apply_to_list"/>
+	<OMS cd="arith1" name="plus"/>
+	<OMV name="nList"/>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+<Example>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMA>
+  <OMS cd="relation1" name="eq"/>
+  <OMA> 
+    <OMS cd="combinat1" name="multinomial"/>
+    <OMI> 8 </OMI>
+    <OMI> 2 </OMI>
+    <OMI> 3 </OMI>
+    <OMI> 3 </OMI>
+  </OMA>
+  <OMI> 560 </OMI>
+</OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> Stirling1 </Name>
+<Role>application</Role>
+<Description>
+The Stirling numbers of the first kind. (-1)^(n-m)*Stirling1(n,m) is the
+number of permutations of n symbols which have exactly m cycles. 
+Note that there are a few slightly different definitions of these numbers.
+</Description>
+
+<CMP>
+Stirling1(n,m) = the sum k=0 to n-m of (-1)^k * binomial(n-1+k, n-m+k) *
+binomial(2n-m,n-m-k) * Stirling2(n,m)
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMS cd="combinat1" name="Stirling1"/>
+      <OMV name="n"/>
+      <OMV name="m"/>
+    </OMA>
+    <OMA>
+      <OMS cd="arith1" name="sum"/>
+      <OMA>
+        <OMS cd="interval1" name="integer_interval"/>
+        <OMS cd="alg1" name="zero"/>
+        <OMA>
+	  <OMS cd="arith1" name="minus"/>
+	  <OMV name="n"/>
+	  <OMV name="m"/>
+	</OMA>
+      </OMA>
+      <OMBIND>
+	<OMS cd="fns1" name="lambda"/>
+	<OMBVAR>
+	  <OMV name="k"/>
+	</OMBVAR>
+	<OMA>
+	  <OMS cd="arith1" name="times"/>
+	  <OMA>
+	    <OMS cd="arith1" name="power"/>
+	    <OMA>
+	      <OMS cd="arith1" name="unary_minus"/>
+	      <OMS cd="alg1" name="one"/>
+	    </OMA>
+	    <OMV name="k"/>
+	  </OMA>
+	  <OMA>
+	    <OMS cd="combinat1" name="binomial"/>
+	    <OMA>
+	      <OMS cd="arith1" name="plus"/>
+	      <OMA>
+	        <OMS cd="arith1" name="minus"/>
+		<OMV name="n"/>
+		<OMS cd="alg1" name="one"/>
+	      </OMA>
+	      <OMV name="k"/>
+	    </OMA>
+	    <OMA>
+	      <OMS cd="arith1" name="plus"/>
+	      <OMA>
+	        <OMS cd="arith1" name="minus"/>
+		<OMV name="n"/>
+		<OMV name="m"/>
+	      </OMA>
+	      <OMV name="k"/>
+	    </OMA>
+	  </OMA>
+	  <OMA>
+	    <OMS cd="combinat1" name="binomial"/>
+	    <OMA>
+	      <OMS cd="arith1" name="minus"/>
+	      <OMA>
+		<OMS cd="arith1" name="times"/>
+		<OMI> 2 </OMI>
+		<OMV name="n"/>
+	      </OMA>
+	      <OMV name="m"/>
+	    </OMA>
+	    <OMA>
+	      <OMS cd="arith1" name="minus"/>
+	      <OMA>
+		<OMS cd="arith1" name="minus"/>
+		<OMV name="n"/>
+		<OMV name="m"/>
+	      </OMA>
+	      <OMV name="k"/>
+	    </OMA>
+	  </OMA>
+	  <OMA>
+	    <OMS cd="combinat1" name="Stirling2"/>
+	    <OMV name="n"/>
+	    <OMV name="m"/>
+	  </OMA>
+	</OMA>
+      </OMBIND>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+<Example>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMA>
+  <OMS cd="relation1" name="eq"/>
+  <OMA> 
+    <OMS cd="combinat1" name="Stirling1"/>
+    <OMI> 10 </OMI>
+    <OMI>  7 </OMI>
+  </OMA>
+  <OMI> -9450 </OMI>
+</OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> Stirling2 </Name>
+<Role>application</Role>
+<Description>
+The Stirling numbers of the second kind. Stirling2(n, m) is the number of
+partitions of a set with n elements into m non empty subsets. 
+Note that there are a few slightly different definitions of these numbers.
+</Description>
+
+<CMP>
+Stirling2(n,m) = 1/m! * the sum from k=0 to m of (-1)^(m-k) * 
+binomial(m,k) * k^n
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMS cd="combinat1" name="Stirling2"/>
+      <OMV name="n"/>
+      <OMV name="m"/>
+    </OMA>
+    <OMA>
+      <OMS cd="arith1" name="times"/>
+      <OMA>
+        <OMS cd="arith1" name="divide"/>
+	<OMS cd="alg1" name="one"/>
+	<OMA>
+	  <OMS cd="integer1" name="factorial"/>
+	  <OMV name="m"/>
+	</OMA>
+      </OMA>
+      <OMA>
+        <OMS cd="arith1" name="sum"/>
+	<OMA>
+	  <OMS cd="interval1" name="integer_interval"/>
+	  <OMS cd="alg1" name="zero"/>
+	  <OMV name="m"/>
+	</OMA>
+	<OMBIND>
+	  <OMS cd="fns1" name="lambda"/>
+	  <OMBVAR>
+	    <OMV name="k"/>
+	  </OMBVAR>
+	  <OMA>
+	    <OMS cd="arith1" name="times"/>
+	    <OMA>
+	      <OMS cd="arith1" name="power"/>
+	      <OMA>
+	        <OMS cd="arith1" name="unary_minus"/>
+	        <OMS cd="alg1" name="one"/>
+	      </OMA>
+	      <OMA>
+	        <OMS cd="arith1" name="minus"/>
+	        <OMV name="m"/>
+	        <OMV name="k"/>
+	      </OMA>
+	    </OMA>
+	    <OMA>
+	      <OMS cd="combinat1" name="binomial"/>
+	      <OMV name="m"/>
+	      <OMV name="k"/>
+	    </OMA>
+	    <OMA>
+	      <OMS cd="arith1" name="power"/>
+	      <OMV name="k"/>
+	      <OMV name="n"/>
+	    </OMA>
+	  </OMA>
+	</OMBIND>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+<Example>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMA>
+  <OMS cd="relation1" name="eq"/>
+  <OMA> 
+    <OMS cd="combinat1" name="Stirling2"/>
+    <OMI> 7 </OMI>
+    <OMI> 3 </OMI>
+  </OMA>
+  <OMI> 301 </OMI>
+</OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> Fibonacci </Name>
+<Role>application</Role>
+<Description>
+The Fibonacci numbers, defined by the linear recurrence:
+Fibonacci(0) = 0, Fibonacci(1) = 1, and 
+Fibonacci(n + 1) = Fibonacci(n) + Fibonacci(n - 1).
+Note that some authors define Fibonacci(0) = 1.
+</Description>
+<CMP>
+Fibonacci(0) = 0, Fibonacci(1) = 1, and 
+Fibonacci(n + 1) = Fibonacci(n) + Fibonacci(n - 1)
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="logic1" name="and"/>
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="combinat1" name="Fibonacci"/>
+	<OMS cd="alg1" name="zero"/>
+      </OMA>
+      <OMS cd="alg1" name="zero"/>
+    </OMA>
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="combinat1" name="Fibonacci"/>
+	<OMS cd="alg1" name="one"/>
+      </OMA>
+      <OMS cd="alg1" name="one"/>
+    </OMA>
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="combinat1" name="Fibonacci"/>
+	<OMA>
+	  <OMS cd="arith1" name="plus"/>
+	  <OMV name="n"/>
+	  <OMS cd="alg1" name="one"/>
+	</OMA>
+      </OMA>
+      <OMA>
+        <OMS cd="arith1" name="plus"/>
+	<OMA>
+	  <OMS cd="combinat1" name="Fibonacci"/>
+	  <OMV name="n"/>
+	</OMA>
+	<OMA>
+	  <OMS cd="combinat1" name="Fibonacci"/>
+	  <OMA>
+	    <OMS cd="arith1" name="minus"/>
+	    <OMV name="n"/>
+	    <OMS cd="alg1" name="one"/>
+	  </OMA>
+	</OMA>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+<Example>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMA>
+  <OMS cd="relation1" name="eq"/>
+  <OMA> 
+    <OMS cd="combinat1" name="Fibonacci"/>
+    <OMI> 10 </OMI>
+  </OMA>
+  <OMI> 55 </OMI>
+</OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> Bell </Name>
+<Role>application</Role>
+<Description>
+The Bell numbers: Bell(n) is the total number of possible partitions of a set
+of n elements. 
+</Description>
+
+<CMP>
+Bell(n) = the sum from k=0 to n of Stirling2(n,k)
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMS cd="combinat1" name="Bell"/>
+      <OMV name="n"/>
+    </OMA>
+    <OMA>
+      <OMS cd="arith1" name="sum"/>
+      <OMA>
+        <OMS cd="interval1" name="integer_interval"/>
+        <OMS cd="alg1" name="zero"/>
+        <OMV name="n"/>
+      </OMA>
+      <OMBIND>
+        <OMS cd="fns1" name="lambda"/>
+	<OMBVAR>
+	  <OMV name="k"/>
+	</OMBVAR>
+	<OMA>
+	  <OMS cd="combinat1" name="Stirling2"/>
+	  <OMV name="n"/>
+	  <OMV name="k"/>
+	</OMA>
+      </OMBIND>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+<Example>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMA>
+  <OMS cd="relation1" name="eq"/>
+  <OMA> 
+    <OMS cd="combinat1" name="Bell"/>
+    <OMI> 7 </OMI>
+  </OMA>
+  <OMI> 877 </OMI>
+</OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+</CD>

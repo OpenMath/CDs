@@ -1,0 +1,343 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+
+  <CDName> polyslp </CDName>
+<CDBase>http://www.openmath.org/cd</CDBase> 
+  <CDURL> http://www.openmath.org/cd/polyslp.ocd </CDURL>
+  <CDReviewDate>2006-03-30</CDReviewDate>
+  <CDDate>2004-03-30</CDDate>
+  <CDStatus> experimental </CDStatus>
+  <CDVersion>3</CDVersion>
+ <CDRevision>1</CDRevision>
+
+  <Description>
+    This CD contains operators to deal with polynomials and more precisely 
+    polynomials held in Straight Line Program representation.
+  </Description>
+
+  <CDComment>
+    Definition of data-structure constructors
+  </CDComment>
+
+  <CDDefinition>
+     <Name> polynomial_SLP </Name>
+<Role>application</Role>
+     <Description>
+       The constructor of Polynomials built with Straight Line Program
+       representation. 
+       The first argument is the polynomial ring containing the polynomial 
+       built with poly_ring_SLP,
+       The second argument is the program body built with prog_body. 
+     </Description>
+    <Example>
+    The polynomial x^2 + y^2,
+    which may be represented as the Straight Line Program :
+
+        line 1 : InputNode	x
+        line 2 : InputNode	y
+        line 3 : OperationNode 	times line 1, line 1
+        line 4 : OperationNode 	times line 2, line 2
+        line 5 : OperationNode 	plus line 3, line 4 &gt;
+
+    may be encoded as :
+
+
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+    <OMA>
+      <OMS cd="polyslp" name="polynomial_SLP"/>
+      <OMA>
+        <OMS cd="polyslp" name="poly_ring_SLP"/>
+        <OMS cd="setname1" name="Z"/>
+        <OMV name="x"/>
+        <OMV name="y"/>
+      </OMA>
+      <OMA>
+        <OMS cd="polyslp" name="prog_body"/>
+        <OMA>
+          <OMS cd="polyslp" name="inp_node"/>
+          <OMV name="x"/>
+        </OMA>
+        <OMA>
+          <OMS cd="polyslp" name="inp_node"/>
+          <OMV name="y"/>
+        </OMA>
+        <OMA>
+          <OMS cd="polyslp" name="op_node"/>
+	  <OMS cd="opnode" name="times"/>
+          <OMI> 1 </OMI>
+          <OMI> 1 </OMI>
+        </OMA>
+        <OMA>
+          <OMS cd="polyslp" name="op_node"/>
+	  <OMS cd="opnode" name="times"/>
+          <OMI> 2 </OMI>
+          <OMI> 2 </OMI>
+        </OMA>
+	<OMA>
+	  <OMS cd="opnode" name="return"/>
+          <OMA>
+            <OMS cd="polyslp" name="op_node"/>
+	    <OMS cd="opnode" name="plus"/>
+            <OMI> 3 </OMI>
+            <OMI> 4 </OMI>
+	  </OMA>
+        </OMA>
+      </OMA>
+    </OMA>
+  </OMOBJ>
+  </Example>
+  </CDDefinition>
+
+  <CDDefinition>
+    <Name> prog_body </Name>
+<Role>application</Role>
+    <Description>
+      The constructor of the body of the straight line program
+      the arguments represent straight line instructions, as constructed by the
+      following three constructors, op_node, inp_node and const_node, possibly
+      wrapped in the return symbol (from the opnode CD). The order
+      is taken to be the order in which they appear.
+    </Description>
+  </CDDefinition>
+
+  <CDDefinition>
+    <Name> op_node </Name>
+<Role>application</Role>
+    <Description>
+      This constructor takes three arguments.
+      The first argument is a symbol from opnode, meant to specify
+      whether the node is a plus, minus times or divide node, 
+      the second and third arguments are integers, which are the numbers
+      of the lines which are the arguments of the operation
+    </Description>
+  </CDDefinition>
+
+  <CDDefinition>
+    <Name> inp_node </Name>
+<Role>application</Role>
+    <Description>
+      This constructor takes one argument, which is a variable. The return
+       value is intended to represent an input node.
+    </Description>
+  </CDDefinition>
+
+  <CDDefinition>
+    <Name> const_node </Name>
+<Role>application</Role>
+    <Description>
+      This constructor takes one argument, which is a value from the 
+      coefficient ring. It is intended to represent a constant node.
+    </Description>
+  </CDDefinition>
+
+  <CDComment>
+    Definition of some functions which are specific to slps
+  </CDComment>
+
+  <CDDefinition>
+    <Name> length </Name>
+<Role>application</Role>
+    <Description>
+      A unary function taking an slp as argument and returning the
+      length of this slp.
+    </Description>
+  </CDDefinition>
+
+  <CDDefinition>
+    <Name> depth </Name>
+<Role>application</Role>
+    <Description>
+      A unary function taking an slp as argument and returning the
+      greatest depth of any leaf node, that is the length of the longest 
+      contiguous path to any leaf node.
+    </Description>
+  </CDDefinition>
+
+  <CDDefinition>
+    <Name> slp_degree </Name>
+<Role>application</Role>
+    <Description>
+      A unary function taking an slp as argument and returning the
+      apparent multiplicative degree of the slp, without performing
+      any cancellation.
+    </Description>
+
+    <CMP> The slp_degree of the polynomial x &gt;= degree(x) </CMP>
+
+    <FMP>
+      <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+        <OMA>
+	  <OMS cd="relation1" name="geq"/>
+	  <OMA>
+	    <OMS cd="polyslp" name="slp_degree"/>
+	    <OMV name="x"/>
+	  </OMA>
+	  <OMA>
+	    <OMS cd="poly" name="degree"/>
+	    <OMV name="x"/>
+	  </OMA>
+	</OMA>
+      </OMOBJ>
+    </FMP>
+
+    <Example>
+      slpDegree(convert(x^2)@poly_ring_SLP - convert(x^2)@poly_ring_SLP) = 2
+      <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+      <OMA>
+        <OMS cd="relation1" name="eq"/>
+	<OMA>
+	  <OMS cd="polyslp" name="polynomial_SLP"/>
+	  <OMA>
+	    <OMS cd="polyslp" name="poly_ring_SLP"/>
+            <OMS name="Z" cd="setname1"/>
+            <OMV name="x"/>
+	  </OMA>
+	  <OMA>
+	    <OMS cd="polyslp" name="prog_body"/>
+	    <OMA>
+	      <OMS cd="polyslp" name="inp_node"/>
+	      <OMV name="x"/>
+	    </OMA>
+	    <OMA>
+	      <OMS cd="polyslp" name="op_node"/>
+	      <OMS cd="opnode" name="times"/>
+	      <OMI> 1 </OMI>
+	      <OMI> 1 </OMI>
+	    </OMA>      
+	    <OMA>
+	      <OMS cd="opnode" name="return"/>
+	      <OMA>
+	        <OMS cd="polyslp" name="op_node"/>
+		<OMS cd="opnode" name="minus"/>
+		<OMI> 2 </OMI>
+		<OMI> 2 </OMI>
+	      </OMA>	
+	    </OMA>
+	  </OMA>
+	</OMA>
+	<OMI> 2 </OMI>
+      </OMA>
+      </OMOBJ>
+    </Example>
+  </CDDefinition>
+
+  <CDDefinition>
+    <Name> return_node </Name>
+<Role>application</Role>
+    <Description>
+      Takes an slp as the argument, and
+      returns the return node of the slp.
+    </Description>
+  </CDDefinition>
+
+  <CDDefinition>
+    <Name> node_selector </Name>
+<Role>application</Role>
+    <Description>
+      Takes an slp as the first argument, the second argument is the
+      position of the required node. Returns the node of the slp at
+      this position.
+    </Description>
+  </CDDefinition>
+
+  <CDDefinition>
+    <Name> left_ref </Name>
+<Role>application</Role>
+    <Description>
+      Takes as argument a node of an slp.
+      Returns the value of the left hand pointer of the node.
+    </Description>
+  </CDDefinition>
+
+  <CDDefinition>
+    <Name> right_ref </Name>
+<Role>application</Role>
+    <Description>
+      Takes as argument a node of an slp.
+      Returns the value of the right hand pointer of the node.
+    </Description>
+  </CDDefinition>
+
+  <CDComment>
+    Definition of some functions which are very useful for slps
+  </CDComment>
+
+  <CDDefinition>
+    <Name> quotient </Name>
+<Role>application</Role>
+    <Description>
+      A quotient function for polynomials represented by slps. It is a
+      requirement that this is an exact division.
+    </Description>
+  </CDDefinition>
+
+  <CDDefinition>
+    <Name> monte_carlo_eq </Name>
+<Role>application</Role>
+    <Description>
+      This is a Monte-Carlo equality test,
+      it takes three arguments, the first two are slps representing
+      polynomials, the third argument is the maximum probability of
+      incorrectness that is required of the equality test.
+      (Monte-Carlo equality tests are very important for slps as they
+      offer the only tractable method of solving the equality problem
+      in many cases)
+    </Description>
+  </CDDefinition>
+
+  <CDDefinition>
+    <Name> poly_ring_SLP </Name>
+<Role>application</Role>
+    <Description>
+      The constructor of the polynomial ring. The first argument is a ring, 
+      (the ring of the coefficients), the rest are the variables, in any order.
+    </Description>
+       <Example>
+
+An example to represent a polynomial ring over the integers, with the
+two variables x,y. viz. Z[x,y]
+
+         <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+           <OMA>
+             <OMS name="poly_ring_SLP" cd="polyslp"/>
+             <OMS name="Z" cd="setname1"/>
+             <OMV name="x"/>
+             <OMV name="y"/>
+           </OMA>
+         </OMOBJ>
+       </Example>
+  </CDDefinition>
+
+</CD>

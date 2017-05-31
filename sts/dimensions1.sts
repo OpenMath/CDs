@@ -1,0 +1,124 @@
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="dimensions1">
+<CDSStatus> official </CDSStatus>
+
+<Signature name="length" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMV name="PhysicalDimension"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="area" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMV name="PhysicalDimension"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="volume" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMV name="PhysicalDimension"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="velocity" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMV name="PhysicalDimension"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="acceleration" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMV name="PhysicalDimension"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="time" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMV name="PhysicalDimension"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="mass" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMV name="PhysicalDimension"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="force" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMV name="PhysicalDimension"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="temperature" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMV name="PhysicalDimension"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="pressure" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMV name="PhysicalDimension"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="charge" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMV name="PhysicalDimension"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="current" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMV name="PhysicalDimension"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="voltage" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMV name="PhysicalDimension"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="resistance" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMV name="PhysicalDimension"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="density" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMV name="PhysicalDimension"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="energy" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMV name="PhysicalDimension"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="concentration" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMV name="PhysicalDimension"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="momentum" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMV name="PhysicalDimension"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="speed" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMV name="PhysicalDimension"/>
+</OMOBJ>
+</Signature>
+
+
+<Signature name="displacement" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMV name="PhysicalDimension"/>
+</OMOBJ>
+</Signature>
+</CDSignatures>

@@ -1,0 +1,15 @@
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="units_ops1">
+<CDSStatus> experimental </CDSStatus>
+
+<Signature name="prefix" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMS cd="units_sts" name="prefix"/>
+    <OMV name="dimension"/>
+    <OMV name="dimension"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+</CDSignatures>

@@ -1,0 +1,52 @@
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="list1">
+<CDSStatus> official </CDSStatus>
+
+
+<Signature name="map">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS cd="sts" name="mapsto"/>
+    <OMA>
+      <OMS cd="sts" name="mapsto"/>
+      <OMS cd="sts" name="Object"/>
+      <OMS cd="sts" name="Object"/>
+    </OMA>
+    <OMV name="List"/>
+    <OMV name="List"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="suchthat">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS cd="sts" name="mapsto"/>
+    <OMA>
+      <OMS name="structure" cd="sts"/>
+      <OMV name="Set"/>
+    </OMA>
+    <OMA>
+      <OMS name="mapsto" cd="sts"/>
+      <OMV name="Set" />
+      <OMS name="Boolean" cd="setname2"/>
+    </OMA>
+    <OMV name="List"/>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="list" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+  <OMS name="mapsto" cd="sts" />
+   <OMA>
+    <OMS name="nary" cd="sts" />
+     <OMS name="Object" cd="sts" />
+   </OMA>
+  <OMS name="Object" cd="sts" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+
+</CDSignatures>

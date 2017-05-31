@@ -1,0 +1,151 @@
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="transc3" >
+<CDSStatus> official </CDSStatus>
+
+<CDSComment>
+Date:  2002-09-17
+Author: James Davenport
+</CDSComment>
+
+<Signature name="log" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMV name="PositiveInteger" />
+    <OMS name="NumericalValue" cd="sts" />
+    <OMS name="SetNumericalValue" cd="sts" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="ln" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMS name="NumericalValue" cd="sts" />
+    <OMS name="SetNumericalValue" cd="sts" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="arcsin" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMS name="NumericalValue" cd="sts" />
+    <OMS name="SetNumericalValue" cd="sts" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="arccos" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMS name="NumericalValue" cd="sts" />
+    <OMS name="SetNumericalValue" cd="sts" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="arctan" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMS name="NumericalValue" cd="sts" />
+    <OMS name="SetNumericalValue" cd="sts" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="arcsec" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMS name="NumericalValue" cd="sts" />
+    <OMS name="SetNumericalValue" cd="sts" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="arccsc" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMS name="NumericalValue" cd="sts" />
+    <OMS name="SetNumericalValue" cd="sts" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="arccot" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMS name="NumericalValue" cd="sts" />
+    <OMS name="SetNumericalValue" cd="sts" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="arcsinh" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMS name="NumericalValue" cd="sts" />
+    <OMS name="SetNumericalValue" cd="sts" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="arccosh" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMS name="NumericalValue" cd="sts" />
+    <OMS name="SetNumericalValue" cd="sts" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="arctanh" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMS name="NumericalValue" cd="sts" />
+    <OMS name="SetNumericalValue" cd="sts" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="arcsech" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMS name="NumericalValue" cd="sts" />
+    <OMS name="SetNumericalValue" cd="sts" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="arccsch" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMS name="NumericalValue" cd="sts" />
+    <OMS name="SetNumericalValue" cd="sts" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="arccoth" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMS name="NumericalValue" cd="sts" />
+    <OMS name="SetNumericalValue" cd="sts" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+</CDSignatures>
+

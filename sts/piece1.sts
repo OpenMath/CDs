@@ -1,0 +1,46 @@
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="piece1">
+<CDSStatus> official </CDSStatus>
+
+<CDSComment>
+Date:  2001-03-01
+Author: James Davenport
+Notes: STS cannot encode the requirement that there may be at most one
+       otherwise, and it must be the last element. However, this is the
+       intention.
+</CDSComment>
+
+<Signature name="piecewise" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+   <OMA>
+     <OMS name="nary" cd="sts" />
+     <OMV name="Piece" />
+   </OMA>
+   <OMS name="Object" cd="sts" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="piece" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+   <OMS name="Object" cd="sts" />
+   <OMS name="Boolean" cd="setname2"/>
+   <OMV name="Piece" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="otherwise" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+   <OMS name="Object" cd="sts" />
+   <OMV name="Piece" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+</CDSignatures>

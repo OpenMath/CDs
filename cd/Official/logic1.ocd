@@ -1,0 +1,337 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+
+<CDName> logic1 </CDName>
+<CDBase>http://www.openmath.org/cd</CDBase>
+<CDURL> http://www.openmath.org/cd/logic1.ocd </CDURL>
+<CDReviewDate>2006-03-30</CDReviewDate>
+<CDDate>2004-03-30</CDDate>
+<CDVersion>3</CDVersion>
+<CDRevision>0</CDRevision>
+<CDStatus> official </CDStatus>
+<Description>
+    This CD holds the basic logic functions.
+</Description>
+
+<CDDefinition>
+<Name> equivalent </Name>
+<Role>application</Role>
+<Description> 
+This symbol is used to show that two boolean expressions are logically 
+equivalent, that is have the same boolean value for any inputs.
+</Description>
+
+<CMP> The condition (A is equivalent to B) is equivalent to the
+condition that (A implies B and B implies A) </CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="logic1" name="equivalent"/>
+    <OMA>
+      <OMS cd="logic1" name="equivalent"/>
+      <OMV name="A"/>
+      <OMV name="B"/>
+    </OMA>
+    <OMA>
+      <OMS cd="logic1" name="and"/>
+      <OMA>
+        <OMS cd="logic1" name="implies"/>
+	<OMV name="A"/>
+	<OMV name="B"/>
+      </OMA>
+      <OMA>
+        <OMS cd="logic1" name="implies"/>
+	<OMV name="B"/>
+	<OMV name="A"/>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> not </Name>
+<Role>application</Role>
+<Description> 
+This symbol represents the logical not function which takes one boolean
+argument, and returns the opposite boolean value.
+</Description>
+<CMP> for all x | not(not(x))=x </CMP>
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMBIND>
+  <OMS cd="quant1" name="forall"/>
+  <OMBVAR>
+    <OMV name="x"/>
+  </OMBVAR>
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMS cd="logic1" name="not"/>
+      <OMA>
+        <OMS cd="logic1" name="not"/>
+        <OMV name="x"/>
+      </OMA>
+    </OMA>
+    <OMV name="x"/>
+  </OMA>
+</OMBIND>
+</OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> and </Name>
+<Role>application</Role>
+<Description> 
+This symbol represents the logical and function which is an n-ary
+function taking boolean arguments and returning a boolean value. It
+is true if all arguments are true or false otherwise.
+</Description>
+<CMP>
+for all x | x and not(x) = false
+</CMP>
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMBIND>
+  <OMS cd="quant1" name="forall"/>
+  <OMBVAR>
+    <OMV name="x"/>
+  </OMBVAR>
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA><OMS cd="logic1" name="and"/>
+      <OMV name="x"/>
+      <OMA><OMS cd="logic1" name="not"/>
+        <OMV name="x"/>
+      </OMA>
+    </OMA>
+    <OMS cd="logic1" name="false"/>
+  </OMA>
+</OMBIND>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> xor </Name>
+<Role>application</Role>
+<Description> 
+This symbol represents the logical xor function which is an n-ary
+function taking boolean arguments and returning a boolean
+value. It is true if there are an odd number of true arguments or
+false otherwise.
+</Description>
+<CMP>
+for all x | x xor x = false
+</CMP>
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMBIND><OMS cd="quant1" name="forall"/>
+  <OMBVAR>
+    <OMV name="x"/>
+  </OMBVAR>
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA><OMS cd="logic1" name="xor"/>
+      <OMV name="x"/>
+      <OMV name="x"/>
+    </OMA>
+    <OMS cd="logic1" name="false"/>
+  </OMA>
+</OMBIND>
+</OMOBJ></FMP>
+
+<CMP>
+for all x | x xor not(x) = true
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd"><OMBIND><OMS cd="quant1" name="forall"/>
+  <OMBVAR>
+    <OMV name="x"/>
+  </OMBVAR>
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA><OMS cd="logic1" name="xor"/>
+      <OMV name="x"/>
+      <OMA><OMS cd="logic1" name="not"/>
+        <OMV name="x"/>
+      </OMA>
+    </OMA>
+    <OMS cd="logic1" name="true"/>
+  </OMA>
+</OMBIND>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> or </Name>
+<Role>application</Role>
+<Description> 
+This symbol represents the logical or function which is an n-ary
+function taking boolean arguments and returning a boolean value. It
+is true if any of the arguments are true or false otherwise.
+</Description>
+
+<CMP>
+for all x | x or not(x) = true
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd"><OMBIND><OMS cd="quant1" name="forall"/>
+  <OMBVAR>
+    <OMV name="x"/>
+  </OMBVAR>
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA><OMS cd="logic1" name="or"/>
+      <OMV name="x"/>
+      <OMA><OMS cd="logic1" name="not"/>
+        <OMV name="x"/>
+      </OMA>
+    </OMA>
+    <OMS cd="logic1" name="true"/>
+  </OMA>
+</OMBIND>
+</OMOBJ></FMP>
+
+<CMP>
+for all a,b | not(a and b)= (not(a) or not(b))
+</CMP>
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMBIND>
+  <OMS cd="quant1" name="forall"/>
+  <OMBVAR>
+    <OMV name="a"/>
+    <OMV name="b"/>
+  </OMBVAR>
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMS cd="logic1" name="not"/>
+      <OMA>
+        <OMS cd="logic1" name="and"/>
+        <OMV name="a"/>
+        <OMV name="b"/>
+      </OMA>
+    </OMA>
+    <OMA>
+      <OMS cd="logic1" name="or"/>
+      <OMA>
+        <OMS cd="logic1" name="not"/>
+        <OMV name="a"/>
+      </OMA>
+      <OMA>
+        <OMS cd="logic1" name="not"/>
+        <OMV name="b"/>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMBIND>
+</OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> implies </Name>
+<Role>application</Role>
+<Description> 
+This symbol represents the logical implies function which takes two
+boolean expressions as arguments. It evaluates to false if the first
+argument is true and the second argument is false, otherwise it
+evaluates to true.
+</Description>
+
+<CMP> for all x | false implies x </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMBIND>
+  <OMS cd="quant1" name="forall"/>
+  <OMBVAR>
+    <OMV name="x"/>
+  </OMBVAR>
+  <OMA>
+    <OMS cd="logic1" name="implies"/>
+    <OMS cd="logic1" name="false"/>
+    <OMV name="x"/>
+  </OMA>
+</OMBIND>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> true </Name>
+<Role>constant</Role>
+<Description> 
+This symbol represents the boolean value true.
+</Description>
+<CMP> not true = false </CMP>
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="logic1" name="not"/>
+	<OMS cd="logic1" name="true"/>
+      </OMA>
+      <OMS cd="logic1" name="false"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> false </Name>
+<Role>constant</Role>
+<Description> 
+This symbol represents the boolean value false.
+</Description>
+<CMP> not false = true </CMP>
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="logic1" name="not"/>
+	<OMS cd="logic1" name="false"/>
+      </OMA>
+      <OMS cd="logic1" name="true"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+</CD>

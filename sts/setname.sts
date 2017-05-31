@@ -1,0 +1,105 @@
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="setname">
+<CDSStatus> official </CDSStatus>
+<CDSComment>
+ Written by JHD 1999-11-19, using the "structure"
+ construct added to STS.
+</CDSComment>
+
+<Signature name="N" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMV name="Set"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="Z" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMV name="EuclideanRing"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="Q" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMV name="Field"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="A" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMV name="Field"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="R" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMV name="Field"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="C" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMV name="Field"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="P" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMV name="Set"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="Zm" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMS name="N" cd="setname"/>
+    <OMA>
+      <OMS name="structure" cd="sts"/>
+      <OMV name="Ring"/>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="GFp" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMS name="P" cd="setname"/>
+    <OMA>
+      <OMS name="structure" cd="sts"/>
+      <OMV name="Field"/>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="GFpn" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMS name="mapsto" cd="sts"/>
+    <OMS name="P" cd="setname"/>
+    <OMS name="N" cd="setname"/>
+    <OMA>
+      <OMS name="structure" cd="sts"/>
+      <OMV name="Field"/>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="QuotientField" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+  <OMA>
+    <OMA>
+      <OMS name="structure" cd="sts"/>
+      <OMV name="IntegralDomain"/>
+    </OMA>
+    <OMA>
+      <OMS name="structure" cd="sts"/>
+      <OMV name="Field"/>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</Signature>
+
+</CDSignatures>

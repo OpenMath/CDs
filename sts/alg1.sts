@@ -1,0 +1,23 @@
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="alg1">
+<CDSStatus> official </CDSStatus>
+
+<CDSComment>
+Date:  1999-04-13
+Author: David Carlisle
+Revised by : N. Hur on 2000-02-02
+</CDSComment>
+
+<Signature name="zero" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMV name="AbelianMonoid" />
+</OMOBJ>
+</Signature>
+
+
+<Signature name="one" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMV name="Monoid" />
+</OMOBJ>
+</Signature>
+
+</CDSignatures>

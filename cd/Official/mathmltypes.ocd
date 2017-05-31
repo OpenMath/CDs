@@ -1,0 +1,322 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+
+<CDName> mathmltypes </CDName>
+<CDBase>http://www.openmath.org/cd</CDBase>
+<CDURL> http://www.openmath.org/cd/mathmltypes.ocd </CDURL>
+<CDReviewDate>2006-03-30</CDReviewDate>
+<CDDate>2004-03-30</CDDate>
+<CDVersion>3</CDVersion>
+<CDRevision>0</CDRevision>
+<CDStatus> official </CDStatus>
+<Description>
+    This CD holds symbols denoting various types of numbers, vectors
+    and similar constructs. Principally these are required for
+    compatibility with MathML.
+</Description>
+
+<CDDefinition>
+<Name> type </Name>
+<Role>semantic-attribution</Role>
+<Description> 
+A symbol to be used within an OpenMath attribute to specify the type of
+the object.
+</Description>
+
+<Example>
+The variable z is attributed with a type for complex numbers, to be
+represented in polar notation.
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMATTR>
+    <OMATP>
+       <OMS cd="mathmltypes" name="type"/>
+       <OMS cd="mathmltypes" name="complex_polar_type"/>
+    </OMATP>
+    <OMV name="z"/>
+  </OMATTR>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> integer_type </Name>
+<Role>constant</Role>
+<Description> 
+A symbol to be used as the argument of the type symbol to convey the
+type of an integer.
+</Description>
+
+<Example>
+The variable z is attributed with a type for integers.
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMATTR>
+    <OMATP>
+       <OMS cd="mathmltypes" name="type"/>
+       <OMS cd="mathmltypes" name="integer_type"/>
+    </OMATP>
+    <OMV name="z"/>
+  </OMATTR>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> real_type </Name>
+<Role>constant</Role>
+<Description> 
+A symbol to be used as the argument of the type symbol to convey the
+type of a real number.
+</Description>
+
+<Example>
+The variable z is attributed with a type for real numbers.
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMATTR>
+    <OMATP>
+       <OMS cd="mathmltypes" name="type"/>
+       <OMS cd="mathmltypes" name="real_type"/>
+    </OMATP>
+    <OMV name="z"/>
+  </OMATTR>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> rational_type </Name>
+<Role>constant</Role>
+<Description> 
+A symbol to be used as the argument of the type symbol to convey the
+type of a rational number.
+</Description>
+
+<Example>
+The variable z is attributed with a type for rational numbers.
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMATTR>
+    <OMATP>
+       <OMS cd="mathmltypes" name="type"/>
+       <OMS cd="mathmltypes" name="rational_type"/>
+    </OMATP>
+    <OMV name="z"/>
+  </OMATTR>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> complex_cartesian_type </Name>
+<Role>constant</Role>
+<Description> 
+A symbol to be used as the argument of the type symbol to convey the
+type of a complex number specified in terms of its real and imaginary
+parts.
+</Description>
+
+<Example>
+The variable z is attributed with a type for complex numbers represented in 
+their Cartesian form.
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMATTR>
+    <OMATP>
+       <OMS cd="mathmltypes" name="type"/>
+       <OMS cd="mathmltypes" name="complex_cartesian_type"/>
+    </OMATP>
+    <OMV name="z"/>
+  </OMATTR>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> complex_polar_type </Name>
+<Role>constant</Role>
+<Description> 
+A symbol to be used as the argument of the type symbol to convey the
+type of a complex number specified in terms of its modulus and argument.
+</Description>
+
+<Example>
+The variable z is attributed with a type for complex numbers represented in 
+their polar form.
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMATTR>
+    <OMATP>
+       <OMS cd="mathmltypes" name="type"/>
+       <OMS cd="mathmltypes" name="complex_polar_type"/>
+    </OMATP>
+    <OMV name="z"/>
+  </OMATTR>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> constant_type </Name>
+<Role>constant</Role>
+<Description> 
+A symbol to be used as the argument of the type symbol to convey a
+type for the common constants, pi ~= 3.1415, e ~= 2.718, i = square
+root of -1, gamma ~= .5772, NaN, infinity (all in the nums cd), true
+and false (in the logic cd). Also for MathML variables declared to
+have type constant, as in &lt;ci type="constant"&gt;x&lt;/ci&gt;.
+</Description>
+
+<Example>
+The variable z is attributed with a type for constants.
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMATTR>
+    <OMATP>
+       <OMS cd="mathmltypes" name="type"/>
+       <OMS cd="mathmltypes" name="constant_type"/>
+    </OMATP>
+    <OMV name="z"/>
+  </OMATTR>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> vector_type </Name>
+<Role>constant</Role>
+<Description> 
+A symbol to be used as the argument of the type symbol to convey the
+type of a (column) vector, an n-tuple of entries.
+</Description>
+
+<Example>
+The variable z is attributed with a type for vectors.
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMATTR>
+    <OMATP>
+       <OMS cd="mathmltypes" name="type"/>
+       <OMS cd="mathmltypes" name="vector_type"/>
+    </OMATP>
+    <OMV name="z"/>
+  </OMATTR>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> list_type </Name>
+<Role>constant</Role>
+<Description> 
+A symbol to be used as the argument of the type symbol to convey the
+type for a list.
+</Description>
+
+<Example>
+The variable z is attributed with a type for lists.
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMATTR>
+    <OMATP>
+       <OMS cd="mathmltypes" name="type"/>
+       <OMS cd="mathmltypes" name="list_type"/>
+    </OMATP>
+    <OMV name="z"/>
+  </OMATTR>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> set_type </Name>
+<Role>constant</Role>
+<Description> 
+A symbol to be used as the argument of the type symbol to convey the
+type for a set.
+</Description>
+
+<Example>
+The variable z is attributed with a type for sets.
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMATTR>
+    <OMATP>
+       <OMS cd="mathmltypes" name="type"/>
+       <OMS cd="mathmltypes" name="set_type"/>
+    </OMATP>
+    <OMV name="z"/>
+  </OMATTR>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> matrix_type </Name>
+<Role>constant</Role>
+<Description>
+A symbol to be used as the argument of the type symbol to convey the
+type for a matrix (n tuple of rows, where each row is an m tuple for
+some m, it should be noted that each row must be the same length).
+</Description>
+
+<Example>
+The variable z is attributed with a type for matrices.
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMATTR>
+    <OMATP>
+       <OMS cd="mathmltypes" name="type"/>
+       <OMS cd="mathmltypes" name="matrix_type"/>
+    </OMATP>
+    <OMV name="z"/>
+  </OMATTR>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> fn_type </Name>
+<Role>constant</Role>
+<Description> 
+A symbol to be used as the argument of the type symbol to convey the
+type for a function name.
+</Description>
+
+<Example>
+The variable f is attributed to say it represents a function.
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMATTR>
+    <OMATP>
+       <OMS cd="mathmltypes" name="type"/>
+       <OMS cd="mathmltypes" name="fn_type"/>
+    </OMATP>
+    <OMV name="f"/>
+  </OMATTR>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+</CD>
