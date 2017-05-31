@@ -115,8 +115,8 @@
     </xslt>	
     <!-- sts output: html files -->
     <xslt 
-      basedir="sts"
-      destdir="${site}/sts"
+      basedir="sts/Official"
+      destdir="${site}/sts/Official"
       force="${doForceXSL}"
       style="${lib}/xsl/sts2html.xsl"
       extension=".xhtml"
@@ -125,6 +125,19 @@
     >
       <include name="*.sts"/>
     </xslt>
+
+    <xslt 
+      basedir="sts/contrib"
+      destdir="${site}/sts/contrib"
+      force="${doForceXSL}"
+      style="${lib}/xsl/sts2html.xsl"
+      extension=".xhtml"
+      processor='${xslt.processor}'
+      classpathref='xslt.classpath'
+    >
+      <include name="*.sts"/>
+    </xslt>
+
     <copy todir="${site}/sts">
       <fileset dir="sts">
         <include name="*.sts"/>
