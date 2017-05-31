@@ -21,3 +21,6 @@ The [OpenMath Society](society) is actively soliciting CD submissions in all fie
   * 'purpose': why do we need these CDs
   * 'description': This will be inserted into the index file for the contributed CD directory.
 
+# Commenting on Content Dictionaries
+
+We use the [GitHub issue system](issues) to discuss and plan changes to the CDs. 
