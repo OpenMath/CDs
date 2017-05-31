@@ -1,9 +1,6 @@
-
 <page>
 
 <page-title>OpenMath Content Dictionaries: CD Groups</page-title>
-
-
 
 <ul>
 <li id="error"><a href="cdgroups/error.html">Error</a></li>
@@ -25,10 +22,4 @@
 <li id="riaca_algebra"><a href="cdgroups/riaca_algebra.html">RIACA Algebra</a></li>
 <li id="directives1"><a href="cdgroups/directives1.html">Directives 1 (RIACA)</a></li>
 </ul>
-
-<ul>
-<li><a href="contributed.html">Contributed CDs</a></li>
-</ul>
-
-
 </page>
