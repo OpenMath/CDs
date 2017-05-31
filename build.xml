@@ -7,7 +7,7 @@
           depends="cds-xslt, archive-cds-and-presentation"/>
   
   <property name="site" value="target/site"/>
-  <property name="cdfiles" value="."/>
+  <property name="lib" value="lib"/>
   <property name="doForceXSL" value="false"/>
   
   <!-- define processor that will be used for xslt tranformations -->
@@ -16,10 +16,10 @@
     value='org.xmLP.ant.taskdefs.optional.Xalan2Liaison'
   />
   <path id='xslt.classpath'>
-    <fileset dir='libraries/mtxslt'>
+    <fileset dir='${lib}/mtxslt'>
       <include name='*.jar'/>
     </fileset>
-    <fileset dir='libraries/xalan'>
+    <fileset dir='${lib}/xalan'>
       <include name='*.jar'/>
     </fileset>
   </path>
@@ -30,13 +30,13 @@
     value='trax'
   />
   <path id='xslt2.classpath'>
-    <fileset dir='libraries/saxon'>
+    <fileset dir='${lib}/saxon'>
       <include name='*.jar'/>
     </fileset>
   </path>
 
   <!-- OCD → RDF/XML translation for linked data publication -->
-  <property name="ocd-rdf-style" value="libraries/krextor-xslt/transform-ocd..rdf-xml.xsl"/>
+  <property name="ocd-rdf-style" value="${lib}/krextor-xslt/transform-ocd..rdf-xml.xsl"/>
   
   <target name="link-others"
           description="Copies all static resources.">
@@ -89,19 +89,19 @@
     
     <!-- entry page -->
     <xslt 
-      in="${cdfiles}/index.xml"
+      in="index.xml"
       force="${doForceXSL}"
       out="${site}/cd/index.html"
-      style="stylesheets/html/om-page.xsl"
+      style="${lib}/stylesheets/html/om-page.xsl"
       processor='${xslt.processor}'
       classpathref='xslt.classpath'
     />
     
     <!-- CD output: xhtml files -->
     <xslt 
-      basedir="${cdfiles}/cd" 
+      basedir="cd" 
       destdir="${site}/cd"
-      style="${cdfiles}/xsl/cd.xsl" 
+      style="${lib}/xsl/cd.xsl" 
       extension=".xhtml"
       force="${doForceXSL}"
       classpathref='xslt2.classpath'
@@ -111,7 +111,7 @@
     </xslt>
     <!-- CD output: RDF/XML files -->
     <xslt 
-      basedir="${cdfiles}/cd" 
+      basedir="cd" 
       destdir="${site}/cd"
       style="${ocd-rdf-style}" 
       extension=".rdf"
@@ -123,15 +123,15 @@
     </xslt>
     <!-- copy .ocd files -->
     <copy todir="${site}/cd">
-      <fileset dir="${cdfiles}/cd">
+      <fileset dir="cd">
         <include name="*.ocd"/>
       </fileset>
     </copy>
     <!-- omcd files -->
     <xslt 
-      basedir="${cdfiles}/cd"
+      basedir="cd"
       destdir="${site}/cd"
-      style="${cdfiles}/xsl/cd2om.xsl"
+      style="${lib}/xsl/cd2om.xsl"
       extension=".omcd"
       force="${doForceXSL}"
       processor='${xslt.processor}'
@@ -141,10 +141,10 @@
     </xslt>	
     <!-- sts output: html files -->
     <xslt 
-      basedir="${cdfiles}/sts"
+      basedir="sts"
       destdir="${site}/sts"
       force="${doForceXSL}"
-      style="${cdfiles}/xsl/sts2html.xsl"
+      style="${lib}/xsl/sts2html.xsl"
       extension=".xhtml"
       processor='${xslt.processor}'
       classpathref='xslt.classpath'
@@ -152,7 +152,7 @@
       <include name="*.sts"/>
     </xslt>
     <copy todir="${site}/sts">
-      <fileset dir="${cdfiles}/sts">
+      <fileset dir="sts">
         <include name="*.sts"/>
       </fileset>
     </copy>
@@ -160,52 +160,52 @@
     <!-- cd groups -->
 		<!-- TODO: make each CD-group also present a list of symbols -->
     <xslt 
-      basedir="${cdfiles}/cdgroups"
+      basedir="cdgroups"
       destdir="${site}/cdgroups"
       force="${doForceXSL}"
-      style="${cdfiles}/xsl/cdgroup.xsl"
+      style="${lib}/xsl/cdgroup.xsl"
       processor='${xslt.processor}'
       classpathref='xslt.classpath'
     >
       <include name="*.cdg"/>
     </xslt>
     <xslt 
-      in="${cdfiles}/cdgroups.xml"
+      in="cdgroups.xml"
       out="${site}/cdgroups.html"
       force="${doForceXSL}"
-      style="stylesheets/html/om-page.xsl"
+      style="${lib}/stylesheets/html/om-page.xsl"
       processor='${xslt.processor}'
       classpathref='xslt.classpath'
     />
 		<copy todir="${site}/cdgroups">
-			<fileset dir="${cdfiles}/cdgroups">
+			<fileset dir="cdgroups">
 	      <include name="*.cdg"/>
 		  </fileset>
     </copy>
     
     <!-- cd index: symbols by symbol-name -->
     <xslt 
-      in="${cdfiles}/cdindex.xml"
+      in="cdindex.xml"
       out="${site}/cdindex.html"
       force="${doForceXSL}"
-      style="${cdfiles}/xsl/index.xsl"
+      style="${lib}/xsl/index.xsl"
       processor='${xslt.processor}'
       classpathref='xslt.classpath'
     />
     <!-- cd index: cds by cd-names -->
     <xslt 
-      in="${cdfiles}/cdindex.xml"
+      in="cdindex.xml"
       out="${site}/cdnames.html"
-      style="${cdfiles}/xsl/cdnames.xsl"
+      style="${lib}/xsl/cdnames.xsl"
       force="${doForceXSL}"
       processor='${xslt.processor}'
       classpathref='xslt.classpath'
     />
     <!-- cd index: cds by symbol-names, all CDs ???  -->
     <xslt 
-      in="${cdfiles}/cdindex.xml"
+      in="cdindex.xml"
       out="${site}/cdnamess.html"
-      style="${cdfiles}/xsl/cdnamess.xsl"
+      style="${lib}/xsl/cdnamess.xsl"
       force="${doForceXSL}"
       processor='${xslt.processor}'
       classpathref='xslt.classpath'
