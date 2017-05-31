@@ -1,0 +1,23 @@
+LIB = $(BASE)/lib
+SITE = $(BASE)/site
+INSTALL = $(SITE)/$(HERE)
+
+OCD = $(shell ls *.ocd)
+HTML = $(OCD:%.ocd=%.xhtml)
+OMCD = $(OCD:%.ocd=%.omcd)
+SAXON = java -jar $(LIB)/saxon/saxon9he.jar
+
+all: $(HTML) $(OMCD)
+
+$(HTML): %.xhtml: %.ocd $(LIB)/xsl/cd.xsl
+	$(SAXON) -s:$< -xsl:$(LIB)/xsl/cd.xsl -o:$@
+
+$(OMCD): %.omcd: %.ocd $(LIB)/xsl/cd2om.xsl
+	$(SAXON) -s:$< -xsl:$(LIB)/xsl/cd2om.xsl -o:$@
+
+install: all
+	mkdir -p $(INSTALL) || true
+	cp *.xhtml *.ocd *.omcd $(INSTALL)
+
+echo:
+	@echo $(HTML)

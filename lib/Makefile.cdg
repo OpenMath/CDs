@@ -1,0 +1,20 @@
+BASE = ..
+LIB = $(BASE)/lib
+SITE = $(BASE)/site
+INSTALL = $(SITE)/cdgroups
+
+CDG = $(shell ls *.cdg)
+HTML = $(OCD:%.cdg=%.xhtml)
+SAXON = java -jar $(LIB)/saxon/saxon9he.jar
+
+all: $(HTML) 
+
+$(HTML): %.xhtml: %.ocd $(LIB)/xsl/cdgroup.xsl
+	$(SAXON) -s:$< -xsl:$(LIB)/xsl/cdgroup.xsl -o:$@
+
+install: all
+	mkdir -p $(INSTALL) || true
+	cp *.xhtml *.cdg $(INSTALL)
+
+echo:
+	@echo $(HTML)
