@@ -1,0 +1,69 @@
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="units_imperial1">
+
+<Signature name="foot" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="dimensions1" name="length"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="yard" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="dimensions1" name="length"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="mile" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="dimensions1" name="length"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="acre" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="dimensions1" name="area"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="pint" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="dimensions1" name="volume"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="miles_per_hr" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="dimensions1" name="velocity"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="miles_per_hr_sqrd" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="dimensions1" name="acceleration"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="pound_mass" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="dimensions1" name="mass"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="pound_force" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="dimensions1" name="force"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="degree_Fahrenheit" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="dimensions1" name="temperature"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="bar" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="dimensions1" name="pressure"/>
+</OMOBJ>
+</Signature>
+
+</CDSignatures>

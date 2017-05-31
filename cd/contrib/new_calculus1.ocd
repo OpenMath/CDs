@@ -1,0 +1,724 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+
+<CDName> calculus1 </CDName>
+<CDURL> http://www.openmath.org/cd/calculus1.ocd </CDURL>
+<CDReviewDate> 2003-04-01 </CDReviewDate>
+<CDStatus> experimental </CDStatus>
+<CDDate> 2002-09-19 </CDDate>
+<CDVersion> 3 </CDVersion>
+<CDRevision> 1 </CDRevision>
+<CDUses>
+  <CDName>alg1</CDName>
+  <CDName>arith1</CDName>
+  <CDName>fns1</CDName>
+  <CDName>interval1</CDName>
+  <CDName>list1</CDName>
+  <CDName>transc1</CDName>
+  <CDName>relation1</CDName>
+  <CDName>quant1</CDName>
+  <CDName>logic1</CDName>
+</CDUses>
+<Description>
+    This CD is intended to be compatible with the calculus operations
+    in Content MathML.
+
+    Integration is just for the univariate case and is either definite
+    or indefinite.
+</Description>
+
+<CDDefinition>
+<Name> diff </Name>
+<Description>
+This symbol is used to express ordinary differentiation of a unary
+function. The single argument is the unary function.
+</Description>
+
+<CMP> 
+diff(lambda y:a(y) + b(y))(x) = diff(lambda y:a(y))(x) + diff(lambda y:b(y))(x)
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMA>
+        <OMS cd="calculus1" name="diff"/>
+        <OMBIND>
+          <OMS cd="fns1" name="lambda"/>
+	  <OMBVAR>
+	    <OMV name="y"/>
+	  </OMBVAR>
+	  <OMA>
+	    <OMS cd="arith1" name="plus"/>
+	    <OMA>
+	      <OMV name="a"/>
+	      <OMV name="y"/>
+	    </OMA>
+	    <OMA>
+	      <OMV name="b"/>
+	      <OMV name="y"/>
+	    </OMA>
+	  </OMA>
+        </OMBIND>
+      </OMA>
+      <OMV name="x"/>
+    </OMA>
+    <OMA>
+      <OMS cd="arith1" name="plus"/>
+      <OMA>
+        <OMA>
+          <OMS cd="calculus1" name="diff"/>
+          <OMBIND>
+            <OMS cd="fns1" name="lambda"/>
+	    <OMBVAR>
+	      <OMV name="y"/>
+	    </OMBVAR>
+	    <OMA>
+	      <OMV name="a"/>
+	      <OMV name="y"/>
+	    </OMA>
+          </OMBIND>
+        </OMA>
+        <OMV name="x"/>
+      </OMA>
+      <OMA>
+        <OMA>
+          <OMS cd="calculus1" name="diff"/>
+          <OMBIND>
+            <OMS cd="fns1" name="lambda"/>
+	    <OMBVAR>
+	      <OMV name="y"/>
+	    </OMBVAR>
+	    <OMA>
+	      <OMV name="b"/>
+	      <OMV name="y"/>
+	    </OMA>
+          </OMBIND>
+        </OMA>
+        <OMV name="x"/>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+<CMP> 
+diff(lambda y:a(y) * b(y))(x) = diff(lambda y:a(y))(x) * b(x) + 
+                                a(x) * diff(lambda y:b(y))(x)
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMA>
+        <OMS cd="calculus1" name="diff"/>
+	<OMBIND>
+	  <OMS cd="fns1" name="lambda"/>
+	  <OMBVAR>
+	    <OMV name="y"/>
+	  </OMBVAR>
+	  <OMA>
+	    <OMS cd="arith1" name="times"/>
+	    <OMA>
+	      <OMV name="a"/>
+	      <OMV name="y"/>
+	    </OMA>
+	    <OMA>
+	      <OMV name="b"/>
+	      <OMV name="y"/>
+	    </OMA>
+	  </OMA>
+	</OMBIND>
+      </OMA>
+      <OMV name="x"/>
+    </OMA>
+    <OMA>
+      <OMS cd="arith1" name="plus"/>
+      <OMA>
+        <OMS cd="arith1" name="times"/>
+	<OMA>
+	  <OMA>
+	    <OMS cd="calculus1" name="diff"/>
+	    <OMBIND>
+	      <OMS cd="fns1" name="lambda"/>
+	      <OMBVAR>
+	        <OMV name="y"/>
+	      </OMBVAR>
+	      <OMA>
+	        <OMV name="a"/>
+	        <OMV name="y"/>
+	      </OMA>
+	    </OMBIND>
+	  </OMA>
+	  <OMV name="x"/>
+	</OMA>
+	<OMA>
+	  <OMV name="b"/>
+	  <OMV name="x"/>
+	</OMA>
+      </OMA>
+      <OMA>
+        <OMS cd="arith1" name="times"/>
+	<OMA>
+	  <OMV name="a"/>
+	  <OMV name="x"/>
+	</OMA>
+	<OMA>
+	  <OMA>
+	    <OMS cd="calculus1" name="diff"/>
+	    <OMBIND>
+	      <OMS cd="fns1" name="lambda"/>
+	      <OMBVAR>
+	        <OMV name="y"/>
+	      </OMBVAR>
+	      <OMA>
+	        <OMV name="b"/>
+	        <OMV name="y"/>
+	      </OMA>
+	    </OMBIND>
+	  </OMA>
+	  <OMV name="x"/>
+	</OMA>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+<Example>
+This represents the equation:
+  derivative(x + 1.0) = 1.0
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMA>
+        <OMS cd="calculus1" name="diff"/>
+        <OMBIND>
+          <OMS cd="fns1" name="lambda"/>
+          <OMBVAR>
+            <OMV name="x"/>
+          </OMBVAR>
+          <OMA>
+            <OMS cd="arith1" name="plus"/>
+            <OMV name="x"/>
+            <OMF dec="1.0"/>
+          </OMA>
+        </OMBIND>
+      </OMA>
+      <OMV name="y"/>
+    </OMA>
+    <OMF dec="1.0"/>
+  </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> nthdiff </Name>
+<Description>
+This symbol is used to express the nth-iterated ordinary differentiation of 
+a unary function. The first argument is n, and the second the unary function.
+</Description>
+<CMP> diff^0(f) = f </CMP>
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS name="eq" cd="relation1"/>
+    <OMA>
+      <OMS name="nthdiff" cd="calculus1"/>
+      <OMS name="zero" cd="alg1"/>
+      <OMV name="f"/>
+    </OMA>
+    <OMV name="f"/>
+  </OMA>
+  </OMOBJ>
+</FMP>
+
+<CMP> diff^(n+1)(f) = diff(diff^n(f)) </CMP>
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS name="eq" cd="relation1"/>
+    <OMA>
+      <OMS name="nthdiff" cd="calculus1"/>
+      <OMA>
+        <OMS name="plus" cd="arith1"/>
+        <OMV name="n"/>
+        <OMS name="one" cd="alg1"/>
+      </OMA>
+      <OMV name="f"/>
+    </OMA>
+    <OMA>
+      <OMS name="diff" cd="calculus1"/>
+      <OMA>
+        <OMS name="nthdiff" cd="calculus1"/>
+        <OMV name="n"/>
+        <OMV name="f"/>
+      </OMA>
+    </OMA>
+  </OMA>
+  </OMOBJ>
+</FMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> partialdiff </Name>
+<Description>
+This symbol is used to express partial differentiation of a function
+of more than one variable. It has two arguments, the first is a list
+of positive integers which index the variables of the function, the
+second is the function.
+Application of the symbol should be taken as meaning the first partial
+differentiation of the function (the second argument) in each one of
+the variables indexed by the list of integers (its first argument).
+</Description>
+
+<Example>
+An example to represent the equation:
+ \partial^2{xyz}/ \partial{x}\partial{z} = y
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS cd="relation1" name="eq"/>
+  <OMA>
+    <OMA>
+      <OMS cd="calculus1" name="partialdiff"/>
+      <OMA>
+        <OMS cd="list1" name="list"/>
+        <OMI> 1 </OMI>
+        <OMI> 3 </OMI>
+      </OMA>
+      <OMBIND>
+        <OMS cd="fns1" name="lambda"/>
+        <OMBVAR>
+          <OMV name="x"/>
+          <OMV name="y"/>
+          <OMV name="z"/>
+        </OMBVAR>
+        <OMA>
+          <OMS cd="arith1" name="times"/>
+          <OMV name="x"/>
+          <OMV name="y"/>
+          <OMV name="z"/>
+        </OMA>
+      </OMBIND>
+    </OMA>
+    <OMV name="y"/>
+  </OMA>
+  <OMV name="y"/>
+</OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+  <Name> nthpartialdiff </Name>
+  <Description>
+This symbol is used to express the nth-iterated partial
+differentiation of a function of more than one variable. It has three
+arguments, the first is a list of positive integers which index the variables
+of the function, the second is a list of integers which specify the
+order of differentiation with respect to the corresponding variable,
+the third argument is the function.
+Application of the symbol should be taken as meaning the following:
+differentiation of the third argument with respect to the variables
+indexed by the first argument. The orders of differentiation are
+specified by the second argument, in the following manner:
+The i'th element of the second argument is the order of
+differentiation of the variable indexed by the i'th element of the
+first argument.
+  </Description>
+
+  <CMP>
+    \frac{\partial^{n+m}}{\partial x^n\partial y^m} f(x,y,z)
+      =
+    \frac{\partial^n}{\partial x^n}(\frac{\partial^m}{\partial y^m}(f(x,y,z)))
+  </CMP>
+
+  <FMP>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA><OMS cd="relation1" name="eq"/>
+        <OMA><OMS cd="calculus1" name="nthpartialdiff"/>
+          <OMA><OMS cd="list1" name="list"/>
+            <OMI>1</OMI><OMI>3</OMI>
+          </OMA>
+          <OMA><OMS cd="list1" name="list"/>
+            <OMV name="n"/>
+            <OMV name="m"/>
+          </OMA>
+          <OMA>
+            <OMV name="f"/>
+            <OMV name="x"/>
+            <OMV name="y"/>
+            <OMV name="z"/>
+          </OMA>
+        </OMA>
+        <OMA><OMS cd="calculus1" name="nthpartialdiff"/>
+          <OMA><OMS cd="list1" name="list"/>
+            <OMI>1</OMI>
+          </OMA>
+          <OMA><OMS cd="list1" name="list"/>
+            <OMV name="n"/>
+          </OMA>
+          <OMA><OMS cd="calculus1" name="nthpartialdiff"/>
+            <OMA><OMS cd="list1" name="list"/>
+              <OMI>3</OMI>
+            </OMA>
+            <OMA><OMS cd="list1" name="list"/>
+              <OMV name="m"/>
+            </OMA>
+            <OMA>
+              <OMV name="f"/>
+              <OMV name="x"/>
+              <OMV name="y"/>
+              <OMV name="z"/>
+            </OMA>
+          </OMA>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> int </Name>
+<Description> 
+This symbol is used to represent indefinite integration of unary functions.
+The argument is the unary function.
+</Description>
+
+<CMP>
+application of integrate followed by differentiate is the identity
+function, that is: 
+ lambda x:diff(lambda y:integral(lambda z:f(z))(y))(x) = lambda x:f(x)
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMBIND>
+      <OMS cd="fns1" name="lambda"/>
+      <OMBVAR>
+        <OMV name="x"/>
+      </OMBVAR>
+      <OMA>
+        <OMA>
+          <OMS cd="calculus1" name="diff"/>
+	  <OMBIND>
+	    <OMS cd="fns1" name="lambda"/>
+	    <OMBVAR>
+              <OMV name="y"/>
+	    </OMBVAR>
+	    <OMA>
+	      <OMA>
+	        <OMS cd="calculus1" name="int"/>
+	        <OMBIND>
+	          <OMS cd="fns1" name="lambda"/>
+	          <OMBVAR>
+	            <OMV name="z"/>
+	          </OMBVAR>
+	          <OMA>
+	            <OMV name="f"/>
+		    <OMV name="z"/>
+	          </OMA>
+	        </OMBIND>
+	      </OMA>
+	      <OMV name="y"/>
+	    </OMA>
+	  </OMBIND>
+	</OMA>
+	<OMV name="x"/>
+      </OMA>
+    </OMBIND>
+    <OMBIND>
+      <OMS cd="fns1" name="lambda"/>
+      <OMBVAR>
+        <OMV name="x"/>
+      </OMBVAR>
+      <OMA>
+        <OMV name="f"/>
+	<OMV name="x"/>
+      </OMA>
+    </OMBIND>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+<Example>
+An example which represents the equation:
+integral(x +-> sin(x)) w.r.t. x = x +-> -cos(x)
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMS cd="calculus1" name="int"/>
+      <OMBIND>
+        <OMS cd="fns1" name="lambda"/>
+	<OMBVAR>
+	  <OMV name="x"/>
+	</OMBVAR>
+	<OMA>
+          <OMS cd="transc1" name="sin"/>
+	  <OMV name="x"/>
+	</OMA>
+      </OMBIND>
+    </OMA>
+    <OMBIND>
+      <OMS cd="fns1" name="lambda"/>
+      <OMBVAR>
+	<OMV name="x"/>
+      </OMBVAR>
+      <OMA>
+        <OMS cd="arith1" name="unary_minus"/>
+        <OMA>
+          <OMS cd="transc1" name="cos"/>
+          <OMV name="x"/>
+        </OMA>
+      </OMA>
+    </OMBIND>
+  </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> defint </Name>
+<Description> 
+This symbol is used to represent definite integration of unary
+functions. It takes two arguments; the first being the range (e.g. a
+set) of integration, and the second the function.
+</Description>
+
+<CMP> for all a,b | integral from a to b = -integral from b to a </CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMBIND>
+    <OMS cd="quant1" name="forall"/>
+    <OMBVAR>
+      <OMV name="a"/>
+      <OMV name="b"/>
+    </OMBVAR>
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="calculus1" name="defint"/>
+	<OMA>
+	  <OMS cd="interval1" name="interval"/>
+	  <OMV name="a"/>
+	  <OMV name="b"/>
+	</OMA>
+	<OMBIND>
+	  <OMS cd="fns1" name="lambda"/>
+	  <OMBVAR>
+	    <OMV name="x"/>
+	  </OMBVAR>
+	  <OMA>
+	    <OMV name="f"/>
+	    <OMV name="x"/>
+	  </OMA>
+	</OMBIND>
+      </OMA>
+      <OMA>
+        <OMS cd="arith1" name="unary_minus"/>
+        <OMA>
+          <OMS cd="calculus1" name="defint"/>
+	  <OMA>
+	    <OMS cd="interval1" name="interval"/>
+	    <OMV name="b"/>
+	    <OMV name="a"/>
+	  </OMA>
+	  <OMBIND>
+	    <OMS cd="fns1" name="lambda"/>
+	    <OMBVAR>
+	      <OMV name="x"/>
+	    </OMBVAR>
+	    <OMA>
+	      <OMV name="f"/>
+	      <OMV name="x"/>
+	    </OMA>
+	  </OMBIND>
+        </OMA>
+      </OMA>
+    </OMA>
+  </OMBIND>
+</OMOBJ>
+</FMP>
+
+<CMP>
+for all a &lt; b &lt; c | integral over [a,c] = integral over [a,b] + 
+integral over [b,c]
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMBIND>
+    <OMS cd="quant1" name="forall"/>
+    <OMBVAR>
+      <OMV name="a"/>
+      <OMV name="b"/>
+      <OMV name="c"/>
+    </OMBVAR>
+    <OMA>
+      <OMS cd="logic1" name="and"/>
+      <OMA>
+        <OMS cd="relation1" name="lt"/>
+	<OMV name="a"/>
+	<OMV name="b"/>
+      </OMA>
+      <OMA>
+        <OMS cd="relation1" name="lt"/>
+	<OMV name="b"/>
+	<OMV name="c"/>
+      </OMA>
+      <OMA>
+        <OMS cd="relation1" name="eq"/>
+	<OMA>
+	  <OMS cd="calculus1" name="defint"/>
+	  <OMA>
+	    <OMS cd="interval1" name="interval"/>
+	    <OMV name="a"/>
+	    <OMV name="c"/>
+	  </OMA>
+	  <OMBIND>
+	    <OMS cd="fns1" name="lambda"/>
+	    <OMBVAR>
+	      <OMV name="x"/>
+	    </OMBVAR>
+	    <OMA>
+	      <OMV name="f"/>
+	      <OMV name="x"/>
+	    </OMA>
+	  </OMBIND>
+	</OMA>
+	<OMA>
+	  <OMS cd="arith1" name="plus"/>
+	  <OMA>
+	    <OMS cd="calculus1" name="defint"/>
+	    <OMA>
+	      <OMS cd="interval1" name="interval"/>
+	      <OMV name="a"/>
+	      <OMV name="b"/>
+	    </OMA>
+	    <OMBIND>
+	      <OMS cd="fns1" name="lambda"/>
+	      <OMBVAR>
+	        <OMV name="x"/>
+	      </OMBVAR>
+	      <OMA>
+	        <OMV name="f"/>
+	        <OMV name="x"/>
+	      </OMA>
+	    </OMBIND>
+	  </OMA>
+	  <OMA>
+	    <OMS cd="calculus1" name="defint"/>
+	    <OMA>
+	      <OMS cd="interval1" name="interval"/>
+	      <OMV name="b"/>
+	      <OMV name="c"/>
+	    </OMA>
+	    <OMBIND>
+	      <OMS cd="fns1" name="lambda"/>
+	      <OMBVAR>
+	        <OMV name="x"/>
+	      </OMBVAR>
+	      <OMA>
+	        <OMV name="f"/>
+	        <OMV name="x"/>
+	      </OMA>
+	    </OMBIND>
+	  </OMA>
+	</OMA>
+      </OMA>
+    </OMA>
+  </OMBIND>
+</OMOBJ>
+</FMP>
+<Example>
+An example to represent the definite integration of sin(x) between the points 
+-1.0 and 1.0.
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS cd="calculus1" name="defint"/>
+    <OMA>
+      <OMS cd="interval1" name="interval"/>
+      <OMF dec="-1.0"/>
+      <OMF dec="1.0"/>
+    </OMA>
+    <OMBIND>
+      <OMS cd="fns1" name="lambda"/>
+      <OMBVAR>
+        <OMV name="x"/>
+      </OMBVAR>
+      <OMA>
+         <OMS cd="transc1" name="sin"/>
+	<OMV name="x"/>
+      </OMA>
+    </OMBIND>
+  </OMA>
+</OMOBJ>
+</Example>
+
+<Example>
+An example to represent the definite integration of f(x), for x in the
+set C:
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS name="defint" cd="calculus1"/>
+    <OMV name="C"/>
+    <OMBIND>
+      <OMS name="lambda" cd="fns1"/>
+      <OMBVAR>
+        <OMV name="x"/>
+      </OMBVAR>
+      <OMA>
+        <OMV name="f"/>
+        <OMV name="x"/>
+      </OMA>
+    </OMBIND>
+  </OMA>
+</OMOBJ>
+
+</Example>
+</CDDefinition>
+
+</CD>

@@ -1,0 +1,95 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment> 
+
+<CDName> numerical1 </CDName> 
+<CDURL> http://www.openmath.org/cd/numerical1.ocd </CDURL>
+<CDReviewDate> 2005-08-06 </CDReviewDate> 
+<CDDate> 2003-09-16 </CDDate> 
+<CDStatus> experimental </CDStatus>
+<CDVersion> 1 </CDVersion>
+<CDRevision> 0 </CDRevision>
+<CDUses>
+</CDUses>
+   <Description>
+     This CD contains descriptors of tolerances (errors) for numerical methods.
+     Note that there are two kinds: the (input) request for a computation
+     within a certain error bound, and an (output) estimated bound for the
+     error. Either kind can be relative or absolute.
+     While it would be normal to respond to a relative_error_requested with a
+     relative_error_bound, this might be meaningless if |computed| is small,
+     so an absolute_error-bound might be the right response.
+   </Description>
+
+    <CDDefinition>
+       <Name> absolute_error_requested </Name>
+       <Description>
+           This symbol marks a requirement for the absolute error
+	   ( |true-computed| ) on a computation.
+       </Description>
+       <Example>
+         <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+	   <OMA>
+	     <OMS name="absolute_error_requested" cd="numerical1"/>
+	     <OMF dec="1.0e-6"/>
+	   </OMA>
+         </OMOBJ>
+       </Example>
+    </CDDefinition>
+
+    <CDDefinition>
+       <Name> relative_error_requested </Name>
+       <Description>
+           This symbol marks a requirement for the relative error
+	   ( |true-computed|/|computed| ) on a computation.
+       </Description>
+    </CDDefinition>
+
+    <CDDefinition>
+       <Name> absolute_error_bound </Name>
+       <Description>
+           This symbol marks an estimated upper bound for the absolute error
+	   ( |true-computed| ) on a computation.
+       </Description>
+    </CDDefinition>
+
+    <CDDefinition>
+       <Name> relative_error_bound </Name>
+       <Description>
+           This symbol marks an estimated upper bound for the relative error
+	   ( |true-computed|/|computed| ) on a computation.
+       </Description>
+    </CDDefinition>
+
+
+</CD>

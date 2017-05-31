@@ -1,0 +1,246 @@
+<?xml version="1.0"?>
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+
+  <CDName> expint </CDName> 
+  <CDURL> http://www.openmath.org/CDs/expint.ocd </CDURL>
+  <CDReviewDate> 2003-04-01 </CDReviewDate>
+  <CDDate> 2002-01-17 </CDDate>
+  <CDVersion> 1 </CDVersion>
+  <CDRevision> 0 </CDRevision>
+  <CDStatus> experimental </CDStatus>
+  <CDUses>
+    <CDName> alg1 </CDName>
+    <CDName> arith1 </CDName>
+    <CDName> calculus1 </CDName>
+    <CDName> cauchypv </CDName>
+    <CDName> complex1 </CDName>
+    <CDName> fns1 </CDName>
+    <CDName> interval1 </CDName>
+    <CDName> logic1 </CDName>
+    <CDName> nums1 </CDName>
+    <CDName> relation1 </CDName>
+    <CDName> transc1 </CDName>
+  </CDUses>
+
+  <Description>
+    This content dictionary contains symbols to describe the Exponential
+    integral and associated functions.
+  </Description>
+
+  <CDDefinition>
+    <Name> Ei </Name>
+    <Description>
+  The symbol Ei defines the basic exponential integral as in Abramovitz &amp; 
+  Stegun equation 5.1.2. This is a Cauchy principal value integral:
+
+    $$Ei(x)=\int_{-\infty}^x\frac{e^t}t dt\qquad(x>0)$$
+
+  which is then extended by analytic continuation (this latter is not
+  currently represented in the FMPs) to the complex plane slit along the 
+  negative real axis
+    </Description>
+    <FMP>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS name="implies" cd="logic1"/>
+        <OMA>
+          <OMS name="gt" cd="relation1"/>
+          <OMV name="x"/>
+          <OMS name="zero" cd="alg1"/>
+        </OMA>
+        <OMA>
+          <OMS name="eq" cd="relation1"/>
+          <OMA>
+            <OMS name="Ei" cd="expint"/>
+            <OMV name="x"/>
+          </OMA>
+          <OMA>
+            <OMS name="defint" cd="cauchypv"/>
+            <OMA>
+              <OMS name="interval" cd="interval1"/>
+              <OMA>
+                <OMS name="unary_minus" cd="arith1"/>
+                <OMS name="infinity" cd="nums1"/>
+              </OMA>
+              <OMV name="x"/>
+            </OMA>
+            <OMBIND>
+              <OMS name="lambda" cd="fns1"/>
+              <OMBVAR>
+                <OMV name="t"/>
+              </OMBVAR>
+              <OMA>
+                <OMS name="divide" cd="arith1"/>
+                <OMA>
+                  <OMS name="exp" cd="transc1"/>
+                  <OMV name="t"/>
+                </OMA>
+                <OMV name="t"/>
+              </OMA>
+            </OMBIND>
+          </OMA>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+    </FMP>
+  </CDDefinition>
+
+  <CDDefinition>
+    <Name> li </Name>
+    <Description>
+  The symbol li defines the basic logarithmic integral as in Abramovitz &amp; 
+  Stegun equation 5.1.2. This is a Cauchy principal value integral:
+
+    $$li(x)=\int_0^x\frac1{\ln t}t dt\qquad(x>1)$$
+
+  which is then extended by analytic continuation (this latter is not
+  currently represented in the FMPs) to the complex plane slit along the 
+  negative real axis
+    </Description>
+    <FMP>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS name="implies" cd="logic1"/>
+        <OMA>
+          <OMS name="gt" cd="relation1"/>
+          <OMV name="x"/>
+          <OMS name="one" cd="alg1"/>
+        </OMA>
+        <OMA>
+          <OMS name="eq" cd="relation1"/>
+          <OMA>
+            <OMS name="li" cd="expint"/>
+            <OMV name="x"/>
+          </OMA>
+          <OMA>
+            <OMS name="defint" cd="cauchypv"/>
+            <OMA>
+              <OMS name="interval" cd="interval1"/>
+              <OMS name="zero" cd="nums1"/>
+              <OMV name="x"/>
+            </OMA>
+            <OMBIND>
+              <OMS name="lambda" cd="fns1"/>
+              <OMBVAR>
+                <OMV name="t"/>
+              </OMBVAR>
+              <OMA>
+                <OMS name="divide" cd="arith1"/>
+                <OMS name="one" cd="alg1"/>
+                <OMA>
+                  <OMS name="ln" cd="transc1"/>
+                  <OMV name="t"/>
+                </OMA>
+              </OMA>
+            </OMBIND>
+          </OMA>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+    </FMP>
+  </CDDefinition>
+
+  <CDDefinition>
+    <Name> E </Name>
+    <Description>
+  The symbol E defines the generalised exponential integral as in Abramovitz
+  &amp; Stegun equation 5.1.4. This is an ordinary integral:
+
+    $$E_n(z)=\int_1^{-\infty}\frac{e^{-zt}}{t^n} dt\qquad(\Re z>0)$$
+
+  which is then extended by analytic continuation (this latter is not
+  currently represented in the FMPs) to the complex plane slit along the 
+  negative real axis.
+  Note that OpenMath's definition is curried, i.e. E(n) is a function.
+    </Description>
+    <FMP>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS name="implies" cd="logic1"/>
+        <OMA>
+          <OMS name="gt" cd="relation1"/>
+          <OMA>
+            <OMS name="real" cd="complex1"/>
+            <OMV name="z"/>
+          </OMA>
+          <OMS name="zero" cd="alg1"/>
+        </OMA>
+        <OMA>
+          <OMS name="eq" cd="relation1"/>
+          <OMA>
+            <OMA>
+              <OMS name="E" cd="expint"/>
+              <OMV name="n"/>
+            </OMA>
+            <OMV name="z"/>
+          </OMA>
+          <OMA>
+            <OMS name="defint" cd="calculus1"/>
+            <OMA>
+              <OMS name="interval" cd="interval1"/>
+              <OMS name="one" cd="alg1"/>
+              <OMS name="infinity" cd="nums1"/>
+            </OMA>
+            <OMBIND>
+              <OMS name="lambda" cd="fns1"/>
+              <OMBVAR>
+                <OMV name="t"/>
+              </OMBVAR>
+              <OMA>
+                <OMS name="divide" cd="arith1"/>
+                <OMA>
+                  <OMS name="exp" cd="transc1"/>
+                  <OMA>
+                    <OMS name="times" cd="arith1"/>
+                    <OMI> -1 </OMI>
+                    <OMV name="z"/>
+                    <OMV name="t"/>
+                  </OMA>
+                </OMA>
+                <OMA>
+                  <OMS name="power" cd="arith1"/>
+                  <OMV name="t"/>
+                  <OMV name="n"/>
+                </OMA>
+              </OMA>
+            </OMBIND>
+          </OMA>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+    </FMP>
+  </CDDefinition>
+
+</CD>

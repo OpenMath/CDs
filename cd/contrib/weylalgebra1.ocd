@@ -1,0 +1,358 @@
+<?xml version="1.0"?>
+<!-- $Id: weylalgebra1.tfb,v 1.10 2003/11/28 06:08:16 taka Exp $ -->
+
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDName> weylalgebra1 </CDName>
+<CDURL> http://www.math.kobe-u.ac.jp/OCD/weylalgebra1.tfb </CDURL>
+<CDReviewDate> 2003-08-07 </CDReviewDate>
+<CDStatus> experimental </CDStatus>
+<CDDate> 2002-08-07, 2003-11-28 revised to 1.1 </CDDate>
+<CDVersion> 1 </CDVersion>
+<CDRevision> 1 </CDRevision>
+<CDUses>
+ <!-- private cd's -->
+  <CDName>freealg1</CDName>
+ <!-- official cd's  -->
+  <CDName>arith1</CDName>
+  <CDName>list1</CDName>
+  <CDName>relation1</CDName>
+</CDUses>
+
+<Description> 
+This CD defines elements of the ring of differential operators
+with coefficients in the polynomial ring.
+</Description>
+
+
+<CDDefinition>
+<Name> diffop </Name>
+<Description>
+  constructor of a differential operator from a polynomial or
+  from an element of the finitely generated free algebra.
+  The inverse of gr.
+</Description>
+<CMP>
+  d/dq  q = q d/dq + 1
+</CMP>
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA><OMS cd="relation1" name="eq"/>
+    <OMA><OMS cd="weylalgebra1" name="diffop"/>
+      <OMA><OMS cd="freealg1" name="times"/>
+        <OMV name="dq"/>
+        <OMV name="q"/>
+      </OMA>
+      <OMA><OMS cd="list1" name="list"/>
+        <OMA><OMS cd="list1" name="list"/>
+          <OMV name="q"/>
+        </OMA>
+        <OMA><OMS cd="list1" name="list"/>
+          <OMV name="dq"/>
+        </OMA>
+      </OMA>
+    </OMA>
+    <OMA><OMS cd="weylalgebra1" name="diffop"/>
+      <OMA><OMS cd="arith1" name="plus"/>
+        <OMA><OMS cd="arith1" name="times"/>
+          <OMV name="q"/>
+          <OMV name="dq"/>
+        </OMA>
+        <OMI> 1 </OMI>
+      </OMA>
+      <OMA><OMS cd="list1" name="list"/>
+        <OMA><OMS cd="list1" name="list"/>
+          <OMV name="q"/>
+        </OMA>
+        <OMA><OMS cd="list1" name="list"/>
+          <OMV name="dq"/>
+        </OMA>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> gr </Name>
+<Description>
+  the symbol polynomial of a given differential operator.
+  The inverse of diffop.
+</Description>
+<CMP>
+ $\gr( q \partial_{q} + 1) = q p + 1 $
+</CMP>
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA><OMS cd="relation1" name="eq"/>
+    <OMA><OMS cd="weylalgebra1" name="gr"/>
+      <OMA><OMS cd="weylalgebra1" name="diffop"/>
+        <OMA><OMS cd="arith1" name="plus"/>
+          <OMA><OMS cd="arith1" name="times"/>
+            <OMV name="q"/>
+            <OMV name="dq"/>
+          </OMA>
+          <OMI> 1 </OMI>
+        </OMA>
+        <OMA><OMS cd="list1" name="list"/>
+          <OMA><OMS cd="list1" name="list"/>
+            <OMV name="q"/>
+          </OMA>
+          <OMA><OMS cd="list1" name="list"/>
+            <OMV name="dq"/>
+          </OMA>
+        </OMA>
+      </OMA>
+      <OMA><OMS cd="list1" name="list"/>
+        <OMA><OMS cd="list1" name="list"/>
+          <OMV name="dq"/>
+        </OMA>
+        <OMA><OMS cd="list1" name="list"/>
+          <OMV name="p"/>
+        </OMA>
+      </OMA>
+    </OMA>
+    <OMA><OMS cd="arith1" name="plus"/>
+      <OMA><OMS cd="arith1" name="times"/>
+        <OMV name="q"/>
+        <OMV name="p"/>
+      </OMA>
+      <OMI> 1 </OMI>
+    </OMA>
+  </OMA>
+</OMOBJ>
+
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> diff </Name>
+<Description>
+  Differentiation of a given function in one variable.
+</Description>
+<Example>
+  $\frac{d x^2}{dx} = 2 x$
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA><OMS cd="relation1" name="eq"/>
+    <OMA><OMS cd="weylalgebra1" name="diff"/>
+      <OMA><OMS cd="arith1" name="power"/>
+        <OMV name="x"/>
+        <OMI> 2 </OMI>
+      </OMA>
+      <OMV name="x"/>
+    </OMA>
+    <OMA><OMS cd="arith1" name="times"/>
+      <OMI> 2 </OMI>
+      <OMV name="x"/>
+    </OMA>
+  </OMA>
+</OMOBJ>
+
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> partialdiff </Name>
+<!-- We do not use partialdiff in calculus1 by lambda. -->
+<Description>
+  partial differentiation of a given function.
+</Description>
+<CMP>
+  $\frac{\partial^{2} x^{2} y}{\partial x^{2}} = 2 y $
+</CMP>
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA><OMS cd="relation1" name="eq"/>
+    <OMA><OMS cd="weylalgebra1" name="partialdiff"/>
+      <OMA><OMS cd="arith1" name="times"/>
+        <OMA><OMS cd="arith1" name="times"/>
+          <OMV name="x"/>
+          <OMV name="x"/>
+        </OMA>
+        <OMV name="y"/>
+      </OMA>
+      <OMA><OMS cd="list1" name="list"/>
+        <OMA><OMS cd="list1" name="list"/>
+          <OMV name="x"/>
+          <OMI> 2 </OMI>
+        </OMA>
+      </OMA>
+    </OMA>
+    <OMA><OMS cd="arith1" name="times"/>
+      <OMI> 2 </OMI>
+      <OMV name="y"/>
+    </OMA>
+  </OMA>
+</OMOBJ>
+
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> times </Name>
+<Description>
+  multiplication in D
+</Description>
+<CMP>
+ $\partial_{q} q = \partial{q} q + 1 $
+</CMP>
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA><OMS cd="relation1" name="eq"/>
+    <OMA><OMS cd="weylalgebra1" name="times"/>
+      <OMV name="dq"/>
+      <OMV name="q"/>
+    </OMA>
+    <OMA><OMS cd="arith1" name="plus"/>
+      <OMA><OMS cd="weylalgebra1" name="times"/>
+        <OMV name="q"/>
+        <OMV name="dq"/>
+      </OMA>
+      <OMI> 1 </OMI>
+    </OMA>
+  </OMA>
+</OMOBJ>
+
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> act </Name>
+<Description>
+  action of a differential operator to a function.
+</Description>
+<CMP>
+  $  x^{m} \partial_{x}^{n} \partial_{y}^{r} \cdot f 
+   = x^{m} \frac{partial^{n+r} f}{\partial x^{n} \partial y^{r}}
+  $
+</CMP>
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA><OMS cd="relation1" name="eq"/>
+    <OMA><OMS cd="weylalgebra1" name="act"/>
+      <OMA><OMS cd="weylalgebra1" name="diffop"/>
+        <OMA><OMS cd="arith1" name="times"/>
+          <OMA><OMS cd="arith1" name="times"/>
+            <OMA><OMS cd="arith1" name="power"/>
+              <OMV name="x"/>
+              <OMV name="m"/>
+            </OMA>
+            <OMA><OMS cd="arith1" name="power"/>
+              <OMV name="dx"/>
+              <OMV name="n"/>
+            </OMA>
+          </OMA>
+          <OMA><OMS cd="arith1" name="power"/>
+            <OMV name="dy"/>
+            <OMV name="r"/>
+          </OMA>
+        </OMA>
+        <OMA><OMS cd="list1" name="list"/>
+          <OMA><OMS cd="list1" name="list"/>
+            <OMV name="x"/>
+            <OMV name="y"/>
+          </OMA>
+          <OMA><OMS cd="list1" name="list"/>
+            <OMV name="dx"/>
+            <OMV name="dy"/>
+          </OMA>
+        </OMA>
+      </OMA>
+      <OMV name="f"/>
+    </OMA>
+    <OMA><OMS cd="arith1" name="times"/>
+      <OMA><OMS cd="arith1" name="power"/>
+        <OMV name="x"/>
+        <OMV name="m"/>
+      </OMA>
+      <OMA><OMS cd="weylalgebra1" name="partialdiff"/>
+        <OMV name="f"/>
+        <OMA><OMS cd="list1" name="list"/>
+          <OMA><OMS cd="list1" name="list"/>
+            <OMV name="x"/>
+            <OMV name="n"/>
+          </OMA>
+          <OMA><OMS cd="list1" name="list"/>
+            <OMV name="y"/>
+            <OMV name="r"/>
+          </OMA>
+        </OMA>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> act_of_poly </Name>
+<Description>
+  action of a polynomial as a differential operator to a function.
+  act_of_poly is equivalent to  the composition of act and diffop.
+</Description>
+<CMP>
+  $  x^{m} \partial_{x}^{n} \partial_{y}^{r} \cdot f 
+   = x^{m} \frac{partial^{n+r} f}{\partial x^{n} \partial y^{r}}
+  $
+</CMP>
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA><OMS cd="relation1" name="eq"/>
+    <OMA><OMS cd="weylalgebra" name="act_of_poly"/>
+      <OMA><OMS cd="arith1" name="times"/>
+        <OMA><OMS cd="arith1" name="times"/>
+          <OMA><OMS cd="arith1" name="power"/>
+            <OMV name="x"/>
+            <OMV name="m"/>
+          </OMA>
+          <OMA><OMS cd="arith1" name="power"/>
+            <OMV name="dx"/>
+            <OMV name="n"/>
+          </OMA>
+        </OMA>
+        <OMA><OMS cd="arith1" name="power"/>
+          <OMV name="dy"/>
+          <OMV name="r"/>
+        </OMA>
+      </OMA>
+      <OMA><OMS cd="list1" name="list"/>
+        <OMA><OMS cd="list1" name="list"/>
+          <OMV name="x"/>
+          <OMV name="y"/>
+        </OMA>
+        <OMA><OMS cd="list1" name="list"/>
+          <OMV name="dx"/>
+          <OMV name="dy"/>
+        </OMA>
+      </OMA>
+      <OMV name="f"/>
+    </OMA>
+    <OMA><OMS cd="arith1" name="times"/>
+      <OMA><OMS cd="arith1" name="power"/>
+        <OMV name="x"/>
+        <OMV name="m"/>
+      </OMA>
+      <OMA><OMS cd="weylalgebra" name="partialdiff"/>
+        <OMV name="f"/>
+        <OMA><OMS cd="list1" name="list"/>
+          <OMA><OMS cd="list1" name="list"/>
+            <OMV name="x"/>
+            <OMV name="n"/>
+          </OMA>
+          <OMA><OMS cd="list1" name="list"/>
+            <OMV name="y"/>
+            <OMV name="r"/>
+          </OMA>
+        </OMA>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+
+</FMP>
+</CDDefinition>
+
+
+</CD>

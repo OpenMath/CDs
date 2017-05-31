@@ -1,0 +1,277 @@
+<?xml version="1.0"?>
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<!-- $Id: hypergeo0.tfb,v 1.9 2002/11/29 07:26:41 taka Exp $ -->
+<CDName> hypergeo0 </CDName>
+<CDURL> http://www.math.kobe-u.ac.jp/OCD/ </CDURL>
+<CDReviewDate> 2003-04-01 </CDReviewDate>
+<CDDate> 2002-11-29 </CDDate>
+<CDVersion> 0 </CDVersion>
+<CDRevision> 0 </CDRevision>
+<CDStatus> experimental </CDStatus>
+<CDUses>
+  <CDName>alg1</CDName>
+  <CDName>arith1</CDName>
+  <CDName>calculus1</CDName>
+  <CDName>complex1</CDName>
+  <CDName>fns1</CDName>
+  <CDName>integer1</CDName>
+  <CDName>interval1</CDName>
+  <CDName>logic1</CDName>
+  <CDName>nums1</CDName>
+  <CDName>relation1</CDName>
+</CDUses>
+<Description>
+	This CD defines some basic hypergeometric integrals and
+    symbols necessary to define hypergeometric functions.
+	These functions are described in the following books.
+	(1) Handbook of Mathematical Functions, Abramowitz, Stegun
+	(2) Higher transcendental functions. Vol. III. Krieger Publishing Co., Inc., Melbourne, Fla., 1981, Erdlyi, Arthur; Magnus, Wilhelm; Oberhettinger, Fritz; Tricomi, Francesco G. 
+	(3) From Gauss to Painleve, Vieweg, Katsunori Iwasaki, Hironobu Kimura, Shun Shimomura, Masaaki Yoshida
+
+</Description>
+
+<CDDefinition>
+<Name> gamma </Name>
+<Description>
+	Euler's gamma function
+</Description>
+<CMP>gamma(z)=\int_0^{+\infty} t^{z-1} e^{-z} dt (Re(z)>0)</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA><OMS cd="logic1" name="implies"/>
+    <OMA><OMS cd="relation1" name="gt"/>
+      <OMA><OMS cd="complex1" name="real"/>
+        <OMV name="z"/>
+      </OMA>
+      <OMI> 0 </OMI>
+    </OMA>
+    <OMA><OMS cd="relation1" name="eq"/>
+      <OMA><OMS cd="hypergeo0" name="gamma"/>
+        <OMV name="z"/>
+      </OMA>
+      <OMA><OMS cd="calculus1" name="defint"/>
+        <OMA><OMS cd="interval1" name="interval"/>
+          <OMI> 0 </OMI>
+          <OMS cd="nums1" name="infinity"/>
+        </OMA>
+        <OMBIND>
+          <OMS cd="fns1" name="lambda"/>
+          <OMBVAR>
+            <OMV name="t"/>
+          </OMBVAR>
+          <OMA><OMS cd="arith1" name="times"/>
+            <OMA><OMS cd="arith1" name="power"/>
+              <OMV name="t"/>
+              <OMA><OMS cd="arith1" name="minus"/>
+                <OMV name="z"/>
+                <OMI> 1 </OMI>
+              </OMA>
+            </OMA>
+            <OMA><OMS cd="arith1" name="power"/>
+              <OMS cd="nums1" name="e"/>
+              <OMA><OMS cd="arith1" name="unary_minus"/>
+                <OMV name="z"/>
+              </OMA>
+            </OMA>
+          </OMA>
+        </OMBIND>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+
+</FMP>
+
+<Example> gamma(n) = (n-1)! (n \in N)
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA><OMS cd="logic1" name="implies"/>
+    <OMA><OMS cd="set1" name="in"/>
+      <OMV name="n"/>
+      <OMS cd="setname1" name="N"/>
+    </OMA>
+    <OMA><OMS cd="relation1" name="eq"/>
+      <OMA><OMS cd="hypergeo0" name="gamma"/>
+        <OMV name="n"/>
+      </OMA>
+      <OMA><OMS cd="integer1" name="factorial"/>
+        <OMA><OMS cd="arith1" name="minus"/>
+          <OMV name="n"/>
+          <OMI> 1 </OMI>
+        </OMA>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> beta </Name>
+<Description>
+	Euler's beta function
+</Description>
+<CMP>beta(p,q)=\frac{gamma(p)gamma(q)}{gamma(p+q)}(p,q \not\in Z_{&lt;=0})</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA><OMS cd="logic1" name="implies"/>
+    <OMA><OMS cd="logic1" name="and"/>
+      <OMA><OMS cd="set1" name="notin"/>
+        <OMA><OMS cd="arith1" name="unary_minus"/>
+          <OMV name="p"/>
+        </OMA>
+        <OMS cd="setname1" name="N"/>
+      </OMA>
+      <OMA><OMS cd="set1" name="notin"/>
+        <OMA><OMS cd="arith1" name="unary_minus"/>
+          <OMV name="q"/>
+        </OMA>
+        <OMS cd="setname1" name="N"/>
+      </OMA>
+    </OMA>
+    <OMA><OMS cd="arith1" name="divide"/>
+      <OMA><OMS cd="arith1" name="times"/>
+        <OMA><OMS cd="hypergeo0" name="gamma"/>
+          <OMV name="p"/>
+        </OMA>
+        <OMA><OMS cd="hypergeo0" name="gamma"/>
+          <OMV name="q"/>
+        </OMA>
+      </OMA>
+      <OMA><OMS cd="hypergeo0" name="gamma"/>
+        <OMA><OMS cd="arith1" name="plus"/>
+          <OMV name="p"/>
+          <OMV name="q"/>
+        </OMA>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+
+</FMP>
+
+<Example> beta(p,q)=\int_0^1 t^{p-1} (1-t)^{q-1} dt (Re(p),Re(q)&gt;0)
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA><OMS cd="logic1" name="implies"/>
+    <OMA><OMS cd="logic1" name="and"/>
+      <OMA><OMS cd="relation1" name="gt"/>
+        <OMA><OMS cd="complex1" name="real"/>
+          <OMV name="p"/>
+        </OMA>
+        <OMI> 0 </OMI>
+      </OMA>
+      <OMA><OMS cd="relation1" name="gt"/>
+        <OMA><OMS cd="complex1" name="real"/>
+          <OMV name="q"/>
+        </OMA>
+        <OMI> 0 </OMI>
+      </OMA>
+    </OMA>
+    <OMA><OMS cd="relation1" name="eq"/>
+      <OMA><OMS cd="hypergeo0" name="beta"/>
+        <OMV name="p"/>
+        <OMV name="q"/>
+      </OMA>
+      <OMA><OMS cd="calculus1" name="defint"/>
+        <OMA><OMS cd="interval1" name="interval"/>
+          <OMI> 0 </OMI>
+          <OMI> 1 </OMI>
+        </OMA>
+        <OMBIND>
+          <OMS cd="fns1" name="lambda"/>
+          <OMBVAR>
+            <OMV name="t"/>
+          </OMBVAR>
+          <OMA><OMS cd="arith1" name="times"/>
+            <OMA><OMS cd="arith1" name="power"/>
+              <OMV name="t"/>
+              <OMA><OMS cd="arith1" name="minus"/>
+                <OMV name="p"/>
+                <OMI> 1 </OMI>
+              </OMA>
+            </OMA>
+            <OMA><OMS cd="arith1" name="power"/>
+              <OMA><OMS cd="arith1" name="minus"/>
+                <OMI> 1 </OMI>
+                <OMV name="t"/>
+              </OMA>
+              <OMA><OMS cd="arith1" name="minus"/>
+                <OMV name="q"/>
+                <OMI> 1 </OMI>
+              </OMA>
+            </OMA>
+          </OMA>
+        </OMBIND>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> pochhammer </Name>
+<Description>
+	Pochhammer symbol
+</Description>
+<CMP>pochhammer(a,n) = gamma(a+n)/gamma(a)</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA><OMS cd="relation1" name="eq"/>
+    <OMA><OMS cd="hypergeo0" name="pochhammer"/>
+      <OMV name="alpha"/>
+      <OMV name="n"/>
+    </OMA>
+    <OMA><OMS cd="arith1" name="divide"/>
+      <OMA><OMS cd="hypergeo0" name="gamma"/>
+        <OMA><OMS cd="arith1" name="plus"/>
+          <OMV name="alpha"/>
+          <OMV name="n"/>
+        </OMA>
+      </OMA>
+      <OMA><OMS cd="hypergeo0" name="gamma"/>
+        <OMV name="alpha"/>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+
+</FMP>
+
+<Example>
+ pochhammer(a,n) = \prod_0^{n-1} (a+i)
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA><OMS cd="relation1" name="eq"/>
+    <OMA><OMS cd="hypergeo0" name="pochhammer"/>
+      <OMV name="a"/>
+      <OMV name="n"/>
+    </OMA>
+    <OMA><OMS cd="arith1" name="product"/>
+      <OMA><OMS cd="interval1" name="integer_interval"/>
+        <OMI> 0 </OMI>
+        <OMA><OMS cd="arith1" name="minus"/>
+          <OMV name="n"/>
+          <OMI> 1 </OMI>
+        </OMA>
+      </OMA>
+      <OMBIND>
+        <OMS cd="fns1" name="lambda"/>
+        <OMBVAR>
+          <OMV name="i"/>
+        </OMBVAR>
+        <OMA><OMS cd="arith1" name="plus"/>
+          <OMV name="a"/>
+          <OMV name="i"/>
+        </OMA>
+      </OMBIND>
+    </OMA>
+  </OMA>
+</OMOBJ>
+
+</Example>
+</CDDefinition>
+</CD>

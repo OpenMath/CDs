@@ -1,0 +1,83 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+
+<CDName> meta_cats </CDName>
+<CDURL> http://www.openmath.org/cd/meta_cats.ocd </CDURL>
+<CDReviewDate> 2005-04-01 </CDReviewDate>
+<CDStatus> experimental </CDStatus>
+<CDDate> 2002-06-17 </CDDate>
+<CDVersion> 0 </CDVersion>
+<CDRevision> 0 </CDRevision>
+<CDUses>
+</CDUses>
+<Description>
+This CD holds symbols for making meta statements about categories
+</Description>
+<CDDefinition>
+<Name> has </Name>
+<Description>
+This symbol represents the notion of category inclusion. It takes two
+arguments, which should both be categories. It implies that axioms of
+the second argument apply to the first, and that function signatures
+in the second category are also in the first.
+</Description>
+<Example> field has group </Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> Category </Name>
+<Description>
+This symbol is intended to denote the type of a category.
+</Description>
+<Example> the type of field is Category </Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> domain </Name>
+<Description>
+These objects have categories as there types and specific implementations of 
+their functions. 
+*** details to be worked out ***
+*** for now *** The first argument is a Category, the remaining
+arguments are the functions (e.g. lambda bindings or unapplied functions).
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name> type </Name>
+<Description>
+This symbol is unary and returns the type of its argument.
+</Description>
+</CDDefinition>
+</CD>

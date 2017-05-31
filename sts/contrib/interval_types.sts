@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="interval_types">
+  <Signature name="intervalType">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMS cd="meta_cats" name="Category"/>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="integerIntervalType">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMS cd="meta_cats" name="Category"/>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="rationalIntervalType">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMS cd="meta_cats" name="Category"/>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="algebraicIntervalType">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMS cd="meta_cats" name="Category"/>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="realIntervalType">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMS cd="meta_cats" name="Category"/>
+    </OMOBJ>
+  </Signature>
+
+</CDSignatures>

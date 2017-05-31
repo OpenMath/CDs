@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+
+Author: Joseph B. Collins (2009), Naval Research Laboratory, Washington, DC.
+Copyright Notice:  This is a work of the U.S. Government and is not
+subject to copyright protection in the United States. Foreign copyrights
+may apply.
+
+</CDComment>
+
+<CDName>FundamentalPhysicalConstants1</CDName>
+<CDBase>http://www.openmath.org/cd</CDBase>
+<CDURL> http://www.openmath.org/cd/FundamentalPhysicalConstants1.ocd</CDURL>
+<CDReviewDate>2006-03-30</CDReviewDate>
+<CDStatus> experimental </CDStatus>
+<CDDate>2005-05-28</CDDate>
+<CDVersion>3</CDVersion>
+<CDRevision>1</CDRevision>
+
+<Description> 
+This CD defines symbols which represent five fundamental physical constants
+and the Planck units that they define.
+</Description>
+
+<CDDefinition>
+<Name>speed of light</Name>
+<Role>constant</Role>
+<Description>
+This symbol represents the speed of light in a vacuum. 
+Its value is implied by the definition of the metre
+[17th CGPM (1983)]. Consequently, the speed of light is defined to be
+exactly 299,792,458 metre per second (in the SI).
+It is commonly represented with the short, italic symbol, "c".
+</Description>
+<CMP> The speed of light is 299,792,458 metre per second </CMP>
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMS cd="physical_consts1" name="speed_of_light"/>
+    <OMA>
+      <OMS cd="arith1" name="times"/>
+      <OMI> 299792458 </OMI>
+      <OMA>
+	<OMS cd="arith1" name="divide"/>
+	<OMS cd="SI_BaseUnits1" name="metre"/>
+	<OMS cd="SI_BaseUnits1" name="second"/>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name>Planck constant</Name>
+<Role>constant</Role>
+<Description>
+This symbol represents the fundamental constant equal to the ratio of
+the energy of a photon to its frequency.
+By measurement it is found to be approximately equal to
+6.62606896(33)*10^(-34) J s  [CODATA 2006].
+It is commonly represented with the short, italic symbol, "h".
+</Description>
+<CMP>
+Planck constant ~ 6.62606896 * 10^–34 J s
+</CMP>
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="approx"/>
+    <OMS cd="FundamentalPhysicalConstants1" name=" Planck constant"/>
+    <OMA>
+      <OMS cd="arith1" name="times"/>
+      <OMA>
+	<OMS cd="bigfloat1" name="bigfloat"/>
+	<OMF dec="6.62606896"/>
+	<OMI>10</OMI><OMI>-34</OMI>
+      </OMA>
+      <OMS cd="SI_NamedDerivedUnits1" name="joule"/>
+      <OMS cd="SI_BaseUnits1" name="second"/>
+    </OMA>
+  </OMA>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name>reduced Planck constant</Name>
+<Role>constant</Role>
+<Description>
+This symbol represents the Planck constant divided by 2*pi.
+It is commonly represented with the short, italic symbol, h with a
+horizontal bar ("h-bar"), Unicode: U+210F ,  HTML: &#8463;.
+</Description>
+<CMP>
+reduced Planck constant = h/(2*pi)
+</CMP>
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMS cd="FundamentalPhysicalConstants1" name="reduced Planck constant"/>
+    <OMA>
+      <OMS cd="arith1" name="divide"/>
+      <OMS cd="FundamentalPhysicalConstants1" name="Planck constant"/>
+      <OMA>
+	<OMS cd="arith1" name="times"/>
+	<OMI>2</OMI>
+	<OMS name="pi" cd="nums1"/>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name>gravitational constant</Name>
+<Role>constant</Role>
+<Description>
+This symbol represents the constant of proportionality in Newton's law
+of universal gravitation. 
+By measurement it is found to be approximately equal to
+6.6742(10)*10^-11 newton metre^2 per kilogram^2.
+It is commonly represented with the short, italic symbol, "G".
+</Description>
+<CMP>
+G ~ 6.6742(10)*10^-11 newton metre^2 per kilogram^2
+</CMP>
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="approx"/>
+    <OMS cd="FundamentalPhysicalConstants1" name="gravitational constant"/>
+    <OMA>
+      <OMS cd="arith1" name="times"/>
+      <OMA>
+        <OMS cd="bigfloat1" name="bigfloat"/>
+        <OMF dec="6.6742"/>
+        <OMI>10</OMI><OMI>-11</OMI>
+      </OMA>
+      <OMS cd="SI_NamedDerivedUnits1" name="newton"/>
+      <OMS cd="SI_BaseUnits1" name="metre"/>
+      <OMA>
+        <OMS cd="arith1" name="divide"/>
+        <OMS cd="SI_BaseUnits1" name="metre"/>
+        <OMA>
+          <OMS cd="arith1" name="power"/>
+	  <OMS cd="SI_BaseUnits1" name="kilogram"/>
+          <OMI>2</OMI>
+        </OMA>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name>Boltzmann constant</Name>
+<Role>constant</Role>
+<Description>
+The Boltzmann constant relates energy at the particle level with temperature observed at the bulk level via the ideal gas law, pV = NkT.
+By measurement it is found to be approximately equal to
+ 1.3806504(24)*10^(-23) joule per kelvin.
+It is commonly represented with the short, italic symbol, "k".
+</Description>
+<CMP>
+k ~ 1.3806504*10^(-23) joule kelvin^-1
+</CMP>
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="approx"/>
+    <OMS cd="FundamentalPhysicalConstants1" name="Boltzmann constant"/>
+    <OMA>
+      <OMS cd="arith1" name="times"/>
+      <OMA>
+        <OMS cd="bigfloat1" name="bigfloat"/>
+        <OMF dec="1.3806504"/>
+        <OMI>10</OMI><OMI>-23</OMI>
+      </OMA>
+      <OMA>
+        <OMS cd="arith1" name="divide"/>
+	<OMS cd="SI_NamedDerivedUnits1" name="joule"/>
+        <OMS cd="SI_BaseUnits1" name="kelvin"/>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name>Coulomb constant</Name>
+<Role>constant</Role>
+<Description>
+The value of the Coulomb constant is implied by international definitions of the
+speed of light and the vacuum permeability.
+By definition, its exact value is equal to (299,792,458)^2 * 10^-7 N m^2 C^-2.
+It is commonly represented with the short, italic symbol, "k" subscripted with the
+upright letter "e".
+</Description>
+<CMP>
+k ~ 1.3806504*10^(-23) joule kelvin^-1
+</CMP>
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="approx"/>
+    <OMS cd="FundamentalPhysicalConstants1" name="Coulomb constant"/>
+    <OMA>
+      <OMS cd="arith1" name="times"/>
+      <OMA>
+        <OMS cd="bigfloat1" name="bigfloat"/>
+        <OMF dec="1.3806504"/>
+        <OMI>10</OMI><OMI>-23</OMI>
+      </OMA>
+      <OMA>
+        <OMS cd="arith1" name="divide"/>
+	<OMS cd="SI_NamedDerivedUnits1" name="joule"/>
+        <OMS cd="SI_BaseUnits1" name="kelvin"/>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name>Planck length</Name>
+<Role>constant</Role>
+<Description>
+The Planck length is defined to be sqrt(h-bar*G/(c^3)).
+Its value derived from measurement is 1.616252(81) * 10^−35 metre.
+It is commonly represented with the short, italic symbol, "l", subscripted with an upright capital "P".
+</Description>
+<CMP>
+l_P ~  1.616252(81) * 10^−35 metre
+</CMP>
+<CMP>
+l_P = sqrt(h-bar*G/(c^3))
+</CMP>
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMS cd="FundamentalPhysicalConstants1" name=" Planck length"/>
+    <OMA>
+      <OMS cd="arith1" name="times"/>
+      <OMA>
+        <OMS cd="bigfloat1" name="bigfloat"/>
+        <OMF dec="1.3806504"/>
+        <OMI>10</OMI><OMI>-23</OMI>
+      </OMA>
+      <OMS cd="SI_BaseUnits1" name="metre"/>
+    </OMA>
+  </OMA>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name>Planck mass</Name>
+<Role>constant</Role>
+<Description>
+The Planck mass is defined to be sqrt(h-bar*c/G).
+Its value derived from measurement is 2.17644(11) * 10^−8 kilogram.
+It is commonly represented with the short, italic symbol, "m", subscripted with an upright capital "P".
+</Description>
+<CMP>
+m_P ~ 2.17644(11) * 10^−8 kilogram
+</CMP>
+<CMP>
+m_P = sqrt(h-bar*c/G)
+</CMP>
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMS cd="FundamentalPhysicalConstants1" name="Planck mass"/>
+    <OMA>
+      <OMS cd="arith1" name="times"/>
+      <OMA>
+        <OMS cd="bigfloat1" name="bigfloat"/>
+        <OMF dec="2.17644"/>
+        <OMI>10</OMI><OMI>-8</OMI>
+      </OMA>
+      <OMS cd="SI_BaseUnits1" name="kilogram"/>
+    </OMA>
+  </OMA>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name>Planck time</Name>
+<Role>constant</Role>
+<Description>
+The Planck time is defined to be sqrt(h-bar*G/(c^5)).
+Its value derived from measurement is 5.39124(27) * 10^−44 second.
+It is commonly represented with the short, italic symbol, "t", subscripted with an upright capital "P".
+</Description>
+<CMP>
+t_P ~  5.39124(27) * 10^−44 second
+</CMP>
+<CMP>
+t_P = sqrt(h-bar*G/(c^5))
+</CMP>
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMS cd="FundamentalPhysicalConstants1" name="Planck time"/>
+    <OMA>
+      <OMS cd="arith1" name="times"/>
+      <OMA>
+        <OMS cd="bigfloat1" name="bigfloat"/>
+        <OMF dec="5.39124"/>
+        <OMI>10</OMI><OMI>-44</OMI>
+      </OMA>
+      <OMS cd="SI_BaseUnits1" name="second"/>
+    </OMA>
+  </OMA>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name>Planck charge</Name>
+<Role>constant</Role>
+<Description>
+The Planck charge is defined to be sqrt(h-bar*c*4*pi*eps0).
+Its value derived from measurement is 1.875545870(47) * 10^−18 coulomb.
+It is commonly represented with the short, italic symbol, "q", subscripted with an upright capital "P".
+</Description>
+<CMP>
+q_P ~  1.875545870(47) * 10^−18 coulomb
+</CMP>
+<CMP>
+q_P = sqrt(h-bar*c*4*pi*eps0)
+</CMP>
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMS cd="FundamentalPhysicalConstants1" name="Planck charge"/>
+    <OMA>
+      <OMS cd="arith1" name="times"/>
+      <OMA>
+        <OMS cd="bigfloat1" name="bigfloat"/>
+        <OMF dec="1.875545870"/>
+        <OMI>10</OMI><OMI>-18</OMI>
+      </OMA>
+      <OMS cd="SI_NamedDerivedUnits1" name="coulomb"/>
+    </OMA>
+  </OMA>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name>Planck temperature</Name>
+<Role>constant</Role>
+<Description>
+The Planck temperature is defined to be sqrt(h-bar*c^5/(G*k^3)).
+Its value derived from measurement is 1.416785(71) × 10^32 kelvin.
+It is commonly represented with the short, italic symbol, "T", subscripted with an upright capital "P".
+</Description>
+<CMP>
+l_P ~ 1.416785(71) × 10^32 kelvin
+</CMP>
+<CMP>
+l_P =  sqrt(h-bar*c^5/(G*k^3))
+</CMP>
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMS cd="FundamentalPhysicalConstants1" name="Boltzmann constant"/>
+    <OMA>
+      <OMS cd="arith1" name="times"/>
+      <OMA>
+        <OMS cd="bigfloat1" name="bigfloat"/>
+        <OMF dec="1.3806504"/>
+        <OMI>10</OMI><OMI>-23</OMI>
+      </OMA>
+      <OMA>
+        <OMS cd="arith1" name="divide"/>
+	<OMS cd="SI_NamedDerivedUnits1" name="joule"/>
+        <OMS cd="SI_BaseUnits1" name="kelvin"/>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ></FMP>
+</CDDefinition>
+
+</CD>

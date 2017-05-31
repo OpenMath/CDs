@@ -1,0 +1,466 @@
+<?xml version="1.0"?>
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+
+<CDName> generic_alg_cats </CDName>
+<CDURL> http://www.openmath.org/cd/generic_alg_cats.ocd </CDURL>
+<CDReviewDate> 2005-04-01 </CDReviewDate>
+<CDStatus> experimental </CDStatus>
+<CDDate> 2002-06-17 </CDDate>
+<CDVersion> 0 </CDVersion>
+<CDRevision> 0 </CDRevision>
+<CDUses>
+  <CDName> algebraic_cats </CDName>
+  <CDName> logic1 </CDName>
+  <CDName> meta_cats </CDName>
+  <CDName> set1 </CDName>
+</CDUses>
+<Description>
+A CD of generic algebraic categories. This CD holds information
+relating to the heirarchical sturcture of the algebraic category
+system.
+</Description>
+<CDDefinition>
+<Name>monoid</Name>
+<Description>
+This Symbol represents the generic category of monoid.
+</Description>
+<CMP> A monoid is a groupoid </CMP>
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS cd="meta_cats" name="has"/>
+  <OMS cd="generic_alg_cats" name="monoid"/>
+  <OMS cd="generic_alg_cats" name="groupoid"/>
+</OMA>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name>Abelian_monoid</Name>
+<Description>
+This Symbol represents the generic category of Abelian monoid.
+</Description>
+<CMP> An Abelian monoid is a monoid </CMP>
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS cd="meta_cats" name="has"/>
+  <OMS cd="generic_alg_cats" name="Abelian_monoid"/>
+  <OMS cd="generic_alg_cats" name="monoid"/>
+</OMA>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name>ordered_monoid</Name>
+<Description>
+This Symbol represents the generic category of ordered monoid.
+</Description>
+
+<CMP> An ordered monoid is a monoid </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS cd="meta_cats" name="has"/>
+  <OMS cd="generic_alg_cats" name="ordered_monoid"/>
+  <OMS cd="generic_alg_cats" name="monoid"/>
+</OMA>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name>ordered_Abelian_monoid</Name>
+<Description>
+This Symbol represents the generic category of ordered Abelian monoid.
+</Description>
+<CMP> An ordered Abelian monoid is an Abelian monoid </CMP>
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS cd="meta_cats" name="has"/>
+  <OMS cd="generic_alg_cats" name="ordered_Abelian_monoid"/>
+  <OMS cd="generic_alg_cats" name="Abelian_monoid"/>
+</OMA>
+</OMOBJ></FMP>
+
+<CMP> An ordered Abelian monoid is an ordered monoid </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS cd="meta_cats" name="has"/>
+  <OMS cd="generic_alg_cats" name="ordered_Abelian_monoid"/>
+  <OMS cd="generic_alg_cats" name="ordered_monoid"/>
+</OMA>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name>groupoid</Name>
+<Description>
+This Symbol represents the generic category of groupoid.
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name>semigroup</Name>
+<Description>
+This Symbol represents the generic category of semigroup.
+</Description>
+<CMP> A semigroup is a groupoid </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS cd="meta_cats" name="has"/>
+  <OMS cd="generic_alg_cats" name="semigroup"/>
+  <OMS cd="generic_alg_cats" name="groupoid"/>
+</OMA>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name>Abelian_semigroup</Name>
+<Description>
+This Symbol represents the generic category of Abelian semigroup.
+</Description>
+<CMP> An Abelian semigroup is a semigroup </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS cd="meta_cats" name="has"/>
+  <OMS cd="generic_alg_cats" name="Abelian_semigroup"/>
+  <OMS cd="generic_alg_cats" name="semigroup"/>
+</OMA>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name>group</Name>
+<Description>
+This Symbol represents the generic category of group.
+</Description>
+<CMP> A group is a monoid </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS cd="meta_cats" name="has"/>
+  <OMS cd="generic_alg_cats" name="group"/>
+  <OMS cd="generic_alg_cats" name="monoid"/>
+</OMA>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name>ordered_group</Name>
+<Description>
+This Symbol represents the generic category of ordered group.
+</Description>
+<CMP> An ordered group is a group </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS cd="meta_cats" name="has"/>
+  <OMS cd="generic_alg_cats" name="ordered_group"/>
+  <OMS cd="generic_alg_cats" name="group"/>
+</OMA>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name>Abelian_group</Name>
+<Description>
+This Symbol represents the generic category of Abelian group.
+</Description>
+<CMP> An Abelian group is a group </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS cd="meta_cats" name="has"/>
+  <OMS cd="generic_alg_cats" name="Abelian_group"/>
+  <OMS cd="generic_alg_cats" name="group"/>
+</OMA>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name>ordered_Abelian_group</Name>
+<Description>
+This Symbol represents the generic category of ordered Abelian group.
+</Description>
+<CMP> An ordered Abelian group is an Abelian group </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="meta_cats" name="has"/>
+      <OMS cd="generic_alg_cats" name="ordered_Abelian_group"/>
+      <OMS cd="generic_alg_cats" name="Abelian_group"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+
+<CMP> An ordered Abelian group is an ordered group </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="meta_cats" name="has"/>
+      <OMS cd="generic_alg_cats" name="ordered_Abelian_group"/>
+      <OMS cd="generic_alg_cats" name="ordered_group"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+  <Name> ringoid </Name>
+  <Description>
+This symbol represents the generic category of ringoid.
+  </Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name>ring</Name>
+<Description>
+This Symbol represents the generic category of ring.
+</Description>
+
+<CMP> A ring is a ringoid </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="meta_cats" name="has"/>
+      <OMS cd="generic_alg_cats" name="ring"/>
+      <OMS cd="generic_alg_cats" name="ringoid"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+
+<CMP> A ring is a group under addition </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="logic1" name="implies"/>
+      <OMA>
+        <OMS cd="set1" name="in"/>
+        <OMV name="R"/>
+        <OMS cd="generic_alg_cats" name="ring"/>
+      </OMA>
+      <OMA>
+        <OMS cd="set1" name="in"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="group"/>
+          <OMA>
+            <OMS cd="algebraic_cats" name="ring_set"/>
+            <OMV name="R"/>
+          </OMA>
+          <OMA>
+            <OMS cd="algebraic_cats" name="ring_plus"/>
+            <OMV name="R"/>
+          </OMA>
+          <OMA>
+            <OMS cd="algebraic_cats" name="ring_zero"/>
+            <OMV name="R"/>
+          </OMA>
+          <OMA>
+            <OMS cd="algebraic_cats" name="ring_negative"/>
+            <OMV name="R"/>
+          </OMA>
+        </OMA>
+        <OMS cd="generic_alg_cats" name="group"/>
+      </OMA>
+    </OMA>
+  </OMOBJ>
+</FMP>
+
+<CMP> A ring is a semigroup under multiplication </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="logic1" name="implies"/>
+      <OMA>
+        <OMS cd="set1" name="in"/>
+        <OMV name="R"/>
+        <OMS cd="generic_alg_cats" name="ring"/>
+      </OMA>
+      <OMA>
+        <OMS cd="set1" name="in"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="semigroup"/>
+          <OMA>
+            <OMS cd="algebraic_cats" name="ring_set"/>
+            <OMV name="R"/>
+          </OMA>
+          <OMA>
+            <OMS cd="algebraic_cats" name="ring_times"/>
+            <OMV name="R"/>
+          </OMA>
+        </OMA>
+        <OMS cd="generic_alg_cats" name="semigroup"/>
+      </OMA>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name>ordered_ring</Name>
+<Description>
+This Symbol represents the generic category of ordered ring.
+</Description>
+
+<CMP> An ordered ring is a ring </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="meta_cats" name="has"/>
+      <OMS cd="generic_alg_cats" name="ordered_ring"/>
+      <OMS cd="generic_alg_cats" name="ring"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name>non_commutative_ring</Name>
+<Description>
+This Symbol represents the generic category of non-commutative ring.
+</Description>
+<CMP> A non-commutative ring is a ring </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="meta_cats" name="has"/>
+      <OMS cd="generic_alg_cats" name="non_commutative_ring"/>
+      <OMS cd="generic_alg_cats" name="ring"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name>Euclidean_domain</Name>
+<Description>
+This Symbol represents the generic category of Euclidean domain.
+</Description>
+<CMP> A Euclidean domain is a ring </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="meta_cats" name="has"/>
+      <OMS cd="generic_alg_cats" name="Euclidean_domain"/>
+      <OMS cd="generic_alg_cats" name="ring"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name>field</Name>
+<Description>
+This Symbol represents the generic category of field.
+</Description>
+
+<CMP> A field is an Abelian group under + </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="logic1" name="implies"/>
+      <OMA>
+        <OMS cd="set1" name="in"/>
+        <OMV name="F"/>
+        <OMS cd="generic_alg_cats" name="field"/>
+      </OMA>
+      <OMA>
+        <OMS cd="set1" name="in"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="Abelian_group"/>
+          <OMA>
+            <OMS cd="algebraic_cats" name="field_set"/>
+            <OMV name="F"/>
+          </OMA>
+          <OMA>
+            <OMS cd="algebraic_cats" name="field_plus"/>
+            <OMV name="F"/>
+          </OMA>
+          <OMA>
+            <OMS cd="algebraic_cats" name="field_zero"/>
+            <OMV name="F"/>
+          </OMA>
+          <OMA>
+            <OMS cd="algebraic_cats" name="field_negative"/>
+            <OMV name="F"/>
+          </OMA>
+        </OMA>
+        <OMS cd="generic_alg_cats" name="Abelian_group"/>
+      </OMA>
+    </OMA>
+  </OMOBJ>
+</FMP>
+
+<CMP> A field is a ring </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="meta_cats" name="has"/>
+      <OMS cd="generic_alg_cats" name="field"/>
+      <OMS cd="generic_alg_cats" name="ring"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name>integral_domain</Name>
+<Description>
+This Symbol represents the generic category of integral domain.
+</Description>
+<CMP> An integral domain is a ring </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="meta_cats" name="has"/>
+      <OMS cd="generic_alg_cats" name="integral_domain"/>
+      <OMS cd="generic_alg_cats" name="ring"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+</CD>

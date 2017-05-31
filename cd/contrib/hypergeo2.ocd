@@ -1,0 +1,503 @@
+<?xml version="1.0"?>
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<!-- $Id: hypergeo2.tfb,v 1.6 2003/11/30 12:56:08 taka Exp $ -->
+<CDName> hypergeo2 </CDName>
+<CDURL> http://www.openxm.org/... </CDURL>
+<CDReviewDate> 2003-08-11 </CDReviewDate>
+<CDDate> 2002-08-11, 2003-11-30 </CDDate>
+<CDVersion> 0 </CDVersion>
+<CDRevision> 1 </CDRevision>
+<CDStatus> experimental </CDStatus>
+<CDUses>
+  <CDName>arith1</CDName>
+  <CDName>relation1</CDName>
+  <CDName>calculus1</CDName>
+  <CDName>alg1</CDName>
+  <CDName>interval1</CDName>
+  <CDName>nums1</CDName>
+  <CDName>hypergeo0</CDName>
+  <CDName>hypergeo1</CDName>
+</CDUses>
+<Description>
+	This CD defines some famous hypergeometric functions such as
+    Bessel functions and Airy functions.
+	These functions are described in the following books.
+	(1) Handbook of Mathematical Functions, Abramowitz, Stegun
+	(2) Higher transcendental functions. Krieger Publishing Co., Inc., Melbourne, Fla., 1981, Erdlyi, Arthur; Magnus, Wilhelm; Oberhettinger, Fritz; Tricomi, Francesco G. 
+</Description>
+
+<CDDefinition>
+<Name> kummer </Name>
+<Description>
+	Kummer's hypergeometric function.
+</Description>
+<CMP>
+	kummer(a,c;z) = hypergeo1.hypergeometric1F1(a,c;z)
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA><OMS cd="relation1" name="eq"/>
+    <OMA><OMS cd="hypergeo2" name="kummer"/>
+      <OMV name="a"/>
+      <OMV name="c"/>
+      <OMV name="z"/>
+    </OMA>
+    <OMA><OMS cd="hypergeo1" name="hypergeometric1F1"/>
+      <OMV name="a"/>
+      <OMV name="c"/>
+      <OMV name="z"/>
+    </OMA>
+  </OMA>
+</OMOBJ>
+
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> besselJ </Name>
+<Description>
+	The Bessel function.
+	This function is one of the famous two solutions of the Bessel
+	differential equation at z=0.
+</Description>
+<CMP>
+	besselJ(v,z)
+	= (\frac{z}{2})^v \sum_{n=0}^{+\infty}
+	\frac{(-1)^n}{n! \Gamma(v+n+1)} (\frac{z}{2})^2n
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA><OMS cd="relation1" name="eq"/>
+    <OMA><OMS cd="hypergeo2" name="besselJ"/>
+      <OMV name="v"/>
+      <OMV name="z"/>
+    </OMA>
+    <OMA><OMS cd="arith1" name="times"/>
+      <OMA><OMS cd="arith1" name="power"/>
+        <OMA><OMS cd="arith1" name="divide"/>
+          <OMV name="z"/>
+          <OMI> 2 </OMI>
+        </OMA>
+        <OMV name="v"/>
+      </OMA>
+      <OMA><OMS cd="arith1" name="sum"/>
+        <OMA><OMS cd="interval1" name="integer_interval"/>
+          <OMI> 0 </OMI>
+          <OMV name="infty"/>
+        </OMA>
+        <OMBIND>
+          <OMS cd="fns1" name="lambda"/>
+          <OMBVAR>
+            <OMV name="n"/>
+          </OMBVAR>
+          <OMA><OMS cd="arith1" name="times"/>
+            <OMA><OMS cd="arith1" name="divide"/>
+              <OMA><OMS cd="arith1" name="power"/>
+                <OMA><OMS cd="arith1" name="unary_minus"/>
+                  <OMI> 1 </OMI>
+                </OMA>
+                <OMV name="n"/>
+              </OMA>
+              <OMA><OMS cd="arith1" name="times"/>
+                <OMA><OMS cd="integer1" name="factorial"/>
+                  <OMV name="n"/>
+                </OMA>
+                <OMA><OMS cd="hypergeo0" name="gamma"/>
+                  <OMA><OMS cd="arith1" name="plus"/>
+                    <OMA><OMS cd="arith1" name="plus"/>
+                      <OMV name="v"/>
+                      <OMV name="n"/>
+                    </OMA>
+                    <OMI> 1 </OMI>
+                  </OMA>
+                </OMA>
+              </OMA>
+            </OMA>
+            <OMA><OMS cd="arith1" name="power"/>
+              <OMA><OMS cd="arith1" name="divide"/>
+                <OMV name="z"/>
+                <OMI> 2 </OMI>
+              </OMA>
+              <OMA><OMS cd="arith1" name="times"/>
+                <OMI> 2 </OMI>
+                <OMV name="n"/>
+              </OMA>
+            </OMA>
+          </OMA>
+        </OMBIND>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+
+</FMP>
+
+<Example>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA><OMS cd="relation1" name="eq"/>
+    <OMA><OMS cd="arith1" name="plus"/>
+      <OMA><OMS cd="arith1" name="plus"/>
+        <OMA><OMS cd="arith1" name="times"/>
+          <OMA><OMS cd="arith1" name="power"/>
+            <OMV name="z"/>
+            <OMI> 2 </OMI>
+          </OMA>
+          <OMA><OMS cd="calculus1" name="diff"/>
+            <OMBIND>
+              <OMS cd="fns1" name="lambda"/>
+              <OMBVAR>
+                <OMV name="z"/>
+              </OMBVAR>
+              <OMA><OMS cd="calculus1" name="diff"/>
+                <OMBIND>
+                  <OMS cd="fns1" name="lambda"/>
+                  <OMBVAR>
+                    <OMV name="z"/>
+                  </OMBVAR>
+                  <OMA><OMS cd="hypergeo2" name="besselJ"/>
+                    <OMV name="v"/>
+                    <OMV name="z"/>
+                  </OMA>
+                </OMBIND>
+              </OMA>
+            </OMBIND>
+          </OMA>
+        </OMA>
+        <OMA><OMS cd="arith1" name="times"/>
+          <OMV name="z"/>
+          <OMA><OMS cd="calculus1" name="diff"/>
+            <OMBIND>
+              <OMS cd="fns1" name="lambda"/>
+              <OMBVAR>
+                <OMV name="z"/>
+              </OMBVAR>
+              <OMA><OMS cd="bypergeo2" name="besselJ"/>
+                <OMV name="v"/>
+                <OMV name="z"/>
+              </OMA>
+            </OMBIND>
+          </OMA>
+        </OMA>
+      </OMA>
+      <OMA><OMS cd="arith1" name="times"/>
+        <OMA><OMS cd="arith1" name="minus"/>
+          <OMA><OMS cd="arith1" name="power"/>
+            <OMV name="z"/>
+            <OMI> 2 </OMI>
+          </OMA>
+          <OMA><OMS cd="arith1" name="power"/>
+            <OMV name="v"/>
+            <OMI> 2 </OMI>
+          </OMA>
+        </OMA>
+        <OMA><OMS name="besselJ"/>
+          <OMV name="v"/>
+          <OMV name="z"/>
+        </OMA>
+      </OMA>
+    </OMA>
+    <OMI> 0 </OMI>
+  </OMA>
+</OMOBJ>
+
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> besselY </Name>
+<Description>
+	The Bessel function.
+	This function is the another one of the famous two solutions of the Bessel
+	differential equation at z=0.
+</Description>
+<CMP>
+	besselY(v,z)
+	= (\cos(v \pi) besselJ(v,z) - besselJ(-v,z))/\sin(v \pi)
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA><OMS cd="relation1" name="eq"/>
+    <OMA><OMS cd="hypergeo2" name="besselY"/>
+      <OMV name="v"/>
+      <OMV name="z"/>
+    </OMA>
+    <OMA><OMS cd="arith1" name="divide"/>
+      <OMA><OMS cd="arith1" name="minus"/>
+        <OMA><OMS cd="arith1" name="times"/>
+          <OMA><OMS cd="transc1" name="cos"/>
+            <OMA><OMS cd="arith1" name="times"/>
+              <OMV name="v"/>
+              <OMS cd="nums1" name="pi"/>
+            </OMA>
+          </OMA>
+          <OMA><OMS cd="hypergeo2" name="besselJ"/>
+            <OMV name="v"/>
+            <OMV name="z"/>
+          </OMA>
+        </OMA>
+        <OMA><OMS name="besselJ"/>
+          <OMA><OMS cd="arith1" name="unary_minus"/>
+            <OMV name="v"/>
+          </OMA>
+          <OMV name="z"/>
+        </OMA>
+      </OMA>
+      <OMA><OMS cd="transc1" name="sin"/>
+        <OMA><OMS cd="arith1" name="times"/>
+          <OMV name="v"/>
+          <OMS cd="nums1" name="pi"/>
+        </OMA>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+
+</FMP>
+
+<Example>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA><OMS cd="relation1" name="eq"/>
+    <OMA><OMS cd="arith1" name="plus"/>
+      <OMA><OMS cd="arith1" name="plus"/>
+        <OMA><OMS cd="arith1" name="times"/>
+          <OMA><OMS cd="arith1" name="power"/>
+            <OMV name="z"/>
+            <OMI> 2 </OMI>
+          </OMA>
+          <OMA><OMS cd="calculus1" name="diff"/>
+            <OMBIND>
+              <OMS cd="fns1" name="lambda"/>
+              <OMBVAR>
+                <OMV name="z"/>
+              </OMBVAR>
+              <OMA><OMS cd="calculus1" name="diff"/>
+                <OMBIND>
+                  <OMS cd="fns1" name="lambda"/>
+                  <OMBVAR>
+                    <OMV name="z"/>
+                  </OMBVAR>
+                  <OMA><OMS cd="hypergeo2" name="besselY"/>
+                    <OMV name="v"/>
+                    <OMV name="z"/>
+                  </OMA>
+                </OMBIND>
+              </OMA>
+            </OMBIND>
+          </OMA>
+        </OMA>
+        <OMA><OMS cd="arith1" name="times"/>
+          <OMV name="z"/>
+          <OMA><OMS cd="calculus1" name="diff"/>
+            <OMBIND>
+              <OMS cd="fns1" name="lambda"/>
+              <OMBVAR>
+                <OMV name="z"/>
+              </OMBVAR>
+              <OMA><OMS cd="hypergeo2" name="besselY"/>
+                <OMV name="v"/>
+                <OMV name="z"/>
+              </OMA>
+            </OMBIND>
+          </OMA>
+        </OMA>
+      </OMA>
+      <OMA><OMS cd="arith1" name="times"/>
+        <OMA><OMS cd="arith1" name="minus"/>
+          <OMA><OMS cd="arith1" name="power"/>
+            <OMV name="z"/>
+            <OMI> 2 </OMI>
+          </OMA>
+          <OMA><OMS cd="arith1" name="power"/>
+            <OMV name="v"/>
+            <OMI> 2 </OMI>
+          </OMA>
+        </OMA>
+        <OMA><OMS cd="hypergeo2" name="besselY"/>
+          <OMV name="v"/>
+          <OMV name="z"/>
+        </OMA>
+      </OMA>
+    </OMA>
+    <OMI> 0 </OMI>
+  </OMA>
+</OMOBJ>
+
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> hankel1 </Name>
+<Description>
+	The first Hankel function.
+	This function is one of the famous two solutions of the Bessel
+	differential equation at z=\infty.
+</Description>
+<CMP>
+	hankel1(v,z)
+	= besselJ(v,z) + i BesselY(v,z)
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA><OMS cd="relation1" name="eq"/>
+    <OMA><OMS cd="hypergeo2" name="hankel1"/>
+      <OMV name="v"/>
+      <OMV name="z"/>
+    </OMA>
+    <OMA><OMS cd="arith1" name="plus"/>
+      <OMA><OMS cd="hypergeo2" name="besselJ"/>
+        <OMV name="v"/>
+        <OMV name="z"/>
+      </OMA>
+      <OMA><OMS cd="arith1" name="times"/>
+        <OMS cd="nums1" name="i"/>
+        <OMA><OMS cd="hypergeo2" name="besselY"/>
+          <OMV name="v"/>
+          <OMV name="z"/>
+        </OMA>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> hankel2 </Name>
+<Description>
+	The second Hankel function.
+	This function is the another one of the famous two solutions of the Bessel
+	differential equation at z=\infty.
+</Description>
+<CMP>
+	hankel2(v,z)
+	= besselJ(v,z) - i BesselY(v,z)
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA><OMS cd="relation1" name="eq"/>
+    <OMA><OMS cd="hypergeo2" name="hankel1"/>
+      <OMV name="v"/>
+      <OMV name="z"/>
+    </OMA>
+    <OMA><OMS cd="arith1" name="minus"/>
+      <OMA><OMS cd="hypergeo2" name="besselJ"/>
+        <OMV name="v"/>
+        <OMV name="z"/>
+      </OMA>
+      <OMA><OMS cd="arith1" name="times"/>
+        <OMS cd="nums1" name="i"/>
+        <OMA><OMS cd="hypergeo2" name="besselY"/>
+          <OMV name="v"/>
+          <OMV name="z"/>
+        </OMA>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> airyAi </Name>
+<Description>
+	The first Airy function.
+	This function is one of the famous two solutions of the Airy
+	differential equation, and converges to 0 when z->\infty
+</Description>
+<CMP>
+	(\frac{d^2}{dz^2} - z) airyAi(z) = 0
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA><OMS cd="relation1" name="eq"/>
+    <OMA><OMS cd="arith1" name="minus"/>
+      <OMA><OMS cd="calculus1" name="diff"/>
+        <OMBIND>
+          <OMS cd="fns1" name="lambda"/>
+          <OMBVAR>
+            <OMV name="z"/>
+          </OMBVAR>
+          <OMA><OMS cd="calculus1" name="diff"/>
+            <OMBIND>
+              <OMS cd="fns1" name="lambda"/>
+              <OMBVAR>
+                <OMV name="z"/>
+              </OMBVAR>
+              <OMA><OMS cd="hypergeo2" name="airyAi"/>
+                <OMV name="z"/>
+              </OMA>
+            </OMBIND>
+          </OMA>
+        </OMBIND>
+      </OMA>
+      <OMA><OMS cd="arith1" name="times"/>
+        <OMV name="z"/>
+        <OMA><OMS cd="hypergeo2" name="airyAi"/>
+          <OMV name="z"/>
+        </OMA>
+      </OMA>
+    </OMA>
+    <OMI> 0 </OMI>
+  </OMA>
+</OMOBJ>
+
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> airyBi </Name>
+<Description>
+	The second Airy function.
+	This function is the another one of the famous two solutions of the Airy
+	differential equation, and diverges when z->\infty
+</Description>
+<CMP>
+	(\frac{d^2}{dz^2} - z) airyBi(z) = 0
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA><OMS cd="relation1" name="eq"/>
+    <OMA><OMS cd="arith1" name="minus"/>
+      <OMA><OMS cd="calculus1" name="diff"/>
+        <OMBIND>
+          <OMS cd="fns1" name="lambda"/>
+          <OMBVAR>
+            <OMV name="z"/>
+          </OMBVAR>
+          <OMA><OMS cd="calculus1" name="diff"/>
+            <OMBIND>
+              <OMS cd="fns1" name="lambda"/>
+              <OMBVAR>
+                <OMV name="z"/>
+              </OMBVAR>
+              <OMA><OMS cd="hypergeo2" name="airyBi"/>
+                <OMV name="z"/>
+              </OMA>
+            </OMBIND>
+          </OMA>
+        </OMBIND>
+      </OMA>
+      <OMA><OMS cd="arith1" name="times"/>
+        <OMV name="z"/>
+        <OMA><OMS cd="hypergeo2" name="airyBi"/>
+          <OMV name="z"/>
+        </OMA>
+      </OMA>
+    </OMA>
+    <OMI> 0 </OMI>
+  </OMA>
+</OMOBJ>
+
+</FMP>
+</CDDefinition>
+
+</CD>

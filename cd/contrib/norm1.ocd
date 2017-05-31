@@ -1,0 +1,190 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment> 
+
+<CDName> norm1 </CDName> 
+<CDURL> http://www.openmath.org/cd/norm1.ocd </CDURL>
+<CDReviewDate> 2005-08-06 </CDReviewDate> 
+<CDDate> 2003-09-16 </CDDate> 
+<CDStatus> experimental </CDStatus>
+<CDVersion> 1 </CDVersion>
+<CDRevision> 0 </CDRevision>
+<CDUses>
+  <CDName>alg1</CDName>
+  <CDName>arith1</CDName>
+  <CDName>fns1</CDName>
+  <CDName>fns2</CDName>
+  <CDName>interval1</CDName>
+  <CDName>linalg1</CDName>
+  <CDName>list1</CDName>
+  <CDName>minmax1</CDName>
+  <CDName>relation1</CDName>
+  <CDName>set1</CDName>
+</CDUses>
+   <Description>
+      This CD contains definitions of various norms.
+   </Description>
+
+<CDDefinition>
+   <Name> L_norm </Name>
+   <Description>
+       This symbol signifies the $L_p$ norm for any $p$ (the
+       case of $L_\infty$ is handled specially).
+   </Description>
+   <CMP>
+      $L_p(v)=\left(\sum_{i=1}^{size v}|v_i|^p\right)^{1/p}$
+   </CMP>
+   <FMP>
+     <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+       <OMA>
+         <OMS name="eq" cd="relation1"/>
+         <OMA>
+           <OMS name="L_norm" cd="norm1"/>
+	   <OMV name="p"/>
+	   <OMV name="v"/>
+         </OMA>
+         <OMA>
+           <OMS name="power" cd="arith1"/>
+           <OMA>
+             <OMS name="sum" cd="arith1"/>
+             <OMA>
+               <OMS name="integer_interval" cd="interval1"/>
+	       <OMS name="one" cd="alg1"/>
+               <OMA>
+	         <OMS name="size" cd="set1"/>
+	         <OMV name="v"/>
+               </OMA>
+             </OMA>
+             <OMBIND>
+               <OMS cd="fns1" name="lambda"/>
+                 <OMBVAR>
+                   <OMV name="i"/>
+                 </OMBVAR>
+                 <OMA>
+                   <OMS cd="arith1" name="power"/>
+                   <OMA>
+		     <OMS name="abs" cd="arith1"/>
+                     <OMA>
+                       <OMS cd="linalg1" name="vector_selector"/>
+                       <OMV name="v"/>
+                       <OMV name="i"/>
+                     </OMA>
+                   </OMA>
+	           <OMV name="p"/>
+                 </OMA>
+             </OMBIND>
+           </OMA>
+           <OMA>
+             <OMS name="divide" cd="arith1"/>
+	     <OMS name="one" cd="alg1"/>
+	     <OMV name="p"/>
+           </OMA>
+         </OMA>
+       </OMA>
+     </OMOBJ>
+   </FMP>
+</CDDefinition>
+
+<CDDefinition>
+   <Name> L_infinity_norm </Name>
+   <Description>
+       This symbol signifies the $L_\infty$ norm.
+   </Description>
+   <CMP>
+      $L_\infty(v)=\max_{i=1}^{size v}|v_i|$
+   </CMP>
+   <FMP>
+     <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+       <OMA>
+         <OMS name="eq" cd="relation1"/>
+         <OMA>
+           <OMS name="L_infinity_norm" cd="norm1"/>
+	   <OMV name="v"/>
+         </OMA>
+         <OMA>
+           <OMS cd="fns2" name="apply_to_list"/>
+           <OMS cd="minmax1" name="max"/>
+           <OMA>
+             <OMS cd="list1" name="make_list"/>
+             <OMI> 1 </OMI>
+             <OMA>
+	       <OMS name="size" cd="set1"/>
+	       <OMV name="v"/>
+             </OMA>
+             <OMBIND>
+               <OMS cd="fns1" name="lambda"/>
+               <OMBVAR>
+                 <OMV name="i"/>
+               </OMBVAR>
+               <OMA>
+                 <OMS cd="arith1" name="abs"/>
+                 <OMA>
+                   <OMS cd="linalg1" name="vector_selector"/>
+                   <OMV name="v"/>
+                   <OMV name="i"/>
+                 </OMA>
+               </OMA>
+             </OMBIND>
+           </OMA>
+         </OMA>
+       </OMA>
+     </OMOBJ>
+   </FMP>
+</CDDefinition>
+
+<CDDefinition>
+   <Name> Euclidean_norm </Name>
+   <Description>
+       This symbol signifies the Euclidean ($L_2$) norm. 
+   </Description>
+   <CMP>
+      $L_2(v)=$ Euclidean_norm(v)
+   </CMP>
+   <FMP>
+     <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+       <OMA>
+         <OMS name="eq" cd="relation1"/>
+         <OMA>
+           <OMS name="Euclidean_norm" cd="norm1"/>
+	   <OMV name="v"/>
+         </OMA>
+           <OMS name="L_norm" cd="norm1"/>
+	   <OMI> 2 </OMI>
+	   <OMV name="v"/>
+         <OMA>
+         </OMA>
+       </OMA>
+     </OMOBJ>
+   </FMP>
+</CDDefinition>
+</CD>

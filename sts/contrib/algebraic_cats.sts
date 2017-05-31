@@ -1,0 +1,1505 @@
+<?xml version="1.0"?>
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts2" cd="algebraic_cats">
+  <CDSComment>
+    Date:2002-07-06
+    Author: Bill Naylor
+  </CDSComment>
+  <Signature name="monoid">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS name="mapsto" cd="sts"/>
+        <OMA>
+          <OMS name="structure" cd="sts"/>
+          <OMV name="Set"/>
+        </OMA>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+        <OMV name="Set"/>
+        <OMS name="monoid" cd="generic_alg_cats"/>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="monoid_set">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="monoid" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="structure" cd="sts"/>
+          <OMV name="Set"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="monoid_operation">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="monoid" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="monoid_identity">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="monoid" cd="generic_alg_cats"/>
+        <OMV name="Set"/>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="Abelian_monoid">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS name="mapsto" cd="sts"/>
+        <OMA>
+          <OMS name="structure" cd="sts"/>
+          <OMV name="Set"/>
+        </OMA>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+        <OMV name="Set"/>
+        <OMS name="Abelian_monoid" cd="generic_alg_cats"/>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="Abelian_monoid_set">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="Abelian_monoid" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="structure" cd="sts"/>
+          <OMV name="Set"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="Abelian_monoid_operation">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="Abelian_monoid" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="Abelian_monoid_identity">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="Abelian_monoid" cd="generic_alg_cats"/>
+        <OMV name="Set"/>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="ordered_monoid">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS name="mapsto" cd="sts"/>
+        <OMA>
+          <OMS name="structure" cd="sts"/>
+          <OMV name="Set"/>
+        </OMA>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+        <OMV name="Set"/>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMS cd="setname2" name="Boolean"/>
+        </OMA>
+        <OMS name="ordered_monoid" cd="generic_alg_cats"/>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="ordered_monoid_set">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="ordered_monoid" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="structure" cd="sts"/>
+          <OMV name="Set"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="ordered_monoid_operation">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="ordered_monoid" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="ordered_monoid_identity">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="ordered_monoid" cd="generic_alg_cats"/>
+        <OMV name="Set"/>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="ordered_monoid_order">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="ordered_monoid" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMS cd="setname2" name="Boolean"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="ordered_Abelian_monoid">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS name="mapsto" cd="sts"/>
+        <OMA>
+          <OMS name="structure" cd="sts"/>
+          <OMV name="Set"/>
+        </OMA>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+        <OMV name="Set"/>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMS cd="setname2" name="Boolean"/>
+        </OMA>
+        <OMS name="ordered_Abelian_monoid" cd="generic_alg_cats"/>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="ordered_Abelian_monoid_set">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="ordered_Abelian_monoid" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="structure" cd="sts"/>
+          <OMV name="Set"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="ordered_Abelian_monoid_operation">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="ordered_Abelian_monoid" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="ordered_Abelian_monoid_identity">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="ordered_Abelian_monoid" cd="generic_alg_cats"/>
+        <OMV name="Set"/>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="ordered_Abelian_monoid_order">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/> <OMS name="ordered_Abelian_monoid" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMS cd="setname2" name="Boolean"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="groupoid">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS name="mapsto" cd="sts"/>
+        <OMA>
+          <OMS name="structure" cd="sts"/>
+          <OMV name="Set"/>
+        </OMA>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+        <OMS name="groupoid" cd="generic_alg_cats"/>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="groupoid_set">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="groupoid" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="structure" cd="sts"/>
+          <OMV name="Set"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="groupoid_operation">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="groupoid" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="semigroup">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS name="mapsto" cd="sts"/>
+        <OMA>
+          <OMS name="structure" cd="sts"/>
+          <OMV name="Set"/>
+        </OMA>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+        <OMS name="semigroup" cd="generic_alg_cats"/>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="semigroup_set">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="semigroup" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="structure" cd="sts"/>
+          <OMV name="Set"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="semigroup_operation">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="semigroup" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="Abelian_semigroup">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS name="mapsto" cd="sts"/>
+        <OMA>
+          <OMS name="structure" cd="sts"/>
+          <OMV name="Set"/>
+        </OMA>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+        <OMS name="Abelian_semigroup" cd="generic_alg_cats"/>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="Abelian_semigroup_set">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="Abelian_semigroup" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="structure" cd="sts"/>
+          <OMV name="Set"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="Abelian_semigroup_operation">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="Abelian_semigroup" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="group">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS name="mapsto" cd="sts"/>
+        <OMA>
+          <OMS name="structure" cd="sts"/>
+          <OMV name="Set"/>
+        </OMA>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+        <OMV name="Set"/>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+        <OMS name="group" cd="generic_alg_cats"/>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="group_set">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="group" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="structure" cd="sts"/>
+          <OMV name="Set"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="group_operation">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="group" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="group_identity">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="group" cd="generic_alg_cats"/>
+        <OMV name="Set"/>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="group_inverse">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="group" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="ordered_group">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS name="mapsto" cd="sts"/>
+        <OMA>
+          <OMS name="structure" cd="sts"/>
+          <OMV name="Set"/>
+        </OMA>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+        <OMV name="Set"/>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMS cd="setname2" name="Boolean"/>
+        </OMA>
+        <OMS name="ordered_group" cd="generic_alg_cats"/>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+  <Signature name="ordered_group_set">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="ordered_group" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="structure" cd="sts"/>
+          <OMV name="Set"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="ordered_group_operation">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="ordered_group" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="ordered_group_identity">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="ordered_group" cd="generic_alg_cats"/>
+        <OMV name="Set"/>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="ordered_group_inverse">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/> <OMS name="ordered_group" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="ordered_group_order">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="ordered_group" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMS cd="setname2" name="Boolean"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="Abelian_group">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS name="mapsto" cd="sts"/>
+        <OMA>
+          <OMS name="structure" cd="sts"/>
+          <OMV name="Set"/>
+        </OMA>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+        <OMV name="Set"/>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+        <OMS name="Abelian_group" cd="generic_alg_cats"/>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="Abelian_group_set">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="Abelian_group" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="structure" cd="sts"/>
+          <OMV name="Set"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="Abelian_group_operation">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="Abelian_group" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="Abelian_group_identity">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="Abelian_group" cd="generic_alg_cats"/>
+        <OMV name="Set"/>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="Abelian_group_inverse">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="Abelian_group" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="ordered_Abelian_group">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS name="mapsto" cd="sts"/>
+        <OMA>
+          <OMS name="structure" cd="sts"/>
+          <OMV name="Set"/>
+        </OMA>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+        <OMV name="Set"/>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMS cd="setname2" name="Boolean"/>
+        </OMA>
+        <OMS name="ordered_Abelian_group" cd="generic_alg_cats"/>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="ordered_Abelian_group_set">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="ordered_Abelian_group" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="structure" cd="sts"/>
+          <OMV name="Set"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="ordered_Abelian_group_operation">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="ordered_Abelian_group" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="ordered_Abelian_group_identity">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="ordered_Abelian_group" cd="generic_alg_cats"/>
+        <OMV name="Set"/>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="ordered_Abelian_group_inverse">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="ordered_Abelian_group" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="ordered_Abelian_group_order">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="ordered_Abelian_group" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMS cd="setname2" name="Boolean"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="ringoid">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS name="mapsto" cd="sts"/>
+        <OMA>
+          <OMS name="structure" cd="sts"/>
+          <OMV name="Set"/>
+        </OMA>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+        <OMS name="ringoid" cd="generic_alg_cats"/>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="ringoid_set">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="ringoid" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="structure" cd="sts"/>
+          <OMV name="Set"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="ringoid_times">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="ringoid" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="ringoid_plus">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="ringoid" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="ring">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS name="mapsto" cd="sts"/>
+        <OMA>
+          <OMS name="structure" cd="sts"/>
+          <OMV name="Set"/>
+        </OMA>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+        <OMV name="Set"/>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+        <OMS name="ring" cd="generic_alg_cats"/>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="ring_set">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="ring" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="structure" cd="sts"/>
+          <OMV name="Set"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="ring_times">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="ring" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="ring_plus">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="ring" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="ring_zero">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="ring" cd="generic_alg_cats"/>
+        <OMV name="Set"/>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="ring_negative">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="ring" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="ordered_ring">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS name="mapsto" cd="sts"/>
+        <OMA>
+          <OMS name="structure" cd="sts"/>
+          <OMV name="Set"/>
+        </OMA>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+        <OMV name="Set"/>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMS cd="setname2" name="Boolean"/>
+        </OMA>
+        <OMS name="ordered_ring" cd="generic_alg_cats"/>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="ordered_ring_set">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="ordered_ring" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="structure" cd="sts"/>
+          <OMV name="Set"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="ordered_ring_times">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="ordered_ring" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="ordered_ring_plus">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="ordered_ring" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="ordered_ring_zero">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="ordered_ring" cd="generic_alg_cats"/>
+        <OMV name="Set"/>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="ordered_ring_negative">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="ordered_ring" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="ordered_ring_order">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="ordered_ring" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMS cd="setname2" name="Boolean"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="non_commutative_ring">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS name="mapsto" cd="sts"/>
+        <OMA>
+          <OMS name="structure" cd="sts"/>
+          <OMV name="Set"/>
+        </OMA>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+        <OMV name="Set"/>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+        <OMS name="non_commutative_ring" cd="generic_alg_cats"/>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="non_commutative_ring_set">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="non_commutative_ring" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="structure" cd="sts"/>
+          <OMV name="Set"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="non_commutative_ring_times">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="non_commutative_ring" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="non_commutative_ring_plus">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="non_commutative_ring" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="non_commutative_ring_zero">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="non_commutative_ring" cd="generic_alg_cats"/>
+        <OMV name="Set"/>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="non_commutative_ring_negative">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="non_commutative_ring" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="Euclidean_domain">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS name="mapsto" cd="sts"/>
+        <OMA>
+          <OMS name="structure" cd="sts"/>
+          <OMV name="Set"/>
+        </OMA>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+        <OMV name="Set"/>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+        <OMS name="Euclidean_domain" cd="generic_alg_cats"/>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="Euclidean_domain_set">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="Euclidean_domain" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="structure" cd="sts"/>
+          <OMV name="Set"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="Euclidean_domain_times">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="Euclidean_domain" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="Euclidean_domain_plus">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="Euclidean_domain" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="Euclidean_domain_zero">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="Euclidean_domain" cd="generic_alg_cats"/>
+        <OMV name="Set"/>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="Euclidean_domain_negative">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="Euclidean_domain" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="Euclidean_domain_abs">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="Euclidean_domain" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="field">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS name="mapsto" cd="sts"/>
+        <OMA>
+          <OMS name="structure" cd="sts"/>
+          <OMV name="Set"/>
+        </OMA>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+        <OMV name="Set"/>
+        <OMV name="Set"/>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+        <OMS name="field" cd="generic_alg_cats"/>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="field_set">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="field" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="structure" cd="sts"/>
+          <OMV name="Set"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="field_times">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="field" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="field_plus">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="field" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="field_one">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="field" cd="generic_alg_cats"/>
+        <OMV name="Set"/>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="field_zero">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="field" cd="generic_alg_cats"/>
+        <OMV name="Set"/>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="field_reciprocal">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="field" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="field_negative">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="field" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="integral_domain">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS name="mapsto" cd="sts"/>
+        <OMA>
+          <OMS name="structure" cd="sts"/>
+          <OMV name="Set"/>
+        </OMA>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+        <OMV name="Set"/>
+        <OMV name="Set"/>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+        <OMS name="integral_domain" cd="generic_alg_cats"/>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="integral_domain_set">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="integral_domain" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="structure" cd="sts"/>
+          <OMV name="Set"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="integral_domain_times">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="integral_domain" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="integral_domain_plus">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="integral_domain" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="integral_domain_one">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="integral_domain" cd="generic_alg_cats"/>
+        <OMV name="Set"/>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="integral_domain_zero">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="integral_domain" cd="generic_alg_cats"/>
+        <OMV name="Set"/>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="integral_domain_negative">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="sts" name="mapsto"/>
+        <OMS name="integral_domain" cd="generic_alg_cats"/>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMV name="Set"/>
+          <OMV name="Set"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+</CDSignatures>

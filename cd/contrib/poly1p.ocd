@@ -1,0 +1,190 @@
+<?xml version="1.0"?>
+<!-- $Id: poly1p.tfb,v 1.1.1.1 2002/10/04 12:50:39 taka Exp $ -->
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDName> poly1p </CDName>
+<CDURL> http://www.math.kobe-u.ac.jp/OCD/poly1p.tfb </CDURL>
+<CDReviewDate> 2003-08-08 </CDReviewDate>
+<CDStatus> experimental </CDStatus>
+<CDDate> 2002-08-08 </CDDate>
+<CDVersion> 1 </CDVersion>
+<CDRevision> 0 </CDRevision>
+<CDUses>
+ <!-- private cd's -->
+  <CDName>linalg1p</CDName>
+  <CDName>poly1p</CDName>
+  <CDName>set1p</CDName>
+  <CDName>logic1p</CDName>
+ <!-- official cd's  -->
+  <CDName>arith1</CDName>
+  <CDName>fns1</CDName>
+  <CDName>interval1</CDName>
+  <CDName>linalg1</CDName>
+  <CDName>linalg4</CDName>
+  <CDName>relation1</CDName>
+  <CDName>set1</CDName>
+</CDUses>
+
+<Description> 
+This CD defines symbols for concerning multi-index and indexed variables.
+</Description>
+
+
+<CDDefinition>
+<Name> multi_power </Name>
+<Description>
+  multi_power is for using the multi-index notation.
+</Description>
+<CMP> <tex> $\prod_{i=1}^n x_i ^ {e_i}$ </tex> </CMP>
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA><OMS cd="relation1" name="eq"/>
+    <OMA><OMS cd="poly1p" name="multi_power"/>
+      <OMV name="x"/>
+      <OMV name="e"/>
+    </OMA>
+    <OMA><OMS cd="arith1" name="product"/>
+      <OMA><OMS cd="interval1" name="integer_interval"/>
+        <OMI> 1 </OMI>
+        <OMA><OMS cd="linalg4" name="size"/>
+          <OMV name="x"/>
+        </OMA>
+      </OMA>
+      <OMBIND>
+        <OMS cd="fns1" name="lambda"/>
+        <OMBVAR>
+          <OMV name="i"/>
+        </OMBVAR>
+        <OMA><OMS cd="arith1" name="power"/>
+          <OMA><OMS cd="linalg1" name="vector_selector"/>
+            <OMV name="i"/>
+            <OMV name="x"/>
+          </OMA>
+          <OMA><OMS cd="linalg1" name="vector_selector"/>
+            <OMV name="i"/>
+            <OMV name="e"/>
+          </OMA>
+        </OMA>
+      </OMBIND>
+    </OMA>
+  </OMA>
+</OMOBJ>
+
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> index </Name>
+<Description>
+  index returns the index of a given indexed variable.
+</Description>
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> indexed_variable </Name>
+<Description>
+  indexed_variable(x,i) returns the variable x_i
+</Description>
+<CMP> index(indexed_variable(x,i)) = i </CMP>
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA><OMS cd="relation1" name="eq"/>
+    <OMA><OMS name="index"/>
+      <OMA><OMS name="indexed_variable"/>
+        <OMV name="x"/>
+        <OMV name="i"/>
+      </OMA>
+    </OMA>
+    <OMV name="i"/>
+  </OMA>
+</OMOBJ>
+
+</FMP>
+
+<CMP> index(indexed_variable(x,[1,2])) = [1,2] </CMP>
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA><OMS cd="relation1" name="eq"/>
+    <OMA><OMS name="index"/>
+      <OMA><OMS name="indexed_variable"/>
+        <OMV name="x"/>
+        <OMA><OMS cd="linalg2" name="vector"/>
+          <OMI> 1 </OMI>
+          <OMI> 2 </OMI>
+        </OMA>
+      </OMA>
+    </OMA>
+    <OMA><OMS cd="linalg2" name="vector"/>
+      <OMI> 1 </OMI>
+      <OMI> 2 </OMI>
+    </OMA>
+  </OMA>
+</OMOBJ>
+
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> vector_of_indexed_variables </Name>
+<Description>
+  vector_of_indexed_variables(x,n) returns the vector of variables
+  (x_1, ..., x_n).
+  vector_of_indexed_variables(x,[m,n]) returns the vector of variables
+  (x_{1,1}, ..., x_{m,n}).
+  Any vector of numbers can be given as an argument.
+</Description>
+<CMP> i-th element of vector_of_indexed_variable(x,n)  is
+      indexed_variable(x,i)
+</CMP>
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA><OMS cd="relation1" name="eq"/>
+    <OMA><OMS cd="linalg1" name="vector_selector"/>
+      <OMV name="i"/>
+      <OMA><OMS name="vector_of_indexed_variables"/>
+        <OMV name="x"/>
+        <OMV name="n"/>
+      </OMA>
+    </OMA>
+    <OMA><OMS name="indexed_variable"/>
+      <OMV name="x"/>
+      <OMV name="i"/>
+    </OMA>
+  </OMA>
+</OMOBJ>
+
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> sorted_set_of_indexed_variables </Name>
+<Description>
+  sorted_set_of_indexed_variables(x,s) returns the vector of variables
+  indexed by the sorted set s.
+</Description>
+<CMP> m-element of sorted_set_of_indexed_variables(x,s)  is
+      indexed_variable(x,m)
+</CMP>
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA><OMS cd="relation1" name="eq"/>
+    <OMA><OMS cd="set1p" name="index_set_selector"/>
+      <OMV name="m"/>
+      <OMA><OMS name="sorted_set_of_indexed_variables"/>
+        <OMV name="x"/>
+        <OMV name="s"/>
+      </OMA>
+    </OMA>
+    <OMA><OMS name="indexed_variable"/>
+      <OMV name="x"/>
+      <OMV name="m"/>
+    </OMA>
+  </OMA>
+</OMOBJ>
+
+</FMP>
+<!--<bug> sorted_set_selector has not yet been  defined. </bug>-->
+</CDDefinition>
+
+
+</CD>

@@ -1,0 +1,445 @@
+<?xml version="1.0"?>
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+
+  <CDName> airy </CDName> 
+  <CDURL> http://www.openmath.org/CDs/airy.ocd </CDURL>
+  <CDReviewDate> 2003-04-01 </CDReviewDate>
+  <CDDate> 2002-01-19 </CDDate>
+  <CDVersion> 1 </CDVersion>
+  <CDRevision> 0 </CDRevision>
+  <CDStatus> experimental </CDStatus>
+  <CDUses>
+    <CDName> alg1 </CDName>
+    <CDName> arith1 </CDName>
+    <CDName> calculus1 </CDName>
+    <CDName> fns1 </CDName>
+    <CDName> euler </CDName>
+    <CDName> list1 </CDName>
+    <CDName> nums1 </CDName>
+    <CDName> odesoln1 </CDName>
+    <CDName> relation1 </CDName>
+  </CDUses>
+
+  <Description>
+    This content dictionary contains symbols to describe the Airy functions
+    and associated functions.
+  </Description>
+
+  <CDDefinition>
+    <Name> Ai </Name>
+    <Description>
+  The symbol Ai defines the unary Airy Ai function; as in Abramovitz &amp; 
+  Stegun equation 10.4.1. This is a solution to the equation:
+
+    $$w^{\prime\prime}-x*w=0$$
+
+  It is linearly independent to the Airy Bi function represented by
+  the Bi symbol in this Content Dictionary and is specifically
+  given by:
+
+    $$Ai(x)=Ai(0)~f(z)-(-Ai^\prime (0))~g(z)$$
+
+  where:
+
+    $$f(z)=\sum_{k=0}^\infty 3^k{\left (\frac{1}{3}\right )}_k
+      \frac{z^{3k}}{(3k)!}$$
+
+  and:
+
+    $$g(z)=\sum_{k=0}^\infty 3^k{\left (\frac{2}{3}\right )}_k
+      \frac{z^{3k+1}}{(3k+1)!}$$
+    </Description>
+    <FMP>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS name="eq" cd="relation1"/>
+        <OMS name="Ai" cd="airy"/>
+        <OMBIND>
+          <OMS name="ODEsolution" cd="odesoln1"/>
+          <OMBVAR>
+            <OMV name="w"/>
+            <OMV name="x"/>
+          </OMBVAR>
+          <OMA>
+            <OMS name="plus" cd="arith1"/>
+            <OMA>
+              <OMS name="diff" cd="calculus1"/>
+              <OMA>
+                <OMS name="diff" cd="calculus1"/>
+                <OMV name="w"/>
+              </OMA>
+            </OMA>
+            <OMA>
+              <OMS name="unary_minus" cd="arith1"/>
+              <OMA>
+                <OMS name="times" cd="arith1"/>
+                <OMV name="w"/>
+                <OMV name="x"/>
+              </OMA>
+            </OMA>
+          </OMA>
+          <OMA>
+            <OMS name="list" cd="list1"/>
+            <OMA>
+              <OMS name="eq" cd="relation1"/>
+              <OMA>
+                <OMS name="divide" cd="arith1"/> 
+                <OMA>
+                  <OMS name="power" cd="arith1"/>
+                  <OMI> 3 </OMI>
+                  <OMA>
+                    <OMS name="divide" cd="arith1"/> 
+                    <OMI> 1 </OMI>
+                    <OMI> 3 </OMI>
+                  </OMA>
+                </OMA>
+                <OMA>
+                  <OMS name="times" cd="arith1"/>
+                  <OMI> 3 </OMI>
+                  <OMA>
+                    <OMS name="Gamma" cd="euler"/>
+                    <OMA>
+                      <OMS name="divide" cd="arith1"/> 
+                      <OMI> 2 </OMI>
+                      <OMI> 3 </OMI>
+                    </OMA>
+                  </OMA>
+                </OMA>
+              </OMA>
+              <OMA>
+                <OMV name="w"/>
+                <OMS name="zero" cd="alg1"/>
+              </OMA>
+            </OMA>
+            <OMA>
+              <OMS name="eq" cd="relation1"/>
+              <OMA>
+                <OMS name="divide" cd="arith1"/> 
+                <OMA>
+                  <OMS name="unary_minus" cd="arith1"/>
+                  <OMA>
+                    <OMS name="times" cd="arith1"/>
+                    <OMA>
+                      <OMS name="power" cd="arith1"/>
+                      <OMI> 3 </OMI>
+                      <OMA>
+                        <OMS name="divide" cd="arith1"/> 
+                        <OMI> 1 </OMI>
+                        <OMI> 6 </OMI>
+                      </OMA>
+                    </OMA>
+                    <OMA>
+                      <OMS name="Gamma" cd="euler"/>
+                      <OMA>
+                        <OMS name="divide" cd="arith1"/> 
+                        <OMI> 2 </OMI>
+                        <OMI> 3 </OMI>
+                      </OMA>
+                    </OMA>
+                  </OMA>
+                </OMA>
+                <OMA>
+                  <OMS name="times" cd="arith1"/>
+                  <OMI> 2 </OMI>
+                  <OMS name="pi" cd="nums1"/>
+                </OMA>
+              </OMA>
+              <OMA>
+                <OMA>
+                  <OMS name="diff" cd="calculus1"/>
+                  <OMV name="w"/>
+                </OMA>
+                <OMS name="zero" cd="alg1"/>
+              </OMA>
+            </OMA>
+          </OMA>
+        </OMBIND>
+      </OMA>
+    </OMOBJ>
+    </FMP>
+  </CDDefinition>
+
+  <CDDefinition>
+    <Name> Bi </Name>
+    <Description>
+  The symbol Bi defines the unary Airy Bi function. This is defined in 
+  Abramivitz and Stegun 10.4.1 and is a solution to the equation:
+
+    $$w^{\prime\prime}-x*w=0$$
+
+  It is linearly independant to the Airy Ai function represented by
+  the Ai symbol in this Content Dictionary and is specifically
+  given by:
+
+    $$Bi(x)=\sqrt{3}(Bi(0)~f(z)+(-Bi^\prime (0))~g(z))$$
+
+  where:
+
+    $$f(z)=\sum_{k=0}^\infty 3^k{\left (\frac{1}{3}\right )}_k
+      \frac{z^{3k}}{(3k)!}$$
+
+  and:
+
+    $$g(z)=\sum_{k=0}^\infty 3^k{\left (\frac{2}{3}\right )}_k
+      \frac{z^{3k+1}}{(3k+1)!}$$
+    </Description>
+    <FMP>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS name="eq" cd="relation1"/>
+        <OMS name="Ai" cd="airy"/>
+        <OMBIND>
+          <OMS name="ODEsolution" cd="odesoln1"/>
+          <OMBVAR>
+            <OMV name="w"/>
+            <OMV name="x"/>
+          </OMBVAR>
+          <OMA>
+            <OMS name="plus" cd="arith1"/>
+            <OMA>
+              <OMS name="diff" cd="calculus1"/>
+              <OMA>
+                <OMS name="diff" cd="calculus1"/>
+                <OMV name="w"/>
+              </OMA>
+            </OMA>
+            <OMA>
+              <OMS name="unary_minus" cd="arith1"/>
+              <OMA>
+                <OMS name="times" cd="arith1"/>
+                <OMV name="w"/>
+                <OMV name="x"/>
+              </OMA>
+            </OMA>
+          </OMA>
+          <OMA>
+            <OMS name="list" cd="list1"/>
+            <OMA>
+              <OMS name="eq" cd="relation1"/>
+              <OMA>
+                <OMS name="divide" cd="arith1"/> 
+                <OMA>
+                  <OMS name="power" cd="arith1"/>
+                  <OMI> 3 </OMI>
+                  <OMA>
+                    <OMS name="divide" cd="arith1"/> 
+                    <OMI> 5 </OMI>
+                    <OMI> 6 </OMI>
+                  </OMA>
+                </OMA>
+                <OMA>
+                  <OMS name="times" cd="arith1"/>
+                  <OMI> 3 </OMI>
+                  <OMA>
+                    <OMS name="Gamma" cd="euler"/>
+                    <OMA>
+                      <OMS name="divide" cd="arith1"/> 
+                      <OMI> 2 </OMI>
+                      <OMI> 3 </OMI>
+                    </OMA>
+                  </OMA>
+                </OMA>
+              </OMA>
+              <OMA>
+                <OMV name="w"/>
+                <OMS name="zero" cd="alg1"/>
+              </OMA>
+            </OMA>
+            <OMA>
+              <OMS name="eq" cd="relation1"/>
+              <OMA>
+                <OMS name="divide" cd="arith1"/> 
+                <OMA>
+                  <OMS name="unary_minus" cd="arith1"/>
+                  <OMA>
+                    <OMS name="times" cd="arith1"/>
+                    <OMA>
+                      <OMS name="power" cd="arith1"/>
+                      <OMI> 3 </OMI>
+                      <OMA>
+                        <OMS name="divide" cd="arith1"/> 
+                        <OMI> 2 </OMI>
+                        <OMI> 3 </OMI>
+                      </OMA>
+                    </OMA>
+                    <OMA>
+                      <OMS name="Gamma" cd="euler"/>
+                      <OMA>
+                        <OMS name="divide" cd="arith1"/> 
+                        <OMI> 2 </OMI>
+                        <OMI> 3 </OMI>
+                      </OMA>
+                    </OMA>
+                  </OMA>
+                </OMA>
+                <OMA>
+                  <OMS name="times" cd="arith1"/>
+                  <OMI> 2 </OMI>
+                  <OMS name="pi" cd="nums1"/>
+                </OMA>
+              </OMA>
+              <OMA>
+                <OMA>
+                  <OMS name="diff" cd="calculus1"/>
+                  <OMV name="w"/>
+                </OMA>
+                <OMS name="zero" cd="alg1"/>
+              </OMA>
+            </OMA>
+          </OMA>
+        </OMBIND>
+      </OMA>
+    </OMOBJ>
+    </FMP>
+  </CDDefinition>
+
+  <CDDefinition>
+    <Name> Ai2 </Name>
+    <Description>
+  The symbol Ai2 takes two arguments, it represents derivatives of
+  the Airy Ai function. The symbol Ai2(n,z) represents the n'th
+  derivative of Ai(z).
+    </Description>
+    <FMP>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS name="eq" cd="relation1"/>
+        <OMA>
+          <OMS name="Ai" cd="airy"/>
+          <OMV name="z"/>
+        </OMA>
+        <OMA>
+          <OMS name="Ai2" cd="airy"/>
+          <OMS name="zero" cd="alg1"/>
+          <OMV name="z"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+    </FMP>
+    <FMP>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS name="eq" cd="relation1"/>
+        <OMA>
+          <OMA>
+            <OMS name="diff" cd="calculus1"/>
+            <OMBIND>
+              <OMS name="lambda" cd="fns1"/>
+              <OMBVAR>
+                <OMV name="z"/>
+              </OMBVAR>
+              <OMA>
+                <OMS name="Ai2" cd="airy"/>
+                <OMV name="n"/>
+                <OMV name="z"/>
+              </OMA>
+            </OMBIND>
+          </OMA>
+          <OMV name="z"/>
+        </OMA>
+        <OMA>
+          <OMS name="Ai2" cd="airy"/>
+          <OMA>
+            <OMS name="plus" cd="arith1"/>
+            <OMV name="n"/>
+            <OMS name="one" cd="alg1"/>
+          </OMA>
+          <OMV name="z"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+    </FMP>
+  </CDDefinition>
+
+  <CDDefinition>
+    <Name> Bi2 </Name>
+    <Description>
+  The symbol Bi2 takes two arguments, it represents derivatives of
+  the Airy Bi function. The symbol Bi2(n,z) represents the n'th
+  derivative of Bi(z).
+    </Description>
+    <FMP>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS name="eq" cd="relation1"/>
+        <OMA>
+          <OMS name="Bi" cd="airy"/>
+          <OMV name="z"/>
+        </OMA>
+        <OMA>
+          <OMS name="Bi2" cd="airy"/>
+          <OMS name="zero" cd="alg1"/>
+          <OMV name="z"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+    </FMP>
+    <FMP>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS name="eq" cd="relation1"/>
+        <OMA>
+          <OMA>
+            <OMS name="diff" cd="calculus1"/>
+            <OMBIND>
+              <OMS name="lambda" cd="fns1"/>
+              <OMBVAR>
+                <OMV name="z"/>
+              </OMBVAR>
+              <OMA>
+                <OMS name="Bi2" cd="airy"/>
+                <OMV name="n"/>
+                <OMV name="z"/>
+              </OMA>
+            </OMBIND>
+          </OMA>
+          <OMV name="z"/>
+        </OMA>
+        <OMA>
+          <OMS name="Bi2" cd="airy"/>
+          <OMA>
+            <OMS name="plus" cd="arith1"/>
+            <OMV name="n"/>
+            <OMS name="one" cd="alg1"/>
+          </OMA>
+          <OMV name="z"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+    </FMP>
+  </CDDefinition>
+
+</CD>
+

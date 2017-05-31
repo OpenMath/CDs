@@ -1,0 +1,586 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+
+<CDName> asymp1 </CDName>
+<CDURL> http://www.openmath.org/cd/asymp1.ocd </CDURL>
+<CDDate> 1999-10-19 </CDDate>
+<CDVersion> 2 </CDVersion>
+<CDRevision> 0 </CDRevision>
+<CDStatus> experimental </CDStatus>
+<CDUses>
+<CDName> alg1 </CDName>
+<CDName> arith1 </CDName>
+<CDName> fns1 </CDName>
+<CDName> limit1 </CDName>
+<CDName> linalg1 </CDName>
+<CDName> logic1 </CDName>
+<CDName> nums1 </CDName>
+<CDName> quant1 </CDName>
+<CDName> relation1 </CDName>
+<CDName> setname1 </CDName>
+<CDName> setname3 </CDName>
+<CDName> set1 </CDName>
+</CDUses>
+<Description>
+ This CD provides a representation of various asymptotic set constructors (O, \Omega, etc.) The constructors represent sets of functions : R -> R.
+</Description>
+
+<CDDefinition>
+<Name> O </Name>
+<Description> 
+The O symbol represents a unary function which constructs a set of certain
+functions of type reals to reals. The condition f(n)=O(g(n))
+is intended to express an upper bound condition on f.   
+
+</Description>
+
+<CMP>
+  O(g) = 
+  { f:reals -> reals | exists c in positive reals and M in the naturals
+      such that
+        forall n geq M. |f(n)| leq c*g(n)}
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS cd = "relation1" name="eq"/>
+    <OMA>
+      <OMS cd ="asymp1" name="O"/>
+      <OMV name="g"/>
+    </OMA>
+    <OMA>
+      <OMS cd="set1" name="suchthat"/>
+      <OMA>
+        <OMS cd="setname3" name="function_set"/>
+        <OMS cd="setname1" name="R"/>
+        <OMS cd="setname1" name="R"/>
+      </OMA>
+      <OMBIND>
+        <OMS cd="fns1" name="lambda"/>
+        <OMBVAR>
+          <OMV name="f"/>
+        </OMBVAR>
+        <OMBIND>
+          <OMS cd="quant1" name="exists"/>
+          <OMBVAR>
+            <OMV name="c"/>
+            <OMV name="M"/>
+          </OMBVAR>
+          <OMA>
+            <OMS cd="logic1" name="and"/>
+            <OMA>
+              <OMS cd="set1" name="in"/>
+              <OMV name="c"/>
+              <OMS cd="setname1" name="R"/>
+            </OMA>
+            <OMA>
+              <OMS cd="relation1" name="gt"/>
+              <OMV name="c"/>
+              <OMS cd="alg1" name="zero"/>
+            </OMA>
+            <OMA>
+              <OMS cd="set1" name="in"/>
+              <OMV name="M"/>
+              <OMS cd="setname1" name="N"/>
+            </OMA>
+            <OMBIND>
+              <OMS cd="quant1" name="forall"/>
+              <OMBVAR>
+                <OMV name="n"/>
+              </OMBVAR>
+              <OMA>
+                <OMS cd="logic1" name="implies"/>
+                <OMA>
+                  <OMS cd="logic1" name="and"/> 
+                  <OMA>
+                    <OMS cd="set1" name="in"/>
+                    <OMV name="n"/>
+                    <OMS cd="setname1" name="N"/>
+                  </OMA>
+                  <OMA>
+                    <OMS cd = "relation1" name="geq"/>
+                    <OMV name="n"/>
+                    <OMV name="M"/>
+                  </OMA>
+                </OMA>
+                <OMA>
+                  <OMS cd = "relation1" name="leq"/>
+                  <OMA>
+		    <OMS cd = "arith1" name = "abs"/>
+		    <OMA>
+                      <OMV name="f"/>
+                      <OMV name="n"/>
+		    </OMA>
+                  </OMA>
+                  <OMA>
+                    <OMS cd="arith1" name="times"/>
+                    <OMV name="c"/>
+                    <OMA>
+                      <OMV name="g"/>
+                      <OMV name="n"/>
+                    </OMA>
+                  </OMA>
+                </OMA>
+              </OMA>
+            </OMBIND>
+          </OMA>
+        </OMBIND>
+      </OMBIND>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> o </Name>
+<Description>
+The o symbol represents a unary function which constructs a set
+of certain functions of type reals to positive reals. The condition
+f(n) = o(g(n)) is intended to express a lower bouund condition
+on f. Formally we say that f(n) = o(g(n)) if and only if the
+limit as n tends to infinity of f(n)/g(n) exists and is equal to 0.
+</Description>
+<CMP>
+o(g) = 
+{f : reals -> reals | the limit as x tends to infinity of f(x)/g(x) is 0}
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMS cd="asymp1" name="o"/>
+      <OMV name="g"/>
+    </OMA>
+    <OMA>
+      <OMS cd="set1" name="suchthat"/>
+      <OMA>
+        <OMS cd="setname3" name="function_set"/>
+        <OMS cd="setname1" name="R"/>
+        <OMS cd="setname1" name="R"/>
+      </OMA>
+      <OMBIND>
+        <OMS cd="fns1" name="lambda"/>
+	<OMBVAR>
+	  <OMV name="f"/>
+	</OMBVAR>
+	<OMA>
+	  <OMS cd="relation1" name="eq"/>
+	  <OMA>
+	    <OMS cd="limit1" name="limit"/>
+	    <OMS cd="nums1" name="infinity"/>
+	    <OMS cd="limit1" name="below"/>
+	    <OMBIND>
+	      <OMS cd="fns1" name="lambda"/>
+	      <OMBVAR>
+	        <OMV name="x"/>
+	      </OMBVAR>
+	      <OMA>
+	        <OMS cd="arith1" name="divide"/>
+		<OMA>
+		  <OMV name="f"/>
+		  <OMV name="x"/>
+		</OMA>
+		<OMA>
+		  <OMV name="g"/>
+		  <OMV name="x"/>
+		</OMA>
+	      </OMA>
+	    </OMBIND>
+	  </OMA>
+	  <OMS cd="alg1" name="zero"/>
+	</OMA>
+      </OMBIND>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> theta </Name>
+<Description>
+The theta symbol represents a unary function which constructs a set
+of certain functions of type reals to positive reals. The theta
+symbol represents a set of functions which all have the same 'rate of
+growth'. Formally we say that f(x) = theta(g(x)) if and only if
+there are constants c_1 not= 0 and c_2 not= 0 and x_0 such that for
+all x > x_0 it is true that c_1*g(x) &lt; f(x) &lt; c_2*g(x).
+</Description>
+
+<CMP>
+f(x) = theta(g(x)) if and only if
+there are constants c_1 not= 0 and c_2 not= 0 and x_0 such that for
+all x > x_0 it is true that c_1*g(x) &lt; f(x) &lt; c_2*g(x)
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMS cd="asymp1" name="theta"/>
+      <OMV name="g"/>
+    </OMA>
+    <OMA>
+      <OMS cd="set1" name="suchthat"/>
+      <OMA>
+        <OMS cd="setname3" name="function_set"/>
+        <OMS cd="setname1" name="R"/>
+        <OMS cd="setname1" name="R"/>
+      </OMA>
+      <OMBIND>
+        <OMS cd="fns1" name="lambda"/>
+	<OMBVAR>
+	  <OMV name="f"/>
+	</OMBVAR>
+	<OMBIND>
+	  <OMS cd="quant1" name="exists"/>
+	  <OMBVAR>
+	    <OMV name="c_1"/>
+	    <OMV name="c_2"/>
+	    <OMV name="x_0"/>
+	  </OMBVAR>
+	  <OMA>
+	    <OMS cd="logic1" name="and"/>
+	    <OMA>
+	      <OMS cd="relation1" name="neq"/>
+	      <OMV name="c_1"/>
+	      <OMS cd="alg1" name="zero"/>
+	    </OMA>
+	    <OMA>
+	      <OMS cd="relation1" name="neq"/>
+	      <OMV name="c_2"/>
+	      <OMS cd="alg1" name="zero"/>
+	    </OMA>
+	    <OMBIND>
+	      <OMS cd="quant1" name="forall"/>
+	      <OMBVAR>
+	        <OMV name="x"/>
+	      </OMBVAR>
+	      <OMA>
+	        <OMS cd="logic1" name="and"/>
+		<OMA>
+		  <OMS cd="relation1" name="gt"/>
+		  <OMV name="x"/>
+		  <OMV name="x_0"/>
+		</OMA>
+		<OMA>
+		  <OMS cd="relation1" name="lt"/>
+		  <OMA>
+		    <OMS cd="arith1" name="times"/>
+		    <OMV name="c_1"/>
+		    <OMA>
+  		      <OMV name="g"/>
+		      <OMV name="x"/>
+		    </OMA>
+		  </OMA>
+		  <OMA>
+		    <OMV name="f"/>
+		    <OMV name="x"/>
+		  </OMA>
+		</OMA>
+		<OMA>
+		  <OMS cd="relation1" name="lt"/>
+		  <OMA>
+		    <OMV name="f"/>
+		    <OMV name="x"/>
+		  </OMA>
+		  <OMA>
+		    <OMS cd="arith1" name="times"/>
+		    <OMV name="c_2"/>
+		    <OMA>
+  		      <OMV name="g"/>
+		      <OMV name="x"/>
+		    </OMA>
+		  </OMA>
+		</OMA>
+	      </OMA>
+	    </OMBIND>
+	  </OMA>
+	</OMBIND>
+      </OMBIND>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> asymptotic </Name>
+<Description>
+The asymptotic symbol represents a binary relation between two
+functions of type reals to reals. The asymptotic relation between two
+functions returns true if the two functions have the same rate of
+growth and more precisely there ratio  approaches 1 as the variable
+approaches infinity. Formally we say that f(x) is asymptotic to g(x)
+if and only if the limit as x tends to infinity of f(x)/g(x) = 1.
+</Description>
+
+<CMP>
+f(x) is
+asymptotic g(x) if and only if the limit as x tends to infinity of
+f(x)/g(x) = 1
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS cd="logic1" name="equivalent"/>
+    <OMA>
+      <OMS cd="asymp1" name="asymptotic"/>
+      <OMV name="f"/>
+      <OMV name="g"/>
+    </OMA>
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="limit1" name="limit"/>
+        <OMS cd="nums1" name="infinity"/>
+        <OMS cd="limit1" name="below"/>
+        <OMBIND>
+	  <OMS cd="fns1" name="lambda"/>
+	  <OMBVAR>
+	    <OMV name="x"/>
+	  </OMBVAR>
+	  <OMA>
+	    <OMS cd="arith1" name="divide"/>
+	    <OMA>
+	      <OMV name="f"/>
+	      <OMV name="x"/>
+	    </OMA>
+	    <OMA>
+	      <OMV name="g"/>
+	      <OMV name="x"/>
+	    </OMA>
+	  </OMA>
+        </OMBIND>
+      </OMA>
+      <OMS cd="alg1" name="one"/>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> omega </Name>
+<Description>
+The omega symbol represents a unary function which constructs a set
+of certain functions of type reals to positive reals. The omega
+symbol represents a set of functions such that for any function in
+the set omega(g(x)), f(x); it is not true that f(x) is in
+o(g(x)). Formally we say that f(x) = omega(g(x)) if and only
+if there is an epsilon > 0 and an infinite  sequence x_1, x_2, x_3,
+... such that for all j then abs(f(x_j)) > epsilon * g(x_j). 
+</Description>
+
+<CMP>
+f(x) is omega(g(x)) if and only if
+it is not true that f(x) is o(g(x))
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMS cd="asymp1" name="omega"/>
+      <OMV name="g"/>
+    </OMA>
+    <OMA>
+      <OMS cd="set1" name="suchthat"/>
+      <OMA>
+        <OMS cd="setname3" name="function_set"/>
+        <OMS cd="setname1" name="R"/>
+        <OMS cd="setname1" name="R"/>
+      </OMA>
+      <OMBIND>
+        <OMS cd="fns1" name="lambda"/>
+	<OMBVAR>
+	  <OMV name="f"/>
+	</OMBVAR>
+	<OMA>
+	  <OMS cd="logic1" name="not"/>
+	  <OMA>
+	    <OMS cd="set1" name="in"/>
+	    <OMA>
+	      <OMV name="f"/>
+	      <OMV name="x"/>
+	    </OMA>
+	    <OMA>
+	      <OMS cd="asymp1" name="o"/>
+	      <OMV name="g"/>
+	    </OMA>
+	  </OMA>
+	</OMA>
+      </OMBIND>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+<CMP>
+f(x) = omega(g(x)) if and only if there is an epsilon > 0 and an
+infinite  sequence x_1, x_2, x_3, ... such that for all j then
+abs(f(x_j)) > epsilon * g(x_j).
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS cd="logic1" name="equivalent"/>
+    <OMA>
+      <OMS cd="set1" name="in"/>
+      <OMV name="f"/>
+      <OMA>
+        <OMS cd="asymp1" name="omega"/>
+	<OMV name="g"/>
+      </OMA>
+    </OMA>
+    <OMBIND>
+      <OMS cd="quant1" name="exists"/>
+      <OMBVAR>
+	  <OMV name="epsilon"/>
+	  <OMV name="seq"/>
+      </OMBVAR>
+      <OMA>
+        <OMS cd="logic1" name="and"/>
+	<OMA>
+	  <OMS cd="relation1" name="gt"/>
+	  <OMV name="epsilon"/>
+	  <OMS cd="alg1" name="zero"/>
+	</OMA>
+	<OMBIND>
+	  <OMS cd="quant1" name="forall"/>
+	  <OMBVAR>
+	    <OMV name="j"/>
+	  </OMBVAR>
+	  <OMA>
+	    <OMS cd="relation1" name="gt"/>
+	    <OMA>
+	      <OMS cd="arith1" name="abs"/>
+	      <OMA>
+	        <OMV name="f"/>
+		<OMA>
+		  <OMS cd="linalg1" name="vector_selector"/>
+		  <OMV name="j"/>
+		  <OMV name="seq"/>
+		</OMA>
+	      </OMA>
+	    </OMA>
+	    <OMA>
+	      <OMS cd="arith1" name="times"/>
+	      <OMV name="epsilon"/>
+	      <OMA>
+	        <OMV name="g"/>
+		<OMA>
+		  <OMS cd="linalg1" name="vector_selector"/>
+		  <OMV name="j"/>
+		  <OMV name="seq"/>
+		</OMA>
+	      </OMA>
+	    </OMA>
+	  </OMA>
+	</OMBIND>
+      </OMA>
+    </OMBIND>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> Omega </Name>
+<Description>
+The Omega symbol represents a unary function which constructs a set
+of certain functions of type reals to positive reals. The Omega
+symbol represents a set of functions such that for any function in
+the set Omega(g(x)), f(x); it is not true that f(x) is in
+O(g(x)).
+</Description>
+<CMP>
+f(x) is Omega(g(x)) if and only if
+it is not true that f(x) is O(g(x))
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMS cd="asymp1" name="Omega"/>
+      <OMV name="g"/>
+    </OMA>
+    <OMA>
+      <OMS cd="set1" name="suchthat"/>
+      <OMA>
+        <OMS cd="setname3" name="function_set"/>
+        <OMS cd="setname1" name="R"/>
+        <OMS cd="setname1" name="R"/>
+      </OMA>
+      <OMBIND>
+        <OMS cd="fns1" name="lambda"/>
+	<OMBVAR>
+	  <OMV name="f"/>
+	</OMBVAR>
+	<OMA>
+	  <OMS cd="logic1" name="not"/>
+	  <OMA>
+	    <OMS cd="set1" name="in"/>
+	    <OMA>
+	      <OMV name="f"/>
+	      <OMV name="x"/>
+	    </OMA>
+	    <OMA>
+	      <OMS cd="asymp1" name="O"/>
+	      <OMV name="g"/>
+	    </OMA>
+	  </OMA>
+	</OMA>
+      </OMBIND>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+</CDDefinition>
+
+</CD>

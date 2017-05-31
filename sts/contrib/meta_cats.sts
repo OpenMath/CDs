@@ -1,0 +1,50 @@
+<CD>
+<CDName> meta_cats </CDName>
+<CDURL> http://www.openmath.org/cd/meta_cats.ocd </CDURL>
+<CDReviewDate> 2005-04-01 </CDReviewDate>
+<CDStatus> experimental </CDStatus>
+<CDDate> 2002-06-17 </CDDate>
+<CDVersion> 0 </CDVersion>
+<CDRevision> 0 </CDRevision>
+<CDUses>
+</CDUses>
+<Description>
+This CD holds symbols for making meta statements about categories
+</Description>
+<CDDefinition>
+<Name> has </Name>
+<Description>
+This symbol represents the notion of category inclusion. It takes two
+arguments, which should both be categories. It implies that axioms of
+the second argument apply to the first, and that function signatures
+in the second category are also in the first.
+</Description>
+<Example> field has group </Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> Category </Name>
+<Description>
+This symbol is intended to denote the type of a category.
+</Description>
+<Example> the type of field is Category </Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> domain </Name>
+<Description>
+These objects have categories as there types and specific implementations of 
+their functions. 
+*** details to be worked out ***
+*** for now *** The first argument is a Category, the remaining
+arguments are the functions (e.g. lambda bindings or unapplied functions).
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name> type </Name>
+<Description>
+This symbol is unary and returns the type of its argument.
+</Description>
+</CDDefinition>
+</CD>

@@ -1,0 +1,435 @@
+<?xml version="1.0"?>
+<!-- $Id: intpath1.tfb,v 1.5 2003/12/12 02:46:08 taka Exp $ -->
+
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDName> intpath1 </CDName>
+<CDURL> http://www.math.kobe-u.ac.jp/OCD/intpath1.ocd </CDURL>
+<CDReviewDate> 2003-07-08 </CDReviewDate>
+<CDStatus> experimental </CDStatus>
+<CDDate> 2004-07-08, 2004-12-12 </CDDate>
+<CDVersion> 1 </CDVersion>
+<CDRevision> 1 </CDRevision>
+<CDUses>
+ <!-- official cd's  -->
+  <CDName>arith1</CDName>
+  <CDName>calculus1</CDName>
+  <CDName>complex1</CDName>
+  <CDName>fns1</CDName>
+  <CDName>list1</CDName>
+  <CDName>logic1</CDName>
+  <CDName>nums1</CDName>
+  <CDName>relation1</CDName>
+  <CDName>set1</CDName>
+  <CDName>transc1</CDName>
+</CDUses>
+
+<Description> 
+This CD defines symbols to express pathes for integration
+for complex integral in one variable.
+Our pathes lie in the one dimensional complex projective space =
+the Riemann sphere.
+These pathes are sufficiently rich to express most pathes of integrations
+in the complex special function theory in one variables.
+The theory of twisted cycles ([1] and [2]) answers to the question
+of telling the exact space of cycles (pathes) defined by symbols in this
+CD. 
+Our symbols are enough to express integral pathes
+when integrand functions are solutions of ordinary differential equations
+with polynomial coefficients.
+The details will be discussed in a separate paper.
+[1] P.Deligne, Equation differentiel dans le champ complex, 
+    Springer Lecture Note in Mathematics, 163.
+[2] K.Matsumoto, H.Majima, N.Takayama, 
+    Quadratic relations for confluent hypergeometric functions.
+    Tohoku Mathematical Journal 52 (2000), 489--514.
+</Description>
+
+
+<CDDefinition>
+<Name> infty </Name>
+<Description>
+  The infty on the Riemann sphere.  When the coordinate of the complex plane
+  is z, we call t=1/z the standard coordinate around the infinity
+  of the Riemann sphere.
+</Description>
+
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> segment </Name>
+<Description>
+  The symbol segment(a,b) is the segment from the point a to the point b
+  in the complex plane.
+  If the arguments are sectors given by path_in_sector, it means the segment
+  from a point in the circular border of the sector to a point
+  in the circular border of the another sector.
+</Description>
+
+
+<Example> The beta function B(p,q) [Re(p)>0, Re(q)>0] is defined by 
+   the following integral.
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA><OMS cd="calculus1" name="defint"/>
+    <OMA><OMS cd="intpath1" name="segment"/>
+      <OMA><OMS cd="complex1" name="complex_cartesian"/>
+        <OMI> 0 </OMI>
+        <OMI> 0 </OMI>
+      </OMA>
+      <OMA><OMS cd="complex1" name="complex_cartesian"/>
+        <OMI> 1 </OMI>
+        <OMI> 0 </OMI>
+      </OMA>
+    </OMA>
+    <OMBIND>
+      <OMS cd="fns1" name="lambda"/>
+      <OMBVAR>
+        <OMV name="z"/>
+      </OMBVAR>
+      <OMA><OMS cd="arith1" name="times"/>
+        <OMA><OMS cd="arith1" name="power"/>
+          <OMV name="z"/>
+          <OMA><OMS cd="arith1" name="minus"/>
+            <OMV name="p"/>
+            <OMI> 1 </OMI>
+          </OMA>
+        </OMA>
+        <OMA><OMS cd="arith1" name="power"/>
+          <OMA><OMS cd="arith1" name="minus"/>
+            <OMI> 1 </OMI>
+            <OMV name="z"/>
+          </OMA>
+          <OMA><OMS cd="arith1" name="minus"/>
+            <OMV name="q"/>
+            <OMI> 1 </OMI>
+          </OMA>
+        </OMA>
+      </OMA>
+    </OMBIND>
+  </OMA>
+</OMOBJ>
+
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> circle </Name>
+<Description>
+  The symbol circle(c,r) is the circle in the Riemann sphere of which
+  center is c and the radius is r.
+  The direction of the circle is the counter clockwise.
+  When the center is intpath1.infty, the radius should be given in the 
+  standard coordinate t=1/z at the infinity.
+</Description>
+
+
+<Example> 
+   The residue of 1/z is equal to 2 pi sqrt(-1).
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA><OMS cd="relation1" name="eq"/>
+    <OMA><OMS cd="arith1" name="times"/>
+      <OMA><OMS cd="arith1" name="times"/>
+        <OMI> 2 </OMI>
+        <OMS cd="nums1" name="pi"/>
+      </OMA>
+      <OMA><OMS cd="complex1" name="complex_cartesian"/>
+        <OMI> 0 </OMI>
+        <OMI> 1 </OMI>
+      </OMA>
+    </OMA>
+    <OMA><OMS cd="calculus1" name="defint"/>
+      <OMA><OMS cd="intpath1" name="circle"/>
+        <OMA><OMS cd="complex1" name="complex_cartesian"/>
+          <OMI> 0 </OMI>
+          <OMI> 0 </OMI>
+        </OMA>
+        <OMI> 1 </OMI>
+      </OMA>
+      <OMBIND>
+        <OMS cd="fns1" name="lambda"/>
+        <OMBVAR>
+          <OMV name="z"/>
+        </OMBVAR>
+        <OMA><OMS cd="arith1" name="power"/>
+          <OMV name="z"/>
+          <OMA><OMS cd="arith1" name="unary_minus"/>
+            <OMI> 1 </OMI>
+          </OMA>
+        </OMA>
+      </OMBIND>
+    </OMA>
+  </OMA>
+</OMOBJ>
+
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> circle_with_starting_point </Name>
+<Description>
+  The symbol circle_with_starting_point(c,r,z0) is the circle 
+  in the Riemann sphere of which center is c and the radius is r.
+  The direction of the circle is the counter clockwise and
+  the staring point is z0.
+</Description>
+
+
+<Example> 
+   The integral representation of the beta function B(p,q) by the twisted cycle
+   is as follows.  
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA><OMS cd="logic1" name="implies"/>
+    <OMA><OMS cd="logic1" name="and"/>
+      <OMA><OMS cd="logic1" name="and"/>
+        <OMA><OMS cd="relation1" name="eq"/>
+          <OMV name="c1"/>
+          <OMA><OMS cd="transc1" name="exp"/>
+            <OMA><OMS cd="arith1" name="times"/>
+              <OMA><OMS cd="arith1" name="times"/>
+                <OMA><OMS cd="arith1" name="times"/>
+                  <OMI> 2 </OMI>
+                  <OMS cd="nums1" name="pi"/>
+                </OMA>
+                <OMA><OMS cd="complex1" name="complex_cartesian"/>
+                  <OMI> 0 </OMI>
+                  <OMI> 1 </OMI>
+                </OMA>
+              </OMA>
+              <OMV name="p"/>
+            </OMA>
+          </OMA>
+        </OMA>
+        <OMA><OMS cd="relation1" name="eq"/>
+          <OMV name="c2"/>
+          <OMA><OMS cd="transc1" name="exp"/>
+            <OMA><OMS cd="arith1" name="times"/>
+              <OMA><OMS cd="arith1" name="times"/>
+                <OMA><OMS cd="arith1" name="times"/>
+                  <OMI> 2 </OMI>
+                  <OMS cd="nums1" name="pi"/>
+                </OMA>
+                <OMA><OMS cd="complex1" name="complex_cartesian"/>
+                  <OMI> 0 </OMI>
+                  <OMI> 1 </OMI>
+                </OMA>
+              </OMA>
+              <OMV name="q"/>
+            </OMA>
+          </OMA>
+        </OMA>
+      </OMA>
+      <OMA><OMS cd="relation1" name="eq"/>
+        <OMV name="e"/>
+        <OMA><OMS cd="arith1" name="divide"/>
+          <OMI> 1 </OMI>
+          <OMI> 10 </OMI>
+        </OMA>
+      </OMA>
+    </OMA>
+    <OMA><OMS cd="calculus1" name="defint"/>
+      <OMA><OMS cd="arith1" name="minus"/>
+        <OMA><OMS cd="arith1" name="plus"/>
+          <OMA><OMS cd="arith1" name="divide"/>
+            <OMA><OMS cd="intpath1" name="circle_with_starting_point"/>
+              <OMA><OMS cd="complex1" name="complex_cartesian"/>
+                <OMI> 0 </OMI>
+                <OMI> 0 </OMI>
+              </OMA>
+              <OMV name="e"/>
+              <OMA><OMS cd="complex1" name="complex_cartesian"/>
+                <OMV name="e"/>
+                <OMI> 0 </OMI>
+              </OMA>
+            </OMA>
+            <OMA><OMS cd="arith1" name="minus"/>
+              <OMV name="c1"/>
+              <OMI> 1 </OMI>
+            </OMA>
+          </OMA>
+          <OMA><OMS cd="intpath1" name="segment"/>
+            <OMA><OMS cd="complex1" name="complex_cartesian"/>
+              <OMV name="e"/>
+              <OMI> 0 </OMI>
+            </OMA>
+          </OMA>
+        </OMA>
+        <OMA><OMS cd="arith1" name="divide"/>
+          <OMA><OMS cd="intpath1" name="circle_with_starting_point"/>
+            <OMA><OMS cd="complex1" name="complex_cartesian"/>
+              <OMI> 1 </OMI>
+              <OMI> 0 </OMI>
+            </OMA>
+            <OMV name="e"/>
+            <OMA><OMS cd="complex1" name="complex_cartesian"/>
+              <OMA><OMS cd="arith1" name="minus"/>
+                <OMI> 1 </OMI>
+                <OMV name="e"/>
+              </OMA>
+              <OMI> 0 </OMI>
+            </OMA>
+          </OMA>
+          <OMA><OMS cd="arith1" name="minus"/>
+            <OMV name="c2"/>
+            <OMI> 1 </OMI>
+          </OMA>
+        </OMA>
+      </OMA>
+      <OMBIND>
+        <OMS cd="fns1" name="lambda"/>
+        <OMBVAR>
+          <OMV name="z"/>
+        </OMBVAR>
+        <OMA><OMS cd="arith1" name="times"/>
+          <OMA><OMS cd="arith1" name="power"/>
+            <OMV name="z"/>
+            <OMA><OMS cd="arith1" name="minus"/>
+              <OMV name="p"/>
+              <OMI> 1 </OMI>
+            </OMA>
+          </OMA>
+          <OMA><OMS cd="arith1" name="power"/>
+            <OMA><OMS cd="arith1" name="minus"/>
+              <OMI> 1 </OMI>
+              <OMV name="z"/>
+            </OMA>
+            <OMA><OMS cd="arith1" name="minus"/>
+              <OMV name="q"/>
+              <OMI> 1 </OMI>
+            </OMA>
+          </OMA>
+        </OMA>
+      </OMBIND>
+    </OMA>
+  </OMA>
+</OMOBJ>
+
+
+</Example>
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> path_in_sector </Name>
+<Description>
+  The symbol path_in_sector(c,t1,t2) is an outgoing path
+  in a sufficiently small sector with the center c and the angles t1 and t2.
+  The path starts from the point c and it is sufficiently short.
+  When the center is intpath1.infty, the angle should be given in the coordinate
+  t=1/z.
+</Description>
+<Example> 
+  The Airy integral is expressed as follows.
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA><OMS cd="calculus1" name="defint"/>
+    <OMA><OMS cd="arith1" name="plus"/>
+      <OMA><OMS cd="arith1" name="plus"/>
+        <OMA><OMS cd="intpath1" name="path_in_sector"/>
+          <OMS cd="intpath1" name="infty"/>
+          <OMI> 0 </OMI>
+          <OMI> 0 </OMI>
+        </OMA>
+        <OMA><OMS cd="intpath1" name="segment"/>
+          <OMA><OMS cd="intpath1" name="path_in_sector"/>
+            <OMS cd="intpath1" name="infty"/>
+            <OMI> 0 </OMI>
+            <OMI> 0 </OMI>
+          </OMA>
+          <OMA><OMS cd="intpath1" name="path_in_sector"/>
+            <OMS cd="intpath1" name="infty"/>
+            <OMA><OMS cd="arith1" name="unary_minus"/>
+              <OMA><OMS cd="arith1" name="divide"/>
+                <OMA><OMS cd="arith1" name="times"/>
+                  <OMI> 2 </OMI>
+                  <OMS cd="nums1" name="pi"/>
+                </OMA>
+                <OMI> 3 </OMI>
+              </OMA>
+            </OMA>
+            <OMA><OMS cd="arith1" name="unary_minus"/>
+              <OMA><OMS cd="arith1" name="divide"/>
+                <OMA><OMS cd="arith1" name="times"/>
+                  <OMI> 2 </OMI>
+                  <OMS cd="nums1" name="pi"/>
+                </OMA>
+                <OMI> 3 </OMI>
+              </OMA>
+            </OMA>
+          </OMA>
+        </OMA>
+      </OMA>
+      <OMA><OMS cd="intpath1" name="path_in_sector"/>
+        <OMS cd="intpath1" name="infty"/>
+        <OMA><OMS cd="arith1" name="unary_minus"/>
+          <OMA><OMS cd="arith1" name="divide"/>
+            <OMA><OMS cd="arith1" name="times"/>
+              <OMI> 2 </OMI>
+              <OMS cd="nums1" name="pi"/>
+            </OMA>
+            <OMI> 3 </OMI>
+          </OMA>
+        </OMA>
+        <OMA><OMS cd="arith1" name="unary_minus"/>
+          <OMA><OMS cd="arith1" name="divide"/>
+            <OMA><OMS cd="arith1" name="times"/>
+              <OMI> 2 </OMI>
+              <OMS cd="nums1" name="pi"/>
+            </OMA>
+            <OMI> 3 </OMI>
+          </OMA>
+        </OMA>
+      </OMA>
+    </OMA>
+    <OMBIND>
+      <OMS cd="fns1" name="lambda"/>
+      <OMBVAR>
+        <OMV name="t"/>
+      </OMBVAR>
+      <OMA><OMS cd="transc1" name="exp"/>
+        <OMA><OMS cd="arith1" name="minus"/>
+          <OMV name="t"/>
+          <OMA><OMS cd="arith1" name="times"/>
+            <OMV name="x"/>
+            <OMA><OMS cd="arith1" name="power"/>
+              <OMV name="t"/>
+              <OMI> 3 </OMI>
+            </OMA>
+          </OMA>
+        </OMA>
+      </OMA>
+    </OMBIND>
+  </OMA>
+</OMOBJ>
+
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> path_in_sector2 </Name>
+<Description>
+  The symbol path_in_sector2(c,t1,t2,z0) is an outgoing path
+  in the sector with the center c and the angles t1 and t2.
+  The path is the segment from the point c to the point z0 which
+  lies in the sector.
+</Description>
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> closed_path </Name>
+<Description>
+  The symbol closed_path(start_end,points_in, points_out) is a closed
+  path with  the starting point "start_end". 
+  The direction of the path is counter clockwise.
+  It contains the set of points "points_in" in the inside of the path.
+  The winding number of the path for each point in the set points_in 
+  is 1.
+  The path is zero homotope in the space (P^1 - points_in).
+</Description>
+</CDDefinition>
+
+
+
+
+</CD>
+
+

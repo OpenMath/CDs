@@ -1,0 +1,131 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+
+<CDName>equations1</CDName>
+<CDBase> http://www.openmath.org/cd </CDBase>
+<CDDate> 2004-02-04 </CDDate>
+<CDVersion> 1 </CDVersion>
+<CDRevision> 0 </CDRevision>
+<CDStatus> experimental </CDStatus>
+
+<Description> 
+Symbols to provide a vocabulary for talking about properties of (systems of)
+equations.
+</Description>
+
+
+<CDDefinition>
+<Name> linear </Name>
+<Description> 
+A predicate to indicate that an equation or system of equations is linear,
+i.e. is expressed in terms of constants and first order terms.
+</Description>
+
+<Example>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS name="linear" cd="eqn1" />
+    <OMA>
+      <OMS name="plus" cd="arith1" />
+      <OMV name="x"/>
+      <OMI>1</OMI>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> non_linear </Name>
+<Description> 
+A predicate to indicate that an equation or system of equations is non-linear,
+i.e. contains terms of order greater than 1.
+</Description>
+
+<Example>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS name="non_linear" cd="eqn1" />
+    <OMA>
+      <OMS name="power" cd="arith1" />
+      <OMV name="x"/>
+      <OMI>2</OMI>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> sparse </Name>
+<Description> 
+A predicate to indicate that an equation or system of equations is sparse.
+</Description>
+
+<Example>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS name="sparse" cd="eqn1" />
+    <OMV name="eqns"/>
+  </OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> dense </Name>
+<Description> 
+A predicate to indicate that an equation or system of equations is dense.
+</Description>
+
+<Example>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS name="dense" cd="eqn1" />
+    <OMV name="eqns"/>
+  </OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+
+</CD>
+

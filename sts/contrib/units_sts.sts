@@ -1,0 +1,12 @@
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="units_sts">
+<CDSComment>
+  2003-08-22 by JHD 
+</CDSComment>
+
+<Signature name="unit_prefix">
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS name="Object" cd="sts"/>
+</OMOBJ>
+</Signature>
+
+</CDSignatures>

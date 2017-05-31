@@ -1,0 +1,271 @@
+<?xml version="1.0"?>
+<!-- $Id: hypergeon1.tfb,v 1.4 2003/11/30 13:21:28 taka Exp $ -->
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDName> hypergeon1 </CDName>
+<CDURL> http://www.math.kobe-u.ac.jp/OCD/hypergeon1.tfb </CDURL>
+<CDReviewDate> 2003-07-30 </CDReviewDate>
+<CDStatus> experimental </CDStatus>
+<CDDate> 2002-07-30, 2003-11-30 </CDDate>
+<CDVersion> 1 </CDVersion>
+<CDRevision> 1 </CDRevision>
+<CDUses>
+ <!-- private cd's -->
+  <CDName>hypergeon0 </CDName>
+ <!-- official cd's  -->
+  <CDName>arith1</CDName>
+  <CDName>fns1</CDName>
+  <CDName>interval1</CDName>
+  <CDName>linalg1</CDName>
+  <CDName>linalg4</CDName>
+  <CDName>relation1</CDName>
+  <CDName>set1</CDName>
+</CDUses>
+
+<Description> 
+This CD defines symbols for A-hypergeometric series
+</Description>
+
+<CDDefinition>
+<Name> falling_factorial </Name>
+<Description>
+  falling_factorial(n,i) is equal to n*(n-1)* ... *(n-i+1).
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name> raising_multi_factorial </Name>
+<Description>
+  raising_multi_factorial is a product of pochhammer symbols.
+  2-ary function.
+  reference:  
+    authors: "Saito, Sturmfels,  Takayama"
+    title: "Grobner Deformations of Hypergeometric
+            Differential Equations"
+    pages: 127
+</Description>
+
+<CMP>
+  $ [v]_{u_+} = \prod_{i \in \Z\cap[0,n] :\ u_i &gt; 0} (v_i+1)_{u_i} $
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA><OMS cd="relation1" name="eq"/>
+    <OMA><OMS cd="hypergeon1" name="raising_multi_factorial"/>
+      <OMV name="v"/>
+      <OMV name="u"/>
+    </OMA>
+    <OMA><OMS cd="arith1" name="product"/>
+      <OMA><OMS cd="set1" name="intersect"/>
+        <OMA><OMS cd="interval1" name="integer_interval"/>
+          <OMI> 1 </OMI>
+          <OMV name="n"/>
+        </OMA>
+        <OMA><OMS cd="set1" name="suchthat"/>
+          <OMS cd="setname1" name="Z"/>
+          <OMBIND>
+            <OMS cd="fns1" name="lambda"/>
+            <OMBVAR>
+              <OMV name="i"/>
+            </OMBVAR>
+            <OMA><OMS cd="arith1" name="gt"/>
+              <OMA><OMS cd="linalg1" name="vector_selector"/>
+                <OMV name="i"/>
+                <OMV name="u"/>
+              </OMA>
+              <OMI> 0 </OMI>
+            </OMA>
+          </OMBIND>
+        </OMA>
+      </OMA>
+      <OMBIND>
+        <OMS cd="fns1" name="lambda"/>
+        <OMBVAR>
+          <OMV name="i"/>
+        </OMBVAR>
+        <OMA><OMS cd="hypergeo0" name="pochhammer"/>
+          <OMA><OMS cd="arith1" name="plus"/>
+            <OMA><OMS cd="linalg1" name="vector_selector"/>
+              <OMV name="i"/>
+              <OMV name="v"/>
+            </OMA>
+            <OMI> 1 </OMI>
+          </OMA>
+          <OMA><OMS cd="linalg1" name="vector_selector"/>
+            <OMV name="i"/>
+            <OMV name="u"/>
+          </OMA>
+        </OMA>
+      </OMBIND>
+    </OMA>
+  </OMA>
+</OMOBJ>
+
+</FMP>
+
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> falling_multi_factorial </Name>
+<Description>
+  falling_multi_factorial is a product of falling pochhammer symbols.
+  2-ary function.
+ reference:
+    authors: "Saito, Sturmfels,  Takayama"
+    title: "Grobner Deformations of Hypergeometric
+            Differential Equations"
+    pages: 127 
+</Description>
+
+<CMP>
+  $ [v]_{u_-} = \prod_{i \in \Z\cap[0,n] :\ u_i &lt; 0} v_i (v_i-1) \cdots (v_i + u_i-1) $
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA><OMS cd="relation1" name="eq"/>
+    <OMA><OMS cd="hypergeon1" name="falling_multi_factorial"/>
+      <OMV name="v"/>
+      <OMV name="u"/>
+    </OMA>
+    <OMA><OMS cd="arith1" name="product"/>
+      <OMA><OMS cd="set1" name="intersect"/>
+        <OMA><OMS cd="interval1" name="integer_interval"/>
+          <OMI> 1 </OMI>
+          <OMV name="n"/>
+        </OMA>
+        <OMA><OMS cd="set1" name="suchthat"/>
+          <OMS cd="setname1" name="Z"/>
+          <OMBIND>
+            <OMS cd="fns1" name="lambda"/>
+            <OMBVAR>
+              <OMV name="i"/>
+            </OMBVAR>
+            <OMA><OMS cd="arith1" name="lt"/>
+              <OMA><OMS cd="linalg1" name="vector_selector"/>
+                <OMV name="i"/>
+                <OMV name="u"/>
+              </OMA>
+              <OMI> 0 </OMI>
+            </OMA>
+          </OMBIND>
+        </OMA>
+      </OMA>
+      <OMBIND>
+        <OMS cd="fns1" name="lambda"/>
+        <OMBVAR>
+          <OMV name="i"/>
+        </OMBVAR>
+        <OMA><OMS cd="hypergeon1" name="falling_factorial"/>
+          <OMA><OMS cd="linalg1" name="vector_selector"/>
+            <OMV name="i"/>
+            <OMV name="v"/>
+          </OMA>
+          <OMA><OMS cd="arith1" name="unary_minus"/>
+            <OMA><OMS cd="linalg1" name="vector_selector"/>
+              <OMV name="i"/>
+              <OMV name="u"/>
+            </OMA>
+          </OMA>
+        </OMA>
+      </OMBIND>
+    </OMA>
+  </OMA>
+</OMOBJ>
+
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> a_hypergeomeric </Name>
+<Description>
+  A-hypergeometric series
+ reference:
+    authors: "Saito, Sturmfels,  Takayama"
+    title: "Grobner Deformations of Hypergeometric
+            Differential Equations"
+    pages: 127
+</Description>
+
+<CMP>
+  $ \phi(A,v,x) = \sum_{u \in \kernel{\Z^n \stackrel \Z^d}}
+           \frac{[v]_{u_-}}{[v+u]_{u_+}} x^{v+u} $
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA><OMS cd="hypergeon0" name="where"/>
+    <OMBIND>
+      <OMS cd="fns1" name="lambda"/>
+      <OMBVAR>
+        <OMV name="n"/>
+      </OMBVAR>
+      <OMA><OMS cd="relation1" name="eq"/>
+        <OMA><OMS name="a_hypergeometric"/>
+          <OMV name="a"/>
+          <OMV name="v"/>
+          <OMV name="x"/>
+        </OMA>
+        <OMA><OMS cd="arith1" name="sum"/>
+          <OMA><OMS cd="hypergeon0" name="kernel"/>
+            <OMA><OMS cd="hypergeon0" name="cartesian_product_n"/>
+              <OMS cd="setname1" name="Z"/>
+              <OMV name="n"/>
+            </OMA>
+            <OMV name="a"/>
+          </OMA>
+          <OMBIND>
+            <OMS cd="fns1" name="lambda"/>
+            <OMBVAR>
+              <OMV name="u"/>
+            </OMBVAR>
+            <OMA><OMS cd="arith1" name="times"/>
+              <OMA><OMS cd="arith1" name="divide"/>
+                <OMA><OMS cd="hypergeon1" name="falling_multi_factorial"/>
+                  <OMV name="v"/>
+                  <OMA><OMS cd="hyergeon0" name="minus_part"/>
+                    <OMV name="u"/>
+                  </OMA>
+                </OMA>
+                <OMA><OMS cd="hypergeon1" name="raising_multi_factorial"/>
+                  <OMA><OMS cd="arith1" name="plus"/>
+                    <OMV name="v"/>
+                    <OMV name="u"/>
+                  </OMA>
+                  <OMA><OMS cd="hypergeon0" name="plus_part"/>
+                    <OMV name="u"/>
+                  </OMA>
+                </OMA>
+              </OMA>
+              <OMA><OMS cd="hypergeon0" name="multi_power"/>
+                <OMV name="x"/>
+                <OMA><OMS cd="arith1" name="plus"/>
+                  <OMV name="v"/>
+                  <OMV name="u"/>
+                </OMA>
+              </OMA>
+            </OMA>
+          </OMBIND>
+        </OMA>
+      </OMA>
+    </OMBIND>
+    <OMA><OMS cd="relation1" name="eq"/>
+      <OMV name="n"/>
+      <OMA><OMS cd="linalg4" name="columncount"/>
+        <OMV name="a"/>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+
+</FMP>
+
+<!--
+<bug>  arith1.plus can be used for vector add?  arith1.mult can be used 
+       for mult in poly? 
+       columncount or row count works for vectors? </bug>-->
+
+</CDDefinition>
+
+</CD>

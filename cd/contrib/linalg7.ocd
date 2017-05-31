@@ -1,0 +1,338 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+
+<CDName> linalg7 </CDName>
+<CDURL> http://www.openmath.org/cd/linalg7.ocd </CDURL>
+<CDReviewDate> 2005-00-00 </CDReviewDate>
+<CDStatus> experimental </CDStatus>
+<CDDate> 2003-03-22 </CDDate>
+<CDVersion> 1 </CDVersion>
+<CDRevision> 0 </CDRevision>
+<CDUses>
+  <CDName>alg1</CDName>
+  <CDName>arith1</CDName>
+  <CDName>interval1</CDName>
+  <CDName>linalg1</CDName>
+  <CDName>linalg4</CDName>
+  <CDName>list1</CDName>
+  <CDName>logic1</CDName>
+  <CDName>mathmltypes</CDName>
+  <CDName>quant1</CDName>
+  <CDName>relation1</CDName>
+  <CDName>set1</CDName>
+</CDUses>
+
+<Description> 
+A CD of structured vectors
+</Description>
+
+<CDDefinition>
+<Name> zero </Name>
+<Description>
+The zero symbol represents the zero vector, it takes one parameter
+which should be the length (dimension in some terminology) of the vector.
+</Description>
+<CMP>
+  If M is an n*m matrix and V is a zero vector of length m then
+  V*M = V2 where V2 is a zero vector of length n
+</CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMBIND>
+  <OMS cd="quant1" name="forall"/>
+  <OMBVAR>
+    <OMATTR>
+      <OMATP>
+        <OMS cd="mathmltypes" name="type"/>
+        <OMS cd="mathmltypes" name="matrix_type"/>
+      </OMATP>
+      <OMV name="M"/>
+    </OMATTR>
+  </OMBVAR>
+  <OMA>
+    <OMS cd="logic1" name="implies"/>
+    <OMA>
+      <OMS cd="logic1" name="and"/>
+      <OMA>
+        <OMS cd="relation1" name="eq"/>
+        <OMA>
+          <OMS cd="linalg4" name="columncount"/>
+          <OMV name="M"/>
+        </OMA>
+        <OMV name="m"/>
+      </OMA>
+      <OMA>
+        <OMS cd="relation1" name="eq"/>
+        <OMA>
+          <OMS cd="linalg4" name="rowcount"/>
+          <OMV name="M"/>
+        </OMA>
+        <OMV name="n"/>
+      </OMA>
+    </OMA>
+    <OMA><OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="arith1" name="times"/>
+        <OMA>
+          <OMS cd="linalg7" name="zero"/>
+          <OMV name="m"/>
+        </OMA>
+        <OMV name="M"/>
+      </OMA>
+      <OMA>
+        <OMS cd="linalg7" name="zero"/>
+        <OMV name="n"/>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMBIND>
+</OMOBJ></FMP>
+
+<CMP>
+  If M is an n*m matrix and V is a zero vector of length n then
+  M*V = V2 where V2 is a zero vector of length m
+</CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMBIND>
+  <OMS cd="quant1" name="forall"/>
+  <OMBVAR>
+    <OMATTR>
+      <OMATP>
+        <OMS cd="mathmltypes" name="type"/>
+        <OMS cd="mathmltypes" name="matrix_type"/>
+      </OMATP>
+      <OMV name="M"/>
+    </OMATTR>
+  </OMBVAR>
+  <OMA>
+    <OMS cd="logic1" name="implies"/>
+    <OMA>
+      <OMS cd="logic1" name="and"/>
+      <OMA>
+        <OMS cd="relation1" name="eq"/>
+        <OMA>
+          <OMS cd="linalg4" name="columncount"/>
+          <OMV name="M"/>
+        </OMA>
+        <OMV name="m"/>
+      </OMA>
+      <OMA>
+        <OMS cd="relation1" name="eq"/>
+        <OMA>
+          <OMS cd="linalg4" name="rowcount"/>
+          <OMV name="M"/>
+        </OMA>
+        <OMV name="n"/>
+      </OMA>
+    </OMA>
+    <OMA><OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="arith1" name="times"/>
+        <OMV name="M"/>
+        <OMA>
+          <OMS cd="linalg7" name="zero"/>
+          <OMV name="n"/>
+        </OMA>
+      </OMA>
+      <OMA>
+        <OMS cd="linalg7" name="zero"/>
+        <OMV name="m"/>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMBIND>
+</OMOBJ></FMP>
+
+<CMP>
+  If V is a zero vector of length n and V2 is a vector of length n
+then
+  V+V2 = V2+V = V2
+</CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMBIND>
+  <OMS cd="quant1" name="forall"/>
+  <OMBVAR>
+    <OMATTR>
+      <OMATP>
+        <OMS cd="mathmltypes" name="type"/>
+        <OMS cd="mathmltypes" name="vector_type"/>
+      </OMATP>
+      <OMV name="V2"/>
+    </OMATTR>
+  </OMBVAR>
+  <OMA>
+    <OMS cd="logic1" name="implies"/>
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="linalg4" name="size"/>
+        <OMV name="V2"/>
+      </OMA>
+      <OMV name="n"/>
+    </OMA>
+    <OMA>
+      <OMS cd="logic1" name="and"/>
+      <OMA>
+        <OMS cd="relation1" name="eq"/>
+        <OMV name="V2"/>
+        <OMA>
+          <OMS cd="arith1" name="plus"/>
+          <OMA>
+            <OMS cd="linalg7" name="zero"/>
+            <OMV name="n"/>
+          </OMA>
+          <OMV name="V2"/>
+        </OMA>
+      </OMA>
+      <OMA>
+        <OMS cd="relation1" name="eq"/>
+        <OMV name="V2"/>
+        <OMA>
+          <OMS cd="arith1" name="plus"/>
+          <OMV name="V2"/>
+          <OMA>
+            <OMS cd="linalg7" name="zero"/>
+            <OMV name="n"/>
+          </OMA>
+        </OMA>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMBIND>
+</OMOBJ></FMP>
+
+<CMP>
+  If V is a zero vector of length n and i is in the integral interval
+[1,n] then
+  V.i = 0
+</CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA><OMS cd="logic1" name="implies"/>
+  <OMA>
+    <OMS cd="set1" name="in"/>
+    <OMV name="i"/>
+    <OMA>
+      <OMS cd="interval1" name="integer_interval"/>
+      <OMS cd="alg1" name="one"/>
+      <OMV name="n"/>
+    </OMA>
+  </OMA>
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMS cd="linalg1" name="vector_selector"/>
+      <OMV name="i"/>
+      <OMA>
+        <OMS cd="linalg7" name="zero"/>
+        <OMV name="n"/>
+      </OMA>
+    </OMA>
+    <OMS cd="alg1" name="zero"/>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> constant </Name>
+<Description>
+The constant symbol represents the constant vector. It takes two parameters, 
+the length (dimension) of the vector and the constant value, which all
+the elements are equal to.
+</Description>
+
+<CMP>
+  If V is a constant vector of length n, with constant value c
+  and i is in the integral interval [1,n] then
+  V.i = c
+</CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA><OMS cd="logic1" name="implies"/>
+  <OMA>
+    <OMS cd="set1" name="in"/>
+    <OMV name="i"/>
+    <OMA>
+      <OMS cd="interval1" name="integer_interval"/>
+      <OMS cd="alg1" name="one"/>
+      <OMV name="n"/>
+    </OMA>
+  </OMA>
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMS cd="linalg1" name="vector_selector"/>
+      <OMV name="i"/>
+      <OMA>
+        <OMS cd="linalg7" name="constant"/>
+        <OMV name="n"/>
+        <OMV name="c"/>
+      </OMA>
+    </OMA>
+    <OMV name="c"/>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> sparse </Name>
+<Description>
+The sparse symbol is a constructor for sparse vectors, it is (n+1)-ary,
+where the first parameter is the length (dimension) of the vector, and
+every following parameter specifies a possibly non-zero element in the
+following way. The parameter is a list which should have length two. 
+The first element in the list is the position (one based), whilst the second
+element in the list is the value. Every other element of the vector is
+implicitly zero.
+</Description>
+
+<Example>
+This example shows a representation of the sparse matrix 
+$$\left (\begin{array}[c]1\\0\\0\\0\\0\end{array}\right$$
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="linalg7" name="sparse"/>
+      <OMA><OMS cd="list1" name="list"/>
+        <OMI>5</OMI>
+        <OMI>1</OMI>
+      </OMA>
+    </OMA>
+  </OMOBJ>
+</Example>
+</CDDefinition>
+</CD>

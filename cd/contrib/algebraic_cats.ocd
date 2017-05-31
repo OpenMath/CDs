@@ -1,0 +1,5224 @@
+
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+
+<CDName> algebraic_cats </CDName>
+<CDURL> http://www.openmath.org/cd/algebraic_cats.ocd </CDURL>
+<CDReviewDate> 2005-04-01 </CDReviewDate>
+<CDStatus> experimental </CDStatus>
+<CDDate> 2002-06-17 </CDDate>
+<CDVersion> 0 </CDVersion>
+<CDRevision> 0 </CDRevision>
+<CDUses>
+  <CDName> generic_alg_cats </CDName>
+  <CDName> logic1 </CDName>
+  <CDName> meta_cats </CDName>
+  <CDName> quant1 </CDName>
+  <CDName> relation1 </CDName>
+  <CDName> set1 </CDName>
+</CDUses>
+<Description>
+A CD of basic algebraic category constructors. This CD holds
+constructors of individual instances of the categories, with
+defining properties of the categories and accessor symbols to allow
+access to attributes of the categories.
+</Description>
+
+<CDDefinition>
+<Name> monoid </Name>
+<Description>
+This is the constructor for monoids. A monoid comprises a set and an operation over elements of the set. The set must contain a unique identity element
+(relative to the operation). That is an element, I, such that I*a=a*I=a where a
+represents an arbitrary element of S and * represents the operation.
+The operation * must be associative over S.
+The monoid constructor takes three arguments, the set of the monoid, a binary 
+function taking two elements of the set into itself to represent the operation
+of the monoid and an element of the set to represent the identity of the
+monoid.
+</Description>
+
+<CMP> This constructor may be used to build monoids </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="set1" name="in"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="monoid"/>
+        <OMV name="S"/>
+        <OMV name="star"/>
+      </OMA>
+      <OMS cd="generic_alg_cats" name="monoid"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+
+<CMP> 
+if (S,*,1) comprises a monoid then for all a,b,c in S | a*(b*c)=(a*b)*c 
+</CMP>
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS cd="logic1" name="implies"/>
+    <OMA>
+      <OMS cd="set1" name="in"/>
+      <OMV name="S"/>
+      <OMS cd="generic_alg_cats" name="monoid"/>
+    </OMA>
+    <OMBIND>
+      <OMS cd="quant1" name="forall"/>
+      <OMBVAR>
+        <OMV name="a"/>
+        <OMV name="b"/>
+        <OMV name="c"/>
+      </OMBVAR>
+      <OMA>
+        <OMS cd="logic1" name="implies"/>
+        <OMA>
+          <OMS cd="logic1" name="and"/>
+          <OMA>
+            <OMS cd="set1" name="in"/>
+            <OMV name="a"/>
+            <OMA>
+              <OMS name="monoid_set" cd="algebraic_cats"/>
+              <OMV name="S"/>
+            </OMA>
+          </OMA>
+          <OMA>
+            <OMS cd="set1" name="in"/>
+            <OMV name="b"/>
+            <OMA>
+              <OMS name="monoid_set" cd="algebraic_cats"/>
+              <OMV name="S"/>
+            </OMA>
+          </OMA>
+          <OMA>
+            <OMS cd="set1" name="in"/>
+            <OMV name="c"/>
+            <OMA>
+              <OMS name="monoid_set" cd="algebraic_cats"/>
+              <OMV name="S"/>
+            </OMA>
+          </OMA>
+        </OMA>
+        <OMA>
+          <OMS cd="relation1" name="eq"/>
+          <OMA>
+            <OMA>
+              <OMS name="monoid_operation" cd="algebraic_cats"/>
+              <OMV name="S"/>
+            </OMA>
+            <OMV name="a"/>
+            <OMA>
+              <OMA>
+                <OMS name="monoid_operation" cd="algebraic_cats"/>
+                <OMV name="S"/>
+              </OMA>
+              <OMV name="b"/>
+              <OMV name="c"/>
+            </OMA>
+          </OMA>
+          <OMA>
+            <OMA>
+              <OMS name="monoid_operation" cd="algebraic_cats"/>
+              <OMV name="S"/>
+            </OMA>
+            <OMA>
+              <OMA>
+                <OMS name="monoid_operation" cd="algebraic_cats"/>
+                <OMV name="S"/>
+              </OMA>
+              <OMV name="a"/>
+              <OMV name="b"/>
+            </OMA>
+            <OMV name="c"/>
+          </OMA>
+        </OMA>
+      </OMA>
+    </OMBIND>
+  </OMA>
+</OMOBJ></FMP>
+
+<CMP> the operation of the monoid is closed over the set of the monoid </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA><OMS cd="logic1" name="implies"/>
+    <OMA><OMS cd="set1" name="in"/>
+      <OMV name="S"/>
+      <OMS cd="generic_alg_cats" name="monoid"/>
+    </OMA>
+    <OMA><OMS cd="logic1" name="implies"/>
+       <OMA><OMS cd="logic1" name="and"/>
+         <OMA><OMS cd="set1" name="in"/>
+           <OMV name="a"/>           
+           <OMA>
+             <OMS name="monoid_set" cd="algebraic_cats"/>
+             <OMV name="S"/>
+           </OMA>
+         </OMA>
+         <OMA><OMS cd="set1" name="in"/>
+           <OMV name="b"/>
+           <OMA>
+             <OMS name="monoid_set" cd="algebraic_cats"/>
+             <OMV name="S"/>
+           </OMA>
+         </OMA>
+       </OMA>
+       <OMA><OMS cd="set1" name="in"/>
+         <OMA>
+           <OMA>
+             <OMS name="monoid_operation" cd="algebraic_cats"/>
+             <OMV name="S"/>
+           </OMA>
+           <OMV name="a"/>
+           <OMV name="b"/>
+         </OMA>
+         <OMA>
+           <OMS name="monoid_set" cd="algebraic_cats"/>
+           <OMV name="S"/>
+         </OMA>
+       </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ></FMP>
+
+<CMP> if (S,*,1) is a monoid then there exists a unique identity
+element in S </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA><OMS cd="logic1" name="implies"/>
+      <OMA><OMS cd="set1" name="in"/>
+        <OMV name="S"/>
+        <OMS cd="generic_alg_cats" name="monoid"/>
+      </OMA>
+      <OMBIND>
+        <OMS cd="quant1" name="exists"/>
+        <OMBVAR><OMV name="id"/></OMBVAR>
+        <OMA><OMS cd="logic1" name="and"/>
+          <OMBIND>
+            <OMS cd="quant1" name="forall"/>
+            <OMBVAR><OMV name="x"/></OMBVAR>
+            <OMA>
+              <OMS cd="relation1" name="eq"/>
+              <OMA>
+                <OMA>
+                  <OMS name="monoid_operation" cd="algebraic_cats"/>
+                  <OMV name="S"/>
+                </OMA>
+                <OMV name="x"/>
+                <OMV name="id"/>
+              </OMA>
+              <OMV name="x"/>
+            </OMA>
+          </OMBIND>
+          <OMA>
+            <OMS cd="relation1" name="eq"/>
+            <OMV name="id"/>
+            <OMA>
+              <OMS cd="algebraic_cats" name="monoid_identity"/>
+              <OMV name="S"/>
+            </OMA>
+          </OMA>
+          <OMA>
+            <OMS cd="logic1" name="implies"/>
+            <OMA>
+              <OMS cd="relation1" name="eq"/>
+              <OMA>
+                <OMA>
+                  <OMS name="monoid_operation" cd="algebraic_cats"/>
+                  <OMV name="S"/>
+                </OMA>
+                <OMV name="x"/>
+                <OMV name="id2"/>
+              </OMA>
+              <OMV name="x"/>
+            </OMA>
+            <OMA>
+              <OMS cd="relation1" name="eq"/>
+              <OMV name="id"/>
+              <OMV name="id2"/>
+            </OMA>
+          </OMA>
+        </OMA>
+      </OMBIND>
+    </OMA>
+  </OMOBJ>
+</FMP>
+<CMP> the set of a monoid must contain at least one element </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS cd="logic1" name="implies"/>
+  <OMA>
+    <OMS cd="set1" name="in"/>
+    <OMV name="S"/>
+    <OMS cd="generic_alg_cats" name="monoid"/>
+  </OMA>
+  <OMBIND>
+    <OMS cd="quant1" name="exists"/>
+    <OMBVAR><OMV name="x"/></OMBVAR>
+    <OMA>
+      <OMS cd="set1" name="in"/>
+      <OMV name="x"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="monoid_set"/>
+        <OMV name="S"/>
+      </OMA>
+    </OMA>
+  </OMBIND>
+</OMA>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+  <Name> monoid_set </Name>
+  <Description>
+This symbol takes one argument which should be a monoid, it returns the set of 
+the monoid.
+  </Description>
+  <CMP> The set of the monoid (S,*,1) = S </CMP>
+
+  <FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="monoid_set"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="monoid"/>
+          <OMV name="S"/>
+          <OMV name="star"/>
+          <OMV name="id"/>
+        </OMA>
+      </OMA>
+      <OMV name="S"/>
+    </OMA>
+  </OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+  <Name> monoid_operation </Name>
+  <Description>
+This symbol takes one argument which should be a monoid, it returns
+the operation of the monoid.
+  </Description>
+  <CMP> The operation of the monoid (S,*,1) = * </CMP>
+
+  <FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="monoid_operation"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="monoid"/>
+          <OMV name="S"/>
+          <OMV name="star"/>
+          <OMV name="id"/>
+        </OMA>
+      </OMA>
+      <OMV name="star"/>
+    </OMA>
+  </OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> monoid_identity </Name>
+<Description>
+This symbol takes  one argument which should be a monoid, it returns
+the identity of the monoid.
+</Description>
+  <CMP> The identity of the monoid (S,*,1) = 1 </CMP>
+
+  <FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="monoid_identity"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="monoid"/>
+          <OMV name="S"/>
+          <OMV name="star"/>
+          <OMV name="id"/>
+        </OMA>
+      </OMA>
+      <OMV name="id"/>
+    </OMA>
+  </OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> Abelian_monoid </Name>
+<Description>
+This is the constructor for Abelian monoids. An Abelian monoid is a monoid, 
+such that the operation is commutative between members of the Abelian monoid.
+The Abelian_monoid constructor takes three arguments, the set of the Abelian monoid, a
+binary function taking two elements of the set into itself to represent the 
+operation of the Abelian monoid and an element of the set to represent the identity of 
+the Abelian monoid.
+</Description>
+<CMP> This constructor may be used to build Abelian_monoids </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="set1" name="in"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="Abelian_monoid"/>
+        <OMV name="S"/>
+        <OMV name="star"/>
+        <OMV name="Id"/>
+      </OMA>
+      <OMS cd="generic_alg_cats" name="Abelian_monoid"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+
+<CMP>
+if (S,*,1) comprises an Abelian monoid then for all a,b in S | a*b=b*a
+</CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="logic1" name="implies"/>
+      <OMA>
+        <OMS cd="set1" name="in"/>
+        <OMV name="S"/>
+        <OMS cd="generic_alg_cats" name="Abelian_monoid"/>
+      </OMA>
+      <OMBIND>
+        <OMS cd="quant1" name="forall"/>
+        <OMBVAR>
+          <OMV name="a"/>
+          <OMV name="b"/>
+        </OMBVAR>
+        <OMA>
+          <OMS cd="logic1" name="and"/>
+          <OMA>
+            <OMS cd="set1" name="in"/>
+            <OMV name="a"/>
+            <OMA>
+              <OMA cd="generic_alg_cats" name="Abelian_monoid"/>
+              <OMV name="S"/>
+            </OMA>
+          </OMA>
+          <OMA>
+            <OMS cd="set1" name="in"/>
+            <OMV name="b"/>
+            <OMA>
+              <OMA cd="generic_alg_cats" name="Abelian_monoid"/>
+              <OMV name="S"/>
+            </OMA>
+          </OMA>
+          <OMA>
+            <OMS cd="relation1" name="eq"/>
+            <OMA>
+              <OMA>
+                <OMS cd="algebraic_cats" name="Abelian_monoid_operation"/>
+                <OMV name="S"/>
+              </OMA>
+              <OMV name="a"/>
+              <OMV name="b"/>
+            </OMA>
+            <OMA>
+              <OMA>
+                <OMS cd="algebraic_cats" name="Abelian_monoid_operation"/>
+                <OMV name="S"/>
+              </OMA>
+              <OMV name="b"/>
+              <OMV name="a"/>
+            </OMA>
+          </OMA>
+        </OMA>
+      </OMBIND>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+  <Name> Abelian_monoid_set </Name>
+  <Description>
+This symbol takes one argument which should be an Abelian monoid, it returns the set of 
+the Abelian monoid.
+  </Description>
+  <CMP> The set of the Abelian monoid (S,*,1) = S </CMP>
+
+  <FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="Abelian_monoid_set"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="Abelian_monoid"/>
+          <OMV name="S"/>
+          <OMV name="star"/>
+          <OMV name="id"/>
+        </OMA>
+      </OMA>
+      <OMV name="S"/>
+    </OMA>
+  </OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+  <Name> Abelian_monoid_operation </Name>
+  <Description>
+This symbol takes one argument which should be an Abelian monoid, it returns
+the operation of the Abelian monoid.
+  </Description>
+  <CMP> The operation of the Abelian monoid (S,*,1)= * </CMP>
+
+  <FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="Abelian_monoid_set"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="Abelian_monoid"/>
+          <OMV name="S"/>
+          <OMV name="star"/>
+          <OMV name="id"/>
+        </OMA>
+      </OMA>
+      <OMV name="star"/>
+    </OMA>
+  </OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> Abelian_monoid_identity </Name>
+<Description>
+This symbol takes  one argument which should be an Abelian monoid, it returns
+the identity of the Abelian monoid.
+</Description>
+<CMP> The identity of the Abelian monoid (S,*,1) = 1 </CMP>
+
+  <FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="Abelian_monoid_set"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="Abelian_monoid"/>
+          <OMV name="S"/>
+          <OMV name="star"/>
+          <OMV name="id"/>
+        </OMA>
+      </OMA>
+      <OMV name="id"/>
+    </OMA>
+  </OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> ordered_monoid </Name>
+<Description>
+This is the constructor for ordered monoids, that is monoids on which there is 
+an ordering relation. The ordered_monoid constructor takes four arguments, the 
+set of the ordered monoid, a binary function taking two elements of the set into itself
+to represent the operation of the ordered monoid, an element of the set to represent 
+the identity of the ordered monoid and a binary function taking two elements of the set
+into the booleans to represent the ordering on the ordered monoid.
+</Description>
+
+<CMP> This constructor may be used to build ordered monoids </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="set1" name="in"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="ordered_monoid"/>
+        <OMV name="S"/>
+        <OMV name="star"/>
+        <OMV name="Id"/>
+        <OMV name="lt"/>
+      </OMA>
+      <OMS cd="generic_alg_cats" name="ordered_monoid"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+
+<CMP>
+if (S,*,1,\leq) represents an ordered monoid, then 
+for all a,b in S | a \leq b or b \leq a
+and
+for all a,b,c in S | if a\leq b and b\leq c then a\leq c
+and
+for all a,b in S | if a\leq b and b\leq a then a=b
+</CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="logic1" name="implies"/>
+      <OMA>
+        <OMS cd="set1" name="in"/>
+        <OMV name="S"/>
+        <OMS name="ordered_monoid" cd="generic_alg_cats"/>
+      </OMA>
+      <OMA>
+        <OMS cd="logic1" name="and"/>
+        <OMBIND>
+          <OMS cd="quant1" name="forall"/>
+          <OMBVAR>
+            <OMV name="a"/>
+            <OMV name="b"/>
+          </OMBVAR>
+          <OMA>
+            <OMS cd="logic1" name="implies"/>
+            <OMA>
+              <OMS cd="logic1" name="and"/>
+              <OMA>
+                <OMS cd="set1" name="in"/>
+                <OMV name="a"/>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ordered_monoid_set"/>
+                  <OMV name="S"/>
+                </OMA>
+              </OMA>
+              <OMA>
+                <OMS cd="set1" name="in"/>
+                <OMV name="b"/>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ordered_monoid_set"/>
+                  <OMV name="S"/>
+                </OMA>
+              </OMA>
+            </OMA>
+            <OMA>
+              <OMS cd="logic1" name="or"/>
+              <OMA>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ordered_monoid_order"/>
+                  <OMV name="S"/>
+                </OMA>
+                <OMV name="a"/>
+                <OMV name="b"/>
+              </OMA>
+              <OMA>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ordered_monoid_order"/>
+                  <OMV name="S"/>
+                </OMA>
+                <OMV name="b"/>
+                <OMV name="a"/>
+              </OMA>
+            </OMA>
+          </OMA>
+        </OMBIND>
+        <OMBIND>
+          <OMS cd="quant1" name="forall"/>
+          <OMBVAR>
+            <OMV name="a"/>
+            <OMV name="b"/>
+            <OMV name="c"/>
+          </OMBVAR>
+          <OMA>
+            <OMS cd="logic1" name="implies"/>
+            <OMA>
+              <OMS cd="logic1" name="and"/>
+              <OMA>
+                <OMS cd="set1" name="in"/>
+                <OMV name="a"/>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ordered_monoid_set"/>
+                  <OMV name="S"/>
+                </OMA>
+              </OMA>
+              <OMA>
+                <OMS cd="set1" name="in"/>
+                <OMV name="b"/>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ordered_monoid_set"/>
+                  <OMV name="S"/>
+                </OMA>
+              </OMA>
+              <OMA>
+                <OMS cd="set1" name="in"/>
+                <OMV name="c"/>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ordered_monoid_set"/>
+                  <OMV name="S"/>
+                </OMA>
+              </OMA>
+            </OMA>
+            <OMA>
+              <OMS cd="logic1" name="implies"/>
+              <OMA>
+                <OMS cd="logic1" name="and"/>
+                <OMA>
+                  <OMA>
+                  <OMS cd="algebraic_cats" name="ordered_monoid_order"/>
+                  <OMV name="S"/>
+                </OMA>
+                  <OMV name="a"/>
+                  <OMV name="b"/>
+                </OMA>
+                <OMA>
+                  <OMA>
+                  <OMS cd="algebraic_cats" name="ordered_monoid_order"/>
+                  <OMV name="S"/>
+                </OMA>
+                  <OMV name="b"/>
+                  <OMV name="c"/>
+                </OMA>
+              </OMA>
+              <OMA>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ordered_monoid_order"/>
+                  <OMV name="S"/>
+                </OMA>
+                  <OMV name="a"/>
+                  <OMV name="c"/>
+              </OMA>
+            </OMA>
+          </OMA>
+        </OMBIND>
+        <OMBIND>
+          <OMS cd="quant1" name="forall"/>
+          <OMBVAR>
+            <OMV name="a"/>
+            <OMV name="b"/>
+          </OMBVAR>
+          <OMA>
+            <OMS cd="logic1" name="implies"/>
+            <OMA>
+              <OMS cd="logic1" name="and"/>
+              <OMA>
+                <OMS cd="set1" name="in"/>
+                <OMV name="a"/>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ordered_monoid_set"/>
+                  <OMV name="S"/>
+                </OMA>
+              </OMA>
+              <OMA>
+                <OMS cd="set1" name="in"/>
+                <OMV name="b"/>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ordered_monoid_set"/>
+                  <OMV name="S"/>
+                </OMA>
+              </OMA>
+            </OMA>
+            <OMA>
+              <OMS cd="logic1" name="implies"/>
+              <OMA>
+                <OMS cd="logic1" name="and"/>
+                <OMA>
+                  <OMA>
+                  <OMS cd="algebraic_cats" name="ordered_monoid_order"/>
+                  <OMV name="S"/>
+                </OMA>
+                  <OMV name="a"/>
+                  <OMV name="b"/>
+                </OMA>
+                <OMA>
+                  <OMA>
+                  <OMS cd="algebraic_cats" name="ordered_monoid_order"/>
+                  <OMV name="S"/>
+                </OMA>
+                  <OMV name="b"/>
+                  <OMV name="a"/>
+                </OMA>
+              </OMA>
+              <OMA>
+                <OMS cd="relation1" name="eq"/>
+                <OMV name="a"/>
+                <OMV name="b"/>
+              </OMA>
+            </OMA>
+          </OMA>
+        </OMBIND>
+      </OMA>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> ordered_monoid_set </Name>
+<Description>
+This symbol takes one argument which should be an ordered monoid. It returns a 
+set which should be the set of the ordered monoid.
+</Description>
+<CMP> The set of the ordered monoid (S,*,1,\leq) = S </CMP>
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="ordered_monoid_set"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="ordered_monoid"/>
+          <OMV name="S"/>
+          <OMV name="star"/>
+          <OMV name="id"/>
+          <OMV name="leq"/>
+        </OMA>
+      </OMA>
+      <OMV name="S"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> ordered_monoid_operation </Name>
+<Description>
+This symbol takes one argument which should be an ordered monoid. It returns a
+binary function between elements of the set of the ordered monoid, which should
+represent the operation of the ordered monoid.
+</Description>
+<CMP> The operation of the ordered monoid (S,*,1,\leq) = * </CMP>
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="ordered_monoid_operation"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="ordered_monoid"/>
+          <OMV name="S"/>
+          <OMV name="star"/>
+          <OMV name="id"/>
+          <OMV name="leq"/>
+        </OMA>
+      </OMA>
+      <OMV name="star"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> ordered_monoid_identity </Name>
+<Description>
+This symbol takes one argument which should be an ordered monoid. It returns an
+element of the set of the ordered monoid, which should be the identity of the 
+ordered monoid.
+</Description>
+<CMP> The identity of the ordered monoid (S,*,1,\leq) = 1</CMP>
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="ordered_monoid_identity"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="ordered_monoid"/>
+          <OMV name="S"/>
+          <OMV name="star"/>
+          <OMV name="id"/>
+          <OMV name="leq"/>
+        </OMA>
+      </OMA>
+      <OMV name="id"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> ordered_monoid_order </Name>
+<Description>
+This symbol takes one argument which should be an ordered monoid. It returns a 
+binary function between elements of the set of the ordered monoid, which should
+represent the ordering relation on the ordered monoid.
+</Description>
+<CMP> The order of the ordered monoid (S,*,1,\leq) = \leq </CMP>
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="ordered_monoid_order"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="ordered_monoid"/>
+          <OMV name="S"/>
+          <OMV name="star"/>
+          <OMV name="id"/>
+          <OMV name="leq"/>
+        </OMA>
+      </OMA>
+      <OMV name="leq"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> ordered_Abelian_monoid </Name>
+<Description>
+This symbol is the constructor for ordered Abelian monoids, that is Abelian 
+monoids on which there is an ordering relation. The ordered_Abelian_monoid 
+constructor takes four arguments, the set of the ordered Abelian monoid, a binary function 
+taking two elements of the set into itself to represent the operation of the 
+ordered Abelian monoid, an element of the set to represent the identity of the ordered Abelian monoid and a 
+binary function taking two elements of the set into the booleans to represent the ordering of the ordered Abelian monoid.
+</Description>
+
+<CMP> This constructor may be used to build ordered Abelian monoids </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="set1" name="in"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="ordered_Abelian_monoid"/>
+        <OMV name="S"/>
+        <OMV name="star"/>
+        <OMV name="Id"/>
+        <OMV name="lt"/>
+      </OMA>
+      <OMS cd="generic_alg_cats" name="ordered_Abelian_monoid"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+
+<CMP>
+if (S,*,1,\leq) represents an ordered Abelian monoid, then 
+for all a,b in S | a \leq b or b \leq a
+and
+for all a,b,c in S | if a\leq b and b\leq c then a\leq c
+and
+for all a,b in S | if a\leq b and b\leq a then a=b
+</CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="logic1" name="implies"/>
+      <OMA>
+        <OMS cd="set1" name="in"/>
+        <OMV name="S"/>
+        <OMS name="ordered_Abelian_monoid" cd="generic_alg_cats"/>
+      </OMA>
+      <OMA>
+        <OMS cd="logic1" name="and"/>
+        <OMBIND>
+          <OMS cd="quant1" name="forall"/>
+          <OMBVAR>
+            <OMV name="a"/>
+            <OMV name="b"/>
+          </OMBVAR>
+          <OMA>
+            <OMS cd="logic1" name="implies"/>
+            <OMA>
+              <OMS cd="logic1" name="and"/>
+              <OMA>
+                <OMS cd="set1" name="in"/>
+                <OMV name="a"/>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ordered_Abelian_monoid_set"/>
+                  <OMV name="S"/>
+                </OMA>
+              </OMA>
+              <OMA>
+                <OMS cd="set1" name="in"/>
+                <OMV name="b"/>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ordered_Abelian_monoid_set"/>
+                  <OMV name="S"/>
+                </OMA>
+              </OMA>
+            </OMA>
+            <OMA>
+              <OMS cd="logic1" name="or"/>
+              <OMA>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ordered_monoid_order"/>
+                  <OMV name="S"/>
+                </OMA>
+                <OMV name="a"/>
+                <OMV name="b"/>
+              </OMA>
+              <OMA>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ordered_monoid_order"/>
+                  <OMV name="S"/>
+                </OMA>
+                <OMV name="b"/>
+                <OMV name="a"/>
+              </OMA>
+            </OMA>
+          </OMA>
+        </OMBIND>
+        <OMBIND>
+          <OMS cd="quant1" name="forall"/>
+          <OMBVAR>
+            <OMV name="a"/>
+            <OMV name="b"/>
+            <OMV name="c"/>
+          </OMBVAR>
+          <OMA>
+            <OMS cd="logic1" name="implies"/>
+            <OMA>
+              <OMS cd="logic1" name="and"/>
+              <OMA>
+                <OMS cd="set1" name="in"/>
+                <OMV name="a"/>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ordered_Abelian_monoid_set"/>
+                  <OMV name="S"/>
+                </OMA>
+              </OMA>
+              <OMA>
+                <OMS cd="set1" name="in"/>
+                <OMV name="b"/>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ordered_Abelian_monoid_set"/>
+                  <OMV name="S"/>
+                </OMA>
+              </OMA>
+              <OMA>
+                <OMS cd="set1" name="in"/>
+                <OMV name="c"/>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ordered_Abelian_monoid_set"/>
+                  <OMV name="S"/>
+                </OMA>
+              </OMA>
+            </OMA>
+            <OMA>
+              <OMS cd="logic1" name="implies"/>
+              <OMA>
+                <OMS cd="logic1" name="and"/>
+                <OMA>
+                  <OMA>
+                    <OMS cd="algebraic_cats" name="ordered_Abelian_monoid_order"/>
+                    <OMV name="S"/>
+                  </OMA>
+                  <OMV name="a"/>
+                  <OMV name="b"/>
+                </OMA>
+                <OMA>
+                  <OMA>
+                    <OMS cd="algebraic_cats" name="ordered_Abelian_monoid_order"/>
+                    <OMV name="S"/>
+                  </OMA>
+                  <OMV name="b"/>
+                  <OMV name="c"/>
+                </OMA>
+              </OMA>
+              <OMA>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ordered_Abelian_monoid_order"/>
+                  <OMV name="S"/>
+                </OMA>
+                <OMV name="a"/>
+                <OMV name="c"/>
+              </OMA>
+            </OMA>
+          </OMA>
+        </OMBIND>
+        <OMBIND>
+          <OMS cd="quant1" name="forall"/>
+          <OMBVAR>
+            <OMV name="a"/>
+            <OMV name="b"/>
+          </OMBVAR>
+          <OMA>
+            <OMS cd="logic1" name="implies"/>
+            <OMA>
+              <OMS cd="logic1" name="and"/>
+              <OMA>
+                <OMS cd="set1" name="in"/>
+                <OMV name="a"/>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ordered_Abelian_monoid_set"/>
+                  <OMV name="S"/>
+                </OMA>
+              </OMA>
+              <OMA>
+                <OMS cd="set1" name="in"/>
+                <OMV name="b"/>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ordered_Abelian_monoid_set"/>
+                  <OMV name="S"/>
+                </OMA>
+              </OMA>
+            </OMA>
+            <OMA>
+              <OMS cd="logic1" name="implies"/>
+              <OMA>
+                <OMS cd="logic1" name="and"/>
+                <OMA>
+                  <OMA>
+                    <OMS cd="algebraic_cats" name="ordered_Abelian_monoid_order"/>
+                    <OMV name="S"/>
+                  </OMA>
+                  <OMV name="a"/>
+                  <OMV name="b"/>
+                </OMA>
+                <OMA>
+                  <OMA>
+                    <OMS cd="algebraic_cats" name="ordered_Abelian_monoid_order"/>
+                    <OMV name="S"/>
+                  </OMA>
+                  <OMV name="b"/>
+                  <OMV name="a"/>
+                </OMA>
+              </OMA>
+              <OMA>
+                <OMS cd="relation1" name="eq"/>
+                <OMV name="a"/>
+                <OMV name="b"/>
+              </OMA>
+            </OMA>
+          </OMA>
+        </OMBIND>
+      </OMA>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> ordered_Abelian_monoid_set </Name>
+<Description>
+This symbol takes one argument which should be an ordered Abelian monoid. It returns a 
+set which should be the set of the ordered Abelian monoid.
+</Description>
+<CMP> The set of the ordered Abelian monoid (S,*,1,/leq) = S </CMP>
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="ordered_Abelian_monoid_set"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="ordered_Abelian_monoid"/>
+          <OMV name="S"/>
+          <OMV name="star"/>
+          <OMV name="id"/>
+          <OMV name="leq"/>
+        </OMA>
+      </OMA>
+      <OMV name="S"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> ordered_Abelian_monoid_operation </Name>
+<Description>
+This symbol takes one argument which should be an ordered Abelian monoid. It returns a
+binary function between elements of the set of the ordered Abelian monoid, which should
+represent the operation of the ordered Abelian monoid.
+</Description>
+<CMP> The operation of the ordered Abelian monoid (S,*,1,/leq) = * </CMP>
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="ordered_Abelian_monoid_operation"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="ordered_Abelian_monoid"/>
+          <OMV name="S"/>
+          <OMV name="star"/>
+          <OMV name="id"/>
+          <OMV name="leq"/>
+        </OMA>
+      </OMA>
+      <OMV name="star"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> ordered_Abelian_monoid_identity </Name>
+<Description>
+This symbol takes one argument which should be an ordered Abelian monoid. It returns an
+element of the set of the ordered Abelian monoid, which should be the identity of the 
+ordered Abelian monoid.
+</Description>
+<CMP> The identity of the ordered Abelian monoid (S,*,1,/leq) = 1 </CMP>
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="ordered_Abelian_monoid_identity"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="ordered_Abelian_monoid"/>
+          <OMV name="S"/>
+          <OMV name="star"/>
+          <OMV name="id"/>
+          <OMV name="leq"/>
+        </OMA>
+      </OMA>
+      <OMV name="id"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> ordered_Abelian_monoid_order </Name>
+<Description>
+This symbol takes one argument which should be an ordered Abelian monoid. It returns a 
+binary function between elements of the set of the ordered Abelian monoid, which should
+represent the ordering relation on the ordered Abelian monoid.
+</Description>
+<CMP> The ordering of the ordered Abelian monoid (S,*,1,/leq) = /leq </CMP>
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="ordered_Abelian_monoid_order"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="ordered_Abelian_monoid"/>
+          <OMV name="S"/>
+          <OMV name="star"/>
+          <OMV name="id"/>
+          <OMV name="leq"/>
+        </OMA>
+      </OMA>
+      <OMV name="leq"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> groupoid </Name>
+<Description>
+This symbol is the constructor for groupoids, that is an algebraic structure 
+on a set, with a binary operation. The operator of the groupoid must be closed 
+over the set of the groupoid.
+The groupoid constructor takes two arguments, the set of the groupoid and a
+binary function which represents the operation of the groupoid.
+</Description>
+
+<CMP> This constructor may be used to build groupoids </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="set1" name="in"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="groupoid"/>
+        <OMV name="S"/>
+        <OMV name="star"/>
+      </OMA>
+      <OMS cd="generic_alg_cats" name="groupoid"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+
+<CMP>
+if (S,*) comprises a groupoid, then for all a,b in S | a*b is a member of S
+</CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS cd="logic1" name="implies"/>
+  <OMA>
+    <OMS cd="set1" name="in"/>
+    <OMV name="S"/>
+    <OMS cd="generic_alg_cats" name="groupoid"/>
+  </OMA>
+  <OMBIND>
+    <OMS cd="quant1" name="forall"/>
+    <OMBVAR>
+      <OMV name="a"/>
+      <OMV name="b"/>
+    </OMBVAR>
+    <OMA>
+      <OMS cd="logic1" name="implies"/>
+      <OMA>
+        <OMA cd="logic1" name="and"/>
+        <OMA>
+          <OMS cd="set1" name="in"/>
+          <OMV name="a"/>
+          <OMA>
+            <OMS cd="algebraic_cats" name="groupoid_set"/>
+            <OMV name="S"/>
+          </OMA>
+        </OMA>
+        <OMA>
+          <OMS cd="set1" name="in"/>
+          <OMV name="b"/>
+          <OMA>
+            <OMS cd="algebraic_cats" name="groupoid_set"/>
+            <OMV name="S"/>
+          </OMA>
+        </OMA>
+      </OMA>
+      <OMA>
+        <OMS cd="set1" name="in"/>
+        <OMA>
+          <OMA>
+            <OMS cd="algebraic_cats" name="groupoid_operation"/>
+            <OMV name="S"/>
+          </OMA>
+          <OMV name="a"/>
+          <OMV name="b"/>
+        </OMA>
+        <OMA>
+          <OMS cd="algebraic_cats" name="groupoid_set"/>
+          <OMV name="S"/>
+        </OMA>
+      </OMA>
+    </OMA>
+  </OMBIND>
+</OMA>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> groupoid_set </Name>
+<Description>
+This symbol takes one argument which should be a groupoid. It returns the set of the groupoid.
+</Description>
+<CMP> The set of the groupoid (S,*) = S </CMP>
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="groupoid_set"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="groupoid"/>
+          <OMV name="S"/>
+          <OMV name="star"/>
+        </OMA>
+      </OMA>
+      <OMV name="S"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> groupoid_operation </Name>
+<Description>
+This symbol takes one argument which should be a groupoid. It returns a binary 
+function which should represent the operation of the groupoid.
+</Description>
+<CMP> The operation of the groupoid (S,*) = * </CMP>
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="groupoid_operation"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="groupoid"/>
+          <OMV name="S"/>
+          <OMV name="star"/>
+        </OMA>
+      </OMA>
+      <OMV name="star"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> semigroup </Name>
+<Description>
+This symbol is the constructor for semigroups, that is groupoids for which 
+the operator of the semigroup is associative over the set of the semigroup.
+The semigroup constructor takes two arguments, the set of the semigroup and a
+binary function which represents the operation of the semigroup.
+</Description>
+
+<CMP> This constructor may be used to build semigroups </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="set1" name="in"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="semigroup"/>
+        <OMV name="S"/>
+        <OMV name="star"/>
+      </OMA>
+      <OMS cd="generic_alg_cats" name="semigroup"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+
+<CMP>
+if (S,*) comprises a semigroup then for all a,b,c in S | a*(b*c)=(a*b)*c
+</CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS cd="logic1" name="implies"/>
+  <OMA>
+    <OMS cd="set1" name="in"/>
+    <OMV name="S"/>
+    <OMS cd="generic_alg_cats" name="semigroup"/>
+  </OMA>
+  <OMBIND>
+    <OMS cd="quant1" name="forall"/>
+    <OMBVAR>
+      <OMV name="a"/>
+      <OMV name="b"/>
+      <OMV name="c"/>
+    </OMBVAR>
+    <OMA>
+      <OMS cd="logic1" name="implies"/>
+      <OMA>
+        <OMA cd="logic1" name="and"/>
+        <OMA>
+          <OMS cd="set1" name="in"/>
+          <OMV name="a"/>
+          <OMA>
+            <OMS cd="algebraic_cats" name="semigroup_set"/>
+            <OMV name="S"/>
+          </OMA>
+        </OMA>
+        <OMA>
+          <OMS cd="set1" name="in"/>
+          <OMV name="b"/>
+          <OMA>
+            <OMS cd="algebraic_cats" name="semigroup_set"/>
+            <OMV name="S"/>
+          </OMA>
+        </OMA>
+        <OMA>
+          <OMS cd="set1" name="in"/>
+          <OMV name="c"/>
+          <OMA>
+            <OMS cd="algebraic_cats" name="semigroup_set"/>
+            <OMV name="S"/>
+          </OMA>
+        </OMA>
+      </OMA>
+    </OMA>
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMA>
+          <OMS cd="algebraic_cats" name="semigroup_operation"/>
+          <OMV name="S"/>
+        </OMA>
+        <OMV name="a"/>
+        <OMA>
+          <OMA>
+            <OMS cd="algebraic_cats" name="semigroup_operation"/>
+            <OMV name="S"/>
+          </OMA>
+          <OMV name="b"/>
+          <OMV name="c"/>
+        </OMA>
+      </OMA>
+      <OMA>
+        <OMA>
+          <OMS cd="algebraic_cats" name="semigroup_operation"/>
+          <OMV name="S"/>
+        </OMA>
+        <OMA>
+          <OMA>
+            <OMS cd="algebraic_cats" name="semigroup_operation"/>
+            <OMV name="S"/>
+          </OMA>
+          <OMV name="a"/>
+          <OMV name="b"/>
+        </OMA>
+        <OMV name="c"/>
+      </OMA>
+    </OMA>
+  </OMBIND>
+</OMA>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> semigroup_set </Name>
+<Description>
+This symbol takes one argument which should be a semigroup. It returns the set of the semigroup.
+</Description>
+<CMP> The set of the semigroup (S,*) = S </CMP>
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="semigroup_set"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="semigroup"/>
+          <OMV name="S"/>
+          <OMV name="star"/>
+        </OMA>
+      </OMA>
+      <OMV name="S"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> semigroup_operation </Name>
+<Description>
+This symbol takes one argument which should be a semigroup. It returns a binary function which should represent the operation of the semigroup.
+</Description>
+<CMP> The operation of the semigroup (S,*) = * </CMP>
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="semigroup_operation"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="semigroup"/>
+          <OMV name="S"/>
+          <OMV name="star"/>
+        </OMA>
+      </OMA>
+      <OMV name="star"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> Abelian_semigroup </Name>
+<Description>
+This symbol is the constructor for an Abelian semigroup, that is a semigroup
+which has an operator which is commutative over the set of the semigroup.
+The Abelian semigroup constructor takes two arguments, the set of the Abelian semigroup and a
+binary function which represents the operation of the Abelian semigroup.
+</Description>
+
+<CMP> This constructor may be used to build Abelian semigroups </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="set1" name="in"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="Abelian_semigroup"/>
+        <OMV name="S"/>
+        <OMV name="star"/>
+      </OMA>
+      <OMS cd="generic_alg_cats" name="Abelian_semigroup"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+
+<CMP> If (S,*) comprises an Abelian semigroup, then for all a,b in S|a*b=b*a </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="logic1" name="implies"/>
+      <OMA>
+        <OMS cd="set1" name="in"/>
+        <OMV name="S"/>
+        <OMS cd="generic_alg_cats" name="Abelian_semigroup"/>
+      </OMA>
+      <OMBIND>
+        <OMS cd="quant1" name="forall"/>
+        <OMBVAR>
+          <OMV name="a"/>
+          <OMV name="b"/>
+        </OMBVAR>
+        <OMA>
+          <OMS cd="logic1" name="and"/>
+          <OMA>
+            <OMS cd="set1" name="in"/>
+            <OMV name="a"/>
+            <OMA>
+              <OMA cd="generic_alg_cats" name="Abelian_semigroup"/>
+              <OMV name="S"/>
+            </OMA>
+          </OMA>
+          <OMA>
+            <OMS cd="set1" name="in"/>
+            <OMV name="b"/>
+            <OMA>
+              <OMA cd="generic_alg_cats" name="Abelian_semigroup"/>
+              <OMV name="S"/>
+            </OMA>
+          </OMA>
+          <OMA>
+            <OMS cd="relation1" name="eq"/>
+            <OMA>
+              <OMA>
+                <OMS cd="algebraic_cats" name="Abelian_semigroup_operation"/>
+                <OMV name="S"/>
+              </OMA>
+              <OMV name="a"/>
+              <OMV name="b"/>
+            </OMA>
+            <OMA>
+              <OMA>
+                <OMS cd="algebraic_cats" name="Abelian_semigroup_operation"/>
+                <OMV name="S"/>
+              </OMA>
+              <OMV name="b"/>
+              <OMV name="a"/>
+            </OMA>
+          </OMA>
+        </OMA>
+      </OMBIND>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> Abelian_semigroup_set </Name>
+<Description>
+This symbol takes one argument which should be an Abelian semigroup. It returns a set, which should be the set of the Abelian semigroup.
+</Description>
+<CMP> The set of the Abelian semigroup (S,*) = S </CMP>
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="Abelian_semigroup_set"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="Abelian_semigroup"/>
+          <OMV name="S"/>
+          <OMV name="star"/>
+        </OMA>
+      </OMA>
+      <OMV name="S"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> Abelian_semigroup_operation </Name>
+<Description>
+This symbol takes one argument which should be an Abelian semigroup. It returns a binary function, which should represent the operation of the Abelian semigroup.
+</Description>
+<CMP> The operation of the Abelian semigroup (S,*) = * </CMP>
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="Abelian_semigroup_operation"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="Abelian_semigroup"/>
+          <OMV name="S"/>
+          <OMV name="star"/>
+        </OMA>
+      </OMA>
+      <OMV name="star"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<CDComment>
+This symbol is an alternative model for the symbol declare_group in
+the CD group1
+</CDComment>
+<Name> group </Name>
+<Description>
+This symbol is the constructor for groups, that is a monoid for which every 
+element is invertible.
+The group constructor takes four arguments, the set of the group, a binary 
+function taking two elements of the set into itself to represent the operation
+of the group, an element of the set to represent the identity of the group and 
+a unary function taking the set into itself to specify inverse elements of the group.
+</Description>
+<CMP> This symbol may be used to build groups </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="set1" name="in"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="group"/>
+        <OMV name="S"/>
+        <OMV name="star"/>
+      </OMA>
+      <OMS cd="generic_alg_cats" name="group"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+<CMP> 
+if (S,*,1,inv:S->S) comprises a group then for all a in S | inv(a) is a member of S and inv(a)*a=a*inv(a)=1
+</CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="logic1" name="implies"/>
+      <OMA>
+        <OMS cd="set1" name="in"/>
+        <OMV name="S"/>
+        <OMS cd="generic_alg_cats" name="group"/>
+      </OMA>
+      <OMBIND>
+        <OMS cd="quant1" name="forall"/>
+        <OMBVAR>
+          <OMV name="a"/>
+        </OMBVAR>
+        <OMA>
+          <OMS cd="logic1" name="implies"/>
+          <OMA>
+            <OMS cd="set1" name="in"/>
+            <OMV name="a"/>
+            <OMA>
+              <OMS cd="algebraic_cats" name="group_set"/>
+              <OMV name="S"/>
+            </OMA>
+          </OMA>
+          <OMA>
+            <OMS cd="logic1" name="and"/>
+            <OMA>
+              <OMS cd="logic1" name="in"/>
+              <OMV name="a"/>
+              <OMA>
+                <OMS cd="algebraic_cats" name="group_set"/>
+                <OMV name="S"/>
+              </OMA>
+            </OMA>
+            <OMA>
+              <OMS cd="relation1" name="eq"/>
+              <OMA>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="group_operation"/>
+                  <OMV name="S"/>
+                </OMA>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="group_inverse"/>
+                  <OMV name="a"/>
+                </OMA>
+                <OMV name="a"/>
+              </OMA>
+              <OMA>
+                <OMS cd="algebraic_cats" name="group_identity"/>
+                <OMV name="S"/>
+              </OMA>
+            </OMA>
+            <OMA>
+              <OMS cd="relation1" name="eq"/>
+              <OMA>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="group_operation"/>
+                  <OMV name="S"/>
+                </OMA>
+                <OMV name="a"/>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="group_inverse"/>
+                  <OMV name="a"/>
+                </OMA>
+              </OMA>
+              <OMA>
+                <OMS cd="algebraic_cats" name="group_identity"/>
+                <OMV name="S"/>
+              </OMA>
+            </OMA>
+          </OMA>
+        </OMA>
+      </OMBIND>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> group_set </Name>
+<Description>
+This symbol takes one argument which should be a group. It returns a set, which should be the set of the group.
+</Description>
+
+<CMP> The set of the group (S,*,1,inv) = S </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="group_set"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="group"/>
+          <OMV name="S"/>
+          <OMV name="star"/>
+          <OMV name="id"/>
+          <OMV name="inv"/>
+        </OMA>
+      </OMA>
+      <OMV name="S"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> group_operation </Name>
+<Description>
+This symbol takes one argument which should be a group. It returns a binary function, which represents the operation of the group.
+</Description>
+
+<CMP> The operation of the group (S,*,1,inv) = * </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="group_operation"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="group"/>
+          <OMV name="S"/>
+          <OMV name="star"/>
+          <OMV name="id"/>
+          <OMV name="inv"/>
+        </OMA>
+      </OMA>
+      <OMV name="star"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> group_identity </Name>
+<Description>
+This symbol takes one argument which should be a group. It returns the identity of the group.
+</Description>
+
+<CMP> The identity of the group (S,*,1,inv) = 1 </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="group_identity"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="group"/>
+          <OMV name="S"/>
+          <OMV name="star"/>
+          <OMV name="id"/>
+          <OMV name="inv"/>
+        </OMA>
+      </OMA>
+      <OMV name="id"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> group_inverse </Name>
+<Description>
+This symbol takes one argument which should be a group. It returns a unary function, which is the inverse mapping for the group.
+</Description>
+
+<CMP> The inverse of the group (S,*,1,inv) = inv </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="group_inverse"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="group"/>
+          <OMV name="S"/>
+          <OMV name="star"/>
+          <OMV name="id"/>
+          <OMV name="inv"/>
+        </OMA>
+      </OMA>
+      <OMV name="inv"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> ordered_group </Name>
+<Description>
+This symbol is the constructor for ordered groups, that is a group on which 
+there is an ordering relation. 
+The ordered_group constructor takes five arguments, the set of the ordered 
+group, a binary function taking two elements of the set into itself to 
+represent the operation of the ordered group, an element of the set to 
+represent the identity of the ordered group, a unary function taking the set 
+into itself to specify inverse elements of the ordered group and a binary function taking two 
+elements of the set into the booleans to specify the ordering of the ordered 
+group.
+</Description>
+<CMP> This constructor may be used to build ordered groups </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="set1" name="in"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="ordered_group"/>
+        <OMV name="S"/>
+        <OMV name="star"/>
+        <OMV name="id"/>
+        <OMV name="inv"/>
+        <OMV name="leq"/>
+      </OMA>
+      <OMS cd="generic_alg_cats" name="ordered_group"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+
+<CMP>
+if (S,*,1,inv:S->S,\leq) represents an ordered group, then 
+for all a,b in S | a \leq b or b \leq a
+and
+for all a,b,c in S | if a\leq b and b\leq c then a\leq c
+and
+for all a,b in S | if a\leq b and b\leq a then a=b
+</CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="logic1" name="implies"/>
+      <OMA>
+        <OMS cd="set1" name="in"/>
+        <OMV name="S"/>
+        <OMS name="ordered_group" cd="generic_alg_cats"/>
+      </OMA>
+      <OMA>
+        <OMS cd="logic1" name="and"/>
+        <OMBIND>
+          <OMS cd="quant1" name="forall"/>
+          <OMBVAR>
+            <OMV name="a"/>
+            <OMV name="b"/>
+          </OMBVAR>
+          <OMA>
+            <OMS cd="logic1" name="implies"/>
+            <OMA>
+              <OMS cd="logic1" name="and"/>
+              <OMA>
+                <OMS cd="set1" name="in"/>
+                <OMV name="a"/>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ordered_group_set"/>
+                  <OMV name="S"/>
+                </OMA>
+              </OMA>
+              <OMA>
+                <OMS cd="set1" name="in"/>
+                <OMV name="b"/>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ordered_group_set"/>
+                  <OMV name="S"/>
+                </OMA>
+              </OMA>
+            </OMA>
+            <OMA>
+              <OMS cd="logic1" name="or"/>
+              <OMA>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ordered_group_order"/>
+                  <OMV name="S"/>
+                </OMA>
+                <OMV name="a"/>
+                <OMV name="b"/>
+              </OMA>
+              <OMA>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ordered_group_order"/>
+                  <OMV name="S"/>
+                </OMA>
+                <OMV name="b"/>
+                <OMV name="a"/>
+              </OMA>
+            </OMA>
+          </OMA>
+        </OMBIND>
+        <OMBIND>
+          <OMS cd="quant1" name="forall"/>
+          <OMBVAR>
+            <OMV name="a"/>
+            <OMV name="b"/>
+            <OMV name="c"/>
+          </OMBVAR>
+          <OMA>
+            <OMS cd="logic1" name="implies"/>
+            <OMA>
+              <OMS cd="logic1" name="and"/>
+              <OMA>
+                <OMS cd="set1" name="in"/>
+                <OMV name="a"/>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ordered_group_set"/>
+                  <OMV name="S"/>
+                </OMA>
+              </OMA>
+              <OMA>
+                <OMS cd="set1" name="in"/>
+                <OMV name="b"/>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ordered_group_set"/>
+                  <OMV name="S"/>
+                </OMA>
+              </OMA>
+              <OMA>
+                <OMS cd="set1" name="in"/>
+                <OMV name="c"/>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ordered_group_set"/>
+                  <OMV name="S"/>
+                </OMA>
+              </OMA>
+            </OMA>
+            <OMA>
+              <OMS cd="logic1" name="implies"/>
+              <OMA>
+                <OMS cd="logic1" name="and"/>
+                <OMA>
+                  <OMA>
+                    <OMS cd="algebraic_cats" name="ordered_group_order"/>
+                    <OMV name="S"/>
+                  </OMA>
+                  <OMV name="a"/>
+                  <OMV name="b"/>
+                </OMA>
+                <OMA>
+                  <OMA>
+                    <OMS cd="algebraic_cats" name="ordered_group_order"/>
+                    <OMV name="S"/>
+                  </OMA>
+                  <OMV name="b"/>
+                  <OMV name="c"/>
+                </OMA>
+              </OMA>
+              <OMA>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ordered_group_order"/>
+                  <OMV name="S"/>
+                </OMA>
+                <OMV name="a"/>
+                <OMV name="c"/>
+              </OMA>
+            </OMA>
+          </OMA>
+        </OMBIND>
+        <OMBIND>
+          <OMS cd="quant1" name="forall"/>
+          <OMBVAR>
+            <OMV name="a"/>
+            <OMV name="b"/>
+          </OMBVAR>
+          <OMA>
+            <OMS cd="logic1" name="implies"/>
+            <OMA>
+              <OMS cd="logic1" name="and"/>
+              <OMA>
+                <OMS cd="set1" name="in"/>
+                <OMV name="a"/>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ordered_group_set"/>
+                  <OMV name="S"/>
+                </OMA>
+              </OMA>
+              <OMA>
+                <OMS cd="set1" name="in"/>
+                <OMV name="b"/>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ordered_group_set"/>
+                  <OMV name="S"/>
+                </OMA>
+              </OMA>
+            </OMA>
+            <OMA>
+              <OMS cd="logic1" name="implies"/>
+              <OMA>
+                <OMS cd="logic1" name="and"/>
+                <OMA>
+                  <OMA>
+                    <OMS cd="algebraic_cats" name="ordered_group_order"/>
+                    <OMV name="S"/>
+                  </OMA>
+                  <OMV name="a"/>
+                  <OMV name="b"/>
+                </OMA>
+                <OMA>
+                  <OMA>
+                    <OMS cd="algebraic_cats" name="ordered_group_order"/>
+                    <OMV name="S"/>
+                  </OMA>
+                  <OMV name="b"/>
+                  <OMV name="a"/>
+                </OMA>
+              </OMA>
+              <OMA>
+                <OMS cd="relation1" name="eq"/>
+                <OMV name="a"/>
+                <OMV name="b"/>
+              </OMA>
+            </OMA>
+          </OMA>
+        </OMBIND>
+      </OMA>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> ordered_group_set </Name>
+<Description>
+This symbol takes one argument which should be an ordered group. It returns the set of the ordered group.
+</Description>
+
+<CMP> The set of the ordered group (S,*,1,inv,leq) = S </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="ordered_group_set"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="ordered_group"/>
+          <OMV name="S"/>
+          <OMV name="star"/>
+          <OMV name="id"/>
+          <OMV name="inv"/>
+          <OMV name="leq"/>
+        </OMA>
+      </OMA>
+      <OMV name="S"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> ordered_group_operation </Name>
+<Description>
+This symbol takes one argument which should be an ordered group. It returns a binary function, which represents the operation of the ordered group.
+</Description>
+
+<CMP> The operation of the ordered group (S,*,1,inv,leq) = * </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="ordered_group_operation"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="ordered_group"/>
+          <OMV name="S"/>
+          <OMV name="star"/>
+          <OMV name="id"/>
+          <OMV name="inv"/>
+          <OMV name="leq"/>
+        </OMA>
+      </OMA>
+      <OMV name=""/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> ordered_group_identity </Name>
+<Description>
+This symbol takes one argument which should be an ordered group. It returns the identity of the ordered group.
+</Description>
+
+<CMP> The identity of the ordered group (S,*,1,inv,leq) = 1 </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="ordered_group_identity"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="ordered_group"/>
+          <OMV name="S"/>
+          <OMV name="star"/>
+          <OMV name="id"/>
+          <OMV name="inv"/>
+          <OMV name="leq"/>
+        </OMA>
+      </OMA>
+      <OMV name="id"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> ordered_group_inverse </Name>
+<Description>
+This symbol takes one argument which should be an ordered group. It returns a unary function, which is the inverse function of the ordered group.
+</Description>
+
+<CMP> The inverse of the ordered group (S,*,1,inv,leq) = inv </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="ordered_group_inverse"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="ordered_group"/>
+          <OMV name="S"/>
+          <OMV name="star"/>
+          <OMV name="id"/>
+          <OMV name="inv"/>
+          <OMV name="leq"/>
+        </OMA>
+      </OMA>
+      <OMV name="inv"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> ordered_group_order </Name>
+<Description>
+This symbol takes one argument which should be an ordered group. It returns a binary function, which represents the ordering of the ordered group.
+</Description>
+
+<CMP> The order of the ordered group (S,*,1,inv,leq) = leq </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="ordered_group_order"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="ordered_group"/>
+          <OMV name="S"/>
+          <OMV name="star"/>
+          <OMV name="id"/>
+          <OMV name="inv"/>
+          <OMV name="leq"/>
+        </OMA>
+      </OMA>
+      <OMV name="leq"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> Abelian_group </Name>
+<Description>
+This symbol is the constructor for Abelian groups, that is a group such that 
+the operation is commutative between members of the group.
+The Abelian_group constructor takes four arguments, the set of the Abelian 
+group, a binary function taking two elements of the set into itself to 
+represent the operation of the Abelian group, an element of the set to 
+represent the identity of the Abelian group and a unary function taking the 
+set into itself to specify inverse elements.
+</Description>
+<CMP> This constructor builds Abelian groups </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="set1" name="in"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="Abelian_group"/>
+        <OMV name="S"/>
+        <OMV name="star"/>
+        <OMV name="id"/>
+        <OMV name="inv"/>
+      </OMA>
+      <OMS cd="generic_alg_cats" name="Abelian_group"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+
+<CMP>
+if (S,*,1,inv) comprises an Abelian group then for all a,b in S | a*b = b*a
+</CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS cd="logic1" name="implies"/>
+  <OMA>
+    <OMS cd="set1" name="in"/>
+    <OMV name="S"/>
+    <OMS cd="generic_alg_cats" name="Abelian_group"/>
+  </OMA>
+  <OMBIND>
+    <OMS cd="quant1" name="forall"/>
+    <OMBVAR>
+      <OMV name="a"/>
+      <OMV name="b"/>
+    </OMBVAR>
+    <OMA>
+      <OMS cd="logic1" name="implies"/>
+      <OMA>
+        <OMS cd="logic1" name="and"/>
+        <OMA>
+          <OMS cd="set1" name="in"/>
+          <OMV name="a"/>
+          <OMA>
+            <OMS cd="algebraic_cats" name="Abelian_group_set"/>
+            <OMV name="S"/>
+          </OMA>
+        </OMA>
+        <OMA>
+          <OMS cd="set1" name="in"/>
+          <OMV name="b"/>
+          <OMA>
+            <OMS cd="algebraic_cats" name="Abelian_group_set"/>
+            <OMV name="S"/>
+          </OMA>
+        </OMA>
+      </OMA>
+      <OMA>
+        <OMS cd="relation1" name="eq"/>
+        <OMA>
+          <OMA>
+            <OMS cd="algebraic_cats" name="Abelian_group_operation"/>
+            <OMV name="S"/>
+          </OMA>
+          <OMV name="a"/>
+          <OMV name="b"/>
+        </OMA>
+        <OMA>
+          <OMA>
+            <OMS cd="algebraic_cats" name="Abelian_group_operation"/>
+            <OMV name="S"/>
+          </OMA>
+          <OMV name="b"/>
+          <OMV name="a"/>
+        </OMA>
+      </OMA>
+    </OMA>
+  </OMBIND>
+</OMA>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> Abelian_group_set </Name>
+<Description>
+This symbol takes one argument which should be an Abelian group. It returns the set of the Abelian group.
+</Description>
+
+<CMP> The set of the Abelian group (S,*,1,inv) = S </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="Abelian_group_set"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="Abelian_group"/>
+          <OMV name="S"/>
+          <OMV name="star"/>
+          <OMV name="id"/>
+          <OMV name="inv"/>
+        </OMA>
+      </OMA>
+      <OMV name="S"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> Abelian_group_operation </Name>
+<Description>
+This symbol takes one argument which should be an Abelian group. It returns a binary function, which represents the operation of the Abelian group.
+</Description>
+
+<CMP> The operation of the Abelian group (S,*,1,inv) = * </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="Abelian_group_operation"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="Abelian_group"/>
+          <OMV name="S"/>
+          <OMV name="star"/>
+          <OMV name="id"/>
+          <OMV name="inv"/>
+        </OMA>
+      </OMA>
+      <OMV name="star"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> Abelian_group_identity </Name>
+<Description>
+This symbol takes one argument which should be an Abelian group. It returns the identity of the Abelian group.
+</Description>
+
+<CMP> The identity of the Abelian group (S,*,1,inv) = 1 </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="Abelian_group_identity"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="Abelian_group"/>
+          <OMV name="S"/>
+          <OMV name="star"/>
+          <OMV name="id"/>
+          <OMV name="inv"/>
+        </OMA>
+      </OMA>
+      <OMV name="id"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> Abelian_group_inverse </Name>
+<Description>
+This symbol takes one argument which should be an Abelian group. It reurns a unary function, which should be the inverse function for the Abelian group.
+</Description>
+
+<CMP> The inverse of the Abelian group (S,*,1,inv) = inv </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="Abelian_group_inverse"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="Abelian_group"/>
+          <OMV name="S"/>
+          <OMV name="star"/>
+          <OMV name="id"/>
+          <OMV name="inv"/>
+        </OMA>
+      </OMA>
+      <OMV name="inv"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> ordered_Abelian_group </Name>
+<Description>
+This symbol is the constructor for ordered Abelian groups, that is an  
+Abelian group on which there is an ordering relation. 
+The ordered_Abelian_group constructor takes five arguments, the set of the 
+ordered Abelian group, a binary function taking two elements of the set into 
+itself to represent the operation of the ordered Abelian group, an element of 
+the set to represent the identity of the ordered Abelian group, a unary 
+function taking the set into itself to specify inverse elements and a binary 
+function taking two elements of the set into the booleans to specify the 
+ordering of the ordered Abelian group.
+</Description>
+<CMP> This constructor builds ordered Abelian groups </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="set1" name="in"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="ordered_Abelian_group"/>
+        <OMV name="S"/>
+        <OMV name="star"/>
+        <OMV name="id"/>
+        <OMV name="inv"/>
+        <OMV name="leq"/>
+      </OMA>
+      <OMS cd="generic_alg_cats" name="ordered_Abelian_group"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+
+<CMP>
+if (S,*,1,inv:S->S,\leq) represents an ordered Abelian group, then 
+for all a,b in S | a \leq b or b \leq a
+and
+for all a,b,c in S | if a\leq b and b\leq c then a\leq c
+and
+for all a,b in S | if a\leq b and b\leq a then a=b
+</CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="logic1" name="implies"/>
+      <OMA>
+        <OMS cd="set1" name="in"/>
+        <OMV name="S"/>
+        <OMS name="ordered_Abelian_group" cd="generic_alg_cats"/>
+      </OMA>
+      <OMA>
+        <OMS cd="logic1" name="and"/>
+        <OMBIND>
+          <OMS cd="quant1" name="forall"/>
+          <OMBVAR>
+            <OMV name="a"/>
+            <OMV name="b"/>
+          </OMBVAR>
+          <OMA>
+            <OMS cd="logic1" name="implies"/>
+            <OMA>
+              <OMS cd="logic1" name="and"/>
+              <OMA>
+                <OMS cd="set1" name="in"/>
+                <OMV name="a"/>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ordered_Abelian_group_set"/>
+                  <OMV name="S"/>
+                </OMA>
+              </OMA>
+              <OMA>
+                <OMS cd="set1" name="in"/>
+                <OMV name="b"/>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ordered_Abelian_group_set"/>
+                  <OMV name="S"/>
+                </OMA>
+              </OMA>
+            </OMA>
+            <OMA>
+              <OMS cd="logic1" name="or"/>
+              <OMA>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ordered_Abelian_group_order"/>
+                  <OMV name="S"/>
+                </OMA>
+                <OMV name="a"/>
+                <OMV name="b"/>
+              </OMA>
+              <OMA>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ordered_Abelian_group_order"/>
+                  <OMV name="S"/>
+                </OMA>
+                <OMV name="b"/>
+                <OMV name="a"/>
+              </OMA>
+            </OMA>
+          </OMA>
+        </OMBIND>
+        <OMBIND>
+          <OMS cd="quant1" name="forall"/>
+          <OMBVAR>
+            <OMV name="a"/>
+            <OMV name="b"/>
+            <OMV name="c"/>
+          </OMBVAR>
+          <OMA>
+            <OMS cd="logic1" name="implies"/>
+            <OMA>
+              <OMS cd="logic1" name="and"/>
+              <OMA>
+                <OMS cd="set1" name="in"/>
+                <OMV name="a"/>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ordered_Abelian_group_set"/>
+                  <OMV name="S"/>
+                </OMA>
+              </OMA>
+              <OMA>
+                <OMS cd="set1" name="in"/>
+                <OMV name="b"/>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ordered_Abelian_group_set"/>
+                  <OMV name="S"/>
+                </OMA>
+              </OMA>
+              <OMA>
+                <OMS cd="set1" name="in"/>
+                <OMV name="c"/>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ordered_Abelian_group_set"/>
+                  <OMV name="S"/>
+                </OMA>
+              </OMA>
+            </OMA>
+            <OMA>
+              <OMS cd="logic1" name="implies"/>
+              <OMA>
+                <OMS cd="logic1" name="and"/>
+                <OMA>
+                  <OMA>
+                  <OMS cd="algebraic_cats" name="ordered_Abelian_group_order"/>
+                  <OMV name="S"/>
+                </OMA>
+                  <OMV name="a"/>
+                  <OMV name="b"/>
+                </OMA>
+                <OMA>
+                  <OMA>
+                  <OMS cd="algebraic_cats" name="ordered_Abelian_group_order"/>
+                  <OMV name="S"/>
+                </OMA>
+                  <OMV name="b"/>
+                  <OMV name="c"/>
+                </OMA>
+              </OMA>
+              <OMA>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ordered_Abelian_group_order"/>
+                  <OMV name="S"/>
+                </OMA>
+                  <OMV name="a"/>
+                  <OMV name="c"/>
+              </OMA>
+            </OMA>
+          </OMA>
+        </OMBIND>
+        <OMBIND>
+          <OMS cd="quant1" name="forall"/>
+          <OMBVAR>
+            <OMV name="a"/>
+            <OMV name="b"/>
+          </OMBVAR>
+          <OMA>
+            <OMS cd="logic1" name="implies"/>
+            <OMA>
+              <OMS cd="logic1" name="and"/>
+              <OMA>
+                <OMS cd="set1" name="in"/>
+                <OMV name="a"/>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ordered_Abelian_group_set"/>
+                  <OMV name="S"/>
+                </OMA>
+              </OMA>
+              <OMA>
+                <OMS cd="set1" name="in"/>
+                <OMV name="b"/>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ordered_Abelian_group_set"/>
+                  <OMV name="S"/>
+                </OMA>
+              </OMA>
+            </OMA>
+            <OMA>
+              <OMS cd="logic1" name="implies"/>
+              <OMA>
+                <OMS cd="logic1" name="and"/>
+                <OMA>
+                  <OMA>
+                  <OMS cd="algebraic_cats" name="ordered_Abelian_group_order"/>
+                  <OMV name="S"/>
+                </OMA>
+                  <OMV name="a"/>
+                  <OMV name="b"/>
+                </OMA>
+                <OMA>
+                  <OMA>
+                  <OMS cd="algebraic_cats" name="ordered_Abelian_group_order"/>
+                  <OMV name="S"/>
+                </OMA>
+                  <OMV name="b"/>
+                  <OMV name="a"/>
+                </OMA>
+              </OMA>
+              <OMA>
+                <OMS cd="relation1" name="eq"/>
+                <OMV name="a"/>
+                <OMV name="b"/>
+              </OMA>
+            </OMA>
+          </OMA>
+        </OMBIND>
+      </OMA>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> ordered_Abelian_group_set </Name>
+<Description>
+This symbol takes one argument which should be an ordered Abelian group. It returns the set of the ordered Abelian group.
+</Description>
+
+<CMP> The set of the ordered Abelian group (S,*,1,inv,leq) = S </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="ordered_Abelian_group_set"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="ordered_Abelian_group"/>
+          <OMV name="S"/>
+          <OMV name="star"/>
+          <OMV name="id"/>
+          <OMV name="inv"/>
+          <OMV name="leq"/>
+        </OMA>
+      </OMA>
+      <OMV name="S"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> ordered_Abelian_group_operation </Name>
+<Description>
+This symbol takes one argument which should be an ordered Abelian group. It returns a binary function, which represents the operation of the ordered Abelian group.
+</Description>
+
+<CMP> The operation of the ordered Abelian group (S,*,1,inv,leq) = * </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="ordered_Abelian_group_operation"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="ordered_Abelian_group"/>
+          <OMV name="S"/>
+          <OMV name="star"/>
+          <OMV name="id"/>
+          <OMV name="inv"/>
+          <OMV name="leq"/>
+        </OMA>
+      </OMA>
+      <OMV name="star"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> ordered_Abelian_group_identity </Name>
+<Description>
+This symbol takes one argument which should be an ordered Abelian group. It returns the identity of the ordered Abelian group.
+</Description>
+
+<CMP> The identity of the ordered Abelian group (S,*,1,inv,leq) = 1 </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="ordered_Abelian_group_identity"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="ordered_Abelian_group"/>
+          <OMV name="S"/>
+          <OMV name="star"/>
+          <OMV name="id"/>
+          <OMV name="inv"/>
+          <OMV name="leq"/>
+        </OMA>
+      </OMA>
+      <OMV name="id"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> ordered_Abelian_group_inverse </Name>
+<Description>
+This symbol takes one argument which should be an ordered Abelian group. It returns a unary function, which is the inverse function of the ordered Abelian group.
+</Description>
+
+<CMP> The inverse of the ordered Abelian group (S,*,1,inv,leq) = inv </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="ordered_Abelian_group_inverse"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="ordered_Abelian_group"/>
+          <OMV name="S"/>
+          <OMV name="star"/>
+          <OMV name="id"/>
+          <OMV name="inv"/>
+          <OMV name="leq"/>
+        </OMA>
+      </OMA>
+      <OMV name="inv"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> ordered_Abelian_group_order </Name>
+<Description>
+This symbol takes one argument which should be an ordered Abelian group. It returns a binary function, which should represent the ordering of the ordered Abelian group.
+</Description>
+
+<CMP> The order of the ordered Abelian group (S,*,1,inv,leq) = leq </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="ordered_Abelian_group_order"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="ordered_Abelian_group"/>
+          <OMV name="S"/>
+          <OMV name="star"/>
+          <OMV name="id"/>
+          <OMV name="inv"/>
+          <OMV name="leq"/>
+        </OMA>
+      </OMA>
+      <OMV name="leq"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+  <Name> ringoid </Name>
+  <Description>
+This symbol is the constructor for ringoids. A ringoid is a set together with 
+two operations + and *. * is left and right distributive over +.
+The ringoid constructor takes three arguments, the set of the ringoid,
+a binary function from the set into itself to represent the * operation and 
+a binary function from the set into itself to represent the + operation.
+  </Description>
+
+  <CMP> The ringoid constructor builds ringoids </CMP>
+  <FMP>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="set1" name="in"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="ringoid"/>
+          <OMV name="S"/>
+          <OMV name="times"/>
+          <OMV name="plus"/>
+        </OMA>
+        <OMS cd="generic_alg_cats" name="ringoid"/>
+      </OMA>
+    </OMOBJ>
+  </FMP>
+
+  <CMP> 
+if (a,*,+) comprises a ringoid then for all a,b,c in S | a*(b+c) = a*b+a*c 
+  </CMP>
+
+  <FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA><OMS cd="logic1" name="implies"/>
+      <OMA>
+        <OMS cd="set1" name="in"/>
+        <OMV name="S"/>
+        <OMS cd="generic_alg_cats" name="ringoid"/>
+      </OMA>
+      <OMBIND>
+        <OMS cd="quant1" name="forall"/>
+        <OMBVAR>
+          <OMV name="a"/>
+          <OMV name="b"/>
+          <OMV name="c"/>
+        </OMBVAR>
+        <OMA><OMS cd="logic1" name="and"/>
+          <OMA><OMS cd="set1" name="in"/>
+            <OMV name="a"/>
+            <OMA>
+              <OMS cd="algebraic_cats" name="ringoid_set"/>
+              <OMV name="S"/>
+            </OMA>
+          </OMA>
+          <OMA><OMS cd="set1" name="in"/>
+            <OMV name="b"/>
+            <OMA>
+              <OMS cd="algebraic_cats" name="ringoid_set"/>
+              <OMV name="S"/>
+            </OMA>
+          </OMA>
+          <OMA><OMS cd="set1" name="in"/>
+            <OMV name="c"/>
+            <OMA>
+              <OMS cd="algebraic_cats" name="ringoid_set"/>
+              <OMV name="S"/>
+            </OMA>
+          </OMA>
+          <OMA>
+            <OMS cd="relation1" name="eq"/>
+            <OMA>
+              <OMA>
+                <OMS cd="algebraic_cats" name="ringoid_times"/>
+                <OMV name="S"/>
+              </OMA>
+              <OMV name="a"/>
+              <OMA>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ringoid_plus"/>
+                  <OMV name="S"/>
+                </OMA>
+                <OMV name="b"/>
+                <OMV name="c"/>
+              </OMA>
+            </OMA>
+            <OMA>
+              <OMA>
+                <OMS cd="algebraic_cats" name="ringoid_plus"/>
+                <OMV name="S"/>
+              </OMA>
+              <OMA>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ringoid_times"/>
+                  <OMV name="S"/>
+                </OMA>
+                <OMV name="a"/>
+                <OMV name="b"/>
+              </OMA>
+              <OMA>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ringoid_times"/>
+                  <OMV name="S"/>
+                </OMA>
+                <OMV name="a"/>
+                <OMV name="c"/>
+              </OMA>
+            </OMA>
+          </OMA>
+        </OMA>
+      </OMBIND>
+    </OMA>
+  </OMOBJ></FMP>
+
+  <CMP> (b+c)*a = b*a+c*a </CMP>
+
+  <FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA><OMS cd="logic1" name="implies"/>
+      <OMA>
+        <OMS cd="set1" name="in"/>
+        <OMV name="S"/>
+        <OMS cd="generic_alg_cats" name="ringoid"/>
+      </OMA>
+      <OMBIND>
+        <OMS cd="quant1" name="forall"/>
+        <OMBVAR>
+          <OMV name="a"/>
+          <OMV name="b"/>
+          <OMV name="c"/>
+        </OMBVAR>
+        <OMA><OMS cd="logic1" name="and"/>
+          <OMA><OMS cd="set1" name="in"/>
+            <OMV name="a"/>
+            <OMA>
+              <OMS cd="algebraic_cats" name="ringoid_set"/>
+              <OMV name="S"/>
+            </OMA>
+          </OMA>
+          <OMA><OMS cd="set1" name="in"/>
+            <OMV name="b"/>
+            <OMA>
+              <OMS cd="algebraic_cats" name="ringoid_set"/>
+              <OMV name="S"/>
+            </OMA>
+          </OMA>
+          <OMA><OMS cd="set1" name="in"/>
+            <OMV name="c"/>
+            <OMA>
+              <OMS cd="algebraic_cats" name="ringoid_set"/>
+              <OMV name="S"/>
+            </OMA>
+          </OMA>
+          <OMA>
+            <OMS cd="relation1" name="eq"/>
+            <OMA>
+              <OMA>
+                <OMS cd="algebraic_cats" name="ringoid_times"/>
+                <OMV name="S"/>
+              </OMA>
+              <OMA>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ringoid_plus"/>
+                  <OMV name="S"/>
+                </OMA>
+                <OMV name="b"/>
+                <OMV name="c"/>
+              </OMA>
+              <OMV name="a"/>
+            </OMA>
+            <OMA>
+              <OMA>
+                <OMS cd="algebraic_cats" name="ringoid_plus"/>
+                <OMV name="S"/>
+              </OMA>
+              <OMA>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ringoid_times"/>
+                  <OMV name="S"/>
+                </OMA>
+                <OMV name="b"/>
+                <OMV name="a"/>
+              </OMA>
+              <OMA>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ringoid_times"/>
+                  <OMV name="S"/>
+                </OMA>
+                <OMV name="c"/>
+                <OMV name="a"/>
+              </OMA>
+            </OMA>
+          </OMA>
+        </OMA>
+      </OMBIND>
+    </OMA>
+  </OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+  <Name> ringoid_set </Name>
+  <Description>
+This symbol takes one argument which should be a ringoid. It returns a
+set which represents the set of the ringoid.
+  </Description>
+
+  <CMP> The set of the ringoid (S,*,+) = S </CMP>
+
+  <FMP>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="relation1" name="eq"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="ringoid_set"/>
+          <OMA>
+            <OMS cd="algebraic_cats" name="ringoid"/>
+            <OMV name="S"/>
+            <OMV name="times"/>
+            <OMV name="plus"/>
+          </OMA>
+        </OMA>
+        <OMV name="S"/>
+      </OMA>
+    </OMOBJ>
+  </FMP>
+</CDDefinition>
+
+<CDDefinition>
+  <Name> ringoid_times </Name>
+  <Description>
+This symbol takes one argument which should be a ringoid. It returns a
+binary function which represents the multiplicative operation (*) of
+the ringoid.
+  </Description>
+
+  <CMP> The mulitplication operation of the ringoid (S,*,+) = S </CMP>
+
+  <FMP>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="relation1" name="eq"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="ringoid_times"/>
+          <OMA>
+            <OMS cd="algebraic_cats" name="ringoid"/>
+            <OMV name="S"/>
+            <OMV name="times"/>
+            <OMV name="plus"/>
+          </OMA>
+        </OMA>
+        <OMV name="times"/>
+      </OMA>
+    </OMOBJ>
+  </FMP>
+</CDDefinition>
+
+<CDDefinition>
+  <Name> ringoid_plus </Name>
+  <Description>
+This symbol takes one argument which should be a ringoid. It returns a
+binary function which represents the additive operation (+) of the ringoid.
+  </Description>
+
+  <CMP> The addition operation of the ringoid (S,*,+) = + </CMP>
+
+  <FMP>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="relation1" name="eq"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="ringoid_plus"/>
+          <OMA>
+            <OMS cd="algebraic_cats" name="ringoid"/>
+            <OMV name="S"/>
+            <OMV name="times"/>
+            <OMV name="plus"/>
+          </OMA>
+        </OMA>
+        <OMV name="plus"/>
+      </OMA>
+    </OMOBJ>
+  </FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> ring </Name>
+<Description>
+This symbol is the constructor for rings. A ring is a set together with two 
+operations + and *. A ring is an Abelian group under + and a semigroup under *.
+A ring has a further rule which associates the two operation, that is left and 
+right distributivity.
+The ring constructor takes five arguments, the set of the ring, a binary 
+function from the set into itself to represent the * operation, a binary 
+function from the set into itself to represent the + operation, an element of 
+the set of the ring to represent the additive identity 0 and a unary function 
+from the set into itself to represent additive inverses (i.e. inverses under +,
+or negatives). 
+</Description>
+<CMP> This constructor builds rings </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="set1" name="in"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="ring"/>
+        <OMV name="S"/>
+        <OMV name="times"/>
+        <OMV name="plus"/>
+        <OMV name="zero"/>
+        <OMV name="neg"/>
+      </OMA>
+      <OMS cd="generic_alg_cats" name="ring"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+
+<CMP> A ring is a ringoid </CMP>
+
+<CMP>
+if (S,*,+,0,neg:S->S) comprises a ring then * is both left and right 
+distributive over +. That is:
+For all a,b,c in S, a*(b+c)=(a*b)+(a*c) and (b+c)*a=(b*a)+(c*a)
+</CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="logic1" name="implies"/>
+      <OMA>
+        <OMS cd="set1" name="in"/>
+        <OMV name="S"/>
+        <OMS cd="generic_alg_cats" name="ring"/>
+      </OMA>
+      <OMBIND>
+        <OMS cd="quant1" name="forall"/>
+        <OMBVAR>
+          <OMV name="a"/>
+          <OMV name="b"/>
+          <OMV name="c"/>
+        </OMBVAR>
+        <OMA>
+          <OMS cd="logic1" name="implies"/>
+          <OMA>
+            <OMS cd="logic1" name="and"/>
+            <OMA>
+              <OMS cd="set1" name="in"/>
+              <OMV name="a"/>
+              <OMA>
+                <OMS cd="algebraic_cats" name="ring_set"/>
+                <OMV name="S"/>
+              </OMA>
+            </OMA>
+            <OMA>
+              <OMS cd="set1" name="in"/>
+              <OMV name="b"/>
+              <OMA>
+                <OMS cd="algebraic_cats" name="ring_set"/>
+                <OMV name="S"/>
+              </OMA>
+            </OMA>
+            <OMA>
+              <OMS cd="set1" name="in"/>
+              <OMV name="c"/>
+              <OMA>
+                <OMS cd="algebraic_cats" name="ring_set"/>
+                <OMV name="S"/>
+              </OMA>
+            </OMA>
+          </OMA>
+          <OMA>
+            <OMS cd="logic1" name="and"/>
+            <OMA>
+              <OMS cd="relation1" name="eq"/>
+              <OMA>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ring_times"/>
+                  <OMV name="S"/>
+                </OMA>
+                <OMV name="a"/>
+                <OMA>
+                  <OMA>
+                    <OMS cd="algebraic_cats" name="ring_plus"/>
+                    <OMV name="S"/>
+                  </OMA>
+                  <OMV name="b"/>
+                  <OMV name="c"/>
+                </OMA>
+              </OMA>
+              <OMA>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ring_plus"/>
+                  <OMV name="S"/>
+                </OMA>
+                <OMA>
+                  <OMA>
+                    <OMS cd="algebraic_cats" name="ring_times"/>
+                    <OMV name="S"/>
+                  </OMA>
+                  <OMV name="a"/>
+                  <OMV name="b"/>
+                </OMA>
+                <OMA>
+                  <OMA>
+                    <OMS cd="algebraic_cats" name="ring_times"/>
+                    <OMV name="S"/>
+                  </OMA>
+                  <OMV name="a"/>
+                  <OMV name="c"/>
+                </OMA>
+              </OMA>
+              <OMA>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ring_times"/>
+                  <OMV name="S"/>
+                </OMA>
+                <OMA>
+                  <OMA>
+                    <OMS cd="algebraic_cats" name="ring_plus"/>
+                    <OMV name="S"/>
+                  </OMA>
+                  <OMV name="b"/>
+                  <OMV name="c"/>
+                </OMA>
+                <OMV name="a"/>
+              </OMA>
+              <OMA>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ring_plus"/>
+                  <OMV name="S"/>
+                </OMA>
+                <OMA>
+                  <OMA>
+                    <OMS cd="algebraic_cats" name="ring_times"/>
+                    <OMV name="S"/>
+                  </OMA>
+                  <OMV name="b"/>
+                  <OMV name="a"/>
+                </OMA>
+                <OMA>
+                  <OMA>
+                    <OMS cd="algebraic_cats" name="ring_times"/>
+                    <OMV name="S"/>
+                  </OMA>
+                  <OMV name="c"/>
+                  <OMV name="a"/>
+                </OMA>
+              </OMA>
+            </OMA>
+          </OMA>
+        </OMA>
+      </OMBIND>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> ring_set </Name>
+<Description>
+This symbol takes one argument which should be a ring. It returns the set of the ring.
+</Description>
+
+<CMP> The set of the ring (S,*,+,0,neg) = S </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="ring_set"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="ring"/>
+          <OMV name="S"/>
+          <OMV name="times"/>
+          <OMV name="plus"/>
+          <OMV name="zero"/>
+          <OMV name="neg"/>
+        </OMA>
+      </OMA>
+      <OMV name="S"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> ring_times </Name>
+<Description>
+This symbol takes one argument which should be a ring. It returns a binary function which represents the multiplicative operation of the ring.
+</Description>
+
+<CMP> The times of the ring (S,*,+,0,neg) = * </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="ring_times"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="ring"/>
+          <OMV name="S"/>
+          <OMV name="times"/>
+          <OMV name="plus"/>
+          <OMV name="zero"/>
+          <OMV name="neg"/>
+        </OMA>
+      </OMA>
+      <OMV name="times"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> ring_plus </Name>
+<Description>
+This symbol takes one argument which should be a ring. It returns a binary function which represents the additive operation of the ring.
+</Description>
+
+<CMP> The plus of the ring (S,*,+,0,neg) = + </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="ring_plus"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="ring"/>
+          <OMV name="S"/>
+          <OMV name="times"/>
+          <OMV name="plus"/>
+          <OMV name="zero"/>
+          <OMV name="neg"/>
+        </OMA>
+      </OMA>
+      <OMV name="plus"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> ring_zero </Name>
+<Description>
+This symbol takes one argument which should be a ring. It returns the additive identity of the ring.
+</Description>
+
+<CMP> The zero of the ring (S,*,+,0,neg) = 0 </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="ring_zero"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="ring"/>
+          <OMV name="S"/>
+          <OMV name="times"/>
+          <OMV name="plus"/>
+          <OMV name="zero"/>
+          <OMV name="neg"/>
+        </OMA>
+      </OMA>
+      <OMV name="zero"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> ring_negative </Name>
+<Description>
+This symbol takes one argument which should be a ring. It returns a unary function which should be the negative function of the ring.
+</Description>
+
+<CMP> The negative function of the ring (S,*,+,0,neg) = neg </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="ring_negative"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="ring"/>
+          <OMV name="S"/>
+          <OMV name="times"/>
+          <OMV name="plus"/>
+          <OMV name="zero"/>
+          <OMV name="neg"/>
+        </OMA>
+      </OMA>
+      <OMV name="neg"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> ordered_ring </Name>
+<Description>
+This symbol is the constructor for ordered rings, that is a ring on which there
+is an ordering relation.
+The ordered_ring constructor takes six arguments,  the set of the ordered ring,
+a binary function from the set into itself to represent the
+multiplicative operation (*), a 
+binary function from the set into itself to represent the additive
+operation (+), an 
+element of the set of the ordered ring to represent the additive identity 0,
+a unary function from the set into itself to represent additive inverses 
+(i.e. inverses under +, or negatives) and a binary function from the set into 
+the booleans to represent the ordering relation. 
+</Description>
+
+<CMP> This constructor builds ordered rings </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="set1" name="in"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="ordered_ring"/>
+        <OMV name="S"/>
+        <OMV name="times"/>
+        <OMV name="plus"/>
+        <OMV name="zero"/>
+        <OMV name="neg"/>
+        <OMV name="leq"/>
+      </OMA>
+      <OMS cd="generic_alg_cats" name="ordered_ring"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+
+<CMP>
+if (S,*,+,0,neg:S->S,\leq) constitutes an ordered ring, then
+for all a,b in S | a \leq b or b \leq a
+and
+for all a,b,c in S | if a\leq b and b\leq c then a\leq c
+and
+for all a,b in S | if a\leq b and b\leq a then a=b
+</CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="logic1" name="implies"/>
+      <OMA>
+        <OMS cd="set1" name="in"/>
+        <OMV name="S"/>
+        <OMS name="ordered_ring" cd="generic_alg_cats"/>
+      </OMA>
+      <OMA>
+        <OMS cd="logic1" name="and"/>
+        <OMBIND>
+          <OMS cd="quant1" name="forall"/>
+          <OMBVAR>
+            <OMV name="a"/>
+            <OMV name="b"/>
+          </OMBVAR>
+          <OMA>
+            <OMS cd="logic1" name="implies"/>
+            <OMA>
+              <OMS cd="logic1" name="and"/>
+              <OMA>
+                <OMS cd="set1" name="in"/>
+                <OMV name="a"/>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ordered_ring_set"/>
+                  <OMV name="S"/>
+                </OMA>
+              </OMA>
+              <OMA>
+                <OMS cd="set1" name="in"/>
+                <OMV name="b"/>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ordered_ring_set"/>
+                  <OMV name="S"/>
+                </OMA>
+              </OMA>
+            </OMA>
+            <OMA>
+              <OMS cd="logic1" name="or"/>
+              <OMA>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ordered_ring_order"/>
+                  <OMV name="S"/>
+                </OMA>
+                <OMV name="a"/>
+                <OMV name="b"/>
+              </OMA>
+              <OMA>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ordered_ring_order"/>
+                  <OMV name="S"/>
+                </OMA>
+                <OMV name="b"/>
+                <OMV name="a"/>
+              </OMA>
+            </OMA>
+          </OMA>
+        </OMBIND>
+        <OMBIND>
+          <OMS cd="quant1" name="forall"/>
+          <OMBVAR>
+            <OMV name="a"/>
+            <OMV name="b"/>
+            <OMV name="c"/>
+          </OMBVAR>
+          <OMA>
+            <OMS cd="logic1" name="implies"/>
+            <OMA>
+              <OMS cd="logic1" name="and"/>
+              <OMA>
+                <OMS cd="set1" name="in"/>
+                <OMV name="a"/>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ordered_ring_set"/>
+                  <OMV name="S"/>
+                </OMA>
+              </OMA>
+              <OMA>
+                <OMS cd="set1" name="in"/>
+                <OMV name="b"/>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ordered_ring_set"/>
+                  <OMV name="S"/>
+                </OMA>
+              </OMA>
+              <OMA>
+                <OMS cd="set1" name="in"/>
+                <OMV name="c"/>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ordered_ring_set"/>
+                  <OMV name="S"/>
+                </OMA>
+              </OMA>
+            </OMA>
+            <OMA>
+              <OMS cd="logic1" name="implies"/>
+              <OMA>
+                <OMS cd="logic1" name="and"/>
+                <OMA>
+                  <OMA>
+                    <OMS cd="algebraic_cats" name="ordered_ring_order"/>
+                    <OMV name="S"/>
+                  </OMA>
+                  <OMV name="a"/>
+                  <OMV name="b"/>
+                </OMA>
+                <OMA>
+                  <OMA>
+                    <OMS cd="algebraic_cats" name="ordered_ring_order"/>
+                    <OMV name="S"/>
+                  </OMA>
+                  <OMV name="b"/>
+                  <OMV name="c"/>
+                </OMA>
+              </OMA>
+              <OMA>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ordered_ring_order"/>
+                  <OMV name="S"/>
+                </OMA>
+                <OMV name="a"/>
+                <OMV name="c"/>
+              </OMA>
+            </OMA>
+          </OMA>
+        </OMBIND>
+        <OMBIND>
+          <OMS cd="quant1" name="forall"/>
+          <OMBVAR>
+            <OMV name="a"/>
+            <OMV name="b"/>
+          </OMBVAR>
+          <OMA>
+            <OMS cd="logic1" name="implies"/>
+            <OMA>
+              <OMS cd="logic1" name="and"/>
+              <OMA>
+                <OMS cd="set1" name="in"/>
+                <OMV name="a"/>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ordered_ring_set"/>
+                  <OMV name="S"/>
+                </OMA>
+              </OMA>
+              <OMA>
+                <OMS cd="set1" name="in"/>
+                <OMV name="b"/>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="ordered_ring_set"/>
+                  <OMV name="S"/>
+                </OMA>
+              </OMA>
+            </OMA>
+            <OMA>
+              <OMS cd="logic1" name="implies"/>
+              <OMA>
+                <OMS cd="logic1" name="and"/>
+                <OMA>
+                  <OMA>
+                    <OMS cd="algebraic_cats" name="ordered_ring_order"/>
+                    <OMV name="S"/>
+                  </OMA>
+                  <OMV name="a"/>
+                  <OMV name="b"/>
+                </OMA>
+                <OMA>
+                  <OMA>
+                    <OMS cd="algebraic_cats" name="ordered_ring_order"/>
+                    <OMV name="S"/>
+                  </OMA>
+                  <OMV name="b"/>
+                  <OMV name="a"/>
+                </OMA>
+              </OMA>
+              <OMA>
+                <OMS cd="relation1" name="eq"/>
+                <OMV name="a"/>
+                <OMV name="b"/>
+              </OMA>
+            </OMA>
+          </OMA>
+        </OMBIND>
+      </OMA>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> ordered_ring_set </Name>
+<Description>
+This symbol takes one argument which should be an ordered ring. It returns the set of the ordered ring.
+</Description>
+
+<CMP> The set of the ordered ring (S,*,+,0,-,leq) = * </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="ordered_ring_set"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="ordered_ring"/>
+          <OMV name="S"/>
+          <OMV name="times"/>
+          <OMV name="plus"/>
+          <OMV name="zero"/>
+          <OMV name="neg"/>
+          <OMV name="leq"/>
+        </OMA>
+      </OMA>
+      <OMV name="S"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> ordered_ring_times </Name>
+<Description>
+This symbol takes one argument which should be an ordered ring. It returns a binary function, which represents the multiplicative operation of the ordered ring.
+</Description>
+
+<CMP> The times of the ordered ring (S,*,+,0,-,leq) = * </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="ordered_ring_times"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="ordered_ring"/>
+          <OMV name="S"/>
+          <OMV name="times"/>
+          <OMV name="plus"/>
+          <OMV name="zero"/>
+          <OMV name="neg"/>
+          <OMV name="leq"/>
+        </OMA>
+      </OMA>
+      <OMV name="times"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> ordered_ring_plus </Name>
+<Description>
+This symbol takes one argument which should be an ordered ring. It returns a binary function, which represents the additive operation of the ordered ring.
+</Description>
+
+<CMP> The + of the ordered ring (S,*,+,0,-,leq) = + </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="ordered_ring_plus"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="ordered_ring"/>
+          <OMV name="S"/>
+          <OMV name="times"/>
+          <OMV name="plus"/>
+          <OMV name="zero"/>
+          <OMV name="neg"/>
+          <OMV name="leq"/>
+        </OMA>
+      </OMA>
+      <OMV name="plus"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> ordered_ring_zero </Name>
+<Description>
+This symbol takes one argument which should be an ordered ring. It returns the zero of the ordered ring.
+</Description>
+
+<CMP> The zero of the ordered ring (S,*,+,0,-,leq) = 0 </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="ordered_ring_zero"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="ordered_ring"/>
+          <OMV name="S"/>
+          <OMV name="times"/>
+          <OMV name="plus"/>
+          <OMV name="zero"/>
+          <OMV name="neg"/>
+          <OMV name="leq"/>
+        </OMA>
+      </OMA>
+      <OMV name="zero"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> ordered_ring_negative </Name>
+<Description>
+This symbol takes one argument which should be an ordered ring. It returns a unary function to represent the additive inverse function of the ordered ring.
+</Description>
+
+<CMP> The negative of the ordered ring (S,*,+,0,-,leq) = - </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="ordered_ring_negative"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="ordered_ring"/>
+          <OMV name="S"/>
+          <OMV name="times"/>
+          <OMV name="plus"/>
+          <OMV name="zero"/>
+          <OMV name="neg"/>
+          <OMV name="leq"/>
+        </OMA>
+      </OMA>
+      <OMV name="neg"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> ordered_ring_order </Name>
+<Description>
+This symbol takes one argument which should be an ordered ring. It returns a binary function, which represents the order function on the ordered ring.
+</Description>
+
+<CMP> The order of the ordered ring (S,*,+,0,-,leq) = leq </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="ordered_ring_order"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="ordered_ring"/>
+          <OMV name="S"/>
+          <OMV name="times"/>
+          <OMV name="plus"/>
+          <OMV name="zero"/>
+          <OMV name="neg"/>
+          <OMV name="leq"/>
+        </OMA>
+      </OMA>
+      <OMV name="leq"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> non_commutative_ring </Name>
+<Description>
+This symbol is the constructor for non commutative rings, these are rings 
+over which the * operator is not commutative.
+the non_commutative_ring constructor takes five arguments:
+The set of the non-commutative ring.
+A binary function into itself to represent the multiplication operation, *.
+A binary function into itself to represent the addition operation, +.
+A member of the set of the non-commutative ring to specify the additive 
+identity, 0.
+And a unary function taking the set of the non-commutative ring into itself to 
+represent the additive inverses of the non-commutative ring (i.e. inverses under +, or negatives).
+</Description>
+
+<CMP> This constructor builds non-commutative rings </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="set1" name="in"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="non_commutative_ring"/>
+        <OMV name="S"/>
+        <OMV name="times"/>
+        <OMV name="plus"/>
+        <OMV name="zero"/>
+        <OMV name="neg"/>
+      </OMA>
+      <OMS cd="generic_alg_cats" name="non_commutative_ring"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+
+<CMP>
+if (S,*,+,0,neg:S->S) constitutes a non-commutative ring, then
+there exist a,b in S such that a*b~=b*a
+</CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="logic1" name="implies"/>
+      <OMA>
+        <OMS cd="set1" name="in"/>
+        <OMV name="S"/>
+        <OMS cd="generic_alg_cats" name="non_commutative_ring"/>
+      </OMA>
+      <OMBIND>
+        <OMS cd="quant1" name="exists"/>
+        <OMBVAR>
+          <OMV name="a"/>
+          <OMV name="b"/>
+        </OMBVAR>
+        <OMA>
+          <OMS cd="logic1" name="implies"/>
+          <OMA>
+            <OMS cd="logic1" name="and"/>
+            <OMA>
+              <OMS cd="set1" name="in"/>
+              <OMV name="a"/>
+              <OMA>
+                <OMS cd="algebraic_cats" name="non_commutative_ring_set"/>
+                <OMV name="S"/>
+              </OMA>
+            </OMA>
+            <OMA>
+              <OMS cd="set1" name="in"/>
+              <OMV name="b"/>
+              <OMA>
+                <OMS cd="algebraic_cats" name="non_commutative_ring_set"/>
+                <OMV name="S"/>
+              </OMA>
+            </OMA>
+          </OMA>
+          <OMA>
+            <OMS cd="relation1" name="neq"/>
+            <OMA>
+              <OMA>
+                <OMS cd="algebraic_cats" name="non_commutative_ring_times"/>
+                <OMV name="S"/>
+              </OMA>
+              <OMV name="a"/>
+              <OMV name="b"/>
+            </OMA>
+          </OMA>
+          <OMA>
+            <OMA>
+              <OMA>
+                <OMS cd="algebraic_cats" name="non_commutative_ring_times"/>
+                <OMV name="S"/>
+              </OMA>
+              <OMV name="b"/>
+              <OMV name="a"/>
+            </OMA>
+          </OMA>
+        </OMA>
+      </OMBIND>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> non_commutative_ring_set </Name>
+<Description>
+This symbol takes one argument which should be a non-commutative ring. It returns the set of the non-commutative ring.
+</Description>
+
+<CMP> The set of the non-commutative ring (S,*,+,0,-) = S </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="non_commutative_ring_set"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="non_commutative_ring"/>
+          <OMV name="S"/>
+          <OMV name="times"/>
+          <OMV name="plus"/>
+          <OMV name="zero"/>
+          <OMV name="neg"/>
+        </OMA>
+      </OMA>
+      <OMV name="S"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> non_commutative_ring_times </Name>
+<Description>
+This symbol takes one argument which should be a non-commutative ring. It returns a binary function, which represents the multiplicative function of the non-commutative ring.
+</Description>
+
+<CMP> The times of the non-commutative ring (S,*,+,0,-) = * </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="non_commutative_ring_times"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="non_commutative"/>
+          <OMV name="S"/>
+          <OMV name="times"/>
+          <OMV name="plus"/>
+          <OMV name="zero"/>
+          <OMV name="neg"/>
+        </OMA>
+      </OMA>
+      <OMV name="times"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> non_commutative_ring_plus </Name>
+<Description>
+This symbol takes one argument which should be a non-commutative ring. It returns a binary function, which represents the additive function of the non-commutative ring.
+</Description>
+
+<CMP> The plus of the non-commutative ring (S,*,+,0,-) = + </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="non_commutative_ring_plus"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="non_commutative_ring"/>
+          <OMV name="S"/>
+          <OMV name="times"/>
+          <OMV name="plus"/>
+          <OMV name="zero"/>
+          <OMV name="neg"/>
+        </OMA>
+      </OMA>
+      <OMV name="plus"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> non_commutative_ring_zero </Name>
+<Description>
+This symbol takes one argument which should be a non-commutative ring. It returns the zero of the non-commutative ring.
+</Description>
+
+<CMP> The zero of the non-commutative ring (S,*,+,0,-) = 0 </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="non_commutative_ring_zero"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="non_commutative_ring"/>
+          <OMV name="S"/>
+          <OMV name="times"/>
+          <OMV name="plus"/>
+          <OMV name="zero"/>
+          <OMV name="neg"/>
+        </OMA>
+      </OMA>
+      <OMV name="zero"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> non_commutative_ring_negative </Name>
+<Description>
+This symbol takes one argument which should be a non-commutative ring. It returns a unary function, which represents the multiplicative inverse of the non-commutative ring.
+</Description>
+
+<CMP> The negative of the non-commutative ring (S,*,+,0,-) = - </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="non_commutative_ring_negative"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="non_commutative_ring"/>
+          <OMV name="S"/>
+          <OMV name="times"/>
+          <OMV name="plus"/>
+          <OMV name="zero"/>
+          <OMV name="neg"/>
+        </OMA>
+      </OMA>
+      <OMV name="neg"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> Euclidean_domain </Name>
+<Description>
+This symbol is the constructor for Euclidean domains. A Euclidean domain is a
+ring on which there is no zero divisors together with an integer norm function.
+The Euclidean_domain constructor takes six arguments:
+The set of the Euclidean domain.
+A binary function into itself to represent the multiplication operation, *.
+A binary function into itself to represent the addition operation, +.
+A member of the set of the Euclidean domain to specify the additive 
+identity, 0.
+A unary function taking the set of the Euclidean domain into itself to 
+represent the additive inverses (i.e. inverses under +, or negatives).
+And a unary function taking elements of the set into the positive integers, to 
+represent the integer norm function.
+</Description>
+
+<CMP> This constructor builds Euclidean domains </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="set1" name="in"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="Euclidean_domain"/>
+        <OMV name="S"/>
+        <OMV name="times"/>
+        <OMV name="plus"/>
+        <OMV name="zero"/>
+        <OMV name="neg"/>
+        <OMV name="abs"/>
+      </OMA>
+      <OMS cd="generic_alg_cats" name="Euclidean_domain"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+
+<CMP>
+if (S,*,+,0,neg:S->S,abs:S->Z^+) constitutes a Euclidean domain then
+for every a,b ~= 0 in S then abs(a*b) >= abs(a) and abs(a*b) >= abs(b)
+and
+for every a,b ~= 0 in S then there exists q and r in S such that
+  a=q*b + r and abs(r) &lt; abs(B) or r=0
+</CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="logic1" name="implies"/>
+      <OMA>
+        <OMS cd="set1" name="in"/>
+        <OMV name="S"/>
+        <OMS cd="generic_alg_cats" name="Euclidean_domain"/>
+      </OMA>
+      <OMA>
+        <OMS cd="logic1" name="and"/>
+        <OMBIND>
+          <OMS cd="quant1" name="exists"/>
+          <OMBVAR>
+            <OMV name="a"/>
+            <OMV name="b"/>
+          </OMBVAR>
+          <OMA>
+            <OMS cd="logic1" name="implies"/>
+            <OMA>
+              <OMS cd="logic1" name="and"/>
+              <OMA>
+                <OMS cd="set1" name="in"/>
+                <OMV name="a"/>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="Euclidean_domain_set"/>
+                  <OMV name="S"/>
+                </OMA>
+              </OMA>
+              <OMA>
+                <OMS cd="set1" name="in"/>
+                <OMV name="b"/>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="Euclidean_domain_set"/>
+                  <OMV name="S"/>
+                </OMA>
+              </OMA>
+              <OMA>
+                <OMS cd="relation1" name="neq"/>
+                <OMV name="a"/>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="Euclidean_domain_zero"/>
+                  <OMV name="S"/>
+                </OMA>
+              </OMA>
+              <OMA>
+                <OMS cd="relation1" name="neq"/>
+                <OMV name="b"/>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="Euclidean_domain_zero"/>
+                  <OMV name="S"/>
+                </OMA>
+              </OMA>
+            </OMA>
+            <OMA>
+              <OMS cd="logic1" name="and"/>
+              <OMA>
+                <OMS cd="relation1" name="geq"/>
+                <OMA>
+                  <OMA>
+                    <OMS cd="algebraic_cats" name="Euclidean_domain_abs"/>
+                    <OMV name="S"/>
+                  </OMA>
+                  <OMA>
+                    <OMA>
+                      <OMS cd="algebraic_cats" name="Euclidean_domain_times"/>
+                      <OMV name="S"/>
+                    </OMA>
+                    <OMV name="a"/>
+                    <OMV name="b"/>
+                  </OMA>
+                </OMA>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="Euclidean_domain_abs"/>
+                  <OMV name="S"/>
+                </OMA>
+                <OMV name="a"/>
+              </OMA>
+              <OMA>
+                <OMS cd="relation1" name="geq"/>
+                <OMA>
+                  <OMA>
+                    <OMS cd="algebraic_cats" name="Euclidean_domain_abs"/>
+                    <OMV name="S"/>
+                  </OMA>
+                  <OMA>
+                    <OMA>
+                      <OMS cd="algebraic_cats" name="Euclidean_domain_times"/>
+                      <OMV name="S"/>
+                    </OMA>
+                    <OMV name="a"/>
+                    <OMV name="b"/>
+                  </OMA>
+                </OMA>
+                <OMA>
+                  <OMA>
+                    <OMS cd="algebraic_cats" name="Euclidean_domain_abs"/>
+                    <OMV name="S"/>
+                  </OMA>
+                  <OMV name="b"/>
+                </OMA>
+              </OMA>
+            </OMA>
+          </OMA>
+        </OMBIND>
+        <OMBIND>
+          <OMS cd="quant1" name="exists"/>
+          <OMBVAR>
+            <OMV name="a"/>
+            <OMV name="b"/>
+          </OMBVAR>
+          <OMA>
+            <OMS cd="logic1" name="implies"/>
+            <OMA>
+              <OMS cd="logic1" name="and"/>
+              <OMA>
+                <OMS cd="set1" name="in"/>
+                <OMV name="a"/>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="Euclidean_domain_set"/>
+                  <OMV name="S"/>
+                </OMA>
+              </OMA>
+              <OMA>
+                <OMS cd="set1" name="in"/>
+                <OMV name="b"/>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="Euclidean_domain_set"/>
+                  <OMV name="S"/>
+                </OMA>
+              </OMA>
+              <OMA>
+                <OMS cd="relation1" name="neq"/>
+                <OMV name="a"/>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="Euclidean_domain_zero"/>
+                  <OMV name="S"/>
+                </OMA>
+              </OMA>
+              <OMA>
+                <OMS cd="relation1" name="neq"/>
+                <OMV name="b"/>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="Euclidean_domain_zero"/>
+                  <OMV name="S"/>
+                </OMA>
+              </OMA>
+            </OMA>
+ <!--exists q and r in S such that a=q*b + r and abs(r) &lt; abs(b) or r=0-->
+            <OMBIND>
+              <OMS cd="quant1" name="exists"/>
+              <OMBVAR>
+                <OMV name="q"/>
+                <OMV name="r"/>
+              </OMBVAR>
+              <OMA>
+                <OMS cd="logic1" name="or"/>
+                <OMA>
+                  <OMS cd="relation1" name="eq"/>
+                  <OMV name="r"/>
+                  <OMA>
+                    <OMS cd="algebraic_cats" name="Euclidean_domain_zero"/>
+                    <OMV name="S"/>
+                  </OMA>
+                </OMA>
+                <OMA>
+                  <OMS cd="logic1" name="and"/>
+                  <OMA>
+                    <OMS cd="set1" name="in"/>
+                    <OMV name="q"/>
+                    <OMA>
+                      <OMS cd="algebraic_cats" name="Euclidean_domain_set"/>
+                      <OMV name="S"/>
+                    </OMA>
+                  </OMA>
+                  <OMA>
+                    <OMS cd="set1" name="in"/>
+                    <OMV name="r"/>
+                    <OMA>
+                      <OMS cd="algebraic_cats" name="Euclidean_domain_set"/>
+                      <OMV name="S"/>
+                    </OMA>
+                  </OMA>
+                  <OMA>
+                    <OMS cd="relation1" name="eq"/>
+                    <OMV name="a"/>
+                    <OMA>
+                      <OMA>
+                        <OMS cd="algebraic_cats" name="Euclidean_domain_plus"/>
+                        <OMV name="S"/>
+                      </OMA>
+                      <OMA>
+                        <OMA>
+                          <OMS cd="algebraic_cats" name="Euclidean_domain_times"/>
+                          <OMV name="S"/>
+                        </OMA>
+                        <OMV name="q"/>
+                        <OMV name="b"/>
+                      </OMA>
+                      <OMV name="r"/>
+                    </OMA>
+                  </OMA>
+                  <OMA>
+                    <OMS cd="relation1" name="lt"/>
+                    <OMA>
+                      <OMA>
+                        <OMS cd="algebraic_cats" name="Euclidean_domain_abs"/>
+                        <OMV name="S"/>
+                      </OMA>
+                      <OMV name="r"/>
+                    </OMA>
+                    <OMA>
+                      <OMA>
+                        <OMS cd="algebraic_cats" name="Euclidean_domain_abs"/>
+                        <OMV name="S"/>
+                      </OMA>
+                      <OMV name="b"/>
+                    </OMA>
+                  </OMA>
+                </OMA>
+              </OMA>
+            </OMBIND>
+          </OMA>
+        </OMBIND>
+      </OMA>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> Euclidean_domain_set </Name>
+<Description>
+This symbol takes one argument which should be a Euclidean domain. It returns the set of the Euclidean domain.
+</Description>
+
+<CMP> The set of the Euclidean domain (S,*,+,0,-,abs) = S </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="Euclidean_domain_set"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="Euclidean_domain"/>
+          <OMV name="S"/>
+          <OMV name="times"/>
+          <OMV name="plus"/>
+          <OMV name="zero"/>
+          <OMV name="neg"/>
+          <OMV name="abs"/>
+        </OMA>
+      </OMA>
+      <OMV name="S"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> Euclidean_domain_times </Name>
+<Description>
+This symbol takes one argument which should be a Euclidean domain. It returns a binary function, which represents the multiplicative operation of the Euclidean domain.
+</Description>
+
+<CMP> The times of the Euclidean domain (S,*,+,0,-,abs) = * </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="Euclidean_domain_times"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="Euclidean_domain"/>
+          <OMV name="S"/>
+          <OMV name="times"/>
+          <OMV name="plus"/>
+          <OMV name="zero"/>
+          <OMV name="neg"/>
+          <OMV name="abs"/>
+        </OMA>
+      </OMA>
+      <OMV name="times"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> Euclidean_domain_plus </Name>
+<Description>
+This symbol takes one argument which should be a Euclidean domain. It returns a binary function, which represents the additive operation of the Euclidean domain.
+</Description>
+
+<CMP> The plus of the Euclidean domain (S,*,+,0,-,abs) = + </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="Euclidean_domain_plus"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="Euclidean_domain_plus"/>
+          <OMV name="S"/>
+          <OMV name="times"/>
+          <OMV name="plus"/>
+          <OMV name="zero"/>
+          <OMV name="neg"/>
+          <OMV name="abs"/>
+        </OMA>
+      </OMA>
+      <OMV name="plus"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> Euclidean_domain_zero </Name>
+<Description>
+This symbol takes one argument which should be a Euclidean domain. It returns the additive identity of the Euclidean domain.
+</Description>
+
+<CMP> The zero of the Euclidean domain (S,*,+,0,-,abs) = 0 </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="Euclidean_domain_zero"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="Euclidean_domain"/>
+          <OMV name="S"/>
+          <OMV name="times"/>
+          <OMV name="plus"/>
+          <OMV name="zero"/>
+          <OMV name="neg"/>
+          <OMV name="abs"/>
+        </OMA>
+      </OMA>
+      <OMV name="zero"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> Euclidean_domain_negative </Name>
+<Description>
+This symbol takes one argument which should be a Euclidean domain. It returns a unary function, which represents additive inverses of the Euclidean domain.
+</Description>
+
+<CMP> The negative of the Euclidean domain (S,*,+,0,-,abs) = - </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="Euclidean_domain_negative"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="Euclidean_domain"/>
+          <OMV name="S"/>
+          <OMV name="times"/>
+          <OMV name="plus"/>
+          <OMV name="zero"/>
+          <OMV name="neg"/>
+          <OMV name="abs"/>
+        </OMA>
+      </OMA>
+      <OMV name="neg"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> Euclidean_domain_abs </Name>
+<Description>
+This symbol takes one argument which should be a Euclidean domain. It returns a unary function, which is the absolute value function of the Euclidean domain.
+</Description>
+
+<CMP> The absolute value function of the Euclidean domain (S,*,+,0,-,abs) = abs </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="Euclidean_domain_abs"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="Euclidean_domain"/>
+          <OMV name="S"/>
+          <OMV name="times"/>
+          <OMV name="plus"/>
+          <OMV name="zero"/>
+          <OMV name="neg"/>
+          <OMV name="abs"/>
+        </OMA>
+      </OMA>
+      <OMV name="abs"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> field </Name>
+<Description>
+  This symbol is the constructor for fields. A field is an Abelian group under
+ +, the set of the field complement {0} with * is an Abelian group, a field 
+has a further rule which associates the two operations, that is left and right 
+distributivity.
+The field constructor takes seven arguments:
+The set of the field.
+A binary function into itself to represent the multiplication operation, *.
+A binary function into itself to represent the addition operation, +.
+A member of the set of the field to specify the multiplicative identity, 1.
+A member of the set of the field to specify the additive identity, 0.
+A unary function taking the set of the field into itself to 
+represent the multiplicative inverses (i.e. inverses under *).
+A unary function taking the set of the field into itself to 
+represent the additive inverses (i.e. inverses under +, or negatives).
+</Description>
+<CMP> This constructor builds fields </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="set1" name="in"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="fields"/>
+        <OMV name="S"/>
+        <OMV name="times"/>
+        <OMV name="plus"/>
+        <OMV name="one"/>
+        <OMV name="zero"/>
+        <OMV name="inv"/>
+        <OMV name="neg"/>
+      </OMA>
+      <OMS cd="generic_alg_cats" name="fields"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+<CMP> The set of the field complement {0} with * is an Abelian group </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="logic1" name="implies"/>
+      <OMA>
+        <OMS cd="set1" name="in"/>
+        <OMV name="S"/>
+        <OMS cd="generic_alg_cats" name="field"/>
+      </OMA>
+      <OMA>
+        <OMS cd="set1" name="in"/>
+        <OMA>
+          <OMS cd="set1" name="setdiff"/>
+          <OMA>
+            <OMS cd="algebraic_cats" name="field_set"/>
+            <OMV name="S"/>
+          </OMA>
+          <OMA>
+            <OMS cd="set1" name="set"/>
+            <OMA>
+              <OMS cd="algebraic_cats" name="field_zero"/>
+            </OMA>
+          </OMA>
+        </OMA>
+        <OMS cd="generic_alg_cats" name="Abelian_group"/>
+      </OMA>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> field_set </Name>
+<Description>
+This symbol takes one argument which should be a field. It returns the set of the field.
+</Description>
+
+<CMP> The set of the field (S,*,+,1,0,inv,-) = S </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="field_set"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="field"/>
+          <OMV name="S"/>
+          <OMV name="times"/>
+          <OMV name="plus"/>
+          <OMV name="one"/>
+          <OMV name="zero"/>
+          <OMV name="inv"/>
+          <OMV name="neg"/>
+        </OMA>
+      </OMA>
+      <OMV name="S"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> field_times </Name>
+<Description>
+This symbol takes one argument which should be a field. It returns a binary function, to represent the multiplicative operation of the field.
+</Description>
+
+<CMP> The times of the field (S,*,+,1,0,inv,-) = * </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="field_times"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="field"/>
+          <OMV name="S"/>
+          <OMV name="times"/>
+          <OMV name="plus"/>
+          <OMV name="one"/>
+          <OMV name="zero"/>
+          <OMV name="inv"/>
+          <OMV name="neg"/>
+        </OMA>
+      </OMA>
+      <OMV name="times"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> field_plus </Name>
+<Description>
+This symbol takes one argument which should be a field. It returns a binary function, to represent the additive operation of the field.
+</Description>
+
+<CMP> The plus of the field (S,*,+,1,0,inv,-) = + </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="field_plus"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="field"/>
+          <OMV name="S"/>
+          <OMV name="times"/>
+          <OMV name="plus"/>
+          <OMV name="one"/>
+          <OMV name="zero"/>
+          <OMV name="inv"/>
+          <OMV name="neg"/>
+        </OMA>
+      </OMA>
+      <OMV name="plus"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> field_one </Name>
+<Description>
+This symbol takes one argument which should be a field. It returns the multiplicative identity of the field.
+</Description>
+
+<CMP> The one of the field (S,*,+,1,0,inv,-) = 1 </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="field_one"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="field"/>
+          <OMV name="S"/>
+          <OMV name="times"/>
+          <OMV name="plus"/>
+          <OMV name="one"/>
+          <OMV name="zero"/>
+          <OMV name="inv"/>
+          <OMV name="neg"/>
+        </OMA>
+      </OMA>
+      <OMV name="one"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> field_zero </Name>
+<Description>
+This symbol takes one argument which should be a field. It returns the additive identity of the field.
+</Description>
+
+<CMP> The zero of the field (S,*,+,1,0,inv,-) = 0 </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="field_zero"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="field"/>
+          <OMV name="S"/>
+          <OMV name="times"/>
+          <OMV name="plus"/>
+          <OMV name="one"/>
+          <OMV name="zero"/>
+          <OMV name="inv"/>
+          <OMV name="neg"/>
+        </OMA>
+      </OMA>
+      <OMV name="zero"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> field_reciprocal </Name>
+<Description>
+This symbol takes one argument which should be a field. It returns a unary function, which is the multiplicative inverse function of the field.
+</Description>
+
+<CMP> The reciprocal of the field (S,*,+,1,0,inv,-) = inv </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="field_reciprocal"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="field"/>
+          <OMV name="S"/>
+          <OMV name="times"/>
+          <OMV name="plus"/>
+          <OMV name="one"/>
+          <OMV name="zero"/>
+          <OMV name="inv"/>
+          <OMV name="neg"/>
+        </OMA>
+      </OMA>
+      <OMV name="inv"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> field_negative </Name>
+<Description>
+This symbol takes one argument which should be a field. It returns a unary function, which is the additive inverse function of the field.
+</Description>
+
+<CMP> The negative of the field (S,*,+,1,0,inv,-) = - </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="field_negative"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="field"/>
+          <OMV name="S"/>
+          <OMV name="times"/>
+          <OMV name="plus"/>
+          <OMV name="one"/>
+          <OMV name="zero"/>
+          <OMV name="inv"/>
+          <OMV name="neg"/>
+        </OMA>
+      </OMA>
+      <OMV name="neg"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> integral_domain </Name>
+<Description>
+This symbol is the constructor for integral domains. An integral domain is a 
+ring which is commutative under *, it has a multiplicative identity (under *), 
+and has no zero divisors.
+The integral_domain constructor takes six arguments.
+The set of the integral domain, 
+a binary function from the set into itself to represent the * operation, 
+a binary function from the set into itself to represent the + operation, 
+an element of the set of the ring to represent the multiplicative identity 1,
+an element of the set of the ring to represent the additive identity 0,
+and a unary function from the set into itself to represent additive inverses 
+(i.e. inverses under +, or negatives). 
+</Description>
+
+<CMP> This constructor builds integral domains </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="set1" name="in"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="integral_domain"/>
+        <OMV name="S"/>
+        <OMV name="times"/>
+        <OMV name="one"/>
+        <OMV name="plus"/>
+        <OMV name="zero"/>
+        <OMV name="neg"/>
+      </OMA>
+      <OMS cd="generic_alg_cats" name="integral_domain"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+
+<CMP> An integral domain is commutative under * </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="logic1" name="implies"/>
+      <OMA>
+        <OMS cd="set1" name="in"/>
+        <OMV name="S"/>
+        <OMS cd="generic_alg_cats" name="integral_domain"/>
+      </OMA>
+      <OMBIND>
+        <OMS cd="quant1" name="forall"/>
+        <OMBVAR>
+          <OMV name="a"/>
+          <OMV name="b"/>
+        </OMBVAR>
+        <OMA>
+          <OMS cd="logic1" name="implies"/>
+          <OMA>
+            <OMS cd="logic1" name="and"/>
+            <OMA>
+              <OMS cd="set1" name="in"/>
+              <OMV name="a"/>
+              <OMA>
+                <OMS cd="algebraic_cats" name="integral_domain_set"/>
+                <OMV name="S"/>
+              </OMA>
+            </OMA>
+            <OMA>
+              <OMS cd="set1" name="in"/>
+              <OMV name="b"/>
+              <OMA>
+                <OMS cd="algebraic_cats" name="integral_domain_set"/>
+                <OMV name="S"/>
+              </OMA>
+            </OMA>
+          </OMA>
+          <OMA>
+            <OMS cd="relation1" name="eq"/>
+            <OMA>
+              <OMA>
+                <OMS cd="algebraic_cats" name="integral_domain_times"/>
+                <OMV name="S"/>
+              </OMA>
+              <OMV name="a"/>
+              <OMV name="b"/>
+            </OMA>
+            <OMA>
+              <OMA>
+                <OMS cd="algebraic_cats" name="integral_domain_times"/>
+                <OMV name="S"/>
+              </OMA>
+              <OMV name="b"/>
+              <OMV name="a"/>
+            </OMA>
+          </OMA>
+        </OMA>
+      </OMBIND>
+    </OMA>
+  </OMOBJ>
+</FMP>
+
+<CMP> An integral domain has a multiplicative identity </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="logic1" name="implies"/>
+      <OMA>
+        <OMS cd="set1" name="in"/>
+        <OMV name="S"/>
+        <OMS cd="generic_alg_cats" name="integral_domain"/>
+      </OMA>
+      <OMBIND>
+        <OMS cd="quant1" name="exists"/>
+        <OMBVAR>
+          <OMV name="id"/>
+        </OMBVAR>
+        <OMBIND>
+          <OMS cd="quant1" name="forall"/>
+          <OMBVAR>
+            <OMV name="x"/>
+          </OMBVAR>
+          <OMA>
+            <OMS cd="logic1" name="and"/>
+            <OMA>
+              <OMS cd="relation1" name="eq"/>
+              <OMA>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="integral_domain_times"/>
+                  <OMV name="S"/>
+                </OMA>
+                <OMV name="id"/>
+                <OMV name="x"/>
+              </OMA>
+              <OMV name="x"/>
+            </OMA>
+            <OMA>
+              <OMS cd="relation1" name="eq"/>
+              <OMA>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="integral_domain_times"/>
+                  <OMV name="S"/>
+                </OMA>
+                <OMV name="x"/>
+                <OMV name="id"/>
+              </OMA>
+              <OMV name="x"/>
+            </OMA>
+          </OMA>
+        </OMBIND>
+      </OMBIND>
+    </OMA>
+  </OMOBJ>
+</FMP>
+
+<CMP> An integral domain has no zero divisors </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="logic1" name="implies"/>
+      <OMA>
+        <OMS cd="set1" name="in"/>
+        <OMV name="S"/>
+        <OMS cd="generic_alg_cats" name="integral_domain"/>
+      </OMA>
+      <OMA>
+        <OMS cd="logic1" name="not"/>
+        <OMBIND>
+          <OMS cd="quant1" name="exists"/>
+          <OMBVAR>
+            <OMV name="zerodiv"/>
+          </OMBVAR>
+          <OMA>
+            <OMS cd="logic1" name="implies"/>
+            <OMA>
+              <OMS cd="set1" name="in"/>
+              <OMV name="x"/>
+              <OMA>
+                <OMS cd="algebraic_cats" name="integral_domain_set"/>
+                <OMV name="S"/>
+              </OMA>
+            </OMA>
+            <OMA>
+              <OMS cd="logic1" name="and"/>
+              <OMA>
+                <OMS cd="relation1" name="neq"/>
+                <OMV name="x"/>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="integral_domain_zero"/>
+                  <OMV name="S"/>
+                </OMA>
+              </OMA>
+              <OMA>
+                <OMA>
+                  <OMS cd="algebraic_cats" name="integral_domain_times"/>
+                  <OMV name="S"/>
+                </OMA>
+                <OMV name="zerodiv"/>
+                <OMV name="x"/>
+              </OMA>
+            </OMA>
+          </OMA>
+        </OMBIND>
+      </OMA>
+    </OMA>
+  </OMOBJ>
+</FMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> integral_domain_set </Name>
+<Description>
+This symbol takes one argument which should be an integral domain. It
+returns the set of the integral domain.
+</Description>
+
+<CMP> The set of the integral domain (S,*,+,1,0,-) = S </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="integral_domain_set"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="integral_domain"/>
+          <OMV name="S"/>
+          <OMV name="times"/>
+          <OMV name="plus"/>
+          <OMV name="one"/>
+          <OMV name="zero"/>
+          <OMV name="neg"/>
+        </OMA>
+      </OMA>
+      <OMV name="S"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> integral_domain_times </Name>
+<Description>
+This symbol takes one argument which should be an integral domain. It
+returns a binary function which represents the multiplicative
+operation of the integral domain.
+</Description>
+
+<CMP> The times of the integral domain (S,*,+,1,0,-) = * </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="integral_domain_times"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="integral_domain"/>
+          <OMV name="S"/>
+          <OMV name="times"/>
+          <OMV name="plus"/>
+          <OMV name="one"/>
+          <OMV name="zero"/>
+          <OMV name="neg"/>
+        </OMA>
+      </OMA>
+      <OMV name="times"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> integral_domain_plus </Name>
+<Description>
+This symbol takes one argument which should be an integral domain. It returns a binary function which represents the additive operation of the integral domain.
+</Description>
+
+<CMP> The plus of the integral domain (S,*,+,1,0,-) = + </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="integral_domain_plus"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="integral_domain"/>
+          <OMV name="S"/>
+          <OMV name="times"/>
+          <OMV name="plus"/>
+          <OMV name="one"/>
+          <OMV name="zero"/>
+          <OMV name="neg"/>
+        </OMA>
+      </OMA>
+      <OMV name="plus"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> integral_domain_one </Name>
+<Description>
+This symbol takes one argument which should be an integral domain. It returns the multiplicative identity of the integral domain.
+</Description>
+
+<CMP> The one of the integral domain (S,*,+,1,0,-) = 1 </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="integral_domain_one"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="integral_domain"/>
+          <OMV name="S"/>
+          <OMV name="times"/>
+          <OMV name="plus"/>
+          <OMV name="one"/>
+          <OMV name="zero"/>
+          <OMV name="neg"/>
+        </OMA>
+      </OMA>
+      <OMV name="one"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> integral_domain_zero </Name>
+<Description>
+This symbol takes one argument which should be an integral domain. It returns the additive identity of the integral domain.
+</Description>
+
+<CMP> The zero of the integral domain (S,*,+,1,0,-) = 0 </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="integral_domain_zero"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="integral_domain"/>
+          <OMV name="S"/>
+          <OMV name="times"/>
+          <OMV name="plus"/>
+          <OMV name="one"/>
+          <OMV name="zero"/>
+          <OMV name="neg"/>
+        </OMA>
+      </OMA>
+      <OMV name="zero"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> integral_domain_negative </Name>
+<Description>
+This symbol takes one argument which should be an integral domain. It
+returns a unary function which represents the additive inverse
+function of the integral domain.
+</Description>
+
+<CMP> The negative of the integral domain (S,*,+,1,0,-) = - </CMP>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="algebraic_cats" name="integral_domain_negative"/>
+        <OMA>
+          <OMS cd="algebraic_cats" name="integral_domain"/>
+          <OMV name="S"/>
+          <OMV name="times"/>
+          <OMV name="plus"/>
+          <OMV name="one"/>
+          <OMV name="zero"/>
+          <OMV name="neg"/>
+        </OMA>
+      </OMA>
+      <OMV name="neg"/>
+    </OMA>
+  </OMOBJ>
+</FMP>
+</CDDefinition>
+
+</CD>

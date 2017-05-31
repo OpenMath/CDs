@@ -1,0 +1,18 @@
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="gen_hyperbolic1">
+
+  <Signature name="generalised_hyperbolic">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS name="mapsto" cd="sts"/>
+        <OMS name="C" cd="setname1"/>
+        <OMS name="Z" cd="setname1"/>
+        <OMS name="Z" cd="setname1"/>
+        <OMA>
+          <OMS name="mapsto" cd="sts"/>
+          <OMS name="C" cd="setname1"/>
+          <OMS name="C" cd="setname1"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Signature>
+</CDSignatures>

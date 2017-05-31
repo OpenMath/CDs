@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!-- $Id: set1p.tfb,v 1.1.1.1 2002/10/04 12:50:39 taka Exp $ -->
+<!-- p in the CD name implies that it is private or experimental 
+     extension of OpenMath CDs for 
+     the hypergeometric formula book project. -->
+<CDDefinition>
+<Name> cartesian_product_n </Name>
+<Description>
+  the cartesian product of n copies of the first argument.
+  Binary function.
+</Description>
+
+<CMP>
+  $ Z^m \times Z^n = Z^{m+n} $
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA><OMS cd="relation1" name="eq"/>
+    <OMA><OMS cd="set1" name="cartesian_product"/>
+      <OMA><OMS cd="set1p" name="cartesian_product_n"/>
+        <OMS cd="setname1" name="Z"/>
+        <OMV name="m"/>
+      </OMA>
+      <OMA><OMS cd="set1p" name="cartesian_product_n"/>
+        <OMS cd="setname1" name="Z"/>
+        <OMV name="n"/>
+      </OMA>
+    </OMA>
+    <OMA><OMS cd="set1p" name="cartesian_product_n"/>
+      <OMS cd="setname1" name="Z"/>
+      <OMA><OMS cd="arith1" name="plus"/>
+        <OMV name="m"/>
+        <OMV name="n"/>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+
+</FMP>
+
+
+</CDDefinition>

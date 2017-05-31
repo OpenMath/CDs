@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="aggregate_cats">
+  <Signature name="aggregateType">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMS cd="meta_cats" name="Category"/>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="multisetType">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMS cd="meta_cats" name="Category"/>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="setType">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMS cd="meta_cats" name="Category"/>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="finiteSetType">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMS cd="meta_cats" name="Category"/>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="infiniteSetType">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMS cd="meta_cats" name="Category"/>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="continuousSetType">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMS cd="meta_cats" name="Category"/>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="piecewiseContinuousSetType">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMS cd="meta_cats" name="Category"/>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="non-continuousSetType">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMS cd="meta_cats" name="Category"/>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="discreteSetType">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMS cd="meta_cats" name="Category"/>
+    </OMOBJ>
+  </Signature>
+</CDSignatures>

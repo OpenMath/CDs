@@ -1,0 +1,219 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+
+
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+
+
+<CDName> alg1 </CDName>
+<CDBase>http://www.openmath.org/cd</CDBase>
+<CDURL> http://www.openmath.org/cd/alg1.ocd </CDURL>
+<CDReviewDate>2006-03-30</CDReviewDate>
+<CDStatus> official </CDStatus>
+<CDDate>2004-03-30</CDDate>
+<CDVersion>3</CDVersion>
+<CDRevision>0</CDRevision>
+
+<Description> 
+A CD of basic algebraic concepts
+
+At present this CD only holds definitions of zero and one. They are
+deliberately defined here without specifying any particular structure
+(e.g. a group) to which they correspond.
+</Description>
+
+
+<CDDefinition>
+<Name> zero </Name>
+<Role>constant</Role>
+<Description>
+This symbol represents the additive identity element.
+</Description>
+<CMP> for all a | a + 0 = a </CMP>
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMBIND>
+    <OMS cd="quant1" name="forall"/>
+    <OMBVAR>
+       <OMV name="a"/>
+       <OMS cd="dd" name="a"/>
+    </OMBVAR>
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="arith1" name="plus"/>
+        <OMV name="a"/>
+        <OMS cd="alg1" name="zero"/>
+      </OMA>
+      <OMV name="a"/>
+    </OMA>
+  </OMBIND>
+</OMOBJ>
+</FMP>
+<CMP> for all a | 0 * a = 0 </CMP>
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMBIND>
+    <OMS cd="quant1" name="forall"/>
+    <OMBVAR>
+       <OMV name="a"/>
+    </OMBVAR>
+    <OMA>
+      <OMS cd="relation10" name="eq"/>
+      <OMA>
+        <OMS cd="arith1" name="times"/>
+        <OMS cd="alg1" name="zero"/>
+        <OMV name="a"/>
+      </OMA>
+      <OMS cd="alg1" name="zero"/>
+    </OMA>
+  </OMBIND>
+</OMOBJ>
+</FMP>
+<CMP>The zero of the integers is 0</CMP>
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMBIND>
+    <OMS cd="quant1" name="forall"/>
+    <OMBVAR>
+       <OMV name="x"/>
+    </OMBVAR>
+    <OMA>
+      <OMS cd="logic1" name="implies"/>
+      <OMA>
+        <OMS cd="logic1" name="and"/>
+        <OMA>
+          <OMS cd="set1" name="in"/>
+          <OMV name="x"/>
+          <OMS cd="setname1" name="Z"/>
+        </OMA>
+        <OMA>
+          <OMS cd="relation1" name="eq"/>
+          <OMV name="x"/>
+          <OMS cd="alg1" name="zero"/>
+        </OMA>
+      </OMA>
+      <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMV name="x"/>
+      <OMI>0</OMI>
+      </OMA>
+    </OMA>
+  </OMBIND>
+</OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> one </Name>
+<Role>constant</Role>
+<Description>
+This symbol represents the multiplicative identity element.
+</Description>
+
+<CMP> for all a | 1 * a = a </CMP>
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMBIND>
+    <OMS cd="quant1" name="forall"/>
+    <OMBVAR>
+       <OMV name="a"/>
+    </OMBVAR>
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="arith1" name="times"/>
+        <OMS cd="alg1" name="one"/>
+        <OMV name="a"/>
+      </OMA>
+      <OMV name="a"/>
+    </OMA>
+  </OMBIND>
+</OMOBJ>
+</FMP>
+
+<CMP> for all a | a * 1 = a </CMP>
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMBIND>
+    <OMS cd="quant1" name="forall"/>
+    <OMBVAR>
+       <OMV name="a"/>
+    </OMBVAR>
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="arith1" name="times"/>
+        <OMV name="a"/>
+        <OMS cd="alg1" name="one"/>
+      </OMA>
+      <OMV name="a"/>
+    </OMA>
+  </OMBIND>
+</OMOBJ>
+</FMP>
+<CMP>The one of the integers is 1</CMP>
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMBIND>
+    <OMS cd="quant1" name="forall"/>
+    <OMBVAR>
+       <OMV name="x"/>
+    </OMBVAR>
+    <OMA>
+      <OMS cd="logic1" name="implies"/>
+      <OMA>
+        <OMS cd="logic1" name="and"/>
+        <OMA>
+          <OMS cd="set1" name="in"/>
+          <OMV name="x"/>
+          <OMS cd="setname1" name="Z"/>
+        </OMA>
+        <OMA>
+          <OMS cd="relation1" name="eq"/>
+          <OMV name="x"/>
+          <OMS cd="alg1" name="one"/>
+        </OMA>
+      </OMA>
+      <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMV name="x"/>
+      <OMI>1</OMI>
+      </OMA>
+    </OMA>
+  </OMBIND>
+</OMOBJ>
+</FMP>
+</CDDefinition>
+
+</CD>

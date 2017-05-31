@@ -1,0 +1,439 @@
+
+aggregate_cats.ocd,63
+constructors of individual instances of the categories,15,419
+
+airy.ocd,136
+<?xml version=1,0
+  The symbol Ai defines the unary Airy Ai function; as in Abramovitz &amp;30,776
+    $$w^{\prime\prime}-x*w=33,915
+
+algebraic_cats.ocd,260
+function taking taking33,1203
+function which which1301,36506
+function taking taking1626,44951
+function taking taking2428,66676
+function taking taking2429,66754
+function from from3082,85214
+function from from3083,85288
+function of of5164,142638
+
+a.ocd,260
+function taking taking33,1203
+function which which1120,30906
+function taking taking1445,39351
+function taking taking2247,61076
+function taking taking2248,61154
+function from from2901,79614
+function from from2902,79688
+function of of4982,136960
+
+asymp1.ocd,306
+ This CD provides a representation of various asymptotic set constructors 23,576
+    <OMS cd 45,1195
+all x > x_0 it is true that c_1*g(x) &lt; f(x) &lt;210,5718
+all x > x_0 it is true that c_1*g(x) &lt; f(x) &lt;216,5910
+    <OMS cd=222,6007
+the set omega(g(x)), f(x); it is not true that f(376,9523
+
+calculus2.ocd,575
+     This document is distributed in the hope that it will be useful,5,19
+     but WITHOUT ANY WARRANTY;6,90
+     document freely as a verbatim copy. Furthermore,10,288
+          this document,14,553
+          then the derived work must include a different CDName element,19,882
+          the OpenMath Society.  In particular,21,1028
+          Dictionary Group whose name is,22,1099
+          Dictionary Group whose name is, for example,22,1099
+          compilation of derived works,29,1583
+          work under the OpenMath license,31,1729
+      <OMS cd=57,2464
+
+cauchypv.ocd,96
+    This CD extends calculus1 23,595
+    $$Ei(x)=\int_{-\infty}^x\frac{e^t}t dt\qquad(93,2214
+
+dimensions1.ocd,19
+<CMP> area 33,707
+
+equations1.ocd,625
+     This document is distributed in the hope that it will be useful,5,19
+     but WITHOUT ANY WARRANTY;6,90
+     document freely as a verbatim copy. Furthermore,10,288
+          this document,14,553
+          then the derived work must include a different CDName element,19,882
+          the OpenMath Society.  In particular,21,1028
+          Dictionary Group whose name is,22,1099
+          Dictionary Group whose name is, for example,22,1099
+          compilation of derived works,29,1583
+          work under the OpenMath license,31,1729
+Symbols to provide a vocabulary for talking about properties of 44,2144
+
+expint.ocd,19
+<?xml version=1,0
+
+fns3.ocd,575
+     This document is distributed in the hope that it will be useful,5,19
+     but WITHOUT ANY WARRANTY;6,90
+     document freely as a verbatim copy. Furthermore,10,288
+          this document,14,553
+          then the derived work must include a different CDName element,19,882
+          the OpenMath Society.  In particular,21,1028
+          Dictionary Group whose name is,22,1099
+          Dictionary Group whose name is, for example,22,1099
+          compilation of derived works,29,1583
+          work under the OpenMath license,31,1729
+    <OMS name=57,2377
+
+freealg1.ocd,19
+<?xml version=1,0
+
+generic_alg_cats.ocd,19
+<?xml version=1,0
+
+gen_hyperbolic1.ocd,30
+function which which35,1034
+
+hypergeo0.ocd,1132
+<?xml version=1,0
+	(2) Higher transcendental functions. Vol. III. Krieger Publishing Co., Inc., Melbourne, Fla., 1981, Erdlyi, Arthur; Magnus,28,867
+	(2) Higher transcendental functions. Vol. III. Krieger Publishing Co., Inc., Melbourne, Fla., 1981, Erdlyi, Arthur; Magnus, Wilhelm;28,867
+	(2) Higher transcendental functions. Vol. III. Krieger Publishing Co., Inc., Melbourne, Fla., 1981, Erdlyi, Arthur; Magnus, Wilhelm; Oberhettinger,28,867
+	(2) Higher transcendental functions. Vol. III. Krieger Publishing Co., Inc., Melbourne, Fla., 1981, Erdlyi, Arthur; Magnus, Wilhelm; Oberhettinger, Fritz;28,867
+	(2) Higher transcendental functions. Vol. III. Krieger Publishing Co., Inc., Melbourne, Fla., 1981, Erdlyi, Arthur; Magnus, Wilhelm; Oberhettinger, Fritz; Tricomi,28,867
+	(3) From Gauss to Painleve,29,1046
+	(3) From Gauss to Painleve, Vieweg,29,1046
+	(3) From Gauss to Painleve, Vieweg, Katsunori Iwasaki,29,1046
+	(3) From Gauss to Painleve, Vieweg, Katsunori Iwasaki, Hironobu Kimura,29,1046
+	(3) From Gauss to Painleve, Vieweg, Katsunori Iwasaki, Hironobu Kimura, Shun Shimomura,29,1046
+  <OMA><OMS cd=157,4300
+
+hypergeo1.ocd,1283
+<?xml version=1,0
+	(2) Higher transcendental functions. Vol. III. Krieger Publishing Co., Inc., Melbourne, Fla., 1981, Erdlyi, Arthur; Magnus,31,1055
+	(2) Higher transcendental functions. Vol. III. Krieger Publishing Co., Inc., Melbourne, Fla., 1981, Erdlyi, Arthur; Magnus, Wilhelm;31,1055
+	(2) Higher transcendental functions. Vol. III. Krieger Publishing Co., Inc., Melbourne, Fla., 1981, Erdlyi, Arthur; Magnus, Wilhelm; Oberhettinger,31,1055
+	(2) Higher transcendental functions. Vol. III. Krieger Publishing Co., Inc., Melbourne, Fla., 1981, Erdlyi, Arthur; Magnus, Wilhelm; Oberhettinger, Fritz;31,1055
+	(2) Higher transcendental functions. Vol. III. Krieger Publishing Co., Inc., Melbourne, Fla., 1981, Erdlyi, Arthur; Magnus, Wilhelm; Oberhettinger, Fritz; Tricomi,31,1055
+	(3) From Gauss to Painleve,32,1234
+	(3) From Gauss to Painleve, Vieweg,32,1234
+	(3) From Gauss to Painleve, Vieweg, Katsunori Iwasaki,32,1234
+	(3) From Gauss to Painleve, Vieweg, Katsunori Iwasaki, Hironobu Kimura,32,1234
+	(3) From Gauss to Painleve, Vieweg, Katsunori Iwasaki, Hironobu Kimura, Shun Shimomura,32,1234
+	hypergeometric0F1(;a;43,1477
+	hypergeometric0F1(;a;z)43,1477
+	hypergeometric1F1(a,b;z)99,2853
+	hypergeometric2F1(a,b,c;z)160,4421
+	hypergeometric_pFq(a,b;z)314,8829
+
+hypergeo2.ocd,780
+<?xml version=1,0
+	(2) Higher transcendental functions. Krieger Publishing Co., Inc., Melbourne, Fla., 1981, Erdlyi, Arthur; Magnus,26,811
+	(2) Higher transcendental functions. Krieger Publishing Co., Inc., Melbourne, Fla., 1981, Erdlyi, Arthur; Magnus, Wilhelm;26,811
+	(2) Higher transcendental functions. Krieger Publishing Co., Inc., Melbourne, Fla., 1981, Erdlyi, Arthur; Magnus, Wilhelm; Oberhettinger,26,811
+	(2) Higher transcendental functions. Krieger Publishing Co., Inc., Melbourne, Fla., 1981, Erdlyi, Arthur; Magnus, Wilhelm; Oberhettinger, Fritz;26,811
+	(2) Higher transcendental functions. Krieger Publishing Co., Inc., Melbourne, Fla., 1981, Erdlyi, Arthur; Magnus, Wilhelm; Oberhettinger, Fritz; Tricomi,26,811
+	kummer(a,c;z)35,1103
+  <OMA><OMS cd=40,1177
+
+hypergeon0.ocd,19
+<?xml version=1,0
+
+hypergeon1.ocd,138
+<?xml version=1,0
+  <OMA><OMS cd=53,1310
+  $ [v]_{u_-} = \prod_{i \in \Z\cap[0,n] :\ u_i &lt; 0} v_i 122,3141
+  <OMA><OMS cd=198,5133
+
+hypergeon2.ocd,19
+<?xml version=1,0
+
+interval_attrs.ocd,0
+
+interval_types.ocd,22
+      <OMS cd=28,705
+
+intpath1.ocd,19
+<?xml version=1,0
+
+linalg1p.ocd,19
+<?xml version=1,0
+
+linalg6.ocd,2285
+matrix in the following way. It takes three arguments,18,459
+which represents the column index,19,527
+based;21,663
+have first and second indices of 22,733
+matrix in the following way. It takes two arguments,32,1068
+which represents the column index,33,1134
+column index of non-zero elements of the matrix,57,2120
+This symbol may be used to represent rows of sparse matrices,66,2400
+sparse matrix must have as elements symbols of the corresponding type,69,2607
+This symbol may be used for representing matrices,77,2815
+efficiently representing sparse matrices. The symbol is n+2 ary,78,2885
+the first argument is the number of rows in the matrix,79,2956
+5&amp;0&amp;90,3308
+5&amp;0&amp;0&amp;90,3308
+5&amp;0&amp;0&amp;0&amp;90,3308
+0&amp;91,3336
+0&amp;0&amp;91,3336
+0&amp;0&amp;6&amp;91,3336
+0&amp;0&amp;6&amp;0&amp;91,3336
+0&amp;92,3364
+0&amp;0&amp;92,3364
+0&amp;0&amp;0&amp;92,3364
+0&amp;0&amp;0&amp;0&amp;92,3364
+0&amp;93,3392
+0&amp;0&amp;93,3392
+0&amp;0&amp;0&amp;93,3392
+0&amp;0&amp;0&amp;0&amp;93,3392
+      <OMS cd=99,3484
+5&amp;0&amp;139,4751
+5&amp;0&amp;0&amp;139,4751
+5&amp;0&amp;0&amp;0&amp;139,4751
+0&amp;140,4779
+0&amp;0&amp;140,4779
+0&amp;0&amp;2&amp;140,4779
+0&amp;0&amp;2&amp;0&amp;140,4779
+1&amp;141,4807
+1&amp;0&amp;141,4807
+1&amp;0&amp;0&amp;141,4807
+1&amp;0&amp;0&amp;0&amp;141,4807
+0&amp;142,4835
+0&amp;0&amp;142,4835
+0&amp;0&amp;0&amp;142,4835
+0&amp;0&amp;0&amp;0&amp;142,4835
+        <OMS cd=148,4931
+1&amp;0&amp;203,6637
+1&amp;0&amp;0&amp;203,6637
+1&amp;0&amp;0&amp;0&amp;203,6637
+0&amp;204,6665
+0&amp;0&amp;204,6665
+0&amp;0&amp;1&amp;204,6665
+0&amp;0&amp;1&amp;0&amp;204,6665
+0&amp;205,6693
+0&amp;0&amp;205,6693
+0&amp;0&amp;0&amp;205,6693
+0&amp;0&amp;0&amp;0&amp;205,6693
+0&amp;206,6721
+0&amp;0&amp;206,6721
+0&amp;0&amp;0&amp;206,6721
+0&amp;0&amp;0&amp;0&amp;206,6721
+      <OMS cd=212,6813
+1&amp;0&amp;246,7759
+1&amp;0&amp;0&amp;246,7759
+1&amp;0&amp;0&amp;0&amp;246,7759
+0&amp;247,7787
+0&amp;0&amp;247,7787
+0&amp;0&amp;1&amp;247,7787
+0&amp;0&amp;1&amp;0&amp;247,7787
+0&amp;248,7815
+0&amp;0&amp;248,7815
+0&amp;0&amp;0&amp;248,7815
+0&amp;0&amp;0&amp;1&amp;248,7815
+0&amp;249,7843
+0&amp;0&amp;249,7843
+0&amp;0&amp;0&amp;249,7843
+0&amp;0&amp;0&amp;0&amp;249,7843
+        <OMS cd=255,7939
+
+linalg7.ocd,110
+The zero symbol represents the zero vector,30,673
+which should be the length 31,740
+      <OMS cd=296,6808
+
+logic1p.ocd,19
+<?xml version=1,0
+
+logic3.ocd,75
+    This CD holds the symbols for constructing formal proofs in the20,506
+
+meta_cats.ocd,123
+arguments,18,488
+the second argument apply to the first,19,558
+*** for now *** The first argument is a Category,39,1116
+
+new_calculus1.ocd,624
+     This document is distributed in the hope that it will be useful,5,23
+     but WITHOUT ANY WARRANTY;6,95
+     document freely as a verbatim copy. Furthermore,10,297
+          this document,14,566
+          then the derived work must include a different CDName element,19,900
+          the OpenMath Society.  In particular,21,1048
+          Dictionary Group whose name is,22,1120
+          Dictionary Group whose name is, for example,22,1120
+          compilation of derived works,29,1611
+          work under the OpenMath license,31,1759
+functions. It takes two arguments; the first being the range 526,13431
+
+norm1.ocd,551
+     This document is distributed in the hope that it will be useful,4,21
+     but WITHOUT ANY WARRANTY;5,93
+     document freely as a verbatim copy. Furthermore,9,295
+          this document,13,564
+          then the derived work must include a different CDName element,18,898
+          the OpenMath Society.  In particular,20,1046
+          Dictionary Group whose name is,21,1118
+          Dictionary Group whose name is, for example,21,1118
+          compilation of derived works,28,1609
+          work under the OpenMath license,30,1757
+
+numerical1.ocd,608
+     This document is distributed in the hope that it will be useful,4,21
+     but WITHOUT ANY WARRANTY;5,93
+     document freely as a verbatim copy. Furthermore,9,295
+          this document,13,564
+          then the derived work must include a different CDName element,18,898
+          the OpenMath Society.  In particular,20,1046
+          Dictionary Group whose name is,21,1118
+          Dictionary Group whose name is, for example,21,1118
+          compilation of derived works,28,1609
+          work under the OpenMath license,30,1757
+     This CD contains descriptors of tolerances 45,2268
+
+numerical2.ocd,687
+     This document is distributed in the hope that it will be useful,4,21
+     but WITHOUT ANY WARRANTY;5,93
+     document freely as a verbatim copy. Furthermore,9,295
+          this document,13,564
+          then the derived work must include a different CDName element,18,898
+          the OpenMath Society.  In particular,20,1046
+          Dictionary Group whose name is,21,1118
+          Dictionary Group whose name is, for example,21,1118
+          compilation of derived works,28,1609
+          work under the OpenMath license,30,1757
+         This symbol marks an initial value for a parameter,52,2449
+         distinct objects,62,2808
+             <OMS name=69,3000
+
+om2test1.ocd,534
+<CD xmlns=1,0
+     document freely as a verbatim copy. Furthermore,11,348
+          this document,15,617
+          then the derived work must include a different CDName element,20,951
+          the OpenMath Society.  In particular,22,1099
+          Dictionary Group whose name is,23,1171
+          Dictionary Group whose name is, for example,23,1171
+          compilation of derived works,30,1662
+          work under the OpenMath license,32,1810
+deliberately defined here without specifying any particular structure51,2424
+
+orthpoly1.ocd,856
+<?xml version=1,0
+ (2) Higher transcendental functions. Krieger Publishing Co., Inc., Melbourne, Fla., 1981, Erdlyi, Arthur; Magnus,25,785
+ (2) Higher transcendental functions. Krieger Publishing Co., Inc., Melbourne, Fla., 1981, Erdlyi, Arthur; Magnus, Wilhelm;25,785
+ (2) Higher transcendental functions. Krieger Publishing Co., Inc., Melbourne, Fla., 1981, Erdlyi, Arthur; Magnus, Wilhelm; Oberhettinger,25,785
+ (2) Higher transcendental functions. Krieger Publishing Co., Inc., Melbourne, Fla., 1981, Erdlyi, Arthur; Magnus, Wilhelm; Oberhettinger, Fritz;25,785
+ (2) Higher transcendental functions. Krieger Publishing Co., Inc., Melbourne, Fla., 1981, Erdlyi, Arthur; Magnus, Wilhelm; Oberhettinger, Fritz; Tricomi,25,785
+	legendreP(v;z)37,1199
+  <OMA><OMS cd=42,1285
+	legendreQ(v;z)79,2179
+  <OMA><OMS cd=86,2336
+	jacobiG(n,a,c;z)171,4715
+
+permutation1.ocd,454
+In order to make available permutations of arbitrary objects,24,637
+The set on which the permutation acts is not specified. To this end,27,747
+When viewed as the set of cycles which are its arguments,30,874
+			This symbol is an n-ary function,40,1069
+				a_1,42,1178
+				a_1, a_2,42,1178
+			consisting of the pairs 43,1200
+                        cycle(a_i, a_{i+1},...,a_n,51,1473
+                        cycle(a_i, a_{i+1},...,a_n,a_1,51,1473
+
+plangeo1.ocd,37
+by a variable. The point may 25,654
+
+poly1p.ocd,19
+<?xml version=1,0
+
+polyu.ocd,714
+     This document is distributed in the hope that it will be useful,4,21
+     but WITHOUT ANY WARRANTY;5,93
+     document freely as a verbatim copy. Furthermore,9,295
+          this document,13,564
+          then the derived work must include a different CDName element,18,898
+          the OpenMath Society.  In particular,20,1046
+          Dictionary Group whose name is,21,1118
+          Dictionary Group whose name is, for example,21,1118
+          compilation of derived works,28,1609
+          work under the OpenMath license,30,1757
+     with monomials in decreasing order of exponent,53,2684
+     being polynomials in the rest of the variables,54,2755
+     univariate-only operations 56,2909
+
+set1p.ocd,19
+<?xml version=1,0
+
+setname2.ocd,150
+Revised to add Zm,25,663
+Revised to add Zm, GFp,25,663
+This symbol represents the set of Booleans. That is the truth values,33,868
+nb not=38,1047
+
+setname3.ocd,16
+ cf Hom(20,529
+
+sts2.ocd,595
+     This document is distributed in the hope that it will be useful,5,19
+     but WITHOUT ANY WARRANTY;6,90
+     document freely as a verbatim copy. Furthermore,10,288
+          this document,14,553
+          then the derived work must include a different CDName element,19,882
+          the OpenMath Society.  In particular,21,1028
+          Dictionary Group whose name is,22,1099
+          Dictionary Group whose name is, for example,22,1099
+          compilation of derived works,29,1583
+          work under the OpenMath license,31,1729
+Symbols for constructing compound 44,2138
+
+test1.ocd,156
+    Properties of &lt;19,496
+    Properties of &lt; &lt;19,496
+    Properties of &lt; &lt; &lt;19,496
+    Properties of &lt; &lt; &lt; functions,19,496
+
+transc2.ocd,879
+     This document is distributed in the hope that it will be useful,5,19
+     but WITHOUT ANY WARRANTY;6,90
+     document freely as a verbatim copy. Furthermore,10,288
+          this document,14,553
+          then the derived work must include a different CDName element,19,882
+          the OpenMath Society.  In particular,21,1028
+          Dictionary Group whose name is,22,1099
+          Dictionary Group whose name is, for example,22,1099
+          compilation of derived works,29,1583
+          work under the OpenMath license,31,1729
+    This CD holds the definition of a two-argument version of arctan,56,2523
+    useful for defining the argument of a complex number,57,2593
+    It also holds a definition of the unwinding number,59,2699
+ATAN2. arctan(68,2971
+$x,y \in {\bf R} \implies \pi &lt;105,3866
+$x,y \in {\bf R} \implies \pi &lt; arctan(105,3866
+
+units_binaryprefix1.ocd,20
+  <OMS name=32,818
+
+units_imperial1.ocd,21
+<CMP> 1 foot 27,677
+
+units_metric1.ocd,79
+This CD defines symbols to represent the basic physical units in the SI17,407
+
+units_ops1.ocd,99
+effectively multiplied by 23,588
+<CMP> This is unit multiplication by 25,646
+  <OMS name=29,716
+
+units_siprefix1.ocd,20
+  <OMS name=33,769
+
+units_sts.ocd,64
+  Type System,13,375
+    The type of all unit prefixes,19,509
+
+units_time1.ocd,87
+This CD defines symbols to represent the basic physical units of time in the SI17,404
+
+weylalgebra1.ocd,19
+<?xml version=1,0

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!-- $Id: freealg1.tfb,v 1.1.1.1 2002/10/04 12:50:39 taka Exp $ -->
+
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDName> freealg1 </CDName>
+<CDURL> http://www.math.kobe-u.ac.jp/OCD/freealg1.tfb </CDURL>
+<CDReviewDate> 2003-09-25 </CDReviewDate>
+<CDStatus> experimental </CDStatus>
+<CDDate> 2002-09-25 </CDDate>
+<CDVersion> 1 </CDVersion>
+<CDRevision> 0 </CDRevision>
+
+<Description> 
+This CD defines elements of a free algebra.
+</Description>
+
+
+<CDDefinition>
+<Name> times </Name>
+<Description>
+  Multiplication in the free algebra.
+</Description>
+</CDDefinition>
+
+</CD>

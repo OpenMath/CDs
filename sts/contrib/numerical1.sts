@@ -1,0 +1,33 @@
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="numerical1">
+
+<CDSComment>
+Date:  2003-09-16
+Author: James Davenport
+</CDSComment>
+
+<Signature name="absolute_error_requested" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMS name="NumericalValue" cd="sts"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="relative_error_requested" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMS name="NumericalValue" cd="sts"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="absolute_error_bound" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMS name="NumericalValue" cd="sts"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="relative_error_bound" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMS name="NumericalValue" cd="sts"/>
+</OMOBJ>
+</Signature>
+
+</CDSignatures>
+

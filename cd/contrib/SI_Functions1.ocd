@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+
+Author: Joseph B. Collins (2009), Naval Research Laboratory, Washington, DC.
+Copyright Notice:  This is a work of the U.S. Government and is not
+subject to copyright protection in the United States. Foreign copyrights
+may apply.
+
+</CDComment>
+
+  <CDName> SI_functions1 </CDName>
+  <CDBase>http://www.openmath.org/cd</CDBase>
+  <CDURL> http://www.openmath.org/cd/SI_functions1.ocd </CDURL>
+  <CDReviewDate> 2009-04-01 </CDReviewDate>
+  <CDStatus> experimental </CDStatus>
+  <CDDate>2009-01-10</CDDate>
+  <CDVersion> 1 </CDVersion>
+  <CDRevision> 0 </CDRevision>
+
+  <Description> 
+    This CD defines symbols for functions applied to SI quantities and
+    units.
+  </Description>
+
+  <CDDefinition>
+    <Name> dim </Name>
+    <Role>application</Role>
+    <Description> 
+      The symbol to represent the function that returns the physical
+      dimension of its argument in terms of products of powers of
+      SI base quantities. The dim operation may be meaningfully applied to SI
+      quantities, SI units, and numbers without physical dimension.
+    </Description>
+    <CMP> The dim operator acts as the identity operation when applied to
+    an SI base quantity.</CMP>
+    <CMP> The dim operator returns the corresponding SI base quantity when
+    applied to an SI base unit.</CMP>
+    <CMP> For named SI derived quantities and named units, the value returned
+    by the dim operator shall be defined for each case.</CMP>
+    <CMP> The dim operator applied to a product is equal to the associative
+    product of the dim operator applied to the individual factors. </CMP>
+    <CMP> The dim operator applied to a product is equal to the commutative
+    product of the dim operator applied to the factors. </CMP>
+    <CMP> The dim operator applied to a multiplicative inverse of a
+    quantity is equal to the multiplicative inverse of the dim operator
+    applied to the same quantity. </CMP>
+    <CMP> The dim operator returns a value of one when applied to a
+    dimensionless quantity or number.</CMP>
+  </CDDefinition>
+
+  <CDDefinition>
+    <Name> unit </Name>
+    <Role>application</Role>
+    <Description> 
+      The symbol to represent the function that returns the units
+      of its argument in terms of a product of powers of
+      SI base units.
+    </Description>
+    <CMP>The unit operator may be applied to any physical quantity.</CMP>
+    <CMP>The unit operator applied to an SI base quantity returns the
+    corresponding SI base unit.</CMP>
+    <CMP>The unit operator applied to an SI base unit or SI coherent unit
+    acts as the identity operator, returning that unit.</CMP>
+    <CMP>The unit operator applied to any derived quantity is equal to the 
+    unit operator applied to the result of applying the dim operator to the
+    same quantity, i.e., unit(Q) = unit(dim(Q)). </CMP>
+    <CMP> The unit operator applied to a product is equal to the
+    commutative product of the unit operator applied to the factors.</CMP>
+    <CMP> The unit operator applied to a product is equal to the
+    associative product of the unit operator applied to the factors.</CMP>
+    <CMP> The unit operator applied to a multiplicative inverse of a
+    quantity is equal to the multiplicative inverse of the unit operator
+    applied to the same quantity. </CMP>
+    <CMP> The unit operator returns a value of one when applied to a
+    dimensionless quantity or number.</CMP>
+  </CDDefinition>
+
+  <CDDefinition>
+    <Name>num</Name>
+    <Role>application</Role>
+    <Description> 
+      The symbol to represent the function to return the numerical
+      value of a quantity in terms of a product of powers of
+      SI base units.
+    </Description>
+    <CMP>The num operator may be applied to any physical quantity.</CMP>
+    <CMP>The num operator applied to an SI base quantity or unit returns
+    the value one.</CMP>
+    <CMP> The quantity num(Q)*unit(Q), may replace any quantity, Q, in
+    a set of physical relations, if all such quantities in the set of
+    relations are so replaced. The quantity num(Q)*unit(Q) is not always
+    the same as Q, however dim(Q) = dim(num(Q)*unit(Q)).</CMP>
+  </CDDefinition>
+
+  <CDDefinition>
+    <Name>kind</Name>
+    <Role>application</Role>
+    <Description> 
+      The symbol to represent the function to return the kind
+      of a quantity. The value of this function is referred to, but not
+      defined in the SI. Its value, kind(Q) for a given quantity, Q, is
+      left to the user to assign.
+    </Description>
+  </CDDefinition>
+
+</CD>

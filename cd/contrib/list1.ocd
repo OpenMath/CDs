@@ -1,0 +1,169 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+
+<CDName> list1 </CDName>
+<CDURL> http://www.openmath.org/cd/list1.ocd </CDURL>
+<CDReviewDate> 2006-04-01 </CDReviewDate>
+<CDDate> 2004-11-22 </CDDate>
+<CDVersion> 3 </CDVersion>
+<CDRevision> 0 </CDRevision>
+<CDStatus> official </CDStatus>
+<CDUses>
+  <CDName>alg1</CDName>
+  <CDName>arith1</CDName>
+  <CDName>fns1</CDName>
+  <CDName>interval1</CDName>
+  <CDName>logic1</CDName>
+  <CDName>relation1</CDName>
+  <CDName>setname1</CDName>
+  <CDName>set1</CDName>
+</CDUses>
+
+<Description>
+    This CD is intended to be `compatible' with MathML list
+    constructs. A.M. Cohen slightly edited the description of the
+suchthat symbol
+(eq, "the set" replaced by "a set X").
+</Description>
+
+<CDDefinition>
+<Name> map </Name>
+<Description>
+This symbol represents a mapping function which may be used to
+construct lists; it takes as arguments a function from X to Y and a
+list over X in that order. The value that is returned is a list of
+values in Y. The argument list may be a set or an integer_interval.
+</Description>
+
+<Example>
+The list of even values between 0 and 20 in ascending order, that is
+the values 2x in ascending order, where x ranges over the integral
+interval [0,10]. 
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS cd="list1" name="map"/>
+    <OMBIND>
+      <OMS cd="fns1" name="lambda"/>
+      <OMBVAR>
+        <OMV name="x"/>
+      </OMBVAR>
+      <OMA>
+        <OMS cd="arith1" name="times"/>
+        <OMI> 2 </OMI>
+	<OMV name="x"/>
+      </OMA>
+    </OMBIND>
+    <OMA>
+      <OMS cd="interval1" name="integer_interval"/>
+      <OMI> 0 </OMI>
+      <OMI> 10 </OMI>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name>suchthat</Name>
+<Description>
+This symbol represents the suchthat function which may be used to
+construct lists; it takes two arguments. The first argument should be a
+set X which contains the elements of the list, the second argument should
+be a predicate, that is a function from the set X to the booleans which
+describes if an element is to be in the list returned.
+</Description>
+
+<Example>
+This example shows how to construct the list of even positive integers less
+than 100, using the suchthat constructor.
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS cd="list1" name="suchthat"/>
+    <OMS cd="setname1" name="Z"/>
+    <OMBIND>
+      <OMS cd="fns1" name="lambda"/>
+      <OMBVAR>
+        <OMV name="x"/>
+      </OMBVAR>
+      <OMA>
+        <OMS cd="logic1" name="and"/>
+	<OMA>
+	  <OMS cd="relation1" name="geq"/>
+	  <OMV name="x"/>
+	  <OMS cd="alg1" name="zero"/>
+	</OMA>
+	<OMA>
+	  <OMS cd="relation1" name="lt"/>
+	  <OMV name="x"/>
+	  <OMI> 100 </OMI>
+	</OMA>
+        <OMA>
+          <OMS cd="set1" name="in"/>
+	  <OMA>
+	    <OMS cd="arith1" name="divide"/>
+	    <OMV name="x"/>
+	    <OMI> 2 </OMI>
+	  </OMA>
+	  <OMS cd="setname1" name="Z"/>
+        </OMA>
+      </OMA>
+    </OMBIND>
+  </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> list </Name>
+<Description> 
+This symbol denotes the list construct which is an n-ary function. The
+list entries must be given explicitly.
+</Description>
+
+<Example>
+The list 3, 6, 9.
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS cd="list1" name="list"/>
+    <OMI> 3 </OMI>
+    <OMI> 6 </OMI>
+    <OMI> 9 </OMI>
+  </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+</CD>
+

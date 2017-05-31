@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CD xmlns="http://www.openmath.org/OpenMathCD"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://www.openmath.org/OpenMathCD 
+			http://www.openmath.org/standard/om20-2004-06-30/omcd2.xsd">
+  <CDComment>
+    This document is distributed in the hope that it will be useful, 
+    but WITHOUT ANY WARRANTY; without even the implied warranty of 
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    
+    The copyright holder grants you permission to redistribute this 
+    document freely as a verbatim copy. Furthermore, the copyright
+    holder permits you to develop any derived work from this document
+    provided that the following conditions are met.
+    a) The derived work acknowledges the fact that it is derived from
+    this document, and maintains a prominent reference in the 
+    work to the original source.
+    b) The fact that the derived work is not the original OpenMath 
+    document is stated prominently in the derived work.  Moreover if
+    both this document and the derived work are Content Dictionaries
+    then the derived work must include a different CDName element,
+    chosen so that it cannot be confused with any works adopted by
+    the OpenMath Society.  In particular, if there is a Content 
+    Dictionary Group whose name is, for example, `math' containing
+    Content Dictionaries named `math1', `math2' etc., then you should 
+    not name a derived Content Dictionary `mathN' where N is an integer.
+    However you are free to name it `private_mathN' or some such.  This
+    is because the names `mathN' may be used by the OpenMath Society
+    for future extensions.
+    c) The derived work is distributed under terms that allow the
+    compilation of derived works, but keep paragraphs a) and b)
+    intact.  The simplest way to do this is to distribute the derived
+    work under the OpenMath license, but this is not a requirement.
+    If you have questions about this license please contact the OpenMath
+    society at http://www.openmath.org.
+    
+    Author: Joseph B. Collins (2010), Naval Research Laboratory, Washington, DC.
+    Copyright Notice:  This is a work of the U.S. Government and is not
+    subject to copyright protection in the United States. Foreign copyrights
+    may apply.
+  </CDComment>
+  <CDName>tensor1</CDName>
+  <CDURL> http://www.openmath.org/cd/.ocd </CDURL>
+  <CDReviewDate>2011-03-01</CDReviewDate>
+  <CDStatus> experimental </CDStatus>
+  <CDDate>2010-08-25</CDDate>
+  <CDVersion>1</CDVersion>
+  <CDRevision>1</CDRevision>
+  <CDUses>
+  </CDUses>
+  
+  <Description> 
+    This CD defines content markup symbols which may be used to represent
+    tensor formulae,particularly with index notation.
+  </Description>
+  
+  <CDDefinition>
+    <Name>tuple</Name>
+    <Role>application</Role>
+    <Description>
+      This symbol is an n-ary symbol, returning an n-tuple of the arguments.
+      The number of arguments, n, is a non-negative integer. 
+      The elements of the n-tuple are ordered as the arguments are ordered.
+      Elements of a tuple may have the same type and value as each other, or not.
+      An n-tuple, unlike a list, is generally not mutable.
+    </Description>
+    <CMP> (X, Y, Z) = tuple(X, Y, Z) </CMP>
+  </CDDefinition>
+  
+  <CDDefinition>
+    <Name>tuple_selector</Name>
+    <Role>application</Role>
+    <Description>
+      This symbol takes 2 arguments, a tuple and a natural number index, and returns the
+      tuple component indicated by the index value.
+      </Description>
+      <CMP>tuple_selector(tuple(A, B), 1) = A</CMP>
+    </CDDefinition>
+    
+    <CDDefinition>
+      <Name>Cartesian</Name>
+      <Role>application</Role>
+      <Description>
+	This symbol takes one argument, a natural number, and returns the Cartesian
+	coordinate, of a right handed Cartesian coordinate frame, corresponding to the
+	value of the argument. These coordinates are commonly named X, Y, and Z in three
+	dimensions, though X, Y, and Z are non-exclusively used for this and other
+	purposes.
+      </Description>
+      <CMP> tuple(X, Y, Z) = tuple(Cartesian(1), Cartesian(2), Cartesian(3)) </CMP>
+      <CMP> partialdiff(Cartesian(i), Cartesian(j)) = Kronecker_tensor(i,j) </CMP>
+    </CDDefinition>
+    
+    <CDDefinition>
+      <Name>unit_Cartesian</Name>
+      <Role>application</Role>
+      <Description>
+	This symbol takes one argument, a natural number, and returns the Cartesian
+	basis element, of a right handed Cartesian coordinate frame, corresponding to
+	the value of the argument. The unit_Cartesian basis elements are each constant
+	with respect to position in the space and define an orthonormal vector space basis.
+      </Description>
+      <CMP> tuple(e_x, e_y, e_z) = tuple(unit_Cartesian(1), unit_Cartesian(2), unit_Cartesian(3)) </CMP>
+      <CMP> scalar_product(unit_Cartesian(i), unit_Cartesian(j)) = Kronecker_tensor(i,j) </CMP>
+      <CMP> partial(unit_Cartesian(i), Cartesian(j)) = 0 </CMP>
+    </CDDefinition>
+    
+    <CDDefinition>
+      <Name>contra_index</Name>
+      <Role>application</Role>
+      <Description>
+	This symbol takes a natural number as its argument and returns a contravariant index.
+      </Description>
+    </CDDefinition>
+    
+    <CDDefinition>
+      <Name>covar_index</Name>
+      <Role>application</Role>
+      <Description>
+	This symbol takes a natural number as its argument and returns a covariant index.
+      </Description>
+    </CDDefinition>
+    
+    <CDDefinition>
+      <Name>basis_selector</Name>
+      <Role>application</Role>
+      <Description>
+	This symbol takes 2 arguments, a tuple of basis elements and a covar_index
+	or a contra_index, and returns the basis element indicated by the index value.
+      </Description>
+      <CMP>unit_Cartesian(1) =
+      basis_selector(tuple(unit_Cartesian(1), unit_Cartesian(2), unit_Cartesian(3)), covar_index(1))</CMP>
+      <FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+        <OMA>
+          <OMS cd="relation1" name="eq"/>
+          <OMA> <OMS cd="tensor1" name="unit_Cartesian"/> <OMI>1</OMI> </OMA>
+          <OMA>
+          <OMS cd="tensor1" name="basis_selector"/>
+          <OMA>
+	          <OMS cd="tensor1" name="tuple"/>
+            <OMA> <OMS cd="tensor1" name="unit_Cartesian"/> <OMI>1</OMI> </OMA>
+            <OMA> <OMS cd="tensor1" name="unit_Cartesian"/> <OMI>2</OMI> </OMA>
+            <OMA> <OMS cd="tensor1" name="unit_Cartesian"/> <OMI>3</OMI> </OMA>
+            </OMA>
+            <OMA> <OMS cd="tensor1" name="covar_index"/> <OMI>1</OMI> </OMA>
+          </OMA>
+        </OMA>
+      </OMOBJ></FMP>
+    </CDDefinition>
+    
+    <CDDefinition>
+      <Name>tensor_selector</Name>
+      <Role>application</Role>
+      <Description>
+	This symbol takes 3 arguments: a tensor, a basis, and a tuple of contravariant
+	and/or covariant indexes. It returns the indexed tensor component in the
+	given basis.
+      </Description>
+    </CDDefinition>
+    
+    <CDDefinition>
+      <Name>Kronecker_tensor</Name>
+      <Role>constant</Role>
+      <Description>
+      This symbol represents the Kronecker tensor or Kronecker delta.
+      </Description>
+      <CMP>tensor_selector(Kronecker_tensor, tuple(unit_Cartesian(1), unit_Cartesian(2), unit_Cartesian(3)), contra_index(i), covar_index(i)) = 1
+      OR
+      tensor_selector(Kronecker_tensor, tuple(unit_Cartesian(1), unit_Cartesian(2), unit_Cartesian(3)), contra_index(i), covar_index(j)) = 0 AND (i != j)
+      </CMP>
+
+      <FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMI>1</OMI>
+      <OMA>
+	<OMS cd="tensor1" name="tensor_selector"/>
+	<OMS cd="tensor1" name="Kronecker_tensor"/>
+	<OMA>
+	  <OMS cd="tensor1" name="tuple"/>
+	  <OMA> <OMS cd="tensor1" name="unit_Cartesian"/> <OMI>1</OMI> </OMA>
+	  <OMA> <OMS cd="tensor1" name="unit_Cartesian"/> <OMI>2</OMI> </OMA>
+	  <OMA> <OMS cd="tensor1" name="unit_Cartesian"/> <OMI>3</OMI> </OMA>
+	</OMA>
+	<OMA> <OMS cd="tensor1" name="contra_index"/> <OMV name="i"/> </OMA>
+	<OMA> <OMS cd="tensor1" name="covar_index"/> <OMV name="i"/> </OMA>
+      </OMA>
+      </OMA>
+      </OMOBJ></FMP>
+    </CDDefinition>
+    
+    <CDDefinition>
+      <Name>metric_tensor</Name>
+      <Role>constant</Role>
+      <Description>
+	This symbol represents the metric tensor, typically depicted using a lower case g.
+	The metric tensor is a nondegenerate, symmetric bilinear form. It defines the ideas of
+	leng th and angle in a metric space, the most common example being the Euclidean metric.
+	The square of a differential length, ds*ds, is given by the bilinear product of the
+	coordinate differentials, dx^i, with the metric tensor.
+      </Description>
+      <CMP> ds^2 = sum_i sum_j (dx^i g_i_j dx^j) </CMP>
+    </CDDefinition>
+    
+    <CDDefinition>
+      <Name>Levi-Civita</Name>
+      <Role>constant</Role>
+      <Description>
+	This symbol represents the Levi-Civita alternating pseudo-tensor or permutation symbol.
+	It's definition depends on the number of dimensions, d, of the space: it has as many
+	indexes as there are dimensions in the space. It is totally antisymmetric, its value
+	being:
+	1 for an even permutation of unequally valued indexes (e.g., (1,2,...,d));
+	-1 for an odd permutation of unequally valued indexes, and;
+	0 whenever two indexes take the same value.
+      </Description>
+      <CMP> epsilon(i,j,k) = (i-j)(j-k)(k-i)/2, i,j,k in {1,2,3}   </CMP> 
+    </CDDefinition>
+  </CD>
+  
+  

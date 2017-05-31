@@ -1,0 +1,209 @@
+<?xml version="1.0"?>
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<!-- $Id: orthpoly1.tfb,v 1.5 2003/11/30 13:10:52 taka Exp $ -->
+<CDName> orthpoly </CDName>
+<CDURL> http://www.openxm.org/... </CDURL>
+<CDReviewDate> 2003-08-11 </CDReviewDate>
+<CDDate> 2002-08-11, 2003-11-30 </CDDate>
+<CDVersion> 0 </CDVersion>
+<CDRevision> 1 </CDRevision>
+<CDStatus> experimental </CDStatus>
+<CDUses>
+  <CDName>arith1</CDName>
+  <CDName>relation1</CDName>
+  <CDName>calculus1</CDName>
+  <CDName>alg1</CDName>
+  <CDName>interval1</CDName>
+  <CDName>nums1</CDName>
+  <CDName>hypergeo0</CDName>
+  <CDName>hypergeo1</CDName>
+</CDUses>
+<Description>
+ This CD defines orthogonal polynomials which are hypergeometric polynomials.
+ These functions are described in the following books.
+ (1) Handbook of Mathematical Functions, Abramowitz, Stegun
+ (2) Higher transcendental functions. Krieger Publishing Co., Inc., Melbourne, Fla., 1981, Erdlyi, Arthur; Magnus, Wilhelm; Oberhettinger, Fritz; Tricomi, Francesco G. 
+</Description>
+
+<CDDefinition>
+<Name> legendreP </Name>
+<Description>
+	The first Legendre function.
+	This function is one of the two famous solutions of Legendre
+	differential equation.
+</Description>
+<FunctorClass> Binary </FunctorClass>
+<CMP>
+	legendreP(v;z) = hypergeo1.hypergeometric2F1(-v,v+1,1;(1-z)/2)
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA><OMS cd="relation1" name="eq"/>
+    <OMA><OMS cd="orthpoly1" name="legendreP"/>
+      <OMV name="v"/>
+      <OMV name="z"/>
+    </OMA>
+    <OMA><OMS cd="hypergeo1" name="hypergeometric2F1"/>
+      <OMA><OMS cd="arith1" name="unary_minus"/>
+        <OMV name="v"/>
+      </OMA>
+      <OMA><OMS cd="arith1" name="plus"/>
+        <OMV name="v"/>
+        <OMI> 1 </OMI>
+      </OMA>
+      <OMI> 1 </OMI>
+      <OMA><OMS cd="arith1" name="divide"/>
+        <OMA><OMS cd="arith1" name="minus"/>
+          <OMI> 1 </OMI>
+          <OMV name="z"/>
+        </OMA>
+        <OMI> 2 </OMI>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> legendreQ </Name>
+<Description>
+	The second Legendre function.
+	This function is the another one of the famous two solutions of Legendre
+	differential equation.
+</Description>
+<FunctorClass> Binary </FunctorClass>
+<CMP>
+	legendreQ(v;z) = \frac{\sqrt{\pi}\Gamma(v+1)}{\Gamma(v+3/2)}
+	  /(2z)^{v+1}
+	  hypergeo1.hypergeometric2F1((v+1)/2,v/2+1,v+3/2;1/z^2)
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA><OMS cd="relation1" name="eq"/>
+    <OMA><OMS cd="orthpoly1" name="legendreQ"/>
+      <OMV name="v"/>
+      <OMV name="z"/>
+    </OMA>
+    <OMA><OMS cd="arith1" name="times"/>
+      <OMA><OMS cd="arith1" name="divide"/>
+        <OMA><OMS cd="arith1" name="divide"/>
+          <OMA><OMS cd="arith1" name="times"/>
+            <OMA><OMS cd="arith1" name="root"/>
+              <OMS cd="nums1" name="pi"/>
+              <OMI> 2 </OMI>
+            </OMA>
+            <OMA><OMS cd="hypergeo0" name="gamma"/>
+              <OMA><OMS cd="arith1" name="plus"/>
+                <OMV name="v"/>
+                <OMI> 1 </OMI>
+              </OMA>
+            </OMA>
+          </OMA>
+          <OMA><OMS cd="hypergeo0" name="gamma"/>
+            <OMA><OMS cd="arith1" name="plus"/>
+              <OMV name="v"/>
+              <OMA><OMS cd="arith1" name="divide"/>
+                <OMI> 3 </OMI>
+                <OMI> 2 </OMI>
+              </OMA>
+            </OMA>
+          </OMA>
+        </OMA>
+        <OMA><OMS cd="arith1" name="power"/>
+          <OMA><OMS cd="arith1" name="times"/>
+            <OMI> 2 </OMI>
+            <OMV name="z"/>
+          </OMA>
+          <OMA><OMS cd="arith1" name="plus"/>
+            <OMV name="v"/>
+            <OMI> 1 </OMI>
+          </OMA>
+        </OMA>
+      </OMA>
+      <OMA><OMS cd="hypergeo1" name="hypergeometric2F1"/>
+        <OMA><OMS cd="arith1" name="divide"/>
+          <OMA><OMS cd="arith1" name="plus"/>
+            <OMV name="v"/>
+            <OMI> 1 </OMI>
+          </OMA>
+          <OMI> 2 </OMI>
+        </OMA>
+        <OMA><OMS cd="arith1" name="plus"/>
+          <OMA><OMS cd="arith1" name="divide"/>
+            <OMV name="v"/>
+            <OMI> 2 </OMI>
+          </OMA>
+          <OMI> 1 </OMI>
+        </OMA>
+        <OMA><OMS cd="arith1" name="plus"/>
+          <OMV name="v"/>
+          <OMA><OMS cd="arith1" name="divide"/>
+            <OMI> 3 </OMI>
+            <OMI> 2 </OMI>
+          </OMA>
+        </OMA>
+        <OMA><OMS cd="arith1" name="power"/>
+          <OMA><OMS cd="arith1" name="divide"/>
+            <OMI> 1 </OMI>
+            <OMV name="z"/>
+          </OMA>
+          <OMI> 2 </OMI>
+        </OMA>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> jacobiG </Name>
+<Description>
+	The Jacobi polynomial.
+</Description>
+<FunctorClass> 4ary </FunctorClass>
+<CMP>
+	jacobiG(n,a,c;z)
+	= hypergeometric2F1(-n,a+n,c,z) (c \not\in Z_{&lt;=0})
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA><OMS cd="logic1" name="implies"/>
+    <OMA><OMS cd="set1" name="notin"/>
+      <OMA><OMS cd="arith1" name="unary_minus"/>
+        <OMV name="c"/>
+      </OMA>
+      <OMS cd="setname1" name="N"/>
+    </OMA>
+    <OMA><OMS cd="relation1" name="eq"/>
+      <OMA><OMS cd="orthpoly1" name="jacobiG"/>
+        <OMV name="n"/>
+        <OMV name="a"/>
+        <OMV name="c"/>
+        <OMV name="z"/>
+      </OMA>
+      <OMA><OMS cd="hypergeo1" name="hypergeometric2F1"/>
+        <OMA><OMS cd="arith1" name="unary_minus"/>
+          <OMV name="n"/>
+        </OMA>
+        <OMA><OMS cd="arith1" name="plus"/>
+          <OMV name="a"/>
+          <OMV name="n"/>
+        </OMA>
+        <OMV name="c"/>
+        <OMV name="z"/>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+
+</FMP>
+</CDDefinition>
+
+</CD>

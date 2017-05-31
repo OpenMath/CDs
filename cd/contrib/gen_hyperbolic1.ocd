@@ -1,0 +1,347 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+
+<CDName> gen_hyperbolic1 </CDName>
+<CDURL> http://www.openmath.org/cd/gen_hyperbolic1.ocd </CDURL>
+<CDReviewDate> 2005-01-01 </CDReviewDate>
+<CDStatus> experimental </CDStatus>
+<CDDate> 2002-11-11 </CDDate>
+<CDVersion> 0 </CDVersion>
+<CDRevision> 0 </CDRevision>
+<CDUses>
+  <CDName>alg1</CDName>
+  <CDName>arith1</CDName>
+  <CDName>fns1</CDName>
+  <CDName>integer1</CDName>
+  <CDName>interval1</CDName>
+  <CDName>logic1</CDName>
+  <CDName>nums1</CDName>
+  <CDName>quant1</CDName>
+  <CDName>relation1</CDName>
+  <CDName>set1</CDName>
+  <CDName>setname1</CDName>
+  <CDName>transc1</CDName>
+</CDUses>
+
+<Description>
+This CD contains a symbol to represent the generalised hyperbolic
+function, and facts relating it to other functions.
+</Description>
+
+<CDDefinition>
+  <Name> generalised_hyperbolic </Name>
+  <Description>
+This symbol represents the generalised hyperbolic function as recorded
+by Riccati. It is intended to be applied in the curried form, that is,
+the symbol should be applied to three arguments in order to return a
+function which should be applied to one argument. The generalised
+hyperbolic function may be defined as an infinite sum as in the
+first CMP/FMP .
+  </Description>
+
+  <CMP>
+for complex \alpha, integral n and r an integer between 0 and r (inclusive)
+(F^\alpha_{n,r})(x) = \Sigma^\infty_{k=0}{\frac{\alpha^k}{(nk+r)!}x^{nk+r}}
+  </CMP>
+  <FMP>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="logic1" name="implies"/>
+        <OMA>
+          <OMS cd="logic1" name="and"/>
+          <OMA>
+            <OMS cd="set1" name="in"/>
+            <OMV name="alpha"/>
+            <OMS cd="setname1" name="C"/>
+          </OMA>
+          <OMA>
+            <OMS cd="set1" name="in"/>
+            <OMV name="n"/>
+            <OMS cd="setname1" name="Z"/>
+          </OMA>
+          <OMA>
+            <OMS cd="set1" name="in"/>
+            <OMV name="r"/>
+            <OMA>
+              <OMS cd="interval1" name="integer_interval"/>
+              <OMI> 0 </OMI>
+              <OMA>
+                <OMS cd="arith1" name="minus"/>
+                <OMV name="n"/><OMI> 1 </OMI>
+              </OMA>
+            </OMA>
+          </OMA>
+        </OMA>
+        <OMA>
+          <OMS cd="relation1" name="eq"/>
+          <OMA>
+            <OMA>
+              <OMS cd="gen_hyperbolic1" name="generalised_hyperbolic"/>
+              <OMV name="alpha"/>
+              <OMV name="n"/>
+              <OMV name="r"/>
+            </OMA>
+            <OMV name="x"/>
+          </OMA>
+          <OMA>
+            <OMS cd="arith1" name="sum"/>
+            <OMA>
+              <OMS cd="interval1" name="integer_interval"/>
+              <OMS cd="alg1" name="zero"/>
+              <OMS cd="nums1" name="infinity"/>
+            </OMA>
+            <OMBIND>
+              <OMS cd="fns1" name="lambda"/>
+              <OMBVAR>
+                <OMV name="k"/>
+              </OMBVAR>
+              <OMA>
+                <OMS cd="arith1" name="times"/>
+                <OMA>
+                  <OMS cd="arith1" name="divide"/>
+                  <OMA>
+                    <OMS cd="arith1" name="power"/>
+                    <OMV name="alpha"/>
+                    <OMV name="k"/>
+                  </OMA>
+                  <OMA>
+                    <OMS cd="integer1" name="factorial"/>
+                    <OMA>
+                      <OMS cd="arith1" name="plus"/>
+                      <OMA>
+                        <OMS cd="arith1" name="times"/>
+                        <OMV name="n"/>
+                        <OMV name="k"/>
+                      </OMA>
+                      <OMV name="r"/>
+                    </OMA>
+                  </OMA>
+                </OMA>
+                <OMA>
+                  <OMS cd="arith1" name="power"/>
+                  <OMV name="x"/>
+                  <OMA>
+                    <OMS cd="arith1" name="plus"/>
+                    <OMA>
+                      <OMS cd="arith1" name="times"/>
+                      <OMV name="n"/>
+                      <OMV name="k"/>
+                    </OMA>
+                    <OMV name="r"/>
+                  </OMA>
+                </OMA>
+              </OMA>
+            </OMBIND>
+          </OMA>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </FMP>
+
+  <CMP> for all z \in C F^1_{1,0} (z) = e^z </CMP>
+
+  <FMP>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMBIND>
+        <OMS cd="quant1" name="forall"/>
+        <OMBVAR>
+          <OMV name="z"/>
+        </OMBVAR>
+        <OMA>
+          <OMS cd="logic1" name="implies"/>
+          <OMA>
+            <OMS cd="set1" name="in"/>
+            <OMV name="z"/>
+            <OMS cd="setname1" name="C"/>
+          </OMA>
+          <OMA>
+            <OMS cd="relation1" name="eq"/>
+            <OMA>
+              <OMA>
+                <OMS cd="gen_hyperbolic1" name="generalised_hyperbolic"/>
+                <OMI> 1 </OMI><OMI> 1 </OMI><OMI> 0 </OMI>
+              </OMA>
+              <OMV name="z"/>
+            </OMA>
+            <OMA>
+              <OMS cd="transc1" name="exp"/>
+              <OMV name="z"/>
+            </OMA>
+          </OMA>
+        </OMA>
+      </OMBIND>
+    </OMOBJ>
+  </FMP>
+
+  <CMP> for all z \in C F^{-1}_{2,-1} (z) = sin(z) </CMP>
+
+  <FMP>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMBIND>
+        <OMS cd="quant1" name="forall"/>
+        <OMBVAR>
+          <OMV name="z"/>
+        </OMBVAR>
+        <OMA>
+          <OMS cd="logic1" name="implies"/>
+          <OMA>
+            <OMS cd="set1" name="in"/>
+            <OMV name="z"/>
+            <OMS cd="setname1" name="C"/>
+          </OMA>
+          <OMA>
+            <OMS cd="relation1" name="eq"/>
+            <OMA>
+              <OMA>
+                <OMS cd="gen_hyperbolic1" name="generalised_hyperbolic"/>
+                <OMI> -1 </OMI><OMI> 2 </OMI><OMI> -1 </OMI>
+              </OMA>
+              <OMV name="z"/>
+            </OMA>
+            <OMA>
+              <OMS cd="transc1" name="sin"/>
+              <OMV name="z"/>
+            </OMA>
+          </OMA>
+        </OMA>
+      </OMBIND>
+    </OMOBJ>
+  </FMP>
+
+  <CMP> for all z \in C F^{-1}_{2,0} (z) = cos(z) </CMP>
+
+  <FMP>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMBIND>
+        <OMS cd="quant1" name="forall"/>
+        <OMBVAR>
+          <OMV name="z"/>
+        </OMBVAR>
+        <OMA>
+          <OMS cd="logic1" name="implies"/>
+          <OMA>
+            <OMS cd="set1" name="in"/>
+            <OMV name="z"/>
+            <OMS cd="setname1" name="C"/>
+          </OMA>
+          <OMA>
+            <OMS cd="relation1" name="eq"/>
+            <OMA>
+              <OMA>
+                <OMS cd="gen_hyperbolic1" name="generalised_hyperbolic"/>
+                <OMI> -1 </OMI><OMI> 2 </OMI><OMI> 0 </OMI>
+              </OMA>
+              <OMV name="z"/>
+            </OMA>
+            <OMA>
+              <OMS cd="transc1" name="cos"/>
+              <OMV name="z"/>
+            </OMA>
+          </OMA>
+        </OMA>
+      </OMBIND>
+    </OMOBJ>
+  </FMP>
+
+  <CMP> for all z \in C F^{1}_{2,1} (z) = sinh(z) </CMP>
+
+  <FMP>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMBIND>
+        <OMS cd="quant1" name="forall"/>
+        <OMBVAR>
+          <OMV name="z"/>
+        </OMBVAR>
+        <OMA>
+          <OMS cd="logic1" name="implies"/>
+          <OMA>
+            <OMS cd="set1" name="in"/>
+            <OMV name="z"/>
+            <OMS cd="setname1" name="C"/>
+          </OMA>
+          <OMA>
+            <OMS cd="relation1" name="eq"/>
+            <OMA>
+              <OMA>
+                <OMS cd="gen_hyperbolic1" name="generalised_hyperbolic"/>
+                <OMI> 1 </OMI><OMI> 2 </OMI><OMI> 1 </OMI>
+              </OMA>
+              <OMV name="z"/>
+            </OMA>
+            <OMA>
+              <OMS cd="transc1" name="sinh"/>
+              <OMV name="z"/>
+            </OMA>
+          </OMA>
+        </OMA>
+      </OMBIND>
+    </OMOBJ>
+  </FMP>
+
+  <CMP> for all z \in C F^{1}_{2,0} (z) = cosh(z) </CMP>
+
+  <FMP>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMBIND>
+        <OMS cd="quant1" name="forall"/>
+        <OMBVAR>
+          <OMV name="z"/>
+        </OMBVAR>
+        <OMA>
+          <OMS cd="logic1" name="implies"/>
+          <OMA>
+            <OMS cd="set1" name="in"/>
+            <OMV name="z"/>
+            <OMS cd="setname1" name="C"/>
+          </OMA>
+          <OMA>
+            <OMS cd="relation1" name="eq"/>
+            <OMA>
+              <OMA>
+                <OMS cd="gen_hyperbolic1" name="generalised_hyperbolic"/>
+                <OMI> 1 </OMI><OMI> 2 </OMI><OMI> 0 </OMI>
+              </OMA>
+              <OMV name="z"/>
+            </OMA>
+            <OMA>
+              <OMS cd="transc1" name="cosh"/>
+              <OMV name="z"/>
+            </OMA>
+          </OMA>
+        </OMA>
+      </OMBIND>
+    </OMOBJ>
+  </FMP>
+</CDDefinition>
+</CD>

@@ -1,0 +1,1180 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+
+<CDName> logic3 </CDName>
+<CDURL> http://www.openmath.org/cd/logic3.ocd </CDURL>
+<CDReviewDate> 2003-09-01 </CDReviewDate>
+<CDDate> 2001-07-31 </CDDate>
+<CDVersion> 0 </CDVersion>
+<CDRevision> 1 </CDRevision>
+<CDStatus> experimental </CDStatus>
+<CDUses>
+  <CDName>alg1</CDName>
+  <CDName>arith1</CDName>
+  <CDName>fns1</CDName>
+  <CDName>list1</CDName>
+  <CDName>logic1</CDName>
+  <CDName>quant1</CDName>
+  <CDName>relation1</CDName>
+  <CDName>set1</CDName>
+</CDUses>
+<Description>
+    This CD holds the symbols for constructing formal proofs in the
+    (classical) propositional and predicate calculus (first-order).
+</Description>
+
+<CDDefinition>
+<Name> prop_theorem </Name>
+<Description> 
+This symbol is used to claim that a statement is a theorem of the 
+classical propositional calculus, i.e. that it follows by applications 
+of Modus Ponens from instantiations of the axioms (which may be the common
+three involving 'implies', but need not be).
+</Description>
+
+<Example>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS cd="logic3" name="prop_theorem"/>
+    <OMA>
+      <OMS cd="logic1" name="implies"/>
+      <OMV name="A"/>
+      <OMV name="A"/>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> pred_theorem </Name>
+<Description> 
+This symbol is used to claim that a statement is a theorem of the 
+classical first-order predicate calculus, i.e. that it follows by
+applications of Modus Ponens,  and generalisation from instantiations of
+the Axioms (which may be the common three involving 'implies', together
+with forall-instantiation and moving forall inside implication, but need
+not be).
+</Description>
+
+<Example>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS cd="logic3" name="pred_theorem"/>
+    <OMBIND>
+      <OMS cd="quant1" name="forall"/>
+      <OMBVAR>
+        <OMV name="x"/>
+      </OMBVAR>
+      <OMA>
+        <OMS cd="logic1" name="implies"/>
+        <OMA>
+          <OMV name="P"/>
+          <OMV name="x"/>
+        </OMA>
+        <OMA>
+          <OMV name="P"/>
+          <OMV name="x"/>
+        </OMA>
+      </OMA>
+    </OMBIND>
+  </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> is_theorem </Name>
+<Description> 
+This symbol expresses whether or not there is a theorem of the form
+quoted. Hence for items of type complete_prop_theorem, it is always true
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name> axiom_instance </Name>
+<Description> 
+This symbol represents a line in a formal proof which is an instance of
+an axiom. The first child is the line in the proof: the second is the
+axiom used.
+</Description>
+<Example>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS cd="logic3" name="axiom_instance"/>
+  <OMA>
+    <OMS cd="logic1" name="implies"/>
+    <OMA>
+      <OMS cd="logic1" name="implies"/>
+      <OMV name="a"/>
+      <OMV name="a"/>
+    </OMA>
+    <OMA>
+      <OMS cd="logic1" name="implies"/>
+      <OMV name="a"/>
+      <OMA>
+        <OMS cd="logic1" name="implies"/>
+        <OMV name="a"/>
+        <OMV name="a"/>
+      </OMA>
+    </OMA>
+  </OMA>
+  <OMA>
+    <OMS cd="logic1" name="implies"/>
+    <OMV name="a"/>
+    <OMA>
+      <OMS cd="logic1" name="implies"/>
+      <OMV name="b"/>
+      <OMV name="a"/>
+    </OMA>
+  </OMA>
+</OMA>
+</OMOBJ>
+</Example>
+
+<Example>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS cd="logic3" name="axiom_instance"/>
+  <OMA>
+    <OMS cd="logic1" name="implies"/>
+    <OMA>
+      <OMS cd="logic1" name="implies"/>
+      <OMV name="a"/>
+      <OMA>
+        <OMS cd="logic1" name="implies"/>
+        <OMA>
+          <OMS cd="logic1" name="implies"/>
+          <OMV name="a"/>
+          <OMV name="a"/>
+        </OMA>
+        <OMV name="a"/>
+      </OMA>
+    </OMA>
+    <OMA>
+      <OMS cd="logic1" name="implies"/>
+      <OMA>
+        <OMS cd="logic1" name="implies"/>
+        <OMV name="a"/>
+        <OMA>
+          <OMS cd="logic1" name="implies"/>
+          <OMV name="a"/>
+          <OMV name="a"/>
+        </OMA>
+      </OMA>
+      <OMA>
+        <OMS cd="logic1" name="implies"/>
+        <OMV name="a"/>
+        <OMV name="a"/>
+      </OMA>
+    </OMA>
+  </OMA>
+  <OMA>
+    <OMS cd="logic1" name="implies"/>
+    <OMA>
+      <OMS cd="logic1" name="implies"/>
+      <OMV name="a"/>
+      <OMA>
+        <OMS cd="logic1" name="implies"/>
+        <OMV name="b"/>
+        <OMV name="c"/>
+      </OMA>
+    </OMA>
+    <OMA>
+      <OMS cd="logic1" name="implies"/>
+      <OMA>
+        <OMS cd="logic1" name="implies"/>
+        <OMV name="a"/>
+        <OMV name="b"/>
+      </OMA>
+      <OMA>
+        <OMS cd="logic1" name="implies"/>
+        <OMV name="a"/>
+        <OMV name="c"/>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMA>
+</OMOBJ>
+</Example>
+
+<CDComment>
+Note how the issue of substitution is dealt with in the specification
+of axiom 4 of the predicate calculus. Essentially, it has to be
+assumed that beta-reduction takes place when the axiom is instantiated.
+</CDComment>
+
+<Example>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS cd="logic3" name="axiom_instance"/>
+  <OMA>
+    <OMS cd="logic1" name="implies"/>
+    <OMBIND>
+      <OMS cd="quant1" name="forall"/>
+      <OMBVAR>
+        <OMV name="x"/>
+      </OMBVAR>
+      <OMA>
+        <OMS cd="logic1" name="implies"/>
+        <OMA>
+          <OMS name="eq" cd="relation1"/>
+          <OMV name="x"/>
+          <OMS name="zero" cd="alg1"/>
+        </OMA>
+        <OMA>
+          <OMS name="eq" cd="relation1"/>
+          <OMA>
+            <OMS name="times" cd="arith1"/>
+            <OMV name="x"/>
+            <OMV name="x"/>
+          </OMA>
+          <OMS name="zero" cd="alg1"/>
+        </OMA>
+      </OMA>
+    </OMBIND>
+    <OMA>
+      <OMS cd="logic1" name="implies"/>
+      <OMA>
+        <OMS name="eq" cd="relation1"/>
+        <OMA>
+          <OMS name="plus" cd="arith1"/>
+          <OMV name="x"/>
+          <OMS name="one" cd="alg1"/>
+        </OMA>
+        <OMS name="zero" cd="alg1"/>
+      </OMA>
+      <OMA>
+        <OMS name="eq" cd="relation1"/>
+        <OMA>
+          <OMS name="times" cd="arith1"/>
+          <OMA>
+            <OMS name="plus" cd="arith1"/>
+            <OMV name="x"/>
+            <OMS name="one" cd="alg1"/>
+          </OMA>
+          <OMA>
+            <OMS name="plus" cd="arith1"/>
+            <OMV name="x"/>
+            <OMS name="one" cd="alg1"/>
+          </OMA>
+        </OMA>
+        <OMS name="zero" cd="alg1"/>
+      </OMA>
+    </OMA>
+  </OMA>
+  <OMA>
+    <OMS cd="logic1" name="implies"/>
+    <OMBIND>
+      <OMS cd="quant1" name="forall"/>
+      <OMBVAR>
+        <OMV name="x"/>
+      </OMBVAR>
+      <OMV name="S"/>
+    </OMBIND>
+    <OMA>
+      <OMBIND>
+        <OMS cd="fns1" name="lambda"/>
+        <OMBVAR>
+          <OMV name="x"/>
+        </OMBVAR>
+        <OMV name="S"/>
+      </OMBIND>
+      <OMV name="T"/>
+    </OMA>
+  </OMA>
+</OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> ModusPonens </Name>
+<Description> 
+This symbol represents the generation of a line of a proof by application
+of Modus Ponens. The first argument is the new well-formed formula (B),
+the second is the line number in the proof for A and the third is the line
+number in the proof for A implies B.
+</Description>
+<Example>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS cd="logic3" name="ModusPonens"/>
+    <OMA>
+      <OMS cd="logic1" name="implies"/>
+      <OMV name="a"/>
+      <OMV name="a"/>
+    </OMA>
+    <OMI> 4 </OMI>
+    <OMI> 2 </OMI>
+  </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> Generalisation </Name>
+<Description> 
+This symbol represents the generation of a line of a proof by application
+of Generalisation. The first argument is the new well-formed formula
+(forall x.B) and the second is the line number in the proof for B.
+</Description>
+<Example>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS cd="logic3" name="Generalisation"/>
+    <OMBIND>
+      <OMS name="forall" cd="quant1"/>
+      <OMBVAR>
+        <OMV name="x"/>
+      </OMBVAR>
+      <OMA>
+        <OMS cd="logic1" name="implies"/>
+        <OMA>
+          <OMV name="P"/>
+          <OMV name="x"/>
+        </OMA>
+        <OMA>
+          <OMV name="P"/>
+          <OMV name="x"/>
+        </OMA>
+      </OMA>
+    </OMBIND>
+    <OMI> 5 </OMI>
+  </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> Hypothesis </Name>
+<Description> 
+This symbol represents that a wellformed formula is a hypothesis of a
+deduction of the propositional or predicate calculus.
+</Description>
+<Example>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS cd="logic3" name="Hypothesis"/>
+    <OMA>
+      <OMS cd="logic1" name="implies"/>
+      <OMV name="a"/>
+      <OMV name="a"/>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> proof </Name>
+<Description> 
+This symbol represents a sequence of justified well-formed formulae
+(i.e. objects of type ProofLine). The single argument is a List of
+ProofLine objects.
+</Description>
+<Example>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS cd="logic3" name="proof"/>
+    <OMA>
+      <OMS cd="list1" name="list"/>
+      <OMA>
+        <OMS cd="logic3" name="axiom_instance"/>
+        <OMA>
+          <OMS cd="logic1" name="implies"/>
+          <OMA>
+            <OMS cd="logic1" name="implies"/>
+            <OMV name="a"/>
+            <OMA>
+              <OMS cd="logic1" name="implies"/>
+              <OMA>
+                <OMS cd="logic1" name="implies"/>
+                <OMV name="a"/>
+                <OMV name="a"/>
+              </OMA>
+              <OMV name="a"/>
+            </OMA>
+          </OMA>
+          <OMA>
+            <OMS cd="logic1" name="implies"/>
+            <OMA>
+              <OMS cd="logic1" name="implies"/>
+              <OMV name="a"/>
+              <OMA>
+                <OMS cd="logic1" name="implies"/>
+                <OMV name="a"/>
+                <OMV name="a"/>
+              </OMA>
+            </OMA>
+            <OMA>
+              <OMS cd="logic1" name="implies"/>
+              <OMV name="a"/>
+              <OMV name="a"/>
+            </OMA>
+          </OMA>
+        </OMA>
+        <OMA>
+          <OMS cd="logic1" name="implies"/>
+          <OMA>
+            <OMS cd="logic1" name="implies"/>
+            <OMV name="a"/>
+            <OMA>
+              <OMS cd="logic1" name="implies"/>
+              <OMV name="b"/>
+              <OMV name="c"/>
+            </OMA>
+          </OMA>
+          <OMA>
+            <OMS cd="logic1" name="implies"/>
+            <OMA>
+              <OMS cd="logic1" name="implies"/>
+              <OMV name="a"/>
+              <OMV name="b"/>
+            </OMA>
+            <OMA>
+              <OMS cd="logic1" name="implies"/>
+              <OMV name="a"/>
+              <OMV name="c"/>
+            </OMA>
+          </OMA>
+        </OMA>
+      </OMA>
+      <OMA>
+        <OMS cd="logic3" name="axiom_instance"/>
+        <OMA>
+          <OMS cd="logic1" name="implies"/>
+          <OMV name="a"/>
+          <OMA>
+            <OMS cd="logic1" name="implies"/>
+            <OMA>
+              <OMS cd="logic1" name="implies"/>
+              <OMV name="a"/>
+              <OMV name="a"/>
+            </OMA>
+            <OMV name="a"/>
+          </OMA>
+        </OMA>
+        <OMA>
+          <OMS cd="logic1" name="implies"/>
+          <OMV name="a"/>
+          <OMA>
+            <OMS cd="logic1" name="implies"/>
+            <OMV name="b"/>
+            <OMV name="a"/>
+          </OMA>
+        </OMA>
+      </OMA>
+      <OMA>
+        <OMS cd="logic3" name="ModusPonens"/>
+        <OMA>
+          <OMS cd="logic1" name="implies"/>
+          <OMA>
+            <OMS cd="logic1" name="implies"/>
+            <OMV name="a"/>
+            <OMA>
+              <OMS cd="logic1" name="implies"/>
+              <OMV name="a"/>
+              <OMV name="a"/>
+            </OMA>
+          </OMA>
+          <OMA>
+            <OMS cd="logic1" name="implies"/>
+            <OMV name="a"/>
+            <OMV name="a"/>
+          </OMA>
+        </OMA>
+        <OMI> 2 </OMI>
+        <OMI> 1 </OMI>
+      </OMA>
+      <OMA>
+        <OMS cd="logic3" name="axiom_instance"/>
+        <OMA>
+          <OMS cd="logic1" name="implies"/>
+          <OMV name="a"/>
+          <OMA>
+            <OMS cd="logic1" name="implies"/>
+            <OMV name="a"/>
+            <OMV name="a"/>
+          </OMA>
+        </OMA>
+        <OMA>
+          <OMS cd="logic1" name="implies"/>
+          <OMV name="a"/>
+          <OMA>
+            <OMS cd="logic1" name="implies"/>
+            <OMV name="b"/>
+            <OMV name="a"/>
+          </OMA>
+        </OMA>
+      </OMA>
+      <OMA>
+        <OMS cd="logic3" name="ModusPonens"/>
+        <OMA>
+          <OMS cd="logic1" name="implies"/>
+          <OMV name="a"/>
+          <OMV name="a"/>
+        </OMA>
+        <OMI> 4 </OMI>
+        <OMI> 3 </OMI>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> complete_prop_theorem </Name>
+<Description> 
+This symbol is used to state, with proof (the second child), that a
+statement (the first child) is a theorem of the classical propositional
+calculus, i.e. that it follows by applications of Modus Ponens from
+instantiations of the axioms (which may be the common three involving
+'implies', but need not be).
+</Description>
+
+<Example>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS cd="logic3" name="complete_prop_theorem"/>
+    <OMA>
+      <OMS cd="logic1" name="implies"/>
+      <OMV name="A"/>
+      <OMV name="A"/>
+    </OMA>
+    <OMA>
+      <OMS cd="logic3" name="proof"/>
+      <OMA>
+        <OMS cd="list1" name="list"/>
+        <OMA>
+          <OMS cd="logic3" name="axiom_instance"/>
+          <OMA>
+            <OMS cd="logic1" name="implies"/>
+            <OMA>
+              <OMS cd="logic1" name="implies"/>
+              <OMV name="a"/>
+              <OMA>
+                <OMS cd="logic1" name="implies"/>
+                <OMA>
+                  <OMS cd="logic1" name="implies"/>
+                  <OMV name="a"/>
+                  <OMV name="a"/>
+                </OMA>
+                <OMV name="a"/>
+              </OMA>
+            </OMA>
+            <OMA>
+              <OMS cd="logic1" name="implies"/>
+              <OMA>
+                <OMS cd="logic1" name="implies"/>
+                <OMV name="a"/>
+                <OMA>
+                  <OMS cd="logic1" name="implies"/>
+                  <OMV name="a"/>
+                  <OMV name="a"/>
+                </OMA>
+              </OMA>
+              <OMA>
+                <OMS cd="logic1" name="implies"/>
+                <OMV name="a"/>
+                <OMV name="a"/>
+              </OMA>
+            </OMA>
+          </OMA>
+          <OMA>
+            <OMS cd="logic1" name="implies"/>
+            <OMA>
+              <OMS cd="logic1" name="implies"/>
+              <OMV name="a"/>
+              <OMA>
+                <OMS cd="logic1" name="implies"/>
+                <OMV name="b"/>
+                <OMV name="c"/>
+              </OMA>
+            </OMA>
+            <OMA>
+              <OMS cd="logic1" name="implies"/>
+              <OMA>
+                <OMS cd="logic1" name="implies"/>
+                <OMV name="a"/>
+                <OMV name="b"/>
+              </OMA>
+              <OMA>
+                <OMS cd="logic1" name="implies"/>
+                <OMV name="a"/>
+                <OMV name="c"/>
+              </OMA>
+            </OMA>
+          </OMA>
+        </OMA>
+        <OMA>
+          <OMS cd="logic3" name="axiom_instance"/>
+          <OMA>
+            <OMS cd="logic1" name="implies"/>
+            <OMV name="a"/>
+            <OMA>
+              <OMS cd="logic1" name="implies"/>
+              <OMA>
+                <OMS cd="logic1" name="implies"/>
+                <OMV name="a"/>
+                <OMV name="a"/>
+              </OMA>
+              <OMV name="a"/>
+            </OMA>
+          </OMA>
+          <OMA>
+            <OMS cd="logic1" name="implies"/>
+            <OMV name="a"/>
+            <OMA>
+              <OMS cd="logic1" name="implies"/>
+              <OMV name="b"/>
+              <OMV name="a"/>
+            </OMA>
+          </OMA>
+        </OMA>
+        <OMA>
+          <OMS cd="logic3" name="ModusPonens"/>
+          <OMA>
+            <OMS cd="logic1" name="implies"/>
+            <OMA>
+              <OMS cd="logic1" name="implies"/>
+              <OMV name="a"/>
+              <OMA>
+                <OMS cd="logic1" name="implies"/>
+                <OMV name="a"/>
+                <OMV name="a"/>
+              </OMA>
+            </OMA>
+            <OMA>
+              <OMS cd="logic1" name="implies"/>
+              <OMV name="a"/>
+              <OMV name="a"/>
+            </OMA>
+          </OMA>
+          <OMI> 2 </OMI>
+          <OMI> 1 </OMI>
+        </OMA>
+        <OMA>
+          <OMS cd="logic3" name="axiom_instance"/>
+          <OMA>
+            <OMS cd="logic1" name="implies"/>
+            <OMV name="a"/>
+            <OMA>
+              <OMS cd="logic1" name="implies"/>
+              <OMV name="a"/>
+              <OMV name="a"/>
+            </OMA>
+          </OMA>
+          <OMA>
+            <OMS cd="logic1" name="implies"/>
+            <OMV name="a"/>
+            <OMA>
+              <OMS cd="logic1" name="implies"/>
+              <OMV name="b"/>
+              <OMV name="a"/>
+            </OMA>
+          </OMA>
+        </OMA>
+        <OMA>
+          <OMS cd="logic3" name="ModusPonens"/>
+          <OMA>
+            <OMS cd="logic1" name="implies"/>
+            <OMV name="a"/>
+            <OMV name="a"/>
+          </OMA>
+          <OMI> 4 </OMI>
+          <OMI> 3 </OMI>
+        </OMA>
+      </OMA>
+    </OMA> 
+  </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> complete_pred_theorem </Name>
+<Description> 
+This symbol is used to state, with justification, that a statement is a
+theorem of the classical first-order predicate calculus, i.e. that it
+follows by applications of Modus Ponens, and generalisation from
+instantiations of the Axioms (which may be the common three involving
+'implies', together with forall-instantiation and moving forall inside
+implication, but need not be), and the hypotheses (elements of the set
+which is the second child).
+</Description>
+
+<Example>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS cd="logic3" name="complete_pred_theorem"/>
+    <OMBIND>
+      <OMS cd="quant1" name="forall"/>
+      <OMBVAR>
+        <OMV name="x"/>
+      </OMBVAR>
+      <OMA>
+        <OMS cd="logic1" name="implies"/>
+        <OMA>
+          <OMV name="P"/>
+          <OMV name="x"/>
+        </OMA>
+        <OMA>
+          <OMV name="P"/>
+          <OMV name="x"/>
+        </OMA>
+      </OMA>
+    </OMBIND>
+    <OMA>
+      <OMS cd="logic3" name="proof"/>
+      <OMA>
+        <OMS cd="list1" name="list"/>
+        <OMA>
+          <OMS cd="logic3" name="axiom_instance"/>
+          <OMA>
+            <OMS cd="logic1" name="implies"/>
+            <OMA>
+              <OMS cd="logic1" name="implies"/>
+              <OMA>
+                <OMV name="P"/>
+                <OMV name="x"/>
+              </OMA>
+              <OMA>
+                <OMS cd="logic1" name="implies"/>
+                <OMA>
+                  <OMS cd="logic1" name="implies"/>
+                  <OMA>
+                    <OMV name="P"/>
+                    <OMV name="x"/>
+                  </OMA>
+                  <OMA>
+                    <OMV name="P"/>
+                    <OMV name="x"/>
+                  </OMA>
+                </OMA>
+                <OMA>
+                  <OMV name="P"/>
+                  <OMV name="x"/>
+                </OMA>
+              </OMA>
+            </OMA>
+            <OMA>
+              <OMS cd="logic1" name="implies"/>
+              <OMA>
+                <OMS cd="logic1" name="implies"/>
+                <OMA>
+                  <OMV name="P"/>
+                  <OMV name="x"/>
+                </OMA>
+                <OMA>
+                  <OMS cd="logic1" name="implies"/>
+                  <OMA>
+                    <OMV name="P"/>
+                    <OMV name="x"/>
+                  </OMA>
+                  <OMA>
+                    <OMV name="P"/>
+                    <OMV name="x"/>
+                  </OMA>
+                </OMA>
+              </OMA>
+              <OMA>
+                <OMS cd="logic1" name="implies"/>
+                <OMA>
+                  <OMV name="P"/>
+                  <OMV name="x"/>
+                </OMA>
+                <OMA>
+                  <OMV name="P"/>
+                  <OMV name="x"/>
+                </OMA>
+              </OMA>
+            </OMA>
+          </OMA>
+          <OMA>
+            <OMS cd="logic1" name="implies"/>
+            <OMA>
+              <OMS cd="logic1" name="implies"/>
+              <OMV name="a"/>
+              <OMA>
+                <OMS cd="logic1" name="implies"/>
+                <OMV name="b"/>
+                <OMV name="c"/>
+              </OMA>
+            </OMA>
+            <OMA>
+              <OMS cd="logic1" name="implies"/>
+              <OMA>
+                <OMS cd="logic1" name="implies"/>
+                <OMV name="a"/>
+                <OMV name="b"/>
+              </OMA>
+              <OMA>
+                <OMS cd="logic1" name="implies"/>
+                <OMV name="a"/>
+                <OMV name="c"/>
+              </OMA>
+            </OMA>
+          </OMA>
+        </OMA>
+        <OMA>
+          <OMS cd="logic3" name="axiom_instance"/>
+          <OMA>
+            <OMS cd="logic1" name="implies"/>
+            <OMA>
+              <OMV name="P"/>
+              <OMV name="x"/>
+            </OMA>
+            <OMA>
+              <OMS cd="logic1" name="implies"/>
+              <OMA>
+                <OMS cd="logic1" name="implies"/>
+                <OMA>
+                  <OMV name="P"/>
+                  <OMV name="x"/>
+                </OMA>
+                <OMA>
+                  <OMV name="P"/>
+                  <OMV name="x"/>
+                </OMA>
+              </OMA>
+              <OMA>
+                <OMV name="P"/>
+                <OMV name="x"/>
+              </OMA>
+            </OMA>
+          </OMA>
+          <OMA>
+            <OMS cd="logic1" name="implies"/>
+            <OMV name="a"/>
+            <OMA>
+              <OMS cd="logic1" name="implies"/>
+              <OMV name="b"/>
+              <OMV name="a"/>
+            </OMA>
+          </OMA>
+        </OMA>
+        <OMA>
+          <OMS cd="logic3" name="ModusPonens"/>
+          <OMA>
+            <OMS cd="logic1" name="implies"/>
+            <OMA>
+              <OMS cd="logic1" name="implies"/>
+              <OMA>
+                <OMV name="P"/>
+                <OMV name="x"/>
+              </OMA>
+              <OMA>
+                <OMS cd="logic1" name="implies"/>
+                <OMA>
+                  <OMV name="P"/>
+                  <OMV name="x"/>
+                </OMA>
+                <OMA>
+                  <OMV name="P"/>
+                  <OMV name="x"/>
+                </OMA>
+              </OMA>
+            </OMA>
+            <OMA>
+              <OMS cd="logic1" name="implies"/>
+              <OMA>
+                <OMV name="P"/>
+                <OMV name="x"/>
+              </OMA>
+              <OMA>
+                <OMV name="P"/>
+                <OMV name="x"/>
+              </OMA>
+            </OMA>
+          </OMA>
+          <OMI> 2 </OMI>
+          <OMI> 1 </OMI>
+        </OMA>
+        <OMA>
+          <OMS cd="logic3" name="axiom_instance"/>
+          <OMA>
+            <OMS cd="logic1" name="implies"/>
+            <OMA>
+              <OMV name="P"/>
+              <OMV name="x"/>
+            </OMA>
+            <OMA>
+              <OMS cd="logic1" name="implies"/>
+              <OMA>
+                <OMV name="P"/>
+                <OMV name="x"/>
+              </OMA>
+              <OMA>
+                <OMV name="P"/>
+                <OMV name="x"/>
+              </OMA>
+            </OMA>
+          </OMA>
+          <OMA>
+            <OMS cd="logic1" name="implies"/>
+            <OMV name="a"/>
+            <OMA>
+              <OMS cd="logic1" name="implies"/>
+              <OMV name="b"/>
+              <OMV name="a"/>
+            </OMA>
+          </OMA>
+        </OMA>
+        <OMA>
+          <OMS cd="logic3" name="ModusPonens"/>
+          <OMA>
+            <OMS cd="logic1" name="implies"/>
+            <OMA>
+              <OMV name="P"/>
+              <OMV name="x"/>
+            </OMA>
+            <OMA>
+              <OMV name="P"/>
+              <OMV name="x"/>
+            </OMA>
+          </OMA>
+          <OMI> 4 </OMI>
+          <OMI> 3 </OMI>
+        </OMA>
+      </OMA>
+    </OMA> 
+    <OMA>
+      <OMS cd="logic3" name="Generalisation"/>
+      <OMBIND>
+        <OMS name="forall" cd="quant1"/>
+        <OMBVAR>
+          <OMV name="x"/>
+        </OMBVAR>
+        <OMA>
+          <OMS cd="logic1" name="implies"/>
+          <OMA>
+            <OMV name="P"/>
+            <OMV name="x"/>
+          </OMA>
+          <OMA>
+            <OMV name="P"/>
+            <OMV name="x"/>
+          </OMA>
+        </OMA>
+      </OMBIND>
+      <OMI> 5 </OMI>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> prop_deduction </Name>
+<Description> 
+This symbol is used to claim that a statement (the first child) is a
+deduction of the classical propositional calculus, i.e. that it follows by
+applications of Modus Ponens from instantiations of the axioms (which may
+be the common three involving 'implies', but need not be), and the
+hypotheses (elements of the set which is the second child).
+</Description>
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+  <OMS name="eq" cd="relation1"/>
+    <OMA>
+      <OMS name="prop_theorem" cd="logic3"/>
+      <OMV name="T"/>
+    </OMA>
+    <OMA>
+      <OMS name="prop_deduction" cd="logic3"/>
+      <OMV name="T"/>
+      <OMS name="emptyset" cd="set1"/>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+<Example>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS cd="logic3" name="prop_deduction"/>
+    <OMV name="A"/>
+    <OMA>
+      <OMS cd="set1" name="set"/>
+      <OMV name="A"/>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> complete_prop_deduction </Name>
+<Description> 
+This symbol is used to claim, with proof (the third child), that a
+statement (the first child) is a deduction of the classical propositional
+calculus, i.e. that it follows by applications of Modus Ponens from
+instantiations of the axioms (which may be the common three involving
+'implies', but need not be), and the hypotheses (elements of the set which
+is the second child).
+</Description>
+<Example>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS name="complete_prop_deduction" cd="logic3"/>
+  <OMV name="a"/>
+  <OMA>
+    <OMS name="set" cd="set1"/>
+    <OMV name="a"/>
+  </OMA>
+  <OMA>
+    <OMS name="proof" cd="logic3"/>
+    <OMA>
+      <OMS name="list" cd="list1"/>
+      <OMA>
+        <OMS name="Hypothesis" cd="logic3"/>
+        <OMV name="a"/>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> pred_deduction </Name>
+<Description> 
+This symbol is used to claim that a statement (the first child) is a
+deduction of the classical predicate calculus, i.e. that it follows by
+applications of Modus Ponens, forall-introduction and exists-elimination,
+from instantiations of the axioms (which may be the common three involving
+applications of Modus Ponens,  and generalisation from instantiations of
+the Axioms (which may be the common three involving 'implies', together
+with forall-instantiation and moving forall inside implication, but need
+not be), and the hypotheses (elements of the set which is the second child).
+</Description>
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+  <OMS name="eq" cd="relation1"/>
+    <OMA>
+      <OMS name="pred_theorem" cd="logic3"/>
+      <OMV name="T"/>
+    </OMA>
+    <OMA>
+      <OMS name="pred_deduction" cd="logic3"/>
+      <OMV name="T"/>
+      <OMS name="emptyset" cd="set1"/>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+<Example>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS cd="logic3" name="pred_deduction"/>
+    <OMA>
+      <OMV name="P"/>
+      <OMV name="x"/>
+    </OMA>
+    <OMA>
+      <OMS cd="set1" name="set"/>
+      <OMA>
+        <OMV name="P"/>
+        <OMV name="x"/>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> complete_pred_deduction </Name>
+<Description> 
+This symbol is used to claim, with proof (the third child), that a
+statement (the first child) is a deduction of the classical predicate
+calculus, i.e. that it follows by applications of Modus Ponens,
+forall-introduction and exists-elimination, from instantiations of the
+axioms (which may be the common three involving applications of Modus
+Ponens,  and generalisation from instantiations of the Axioms (which may be
+the common three involving 'implies', together with forall-instantiation
+and moving forall inside implication, but need not be), and the hypotheses
+(elements of the set which is the second child).
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name> is_deduction </Name>
+<Description> 
+This symbol expresses whether or not there is a deduction of the form
+quoted. Hence for items of type complete_pred_deduction, it is always true
+</Description>
+<CDComment>
+The Deduction Theorem (of propositional calculus).
+</CDComment>
+<Example>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS name="implies" cd="logic1"/>
+  <OMA>
+    <OMS name="is_deduction" cd="logic3"/>
+    <OMA>
+      <OMS name="prop_deduction" cd="logic3"/>
+      <OMV name="P"/>
+      <OMA>
+        <OMS name="set" cd="set1"/>
+        <OMV name="H"/>
+      </OMA>
+    </OMA>
+  </OMA>
+  <OMA>
+    <OMS name="is_theorem" cd="logic3"/>
+    <OMA>
+      <OMS name="prop_theorem" cd="logic3"/>
+      <OMA>
+        <OMS name="implies" cd="logic1"/>
+        <OMV name="H"/>
+        <OMV name="P"/>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+</CD>

@@ -1,0 +1,239 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+
+<CDName> units_time1 </CDName>
+<CDURL> http://www.openmath.org/cd/units_time1.ocd </CDURL>
+<CDReviewDate> 2004-04-01 </CDReviewDate>
+<CDStatus> experimental </CDStatus>
+<CDDate> 2003-08-21 </CDDate>
+<CDVersion> 1 </CDVersion>
+<CDRevision> 0 </CDRevision>
+<CDUses>
+  <CDName>interval1</CDName>
+  <CDName>arith1</CDName>
+  <CDName>relations1</CDName>
+  <CDName>set1</CDName>
+</CDUses>
+
+<Description> 
+This CD defines symbols to represent the basic physical units of time in the SI
+(syst\'eme international) system of units. and therefore most other modern
+systems such as "Imperial" and "U.S.".
+</Description>
+
+<CDDefinition>
+<Name> second </Name>
+<Description>
+This symbol represents the measure of one second of time. This is the standard
+SI unit measure for time.
+</Description>
+<CMP> This is a base unit for the SI system </CMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> minute </Name>
+<Description>
+This symbol represents the measure of one minute of time.
+</Description>
+
+<CMP> 1 minute = 60 seconds </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS name="eq" cd="relations1"/>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMI> 1 </OMI>
+    <OMS name="minute" cd="units_time1"/>
+  </OMA>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMI> 60 </OMI>
+    <OMS name="second" cd="units_time1"/>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> hour </Name>
+<Description>
+This symbol represents the measure of one hour of time.
+</Description>
+
+<CMP> 1 hour = 60 minutes </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS name="eq" cd="relations1"/>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMI> 1 </OMI>
+    <OMS name="hour" cd="units_time1"/>
+  </OMA>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMI> 60 </OMI>
+    <OMS name="minute" cd="units_time1"/>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> day </Name>
+<Description>
+This symbol represents the measure of one day of time.
+The definitions below ignore the possibilities of "leap seconds".
+</Description>
+
+<CMP> 1 day = 24 hours </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS name="eq" cd="relations1"/>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMI> 1 </OMI>
+    <OMS name="day" cd="units_time1"/>
+  </OMA>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMI> 24 </OMI>
+    <OMS name="hour" cd="units_time1"/>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> week </Name>
+<Description>
+This symbol represents the measure of one week of time.
+</Description>
+
+<CMP> 1 week = 7 days </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS name="eq" cd="relations1"/>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMI> 1 </OMI>
+    <OMS name="week" cd="units_time1"/>
+  </OMA>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMI> 7 </OMI>
+    <OMS name="day" cd="units_time1"/>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> calendar_month </Name>
+<Description>
+This symbol represents the measure of one month of (calendar) time.
+</Description>
+
+<CMP> 1 month = 28..31 days </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS name="in" cd="set1"/>
+  <OMA>
+    <OMS name="divide" cd="arith1"/>
+    <OMS name="calendar_month" cd="units_time1"/>
+    <OMS name="day" cd="units_time1"/>
+  </OMA>
+  <OMA>
+    <OMS cd="interval1" name="integer_interval"/>
+    <OMI> 28 </OMI>
+    <OMI> 31 </OMI>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> calendar_year </Name>
+<Description>
+This symbol represents the measure of one year of (calendar) time.
+</Description>
+
+<CMP> 1 year = 365..366 days </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS name="in" cd="set1"/>
+  <OMA>
+    <OMS name="divide" cd="arith1"/>
+    <OMS name="calendar_year" cd="units_time1"/>
+    <OMS name="day" cd="units_time1"/>
+  </OMA>
+  <OMA>
+    <OMS cd="interval1" name="integer_interval"/>
+    <OMI> 365 </OMI>
+    <OMI> 366 </OMI>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+
+<CMP> 1 year = 12 months </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS name="eq" cd="relations1"/>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMI> 1 </OMI>
+    <OMS name="calendar_year" cd="units_time1"/>
+  </OMA>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMI> 12 </OMI>
+    <OMS name="calendar_month" cd="units_time1"/>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+
+</CDDefinition>
+
+</CD>

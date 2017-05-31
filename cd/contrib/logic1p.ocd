@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!-- $Id: logic1p.tfb,v 1.1.1.1 2002/10/04 12:50:39 taka Exp $ -->
+
+<CDDefinition>
+<Name>  where </Name>
+<Description>
+  The word "where" is often used in mathematical expressions
+  to set variables or to say side conditions.
+  CDname logic1.implies can be used for these purposes, but 
+  "where" will be more intuitive and more friendly expression
+  for formula book writers.
+</Description>
+
+<CMP> <tex> $ x^n  \mbox{where} n=10 </tex> </CMP>
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA><OMS cd="logic1p" name="where"/>
+    <OMBIND>
+      <OMS cd="fns1" name="lambda"/>
+      <OMBVAR>
+        <OMV name="n"/>
+      </OMBVAR>
+      <OMA><OMS cd="arith1" name="power"/>
+        <OMV name="x"/>
+        <OMV name="n"/>
+      </OMA>
+    </OMBIND>
+    <OMA><OMS cd="relation1" name="eq"/>
+      <OMV name="n"/>
+      <OMI> 10 </OMI>
+    </OMA>
+  </OMA>
+</OMOBJ>
+
+</FMP>
+</CDDefinition>
+

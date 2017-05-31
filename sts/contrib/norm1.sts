@@ -1,0 +1,30 @@
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="norm1">
+<CDSComment>
+</CDSComment>
+
+<Signature name="L_norm" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS name="mapsto" cd="sts"/>
+  <OMS name="Numerical_Value" cd="sts"/>
+  <OMS name="Object" cd="sts"/>
+  <OMS name="Numerical_Value" cd="sts"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="L_infinity_norm" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS name="mapsto" cd="sts"/>
+  <OMS name="Object" cd="sts"/>
+  <OMS name="Numerical_Value" cd="sts"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="Euclidean_norm" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS name="mapsto" cd="sts"/>
+  <OMS name="Object" cd="sts"/>
+  <OMS name="Numerical_Value" cd="sts"/>
+</OMOBJ>
+</Signature>
+
+</CDSignatures>

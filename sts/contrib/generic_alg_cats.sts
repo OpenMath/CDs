@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts2" cd="generic_alg_cats">
+
+<CDSComment>
+Date:  2002-07-06
+Author: Bill Naylor
+</CDSComment>
+
+  <Signature name="monoid">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMS cd="meta_cats" name="Category"/>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="Abelian_monoid">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMS cd="meta_cats" name="Category"/>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="ordered_monoid">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMS cd="meta_cats" name="Category"/>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="ordered_Abelian_monoid">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMS cd="meta_cats" name="Category"/>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="groupoid">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMS cd="meta_cats" name="Category"/>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="semigroup">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMS cd="meta_cats" name="Category"/>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="Abelian_semigroup">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMS cd="meta_cats" name="Category"/>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="group">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMS cd="meta_cats" name="Category"/>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="ordered_group">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMS cd="meta_cats" name="Category"/>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="Abelian_group">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMS cd="meta_cats" name="Category"/>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="ordered_Abelian_group">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMS cd="meta_cats" name="Category"/>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="ringoid">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMS cd="meta_cats" name="Category"/>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="ring">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMS cd="meta_cats" name="Category"/>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="ordered_ring">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMS cd="meta_cats" name="Category"/>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="non_commutative_ring">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMS cd="meta_cats" name="Category"/>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="Euclidean_domain">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMS cd="meta_cats" name="Category"/>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="field">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMS cd="meta_cats" name="Category"/>
+    </OMOBJ>
+  </Signature>
+
+  <Signature name="integral_domain">
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMS cd="meta_cats" name="Category"/>
+    </OMOBJ>
+  </Signature>
+</CDSignatures>

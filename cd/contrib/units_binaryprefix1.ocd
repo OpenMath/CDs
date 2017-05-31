@@ -1,0 +1,260 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+
+<CDName> units_binaryprefix1 </CDName>
+<CDURL> http://www.openmath.org/cd/units_binaryprefix1.ocd </CDURL>
+<CDReviewDate> 2004-04-01 </CDReviewDate>
+<CDStatus> experimental </CDStatus>
+<CDDate> 2003-08-22 </CDDate>
+<CDVersion> 1 </CDVersion>
+<CDRevision> 0 </CDRevision>
+<CDUses>
+  <CDName>arith1</CDName>
+  <CDName>relations1</CDName>
+  <CDName>units_ops1</CDName>
+</CDUses>
+
+<Description> 
+This CD defines symbols for the IEC binary prefixes to indicate unit
+multiplication by a power of 2.
+</Description>
+
+
+    <CDDefinition>
+      <Name> exbi </Name>
+      <Description>
+This symbol represents the fact that the subsequent unit has been 
+effectively multiplied by $2^60$. The full technical name 
+is exabinary.
+      </Description>
+      <CMP> This is unit multiplication by $2^60$ </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS name="eq" cd="relations1"/>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMI> 1 </OMI>
+    <OMA>
+      <OMS name="prefix" cd="units_ops1"/>
+      <OMS name="exbi" cd="units_binaryprefix1"/>
+      <OMV name="unit"/>
+    </OMA>
+  </OMA>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMA>
+      <OMS name="power" cd="arith1"/>
+      <OMI> 2 </OMI>
+      <OMI> 60 </OMI>
+    </OMA>
+    <OMV name="unit"/>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+    </CDDefinition>
+  
+    <CDDefinition>
+      <Name> pebi </Name>
+      <Description>
+This symbol represents the fact that the subsequent unit has been 
+effectively multiplied by $2^50$. The full technical name 
+is petabinary.
+      </Description>
+      <CMP> This is unit multiplication by $2^50$ </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS name="eq" cd="relations1"/>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMI> 1 </OMI>
+    <OMA>
+      <OMS name="prefix" cd="units_ops1"/>
+      <OMS name="pebi" cd="units_binaryprefix1"/>
+      <OMV name="unit"/>
+    </OMA>
+  </OMA>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMA>
+      <OMS name="power" cd="arith1"/>
+      <OMI> 2 </OMI>
+      <OMI> 50 </OMI>
+    </OMA>
+    <OMV name="unit"/>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+    </CDDefinition>
+  
+    <CDDefinition>
+      <Name> tebi </Name>
+      <Description>
+This symbol represents the fact that the subsequent unit has been 
+effectively multiplied by $2^40$. The full technical name 
+is terabinary.
+      </Description>
+      <CMP> This is unit multiplication by $2^40$ </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS name="eq" cd="relations1"/>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMI> 1 </OMI>
+    <OMA>
+      <OMS name="prefix" cd="units_ops1"/>
+      <OMS name="tebi" cd="units_binaryprefix1"/>
+      <OMV name="unit"/>
+    </OMA>
+  </OMA>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMA>
+      <OMS name="power" cd="arith1"/>
+      <OMI> 2 </OMI>
+      <OMI> 40 </OMI>
+    </OMA>
+    <OMV name="unit"/>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+    </CDDefinition>
+  
+    <CDDefinition>
+      <Name> gibi </Name>
+      <Description>
+This symbol represents the fact that the subsequent unit has been 
+effectively multiplied by $2^30$. The full technical name 
+is gigabinary.
+      </Description>
+      <CMP> This is unit multiplication by $2^30$ </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS name="eq" cd="relations1"/>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMI> 1 </OMI>
+    <OMA>
+      <OMS name="prefix" cd="units_ops1"/>
+      <OMS name="gibi" cd="units_binaryprefix1"/>
+      <OMV name="unit"/>
+    </OMA>
+  </OMA>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMA>
+      <OMS name="power" cd="arith1"/>
+      <OMI> 2 </OMI>
+      <OMI> 30 </OMI>
+    </OMA>
+    <OMV name="unit"/>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+    </CDDefinition>
+  
+    <CDDefinition>
+      <Name> mebi </Name>
+      <Description>
+This symbol represents the fact that the subsequent unit has been 
+effectively multiplied by $2^20$. The full technical name 
+is megabinary.
+      </Description>
+      <CMP> This is unit multiplication by $2^20$ </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS name="eq" cd="relations1"/>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMI> 1 </OMI>
+    <OMA>
+      <OMS name="prefix" cd="units_ops1"/>
+      <OMS name="mebi" cd="units_binaryprefix1"/>
+      <OMV name="unit"/>
+    </OMA>
+  </OMA>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMA>
+      <OMS name="power" cd="arith1"/>
+      <OMI> 2 </OMI>
+      <OMI> 20 </OMI>
+    </OMA>
+    <OMV name="unit"/>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+    </CDDefinition>
+  
+    <CDDefinition>
+      <Name> kibi </Name>
+      <Description>
+This symbol represents the fact that the subsequent unit has been 
+effectively multiplied by $2^10$. The full technical name 
+is kilobinary.
+      </Description>
+      <CMP> This is unit multiplication by $2^10$ </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS name="eq" cd="relations1"/>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMI> 1 </OMI>
+    <OMA>
+      <OMS name="prefix" cd="units_ops1"/>
+      <OMS name="kibi" cd="units_binaryprefix1"/>
+      <OMV name="unit"/>
+    </OMA>
+  </OMA>
+  <OMA>
+    <OMS name="times" cd="arith1"/>
+    <OMA>
+      <OMS name="power" cd="arith1"/>
+      <OMI> 2 </OMI>
+      <OMI> 10 </OMI>
+    </OMA>
+    <OMV name="unit"/>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+    </CDDefinition>
+  
+
+</CD>
+  

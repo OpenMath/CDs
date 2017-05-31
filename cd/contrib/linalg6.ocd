@@ -1,0 +1,327 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+
+<CDName> linalg6 </CDName>
+<CDURL> http://www.openmath.org/cd/linalg6.ocd </CDURL>
+<CDReviewDate> 2005-01-01 </CDReviewDate>
+<CDStatus> experimental </CDStatus>
+<CDDate> 2002-11-15 </CDDate>
+<CDVersion> 0 </CDVersion>
+<CDRevision> 0 </CDRevision>
+
+<Description>
+Symbols for describing sparse matrices
+</Description>
+
+<CDDefinition>
+  <Name> sparseMatrixElement1 </Name>
+  <Description>
+This symbol may be used to represent a non-zero element of a sparse
+matrix in the following way. It takes three arguments, the first of
+which represents the column index, the second of which represents the
+row index and the third represents the value. The indexing is one
+based; that is an element in the top left position of the matrix will
+have first and second indices of 1,1 respectively. Applications of this
+symbol will be expected as arguments of the symbol sparseMatrix in
+this content dictionary.
+  </Description>
+</CDDefinition>
+
+<CDDefinition>
+  <Name> sparseMatrixElement2 </Name>
+  <Description>
+This symbol may be used to represent a non-zero element of a sparse
+matrix in the following way. It takes two arguments, the first of
+which represents the column index, the second of which represents the
+value of the element. The row index is deduced from the index of the
+sparseMatrixRow symbols of which applications of this symbol are
+arguments. Applications of this symbol occur as arguments of arguments
+of the symbol nonZeroRowSparseMatrix only.
+  </Description>
+</CDDefinition>
+
+<CDDefinition>
+  <Name> sparseMatrixElement3 </Name>
+  <Description>
+This symbol may be used to represent a non-zero element of a sparse
+matrix over Z_2 in the following way. The first and second arguments
+are the column and row indices of the non-zero elements respectively
+i.e. elements with value 1. Applications of this symbol occur as
+arguments of arguments of the symbol sparseMatrix01 only.
+  </Description>
+</CDDefinition>
+
+<CDDefinition>
+  <Name> sparseMatrixElement4 </Name>
+  <Description>
+This symbol may be used to represent a non-zero element of a sparse
+matrix over Z_2 in the following way. The single argument is the
+column index of non-zero elements of the matrix, i.e. elements with
+value 1. Applications of this symbol occur as arguments of arguments
+of the symbol nonZeroRowSparseMatrix01 only.
+  </Description>
+</CDDefinition>
+
+<CDDefinition>
+  <Name> sparseMatrixRow </Name>
+  <Description>
+This symbol may be used to represent rows of sparse matrices, it is a
+fairly general symbol in that it may be used to represent rows of any
+type of sparse matrix from this CD. However the particular type of
+sparse matrix must have as elements symbols of the corresponding type,
+as described in that symbols description.
+  </Description>
+</CDDefinition>
+
+<CDDefinition>
+  <Name> sparseMatrix </Name>
+  <Description>
+This symbol may be used for representing matrices, it is designed for
+efficiently representing sparse matrices. The symbol is n+2 ary, where
+the first argument is the number of rows in the matrix, the second
+argument is the number of columns in the matrix and n is the
+number of non-zero entries. The following arguments must be
+applications of the symbol sparseMatrixElement1.
+
+Any non-specified entry is implicitly zero.
+  </Description>
+<Example>
+The matrix
+$$
+\left ( \begin{array}{ccccc}
+5&amp;0&amp;0&amp;0&amp;0\\
+0&amp;0&amp;6&amp;0&amp;0\\
+0&amp;0&amp;0&amp;0&amp;0\\
+0&amp;0&amp;0&amp;0&amp;1
+\end{array}\right )
+$$
+may be represented as:
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="linalg6" name="sparseMatrix"/>
+      <OMI>4</OMI><OMI>5</OMI>
+      <OMA>
+        <OMS cd="linalg6" name="sparseMatrixElement1"/>
+        <OMI>1</OMI><OMI>1</OMI>
+        <OMI>5</OMI>
+      </OMA>
+      <OMA>
+        <OMS cd="linalg6" name="sparseMatrixElement1"/>
+        <OMI>2</OMI><OMI>3</OMI>
+        <OMI>6</OMI>
+      </OMA>
+      <OMA>
+        <OMS cd="linalg6" name="sparseMatrixElement1"/>
+        <OMI>4</OMI><OMI>5</OMI>
+        <OMI>1</OMI>
+      </OMA>
+    </OMA>
+  </OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+  <Name> nonZeroRowSparseMatrix </Name>
+  <Description>
+This symbol may be used for representing matrices, it is designed for
+efficiently representing sparse matrices where every row has at least
+one non-zero entry. This is an n+1 ary symbol, where n is the number of
+rows in the matrix. The first argument must be the number of columns
+in the matrix, every following argument of the symbol must be an
+application of a sparseMatrixRow symbol which has arguments which are
+sparseMatrixElement2, one sparseMatrixElement2 element for each row in
+the matrix, in the order in which they occur in the matrix.
+
+Any non-specified entry is implicitly zero.
+  </Description>
+  <Example>
+The matrix
+$$
+\left ( \begin{array}{ccccc}
+5&amp;0&amp;0&amp;0&amp;0\\
+0&amp;0&amp;2&amp;0&amp;0\\
+1&amp;0&amp;0&amp;0&amp;0\\
+0&amp;0&amp;0&amp;0&amp;1
+\end{array}\right )
+$$
+may be represented as:
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="linalg6" name="nonZeroRowSparseMatrix"/>
+        <OMI>5</OMI>
+        <OMA>
+          <OMS cd="linalg6" name="sparseMatrixRow"/>
+          <OMA>
+            <OMS cd="linalg6" name="sparseMatrixElement2"/>
+            <OMI>1</OMI><OMI>5</OMI>
+          </OMA>
+        </OMA>
+        <OMA>
+          <OMS cd="linalg6" name="sparseMatrixRow"/>
+          <OMA>
+            <OMS cd="linalg6" name="sparseMatrixElement2"/>
+            <OMI>3</OMI><OMI>2</OMI>
+          </OMA>
+        </OMA>
+        <OMA>
+          <OMS cd="linalg6" name="sparseMatrixRow"/>
+          <OMA>
+            <OMS cd="linalg6" name="sparseMatrixElement2"/>
+            <OMI>1</OMI><OMI>1</OMI>
+          </OMA>
+        </OMA>
+        <OMA>
+          <OMS cd="linalg6" name="sparseMatrixRow"/>
+          <OMA>
+            <OMS cd="linalg6" name="sparseMatrixElement2"/>
+            <OMI>5</OMI><OMI>1</OMI>
+          </OMA>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Example>
+</CDDefinition>
+
+<CDDefinition>
+  <Name> sparseMatrix01 </Name>
+  <Description>
+This symbol may be used for representing matrices which have all entries 
+in the modular field Z_2, i.e. 1 or 0. It allows efficient representation 
+of sparse matrices, more so than the 'sparseMatrix' symbol, since the 
+value of the entries with values of 1 need not be stored, only their 
+positions.
+
+The symbol is n+2 ary, where the first argument is the number of rows in 
+the matrix, the second argument is the number of columns in the matrix. 
+The following arguments are sparseMatrixElement3 elements described in
+this content dictionary.
+
+Any non-specified entry is implicitly zero.
+  </Description>
+<Example>
+The matrix
+$$
+\left ( \begin{array}{ccccc}
+1&amp;0&amp;0&amp;0&amp;0\\
+0&amp;0&amp;1&amp;0&amp;0\\
+0&amp;0&amp;0&amp;0&amp;0\\
+0&amp;0&amp;0&amp;0&amp;1
+\end{array}\right )
+$$
+may be represented as:
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="linalg6" name="sparseMatrix01"/>
+      <OMI>4</OMI><OMI>5</OMI>
+      <OMA>
+        <OMS cd="linalg6" name="sparseMatrixElement3"/>
+        <OMI>1</OMI><OMI>1</OMI>
+      </OMA>
+      <OMA>
+        <OMS cd="linalg6" name="sparseMatrixElement3"/>
+        <OMI>2</OMI><OMI>3</OMI>
+      </OMA>
+      <OMA>
+        <OMS cd="linalg6" name="sparseMatrixElement3"/>
+        <OMI>4</OMI><OMI>5</OMI>
+      </OMA>
+    </OMA>
+  </OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+  <Name> nonZeroRowSparseMatrix01 </Name>
+  <Description>
+This symbol may be used to represent matrices which have no zero rows,
+and for which every row is in Z_2 efficiently. The first argument is
+the number of columns in the matrix, the following arguments are
+sparseMatrixRow elements where the arguments are sparseMatrixElement4
+elements.
+
+Any non-specified entry is implicitly zero.
+  </Description>
+  <Example>
+The matrix
+$$
+\left ( \begin{array}{ccccc}
+1&amp;0&amp;0&amp;0&amp;1\\
+0&amp;0&amp;1&amp;0&amp;0\\
+0&amp;0&amp;0&amp;1&amp;0\\
+0&amp;0&amp;0&amp;0&amp;1
+\end{array}\right )
+$$
+may be represented as:
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="linalg6" name="nonZeroRowSparseMatrix01"/>
+        <OMI>5</OMI>
+        <OMA>
+          <OMS cd="linalg6" name="sparseMatrixRow"/>
+          <OMA>
+            <OMS cd="linalg6" name="sparseMatrixElement4"/>
+            <OMI>1</OMI>
+          </OMA>
+          <OMA>
+            <OMS cd="linalg6" name="sparseMatrixElement4"/>
+            <OMI>5</OMI>
+          </OMA>
+        </OMA>
+        <OMA>
+          <OMS cd="linalg6" name="sparseMatrixRow"/>
+          <OMA>
+            <OMS cd="linalg6" name="sparseMatrixElement4"/>
+            <OMI>3</OMI>
+          </OMA>
+        </OMA>
+        <OMA>
+          <OMS cd="linalg6" name="sparseMatrixRow"/>
+          <OMA>
+            <OMS cd="linalg6" name="sparseMatrixElement4"/>
+            <OMI>4</OMI>
+          </OMA>
+        </OMA>
+        <OMA>
+          <OMS cd="linalg6" name="sparseMatrixRow"/>
+          <OMA>
+            <OMS cd="linalg6" name="sparseMatrixElement4"/>
+            <OMI>5</OMI>
+          </OMA>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+
+  </Example>
+</CDDefinition>
+</CD>

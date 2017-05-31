@@ -1,0 +1,388 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+
+<CDName> dimensions1 </CDName>
+<CDURL> http://www.openmath.org/cd/dimensions1.ocd </CDURL>
+<CDReviewDate> 2004-04-01 </CDReviewDate>
+<CDStatus> experimental </CDStatus>
+<CDDate> 2003-08-20 </CDDate>
+<CDVersion> 4 </CDVersion>
+<CDRevision> 0 </CDRevision>
+<CDUses>
+<CDName>norm1</CDName>
+<CDName>arith1</CDName>
+<CDName>relation1</CDName>
+</CDUses>
+
+<Description> 
+This CD defines symbols which represent basic physical dimensions.
+</Description>
+
+<CDDefinition>
+<Name> length </Name>
+<Description>
+This symbol represents the length physical dimension.
+</Description>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> area </Name>
+<Description>
+This symbol represents the area physical dimension.
+</Description>
+
+<CMP> area = length*length </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMS cd="dimensions1" name="area"/>
+    <OMA>
+      <OMS cd="arith1" name="times"/>
+      <OMS cd="dimensions1" name="length"/>
+      <OMS cd="dimensions1" name="length"/>
+    </OMA>
+  </OMA>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> volume </Name>
+<Description>
+This symbol represents the volume physical dimension.
+</Description>
+
+<CMP> volume = length*length*length </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMS cd="dimensions1" name="volume"/>
+    <OMA>
+      <OMS cd="arith1" name="times"/>
+      <OMS cd="dimensions1" name="length"/>
+      <OMS cd="dimensions1" name="length"/>
+      <OMS cd="dimensions1" name="length"/>
+    </OMA>
+  </OMA>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> speed </Name>
+<Description>
+This symbol represents the speed physical dimension. It is the size of the
+derivative of distance with respect to time.
+</Description>
+
+<CMP>speed = length/time</CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMS cd="dimensions1" name="speed"/>
+    <OMA>
+      <OMS cd="arith1" name="divide"/>
+      <OMS cd="dimensions1" name="length"/>
+      <OMS cd="dimensions1" name="time"/>
+    </OMA>
+  </OMA>
+</OMOBJ></FMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> velocity </Name>
+<Description>
+This symbol represents the velocity physical dimension. It is the
+derivative of (vector) distance with respect to time.
+</Description>
+
+<CMP> velocity = displacement/second</CMP>
+<CMP> speed is the Euclidean norm of velocity </CMP>
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS name="eq" cd="relation1"/>>
+    <OMS name="speed" cd="dimensions1"/>>
+    <OMA>
+      <OMS name="Euclidean_norm" cd="norm1"/>>
+      <OMS name="velocity" cd="dimensions1"/>>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> acceleration </Name>
+<Description>
+This symbol represents the acceleration physical dimension. It is the
+second derivative of distance with respect to time.
+</Description>
+
+<CMP>acceleration = length/(time^2)</CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMS cd="dimensions1" name="acceleration"/>
+    <OMA>
+      <OMS cd="arith1" name="divide"/>
+      <OMS cd="dimensions1" name="length"/>
+      <OMA>
+        <OMS cd="arith1" name="divide"/>
+        <OMS cd="dimensions1" name="time"/>
+	<OMI> 2 </OMI>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ></FMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> time </Name>
+<Description>
+This symbol represents the time physical dimension.
+Note that the main units for time are defined in the units_time1 CD.
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name> mass </Name>
+<Description>
+This symbol represents the mass physical dimension.
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name> force </Name>
+<Description>
+This symbol represents the force physical dimension. 
+</Description>
+
+<CMP> force = mass*length/time^2 </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMS cd="dimensions1" name="force"/>
+    <OMA>
+      <OMS cd="arith1" name="times"/>
+      <OMS cd="dimensions1" name="mass"/>
+      <OMS cd="dimensions1" name="acceleration"/>
+    </OMA>
+  </OMA>
+</OMOBJ></FMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> temperature </Name>
+<Description>
+This symbol represents the temperature physical dimension.
+</Description>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> pressure </Name>
+<Description>
+This symbol represents the pressure physical dimension.
+</Description>
+
+<CMP> pressure = force/area </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMS cd="dimensions1" name="pressure"/>
+    <OMA>
+      <OMS cd="arith1" name="divide"/>
+      <OMS cd="dimensions1" name="force"/>
+      <OMS cd="dimensions1" name="area"/>
+    </OMA>
+  </OMA>
+</OMOBJ></FMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> charge </Name>
+<Description>
+This symbol represents the charge physical dimension.
+</Description>
+
+<CMP> charge = current/voltage </CMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> current </Name>
+<Description>
+This symbol represents the current physical dimension.
+</Description>
+
+<CMP> current = voltage*charge </CMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> voltage </Name>
+<Description>
+This symbol represents the voltage physical dimension.
+</Description>
+
+<CMP> voltage = current/charge </CMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> resistance </Name>
+<Description>
+This symbol represents the resistance physical dimension, it is the
+resistance that an electrical circuit has to flow of charge.
+</Description>
+
+<CMP> resistance = voltage/current </CMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> density </Name>
+<Description>
+This symbol represents the density physical dimension, it is the mass
+per unit volume.
+</Description>
+
+<CMP> density = mass/volume </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMS cd="dimensions1" name="density"/>
+    <OMA>
+      <OMS cd="arith1" name="divide"/>
+      <OMS cd="dimensions1" name="mass"/>
+      <OMS cd="dimensions1" name="volume"/>
+    </OMA>
+  </OMA>
+</OMOBJ></FMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> energy </Name>
+<Description>
+This symbol represents the energy physical dimension.
+</Description>
+
+<CMP> energy = mass*length^2/time^2 </CMP>
+<CMP> energy = force*length </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMS cd="dimensions1" name="energy"/>
+    <OMA>
+      <OMS cd="arith1" name="times"/>
+      <OMS cd="dimensions1" name="force"/>
+      <OMS cd="dimensions1" name="length"/>
+    </OMA>
+  </OMA>
+</OMOBJ></FMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> concentration </Name>
+<Description>
+This symbol represents the concentration physical dimension, it is the
+amount of a substance in a volume.
+</Description>
+
+<CMP> concentration = mass/length^3 </CMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> momentum </Name>
+<Description>
+This symbol represents the momentum physical dimension, it is mass
+times velocity.
+</Description>
+
+<CMP> momentum = mass*velocity </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMS cd="dimensions1" name="momentun"/>
+    <OMA>
+      <OMS cd="arith1" name="times"/>
+      <OMS cd="dimensions1" name="mass"/>
+      <OMS cd="dimensions1" name="velocity"/>
+    </OMA>
+  </OMA>
+</OMOBJ></FMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> power </Name>
+<Description>
+This symbol represents the power physical dimension, it is energy
+per time.
+</Description>
+
+<CMP> power = energy/time </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMS cd="dimensions1" name="power"/>
+    <OMA>
+      <OMS cd="arith1" name="divide"/>
+      <OMS cd="dimensions1" name="energy"/>
+      <OMS cd="dimensions1" name="time"/>
+    </OMA>
+  </OMA>
+</OMOBJ></FMP>
+
+</CDDefinition>
+
+</CD>

@@ -1,0 +1,181 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+
+<CDName> interval_types </CDName>
+<CDURL> http://www.openmath.org/cd/interval_types.ocd </CDURL>
+<CDReviewDate> 2005-04-01 </CDReviewDate>
+<CDStatus> experimental </CDStatus>
+<CDDate> 2002-08-25 </CDDate>
+<CDVersion> 0 </CDVersion>
+<CDRevision> 0 </CDRevision>
+<CDUses>
+  <CDName> aggregate_cats </CDName>
+  <CDName> meta_cats </CDName>
+</CDUses>
+<Description>
+A CD of basic interval type constructors. This CD holds
+constructors of individual instances of the different types of intervals.
+</Description>
+
+<CDDefinition>
+  <Name> intervalType </Name>
+  <Description>
+This symbol represents the type of intervals.
+  </Description>
+
+  <CMP> interval type has set type </CMP>
+
+  <FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="meta_cats" name="has"/>
+      <OMS cd="interval_types" name="intervalType"/>
+      <OMS cd="aggregate_cats" name="setType"/>
+    </OMA>
+  </OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+  <Name> integerIntervalType </Name>
+  <Description>
+This symbol represents the type of integer intervals.
+  </Description>
+
+  <CMP> integer interval type has rational interval type </CMP>
+
+  <FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="meta_cats" name="has"/>
+      <OMS cd="interval_types" name="integerIntervalType"/>
+      <OMS cd="interval_types" name="rationalIntervalType"/>
+    </OMA>
+  </OMOBJ></FMP>
+
+  <CMP> integer interval type has discrete set type </CMP>
+
+  <FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="meta_cats" name="has"/>
+      <OMS cd="interval_types" name="integerIntervalType"/>
+      <OMS cd="aggregate_cats" name="discreteSetType"/>
+    </OMA>
+  </OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+  <Name> rationalIntervalType </Name>
+  <Description>
+This symbol represents the type of rational intervals.
+  </Description>
+
+  <CMP> rational interval type has algebraic interval type </CMP>
+
+  <FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="meta_cats" name="has"/>
+      <OMS cd="interval_types" name="rationalIntervalType"/>
+      <OMS cd="interval_types" name="algebraicIntervalType"/>
+    </OMA>
+  </OMOBJ></FMP>
+
+  <CMP> rational interval type has continuous set type </CMP>
+
+  <FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="meta_cats" name="has"/>
+      <OMS cd="interval_types" name="rationalIntervalType"/>
+      <OMS cd="aggregate_cats" name="continuousSetType"/>
+    </OMA>
+  </OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+  <Name> algebraicIntervalType </Name>
+  <Description>
+This symbol represents the type of algebraic intervals.
+  </Description>
+
+  <CMP> algebraic interval type has real interval type </CMP>
+
+  <FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="meta_cats" name="has"/>
+      <OMS cd="interval_types" name="algebraicIntervalType"/>
+      <OMS cd="interval_types" name="realIntervalType"/>
+    </OMA>
+  </OMOBJ></FMP>
+
+  <CMP> algebraic interval type has continuous set type </CMP>
+
+  <FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="meta_cats" name="has"/>
+      <OMS cd="interval_types" name="algebraicIntervalType"/>
+      <OMS cd="aggregate_cats" name="continuousSetType"/>
+    </OMA>
+  </OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+  <Name> realIntervalType </Name>
+  <Description>
+This symbol represents the type of real intervals.
+  </Description>
+
+  <CMP> real interval type has interval type </CMP>
+
+  <FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="meta_cats" name="has"/>
+      <OMS cd="interval_types" name="realIntervalType"/>
+      <OMS cd="interval_types" name="intervalType"/>
+    </OMA>
+  </OMOBJ></FMP>
+
+  <CMP> real interval type has continuous set type </CMP>
+
+  <FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA>
+      <OMS cd="meta_cats" name="has"/>
+      <OMS cd="interval_types" name="realIntervalType"/>
+      <OMS cd="aggregate_cats" name="continuousSetType"/>
+    </OMA>
+  </OMOBJ></FMP>
+</CDDefinition>
+
+<CDComment>
+maybe we should also include some 'complex interval' symbols,
+could have cartesian varieties, i.e. 'square', as well as polar
+varieties, i.e. 'round'
+</CDComment>
+</CD>

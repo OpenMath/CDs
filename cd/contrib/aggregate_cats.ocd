@@ -1,0 +1,247 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+
+<CDName> aggregate_cats </CDName>
+<CDURL> http://www.openmath.org/cd/aggregate_cats.ocd </CDURL>
+<CDReviewDate> 2005-04-01 </CDReviewDate>
+<CDStatus> experimental </CDStatus>
+<CDDate> 2002-08-25 </CDDate>
+<CDVersion> 0 </CDVersion>
+<CDRevision> 0 </CDRevision>
+<CDUses>
+  <CDName> logic1 </CDName>
+  <CDName> meta_cats </CDName>
+</CDUses>
+<Description>
+A CD of basic aggregate category constructors. This CD holds
+constructors of individual instances of the categories, with
+defining properties of the categories.
+</Description>
+
+<CDDefinition>
+  <Name> aggregateType </Name>
+  <Description>
+This symbol represents a generic type for aggregates (or collections
+of objects.
+  </Description>
+</CDDefinition>
+
+<CDDefinition>
+  <Name> multisetType </Name>
+  <Description>
+This symbol represents the type of multisets.
+  </Description>
+
+  <CMP> multisetType is an aggregate type </CMP>
+
+  <FMP>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="meta_cats" name="has"/>
+        <OMS cd="aggregate_cats" name="multisetType"/>
+        <OMS cd="aggregate_cats" name="aggregateType"/>
+      </OMA>
+    </OMOBJ>
+  </FMP>
+</CDDefinition>
+
+<CDDefinition>
+  <Name> setType </Name>
+  <Description>
+This symbol represents the type of sets.
+  </Description>
+
+  <CMP> setType is an aggregate type </CMP>
+
+  <FMP>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="meta_cats" name="has"/>
+        <OMS cd="aggregate_cats" name="setType"/>
+        <OMS cd="aggregate_cats" name="aggregateType"/>
+      </OMA>
+    </OMOBJ>
+  </FMP>
+</CDDefinition>
+
+<CDDefinition>
+  <Name> finiteSetType </Name>
+  <Description>
+This symbol represents the type of finite sets.
+  </Description>
+
+  <CMP> finite set type has set type </CMP>
+
+  <FMP>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="meta_cats" name="has"/>
+        <OMS cd="aggregate_cats" name="finiteSetType"/>
+        <OMS cd="aggregate_cats" name="setType"/>
+      </OMA>
+    </OMOBJ>
+  </FMP>
+</CDDefinition>
+
+<CDDefinition>
+  <Name> infiniteSetType </Name>
+  <Description>
+This symbol represents the type of infinite sets.
+  </Description>
+
+  <CMP> infinite set type has set type </CMP>
+
+  <FMP>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="meta_cats" name="has"/>
+        <OMS cd="aggregate_cats" name="infiniteSetType"/>
+        <OMS cd="aggregate_cats" name="setType"/>
+      </OMA>
+    </OMOBJ>
+  </FMP>
+
+  <CMP> infinite set type does not have finite set type </CMP>
+</CDDefinition>
+
+<CDDefinition>
+  <Name> continuousSetType </Name>
+  <Description>
+This symbol represents the type of continuous sets.
+  </Description>
+
+  <CMP> continuous set type has set type </CMP>
+
+  <FMP>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="meta_cats" name="has"/>
+        <OMS cd="aggregate_cats" name="continuousSetType"/>
+        <OMS cd="aggregate_cats" name="setType"/>
+      </OMA>
+    </OMOBJ>
+  </FMP>
+</CDDefinition>
+
+<CDDefinition>
+  <Name> piecewiseContinuousSetType </Name>
+  <Description>
+This symbol represents the type of piecewise continuous sets.
+  </Description>
+
+  <CMP> piecewise continuous set type has set type </CMP>
+
+  <FMP>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="meta_cats" name="has"/>
+        <OMS cd="aggregate_cats" name="piecewiseContinuousSetType"/>
+        <OMS cd="aggregate_cats" name="setType"/>
+      </OMA>
+    </OMOBJ>
+  </FMP>
+</CDDefinition>
+
+<CDDefinition>
+  <Name> non_continuousSetType </Name>
+  <Description>
+This symbol represents the type of non-continuous sets.
+  </Description>
+
+  <CMP> non-continuous set type has set type </CMP>
+
+  <FMP>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="meta_cats" name="has"/>
+        <OMS cd="aggregate_cats" name="non_continuousSetType"/>
+        <OMS cd="aggregate_cats" name="setType"/>
+      </OMA>
+    </OMOBJ>
+  </FMP>
+
+  <CMP> non-continuous set type does not have continuous set type </CMP>
+
+  <FMP>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="logic1" name="not"/>
+        <OMA>
+          <OMS cd="meta_cats" name="has"/>
+          <OMS cd="aggregate_cats" name="non_continuousSetType"/>
+          <OMS cd="aggregate_cats" name="continuousSetType"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </FMP>
+</CDDefinition>
+
+<CDDefinition>
+  <Name> discreteSetType </Name>
+  <Description>
+This symbol represents the type of discrete sets.
+  </Description>
+
+  <CMP> discrete set type has set type </CMP>
+
+  <FMP>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="meta_cats" name="has"/>
+        <OMS cd="aggregate_cats" name="discreteSetType"/>
+        <OMS cd="aggregate_cats" name="setType"/>
+      </OMA>
+    </OMOBJ>
+  </FMP>
+
+  <CMP>
+discrete set type does not have continuous set type or piecewise
+continuous set type
+  </CMP>
+
+  <FMP>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA>
+        <OMS cd="logic1" name="not"/>
+        <OMA>
+          <OMS cd="meta_cats" name="has"/>
+          <OMS cd="aggregate_cats" name="discreteSetType"/>
+          <OMS cd="aggregate_cats" name="continuousSetType"/>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </FMP>
+</CDDefinition>
+
+</CD>

@@ -1,0 +1,47 @@
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="airy">
+
+<Signature name="Ai" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+   <OMS name="NumericalValue" cd="sts"/>
+   <OMS name="NumericalValue" cd="sts"/>
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="Bi" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+   <OMS name="NumericalValue" cd="sts"/>
+   <OMS name="NumericalValue" cd="sts"/>
+ </OMA>
+</OMOBJ>
+</Signature>
+
+
+<Signature name="Ai2" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+   <OMS cd="setname1" name="Z"/>
+   <OMS name="NumericalValue" cd="sts"/>
+   <OMS name="NumericalValue" cd="sts"/>
+ </OMA>
+</OMOBJ>
+</Signature>
+
+
+<Signature name="Bi2" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+   <OMS cd="setname1" name="Z"/>
+   <OMS name="NumericalValue" cd="sts"/>
+   <OMS name="NumericalValue" cd="sts"/>
+ </OMA>
+</OMOBJ>
+</Signature>
+
+</CDSignatures>

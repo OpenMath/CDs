@@ -1,0 +1,64 @@
+
+aggregate_cats.sts,19
+<?xml version=1,0
+
+airy.sts,24
+<CDSignatures type=1,0
+
+algebraic_cats.sts,19
+<?xml version=1,0
+
+dimensions1.sts,24
+<CDSignatures type=1,0
+
+generic_alg_cats.sts,19
+<?xml version=1,0
+
+gen_hyperbolic1.sts,24
+<CDSignatures type=1,0
+
+interval_attrs.sts,0
+
+interval_types.sts,19
+<?xml version=1,0
+
+list2.sts,24
+<CDSignatures type=1,0
+
+meta_cats.sts,123
+arguments,18,488
+the second argument apply to the first,19,558
+*** for now *** The first argument is a Category,39,1116
+
+norm1.sts,24
+<CDSignatures type=1,0
+
+numerical1.sts,24
+<CDSignatures type=1,0
+
+polyu.sts,24
+<CDSignatures type=1,0
+
+setname2.sts,24
+<CDSignatures type=1,0
+
+units_binaryprefix1.sts,24
+<CDSignatures type=1,0
+
+units_imperial1.sts,24
+<CDSignatures type=1,0
+
+units_metric1.sts,24
+<CDSignatures type=1,0
+
+units_ops1.sts,24
+<CDSignatures type=1,0
+
+units_siprefix1.sts,24
+<CDSignatures type=1,0
+
+units_sts.sts,24
+<CDSignatures type=1,0
+
+units_time1.sts,24
+<CDSignatures type=1,0

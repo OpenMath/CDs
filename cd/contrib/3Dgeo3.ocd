@@ -1,0 +1,348 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+
+<CDName>3Dgeo3</CDName>
+<CDURL> http://nash.sip.ucm.es/LAD-3D/3DgeoCDs/3Dgeo3.ocd </CDURL>
+<CDReviewDate> 2009-5-17 </CDReviewDate>
+<CDStatus>experimental</CDStatus>
+<CDDate> 2008-1-21 </CDDate>
+<CDVersion> 0 </CDVersion>
+<CDRevision> 0.1 </CDRevision>
+
+<Description> 
+This CD defines symbols for 3-dimensional Euclidean geometry
+</Description> 
+
+<CDDefinition>
+<Name> set_affine_coordinates</Name>
+<Description> 
+Defines the affine coordinates of an a point in 3-dimensional Euclidean space. 
+Takes the point as first argument and the vector with the coordinates as second argument.
+</Description>
+
+
+<Example>
+The description of the point A with affine coordinates (4.8,0.6,10.2) is given by:
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA>
+    <OMS cd="3Dgeo1" name="point"/>
+    <OMV name="A"/>
+    <OMA>
+      <OMS cd="3Dgeo3" name="set_affine_coordinates"/>
+      <OMV name="A"/>
+      <OMA>
+        <OMS cd="linalg2" name="vector"/>
+        <OMF dec =" 4.8 "/>
+        <OMF dec =" 0.6 "/>
+        <OMF dec =" 10.2 "/>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ> 
+
+</Example>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name>distance</Name>
+<Description> 
+The distance between two affine points in 3-dimensional Euclidean space is the Euclidean distance.
+The distance between two geometric objects O and O' in 3-dimensional Euclidean space is the infimum of the
+distances between two affine points, one on O and one on O'.  
+</Description>
+
+<Example> The distance between two points A and B is given by
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA>
+    <OMS cd="3Dgeo3" name="distance"/>
+    <OMV name="A"/>
+    <OMV name="B"/>
+  </OMA>
+</OMOBJ>
+ 
+</Example>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> configuration </Name>
+<Description> 
+The symbol represents a configuration in Euclidean 3-dimensional geometry consisting of a sequence of geometric objects like points, lines,  etc, but also of other configurations.
+</Description>
+
+<Example> The configuration of a point A and a line l incident to A 
+is defined by:
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA>
+    <OMS cd="3Dgeo3" name="configuration"/>
+    <OMA>
+      <OMS cd="3Dgeo1" name="point"/> 
+      <OMV name="A"/>
+    </OMA>
+    <OMA>
+      <OMS cd="3Dgeo1" name="line"/>
+      <OMV name="l"/>
+      <OMA>
+        <OMS cd="3Dgeo2" name="incident"/>
+        <OMV name="A"/>
+        <OMV name="l"/>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+
+</Example>
+
+<Example>
+The following is the description of the configuration consisting on two different points A and B and the line l determined by them:
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA>
+    <OMS cd="3Dgeo3" name="configuration"/>
+    <OMA>
+      <OMS cd="3Dgeo1" name="point"/>
+      <OMV name="A"/>
+    </OMA>
+    <OMA>
+      <OMS cd="3Dgeo1" name="point"/>
+      <OMV name="B"/>
+      <OMA>
+        <OMS cd="logic1" name="not"/>
+        <OMA>
+          <OMS cd="relation1" name="eq"/>
+          <OMV name="A"/>
+          <OMV name="B"/>
+        </OMA>
+      </OMA>
+    </OMA>
+    <OMA>
+      <OMS cd="3Dgeo1" name="line"/>
+      <OMV name="l"/>
+      <OMA>
+        <OMS cd="3Dgeo2" name="incident"/>
+        <OMV name="A"/>
+        <OMV name="l"/>
+      </OMA>
+      <OMA>
+        <OMS cd="3Dgeo2" name="incident"/>
+        <OMV name="B"/>
+        <OMV name="l"/>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+
+</Example>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> assertion </Name>
+<Description> 
+The symbol is a constructor with two arguments.
+Its first argument is a 3-dimensional Euclidean geometry configuration, its second argument a statement about the
+configuration, called thesis.
+When applied to a configuration C and a thesis T, the OpenMath object assertion(C,T)
+expresses the assertion that T holds in C.
+</Description>
+
+<Example> The assertion that two distinct intersecting lines meet in only one point
+can be expressed as follows using the assertion symbol.
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA>
+    <OMS cd="3Dgeo3" name="assertion"/>
+    <OMA>
+      <OMS cd="3Dgeo3" name="configuration"/>
+      <OMA>
+        <OMS cd="3Dgeo1" name="point"/> 
+        <OMV name="A"/>
+      </OMA>
+      <OMA>
+        <OMS cd="3Dgeo1" name="point"/> 
+        <OMV name="B"/>
+      </OMA>
+      <OMA>
+        <OMS cd="3Dgeo1" name="line"/>
+        <OMV name="l"/>
+        <OMA>
+          <OMS cd="3Dgeo2" name="incident"/>
+          <OMV name="A"/>
+          <OMV name="l"/>
+        </OMA>
+        <OMA>
+          <OMS cd="3Dgeo2" name="incident"/>
+          <OMV name="B"/>
+          <OMV name="l"/>
+        </OMA>
+      </OMA>
+      <OMA>
+        <OMS cd="3Dgeo1" name="line"/>
+        <OMV name="m"/>
+        <OMA>
+          <OMS cd="3Dgeo2" name="incident"/>
+          <OMV name="A"/>
+          <OMV name="m"/>
+        </OMA>
+        <OMA>
+          <OMS cd="3Dgeo2" name="incident"/>
+          <OMV name="B"/>
+          <OMV name="m"/>
+        </OMA>
+        <OMA>
+          <OMS cd="logic1" name="not"/>
+          <OMA>
+            <OMS cd="relation1" name="eq"/>
+            <OMV name="l"/>
+            <OMV name="m"/>
+          </OMA>
+        </OMA>
+      </OMA>
+    </OMA>
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMV name="A"/>
+      <OMV name="B"/>
+    </OMA>
+  </OMA>
+</OMOBJ>
+
+</Example>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name>locus</Name>
+<Description> 
+The symbol is used to indicate by a variable the locus set traced by a point T in a 3-dimensional Euclidean geometry configuration C. That is, the set of all points satisfying the conditions imposed on T in the configuration C. 
+The locus may (but need not) be defined by constraints on the point T additional to those in the configuration.
+The symbol takes the variable as the first argument, the tracer point T as second argument and the additional constraints as further arguments.
+</Description>
+
+
+<Example> 
+The following example describes a configuration with the locus set L of all points C equidistant to two given points A and B.
+
+<OMOBJ xmins="http://www.openmath.org/OpenMath" version="2.0"> 
+  <OMA>
+    <OMS cd="3Dgeo3" name="configuration"/>
+    <OMA>
+      <OMS cd="3Dgeo1" name="point"/>
+      <OMV name="A"/>
+    </OMA>
+    <OMA>
+      <OMS cd="3Dgeo1" name="point"/>
+      <OMV name="B"/>
+    </OMA>
+    <OMA>
+      <OMS cd="3Dgeo1" name="point"/>
+      <OMV name="C"/>
+    </OMA>
+    <OMA>
+      <OMS cd="3Dgeo3" name="locus"/>
+      <OMV name="L"/>
+      <OMV name="C"/>
+      <OMA>
+        <OMS cd="relation1" name="eq"/>
+        <OMA>
+          <OMS cd="3Dgeo3" name="distance"/>
+          <OMV name="A"/>
+          <OMV name="C"/>
+        </OMA>
+        <OMA>
+          <OMS cd="3Dgeo3" name="distance"/>
+          <OMV name="B"/>
+          <OMV name="C"/>
+        </OMA>
+      </OMA>
+    </OMA>
+  </OMA> 
+</OMOBJ> 
+
+</Example>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name>discovery</Name>
+<Description> 
+The symbol is used to describe the task of finding necessary conditions for some properties to hold in a geometric configuration in 3-dimensional Euclidean geometry.
+The symbol takes a configuration as the first argument and the properties for which necessary conditions are to be sought as further arguments.
+</Description>
+
+<Example> 
+The following example encodes the task of finding necessary conditions for a point C to be equidistant to the points A and B.
+
+<OMOBJ xmins="http://www.openmath.org/OpenMath" version="2.0"> 
+  <OMA>
+    <OMS cd="3Dgeo3" name="discovery"/>
+    <OMA>
+      <OMS cd="3Dgeo3" name="configuration"/>
+      <OMA>
+        <OMS cd="3Dgeo1" name="point"/>
+        <OMV name="A"/>
+      </OMA>
+      <OMA>
+        <OMS cd="3Dgeo1" name="point"/>
+        <OMV name="B"/>
+      </OMA>
+      <OMA>
+        <OMS cd="3Dgeo1" name="point"/>
+        <OMV name="C"/>
+      </OMA>
+    </OMA> 
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="3Dgeo3" name="distance"/>
+        <OMV name="A"/>
+        <OMV name="C"/>
+      </OMA>
+      <OMA>
+        <OMS cd="3Dgeo3" name="distance"/>
+        <OMV name="B"/>
+        <OMV name="C"/>
+      </OMA>
+   </OMA>
+  </OMA>
+</OMOBJ> 
+
+</Example>
+</CDDefinition>
+
+</CD>

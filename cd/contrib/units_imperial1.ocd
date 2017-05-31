@@ -1,0 +1,244 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+
+<CDName> units_imperial1 </CDName>
+<CDURL> http://www.openmath.org/cd/units_imperial1.ocd </CDURL>
+<CDReviewDate> 2004-04-01 </CDReviewDate>
+<CDStatus> experimental </CDStatus>
+<CDDate> 2003-08-21 </CDDate>
+<CDVersion> 3 </CDVersion>
+<CDRevision> 0 </CDRevision>
+<CDUses>
+<CDName>arith1</CDName>
+<CDName>relation1</CDName>
+<CDName>units_metric1</CDName>
+<CDName>units_time1</CDName>
+<CDName></CDName>
+</CDUses>
+
+<Description> 
+This CD defines symbols to represent imperial standard measures.
+</Description>
+
+<CDDefinition>
+<Name> foot </Name>
+<Description>
+This symbol represents the measure of one foot. This is the standard
+imperial measure for distance.
+</Description>
+<CMP> 1 foot = 0.3048 metres </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS name="eq" cd="relation1"/>
+    <OMA>
+      <OMS name="times" cd="arith1"/>
+      <OMI> 1 </OMI>
+      <OMS name="foot" cd="units_imperial1"/>
+    </OMA>
+    <OMA>
+      <OMS name="times" cd="arith1"/>
+      <OMF> 0.3048 </OMF>
+      <OMS name="metre" cd="units_metric1"/>
+    </OMA>
+  </OMA>
+</OMOBJ></FMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> yard </Name>
+<Description>
+This symbol represents the measure of one yard. This is a
+standard imperial measure for distance, defined in terms of the foot.
+</Description>
+<CMP> 1 yard = 3 feet </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS name="eq" cd="relation1"/>
+    <OMA>
+      <OMS name="times" cd="arith1"/>
+      <OMI> 1 </OMI>
+      <OMS name="yard" cd="units_imperial1"/>
+    </OMA>
+    <OMA>
+      <OMS name="times" cd="arith1"/>
+      <OMI> 3 </OMI>
+      <OMS name="foot" cd="units_imperial1"/>
+    </OMA>
+  </OMA>
+</OMOBJ></FMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> mile </Name>
+<Description>
+This symbol represents the measure of one (land, or statute) mile. This is a
+standard imperial measure for distance, defined in terms of the foot.
+</Description>
+<CMP> 1 mile = 5280 feet </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS name="eq" cd="relation1"/>
+    <OMA>
+      <OMS name="times" cd="arith1"/>
+      <OMI> 1 </OMI>
+      <OMS name="mile" cd="units_imperial1"/>
+    </OMA>
+    <OMA>
+      <OMS name="times" cd="arith1"/>
+      <OMI> 5280 </OMI>
+      <OMS name="foot" cd="units_imperial1"/>
+    </OMA>
+  </OMA>
+</OMOBJ></FMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> acre </Name>
+<Description>
+This symbol represents the measure of one acre. This is a standard
+imperial measure for area.
+</Description>
+<CMP> 1 acre = 4840 square yards </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS name="eq" cd="relation1"/>
+    <OMA>
+      <OMS name="times" cd="arith1"/>
+      <OMI> 1 </OMI>
+      <OMS name="acre" cd="units_imperial1"/>
+    </OMA>
+    <OMA>
+      <OMS name="times" cd="arith1"/>
+      <OMI> 4840 </OMI>
+      <OMA>
+        <OMS name="times" cd="arith1"/>
+        <OMS name="yard" cd="units_imperial1"/>
+        <OMS name="yard" cd="units_imperial1"/>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ></FMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> pint </Name>
+<Description>
+This symbol represents the measure of one (imperial) pint. This is the standard
+imperial measure for volume. See units_us1 for the U.S. pint.
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name> miles_per_hr </Name>
+<Description>
+This symbol represents the measure of one mile per hour. This is a standard
+imperial measure for speed.
+</Description>
+<CMP> 1 miles_per_hr = 1 mile in 1 hour </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS name="eq" cd="relation1"/>
+  <OMS name="miles_per_h" cd="units_imperial1"/>
+  <OMA>
+    <OMS name="divide" cd="arith1"/> 
+    <OMS name="mile" cd="units_imperial1"/> 
+    <OMS name="hour" cd="units_time1"/> 
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> miles_per_hr_sqrd </Name>
+<Description>
+This symbol represents the measure of one mile per hour
+squared. This is a standard imperial measure for acceleration.
+</Description>
+<CMP> 1 miles_per_hr_sqrd = 1 mile_per_hr (change) in 1 hour </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA>
+  <OMS name="eq" cd="relation1"/>
+  <OMS name="miles_per_h" cd="units_imperial1"/>
+  <OMA>
+    <OMS name="divide" cd="arith1"/> 
+    <OMS name="mile_per_hr" cd="units_imperial1"/> 
+    <OMS name="hour" cd="units_time1"/> 
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> pound_mass </Name>
+<Description>
+This symbol represents the measure of the mass which weighs one pound
+under the influence of standard gravity.
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name> pound_force </Name>
+<Description>
+This symbol represents the measure of force of one pound.
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name> degree_Fahrenheit </Name>
+<Description>
+This symbol represents the measure of one degree Fahrenheit. This is
+the standard imperial measure for temperature.
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name> bar </Name>
+<Description>
+This symbol represents the measure of one bar. This is the standard
+imperial measure for pressure.
+</Description>
+</CDDefinition>
+
+</CD>

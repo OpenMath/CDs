@@ -1,0 +1,39 @@
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="units_binaryprefix1">
+
+<Signature name="exbi" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="units_sts" name="unit_prefix"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="pebi" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="units_sts" name="unit_prefix"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="tebi" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="units_sts" name="unit_prefix"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="gibi" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="units_sts" name="unit_prefix"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="mebi" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="units_sts" name="unit_prefix"/>
+</OMOBJ>
+</Signature>
+
+<Signature name="kibi" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMS cd="units_sts" name="unit_prefix"/>
+</OMOBJ>
+</Signature>
+
+</CDSignatures>

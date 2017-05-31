@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<!-- $Id: linalg1p.tfb,v 1.1.1.1 2002/10/04 12:50:39 taka Exp $ -->
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDName> linalg1p </CDName>
+<CDURL> http://www.math.kobe-u.ac.jp/OCD/linalg1p.tfb </CDURL>
+<CDReviewDate> 2003-07-30 </CDReviewDate>
+<CDStatus> experimental </CDStatus>
+<CDDate> 2002-07-30 </CDDate>
+<CDVersion> 1 </CDVersion>
+<CDRevision> 0 </CDRevision>
+<CDUses>
+ <!-- official cd's  -->
+ <CDName>arith1</CDName>
+ <CDName>linalg1</CDName>
+ <CDName>linalg4</CDName>
+ <CDName>linalg5</CDName>
+ <CDName>relation1</CDName>
+ <CDName>set1</CDName>
+</CDUses>
+
+<Description> 
+This CD defines symbols for linear algebra used for hypergeon1
+(hypergeometric series of n variables).
+</Description>
+
+<CDDefinition>
+<Name>  plus_part </Name>
+<Description>
+  The argument is a vector. It replaces negative elements in the vector 
+  to zero.
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name>   minus_part </Name>
+<Description>
+  The argument is a vector. It replaces positive elements in the vector 
+  to zero and negative elements to their absolute values.
+</Description>
+
+<CMP> <tex> $u = u_{+} - u_{-}$ </tex> </CMP>
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA><OMS cd="relation1" name="eq"/>
+    <OMV name="u"/>
+    <OMA><OMS cd="arith1" name="sub"/>
+      <OMA><OMS cd="linalg1p" name="plus_part"/>
+        <OMV name="u"/>
+      </OMA>
+      <OMA><OMS cd="linalg1p" name="minus_part"/>
+        <OMV name="u"/>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+
+</FMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> ones </Name>
+<Description>
+ It returns a vector of a specifed size of which elements are one.
+ 1-ary function.
+</Description>
+<CMP>  <tex> for all $i$, ${\vec 1}[i] = 1$ </tex> </CMP>
+<FMP>
+</FMP>
+
+<Name> kernel </Name>
+<Description>
+ It returns the kernel of the map defined by a matrix in a specified
+ domain.
+</Description>
+<CMP> <tex> $\{ x \in D | A x = 0 \}$ </tex> </CMP>
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA><OMS cd="relation1" name="eq"/>
+    <OMA><OMS cd="linalg1p" name="kernel"/>
+      <OMV name="d"/>
+      <OMV name="a"/>
+    </OMA>
+    <OMA><OMS cd="set1" name="suchthat"/>
+      <OMV name="d"/>
+      <OMBIND>
+        <OMS cd="fns1" name="lambda"/>
+        <OMBVAR>
+          <OMV name="x"/>
+        </OMBVAR>
+        <OMA><OMS cd="relation1" name="eq"/>
+          <OMA><OMS cd="arith1" name="times"/>
+            <OMV name="a"/>
+            <OMV name="x"/>
+          </OMA>
+          <OMA><OMS cd="linalg5" name="zero"/>
+            <OMA><OMS cd="linalg4" name="size"/>
+              <OMV name="x"/>
+            </OMA>
+            <OMI> 1 </OMI>
+          </OMA>
+        </OMA>
+      </OMBIND>
+    </OMA>
+  </OMA>
+</OMOBJ>
+
+</FMP>
+<bug>  arith1.times is relavant for the matrix multiplication? </bug>
+</CDDefinition>
+
+</CD>

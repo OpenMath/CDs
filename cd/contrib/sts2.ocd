@@ -1,0 +1,160 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+
+<CDName>sts2</CDName>
+<CDBase> http://www.openmath.org/cd </CDBase>
+<CDDate> 2004-02-02 </CDDate>
+<CDVersion> 1 </CDVersion>
+<CDRevision> 0 </CDRevision>
+<CDStatus> experimental </CDStatus>
+
+<Description> 
+Symbols for constructing compound (parameterised) types in the OpenMath
+small type system.
+</Description>
+
+
+<CDDefinition>
+<Name> list  </Name>
+<Description> 
+A constructor for the type of a homogeneous list 
+</Description>
+
+<Example>
+A list of integers
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS name="list" cd="sts2" />
+    <OMS name="Z" cd="setname1"/>
+  </OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> interval </Name>
+<Description> 
+A constructor for an interval over a set.
+</Description>
+
+<Example>
+A real interval
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS name="interval" cd="sts2" />
+    <OMS name="R" cd="setname1"/>
+  </OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> matrix </Name>
+<Description> 
+A constructor for the type of a matrix
+</Description>
+
+<Example>
+A matrix of integers
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS name="matrix" cd="sts2" />
+    <OMS name="Z" cd="setname1"/>
+  </OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> vector </Name>
+<Description> 
+A constructor for the type of a vector
+</Description>
+
+<Example>
+A vector of integers
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS name="vector" cd="sts2" />
+    <OMS name="Z" cd="setname1"/>
+  </OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> vector_n </Name>
+<Description> 
+A constructor for the type of a vector of size n
+</Description>
+
+<Example>
+A 3-vector of integers
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS name="vector" cd="sts2" />
+    <OMI>3</OMI>
+    <OMS name="Z" cd="setname1"/>
+  </OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> square_matrix</Name>
+<Description> 
+A constructor for the type of a square matrix
+</Description>
+
+<Example>
+A 2x2 square matrix of integers
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS name="square_matrix" cd="sts2" />
+    <OMI>2</OMI>
+    <OMS name="Z" cd="setname1"/>
+  </OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+</CD>
+

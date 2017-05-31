@@ -1,0 +1,194 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+
+<CDName>fns3</CDName>
+<CDBase> http://www.openmath.org/cd </CDBase>
+<CDDate> 2004-02-05 </CDDate>
+<CDVersion> 1 </CDVersion>
+<CDRevision> 0 </CDRevision>
+<CDStatus> experimental </CDStatus>
+
+<Description> 
+Symbols to make statements about properties of a function
+</Description>
+
+
+<CDDefinition>
+<Name> continuous </Name>
+<Description> 
+A predicate to indicate that a function is continuous everywhere.
+</Description>
+
+<Example>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS name="continuous" cd="fns3" />
+    <OMS name="sin" cd="transc1"/>
+  </OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> piecewise_continuous </Name>
+<Description> 
+A predicate to indicate that a function is piecewise continuous
+everywhere, i.e. continuous at all but a finite number of points in
+its domain.
+</Description>
+
+<Example>
+1/x is continuous everywhere except x=0.
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS name="piecewise_continuous" cd="fns3" />
+    <OMBIND>
+      <OMS name="lambda" cd="fns1"/>
+      <OMBVAR>
+        <OMV name="x"/>
+      </OMBVAR>
+      <OMA>
+        <OMS name="divide" cd="arith1"/>
+        <OMI>1</OMI>
+        <OMV name="x"/>
+      </OMA>
+    </OMBIND>
+  </OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> differentiable </Name>
+<Description> 
+A predicate to indicate that a function is differentiable over its
+whole domain.
+</Description>
+
+<Example>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS name="differentiable" cd="fns3" />
+    <OMS name="sin" cd="transc1" />
+  </OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> continuous_on </Name>
+<Description> 
+A predicate to indicate that a function is continuous over a
+particular region or range.
+</Description>
+
+<Example>
+1/x is continuous on the real interval [1,10]
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS name="continuous_on" cd="fns3" />
+    <OMBIND>
+      <OMS name="lambda" cd="fns1"/>
+      <OMBVAR>
+        <OMV name="x"/>
+      </OMBVAR>
+      <OMA>
+        <OMS name="divide" cd="arith1"/>
+        <OMI>1</OMI>
+        <OMV name="x"/>
+      </OMA>
+    </OMBIND>
+    <OMA>
+      <OMS cd="interval1" name="interval"/>
+      <OMF dec="1.0"/>
+      <OMF dec="10.0"/>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> piecewise_continuous_on </Name>
+<Description> 
+A predicate to indicate that a function is continuous
+at all but a finite number of points in a region.
+</Description>
+
+<Example>
+tan is piecewise continuous over the real interval [0,pi]
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS name="piecewise_continuous_on" cd="fns3" />
+    <OMS name="tan" cd="transc1" />
+    <OMA>
+      <OMS cd="interval1" name="interval"/>
+      <OMF dec="0.0"/>
+      <OMS name="pi" cd="nums1" />
+    </OMA>
+  </OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> differentiable_on </Name>
+<Description> 
+A predicate to indicate that a function is differentiable on
+a region.
+</Description>
+
+<Example>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS name="differentiable_on" cd="fns3" />
+    <OMS name="sin" cd="transc1" />
+    <OMS name="R" cd="setnames1" />
+  </OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+
+</CD>
+

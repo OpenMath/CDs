@@ -1,0 +1,12 @@
+<p>Errors in OMOBJ 1
+   on line 64 (Validated against OpenMath 2)
+</p>
+<div style="border: solid;margin:1em 1em 1em 1em; padding:1em 1em 1em 1em; ">
+   <p>OMBVAR may only contain variables and attributed variables: OMS</p>
+</div>
+<p>Errors in OMOBJ 2
+   on line 85 (Validated against OpenMath 2)
+</p>
+<div style="border: solid;margin:1em 1em 1em 1em; padding:1em 1em 1em 1em; ">
+   <p> Bad Symbol: Unknown CD relation10</p>
+</div>

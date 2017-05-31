@@ -1,0 +1,1053 @@
+<?xml version="1.0"?>
+<!-- $Id: hypergeon2.tfb,v 1.4 2003/11/30 13:21:28 taka Exp $ -->
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDName> hypergeon2 </CDName>
+<CDURL> http://www.math.kobe-u.ac.jp/OCD/hypergeon2.tfb </CDURL>
+<CDReviewDate> 2003-08-07 </CDReviewDate>
+<CDStatus> experimental </CDStatus>
+<CDDate> 2002-08-07, 2003-11-30 </CDDate>
+<CDVersion> 1 </CDVersion>
+<CDRevision> 1 </CDRevision>
+<CDUses>
+ <!-- private cd's -->
+  <CDName>hypergeo1</CDName>
+  <CDName>hypergeon0</CDName>
+ <!-- official cd's  -->
+  <CDName>arith1</CDName>
+  <CDName>fns1</CDName>
+  <CDName>interval1</CDName>
+  <CDName>linalg1</CDName>
+  <CDName>linalg4</CDName>
+  <CDName>relation1</CDName>
+  <CDName>set1</CDName>
+</CDUses>
+
+<Description> 
+This CD defines symbols for classical hypergeometric series
+of several variables, which include Appell functions and Lauricella
+functions.
+</Description>
+
+<CDDefinition>
+<Name> multi_pochhammer </Name>
+<Description>
+  multi_pochhammer is a product of pochhammer symbols.
+</Description>
+
+<CMP>
+  $ (a)_n = \prod_{i=1}^{m} (a_{i})_{n_{i}} $
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA><OMS cd="relation1" name="eq"/>
+    <OMA><OMS name="multi_pochhammer"/>
+      <OMV name="a"/>
+      <OMV name="n"/>
+    </OMA>
+    <OMA><OMS cd="arith1" name="product"/>
+      <OMA><OMS cd="interval1" name="integer_interval"/>
+        <OMI> 1 </OMI>
+        <OMA><OMS cd="linalg4" name="columnsize"/>
+          <OMV name="n"/>
+        </OMA>
+      </OMA>
+      <OMBIND>
+        <OMS cd="fns1" name="lambda"/>
+        <OMBVAR>
+          <OMV name="i"/>
+        </OMBVAR>
+        <OMA><OMS cd="hypergeo0" name="pochhammer"/>
+          <OMA><OMS cd="linalg1" name="vector_selector"/>
+            <OMV name="i"/>
+            <OMV name="a"/>
+          </OMA>
+          <OMA><OMS cd="linalg1" name="vector_selector"/>
+            <OMV name="i"/>
+            <OMV name="n"/>
+          </OMA>
+        </OMA>
+      </OMBIND>
+    </OMA>
+  </OMA>
+</OMOBJ>
+
+</FMP>
+
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> appel_F1 </Name>
+<Description>
+  Appell's hypergeometric series F_1
+ reference:
+    authors: "Appel, Kampe de Feriet"
+    title: "Les Fonctions Hypergeometriques de Plusieurs Variables et
+            Polynome d'Hermite"
+    pages: 14
+</Description>
+
+<CMP>
+  $ F_1(a,b,b',c;x,y) = \sum_{m,n=0}^{\infty}
+           \frac{(a)_{m+n} (b)_m (b')_n}{(c)_{m+n} (1)_{m} (1)_{n}}x^{m}y^{n}$
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA><OMS cd="relation1" name="eq"/>
+    <OMA><OMS name="apple_F1"/>
+      <OMV name="a"/>
+      <OMV name="b1"/>
+      <OMV name="b2"/>
+      <OMV name="c"/>
+      <OMV name="x"/>
+      <OMV name="y"/>
+    </OMA>
+    <OMA><OMS cd="arith1" name="sum"/>
+      <OMA><OMS cd="set1" name="cartesian_product"/>
+        <OMS cd="setname1" name="N"/>
+        <OMS cd="setname1" name="N"/>
+      </OMA>
+      <OMBIND>
+        <OMS cd="fns1" name="lambda"/>
+        <OMBVAR>
+          <OMV name="m"/>
+        </OMBVAR>
+        <OMA><OMS cd="arith1" name="times"/>
+          <OMA><OMS cd="arith1" name="divide"/>
+            <OMA><OMS cd="arith1" name="times"/>
+              <OMA><OMS cd="arith1" name="times"/>
+                <OMA><OMS cd="hypergeo0" name="pochhammer"/>
+                  <OMV name="a"/>
+                  <OMA><OMS cd="arith1" name="plus"/>
+                    <OMA><OMS cd="linalg1" name="vector_selector"/>
+                      <OMI> 1 </OMI>
+                      <OMV name="m"/>
+                    </OMA>
+                    <OMA><OMS cd="linalg1" name="vector_selector"/>
+                      <OMI> 2 </OMI>
+                      <OMV name="m"/>
+                    </OMA>
+                  </OMA>
+                </OMA>
+                <OMA><OMS cd="hypergeo0" name="pochhammer"/>
+                  <OMV name="b1"/>
+                  <OMA><OMS cd="linalg1" name="vector_selector"/>
+                    <OMI> 1 </OMI>
+                    <OMV name="m"/>
+                  </OMA>
+                </OMA>
+              </OMA>
+              <OMA><OMS cd="hypergeo0" name="pochhammer"/>
+                <OMV name="b2"/>
+                <OMA><OMS cd="linalg1" name="vector_selector"/>
+                  <OMI> 2 </OMI>
+                  <OMV name="m"/>
+                </OMA>
+              </OMA>
+            </OMA>
+            <OMA><OMS cd="arith1" name="times"/>
+              <OMA><OMS cd="arith1" name="times"/>
+                <OMA><OMS cd="hypergeo0" name="pochhammer"/>
+                  <OMV name="c"/>
+                  <OMA><OMS cd="arith1" name="plus"/>
+                    <OMA><OMS cd="linalg1" name="vector_selector"/>
+                      <OMI> 1 </OMI>
+                      <OMV name="m"/>
+                    </OMA>
+                    <OMA><OMS cd="linalg1" name="vector_selector"/>
+                      <OMI> 2 </OMI>
+                      <OMV name="m"/>
+                    </OMA>
+                  </OMA>
+                </OMA>
+                <OMA><OMS cd="hypergeo0" name="pochhammer"/>
+                  <OMI> 1 </OMI>
+                  <OMA><OMS cd="linalg1" name="vector_selector"/>
+                    <OMI> 1 </OMI>
+                    <OMV name="m"/>
+                  </OMA>
+                </OMA>
+              </OMA>
+              <OMA><OMS cd="hypergeo0" name="pochhammer"/>
+                <OMI> 1 </OMI>
+                <OMA><OMS cd="linalg1" name="vector_selector"/>
+                  <OMI> 2 </OMI>
+                  <OMV name="m"/>
+                </OMA>
+              </OMA>
+            </OMA>
+          </OMA>
+          <OMA><OMS cd="arith1" name="times"/>
+            <OMA><OMS cd="arith1" name="power"/>
+              <OMV name="x"/>
+              <OMA><OMS name="vector_selector"/>
+                <OMI> 1 </OMI>
+                <OMV name="m"/>
+              </OMA>
+            </OMA>
+            <OMA><OMS cd="arith1" name="power"/>
+              <OMV name="y"/>
+              <OMA><OMS name="vector_selector"/>
+                <OMI> 2 </OMI>
+                <OMV name="m"/>
+              </OMA>
+            </OMA>
+          </OMA>
+        </OMA>
+      </OMBIND>
+    </OMA>
+  </OMA>
+</OMOBJ>
+
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> appel_F2 </Name>
+<Description>
+  Appell's hypergeometric series F_2
+  reference:
+    authors: "Appel, Kampe de Feriet"
+    title: "Les Fonctions Hypergeometriques de Plusieurs Variables et
+            Polynome d'Hermite"
+    pages: 14
+</Description>
+
+<CMP>
+  $ F_2(a,b,b',c,c';x,y) = \sum_{m,n=0}^\infty
+           \frac{(a)_{m+n} (b)_{m}(b')_{n}}
+                {(c)_{m} (c')_{n} (1)_{m} (1)_{n}}x^{m}y^{n} $
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA><OMS cd="relation1" name="eq"/>
+    <OMA><OMS name="apple_F2"/>
+      <OMV name="a"/>
+      <OMV name="b1"/>
+      <OMV name="b2"/>
+      <OMV name="c1"/>
+      <OMV name="c2"/>
+      <OMV name="x"/>
+      <OMV name="y"/>
+    </OMA>
+    <OMA><OMS cd="arith1" name="sum"/>
+      <OMA><OMS cd="set1" name="cartesian_product"/>
+        <OMS cd="setname1" name="N"/>
+        <OMS cd="setname1" name="N"/>
+      </OMA>
+      <OMBIND>
+        <OMS cd="fns1" name="lambda"/>
+        <OMBVAR>
+          <OMV name="m"/>
+        </OMBVAR>
+        <OMA><OMS cd="arith1" name="times"/>
+          <OMA><OMS cd="arith1" name="divide"/>
+            <OMA><OMS cd="arith1" name="times"/>
+              <OMA><OMS cd="arith1" name="times"/>
+                <OMA><OMS cd="hypergeo0" name="pochhammer"/>
+                  <OMV name="a"/>
+                  <OMA><OMS cd="arith1" name="plus"/>
+                    <OMA><OMS cd="linalg1" name="vector_selector"/>
+                      <OMI> 1 </OMI>
+                      <OMV name="m"/>
+                    </OMA>
+                    <OMA><OMS cd="linalg1" name="vector_selector"/>
+                      <OMI> 2 </OMI>
+                      <OMV name="m"/>
+                    </OMA>
+                  </OMA>
+                </OMA>
+                <OMA><OMS cd="hypergeo0" name="pochhammer"/>
+                  <OMV name="b1"/>
+                  <OMA><OMS cd="linalg1" name="vector_selector"/>
+                    <OMI> 1 </OMI>
+                    <OMV name="m"/>
+                  </OMA>
+                </OMA>
+              </OMA>
+              <OMA><OMS cd="hypergeo0" name="pochhammer"/>
+                <OMV name="b2"/>
+                <OMA><OMS cd="linalg1" name="vector_selector"/>
+                  <OMI> 2 </OMI>
+                  <OMV name="m"/>
+                </OMA>
+              </OMA>
+            </OMA>
+            <OMA><OMS cd="arith1" name="times"/>
+              <OMA><OMS cd="arith1" name="times"/>
+                <OMA><OMS cd="arith1" name="times"/>
+                  <OMA><OMS cd="hypergeo0" name="pochhammer"/>
+                    <OMV name="c1"/>
+                    <OMA><OMS cd="linalg1" name="vector_selector"/>
+                      <OMI> 1 </OMI>
+                      <OMV name="m"/>
+                    </OMA>
+                  </OMA>
+                  <OMA><OMS cd="hypergeo0" name="pochhammer"/>
+                    <OMV name="c2"/>
+                    <OMA><OMS cd="linalg1" name="vector_selector"/>
+                      <OMI> 2 </OMI>
+                      <OMV name="m"/>
+                    </OMA>
+                  </OMA>
+                </OMA>
+                <OMA><OMS cd="hypergeo0" name="pochhammer"/>
+                  <OMI> 1 </OMI>
+                  <OMA><OMS cd="linalg1" name="vector_selector"/>
+                    <OMI> 1 </OMI>
+                    <OMV name="m"/>
+                  </OMA>
+                </OMA>
+              </OMA>
+              <OMA><OMS cd="hypergeo0" name="pochhammer"/>
+                <OMI> 1 </OMI>
+                <OMA><OMS cd="linalg1" name="vector_selector"/>
+                  <OMI> 2 </OMI>
+                  <OMV name="m"/>
+                </OMA>
+              </OMA>
+            </OMA>
+          </OMA>
+          <OMA><OMS cd="arith1" name="times"/>
+            <OMA><OMS cd="arith1" name="power"/>
+              <OMV name="x"/>
+              <OMA><OMS name="vector_selector"/>
+                <OMI> 1 </OMI>
+                <OMV name="m"/>
+              </OMA>
+            </OMA>
+            <OMA><OMS cd="arith1" name="power"/>
+              <OMV name="y"/>
+              <OMA><OMS name="vector_selector"/>
+                <OMI> 2 </OMI>
+                <OMV name="m"/>
+              </OMA>
+            </OMA>
+          </OMA>
+        </OMA>
+      </OMBIND>
+    </OMA>
+  </OMA>
+</OMOBJ>
+
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> appel_F3 </Name>
+<Description>
+  Appell's hypergeometric series F_3
+ reference:
+    authors: "Appel, Kampe de Feriet"
+    title: "Les Fonctions Hypergeometriques de Plusieurs Variables et
+            Polynome d'Hermite"
+    pages: 14
+</Description>
+
+<CMP>
+  $ F_3(a,a',b,b',c;x,y) = \sum_{m,n=0}^{\infty}
+           \frac{(a)_{m}(a')_{n}(b)_{m}(b')_{n}}
+                {(c)_{m+n}(1)_{m}(1)_{n}}x^{m}y^{n}$
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA><OMS cd="relation1" name="eq"/>
+    <OMA><OMS name="apple_F3"/>
+      <OMV name="a1"/>
+      <OMV name="a2"/>
+      <OMV name="b1"/>
+      <OMV name="b2"/>
+      <OMV name="c"/>
+      <OMV name="x"/>
+      <OMV name="y"/>
+    </OMA>
+    <OMA><OMS cd="arith1" name="sum"/>
+      <OMA><OMS cd="set1" name="cartesian_product"/>
+        <OMS cd="setname1" name="N"/>
+        <OMS cd="setname1" name="N"/>
+      </OMA>
+      <OMBIND>
+        <OMS cd="fns1" name="lambda"/>
+        <OMBVAR>
+          <OMV name="m"/>
+        </OMBVAR>
+        <OMA><OMS cd="arith1" name="times"/>
+          <OMA><OMS cd="arith1" name="divide"/>
+            <OMA><OMS cd="arith1" name="times"/>
+              <OMA><OMS cd="arith1" name="times"/>
+                <OMA><OMS cd="arith1" name="times"/>
+                  <OMA><OMS cd="hypergeo0" name="pochhammer"/>
+                    <OMV name="a1"/>
+                    <OMA><OMS cd="linalg1" name="vector_selector"/>
+                      <OMI> 1 </OMI>
+                      <OMV name="m"/>
+                    </OMA>
+                  </OMA>
+                  <OMA><OMS cd="hypergeo0" name="pochhammer"/>
+                    <OMV name="a2"/>
+                    <OMA><OMS cd="linalg1" name="vector_selector"/>
+                      <OMI> 1 </OMI>
+                      <OMV name="m"/>
+                    </OMA>
+                  </OMA>
+                </OMA>
+                <OMA><OMS cd="hypergeo0" name="pochhammer"/>
+                  <OMV name="b1"/>
+                  <OMA><OMS cd="linalg1" name="vector_selector"/>
+                    <OMI> 1 </OMI>
+                    <OMV name="m"/>
+                  </OMA>
+                </OMA>
+              </OMA>
+              <OMA><OMS cd="hypergeo0" name="pochhammer"/>
+                <OMV name="b2"/>
+                <OMA><OMS cd="linalg1" name="vector_selector"/>
+                  <OMI> 2 </OMI>
+                  <OMV name="m"/>
+                </OMA>
+              </OMA>
+            </OMA>
+            <OMA><OMS cd="arith1" name="times"/>
+              <OMA><OMS cd="arith1" name="times"/>
+                <OMA><OMS cd="hypergeo0" name="pochhammer"/>
+                  <OMV name="c"/>
+                  <OMA><OMS cd="arith1" name="plus"/>
+                    <OMA><OMS cd="linalg1" name="vector_selector"/>
+                      <OMI> 1 </OMI>
+                      <OMV name="m"/>
+                    </OMA>
+                    <OMA><OMS cd="linalg1" name="vector_selector"/>
+                      <OMI> 2 </OMI>
+                      <OMV name="m"/>
+                    </OMA>
+                  </OMA>
+                </OMA>
+                <OMA><OMS cd="hypergeo0" name="pochhammer"/>
+                  <OMI> 1 </OMI>
+                  <OMA><OMS cd="linalg1" name="vector_selector"/>
+                    <OMI> 1 </OMI>
+                    <OMV name="m"/>
+                  </OMA>
+                </OMA>
+              </OMA>
+              <OMA><OMS cd="hypergeo0" name="pochhammer"/>
+                <OMI> 1 </OMI>
+                <OMA><OMS cd="linalg1" name="vector_selector"/>
+                  <OMI> 2 </OMI>
+                  <OMV name="m"/>
+                </OMA>
+              </OMA>
+            </OMA>
+          </OMA>
+          <OMA><OMS cd="arith1" name="times"/>
+            <OMA><OMS cd="arith1" name="power"/>
+              <OMV name="x"/>
+              <OMA><OMS name="vector_selector"/>
+                <OMI> 1 </OMI>
+                <OMV name="m"/>
+              </OMA>
+            </OMA>
+            <OMA><OMS cd="arith1" name="power"/>
+              <OMV name="y"/>
+              <OMA><OMS name="vector_selector"/>
+                <OMI> 2 </OMI>
+                <OMV name="m"/>
+              </OMA>
+            </OMA>
+          </OMA>
+        </OMA>
+      </OMBIND>
+    </OMA>
+  </OMA>
+</OMOBJ>
+
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> appel_F4 </Name>
+<Description>
+  Appell's hypergeometric series F_4
+  reference:
+    authors: "Appel, Kampe de Feriet"
+    title: "Les Fonctions Hypergeometriques de Plusieurs Variables et
+            Polynome d'Hermite"
+    pages: 14 
+</Description>
+
+<CMP>
+  $ F_4(a,b,c,c';x,y) = \sum_{m,n=0}^{\infty}
+           \frac{(a)_{m+n} (b)_{m+n}}{(c1)_{m}(c2)_{n}(1)_{m}(1)_{n}}x^{m}y^{n} $
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA><OMS cd="relation1" name="eq"/>
+    <OMA><OMS name="apple_F4"/>
+      <OMV name="a"/>
+      <OMV name="b"/>
+      <OMV name="c1"/>
+      <OMV name="c2"/>
+      <OMV name="x"/>
+      <OMV name="y"/>
+    </OMA>
+    <OMA><OMS cd="arith1" name="sum"/>
+      <OMA><OMS cd="set1" name="cartesian_product"/>
+        <OMS cd="setname1" name="N"/>
+        <OMS cd="setname1" name="N"/>
+      </OMA>
+      <OMBIND>
+        <OMS cd="fns1" name="lambda"/>
+        <OMBVAR>
+          <OMV name="m"/>
+        </OMBVAR>
+        <OMA><OMS cd="arith1" name="times"/>
+          <OMA><OMS cd="arith1" name="divide"/>
+            <OMA><OMS cd="arith1" name="times"/>
+              <OMA><OMS cd="hypergeo0" name="pochhammer"/>
+                <OMV name="a"/>
+                <OMA><OMS cd="arith1" name="plus"/>
+                  <OMA><OMS cd="linalg1" name="vector_selector"/>
+                    <OMI> 1 </OMI>
+                    <OMV name="m"/>
+                  </OMA>
+                  <OMA><OMS cd="linalg1" name="vector_selector"/>
+                    <OMI> 2 </OMI>
+                    <OMV name="m"/>
+                  </OMA>
+                </OMA>
+              </OMA>
+              <OMA><OMS cd="hypergeo0" name="pochhammer"/>
+                <OMV name="b"/>
+                <OMA><OMS cd="arith1" name="plus"/>
+                  <OMA><OMS cd="linalg1" name="vector_selector"/>
+                    <OMI> 1 </OMI>
+                    <OMV name="m"/>
+                  </OMA>
+                  <OMA><OMS cd="linalg1" name="vector_selector"/>
+                    <OMI> 2 </OMI>
+                    <OMV name="m"/>
+                  </OMA>
+                </OMA>
+              </OMA>
+            </OMA>
+            <OMA><OMS cd="arith1" name="times"/>
+              <OMA><OMS cd="arith1" name="times"/>
+                <OMA><OMS cd="arith1" name="times"/>
+                  <OMA><OMS cd="hypergeo0" name="pochhammer"/>
+                    <OMV name="c1"/>
+                    <OMA><OMS cd="linalg1" name="vector_selector"/>
+                      <OMI> 1 </OMI>
+                      <OMV name="m"/>
+                    </OMA>
+                  </OMA>
+                  <OMA><OMS cd="hypergeo0" name="pochhammer"/>
+                    <OMV name="c2"/>
+                    <OMA><OMS cd="linalg1" name="vector_selector"/>
+                      <OMI> 2 </OMI>
+                      <OMV name="m"/>
+                    </OMA>
+                  </OMA>
+                </OMA>
+                <OMA><OMS cd="hypergeo0" name="pochhammer"/>
+                  <OMI> 1 </OMI>
+                  <OMA><OMS cd="linalg1" name="vector_selector"/>
+                    <OMI> 1 </OMI>
+                    <OMV name="m"/>
+                  </OMA>
+                </OMA>
+              </OMA>
+              <OMA><OMS cd="hypergeo0" name="pochhammer"/>
+                <OMI> 1 </OMI>
+                <OMA><OMS cd="linalg1" name="vector_selector"/>
+                  <OMI> 2 </OMI>
+                  <OMV name="m"/>
+                </OMA>
+              </OMA>
+            </OMA>
+          </OMA>
+          <OMA><OMS cd="arith1" name="times"/>
+            <OMA><OMS cd="arith1" name="power"/>
+              <OMV name="x"/>
+              <OMA><OMS name="vector_selector"/>
+                <OMI> 1 </OMI>
+                <OMV name="m"/>
+              </OMA>
+            </OMA>
+            <OMA><OMS cd="arith1" name="power"/>
+              <OMV name="y"/>
+              <OMA><OMS name="vector_selector"/>
+                <OMI> 2 </OMI>
+                <OMV name="m"/>
+              </OMA>
+            </OMA>
+          </OMA>
+        </OMA>
+      </OMBIND>
+    </OMA>
+  </OMA>
+</OMOBJ>
+
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> lauricella_FA </Name>
+<Description>
+  Lauricella's hypergeometric series F_A of n variables.
+  In case of one variables, it agrees with the Appel function F_2.
+  reference:
+    authors: "Appel, Kampe de Feriet"
+    title: "Les Fonctions Hypergeometriques de Plusieurs Variables et
+            Polynome d'Hermite"
+    pages: 
+</Description>
+
+<CMP>
+  $ F_A(a,b,c;x) = \sum_{k \in \N^n}^{\infty}
+           \frac{(a)_{\sum k_i} \prod (b_i)_{k_i}}
+                {\prod (c_i)_{k_i} \prod (1)_{k_i}} x^{k} $
+</CMP>
+
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA><OMS cd="hypergeon0" name="where"/>
+    <OMBIND>
+      <OMS cd="fns1" name="lambda"/>
+      <OMBVAR>
+        <OMV name="n"/>
+      </OMBVAR>
+      <OMA><OMS cd="relation1" name="eq"/>
+        <OMA><OMS name="lauricella_FA"/>
+          <OMV name="a"/>
+          <OMV name="b"/>
+          <OMV name="c"/>
+          <OMV name="x"/>
+        </OMA>
+        <OMA><OMS cd="arith1" name="sum"/>
+          <OMA><OMS cd="hypergeon0" name="cartesian_product_n"/>
+            <OMS cd="setname1" name="N"/>
+            <OMV name="n"/>
+          </OMA>
+          <OMBIND>
+            <OMS cd="fns1" name="lambda"/>
+            <OMBVAR>
+              <OMV name="k"/>
+            </OMBVAR>
+            <OMA><OMS cd="arith1" name="times"/>
+              <OMA><OMS cd="arith1" name="divide"/>
+                <OMA><OMS cd="arith1" name="times"/>
+                  <OMA><OMS cd="hypergeo0" name="pochhammer"/>
+                    <OMV name="a"/>
+                    <OMA><OMS cd="arith1" name="sum"/>
+                      <OMA><OMS cd="interval1" name="integer_interval"/>
+                        <OMI> 1 </OMI>
+                        <OMV name="n"/>
+                      </OMA>
+                      <OMBIND>
+                        <OMS cd="fns1" name="lambda"/>
+                        <OMBVAR>
+                          <OMV name="i"/>
+                        </OMBVAR>
+                        <OMA><OMS name="vector_selector"/>
+                          <OMV name="i"/>
+                          <OMV name="k"/>
+                        </OMA>
+                      </OMBIND>
+                    </OMA>
+                  </OMA>
+                  <OMA><OMS cd="arith1" name="prod"/>
+                    <OMA><OMS cd="interval1" name="integer_interval"/>
+                      <OMI> 1 </OMI>
+                      <OMV name="n"/>
+                    </OMA>
+                    <OMBIND>
+                      <OMS cd="fns1" name="lambda"/>
+                      <OMBVAR>
+                        <OMV name="i"/>
+                      </OMBVAR>
+                      <OMA><OMS cd="hypergeo0" name="pochhammer"/>
+                        <OMA><OMS name="vector_selector"/>
+                          <OMV name="i"/>
+                          <OMV name="b"/>
+                        </OMA>
+                        <OMA><OMS name="vector_selector"/>
+                          <OMV name="i"/>
+                          <OMV name="k"/>
+                        </OMA>
+                      </OMA>
+                    </OMBIND>
+                  </OMA>
+                </OMA>
+                <OMA><OMS cd="arith1" name="times"/>
+                  <OMA><OMS cd="arith1" name="prod"/>
+                    <OMA><OMS cd="interval1" name="integer_interval"/>
+                      <OMI> 1 </OMI>
+                      <OMV name="n"/>
+                    </OMA>
+                    <OMBIND>
+                      <OMS cd="fns1" name="lambda"/>
+                      <OMBVAR>
+                        <OMV name="i"/>
+                      </OMBVAR>
+                      <OMA><OMS cd="hypergeo0" name="pochhammer"/>
+                        <OMA><OMS name="vector_selector"/>
+                          <OMV name="i"/>
+                          <OMV name="c"/>
+                        </OMA>
+                        <OMA><OMS name="vector_selector"/>
+                          <OMV name="i"/>
+                          <OMV name="k"/>
+                        </OMA>
+                      </OMA>
+                    </OMBIND>
+                  </OMA>
+                  <OMA><OMS cd="arith1" name="prod"/>
+                    <OMA><OMS cd="interval1" name="integer_interval"/>
+                      <OMI> 1 </OMI>
+                      <OMV name="n"/>
+                    </OMA>
+                    <OMBIND>
+                      <OMS cd="fns1" name="lambda"/>
+                      <OMBVAR>
+                        <OMV name="i"/>
+                      </OMBVAR>
+                      <OMA><OMS cd="hypergeo0" name="pochhammer"/>
+                        <OMI> 1 </OMI>
+                        <OMA><OMS name="vector_selector"/>
+                          <OMV name="i"/>
+                          <OMV name="k"/>
+                        </OMA>
+                      </OMA>
+                    </OMBIND>
+                  </OMA>
+                </OMA>
+              </OMA>
+              <OMA><OMS cd="hypergeon0" name="multi_power"/>
+                <OMV name="x"/>
+                <OMV name="k"/>
+              </OMA>
+            </OMA>
+          </OMBIND>
+        </OMA>
+      </OMA>
+    </OMBIND>
+    <OMA><OMS cd="relation1" name="eq"/>
+      <OMV name="n"/>
+      <OMA><OMS cd="linalg4" name="rowcount"/>
+        <OMV name="b"/>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> lauricella_FC </Name>
+<Description>
+  Lauricella's hypergeometric series F_C of n variables.
+  In case of two variable, it agree with the Appel function F_4.
+ reference:
+    authors: "Appel, Kampe de Feriet"
+    title: "Les Fonctions Hypergeometriques de Plusieurs Variables et
+            Polynome d'Hermite"
+    pages: 
+</Description>
+
+<CMP>
+  $ F_C(a,b,c;x) = \sum_{k \in {\bf N}^n}^{\infty}
+           \frac{(a)_{\sum k_i} (b)_{\sum k_i} }
+                {\prod (c_i)_{k_i} \prod (1)_{k_i}} x^{k} $
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA><OMS cd="hypergeon0" name="where"/>
+    <OMBIND>
+      <OMS cd="fns1" name="lambda"/>
+      <OMBVAR>
+        <OMV name="n"/>
+      </OMBVAR>
+      <OMA><OMS cd="relation1" name="eq"/>
+        <OMA><OMS name="lauricella_FC"/>
+          <OMV name="a"/>
+          <OMV name="b"/>
+          <OMV name="c"/>
+          <OMV name="x"/>
+        </OMA>
+        <OMA><OMS cd="arith1" name="sum"/>
+          <OMA><OMS cd="hypergeon0" name="cartesian_product_n"/>
+            <OMS cd="setname1" name="N"/>
+            <OMV name="n"/>
+          </OMA>
+          <OMBIND>
+            <OMS cd="fns1" name="lambda"/>
+            <OMBVAR>
+              <OMV name="k"/>
+            </OMBVAR>
+            <OMA><OMS cd="arith1" name="times"/>
+              <OMA><OMS cd="arith1" name="divide"/>
+                <OMA><OMS cd="arith1" name="times"/>
+                  <OMA><OMS cd="hypergeo0" name="pochhammer"/>
+                    <OMV name="a"/>
+                    <OMA><OMS cd="arith1" name="sum"/>
+                      <OMA><OMS cd="interval1" name="integer_interval"/>
+                        <OMI> 1 </OMI>
+                        <OMV name="n"/>
+                      </OMA>
+                      <OMBIND>
+                        <OMS cd="fns1" name="lambda"/>
+                        <OMBVAR>
+                          <OMV name="i"/>
+                        </OMBVAR>
+                        <OMA><OMS name="vector_selector"/>
+                          <OMV name="i"/>
+                          <OMV name="k"/>
+                        </OMA>
+                      </OMBIND>
+                    </OMA>
+                  </OMA>
+                  <OMA><OMS cd="hypergeo0" name="pochhammer"/>
+                    <OMV name="b"/>
+                    <OMA><OMS cd="arith1" name="sum"/>
+                      <OMA><OMS cd="interval1" name="integer_interval"/>
+                        <OMI> 1 </OMI>
+                        <OMV name="n"/>
+                      </OMA>
+                      <OMBIND>
+                        <OMS cd="fns1" name="lambda"/>
+                        <OMBVAR>
+                          <OMV name="i"/>
+                        </OMBVAR>
+                        <OMA><OMS name="vector_selector"/>
+                          <OMV name="i"/>
+                          <OMV name="k"/>
+                        </OMA>
+                      </OMBIND>
+                    </OMA>
+                  </OMA>
+                </OMA>
+                <OMA><OMS cd="arith1" name="times"/>
+                  <OMA><OMS cd="arith1" name="prod"/>
+                    <OMA><OMS cd="interval1" name="integer_interval"/>
+                      <OMI> 1 </OMI>
+                      <OMV name="n"/>
+                    </OMA>
+                    <OMBIND>
+                      <OMS cd="fns1" name="lambda"/>
+                      <OMBVAR>
+                        <OMV name="i"/>
+                      </OMBVAR>
+                      <OMA><OMS cd="hypergeo0" name="pochhammer"/>
+                        <OMA><OMS name="vector_selector"/>
+                          <OMV name="i"/>
+                          <OMV name="c"/>
+                        </OMA>
+                        <OMA><OMS name="vector_selector"/>
+                          <OMV name="i"/>
+                          <OMV name="k"/>
+                        </OMA>
+                      </OMA>
+                    </OMBIND>
+                  </OMA>
+                  <OMA><OMS cd="arith1" name="prod"/>
+                    <OMA><OMS cd="interval1" name="integer_interval"/>
+                      <OMI> 1 </OMI>
+                      <OMV name="n"/>
+                    </OMA>
+                    <OMBIND>
+                      <OMS cd="fns1" name="lambda"/>
+                      <OMBVAR>
+                        <OMV name="i"/>
+                      </OMBVAR>
+                      <OMA><OMS cd="hypergeo0" name="pochhammer"/>
+                        <OMI> 1 </OMI>
+                        <OMA><OMS name="vector_selector"/>
+                          <OMV name="i"/>
+                          <OMV name="k"/>
+                        </OMA>
+                      </OMA>
+                    </OMBIND>
+                  </OMA>
+                </OMA>
+              </OMA>
+              <OMA><OMS cd="hypergeon0" name="multi_power"/>
+                <OMV name="x"/>
+                <OMV name="k"/>
+              </OMA>
+            </OMA>
+          </OMBIND>
+        </OMA>
+      </OMA>
+    </OMBIND>
+    <OMA><OMS cd="relation1" name="eq"/>
+      <OMV name="n"/>
+      <OMA><OMS cd="linalg4" name="rowcount"/>
+        <OMV name="b"/>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> lauricella_FD </Name>
+<Description>
+  Lauricella's hypergeometric series F_D of n variables.
+  In case of two variables, it agree with the Appell function F_1.
+  reference:
+    authors: "Appel, Kampe de Feriet"
+    title: "Les Fonctions Hypergeometriques de Plusieurs Variables et
+            Polynome d'Hermite"
+    pages:
+</Description>
+
+<CMP>
+  $ F_D(a,b,c;x) = \sum_{k \in {\bf N}^n}^{\infty}
+           \frac{(a)_{\sum k_i} \prod (b_i)_{k_i}}
+                {(c)_{\sum k_i} \prod (1)_{k_i}} x^{k} $
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA><OMS cd="hypergeon0" name="where"/>
+    <OMBIND>
+      <OMS cd="fns1" name="lambda"/>
+      <OMBVAR>
+        <OMV name="n"/>
+      </OMBVAR>
+      <OMA><OMS cd="relation1" name="eq"/>
+        <OMA><OMS name="lauricella_FD"/>
+          <OMV name="a"/>
+          <OMV name="b"/>
+          <OMV name="c"/>
+          <OMV name="x"/>
+        </OMA>
+        <OMA><OMS cd="arith1" name="sum"/>
+          <OMA><OMS cd="hypergeon0" name="cartesian_product_n"/>
+            <OMS cd="setname1" name="N"/>
+            <OMV name="n"/>
+          </OMA>
+          <OMBIND>
+            <OMS cd="fns1" name="lambda"/>
+            <OMBVAR>
+              <OMV name="k"/>
+            </OMBVAR>
+            <OMA><OMS cd="arith1" name="times"/>
+              <OMA><OMS cd="arith1" name="divide"/>
+                <OMA><OMS cd="arith1" name="times"/>
+                  <OMA><OMS cd="hypergeo0" name="pochhammer"/>
+                    <OMV name="a"/>
+                    <OMA><OMS cd="arith1" name="sum"/>
+                      <OMA><OMS cd="interval1" name="integer_interval"/>
+                        <OMI> 1 </OMI>
+                        <OMV name="n"/>
+                      </OMA>
+                      <OMBIND>
+                        <OMS cd="fns1" name="lambda"/>
+                        <OMBVAR>
+                          <OMV name="i"/>
+                        </OMBVAR>
+                        <OMA><OMS name="vector_selector"/>
+                          <OMV name="i"/>
+                          <OMV name="k"/>
+                        </OMA>
+                      </OMBIND>
+                    </OMA>
+                  </OMA>
+                  <OMA><OMS cd="arith1" name="prod"/>
+                    <OMA><OMS cd="interval1" name="integer_interval"/>
+                      <OMI> 1 </OMI>
+                      <OMV name="n"/>
+                    </OMA>
+                    <OMBIND>
+                      <OMS cd="fns1" name="lambda"/>
+                      <OMBVAR>
+                        <OMV name="i"/>
+                      </OMBVAR>
+                      <OMA><OMS cd="hypergeo0" name="pochhammer"/>
+                        <OMA><OMS name="vector_selector"/>
+                          <OMV name="i"/>
+                          <OMV name="b"/>
+                        </OMA>
+                        <OMA><OMS name="vector_selector"/>
+                          <OMV name="i"/>
+                          <OMV name="k"/>
+                        </OMA>
+                      </OMA>
+                    </OMBIND>
+                  </OMA>
+                </OMA>
+                <OMA><OMS cd="arith1" name="times"/>
+                  <OMA><OMS cd="hypergeo0" name="pochhammer"/>
+                    <OMV name="c"/>
+                    <OMA><OMS cd="arith1" name="sum"/>
+                      <OMA><OMS cd="interval1" name="integer_interval"/>
+                        <OMI> 1 </OMI>
+                        <OMV name="n"/>
+                      </OMA>
+                      <OMBIND>
+                        <OMS cd="fns1" name="lambda"/>
+                        <OMBVAR>
+                          <OMV name="i"/>
+                        </OMBVAR>
+                        <OMA><OMS name="vector_selector"/>
+                          <OMV name="i"/>
+                          <OMV name="k"/>
+                        </OMA>
+                      </OMBIND>
+                    </OMA>
+                  </OMA>
+                  <OMA><OMS cd="arith1" name="prod"/>
+                    <OMA><OMS cd="interval1" name="integer_interval"/>
+                      <OMI> 1 </OMI>
+                      <OMV name="n"/>
+                    </OMA>
+                    <OMBIND>
+                      <OMS cd="fns1" name="lambda"/>
+                      <OMBVAR>
+                        <OMV name="i"/>
+                      </OMBVAR>
+                      <OMA><OMS cd="hypergeo0" name="pochhammer"/>
+                        <OMI> 1 </OMI>
+                        <OMA><OMS name="vector_selector"/>
+                          <OMV name="i"/>
+                          <OMV name="k"/>
+                        </OMA>
+                      </OMA>
+                    </OMBIND>
+                  </OMA>
+                </OMA>
+              </OMA>
+              <OMA><OMS cd="hypergeon0" name="multi_power"/>
+                <OMV name="x"/>
+                <OMV name="k"/>
+              </OMA>
+            </OMA>
+          </OMBIND>
+        </OMA>
+      </OMA>
+    </OMBIND>
+    <OMA><OMS cd="relation1" name="eq"/>
+      <OMV name="n"/>
+      <OMA><OMS cd="linalg4" name="rowcount"/>
+        <OMV name="b"/>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+
+</FMP>
+</CDDefinition>
+
+
+</CD>

@@ -1,0 +1,400 @@
+<?xml version="1.0"?>
+<!-- $Id: hypergeo1.tfb,v 1.13 2002/12/04 08:37:09 taka Exp $ -->
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<!-- The Gauss hypergeometric function, confluent hypergeometric functions,-->
+<!-- and generalized hypergeometric functions in one variables. -->
+<CDName> hypergeo1 </CDName>
+<CDURL> http://www.math.kobe-u.ac.jp/OCD/ </CDURL>
+<CDReviewDate> 2003-07-26 </CDReviewDate>
+<CDDate> 2002-11-29 </CDDate>
+<CDVersion> 0 </CDVersion>
+<CDRevision> 0 </CDRevision>
+<CDStatus> experimental </CDStatus>
+<CDUses>
+  <CDName>alg1</CDName>
+  <CDName>arith1</CDName>
+  <CDName>calculus1</CDName>
+  <CDName>fns1</CDName>
+  <CDName>hypergeo0</CDName>
+  <CDName>interval1</CDName>
+  <CDName>linalg1</CDName>
+  <CDName>linalg4</CDName>
+  <CDName>nums1</CDName>
+  <CDName>relation1</CDName>
+</CDUses>
+<Description>
+	This CD defines the Gauss hypergeometric function, confluent
+    hypergeometric functions, and generalized hypergeometric functions
+    in one variable.
+	These functions are described in the following books.
+	(1) Handbook of Mathematical Functions, Abramowitz, Stegun
+	(2) Higher transcendental functions. Vol. III. Krieger Publishing Co., Inc., Melbourne, Fla., 1981, Erdlyi, Arthur; Magnus, Wilhelm; Oberhettinger, Fritz; Tricomi, Francesco G. 
+	(3) From Gauss to Painleve, Vieweg, Katsunori Iwasaki, Hironobu Kimura, Shun Shimomura, Masaaki Yoshida. 
+
+</Description>
+
+<CDDefinition>
+<Name> hypergeometric0F1 </Name>
+<Description>
+	Hypergeometric function {}_0 F_1.
+</Description>
+
+<CMP>
+	hypergeometric0F1(;a;z)
+	=\sum_{n=0}^{+\infty}
+	\frac{1}{pochhammer(a,n)pochhammer(1,n)} z^n
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA><OMS cd="relation1" name="eq"/>
+    <OMA><OMS cd="hypergeo1" name="hypergeometric0F1"/>
+      <OMV name="a"/>
+      <OMV name="z"/>
+    </OMA>
+    <OMA><OMS cd="arith1" name="sum"/>
+      <OMA><OMS cd="interval1" name="integer_interval"/>
+        <OMI> 0 </OMI>
+        <OMS cd="nums1" name="infinity"/>
+      </OMA>
+      <OMBIND>
+        <OMS cd="fns1" name="lambda"/>
+        <OMBVAR>
+          <OMV name="n"/>
+        </OMBVAR>
+        <OMA><OMS cd="arith1" name="times"/>
+          <OMA><OMS cd="arith1" name="divide"/>
+            <OMA><OMS cd="arith1" name="divide"/>
+              <OMI> 1 </OMI>
+              <OMA><OMS cd="hypergeo0" name="pochhammer"/>
+                <OMV name="a"/>
+                <OMV name="n"/>
+              </OMA>
+            </OMA>
+            <OMA><OMS cd="hypergeo0" name="pochhammer"/>
+              <OMI> 1 </OMI>
+              <OMV name="n"/>
+            </OMA>
+          </OMA>
+          <OMA><OMS cd="arith1" name="power"/>
+            <OMV name="z"/>
+            <OMV name="n"/>
+          </OMA>
+        </OMA>
+      </OMBIND>
+    </OMA>
+  </OMA>
+</OMOBJ>
+
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> hypergeometric1F1 </Name>
+<Description>
+	Kummer's confluent hypergeometric function.
+</Description>
+
+<CMP>
+	hypergeometric1F1(a,b;z)
+	=\sum_{n=0}^{+\infty}
+	\frac{pochhammer(a,n)}{pochhammer(1,n)pochhammer(b,n)} z^n
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA><OMS cd="relation1" name="eq"/>
+    <OMA><OMS cd="hypergeo1" name="hypergeometric1F1"/>
+      <OMV name="a"/>
+      <OMV name="b"/>
+      <OMV name="z"/>
+    </OMA>
+    <OMA><OMS cd="arith1" name="sum"/>
+      <OMA><OMS cd="interval1" name="integer_interval"/>
+        <OMI> 0 </OMI>
+        <OMS cd="nums1" name="infinity"/>
+      </OMA>
+      <OMBIND>
+        <OMS cd="fns1" name="lambda"/>
+        <OMBVAR>
+          <OMV name="n"/>
+        </OMBVAR>
+        <OMA><OMS cd="arith1" name="times"/>
+          <OMA><OMS cd="arith1" name="divide"/>
+            <OMA><OMS cd="hypergeo0" name="pochhammer"/>
+              <OMV name="a"/>
+              <OMV name="n"/>
+            </OMA>
+            <OMA><OMS cd="arith1" name="times"/>
+              <OMA><OMS cd="hypergeo0" name="pochhammer"/>
+                <OMV name="b"/>
+                <OMV name="n"/>
+              </OMA>
+              <OMA><OMS cd="hypergeo0" name="pochhammer"/>
+                <OMI> 1 </OMI>
+                <OMV name="n"/>
+              </OMA>
+            </OMA>
+          </OMA>
+          <OMA><OMS cd="arith1" name="power"/>
+            <OMV name="z"/>
+            <OMV name="n"/>
+          </OMA>
+        </OMA>
+      </OMBIND>
+    </OMA>
+  </OMA>
+</OMOBJ>
+
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> hypergeometric2F1 </Name>
+<Description>
+	The Gauss hypergeometric function.
+	This function has a branch cut on [1,+infinity).
+</Description>
+
+<CMP>
+	hypergeometric2F1(a,b,c;z)
+	=\sum_{n=0}^{+\infty}
+	\frac{pochhammer(a,n)pochhammer(b,n)}{pochhammer(c,n)pochhammer(1,n)} z^n
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA><OMS cd="relation1" name="eq"/>
+    <OMA><OMS cd="hypergeo1" name="hypergeometric2F1"/>
+      <OMV name="a"/>
+      <OMV name="b"/>
+      <OMV name="c"/>
+      <OMV name="z"/>
+    </OMA>
+    <OMA><OMS cd="arith1" name="sum"/>
+      <OMA><OMS cd="interval1" name="integer_interval"/>
+        <OMI> 0 </OMI>
+        <OMS cd="nums1" name="infinity"/>
+      </OMA>
+      <OMBIND>
+        <OMS cd="fns1" name="lambda"/>
+        <OMBVAR>
+          <OMV name="n"/>
+        </OMBVAR>
+        <OMA><OMS cd="arith1" name="times"/>
+          <OMA><OMS cd="arith1" name="divide"/>
+            <OMA><OMS cd="arith1" name="times"/>
+              <OMA><OMS cd="hypergeo0" name="pochhammer"/>
+                <OMV name="a"/>
+                <OMV name="n"/>
+              </OMA>
+              <OMA><OMS cd="hypergeo0" name="pochhammer"/>
+                <OMV name="b"/>
+                <OMV name="n"/>
+              </OMA>
+            </OMA>
+            <OMA><OMS cd="arith1" name="times"/>
+              <OMA><OMS cd="hypergeo0" name="pochhammer"/>
+                <OMV name="c"/>
+                <OMV name="n"/>
+              </OMA>
+              <OMA><OMS cd="hypergeo0" name="pochhammer"/>
+                <OMI> 1 </OMI>
+                <OMV name="n"/>
+              </OMA>
+            </OMA>
+          </OMA>
+          <OMA><OMS cd="arith1" name="power"/>
+            <OMV name="z"/>
+            <OMV name="n"/>
+          </OMA>
+        </OMA>
+      </OMBIND>
+    </OMA>
+  </OMA>
+</OMOBJ>
+
+</FMP>
+
+<Example>
+ z (1-z) d^2 F/dz^2 + (c - (a+b+1) z) d F/dz - a b F = 0 
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA><OMS cd="relation1" name="eq"/>
+    <OMA><OMS cd="arith1" name="minus"/>
+      <OMA><OMS cd="arith1" name="plus"/>
+        <OMA><OMS cd="arith1" name="times"/>
+          <OMA><OMS cd="arith1" name="times"/>
+            <OMV name="z"/>
+            <OMA><OMS cd="arith1" name="minus"/>
+              <OMI> 1 </OMI>
+              <OMV name="z"/>
+            </OMA>
+          </OMA>
+          <OMA><OMS cd="calculus1" name="diff"/>
+            <OMBIND>
+              <OMS cd="fns1" name="lambda"/>
+              <OMBVAR>
+                <OMV name="z"/>
+              </OMBVAR>
+              <OMA><OMS cd="calculus1" name="diff"/>
+                <OMBIND>
+                  <OMS cd="fns1" name="lambda"/>
+                  <OMBVAR>
+                    <OMV name="z"/>
+                  </OMBVAR>
+                  <OMA><OMS cd="hypergeo1" name="hypergeometric2F1"/>
+                    <OMV name="a"/>
+                    <OMV name="b"/>
+                    <OMV name="c"/>
+                    <OMV name="z"/>
+                  </OMA>
+                </OMBIND>
+              </OMA>
+            </OMBIND>
+          </OMA>
+        </OMA>
+        <OMA><OMS cd="arith1" name="times"/>
+          <OMA><OMS cd="arith1" name="times"/>
+            <OMA><OMS cd="arith1" name="minus"/>
+              <OMV name="c"/>
+              <OMA><OMS cd="arith1" name="plus"/>
+                <OMA><OMS cd="arith1" name="plus"/>
+                  <OMV name="a"/>
+                  <OMV name="b"/>
+                </OMA>
+                <OMI> 1 </OMI>
+              </OMA>
+            </OMA>
+            <OMV name="z"/>
+          </OMA>
+          <OMA><OMS cd="calculus1" name="diff"/>
+            <OMBIND>
+              <OMS cd="fns1" name="lambda"/>
+              <OMBVAR>
+                <OMV name="z"/>
+              </OMBVAR>
+              <OMA><OMS cd="hypergeo1" name="hypergeometric2F1"/>
+                <OMV name="a"/>
+                <OMV name="b"/>
+                <OMV name="c"/>
+                <OMV name="z"/>
+              </OMA>
+            </OMBIND>
+          </OMA>
+        </OMA>
+      </OMA>
+      <OMA><OMS cd="arith1" name="times"/>
+        <OMA><OMS cd="arith1" name="times"/>
+          <OMV name="a"/>
+          <OMV name="b"/>
+        </OMA>
+        <OMA><OMS cd="hypergeo1" name="hypergeometric2F1"/>
+          <OMV name="a"/>
+          <OMV name="b"/>
+          <OMV name="c"/>
+          <OMV name="z"/>
+        </OMA>
+      </OMA>
+    </OMA>
+    <OMI> 0 </OMI>
+  </OMA>
+</OMOBJ>
+
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> hypergeometric_pFq </Name>
+<Description>
+	Generalized hypergeometric function.
+	This function has a branch cut on [1,+infinity).
+</Description>
+
+<CMP>
+	hypergeometric_pFq(a,b;z)
+	=\sum_{n=0}^{+\infty}
+	\frac{\Pi_i pochhammer(a_i,n)}{\Pi_i pochhammer(b_i,n)pochhammer(1,n)} z^n
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA><OMS cd="relation1" name="eq"/>
+    <OMA><OMS cd="hypergeo1" name="hypergeometric_pFq"/>
+      <OMV name="a"/>
+      <OMV name="b"/>
+      <OMV name="z"/>
+    </OMA>
+    <OMA><OMS cd="arith1" name="sum"/>
+      <OMA><OMS cd="interval1" name="integer_interval"/>
+        <OMI> 0 </OMI>
+        <OMS cd="nums1" name="infinity"/>
+      </OMA>
+      <OMBIND>
+        <OMS cd="fns1" name="lambda"/>
+        <OMBVAR>
+          <OMV name="n"/>
+        </OMBVAR>
+        <OMA><OMS cd="arith1" name="times"/>
+          <OMA><OMS cd="arith1" name="divide"/>
+            <OMA><OMS cd="arith1" name="divide"/>
+              <OMA><OMS cd="arith1" name="product"/>
+                <OMA><OMS cd="interval1" name="integer_interval"/>
+                  <OMI> 1 </OMI>
+                  <OMA><OMS cd="linalg4" name="size"/>
+                    <OMV name="a"/>
+                  </OMA>
+                </OMA>
+                <OMBIND>
+                  <OMS cd="fns1" name="lambda"/>
+                  <OMBVAR>
+                    <OMV name="i"/>
+                  </OMBVAR>
+                  <OMA><OMS cd="hypergeo0" name="pochhammer"/>
+                    <OMA><OMS cd="lialg1" name="vector_selector"/>
+                      <OMV name="i"/>
+                      <OMV name="a"/>
+                    </OMA>
+                    <OMV name="n"/>
+                  </OMA>
+                </OMBIND>
+              </OMA>
+              <OMA><OMS cd="arith1" name="product"/>
+                <OMA><OMS cd="interval1" name="integer_interval"/>
+                  <OMI> 1 </OMI>
+                  <OMA><OMS cd="linalg4" name="size"/>
+                    <OMV name="b"/>
+                  </OMA>
+                </OMA>
+                <OMBIND>
+                  <OMS cd="fns1" name="lambda"/>
+                  <OMBVAR>
+                    <OMV name="i"/>
+                  </OMBVAR>
+                  <OMA><OMS cd="hypergeo0" name="pochhammer"/>
+                    <OMA><OMS cd="linalg1" name="vector_selector"/>
+                      <OMV name="i"/>
+                      <OMV name="b"/>
+                    </OMA>
+                    <OMV name="n"/>
+                  </OMA>
+                </OMBIND>
+              </OMA>
+            </OMA>
+            <OMA><OMS cd="hypergeo0" name="pochhammer"/>
+              <OMI> 1 </OMI>
+              <OMV name="n"/>
+            </OMA>
+          </OMA>
+          <OMA><OMS cd="arith1" name="power"/>
+            <OMV name="z"/>
+            <OMV name="n"/>
+          </OMA>
+        </OMA>
+      </OMBIND>
+    </OMA>
+  </OMA>
+</OMOBJ>
+
+</FMP>
+</CDDefinition>
+</CD>

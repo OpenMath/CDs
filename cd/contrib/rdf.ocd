@@ -1,0 +1,322 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+
+<CDComment>
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+
+<CDName>rdf</CDName>
+<CDBase>http://www.openmath.org/cd</CDBase>
+<CDURL>http://www.openmath.org/cd/rdf.ocd</CDURL>
+<!-- CDReviewDate>not yet reviewed</CDReviewDate -->
+<CDDate>2012-02-29</CDDate>
+<CDVersion>1</CDVersion>
+<CDRevision>0</CDRevision>
+<CDStatus>experimental</CDStatus>
+<Description>
+    This CD defines symbols for basic integration of RDF data into OpenMath.
+    It should serve as a starting point for future integration scenarios of
+    Linked Data and mathematics.
+    Author: Ken Wenzel, Fraunhofer IWU
+</Description>
+
+<CDDefinition>
+<Name>resourceset</Name>
+<Role>application</Role>
+<Description>
+This symbol represents an unary construction function for constructing
+a set of RDF resources. It takes one string argument representing a 
+Manchester Syntax description as described by
+http://www.w3.org/TR/owl2-manchester-syntax/#Descriptions
+in order to construct a set of RDF resources.
+
+Please note that it may also be possible to represent the class description
+by using OpenMath set operations:
+rdf.resourceset(
+  set1.intersect(
+    rdf.resourceset("foaf:Person"), 
+    set1.suchthat(rdf.resourceset("rdfs:Resource"), fns1.lambda[$r -> set1.size(rdf.valueset("foaf:age", $r) > 0)])
+  )
+)
+</Description>
+
+<Example>
+An example to show the representation of the class of FOAF persons with a known age.
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="rdf" name="resourceset" />
+    <OMSTR>foaf:Person and foaf:age some rdfs:Literal</OMSTR>
+  </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name>prefixes</Name>
+<Role>semantic-attribution</Role>
+<Description> 
+A symbol to be used within an OpenMath attribute to specify one or more RDF namespace prefixes.
+The annotation value should be a set1.set of pairs of strings (prefix name, namespace URI) constructed
+with the prefix symbol.
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name>prefix</Name>
+<Role>application</Role>
+<Description> 
+A symbol to be used as the head of the OpenMath application
+to construct a prefix mapping that can be used as a value of the prefixes attribution.
+The two arguments of this function should be OpenMath strings representing
+in order, the prefix and the corresponding namespace URI.
+</Description>
+<Example>
+The prefix mappings rdfs:&lt;http://www.w3.org/2000/01/rdf-schema#&gt; and foaf:&lt;http://xmlns.com/foaf/0.1/&gt; 
+for a rdf.resourceset may be represented by:
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0"
+  cdbase="http://www.openmath.org/cd">
+  <OMATTR>
+    <OMATP>
+      <OMS cd="rdf" name="prefixes" />
+      <OMA>
+        <OMS cd="set1" name="set" />
+        <OMA>
+          <OMS cd="rdf" name="prefix" />
+          <OMSTR>rdfs</OMSTR>
+          <OMSTR>http://www.w3.org/2000/01/rdf-schema#</OMSTR>
+        </OMA>
+        <OMA>
+          <OMS cd="rdf" name="prefix" />
+          <OMSTR>foaf</OMSTR>
+          <OMSTR>http://xmlns.com/foaf/0.1/</OMSTR>
+        </OMA>
+      </OMA>
+    </OMATP>
+    <OMA>
+      <OMS cd="rdf" name="resourceset" />
+      <OMSTR>foaf:Person and foaf:age some rdfs:Literal</OMSTR>
+    </OMA>
+  </OMATTR>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name>resource</Name>
+<Role>application</Role>
+<Description>
+This symbol represents an unary construction function for representing
+a specific RDF resource. It takes one string argument denoting an IRI reference
+as prefixed name in the form &quot;prefix:resourceName&quot; 
+or as a full IRI in the form &quot;&gt;IRI&lt;&quot;.
+</Description>
+
+<Example>
+An example to show the representation of the resource http://example.org/persons#Alice
+using a full IRI reference.
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="rdf" name="resource" />
+    <OMSTR>&lt;http://example.org/persons#Alice&gt;</OMSTR>
+  </OMA>
+</OMOBJ>
+</Example>
+
+<Example>
+An example to show the representation of the resource http://example.org/persons#Alice
+using the prefixed name example:Alice.
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0"
+  cdbase="http://www.openmath.org/cd">
+  <OMATTR>
+    <OMATP>
+      <OMS cd="rdf" name="prefixes" />
+      <OMA>
+        <OMS cd="set1" name="set" />
+        <OMA>
+          <OMS cd="rdf" name="prefix" />
+          <OMSTR>example</OMSTR>
+          <OMSTR>http://example.org/persons#</OMSTR>
+        </OMA>
+      </OMA>
+    </OMATP>
+    <OMA>
+      <OMS cd="rdf" name="resource" />
+      <OMSTR>example:Alice</OMSTR>
+    </OMA>
+  </OMATTR>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name>value</Name>
+<Role>application</Role>
+<Description>
+This symbol represents a function for accessing
+the value of an RDF property. It takes two arguments, a string
+denoting the property and an object denoting the RDF resource
+whose property value should be retrieved.
+</Description>
+
+<Example>
+An example that retrieves the property value for http://xmlns.com/foaf/0.1/age of 
+the resource http://example.org/persons#Alice.
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0"
+  cdbase="http://www.openmath.org/cd">
+  <OMATTR>
+    <OMATP>
+      <OMS cd="rdf" name="prefixes" />
+      <OMA>
+        <OMS cd="set1" name="set" />
+        <OMA>
+          <OMS cd="rdf" name="prefix" />
+          <OMSTR>example</OMSTR>
+          <OMSTR>http://example.org/persons#</OMSTR>
+        </OMA>
+        <OMA>
+          <OMS cd="rdf" name="prefix" />
+          <OMSTR>foaf</OMSTR>
+          <OMSTR>http://xmlns.com/foaf/0.1/</OMSTR>
+        </OMA>
+      </OMA>
+    </OMATP>
+    <OMA>
+      <OMS cd="rdf" name="value" />
+      <OMSTR>foaf:age</OMSTR>
+      <OMA>
+        <OMS cd="rdf" name="resource" />
+        <OMSTR>example:Alice</OMSTR>
+      </OMA>
+    </OMA>
+  </OMATTR>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name>valueset</Name>
+<Role>application</Role>
+<Description>
+This symbol represents a function for accessing
+all values of multivalued RDF property. It takes two arguments, a string
+denoting the property and an object denoting the RDF resource
+whose property values should be retrieved.
+</Description>
+
+<Example>
+An example that retrieves the property values for http://xmlns.com/foaf/0.1/knows of 
+the resource http://example.org/persons#Alice and hence all persons known by Alice. 
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0"
+  cdbase="http://www.openmath.org/cd">
+  <OMATTR>
+    <OMATP>
+      <OMS cd="rdf" name="prefixes" />
+      <OMA>
+        <OMS cd="set1" name="set" />
+        <OMA>
+          <OMS cd="rdf" name="prefix" />
+          <OMSTR>example</OMSTR>
+          <OMSTR>http://example.org/persons#</OMSTR>
+        </OMA>
+        <OMA>
+          <OMS cd="rdf" name="prefix" />
+          <OMSTR>foaf</OMSTR>
+          <OMSTR>http://xmlns.com/foaf/0.1/</OMSTR>
+        </OMA>
+      </OMA>
+    </OMATP>
+    <OMA>
+      <OMS cd="set1" name="in" />
+      <OMV name="p" />
+      <OMA>
+        <OMS cd="rdf" name="valueset" />
+        <OMSTR>foaf:knows</OMSTR>
+        <OMA>
+          <OMS cd="rdf" name="resource" />
+          <OMSTR>example:Alice</OMSTR>
+        </OMA>
+      </OMA>
+    </OMA>
+  </OMATTR>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name>literal_type</Name>
+<Role>semantic-attribution</Role>
+<Description> 
+A symbol to be used within an OpenMath attribute to specify the type of an RDF literal which
+is represented as an OpenMath object. The annotation value should be an rdf.resource.
+</Description>
+
+<Example>
+An example to show the representation of the typed RDF literal "This is a string."^^&lt;http://www.w3.org/2001/XMLSchema#string&gt;
+using a full IRI reference.
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0"
+  cdbase="http://www.openmath.org/cd">
+  <OMATTR>
+    <OMATP>
+      <OMS cd="rdf" name="literal_type" />
+      <OMA>
+        <OMS cd="rdf" name="resource" />
+        <OMSTR>&lt;http://www.w3.org/2001/XMLSchema#string&gt;</OMSTR>
+      </OMA>
+    </OMATP>
+    <OMSTR>This is a string.</OMSTR>
+  </OMATTR>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name>literal_lang</Name>
+<Role>semantic-attribution</Role>
+<Description> 
+A symbol to be used within an OpenMath attribute to specify the language of an RDF literal. 
+The annotation value should be an OpenMath string.
+</Description>
+
+<Example>
+An example to show the representation of the RDF literal "This is an English text."@en.
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0"
+  cdbase="http://www.openmath.org/cd">
+  <OMATTR>
+    <OMATP>
+      <OMS cd="rdf" name="literal_lang" />
+      <OMSTR>en</OMSTR>
+    </OMATP>
+    <OMSTR>This is an English text.</OMSTR>
+  </OMATTR>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+</CD>
