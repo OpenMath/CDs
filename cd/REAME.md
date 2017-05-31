@@ -10,3 +10,5 @@ This directory is split in three big branches:
   They should be grouped into project or ownerships which should make management easier.
   Each project directory should, if applicable, contain a `cd` and `sts` directory and any
   other applicable file types.
+* [contrib](contrib): contains all the CDs contributed by the community. They may be
+  considered for the set of official CDs after a review process. 
