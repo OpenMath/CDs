@@ -1,4 +1,4 @@
-DIRS = cd cdgroups
+cDIRS = cd cdgroups
 OCD = $(shell ls cd/*/*.ocd)
 CDS = $(OCD:%.ocd=%)
 SAXON = java -jar lib/saxon/saxon9he.jar
@@ -19,7 +19,8 @@ cds.xml: $(OCD)
 	   echo "</OCD>" >> cds.xml;\
 	done
 	@echo "</CDS>\n" >> cds.xml
-	sed -iE s/.*version=\"1.0\".*//g cds.xml
+	sed -E s/.*version=\"1.0\".*//g cds.xml > cds.xml.r
+	mv cds.xml.r cds.xml
 
 cdnames.md: cds.xml lib/xsl/cdnames.xsl
 	xsltproc -o $@ lib/xsl/cdnames.xsl $<

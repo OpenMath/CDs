@@ -113,6 +113,7 @@
     >
       <include name="*.ocd"/>
     </xslt>	
+
     <!-- sts output: html files -->
     <xslt 
       basedir="sts/Official"
@@ -164,15 +165,15 @@
       processor='${xslt.processor}'
       classpathref='xslt.classpath'
     />
-		<copy todir="${site}/cdgroups">
-			<fileset dir="cdgroups">
-	      <include name="*.cdg"/>
-		  </fileset>
+    <copy todir="${site}/cdgroups">
+      <fileset dir="cdgroups">
+	<include name="*.cdg"/>
+      </fileset>
     </copy>
     
     <!-- cd index: symbols by symbol-name -->
     <xslt 
-      in="cdindex.xml"
+      in="${lib}/cdindex.xml"
       out="${site}/cdindex.html"
       force="${doForceXSL}"
       style="${lib}/xsl/index.xsl"
@@ -181,7 +182,7 @@
     />
     <!-- cd index: cds by cd-names -->
     <xslt 
-      in="cdindex.xml"
+      in="${lib}/cdindex.xml"
       out="${site}/cdnames.html"
       style="${lib}/xsl/cdnames.xsl"
       force="${doForceXSL}"
@@ -190,7 +191,7 @@
     />
     <!-- cd index: cds by symbol-names, all CDs ???  -->
     <xslt 
-      in="cdindex.xml"
+      in="${lib}/cdindex.xml"
       out="${site}/cdnamess.html"
       style="${lib}/xsl/cdnamess.xsl"
       force="${doForceXSL}"
