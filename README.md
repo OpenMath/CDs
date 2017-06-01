@@ -34,5 +34,10 @@ The new CDs state can be published on the OpenMath Web site in a manual process
 a `make install` in the `CDs` repository followed by a `git push` in the
 `OpenMath.github.io` repository suffices. 
 
+# Version History
+
+This repository contains a fresh copy of the current CDs. The development history of the
+OpenMath CDs has been retained as part of the repository https://github.com/OpenMath/OMSVN
+(warning there are copies of the CDs in various places).
 <!--  LocalWords:  sts ocd contrib
  -->
