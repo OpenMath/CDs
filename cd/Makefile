@@ -1,6 +1,6 @@
 DIRS = Official experimental contrib
 BASE = ..
-INSTALL = $(BASE)/site
+INSTALL = $(BASE)/../OpenMath.github.io/cd
 
 all:
 	@for d in $(DIRS); do (cd $$d && $(MAKE) -$(MAKEFLAGS) $@) done 	

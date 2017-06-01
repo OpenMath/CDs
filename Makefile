@@ -2,14 +2,14 @@ DIRS = cd cdgroups sts
 OCD = $(shell ls cd/*/*.ocd)
 CDS = $(OCD:%.ocd=%)
 SAXON = java -jar lib/saxon/saxon9he.jar
-INSTALL = site
+INSTALL = ../OpenMath.github.io
 
-all: 
+all: cdnames.md symbols.md
 	@for d in $(DIRS); do (cd $$d && $(MAKE) -$(MAKEFLAGS) $@) done 	
 
 install: all 
 	@for d in $(DIRS); do (cd $$d && $(MAKE) -$(MAKEFLAGS) $@) done 	
-	cp *.md $(INSTALL)
+	cp cdnames.md symbols.md $(INSTALL)
 
 cds.xml: $(OCD)
 	@echo "<CDS>" > cds.xml

@@ -1,5 +1,5 @@
 LIB = $(BASE)/lib
-SITE = $(BASE)/site
+SITE = $(BASE)/../OpenMath.github.io
 INSTALL = $(SITE)/$(HERE)
 
 STS = $(shell ls *.sts)

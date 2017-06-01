@@ -7,29 +7,26 @@
    xmlns:xx="http://icl.com/saxon"
   xmlns:exslt='http://exslt.org/common'
 >
-
-<xsl:output method="html" indent="yes"/>
-
-<xsl:template match="/">
----
+  <xsl:strip-space elements="*"/>
+  <xsl:output method="text"/>
+  <xsl:template match="/">
+    <xsl:text>---
 layout: page
 title: OpenMath Content Dictionaries by name
 ---
-<table border="1">
-  <tr>
-    <th>Symbol</th>
-    <th>CD</th>
-    <th>Description</th>
-  </tr>
+|Symbol|CD|Description|</xsl:text>
   <xsl:for-each select="CDS/OCD/cd:CD/cd:CDDefinition">
     <xsl:sort select="cd:Name"/>
-    <tr>
-      <td><xsl:value-of select="cd:Name"/></td>
-      <td><a href="{substring-before(../../@path,'.ocd')}.xhtml"><xsl:value-of select="../cd:CDName"/></a></td>
-      <td><xsl:copy-of select="(Description|cd:Description)/node()"/></td>
-    </tr>
+    <xsl:text>|</xsl:text>
+    <xsl:value-of select="cd:Name"/>
+    <xsl:text>|[</xsl:text>
+    <xsl:value-of select="../cd:CDName"/>
+    <xsl:text>](../</xsl:text>
+    <xsl:value-of select="substring-before(../../@path,'.ocd')"/>
+    <xsl:text>.xhtml)|</xsl:text>
+    <xsl:copy-of select="normalize-space((Description|cd:Description)/node())"/>
+    <xsl:text>|&#xA;</xsl:text>
   </xsl:for-each>
-</table>
 </xsl:template>
 
 

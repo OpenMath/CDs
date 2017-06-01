@@ -1,6 +1,6 @@
 BASE = ..
 LIB = $(BASE)/lib
-SITE = $(BASE)/site
+SITE = $(BASE)/../OpenMath.github.io
 INSTALL = $(SITE)/cdgroups
 
 CDG = $(shell ls *.cdg)
