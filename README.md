@@ -14,12 +14,12 @@ To build the web site just run `ant` in the top dir, the web site is generated i
 The [OpenMath Society](society) is actively soliciting CD submissions in all fields of mathematics. To submit a CD make a pull request:
 
 1. [Fork this repository](https://github.com/OpenMath/CDs/compare#fork-destination-box)
-1. develop your CDs in the fork (i.e. a file with name `*.ocd` in the `cd/experimental` directory)
+1. develop your CDs in the fork (i.e. a file with name `*.ocd` in the `cd/contrib` directory)
 1. make a pull request on your fork (via the "new pull request" button under the magenta line and on this page via the green "create pull request" button. 
 1. add the following information in the comment
   * 'authors': who is responsible (other than the person submitting the pull request) 
   * 'purpose': why do we need these CDs
-  * 'description': This will be inserted into the index file for the contributed CD directory.
+  * 'description': in a nutshell, what is in the new CDs
 
 # Commenting on Content Dictionaries
 
@@ -33,3 +33,6 @@ The new CDs state can be published on the OpenMath Web site in a manual process
 [CDs](http:://github.com/OpenMath/CDs) repositories are cloned as siblings on file system,
 a `make install` in the `CDs` repository followed by a `git push` in the
 `OpenMath.github.io` repository suffices. 
+
+<!--  LocalWords:  sts ocd contrib
+ -->
