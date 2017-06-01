@@ -30,8 +30,8 @@ title: OpenMath Content Dictionaries by name
   <tr>
     <th style="text-align:left"><xsl:value-of select="$name"/></th>
     <td><xsl:value-of select="$status"/></td>
-    <td><a href="{$basepath}.xhtml"><xsl:value-of select="$name"/>.xhtml</a></td>
-    <td><a href="{$basepath}.ocd"><xsl:value-of select="$name"/>.ocd</a></td>
+    <td><a href="../{$basepath}.xhtml"><xsl:value-of select="$name"/>.xhtml</a></td>
+    <td><a href="../{$basepath}.ocd"><xsl:value-of select="$name"/>.ocd</a></td>
   </tr>
 </xsl:for-each>
 </table>
