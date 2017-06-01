@@ -14,7 +14,7 @@
 layout: page
 title: OpenMath Content Dictionaries by name
 ---
-|Symbol|CD|Description|</xsl:text>
+|Symbol|CD|Description|&#xA;</xsl:text>
   <xsl:for-each select="CDS/OCD/cd:CD/cd:CDDefinition">
     <xsl:sort select="cd:Name"/>
     <xsl:text>|</xsl:text>
@@ -28,10 +28,5 @@ title: OpenMath Content Dictionaries by name
     <xsl:text>|&#xA;</xsl:text>
   </xsl:for-each>
 </xsl:template>
-
-
-
-
-
 </xsl:stylesheet>
 
