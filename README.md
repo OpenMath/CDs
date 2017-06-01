@@ -24,3 +24,12 @@ The [OpenMath Society](society) is actively soliciting CD submissions in all fie
 # Commenting on Content Dictionaries
 
 We use the [GitHub issue system](issues) to discuss and plan changes to the CDs. 
+
+# Admin: publishing CDs on the OpenMath Web Site
+
+The new CDs state can be published on the OpenMath Web site in a manual process
+(automation via travis pending): Assuming that the
+[OpenMath.github.io](http:://github.com/OpenMath/OpenMath.github.io) repository and the
+[CDs](http:://github.com/OpenMath/CDs) repositories are cloned as siblings on file system,
+a `make install` in the `CDs` repository followed by a `git push` in the
+`OpenMath.github.io` repository suffices. 
