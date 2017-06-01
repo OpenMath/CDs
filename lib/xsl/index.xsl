@@ -13,8 +13,9 @@
     <xsl:text>---
 layout: page
 title: OpenMath Content Dictionaries by name
----
-|Symbol|CD|Description|&#xA;</xsl:text>
+---&#xA;</xsl:text>
+<xsl:text>&lt;!-- WARNING: This page is automatically generated, do not edit! WARNING--&gt;&#xA;</xsl:text>
+<xsl:text>|Symbol|CD|Description|&#xA;</xsl:text>
   <xsl:for-each select="CDS/OCD/cd:CD/cd:CDDefinition">
     <xsl:sort select="cd:Name"/>
     <xsl:text>|</xsl:text>
