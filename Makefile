@@ -9,7 +9,7 @@ all: cdnames.md symbols.md
 
 install: all 
 	@for d in $(DIRS); do (cd $$d && $(MAKE) -$(MAKEFLAGS) $@) done 	
-	cp cdnames.md symbols.md $(INSTALL)
+	cp cdnames.md symbols.md cds.tar.gz $(INSTALL)
 
 cds.xml: $(OCD)
 	@echo "<CDS>" > cds.xml
@@ -28,7 +28,12 @@ cdnames.md: cds.xml lib/xsl/cdnames.xsl
 symbols.md: cds.xml lib/xsl/index.xsl
 	xsltproc -o $@ lib/xsl/index.xsl $<
 
-cds.tgz: all
-	tar zfc cds.tgz cd/ 
+cds.tar.gz: all
+	tar fc cds.tar cd/*/*.xhtml cd/*/*.ocd cd/*/*.omcd
+	tar fr cds.tar sts/*.xhtml sts/*.sts
+	tar fr cds.tar cdgroups/*.cdg cdgroups/*.xhtml
+	tar fr cds.tar contrib/*/*.xhtml contrib/*/*.ocd contrib/*/*.omcd
+	gzip cds.tar -f
+
 echo:
 	@echo $(OCD)
