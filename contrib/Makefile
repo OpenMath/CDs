@@ -1,10 +1,7 @@
-DIRS = Official experimental
-BASE = ..
-INSTALL = $(BASE)/../OpenMath.github.io/cd
+DIRS = cd sts
 
-all:
+all: 
 	@for d in $(DIRS); do (cd $$d && $(MAKE) -$(MAKEFLAGS) $@) done 	
 
 install: all 
 	@for d in $(DIRS); do (cd $$d && $(MAKE) -$(MAKEFLAGS) $@) done 	
-	cp omcd.css $(INSTALL)

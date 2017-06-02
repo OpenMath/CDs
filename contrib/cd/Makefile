@@ -1,3 +1,3 @@
 BASE = ../..
-HERE = cd/contrib
+HERE = contrib/cd
 include $(BASE)/lib/Makefile.cd

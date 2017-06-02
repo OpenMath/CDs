@@ -1,4 +1,4 @@
 BASE = ../..
-HERE = sts/contrib
+HERE = contrib/sts
 include $(BASE)/lib/Makefile.sts
 

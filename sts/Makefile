@@ -1,5 +1,4 @@
-DIRS = Official contrib
-INSTALL = ../../OpenMath.github.io/sts
+BASE = ..
+HERE = sts
+include $(BASE)/lib/Makefile.sts
 
-all install::
-	@for d in $(DIRS); do (cd $$d && $(MAKE) -$(MAKEFLAGS) $@) done 	
