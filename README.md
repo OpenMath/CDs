@@ -2,12 +2,17 @@
 
 This repository contains the [OpenMath](http://openmath.org) content dictionaries
 
-* `cd` contains the actual content dictionaries, there are two 
-* `sts` contains the small type system type annotations
+* `cd` contains the actual content dictionaries, there are two kinds official and experimental ones. 
+* `cdgroups` contains the CD groups specifications. 
+* `sts` contains the small type system (STS) libraries.
+* `contrib` contains the contributed CDs and and STS libraries. 
 * `build.xml` allows to run the html generation for [the OpenMath Web Site](http://www.openmath.org/cd), the other `*.xml` will probably be moved to the web site repository.
 * `lib` contains resources for the build
 
-To build the web site just run `ant` in the top dir, the web site is generated into the directory `target`. It only needs to be committed there. This wil probably be automated with travis in the near future. 
+To build the web site just run `make install` in the top dir, assuming that the
+[OpenMath.github.io](https://github.com/OpenMath/OpenMath.github.io) repository is cloned
+as a sibling to the [CDs](https://github.com/OpenMath/CDs) repository. It only needs to be
+committed there. This wil probably be automated with travis in the near future.
 
 # Contributing Content Dictionaries
 
