@@ -164,7 +164,7 @@
     <dt><span class="dt">Signatures:</span></dt>
     <dd>
       <xsl:element name="a">
-	<xsl:attribute name="href">../sts/<xsl:value-of 
+	<xsl:attribute name="href">../../sts/<xsl:value-of 
 	select="normalize-space((/cd:CD/cd:CDName)[1])"/>.xhtml#<xsl:value-of
 	select="normalize-space(cd:Name[1])"/></xsl:attribute>
 	sts
