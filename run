@@ -15,6 +15,9 @@ if [ "$TRAVIS" = "true" ] && [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
 	git config --global push.default simple
 
 	git clone https://$ghauth@github.com/OpenMath/OpenMath.github.io.git
+	cp -p  OpenMath.github.io/cd/Official/*.html CDs/cd/Official
+	cp -p  OpenMath.github.io/cd/experimental/*.html CDs/cd/experimental
+	cp -p  OpenMath.github.io/sts/*.html CDs/sts
         cd CDs
         make
 	make cds.tar.gz
