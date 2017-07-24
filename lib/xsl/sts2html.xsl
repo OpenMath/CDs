@@ -28,7 +28,7 @@
       <a href="../cd/{@type}.html"><xsl:value-of select="@type"/></a>
       <br/>
       Content Dictionary:
-      <a href="../cd/{@cd}.xhtml"><xsl:value-of select="@cd"/></a>
+      <a href="../cd/{@cd}.html"><xsl:value-of select="@cd"/></a>
       <br/>
       CD Signature File:
       <a href="{@cd}.sts"><xsl:value-of select="@cd"/>.sts</a>
@@ -61,7 +61,7 @@
   </pre>
   <xsl:apply-templates mode="display"/>
   <p>
-     <a href="../cd/{../@cd}.xhtml#{@name}">Content Dictionary Entry.</a> 
+     <a href="../cd/{../@cd}.html#{@name}">Content Dictionary Entry.</a> 
   </p>
   <hr/>
   <table width="100%">
@@ -149,7 +149,7 @@
 
 <xsl:template mode="display" match="om:OMS[not(@cd='sts')]">
   <xsl:text> </xsl:text>
-  <a href="../cd/{@cd}.xhtml#{@name}"><xsl:value-of select="@name"/></a>
+  <a href="../cd/{@cd}.html#{@name}"><xsl:value-of select="@name"/></a>
   <xsl:text> </xsl:text>
 </xsl:template>
 

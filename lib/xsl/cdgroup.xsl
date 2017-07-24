@@ -35,7 +35,7 @@
 <xsl:template match="cd:CDGroupMember">
     <xsl:element name="a">
       <xsl:attribute name="href">../cd/<xsl:value-of 
-      select="normalize-space(./cd:CDName)"/>.xhtml</xsl:attribute>
+      select="normalize-space(./cd:CDName)"/>.html</xsl:attribute>
       <xsl:value-of select="cd:CDGroupName"/>
       <xsl:value-of 
 	  select="normalize-space(./cd:CDName)"/>
