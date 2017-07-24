@@ -20,6 +20,9 @@ if [ "$TRAVIS" = "true" ] && [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
 	cp -p  OpenMath.github.io/cd/experimental/*.html CDs/cd/experimental
 	cp -p  OpenMath.github.io/cd/experimental/*.omcd CDs/cd/experimental
 	cp -p  OpenMath.github.io/sts/*.html CDs/sts
+	cp -p  OpenMath.github.io/contrib/cd/*.html CDs/contrib/cd
+	cp -p  OpenMath.github.io/contrib/cd/*.omcd CDs/contrib/cd
+	cp -p  OpenMath.github.io/contrib/sts/*.html CDs/contrib/sts
         cd CDs
         make
 	make cds.tar.gz
