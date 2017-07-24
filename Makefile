@@ -23,10 +23,10 @@ cds.xml: $(OCD)
 	mv cds.xml.r cds.xml
 
 cdnames.md: cds.xml lib/xsl/cdnames.xsl
-	xsltproc -o $@ lib/xsl/cdnames.xsl $<
+	$(SAXON) -o $@ $< lib/xsl/cdnames.xsl 
 
 symbols.md: cds.xml lib/xsl/index.xsl
-	xsltproc -o $@ lib/xsl/index.xsl $<
+	$(SAXON) -o $@ $< lib/xsl/index.xsl 
 
 cds.tar.gz: all
 	tar fc cds.tar cd/*/*.xhtml cd/*/*.ocd cd/*/*.omcd

@@ -4,7 +4,6 @@
   xmlns:cd="http://www.openmath.org/OpenMathCD"
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
    xmlns:x="http://xml.apache.org/xalan"
-   xmlns:xx="http://icl.com/saxon"
   xmlns:exslt='http://exslt.org/common'
 >
 <xsl:output method="html" indent="yes"/>
