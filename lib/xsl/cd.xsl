@@ -16,7 +16,9 @@
 
 <xsl:param name="xsldir" select="'../xsl'"/>
 
-<xsl:output method="xml" />
+<xsl:output method="xml"
+	    omit-xml-declaration="yes"
+	    encoding="US-ASCII"/>
 
 <xsl:strip-space elements="cd:Name"/>
 
@@ -27,8 +29,11 @@
 
 <xsl:template match="cd:CD">
   <xsl:variable name="cd" select="normalize-space(./cd:CDName)"/>
-<xsl:processing-instruction name="xml-stylesheet"
-> type="text/xsl"  href="<xsl:value-of select="$xsldir"/>/pmathml.xsl"</xsl:processing-instruction>
+  <!--
+      <xsl:processing-instruction name="xml-stylesheet"
+      > type="text/xsl"  href="<xsl:value-of select="$xsldir"/>/pmathml.xsl"</xsl:processing-instruction>
+  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_SVG"><xsl:text> </xsl:text></script>
 <xsl:text>&#10;</xsl:text>
   <html>
   <head>

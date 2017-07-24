@@ -3,17 +3,17 @@ SITE = $(BASE)/../OpenMath.github.io
 INSTALL = $(SITE)/$(HERE)
 
 STS = $(shell ls *.sts)
-HTML = $(STS:%.sts=%.xhtml)
+HTML = $(STS:%.sts=%.html)
 SAXON = java -jar $(LIB)/saxon/saxon9he.jar
 
 all: $(HTML) 
 
-$(HTML): %.xhtml: %.sts $(LIB)/xsl/sts2html.xsl
+$(HTML): %.html: %.sts $(LIB)/xsl/sts2html.xsl
 	$(SAXON) -o:$@ $< $(LIB)/xsl/sts2html.xsl 
 
 install: all
 	mkdir -p $(INSTALL) || true
-	cp *.xhtml *.sts $(INSTALL)
+	cp *.html *.sts $(INSTALL)
 
 echo:
 	@echo $(HTML)

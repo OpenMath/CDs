@@ -8,7 +8,10 @@
 <!-- verb mode -->
 <xsl:import href="verb.xsl"/>
 
-<xsl:output method="xml" indent="yes"/>
+<xsl:output method="xml"
+	    indent="yes"
+	    omit-xml-declaration="yes"
+	    encoding="US-ASCII"/>
 
 
 <xsl:template match="sts:CDSignatures">
