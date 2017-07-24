@@ -26,5 +26,5 @@ if [ "$TRAVIS" = "true" ] && [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
 else
     echo skipping copying to website
 fi
-fi
+
 
