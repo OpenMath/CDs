@@ -9,7 +9,7 @@ SAXON = java -jar $(LIB)/saxon/saxon9he.jar
 all: $(HTML) 
 
 $(HTML): %.xhtml: %.sts $(LIB)/xsl/sts2html.xsl
-	xsltproc -o $@ $(LIB)/xsl/sts2html.xsl $<
+	$(SAXON) -o:$@ $< $(LIB)/xsl/sts2html.xsl 
 
 install: all
 	mkdir -p $(INSTALL) || true
