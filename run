@@ -1,0 +1,27 @@
+
+ 
+set -e
+
+
+
+
+if [ "$TRAVIS" = "true" ] && [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
+   echo "travis job push to om website"
+   	rm -rf OpenMath.github.io.git
+	echo clone
+	git config --global user.email "dpcarlisle@gmail.com"
+	git config --global user.name "Travis CI"
+	git config --global push.default simple
+
+	git clone https://$ghauth@github.com/OpenMath/OpenMath.github.io.git
+        make
+        cp -r cdnames.md symbols.md cds.tar.gz OpenMath.github.io
+	cd OpenMath.github.io
+	git commit -a -m "from travis ci: $TRAVIS_COMMIT_MESSAGE" || echo no changes
+	git push
+	
+else
+    echo skipping copying to website
+fi
+fi
+
