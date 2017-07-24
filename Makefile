@@ -18,7 +18,7 @@ cds.xml: $(OCD)
 	   cat $$d >> cds.xml &&\
 	   echo "</OCD>" >> cds.xml;\
 	done
-	@echo "</CDS>\n" >> cds.xml
+	@echo "</CDS>" >> cds.xml
 	sed -E s/.*version=\"1.0\".*//g cds.xml > cds.xml.r
 	mv cds.xml.r cds.xml
 
