@@ -17,8 +17,11 @@ install: all
 	cp *.html *.cdg index.md $(INSTALL)
 
 index.md:
-	@echo "---\nlayout: page\ntitle: OpenMath Content Dictionaries - CD Groups\n---\n" > $@
-	@for d in $(CDG); do echo "* [$$d]($$d)" >> $@; done
+	@echo '---' > $@
+	@echo 'layout: page' >> $@
+	@echo 'title: OpenMath Content Dictionaries - CD Groups' >> $@
+	@echo '---' >> $@
+	@for d in $(CDG); do echo "* [$$d]($$d)" | sed -e 's/cdg)/html)/'  >> $@; done
 
 echo:
 	@echo $(HTML)
