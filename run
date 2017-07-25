@@ -15,6 +15,8 @@ if [ "$TRAVIS" = "true" ] && [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
 	git config --global push.default simple
 
 	git clone https://$ghauth@github.com/OpenMath/OpenMath.github.io.git
+	echo "TRAVIS EVENT TYPE: $TRAVIS_EVENT_TYPE"
+	if [ "$TRAVIS_EVENT_TYPE" = "pull" ]; then
 	cp -p  OpenMath.github.io/cd/Official/*.html CDs/cd/Official
 	cp -p  OpenMath.github.io/cd/Official/*.omcd CDs/cd/Official
 	cp -p  OpenMath.github.io/cd/experimental/*.html CDs/cd/experimental
@@ -23,6 +25,7 @@ if [ "$TRAVIS" = "true" ] && [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
 	cp -p  OpenMath.github.io/contrib/cd/*.html CDs/contrib/cd
 	cp -p  OpenMath.github.io/contrib/cd/*.omcd CDs/contrib/cd
 	cp -p  OpenMath.github.io/contrib/sts/*.html CDs/contrib/sts
+	fi
         cd CDs
         make
 	make cds.tar.gz
