@@ -16,9 +16,9 @@
 
 <xsl:template match="sts:CDSignatures">
   <html>
+  <head>
   <link rel="stylesheet" href="https://openmath.github.io/public/css/hyde.css"/>
   <link rel="stylesheet" href="https://openmath.github.io/public/css/main.css"/>
-  <head>
     <title><xsl:value-of select="@cd"/></title>
     <link rel="stylesheet" href="../cd/omcd.css" type="text/css"/>
   </head>

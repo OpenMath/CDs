@@ -13,9 +13,68 @@
 <xsl:template match="cd:CDGroup">
   <html>
     <head>
+  <link rel="stylesheet" href="https://openmath.github.io/public/css/hyde.css"/>
+  <link rel="stylesheet" href="https://openmath.github.io/public/css/main.css"/>
       <title><xsl:value-of select="cd:CDGroupName"/></title>
     </head>
-    <body bgcolor="#FFFFFF">
+      <body class="theme-base-odk">
+    <div class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+            <img src="https://openmath.github.io/public/logo.png" alt="OpenMath" width="100%"/>
+        </a>
+      </h1>
+      <p class="lead">OpenMath is an extensible standard for representing the semantics of mathematical objects.</p>
+      <p class="site-url lead"><a href="http://openmath.github.io/">http://openmath.github.io</a></p>
+    </div>
+
+<nav class="sidebar-nav">
+<a class="sidebar-nav-item"
+   href="https://openmath.github.io/">Home</a> ,
+<a class="sidebar-nav-item"
+   href="https://openmath.github.io//about/">OpenMath</a>
+<br/>
+<a class="sidebar-nav-item"
+   href="https://openmath.github.io//society/">OM Society</a> , 
+<a class="sidebar-nav-item"
+   href="https://openmath.github.io//meetings/">Meetings</a>
+<br/>
+<a class="sidebar-nav-item"
+   href="https://openmath.github.io//standard/">Standards</a> ,
+<a class="sidebar-nav-item"
+   href="https://openmath.github.io//documents/">Documents</a> , 
+<a class="sidebar-nav-item"
+   href="https://openmath.github.io//cd/">CDs</a>
+<br/>
+<a class="sidebar-nav-item"
+   href="https://openmath.github.io/development/">Development</a> , 
+<a class="sidebar-nav-item"
+   href="https://openmath.github.io/projects/">Projects</a> , 
+<a class="sidebar-nav-item"
+   href="https://openmath.github.io/software/">Software &amp; Tools</a>
+<br/>
+<a class="sidebar-nav-item"
+   href="https://openmath.github.io/news/">News</a> ,
+<a class="sidebar-nav-item"
+   href="https://openmath.github.io/follow/">Follow &amp; Contact us</a>
+&#160;&#160;
+      <span class="sidebar-nav-item">
+        <a href="https://openmath.github.io/atom.xml"><img class="icon" src="https://openmath.github.io/public/feed_w.png" alt="atom feed"/></a>
+        <a href="https://twitter.com/openmath"><img class="icon" src="https://openmath.github.io/public/twitter_w.png" alt="twitter"/></a>
+        <a href="https://github.com/OpenMath"><img class="icon" src="https://openmath.github.io/public/github_w.png" alt="github"/></a>
+      </span><br/>
+
+      
+  </nav>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="page">
+
       <h1>OpenMath CD Group:
       <xsl:value-of select="cd:CDGroupName"/>
       </h1>
@@ -24,7 +83,9 @@
       <xsl:value-of select="cd:CDGroupDescription"/>
       <hr/>
       <xsl:apply-templates/>
-    </body>
+      </div>
+    </div>
+      </body>
   </html>
 </xsl:template>
 
