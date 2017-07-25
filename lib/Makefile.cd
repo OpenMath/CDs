@@ -3,21 +3,21 @@ SITE = $(BASE)/../OpenMath.github.io
 INSTALL = $(SITE)/$(HERE)
 
 OCD = $(shell ls *.ocd)
-HTML = $(OCD:%.ocd=%.xhtml)
+HTML = $(OCD:%.ocd=%.html)
 OMCD = $(OCD:%.ocd=%.omcd)
 SAXON = java -jar $(LIB)/saxon/saxon9he.jar
 
 all: $(HTML) $(OMCD)
 
-$(HTML): %.xhtml: %.ocd $(LIB)/xsl/cd.xsl
+$(HTML): %.html: %.ocd $(LIB)/xsl/cd.xsl
 	$(SAXON) -s:$< -xsl:$(LIB)/xsl/cd.xsl -o:$@
 
 $(OMCD): %.omcd: %.ocd $(LIB)/xsl/cd2om.xsl
-	xsltproc -o $@ $(LIB)/xsl/cd2om.xsl $<
+	$(SAXON) -o:$@ $< $(LIB)/xsl/cd2om.xsl 
 
 install: all
 	mkdir -p $(INSTALL) || true
-	cp *.xhtml *.ocd *.omcd $(INSTALL)
+	cp *.html *.ocd *.omcd $(INSTALL)
 
 echo:
 	@echo $(HTML)

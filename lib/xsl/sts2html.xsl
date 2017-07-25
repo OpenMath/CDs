@@ -1,5 +1,5 @@
 <xsl:stylesheet 
-  version="1.0"
+  version="2.0"
   xmlns:om="http://www.openmath.org/OpenMath"
   xmlns:sts="http://www.openmath.org/OpenMathCDS"
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
@@ -8,7 +8,10 @@
 <!-- verb mode -->
 <xsl:import href="verb.xsl"/>
 
-<xsl:output method="xml" indent="yes"/>
+<xsl:output method="xml"
+	    indent="yes"
+	    omit-xml-declaration="yes"
+	    encoding="US-ASCII"/>
 
 
 <xsl:template match="sts:CDSignatures">
@@ -25,7 +28,7 @@
       <a href="../cd/{@type}.html"><xsl:value-of select="@type"/></a>
       <br/>
       Content Dictionary:
-      <a href="../cd/{@cd}.xhtml"><xsl:value-of select="@cd"/></a>
+      <a href="../cd/{@cd}.html"><xsl:value-of select="@cd"/></a>
       <br/>
       CD Signature File:
       <a href="{@cd}.sts"><xsl:value-of select="@cd"/>.sts</a>
@@ -58,7 +61,7 @@
   </pre>
   <xsl:apply-templates mode="display"/>
   <p>
-     <a href="../cd/{../@cd}.xhtml#{@name}">Content Dictionary Entry.</a> 
+     <a href="../cd/{../@cd}.html#{@name}">Content Dictionary Entry.</a> 
   </p>
   <hr/>
   <table width="100%">
@@ -146,7 +149,7 @@
 
 <xsl:template mode="display" match="om:OMS[not(@cd='sts')]">
   <xsl:text> </xsl:text>
-  <a href="../cd/{@cd}.xhtml#{@name}"><xsl:value-of select="@name"/></a>
+  <a href="../cd/{@cd}.html#{@name}"><xsl:value-of select="@name"/></a>
   <xsl:text> </xsl:text>
 </xsl:template>
 

@@ -1,9 +1,10 @@
 <xsl:stylesheet 
-  version="1.0"
+  version="2.0"
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   xmlns:om="http://www.openmath.org/OpenMath"
   xmlns:cd="http://www.openmath.org/OpenMathCDG"
-  xmlns="http://www.w3.org/1999/xhtml">
+  xmlns="http://www.w3.org/1999/xhtml"
+  exclude-result-prefixes="om cd">
 
 
 <xsl:output method="html" indent="yes"/>
@@ -35,7 +36,7 @@
 <xsl:template match="cd:CDGroupMember">
     <xsl:element name="a">
       <xsl:attribute name="href">../cd/<xsl:value-of 
-      select="normalize-space(./cd:CDName)"/>.xhtml</xsl:attribute>
+      select="normalize-space(./cd:CDName)"/>.html</xsl:attribute>
       <xsl:value-of select="cd:CDGroupName"/>
       <xsl:value-of 
 	  select="normalize-space(./cd:CDName)"/>

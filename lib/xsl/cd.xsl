@@ -16,7 +16,9 @@
 
 <xsl:param name="xsldir" select="'../xsl'"/>
 
-<xsl:output method="xml" />
+<xsl:output method="xml"
+	    omit-xml-declaration="yes"
+	    encoding="US-ASCII"/>
 
 <xsl:strip-space elements="cd:Name"/>
 
@@ -27,8 +29,11 @@
 
 <xsl:template match="cd:CD">
   <xsl:variable name="cd" select="normalize-space(./cd:CDName)"/>
-<xsl:processing-instruction name="xml-stylesheet"
-> type="text/xsl"  href="<xsl:value-of select="$xsldir"/>/pmathml.xsl"</xsl:processing-instruction>
+  <!--
+      <xsl:processing-instruction name="xml-stylesheet"
+      > type="text/xsl"  href="<xsl:value-of select="$xsldir"/>/pmathml.xsl"</xsl:processing-instruction>
+  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_SVG"><xsl:text> </xsl:text></script>
 <xsl:text>&#10;</xsl:text>
   <html>
   <head>
@@ -104,7 +109,7 @@
       <xsl:if test="not(doc-available(resolve-uri(concat(.,'.ocd'),base-uri(/))))">../../../cd/</xsl:if>
       </xsl:variable>
       <xsl:variable name="n" select="normalize-space(.)"/>
-      <a href="{$p}{$n}.xhtml"><xsl:value-of select="$n"/></a>
+      <a href="{$p}{$n}.html"><xsl:value-of select="$n"/></a>
       <xsl:if test="position() &lt; last()">, </xsl:if>
     </xsl:for-each></dd>
     </xsl:if></dl>
@@ -165,7 +170,7 @@
     <dd>
       <xsl:element name="a">
 	<xsl:attribute name="href">../../sts/<xsl:value-of 
-	select="normalize-space((/cd:CD/cd:CDName)[1])"/>.xhtml#<xsl:value-of
+	select="normalize-space((/cd:CD/cd:CDName)[1])"/>.html#<xsl:value-of
 	select="normalize-space(cd:Name[1])"/></xsl:attribute>
 	sts
       </xsl:element>
@@ -362,7 +367,7 @@
   <xsl:variable name="p">
     <xsl:if test="not(doc-available(resolve-uri(concat(.,'.ocd'),base-uri(/))))">../../../cd/</xsl:if>
   </xsl:variable>
-  <a href="{$p}{@cd}.xhtml#{@name}"><xsl:value-of select="@name"/></a>
+  <a href="{$p}{@cd}.html#{@name}"><xsl:value-of select="@name"/></a>
 </xsl:template>
 
 <xsl:template mode="term" match="om:OMATP">
