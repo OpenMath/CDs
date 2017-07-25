@@ -11,7 +11,7 @@
   <xsl:template match="/">
     <xsl:text>---
 layout: page
-title: OpenMath Content Dictionaries by name
+title: OpenMath Symbols
 ---&#xA;</xsl:text>
 
 <table>
@@ -21,7 +21,7 @@ title: OpenMath Content Dictionaries by name
     <th>Description</th>
   </tr>
   <xsl:for-each select="CDS/OCD/cd:CD/cd:CDDefinition">
-    <xsl:sort select="cd:Name"/>
+    <xsl:sort select="lower-case(cd:Name)"/>
     <tr>
       <td><xsl:value-of select="cd:Name"/></td>
       <td><a href="../{substring-before(../../@path,'.ocd')}.xhtml">

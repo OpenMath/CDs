@@ -1,5 +1,6 @@
 site
 *.xhtml
+*.html
 *.omcd
 *.md
 cds.xml
