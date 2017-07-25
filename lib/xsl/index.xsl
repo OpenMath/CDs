@@ -12,7 +12,7 @@
   <xsl:template match="/">
     <xsl:text>---
 layout: page
-title: OpenMath Content Dictionaries by name
+title: OpenMath Symbols
 ---&#xA;</xsl:text>
 
 <table>
