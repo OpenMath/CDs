@@ -33,10 +33,12 @@
       <xsl:processing-instruction name="xml-stylesheet"
       > type="text/xsl"  href="<xsl:value-of select="$xsldir"/>/pmathml.xsl"</xsl:processing-instruction>
   -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_SVG"><xsl:text> </xsl:text></script>
 <xsl:text>&#10;</xsl:text>
-  <html>
-  <head>
+<html>
+ <head>
+  <link rel="stylesheet" href="https://openmath.github.io/public/css/hyde.css"/>
+  <link rel="stylesheet" href="https://openmath.github.io/public/css/main.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_SVG"><xsl:text> </xsl:text></script>
 
     <script type="text/javascript"> function divfold(_Id){
      var thisLevel = document.getElementById(_Id);
@@ -52,11 +54,69 @@
      <title><xsl:value-of select="$cd"/>
      </title>    
      <link rel = "stylesheet"
-	   href = "omcd.css"
+	   href = "https://openmath.github.io/cd/omcd.css"
 	   type = "text/css" ></link>
      
   </head>
-  <body>
+      <body class="theme-base-odk">
+
+    <div class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+            <img src="https://openmath.github.io/public/logo.png" alt="OpenMath" width="100%"/>
+        </a>
+      </h1>
+      <p class="lead">OpenMath is an extensible standard for representing the semantics of mathematical objects.</p>
+      <p class="site-url lead"><a href="http://openmath.github.io/">http://openmath.github.io</a></p>
+    </div>
+
+<nav class="sidebar-nav">
+<a class="sidebar-nav-item"
+   href="https://openmath.github.io/">Home</a> ,
+<a class="sidebar-nav-item"
+   href="https://openmath.github.io//about/">OpenMath</a>
+<br/>
+<a class="sidebar-nav-item"
+   href="https://openmath.github.io//society/">OM Society</a> , 
+<a class="sidebar-nav-item"
+   href="https://openmath.github.io//meetings/">Meetings</a>
+<br/>
+<a class="sidebar-nav-item"
+   href="https://openmath.github.io//standard/">Standards</a> ,
+<a class="sidebar-nav-item"
+   href="https://openmath.github.io//documents/">Documents</a> , 
+<a class="sidebar-nav-item"
+   href="https://openmath.github.io//cd/">CDs</a>
+<br/>
+<a class="sidebar-nav-item"
+   href="https://openmath.github.io/development/">Development</a> , 
+<a class="sidebar-nav-item"
+   href="https://openmath.github.io/projects/">Projects</a> , 
+<a class="sidebar-nav-item"
+   href="https://openmath.github.io/software/">Software &amp; Tools</a>
+<br/>
+<a class="sidebar-nav-item"
+   href="https://openmath.github.io/news/">News</a> ,
+<a class="sidebar-nav-item"
+   href="https://openmath.github.io/follow/">Follow &amp; Contact us</a>
+&#160;&#160;
+      <span class="sidebar-nav-item">
+        <a href="https://openmath.github.io/atom.xml"><img class="icon" src="https://openmath.github.io/public/feed_w.png" alt="atom feed"/></a>
+        <a href="https://twitter.com/openmath"><img class="icon" src="https://openmath.github.io/public/twitter_w.png" alt="twitter"/></a>
+        <a href="https://github.com/OpenMath"><img class="icon" src="https://openmath.github.io/public/github_w.png" alt="github"/></a>
+      </span><br/>
+
+      
+  </nav>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="page">
+
     <a name="top"/>
     <h1>OpenMath Content Dictionary: <xsl:value-of select="$cd"/></h1>
     
@@ -115,7 +175,9 @@
     </xsl:if></dl>
     <hr/>
     <xsl:apply-templates/>
-  </body>
+      </div>
+    </div>
+      </body>
   </html>
 </xsl:template>
 
