@@ -38,7 +38,7 @@
 <CDStatus> experimental </CDStatus>
 <CDDate> 2003-08-21 </CDDate>
 <CDVersion> 3 </CDVersion>
-<CDRevision> 0 </CDRevision>
+<CDRevision> 1 </CDRevision>
 <CDUses>
 <CDName>arith1</CDName>
 <CDName>relation1</CDName>
@@ -69,7 +69,7 @@ imperial measure for distance.
     </OMA>
     <OMA>
       <OMS name="times" cd="arith1"/>
-      <OMF> 0.3048 </OMF>
+      <OMF dec="0.3048"/>
       <OMS name="metre" cd="units_metric1"/>
     </OMA>
   </OMA>
