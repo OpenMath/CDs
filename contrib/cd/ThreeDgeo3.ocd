@@ -34,11 +34,14 @@
 
 <CDName>ThreeDgeo3</CDName>
 <CDURL> http://nash.sip.ucm.es/LAD-3D/3DgeoCDs/ThreeDgeo3.ocd </CDURL>
-<CDReviewDate> 2009-05-17 </CDReviewDate>
+<CDReviewDate>2017-12-31</CDReviewDate>
 <CDStatus>experimental</CDStatus>
 <CDDate> 2008-01-21 </CDDate>
 <CDVersion> 0 </CDVersion>
-<CDRevision> 2 </CDRevision>
+<CDRevision>3</CDRevision>
+<CDComment>
+  Author: Jesús Escribano
+</CDComment>
 
 <Description> 
 This CD defines symbols for 3-dimensional Euclidean geometry
