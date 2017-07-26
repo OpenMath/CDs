@@ -44,7 +44,7 @@ may apply.
   <CDStatus> experimental </CDStatus>
   <CDDate> 2009-01-10 </CDDate>
   <CDVersion> 1 </CDVersion>
-  <CDRevision> 0 </CDRevision>
+  <CDRevision> 1 </CDRevision>
   <CDUses>
   </CDUses>
 
@@ -121,7 +121,7 @@ Its measured value is
 </CDDefinition>
 
 <CDDefinition>
-<Name> astronomical unit </Name>
+<Name> astronomical-unit </Name>
 <Description>
 This symbol represents the measure of one astronomical unit of distance.
 It has the short symbol form, "ua".
@@ -131,14 +131,14 @@ Its measured value is
 [DRAFT INTERNATIONAL STANDARD ISO/DIS 80000-1,
 International Organization for Standardization, 2008]
 </Description>
-<CMP>  1  astronomical unit ~ 1.49597870691 * 10^11 metre  </CMP>
+<CMP>  1  astronomical-unit ~ 1.49597870691 * 10^11 metre  </CMP>
 <FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
 <OMA>
   <OMS name="approx" cd="relation1"/>
   <OMA>
     <OMS name="times" cd="arith1"/>
     <OMI> 1 </OMI>
-    <OMS name="astronomical unit" cd="SIUsed_OffSystemMeasuredUnits1"/>
+    <OMS name="astronomical-unit" cd="SIUsed_OffSystemMeasuredUnits1"/>
   </OMA>
   <OMA>
     <OMS name="times" cd="arith1"/>

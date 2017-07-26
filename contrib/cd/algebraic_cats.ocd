@@ -39,7 +39,7 @@
 <CDStatus> experimental </CDStatus>
 <CDDate> 2002-06-17 </CDDate>
 <CDVersion> 0 </CDVersion>
-<CDRevision> 0 </CDRevision>
+<CDRevision> 1 </CDRevision>
 <CDUses>
   <CDName> generic_alg_cats </CDName>
   <CDName> logic1 </CDName>
@@ -428,7 +428,7 @@ if (S,*,1) comprises an Abelian monoid then for all a,b in S | a*b=b*a
             <OMS cd="set1" name="in"/>
             <OMV name="a"/>
             <OMA>
-              <OMA cd="generic_alg_cats" name="Abelian_monoid"/>
+              <OMS cd="generic_alg_cats" name="Abelian_monoid"/>
               <OMV name="S"/>
             </OMA>
           </OMA>
@@ -436,7 +436,7 @@ if (S,*,1) comprises an Abelian monoid then for all a,b in S | a*b=b*a
             <OMS cd="set1" name="in"/>
             <OMV name="b"/>
             <OMA>
-              <OMA cd="generic_alg_cats" name="Abelian_monoid"/>
+              <OMS cd="generic_alg_cats" name="Abelian_monoid"/>
               <OMV name="S"/>
             </OMA>
           </OMA>
@@ -1264,7 +1264,7 @@ if (S,*) comprises a groupoid, then for all a,b in S | a*b is a member of S
     <OMA>
       <OMS cd="logic1" name="implies"/>
       <OMA>
-        <OMA cd="logic1" name="and"/>
+        <OMS cd="logic1" name="and"/>
         <OMA>
           <OMS cd="set1" name="in"/>
           <OMV name="a"/>
@@ -1380,7 +1380,7 @@ binary function which represents the operation of the semigroup.
 <CMP>
 if (S,*) comprises a semigroup then for all a,b,c in S | a*(b*c)=(a*b)*c
 </CMP>
-
+<!--
 <FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
 <OMA>
   <OMS cd="logic1" name="implies"/>
@@ -1399,7 +1399,7 @@ if (S,*) comprises a semigroup then for all a,b,c in S | a*(b*c)=(a*b)*c
     <OMA>
       <OMS cd="logic1" name="implies"/>
       <OMA>
-        <OMA cd="logic1" name="and"/>
+        <OMS cd="logic1" name="and"/>
         <OMA>
           <OMS cd="set1" name="in"/>
           <OMV name="a"/>
@@ -1461,7 +1461,9 @@ if (S,*) comprises a semigroup then for all a,b,c in S | a*(b*c)=(a*b)*c
     </OMA>
   </OMBIND>
 </OMA>
-</OMOBJ></FMP>
+</OMOBJ>
+</FMP>
+-->
 </CDDefinition>
 
 <CDDefinition>
@@ -1560,7 +1562,7 @@ binary function which represents the operation of the Abelian semigroup.
             <OMS cd="set1" name="in"/>
             <OMV name="a"/>
             <OMA>
-              <OMA cd="generic_alg_cats" name="Abelian_semigroup"/>
+              <OMS cd="generic_alg_cats" name="Abelian_semigroup"/>
               <OMV name="S"/>
             </OMA>
           </OMA>
@@ -1568,7 +1570,7 @@ binary function which represents the operation of the Abelian semigroup.
             <OMS cd="set1" name="in"/>
             <OMV name="b"/>
             <OMA>
-              <OMA cd="generic_alg_cats" name="Abelian_semigroup"/>
+              <OMS cd="generic_alg_cats" name="Abelian_semigroup"/>
               <OMV name="S"/>
             </OMA>
           </OMA>
@@ -2151,7 +2153,7 @@ This symbol takes one argument which should be an ordered group. It returns a bi
           <OMV name="leq"/>
         </OMA>
       </OMA>
-      <OMV name=""/>
+      <OMV name="missing"/>
     </OMA>
   </OMOBJ>
 </FMP>

@@ -5,9 +5,9 @@
 <CDURL> http://www.math.kobe-u.ac.jp/OCD/hypergeon0.tfb </CDURL>
 <CDReviewDate> 2003-11-11 </CDReviewDate>
 <CDStatus> experimental </CDStatus>
-<CDDate> 2002-11-11, 2003-11-30 </CDDate>
+<CDDate> 2003-11-30 </CDDate>
 <CDVersion> 1 </CDVersion>
-<CDRevision> 1 </CDRevision>
+<CDRevision> 2 </CDRevision>
 <CDUses>
  <CDName>arith1</CDName>
  <CDName>linalg1</CDName>

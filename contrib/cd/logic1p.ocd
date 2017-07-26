@@ -1,5 +1,12 @@
 <?xml version="1.0"?>
 <!-- $Id: logic1p.tfb,v 1.1.1.1 2002/10/04 12:50:39 taka Exp $ -->
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDName>logic1p</CDName>
+ <CDDate>2002-10-04</CDDate>
+ <CDStatus>experimental</CDStatus>
+ <CDVersion>0</CDVersion>
+ <CDRevision>0</CDRevision>
+
 
 <CDDefinition>
 <Name>  where </Name>
@@ -11,7 +18,7 @@
   for formula book writers.
 </Description>
 
-<CMP> <tex> $ x^n  \mbox{where} n=10 </tex> </CMP>
+<CMP> $ x^n  \mbox{where} n=10 </CMP>
 <FMP>
 <OMOBJ xmlns="http://www.openmath.org/OpenMath">
   <OMA><OMS cd="logic1p" name="where"/>
@@ -35,3 +42,4 @@
 </FMP>
 </CDDefinition>
 
+</CD>

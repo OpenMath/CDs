@@ -71,7 +71,7 @@ may apply.
   </CDDefinition>
 
   <CDDefinition>
-    <Name>solid angle</Name>
+    <Name>solid-angle</Name>
     <Role>constant</Role>
     <Description>
       This symbol represents the quantity of a two dimensional, geometric
@@ -80,12 +80,12 @@ may apply.
       is commonly represented with the
       italic, upper case greek variable, "\Omega;".
     </Description>
-    <CMP> dim(solid angle) = one </CMP>
+    <CMP> dim(solid-angle) = one </CMP>
     <FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
       <OMA>
 	<OMS cd="relation1" name="eq"/>
 	<OMA> <OMS cd="SI_Functions1" name="dim"/>
-              <OMS cd="SI_DerivedQuantities1" name="solid angle"/>
+              <OMS cd="SI_DerivedQuantities1" name="solid-angle"/>
 	</OMA>
 	<OMS cd="SI_BaseQuantities1" name="one"/>
       </OMA>
@@ -467,7 +467,7 @@ italic, upper case letter, "G" or "S".
 </CDDefinition>
 
 <CDDefinition>
-<Name> magnetic flux </Name>
+<Name> magnetic-flux </Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the physical quantity of magnetic flux.
@@ -475,12 +475,12 @@ A variable representing an arbitrary quantity of magnetic flux
 is commonly represented with the
 italic, upper case greek letter, "\Phi;".
 </Description>
-<CMP> dim(magnetic flux) = dim(energy/current) =  mass*length^2/(current*time^2) </CMP>
+<CMP> dim(magnetic-flux) = dim(energy/current) =  mass*length^2/(current*time^2) </CMP>
 <FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
   <OMA>
     <OMS cd="relation4" name="eqs"/>
     <OMA> <OMS cd="SI_Functions1" name="dim"/>
-          <OMS cd="SI_DerivedQuantities1" name="magnetic flux"/>
+          <OMS cd="SI_DerivedQuantities1" name="magnetic-flux"/>
     </OMA>
     <OMA> <OMS cd="SI_Functions1" name="dim"/>
       <OMA>
@@ -507,7 +507,7 @@ italic, upper case greek letter, "\Phi;".
 </CDDefinition>
 
 <CDDefinition>
-<Name> magnetic flux density </Name>
+<Name> magnetic-flux-density </Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the physical quantity of magnetic flux density.
@@ -515,19 +515,19 @@ A variable representing an arbitrary quantity of magnetic flux density
 is commonly represented
 with the italic, upper case letter, "B".
 </Description>
-<CMP> dim(magnetic flux density) = dim(magnetic flux)/(length^2)
+<CMP> dim(magnetic-flux-density) = dim(magnetic-flux)/(length^2)
       = mass/(current*time^2) </CMP>
 <FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
   <OMA>
     <OMS cd="relation4" name="eqs"/>
     <OMA> <OMS cd="SI_Functions1" name="dim"/>
-          <OMS cd="SI_DerivedQuantities1" name="magnetic flux density"/>
+          <OMS cd="SI_DerivedQuantities1" name="magnetic-flux-density"/>
     </OMA>
     <OMA>
       <OMS cd="arith1" name="divide"/>
       <OMA>
         <OMS cd="SI_Functions1" name="dim"/>
-        <OMS cd="SI_DerivedQuantities1" name="magnetic flux"/>
+        <OMS cd="SI_DerivedQuantities1" name="magnetic-flux"/>
       </OMA>
       <OMA> <OMS cd="arith1" name="power"/>
             <OMS cd="SI_BaseQuantities1" name="length"/>
@@ -593,7 +593,7 @@ italic, upper case letter, "L".
 </CDDefinition>
 
 <CDDefinition>
-<Name> Celsius temperature </Name>
+<Name> Celsius-temperature </Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the physical quantity of Celsius temperature.
@@ -601,13 +601,13 @@ A variable representing an arbitrary quantity of temperature
 is commonly represented with the
 italic, upper case letter, "T".
 </Description>
-<CMP> dim(Celsius temperature) = temperature </CMP>
-<CMP> num(Celsius temperature) + 273.15 = num(temperature) </CMP>
+<CMP> dim(Celsius-temperature) = temperature </CMP>
+<CMP> num(Celsius-temperature) + 273.15 = num(temperature) </CMP>
 <FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
   <OMA>
     <OMS cd="relation1" name="eq"/>
     <OMA> <OMS cd="SI_Functions1" name="dim"/>
-          <OMS cd="SI_DerivedQuantities1" name="Celsius temperature"/>
+          <OMS cd="SI_DerivedQuantities1" name="Celsius-temperature"/>
     </OMA>
     <OMS cd="SI_BaseQuantities1" name="temperature"/>
   </OMA>
@@ -618,7 +618,7 @@ italic, upper case letter, "T".
     <OMA>
       <OMS cd="arith1" name="plus"/>
       <OMA> <OMS cd="SI_Functions1" name="num"/>
-            <OMS cd="SI_DerivedQuantities1" name="Celsius temperature"/>
+            <OMS cd="SI_DerivedQuantities1" name="Celsius-temperature"/>
       </OMA>
       <OMF dec="273.15"/>
     </OMA>
@@ -627,7 +627,7 @@ italic, upper case letter, "T".
 </CDDefinition>
 
 <CDDefinition>
-<Name> luminous flux </Name>
+<Name> luminous-flux </Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the physical quantity of luminous flux.
@@ -635,19 +635,19 @@ A variable representing an arbitrary quantity of luminous flux
 is commonly represented with the
 italic, upper case letter, "Φv" (\phi; sub V).
 </Description>
-<CMP> dim(luminous flux) = (luminous intensity)*dim(solid angle)
-      =  (luminous intensity) </CMP>
+<CMP> dim(luminous-flux) = (luminous-intensity)*dim(solid-angle)
+      =  (luminous-intensity) </CMP>
 <FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
   <OMA>
     <OMS cd="relation4" name="eqs"/>
     <OMA> <OMS cd="SI_Functions1" name="dim"/>
-          <OMS cd="SI_DerivedQuantities1" name="luminous flux"/>
+          <OMS cd="SI_DerivedQuantities1" name="luminous-flux"/>
     </OMA>
     <OMA>
       <OMS cd="arith1" name="times"/>
-      <OMS cd="SI_BaseQuantities1" name="luminous intensity"/>
+      <OMS cd="SI_BaseQuantities1" name="luminous-intensity"/>
       <OMA> <OMS cd="SI_Functions1" name="dim"/>
-            <OMS cd="SI_DerivedQuantities1" name="solid angle"/>
+            <OMS cd="SI_DerivedQuantities1" name="solid-angle"/>
       </OMA>
     </OMA>
   </OMA>
@@ -663,8 +663,8 @@ A variable representing an arbitrary quantity of illuminance
 is commonly represented with the
 italic, upper case letter, "E".
 </Description>
-<CMP> dim(illuminance) = dim(luminous flux)/(length^2)
-      = (luminous intensity)/(length^2) </CMP>
+<CMP> dim(illuminance) = dim(luminous-flux)/(length^2)
+      = (luminous-intensity)/(length^2) </CMP>
 <FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
   <OMA>
     <OMS cd="relation4" name="eqs"/>
@@ -674,7 +674,7 @@ italic, upper case letter, "E".
     <OMA>
       <OMS cd="arith1" name="divide"/>
       <OMA> <OMS cd="SI_Functions1" name="dim"/>
-            <OMS cd="SI_DerivedQuantities1" name="luminous flux"/>
+            <OMS cd="SI_DerivedQuantities1" name="luminous-flux"/>
       </OMA>
       <OMA> <OMS cd="arith1" name="times"/>
             <OMS cd="SI_BaseQuantities1" name="length"/>
@@ -683,7 +683,7 @@ italic, upper case letter, "E".
     </OMA>
     <OMA>
       <OMS cd="arith1" name="divide"/>
-      <OMS cd="SI_DerivedQuantities1" name="luminous intensity"/>
+      <OMS cd="SI_DerivedQuantities1" name="luminous-intensity"/>
       <OMA> <OMS cd="arith1" name="times"/>
             <OMS cd="SI_BaseQuantities1" name="length"/>
             <OMS cd="SI_BaseQuantities1" name="length"/>
@@ -720,7 +720,7 @@ italic, upper case letter, "A".
 </CDDefinition>
 
 <CDDefinition>
-<Name> absorbed dose </Name>
+<Name> absorbed-dose </Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the physical quantity of absorbed dose of ionizing radiation.
@@ -728,12 +728,12 @@ A variable representing an arbitrary quantity of absorbed dose
 is commonly represented with the
 italic, upper case letter, "D".
 </Description>
-<CMP> dim(absorbed dose) = dim(energy/mass) </CMP>
+<CMP> dim(absorbed-dose) = dim(energy/mass) </CMP>
 <FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
   <OMA>
     <OMS cd="relation1" name="eq"/>
     <OMA> <OMS cd="SI_Functions1" name="dim"/>
-          <OMS cd="SI_DerivedQuantities1" name="absorbed dose"/>
+          <OMS cd="SI_DerivedQuantities1" name="absorbed-dose"/>
     </OMA>
     <OMA>
       <OMS cd="SI_Functions1" name="dim"/>
@@ -748,7 +748,7 @@ italic, upper case letter, "D".
 </CDDefinition>
 
 <CDDefinition>
-<Name> equivalent dose </Name>
+<Name> equivalent-dose </Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the physical quantity of equivalent dose of ionizing
@@ -758,12 +758,12 @@ A variable representing an arbitrary quantity of equivalent dose
 is commonly represented with the
 italic, upper case letter, "H".
 </Description>
-<CMP> dim(equivalent dose) = dim(energy/mass) </CMP>
+<CMP> dim(equivalent-dose) = dim(energy/mass) </CMP>
 <FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
   <OMA>
     <OMS cd="relation1" name="eq"/>
     <OMA> <OMS cd="SI_Functions1" name="dim"/>
-          <OMS cd="SI_DerivedQuantities1" name="equivalent dose"/>
+          <OMS cd="SI_DerivedQuantities1" name="equivalent-dose"/>
     </OMA>
     <OMA>
       <OMS cd="SI_Functions1" name="dim"/>
@@ -778,23 +778,23 @@ italic, upper case letter, "H".
 </CDDefinition>
 
 <CDDefinition>
-<Name> catalytic activity </Name>
+<Name> catalytic-activity </Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the physical quantity of catalytic activity,
 an amount of catalyst that effects a rate of catalytic conversion of
 an amount of substance.
 </Description>
-<CMP> dim(catalytic activity) = (amount of substance)/time </CMP>
+<CMP> dim(catalytic-activity) = (amount-of-substance)/time </CMP>
 <FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
   <OMA>
     <OMS cd="relation1" name="eq"/>
     <OMA> <OMS cd="SI_Functions1" name="dim"/>
-          <OMS cd="SI_DerivedQuantities1" name="catalytic activity"/>
+          <OMS cd="SI_DerivedQuantities1" name="catalytic-activity"/>
     </OMA>
     <OMA>
       <OMS cd="arith1" name="divide"/>
-      <OMS cd="SI_BaseQuantities1" name="amount of substance"/>
+      <OMS cd="SI_BaseQuantities1" name="amount-of-substance"/>
       <OMS cd="SI_BaseQuantities1" name="time"/>
     </OMA>
   </OMA>
@@ -895,17 +895,17 @@ This symbol represents the physical quantity of area.
 </CDDefinition>
 
 <CDDefinition>
-  <Name>moment of force</Name>
+  <Name>moment-of-force</Name>
   <Role>constant</Role>
   <Description>
     This symbol represents the physical quantity of force. 
   </Description>
-  <CMP> dim(moment of force) = length*dim(force) = mass*length^2/(time^2) </CMP>
+  <CMP> dim(moment-of-force) = length*dim(force) = mass*length^2/(time^2) </CMP>
   <FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
     <OMA>
       <OMS cd="relation4" name="eqs"/>
       <OMA> <OMS cd="SI_Functions1" name="dim"/>
-          <OMS cd="SI_DerivedQuantities1" name="moment of force"/>
+          <OMS cd="SI_DerivedQuantities1" name="moment-of-force"/>
       </OMA>
       <OMA>
 	<OMS cd="arith1" name="times"/>
@@ -962,7 +962,7 @@ This symbol represents the physical quantity of area.
     This symbol represents the physical quantity of concentration, the
     amount of a substance in a volume.
   </Description>
-  <CMP> dim(concentration) = (amount of substance)/length^3 </CMP>
+  <CMP> dim(concentration) = (amount-of-substance)/length^3 </CMP>
   <FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
     <OMA>
       <OMS cd="relation1" name="eq"/>
@@ -971,7 +971,7 @@ This symbol represents the physical quantity of area.
       </OMA>
       <OMA>
 	<OMS cd="arith1" name="divide"/>
-	<OMS cd="SI_BaseQuantities1" name="amount of substance"/>
+	<OMS cd="SI_BaseQuantities1" name="amount-of-substance"/>
 	<OMA> <OMS cd="arith1" name="power"/>
               <OMS cd="SI_BaseQuantities1" name="length"/>
               <OMI> 3 </OMI>

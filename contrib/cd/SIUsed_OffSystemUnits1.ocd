@@ -44,7 +44,7 @@ may apply.
   <CDStatus> experimental </CDStatus>
   <CDDate> 2009-01-10 </CDDate>
   <CDVersion> 1 </CDVersion>
-  <CDRevision> 0 </CDRevision>
+  <CDRevision> 1 </CDRevision>
   <CDUses>
   </CDUses>
 
@@ -129,20 +129,20 @@ It has the short symbol form, "d".
 </CDDefinition>
 
 <CDDefinition>
-<Name>degree of arc</Name>
+<Name>degree-of-arc</Name>
 <Description>
 This symbol represents the angular measure of one degree of arc.
 It has the short symbol form of the degree symbol, a superscript
 circle, Unicode: U+00B0 or HTML: &#176;.
 </Description>
-<CMP> 1 degree of arc = pi/180 radian </CMP>
+<CMP> 1 degree-of-arc = pi/180 radian </CMP>
 <FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
 <OMA>
   <OMS name="eq" cd="relation1"/>
   <OMA>
     <OMS name="times" cd="arith1"/>
     <OMI> 1 </OMI>
-    <OMS name="degree of arc" cd="SIUsed_OffSystemUnits1"/>
+    <OMS name="degree-of-arc" cd="SIUsed_OffSystemUnits1"/>
   </OMA>
   <OMA>
     <OMS name="times" cd="arith1"/>
@@ -158,23 +158,23 @@ circle, Unicode: U+00B0 or HTML: &#176;.
 </CDDefinition>
 
 <CDDefinition>
-<Name> minute of arc </Name>
+<Name> minute-of-arc </Name>
 <Description>
 This symbol represents the angular measure of one minute of arc.
 It has the short symbol form, "'".
 </Description>
-<CMP>  1 minute of arc = 1/60 degree of arc </CMP>
+<CMP>  1 minute-of-arc = 1/60 degree-of-arc </CMP>
 <FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
 <OMA>
   <OMS name="eq" cd="relation1"/>
   <OMA>
     <OMS name="times" cd="arith1"/>
     <OMI> 1 </OMI>
-    <OMS name="minute of arc" cd="SIUsed_OffSystemUnits1"/>
+    <OMS name="minute-of-arc" cd="SIUsed_OffSystemUnits1"/>
   </OMA>
   <OMA>
     <OMS name="divide" cd="arith1"/>
-    <OMS name="degree of arc" cd="SIUsed_OffSystemUnits1"/>
+    <OMS name="degree-of-arc" cd="SIUsed_OffSystemUnits1"/>
     <OMI> 60 </OMI>
   </OMA>
 </OMA>
@@ -182,23 +182,23 @@ It has the short symbol form, "'".
 </CDDefinition>
 
 <CDDefinition>
-<Name> second of arc </Name>
+<Name> second-of-arc </Name>
 <Description>
-This symbol represents the angular measure of one second of arc.
+This symbol represents the angular measure of one second-of-arc.
 It has the short symbol form, '"'.
 </Description>
-<CMP>  1 second of arc = 1/60 minute of arc  </CMP>
+<CMP>  1 second-of-arc = 1/60 minute-of-arc  </CMP>
 <FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
 <OMA>
   <OMS name="eq" cd="relation1"/>
   <OMA>
     <OMS name="times" cd="arith1"/>
     <OMI> 1 </OMI>
-    <OMS name="second of arc" cd="SIUsed_OffSystemUnits1"/>
+    <OMS name="second-of-arc" cd="SIUsed_OffSystemUnits1"/>
   </OMA>
   <OMA>
     <OMS name="divide" cd="arith1"/>
-    <OMS name="minute of arc" cd="SIUsed_OffSystemUnits1"/>
+    <OMS name="minute-of-arc" cd="SIUsed_OffSystemUnits1"/>
     <OMI> 60 </OMI>
   </OMA>
 </OMA>

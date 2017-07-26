@@ -3,6 +3,12 @@
 <!-- p in the CD name implies that it is private or experimental 
      extension of OpenMath CDs for 
      the hypergeometric formula book project. -->
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+ <CDName>set1p</CDName>
+ <CDDate>2002-10-04</CDDate>
+ <CDStatus>experimental</CDStatus>
+ <CDVersion>0</CDVersion>
+ <CDRevision>0</CDRevision>
 <CDDefinition>
 <Name> cartesian_product_n </Name>
 <Description>
@@ -41,3 +47,4 @@
 
 
 </CDDefinition>
+</CD>

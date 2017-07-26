@@ -38,7 +38,7 @@
 <CDDate> 2003-09-16 </CDDate> 
 <CDStatus> experimental </CDStatus>
 <CDVersion> 1 </CDVersion>
-<CDRevision> 0 </CDRevision>
+<CDRevision> 1 </CDRevision>
 <CDUses>
   <CDName>alg1</CDName>
   <CDName>arith1</CDName>
@@ -181,8 +181,6 @@
            <OMS name="L_norm" cd="norm1"/>
 	   <OMI> 2 </OMI>
 	   <OMV name="v"/>
-         <OMA>
-         </OMA>
        </OMA>
      </OMOBJ>
    </FMP>

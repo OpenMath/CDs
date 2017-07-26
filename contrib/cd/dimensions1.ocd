@@ -38,7 +38,7 @@
 <CDStatus> experimental </CDStatus>
 <CDDate> 2003-08-20 </CDDate>
 <CDVersion> 4 </CDVersion>
-<CDRevision> 0 </CDRevision>
+<CDRevision> 1 </CDRevision>
 <CDUses>
 <CDName>norm1</CDName>
 <CDName>arith1</CDName>
@@ -135,11 +135,11 @@ derivative of (vector) distance with respect to time.
 <FMP>
 <OMOBJ xmlns="http://www.openmath.org/OpenMath">
   <OMA>
-    <OMS name="eq" cd="relation1"/>>
-    <OMS name="speed" cd="dimensions1"/>>
+    <OMS name="eq" cd="relation1"/>
+    <OMS name="speed" cd="dimensions1"/>
     <OMA>
-      <OMS name="Euclidean_norm" cd="norm1"/>>
-      <OMS name="velocity" cd="dimensions1"/>>
+      <OMS name="Euclidean_norm" cd="norm1"/>
+      <OMS name="velocity" cd="dimensions1"/>
     </OMA>
   </OMA>
 </OMOBJ>

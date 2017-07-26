@@ -5,9 +5,9 @@
 <CDURL> http://www.math.kobe-u.ac.jp/OCD/hypergeon2.tfb </CDURL>
 <CDReviewDate> 2003-08-07 </CDReviewDate>
 <CDStatus> experimental </CDStatus>
-<CDDate> 2002-08-07, 2003-11-30 </CDDate>
+<CDDate> 2003-11-30 </CDDate>
 <CDVersion> 1 </CDVersion>
-<CDRevision> 1 </CDRevision>
+<CDRevision> 2 </CDRevision>
 <CDUses>
  <!-- private cd's -->
   <CDName>hypergeo1</CDName>
@@ -41,7 +41,7 @@ functions.
 <FMP>
 <OMOBJ xmlns="http://www.openmath.org/OpenMath">
   <OMA><OMS cd="relation1" name="eq"/>
-    <OMA><OMS name="multi_pochhammer"/>
+    <OMA><OMS cd="hypergeon2" name="multi_pochhammer"/>
       <OMV name="a"/>
       <OMV name="n"/>
     </OMA>
@@ -96,7 +96,7 @@ functions.
 <FMP>
 <OMOBJ xmlns="http://www.openmath.org/OpenMath">
   <OMA><OMS cd="relation1" name="eq"/>
-    <OMA><OMS name="apple_F1"/>
+    <OMA><OMS cd="hypergeon2" name="apple_F1"/>
       <OMV name="a"/>
       <OMV name="b1"/>
       <OMV name="b2"/>
@@ -182,14 +182,14 @@ functions.
           <OMA><OMS cd="arith1" name="times"/>
             <OMA><OMS cd="arith1" name="power"/>
               <OMV name="x"/>
-              <OMA><OMS name="vector_selector"/>
+              <OMA><OMS cd="hypergeon2" name="vector_selector"/>
                 <OMI> 1 </OMI>
                 <OMV name="m"/>
               </OMA>
             </OMA>
             <OMA><OMS cd="arith1" name="power"/>
               <OMV name="y"/>
-              <OMA><OMS name="vector_selector"/>
+              <OMA><OMS cd="hypergeon2" name="vector_selector"/>
                 <OMI> 2 </OMI>
                 <OMV name="m"/>
               </OMA>
@@ -224,7 +224,7 @@ functions.
 <FMP>
 <OMOBJ xmlns="http://www.openmath.org/OpenMath">
   <OMA><OMS cd="relation1" name="eq"/>
-    <OMA><OMS name="apple_F2"/>
+    <OMA><OMS cd="hypergeon2" name="apple_F2"/>
       <OMV name="a"/>
       <OMV name="b1"/>
       <OMV name="b2"/>
@@ -314,14 +314,14 @@ functions.
           <OMA><OMS cd="arith1" name="times"/>
             <OMA><OMS cd="arith1" name="power"/>
               <OMV name="x"/>
-              <OMA><OMS name="vector_selector"/>
+              <OMA><OMS cd="hypergeon2" name="vector_selector"/>
                 <OMI> 1 </OMI>
                 <OMV name="m"/>
               </OMA>
             </OMA>
             <OMA><OMS cd="arith1" name="power"/>
               <OMV name="y"/>
-              <OMA><OMS name="vector_selector"/>
+              <OMA><OMS cd="hypergeon2" name="vector_selector"/>
                 <OMI> 2 </OMI>
                 <OMV name="m"/>
               </OMA>
@@ -356,7 +356,7 @@ functions.
 <FMP>
 <OMOBJ xmlns="http://www.openmath.org/OpenMath">
   <OMA><OMS cd="relation1" name="eq"/>
-    <OMA><OMS name="apple_F3"/>
+    <OMA><OMS cd="hypergeon2" name="apple_F3"/>
       <OMV name="a1"/>
       <OMV name="a2"/>
       <OMV name="b1"/>
@@ -446,14 +446,14 @@ functions.
           <OMA><OMS cd="arith1" name="times"/>
             <OMA><OMS cd="arith1" name="power"/>
               <OMV name="x"/>
-              <OMA><OMS name="vector_selector"/>
+              <OMA><OMS cd="hypergeon2" name="vector_selector"/>
                 <OMI> 1 </OMI>
                 <OMV name="m"/>
               </OMA>
             </OMA>
             <OMA><OMS cd="arith1" name="power"/>
               <OMV name="y"/>
-              <OMA><OMS name="vector_selector"/>
+              <OMA><OMS cd="hypergeon2" name="vector_selector"/>
                 <OMI> 2 </OMI>
                 <OMV name="m"/>
               </OMA>
@@ -487,7 +487,7 @@ functions.
 <FMP>
 <OMOBJ xmlns="http://www.openmath.org/OpenMath">
   <OMA><OMS cd="relation1" name="eq"/>
-    <OMA><OMS name="apple_F4"/>
+    <OMA><OMS cd="hypergeon2" name="apple_F4"/>
       <OMV name="a"/>
       <OMV name="b"/>
       <OMV name="c1"/>
@@ -573,14 +573,14 @@ functions.
           <OMA><OMS cd="arith1" name="times"/>
             <OMA><OMS cd="arith1" name="power"/>
               <OMV name="x"/>
-              <OMA><OMS name="vector_selector"/>
+              <OMA><OMS cd="hypergeon2" name="vector_selector"/>
                 <OMI> 1 </OMI>
                 <OMV name="m"/>
               </OMA>
             </OMA>
             <OMA><OMS cd="arith1" name="power"/>
               <OMV name="y"/>
-              <OMA><OMS name="vector_selector"/>
+              <OMA><OMS cd="hypergeon2" name="vector_selector"/>
                 <OMI> 2 </OMI>
                 <OMV name="m"/>
               </OMA>
@@ -623,7 +623,7 @@ functions.
         <OMV name="n"/>
       </OMBVAR>
       <OMA><OMS cd="relation1" name="eq"/>
-        <OMA><OMS name="lauricella_FA"/>
+        <OMA><OMS cd="hypergeon2" name="lauricella_FA"/>
           <OMV name="a"/>
           <OMV name="b"/>
           <OMV name="c"/>
@@ -654,7 +654,7 @@ functions.
                         <OMBVAR>
                           <OMV name="i"/>
                         </OMBVAR>
-                        <OMA><OMS name="vector_selector"/>
+                        <OMA><OMS cd="hypergeon2" name="vector_selector"/>
                           <OMV name="i"/>
                           <OMV name="k"/>
                         </OMA>
@@ -672,11 +672,11 @@ functions.
                         <OMV name="i"/>
                       </OMBVAR>
                       <OMA><OMS cd="hypergeo0" name="pochhammer"/>
-                        <OMA><OMS name="vector_selector"/>
+                        <OMA><OMS cd="hypergeon2" name="vector_selector"/>
                           <OMV name="i"/>
                           <OMV name="b"/>
                         </OMA>
-                        <OMA><OMS name="vector_selector"/>
+                        <OMA><OMS cd="hypergeon2" name="vector_selector"/>
                           <OMV name="i"/>
                           <OMV name="k"/>
                         </OMA>
@@ -696,11 +696,11 @@ functions.
                         <OMV name="i"/>
                       </OMBVAR>
                       <OMA><OMS cd="hypergeo0" name="pochhammer"/>
-                        <OMA><OMS name="vector_selector"/>
+                        <OMA><OMS cd="hypergeon2" name="vector_selector"/>
                           <OMV name="i"/>
                           <OMV name="c"/>
                         </OMA>
-                        <OMA><OMS name="vector_selector"/>
+                        <OMA><OMS cd="hypergeon2" name="vector_selector"/>
                           <OMV name="i"/>
                           <OMV name="k"/>
                         </OMA>
@@ -719,7 +719,7 @@ functions.
                       </OMBVAR>
                       <OMA><OMS cd="hypergeo0" name="pochhammer"/>
                         <OMI> 1 </OMI>
-                        <OMA><OMS name="vector_selector"/>
+                        <OMA><OMS cd="hypergeon2" name="vector_selector"/>
                           <OMV name="i"/>
                           <OMV name="k"/>
                         </OMA>
@@ -776,7 +776,7 @@ functions.
         <OMV name="n"/>
       </OMBVAR>
       <OMA><OMS cd="relation1" name="eq"/>
-        <OMA><OMS name="lauricella_FC"/>
+        <OMA><OMS cd="hypergeon2" name="lauricella_FC"/>
           <OMV name="a"/>
           <OMV name="b"/>
           <OMV name="c"/>
@@ -807,7 +807,7 @@ functions.
                         <OMBVAR>
                           <OMV name="i"/>
                         </OMBVAR>
-                        <OMA><OMS name="vector_selector"/>
+                        <OMA><OMS cd="hypergeon2" name="vector_selector"/>
                           <OMV name="i"/>
                           <OMV name="k"/>
                         </OMA>
@@ -826,7 +826,7 @@ functions.
                         <OMBVAR>
                           <OMV name="i"/>
                         </OMBVAR>
-                        <OMA><OMS name="vector_selector"/>
+                        <OMA><OMS cd="hypergeon2" name="vector_selector"/>
                           <OMV name="i"/>
                           <OMV name="k"/>
                         </OMA>
@@ -846,11 +846,11 @@ functions.
                         <OMV name="i"/>
                       </OMBVAR>
                       <OMA><OMS cd="hypergeo0" name="pochhammer"/>
-                        <OMA><OMS name="vector_selector"/>
+                        <OMA><OMS cd="hypergeon2" name="vector_selector"/>
                           <OMV name="i"/>
                           <OMV name="c"/>
                         </OMA>
-                        <OMA><OMS name="vector_selector"/>
+                        <OMA><OMS cd="hypergeon2" name="vector_selector"/>
                           <OMV name="i"/>
                           <OMV name="k"/>
                         </OMA>
@@ -869,7 +869,7 @@ functions.
                       </OMBVAR>
                       <OMA><OMS cd="hypergeo0" name="pochhammer"/>
                         <OMI> 1 </OMI>
-                        <OMA><OMS name="vector_selector"/>
+                        <OMA><OMS cd="hypergeon2" name="vector_selector"/>
                           <OMV name="i"/>
                           <OMV name="k"/>
                         </OMA>
@@ -926,7 +926,7 @@ functions.
         <OMV name="n"/>
       </OMBVAR>
       <OMA><OMS cd="relation1" name="eq"/>
-        <OMA><OMS name="lauricella_FD"/>
+        <OMA><OMS cd="hypergeon2" name="lauricella_FD"/>
           <OMV name="a"/>
           <OMV name="b"/>
           <OMV name="c"/>
@@ -957,7 +957,7 @@ functions.
                         <OMBVAR>
                           <OMV name="i"/>
                         </OMBVAR>
-                        <OMA><OMS name="vector_selector"/>
+                        <OMA><OMS cd="hypergeon2" name="vector_selector"/>
                           <OMV name="i"/>
                           <OMV name="k"/>
                         </OMA>
@@ -975,11 +975,11 @@ functions.
                         <OMV name="i"/>
                       </OMBVAR>
                       <OMA><OMS cd="hypergeo0" name="pochhammer"/>
-                        <OMA><OMS name="vector_selector"/>
+                        <OMA><OMS cd="hypergeon2" name="vector_selector"/>
                           <OMV name="i"/>
                           <OMV name="b"/>
                         </OMA>
-                        <OMA><OMS name="vector_selector"/>
+                        <OMA><OMS cd="hypergeon2" name="vector_selector"/>
                           <OMV name="i"/>
                           <OMV name="k"/>
                         </OMA>
@@ -1000,7 +1000,7 @@ functions.
                         <OMBVAR>
                           <OMV name="i"/>
                         </OMBVAR>
-                        <OMA><OMS name="vector_selector"/>
+                        <OMA><OMS cd="hypergeon2" name="vector_selector"/>
                           <OMV name="i"/>
                           <OMV name="k"/>
                         </OMA>
@@ -1019,7 +1019,7 @@ functions.
                       </OMBVAR>
                       <OMA><OMS cd="hypergeo0" name="pochhammer"/>
                         <OMI> 1 </OMI>
-                        <OMA><OMS name="vector_selector"/>
+                        <OMA><OMS cd="hypergeon2" name="vector_selector"/>
                           <OMV name="i"/>
                           <OMV name="k"/>
                         </OMA>

@@ -44,7 +44,7 @@ may apply.
   <CDStatus> experimental </CDStatus>
   <CDDate> 2009-01-10 </CDDate>
   <CDVersion> 1 </CDVersion>
-  <CDRevision> 0 </CDRevision>
+  <CDRevision> 1 </CDRevision>
   <CDUses>
   </CDUses>
 
@@ -223,13 +223,13 @@ may apply.
     contains as many "elemental entities" as there are atoms in 12 grams
     of carbon-12 [14th CGPM (1971)].
     </CMP>
-    <CMP> mole = unit(amount of substance) </CMP>
+    <CMP> mole = unit(amount-of-substance) </CMP>
     <FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
       <OMA>
         <OMS cd="relation1" name="eq"/>
         <OMS cd="SI_BaseUnits1" name="mole"/>
         <OMA> <OMS cd="SI_Functions1" name="unit"/>
-              <OMS cd="SI_BaseQuantities1" name="amount of substance"/>
+              <OMS cd="SI_BaseQuantities1" name="amount-of-substance"/>
         </OMA>
       </OMA>
     </OMOBJ></FMP>
@@ -249,13 +249,13 @@ may apply.
     540×10^12 hertz and that has a radiant intensity in that direction of
     1/683 watt per steradian [16th CGPM (1979)].
     </CMP>
-    <CMP> candela = unit(luminous intensity) </CMP>
+    <CMP> candela = unit(luminous-intensity) </CMP>
     <FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
       <OMA>
         <OMS cd="relation1" name="eq"/>
         <OMS cd="SI_BaseUnits1" name="candela"/>
         <OMA> <OMS cd="SI_Functions1" name="unit"/>
-              <OMS cd="SI_BaseQuantities1" name="luminous intensity"/>
+              <OMS cd="SI_BaseQuantities1" name="luminous-intensity"/>
         </OMA>
       </OMA>
     </OMOBJ></FMP>

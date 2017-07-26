@@ -37,8 +37,8 @@
 	<CDDate>2002-10-21</CDDate>
 	<CDReviewDate>2003-07-27</CDReviewDate>
 	<CDStatus>experimental</CDStatus>
-	<CDVersion>1.3</CDVersion>
-	<CDRevision>0</CDRevision>
+	<CDVersion>1</CDVersion>
+	<CDRevision>4</CDRevision>
 	<CDUses>
 		<CDName>arith1</CDName>
 		<CDName>fns1</CDName>

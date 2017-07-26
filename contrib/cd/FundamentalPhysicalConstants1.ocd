@@ -47,7 +47,7 @@ may apply.
 <CDStatus> experimental </CDStatus>
 <CDDate>2005-05-28</CDDate>
 <CDVersion>3</CDVersion>
-<CDRevision>1</CDRevision>
+<CDRevision>2</CDRevision>
 
 <Description> 
 This CD defines symbols which represent five fundamental physical constants
@@ -55,7 +55,7 @@ and the Planck units that they define.
 </Description>
 
 <CDDefinition>
-<Name>speed of light</Name>
+<Name>speed-of-light</Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the speed of light in a vacuum. 
@@ -83,7 +83,7 @@ It is commonly represented with the short, italic symbol, "c".
 </CDDefinition>
 
 <CDDefinition>
-<Name>Planck constant</Name>
+<Name>Planck-constant</Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the fundamental constant equal to the ratio of
@@ -98,7 +98,7 @@ Planck constant ~ 6.62606896 * 10^–34 J s
 <FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
   <OMA>
     <OMS cd="relation1" name="approx"/>
-    <OMS cd="FundamentalPhysicalConstants1" name=" Planck constant"/>
+    <OMS cd="FundamentalPhysicalConstants1" name="Planck-constant"/>
     <OMA>
       <OMS cd="arith1" name="times"/>
       <OMA>
@@ -114,7 +114,7 @@ Planck constant ~ 6.62606896 * 10^–34 J s
 </CDDefinition>
 
 <CDDefinition>
-<Name>reduced Planck constant</Name>
+<Name>reduced-Planck-constant</Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the Planck constant divided by 2*pi.
@@ -127,10 +127,10 @@ reduced Planck constant = h/(2*pi)
 <FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
   <OMA>
     <OMS cd="relation1" name="eq"/>
-    <OMS cd="FundamentalPhysicalConstants1" name="reduced Planck constant"/>
+    <OMS cd="FundamentalPhysicalConstants1" name="reduced-Planck-constant"/>
     <OMA>
       <OMS cd="arith1" name="divide"/>
-      <OMS cd="FundamentalPhysicalConstants1" name="Planck constant"/>
+      <OMS cd="FundamentalPhysicalConstants1" name="Planck-constant"/>
       <OMA>
 	<OMS cd="arith1" name="times"/>
 	<OMI>2</OMI>
@@ -142,7 +142,7 @@ reduced Planck constant = h/(2*pi)
 </CDDefinition>
 
 <CDDefinition>
-<Name>gravitational constant</Name>
+<Name>gravitational-constant</Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the constant of proportionality in Newton's law
@@ -157,7 +157,7 @@ G ~ 6.6742(10)*10^-11 newton metre^2 per kilogram^2
 <FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
   <OMA>
     <OMS cd="relation1" name="approx"/>
-    <OMS cd="FundamentalPhysicalConstants1" name="gravitational constant"/>
+    <OMS cd="FundamentalPhysicalConstants1" name="gravitational-constant"/>
     <OMA>
       <OMS cd="arith1" name="times"/>
       <OMA>
@@ -182,7 +182,7 @@ G ~ 6.6742(10)*10^-11 newton metre^2 per kilogram^2
 </CDDefinition>
 
 <CDDefinition>
-<Name>Boltzmann constant</Name>
+<Name>Boltzmann-constant</Name>
 <Role>constant</Role>
 <Description>
 The Boltzmann constant relates energy at the particle level with temperature observed at the bulk level via the ideal gas law, pV = NkT.
@@ -196,7 +196,7 @@ k ~ 1.3806504*10^(-23) joule kelvin^-1
 <FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
   <OMA>
     <OMS cd="relation1" name="approx"/>
-    <OMS cd="FundamentalPhysicalConstants1" name="Boltzmann constant"/>
+    <OMS cd="FundamentalPhysicalConstants1" name="Boltzmann-constant"/>
     <OMA>
       <OMS cd="arith1" name="times"/>
       <OMA>
@@ -215,7 +215,7 @@ k ~ 1.3806504*10^(-23) joule kelvin^-1
 </CDDefinition>
 
 <CDDefinition>
-<Name>Coulomb constant</Name>
+<Name>Coulomb-constant</Name>
 <Role>constant</Role>
 <Description>
 The value of the Coulomb constant is implied by international definitions of the
@@ -230,7 +230,7 @@ k ~ 1.3806504*10^(-23) joule kelvin^-1
 <FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
   <OMA>
     <OMS cd="relation1" name="approx"/>
-    <OMS cd="FundamentalPhysicalConstants1" name="Coulomb constant"/>
+    <OMS cd="FundamentalPhysicalConstants1" name="Coulomb-constant"/>
     <OMA>
       <OMS cd="arith1" name="times"/>
       <OMA>
@@ -249,7 +249,7 @@ k ~ 1.3806504*10^(-23) joule kelvin^-1
 </CDDefinition>
 
 <CDDefinition>
-<Name>Planck length</Name>
+<Name>Planck-length</Name>
 <Role>constant</Role>
 <Description>
 The Planck length is defined to be sqrt(h-bar*G/(c^3)).
@@ -265,7 +265,7 @@ l_P = sqrt(h-bar*G/(c^3))
 <FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
   <OMA>
     <OMS cd="relation1" name="eq"/>
-    <OMS cd="FundamentalPhysicalConstants1" name=" Planck length"/>
+    <OMS cd="FundamentalPhysicalConstants1" name=" Planck-length"/>
     <OMA>
       <OMS cd="arith1" name="times"/>
       <OMA>
@@ -280,7 +280,7 @@ l_P = sqrt(h-bar*G/(c^3))
 </CDDefinition>
 
 <CDDefinition>
-<Name>Planck mass</Name>
+<Name>Planck-mass</Name>
 <Role>constant</Role>
 <Description>
 The Planck mass is defined to be sqrt(h-bar*c/G).
@@ -296,7 +296,7 @@ m_P = sqrt(h-bar*c/G)
 <FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
   <OMA>
     <OMS cd="relation1" name="eq"/>
-    <OMS cd="FundamentalPhysicalConstants1" name="Planck mass"/>
+    <OMS cd="FundamentalPhysicalConstants1" name="Planck-mass"/>
     <OMA>
       <OMS cd="arith1" name="times"/>
       <OMA>
@@ -311,7 +311,7 @@ m_P = sqrt(h-bar*c/G)
 </CDDefinition>
 
 <CDDefinition>
-<Name>Planck time</Name>
+<Name>Planck-time</Name>
 <Role>constant</Role>
 <Description>
 The Planck time is defined to be sqrt(h-bar*G/(c^5)).
@@ -327,7 +327,7 @@ t_P = sqrt(h-bar*G/(c^5))
 <FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
   <OMA>
     <OMS cd="relation1" name="eq"/>
-    <OMS cd="FundamentalPhysicalConstants1" name="Planck time"/>
+    <OMS cd="FundamentalPhysicalConstants1" name="Planck-time"/>
     <OMA>
       <OMS cd="arith1" name="times"/>
       <OMA>
@@ -342,7 +342,7 @@ t_P = sqrt(h-bar*G/(c^5))
 </CDDefinition>
 
 <CDDefinition>
-<Name>Planck charge</Name>
+<Name>Planck-charge</Name>
 <Role>constant</Role>
 <Description>
 The Planck charge is defined to be sqrt(h-bar*c*4*pi*eps0).
@@ -358,7 +358,7 @@ q_P = sqrt(h-bar*c*4*pi*eps0)
 <FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
   <OMA>
     <OMS cd="relation1" name="eq"/>
-    <OMS cd="FundamentalPhysicalConstants1" name="Planck charge"/>
+    <OMS cd="FundamentalPhysicalConstants1" name="Planck-charge"/>
     <OMA>
       <OMS cd="arith1" name="times"/>
       <OMA>
@@ -373,7 +373,7 @@ q_P = sqrt(h-bar*c*4*pi*eps0)
 </CDDefinition>
 
 <CDDefinition>
-<Name>Planck temperature</Name>
+<Name>Planck-temperature</Name>
 <Role>constant</Role>
 <Description>
 The Planck temperature is defined to be sqrt(h-bar*c^5/(G*k^3)).
@@ -389,7 +389,7 @@ l_P =  sqrt(h-bar*c^5/(G*k^3))
 <FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
   <OMA>
     <OMS cd="relation1" name="eq"/>
-    <OMS cd="FundamentalPhysicalConstants1" name="Boltzmann constant"/>
+    <OMS cd="FundamentalPhysicalConstants1" name="Boltzmann-constant"/>
     <OMA>
       <OMS cd="arith1" name="times"/>
       <OMA>

@@ -7,7 +7,7 @@
 <CDStatus> experimental </CDStatus>
 <CDDate> 2002-08-08 </CDDate>
 <CDVersion> 1 </CDVersion>
-<CDRevision> 0 </CDRevision>
+<CDRevision> 1 </CDRevision>
 <CDUses>
  <!-- private cd's -->
   <CDName>linalg1p</CDName>
@@ -34,7 +34,7 @@ This CD defines symbols for concerning multi-index and indexed variables.
 <Description>
   multi_power is for using the multi-index notation.
 </Description>
-<CMP> <tex> $\prod_{i=1}^n x_i ^ {e_i}$ </tex> </CMP>
+<CMP> $\prod_{i=1}^n x_i ^ {e_i}$  </CMP>
 <FMP>
 <OMOBJ xmlns="http://www.openmath.org/OpenMath">
   <OMA><OMS cd="relation1" name="eq"/>
@@ -89,8 +89,8 @@ This CD defines symbols for concerning multi-index and indexed variables.
 <FMP>
 <OMOBJ xmlns="http://www.openmath.org/OpenMath">
   <OMA><OMS cd="relation1" name="eq"/>
-    <OMA><OMS name="index"/>
-      <OMA><OMS name="indexed_variable"/>
+    <OMA><OMS cd="poly1p" name="index"/>
+      <OMA><OMS cd="poly1p" name="indexed_variable"/>
         <OMV name="x"/>
         <OMV name="i"/>
       </OMA>
@@ -105,8 +105,8 @@ This CD defines symbols for concerning multi-index and indexed variables.
 <FMP>
 <OMOBJ xmlns="http://www.openmath.org/OpenMath">
   <OMA><OMS cd="relation1" name="eq"/>
-    <OMA><OMS name="index"/>
-      <OMA><OMS name="indexed_variable"/>
+    <OMA><OMS cd="poly1p" name="index"/>
+      <OMA><OMS cd="poly1p" name="indexed_variable"/>
         <OMV name="x"/>
         <OMA><OMS cd="linalg2" name="vector"/>
           <OMI> 1 </OMI>
@@ -141,12 +141,12 @@ This CD defines symbols for concerning multi-index and indexed variables.
   <OMA><OMS cd="relation1" name="eq"/>
     <OMA><OMS cd="linalg1" name="vector_selector"/>
       <OMV name="i"/>
-      <OMA><OMS name="vector_of_indexed_variables"/>
+      <OMA><OMS cd="poly1p" name="vector_of_indexed_variables"/>
         <OMV name="x"/>
         <OMV name="n"/>
       </OMA>
     </OMA>
-    <OMA><OMS name="indexed_variable"/>
+    <OMA><OMS cd="poly1p" name="indexed_variable"/>
       <OMV name="x"/>
       <OMV name="i"/>
     </OMA>
@@ -170,12 +170,12 @@ This CD defines symbols for concerning multi-index and indexed variables.
   <OMA><OMS cd="relation1" name="eq"/>
     <OMA><OMS cd="set1p" name="index_set_selector"/>
       <OMV name="m"/>
-      <OMA><OMS name="sorted_set_of_indexed_variables"/>
+      <OMA><OMS cd="poly1p" name="sorted_set_of_indexed_variables"/>
         <OMV name="x"/>
         <OMV name="s"/>
       </OMA>
     </OMA>
-    <OMA><OMS name="indexed_variable"/>
+    <OMA><OMS cd="poly1p" name="indexed_variable"/>
       <OMV name="x"/>
       <OMV name="m"/>
     </OMA>

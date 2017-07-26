@@ -6,9 +6,9 @@
 <CDURL> http://www.math.kobe-u.ac.jp/OCD/intpath1.ocd </CDURL>
 <CDReviewDate> 2003-07-08 </CDReviewDate>
 <CDStatus> experimental </CDStatus>
-<CDDate> 2004-07-08, 2004-12-12 </CDDate>
+<CDDate> 2004-12-12 </CDDate>
 <CDVersion> 1 </CDVersion>
-<CDRevision> 1 </CDRevision>
+<CDRevision> 2 </CDRevision>
 <CDUses>
  <!-- official cd's  -->
   <CDName>arith1</CDName>

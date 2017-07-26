@@ -149,6 +149,7 @@ An example: the definition of the exponential integral.
               <OMV name="x"/>
             </OMA>
             <OMBIND>
+	    <OMV name="missing"/>
               <OMBVAR>
                 <OMV name="t"/>
               </OMBVAR>

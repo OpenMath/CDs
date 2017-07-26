@@ -39,10 +39,10 @@
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL> http://www.openmath.org/cd/alg1.ocd </CDURL>
 <CDReviewDate>2006-03-30</CDReviewDate>
-<CDStatus> official </CDStatus>
+<CDStatus> experimental </CDStatus>
 <CDDate>2004-03-30</CDDate>
 <CDVersion>3</CDVersion>
-<CDRevision>0</CDRevision>
+<CDRevision>1</CDRevision>
 
 <Description> 
 A CD of basic algebraic concepts
@@ -66,7 +66,6 @@ This symbol represents the additive identity element.
     <OMS cd="quant1" name="forall"/>
     <OMBVAR>
        <OMV name="a"/>
-       <OMS cd="dd" name="a"/>
     </OMBVAR>
     <OMA>
       <OMS cd="relation1" name="eq"/>

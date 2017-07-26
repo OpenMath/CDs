@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CD xmlns="http://www.openmath.org/OpenMathCD"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-    xsi:schemaLocation="http://www.openmath.org/OpenMathCD 
-			http://www.openmath.org/standard/om20-2004-06-30/omcd2.xsd">
+<CD xmlns="http://www.openmath.org/OpenMathCD">
   <CDComment>
     This document is distributed in the hope that it will be useful, 
     but WITHOUT ANY WARRANTY; without even the implied warranty of 

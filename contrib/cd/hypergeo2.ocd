@@ -4,9 +4,9 @@
 <CDName> hypergeo2 </CDName>
 <CDURL> http://www.openxm.org/... </CDURL>
 <CDReviewDate> 2003-08-11 </CDReviewDate>
-<CDDate> 2002-08-11, 2003-11-30 </CDDate>
+<CDDate> 2003-11-30 </CDDate>
 <CDVersion> 0 </CDVersion>
-<CDRevision> 1 </CDRevision>
+<CDRevision> 2 </CDRevision>
 <CDStatus> experimental </CDStatus>
 <CDUses>
   <CDName>arith1</CDName>
@@ -192,7 +192,7 @@
             <OMI> 2 </OMI>
           </OMA>
         </OMA>
-        <OMA><OMS name="besselJ"/>
+        <OMA><OMS cd="hypergeo2" name="besselJ"/>
           <OMV name="v"/>
           <OMV name="z"/>
         </OMA>
@@ -238,7 +238,7 @@
             <OMV name="z"/>
           </OMA>
         </OMA>
-        <OMA><OMS name="besselJ"/>
+        <OMA><OMS cd="hypergeo2" name="besselJ"/>
           <OMA><OMS cd="arith1" name="unary_minus"/>
             <OMV name="v"/>
           </OMA>

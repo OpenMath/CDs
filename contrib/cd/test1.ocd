@@ -55,10 +55,14 @@
 
 <CDDefinition>
 <Name> differentiable </Name>
+<Description>
+</Description>
 </CDDefinition>
 
 <CDDefinition>
 <Name> continuous </Name>
+<Description>
+</Description>
 </CDDefinition>
 
 </CD>

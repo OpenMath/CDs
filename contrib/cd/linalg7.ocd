@@ -34,11 +34,11 @@
 
 <CDName> linalg7 </CDName>
 <CDURL> http://www.openmath.org/cd/linalg7.ocd </CDURL>
-<CDReviewDate> 2005-00-00 </CDReviewDate>
+<CDReviewDate> 2017-12-31 </CDReviewDate>
 <CDStatus> experimental </CDStatus>
 <CDDate> 2003-03-22 </CDDate>
 <CDVersion> 1 </CDVersion>
-<CDRevision> 0 </CDRevision>
+<CDRevision> 1 </CDRevision>
 <CDUses>
   <CDName>alg1</CDName>
   <CDName>arith1</CDName>

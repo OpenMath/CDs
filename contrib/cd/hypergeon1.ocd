@@ -5,7 +5,7 @@
 <CDURL> http://www.math.kobe-u.ac.jp/OCD/hypergeon1.tfb </CDURL>
 <CDReviewDate> 2003-07-30 </CDReviewDate>
 <CDStatus> experimental </CDStatus>
-<CDDate> 2002-07-30, 2003-11-30 </CDDate>
+<CDDate> 2003-11-30 </CDDate>
 <CDVersion> 1 </CDVersion>
 <CDRevision> 1 </CDRevision>
 <CDUses>
@@ -202,7 +202,7 @@ This CD defines symbols for A-hypergeometric series
         <OMV name="n"/>
       </OMBVAR>
       <OMA><OMS cd="relation1" name="eq"/>
-        <OMA><OMS name="a_hypergeometric"/>
+        <OMA><OMS cd="hypergeon1" name="a_hypergeometric"/>
           <OMV name="a"/>
           <OMV name="v"/>
           <OMV name="x"/>

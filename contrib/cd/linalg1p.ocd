@@ -38,7 +38,7 @@ This CD defines symbols for linear algebra used for hypergeon1
   to zero and negative elements to their absolute values.
 </Description>
 
-<CMP> <tex> $u = u_{+} - u_{-}$ </tex> </CMP>
+<CMP> $u = u_{+} - u_{-}$  </CMP>
 <FMP>
 <OMOBJ xmlns="http://www.openmath.org/OpenMath">
   <OMA><OMS cd="relation1" name="eq"/>
@@ -64,16 +64,16 @@ This CD defines symbols for linear algebra used for hypergeon1
  It returns a vector of a specifed size of which elements are one.
  1-ary function.
 </Description>
-<CMP>  <tex> for all $i$, ${\vec 1}[i] = 1$ </tex> </CMP>
-<FMP>
-</FMP>
+<CMP> for all $i$, ${\vec 1}[i] = 1$ </CMP>
+</CDDefinition>
 
+<CDDefinition>
 <Name> kernel </Name>
 <Description>
  It returns the kernel of the map defined by a matrix in a specified
  domain.
 </Description>
-<CMP> <tex> $\{ x \in D | A x = 0 \}$ </tex> </CMP>
+<CMP> $\{ x \in D | A x = 0 \}$  </CMP>
 <FMP>
 <OMOBJ xmlns="http://www.openmath.org/OpenMath">
   <OMA><OMS cd="relation1" name="eq"/>
@@ -106,7 +106,7 @@ This CD defines symbols for linear algebra used for hypergeon1
 </OMOBJ>
 
 </FMP>
-<bug>  arith1.times is relavant for the matrix multiplication? </bug>
+<!--<bug>  arith1.times is relavant for the matrix multiplication? </bug>-->
 </CDDefinition>
 
 </CD>

@@ -38,7 +38,7 @@
   <CDReviewDate> 2003-04-01 </CDReviewDate>
   <CDDate> 2002-01-19 </CDDate>
   <CDVersion> 1 </CDVersion>
-  <CDRevision> 0 </CDRevision>
+  <CDRevision> 1 </CDRevision>
   <CDStatus> experimental </CDStatus>
   <CDUses>
     <CDName> alg1 </CDName>
@@ -80,7 +80,8 @@
 
     $$g(z)=\sum_{k=0}^\infty 3^k{\left (\frac{2}{3}\right )}_k
       \frac{z^{3k+1}}{(3k+1)!}$$
-    </Description>
+     </Description>
+     <!--
     <FMP>
     <OMOBJ xmlns="http://www.openmath.org/OpenMath">
       <OMA>
@@ -189,6 +190,7 @@
       </OMA>
     </OMOBJ>
     </FMP>
+    -->
   </CDDefinition>
 
   <CDDefinition>
@@ -215,6 +217,7 @@
     $$g(z)=\sum_{k=0}^\infty 3^k{\left (\frac{2}{3}\right )}_k
       \frac{z^{3k+1}}{(3k+1)!}$$
     </Description>
+    <!--
     <FMP>
     <OMOBJ xmlns="http://www.openmath.org/OpenMath">
       <OMA>
@@ -323,6 +326,7 @@
       </OMA>
     </OMOBJ>
     </FMP>
+    -->
   </CDDefinition>
 
   <CDDefinition>
