@@ -35,10 +35,13 @@
 
 <CDName> transc2 </CDName>
 <CDURL> http://www.openmath.org/cd/transc2.ocd </CDURL>
-<CDReviewDate> 2003-09-01 </CDReviewDate>
+<CDReviewDate>2017-12-31</CDReviewDate>
 <CDDate> 2002-09-11 </CDDate>
 <CDVersion> 1 </CDVersion>
-<CDRevision> 1 </CDRevision>
+<CDRevision>2</CDRevision>
+<CDComment>
+  Author: James Davenport
+</CDComment>
 <CDStatus> experimental </CDStatus>
 <CDUses>
   <CDName> alg1      </CDName>

@@ -36,6 +36,7 @@
 <CDName>sts2</CDName>
 <CDBase> http://www.openmath.org/cd </CDBase>
 <CDDate> 2004-02-02 </CDDate>
+<CDReviewDate> 1999-10-19 </CDReviewDate>
 <CDVersion> 1 </CDVersion>
 <CDRevision> 0 </CDRevision>
 <CDStatus> experimental </CDStatus>

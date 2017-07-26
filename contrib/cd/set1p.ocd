@@ -6,6 +6,7 @@
 <CD xmlns="http://www.openmath.org/OpenMathCD">
  <CDName>set1p</CDName>
  <CDDate>2002-10-04</CDDate>
+ <CDReviewDate> 1999-10-19 </CDReviewDate>
  <CDStatus>experimental</CDStatus>
  <CDVersion>0</CDVersion>
  <CDRevision>0</CDRevision>

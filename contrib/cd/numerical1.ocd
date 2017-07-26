@@ -34,11 +34,14 @@
 
 <CDName> numerical1 </CDName> 
 <CDURL> http://www.openmath.org/cd/numerical1.ocd </CDURL>
-<CDReviewDate> 2005-08-06 </CDReviewDate> 
+<CDReviewDate>2017-12-31</CDReviewDate> 
 <CDDate> 2003-09-16 </CDDate> 
 <CDStatus> experimental </CDStatus>
 <CDVersion> 1 </CDVersion>
-<CDRevision> 0 </CDRevision>
+<CDRevision>1</CDRevision>
+<CDComment>
+  Author: James Davenport
+</CDComment>
 <CDUses>
 </CDUses>
    <Description>

@@ -34,11 +34,14 @@
 
 <CDName> cauchypv </CDName>
 <CDURL> http://www.openmath.org/cd/cauchypv.ocd </CDURL>
-<CDReviewDate> 2002-09-01</CDReviewDate>
+<CDReviewDate>2017-12-31</CDReviewDate>
 <CDStatus> experimental </CDStatus>
 <CDDate> 2001-09-23 </CDDate>
 <CDVersion> 1 </CDVersion>
-<CDRevision> 0 </CDRevision>
+<CDRevision>1</CDRevision>
+<CDComment>
+  Author: James Davenport
+</CDComment>
 <CDUses>
   <CDName>alg1</CDName>
   <CDName>arith1</CDName>

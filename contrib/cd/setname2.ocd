@@ -34,10 +34,13 @@
 
 <CDName> setname2 </CDName>
 <CDURL> http://www.openmath.org/cd/setname2.ocd </CDURL>
-<CDReviewDate> 2003-04-01 </CDReviewDate>
+<CDReviewDate>2017-12-31</CDReviewDate>
 <CDDate> 2000-02-02 </CDDate>
 <CDVersion> 3 </CDVersion>
-<CDRevision> 0 </CDRevision>
+<CDRevision>1</CDRevision>
+<CDComment>
+  Author: James Davenport
+</CDComment>
 <CDStatus> experimental </CDStatus>
 <CDUses>
   <CDName>alg1</CDName>
