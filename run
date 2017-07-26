@@ -31,6 +31,8 @@ if [ "$TRAVIS" = "true" ] && [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
 	cp -p  OpenMath.github.io/contrib/sts/*.html CDs/contrib/sts
 echo "checking cp -p"
 ls -l CDs/contrib/cd
+echo "contrib on website"
+ls -l OpenMath.github.io/contrib/cd/*.html
 	;;
 	esac
 	fi
