@@ -35,10 +35,13 @@
 	<CDName>permutation1</CDName>
 	<CDURL>http://www.win.tue.nl/~amc/oz/om/cds/permutation1.ocd</CDURL>
 	<CDDate>2002-10-21</CDDate>
-	<CDReviewDate>2003-07-27</CDReviewDate>
+	<CDReviewDate>2017-12-31</CDReviewDate>
 	<CDStatus>experimental</CDStatus>
 	<CDVersion>1</CDVersion>
-	<CDRevision>4</CDRevision>
+	<CDRevision>5</CDRevision>
+<CDComment>
+  Author: Arjeh Cohen
+</CDComment>
 	<CDUses>
 		<CDName>arith1</CDName>
 		<CDName>fns1</CDName>

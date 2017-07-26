@@ -34,11 +34,14 @@
 
 <CDName>plangeo1</CDName>
 <CDURL> http://www.win.tue.nl/~amc/oz/om/cds/plangeo1.ocd </CDURL>
-<CDReviewDate> 00 </CDReviewDate>
+<CDReviewDate>2017-12-31</CDReviewDate>
 <CDStatus> experimental </CDStatus>
 <CDDate> 2002-03-15 </CDDate>
 <CDVersion> 0 </CDVersion>
-<CDRevision> 1 </CDRevision>
+<CDRevision>2</CDRevision>
+<CDComment>
+  Author: Arjeh Cohen
+</CDComment>
 <CDUses>
   <CDName>logic1.ocd</CDName>
   <CDName>relation1.ocd</CDName>
