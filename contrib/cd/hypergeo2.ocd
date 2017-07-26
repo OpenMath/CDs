@@ -3,10 +3,13 @@
 <!-- $Id: hypergeo2.tfb,v 1.6 2003/11/30 12:56:08 taka Exp $ -->
 <CDName> hypergeo2 </CDName>
 <CDURL> http://www.openxm.org/... </CDURL>
-<CDReviewDate> 2003-08-11 </CDReviewDate>
+<CDReviewDate>2017-12-31</CDReviewDate>
 <CDDate> 2003-11-30 </CDDate>
 <CDVersion> 0 </CDVersion>
-<CDRevision> 2 </CDRevision>
+<CDRevision>3</CDRevision>
+<CDComment>
+  Author: Yasushi Tamura
+</CDComment>
 <CDStatus> experimental </CDStatus>
 <CDUses>
   <CDName>arith1</CDName>

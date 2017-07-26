@@ -3,10 +3,13 @@
 <!-- $Id: hypergeo0.tfb,v 1.9 2002/11/29 07:26:41 taka Exp $ -->
 <CDName> hypergeo0 </CDName>
 <CDURL> http://www.math.kobe-u.ac.jp/OCD/ </CDURL>
-<CDReviewDate> 2003-04-01 </CDReviewDate>
+<CDReviewDate>2017-12-31</CDReviewDate>
 <CDDate> 2002-11-29 </CDDate>
 <CDVersion> 0 </CDVersion>
-<CDRevision> 0 </CDRevision>
+<CDRevision>1</CDRevision>
+<CDComment>
+  Author: Yasushi Tamura
+</CDComment>
 <CDStatus> experimental </CDStatus>
 <CDUses>
   <CDName>alg1</CDName>
