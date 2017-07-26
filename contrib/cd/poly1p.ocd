@@ -3,11 +3,14 @@
 <CD xmlns="http://www.openmath.org/OpenMathCD">
 <CDName> poly1p </CDName>
 <CDURL> http://www.math.kobe-u.ac.jp/OCD/poly1p.tfb </CDURL>
-<CDReviewDate> 2003-08-08 </CDReviewDate>
+<CDReviewDate>2017-12-31</CDReviewDate>
 <CDStatus> experimental </CDStatus>
 <CDDate> 2002-08-08 </CDDate>
 <CDVersion> 1 </CDVersion>
-<CDRevision> 1 </CDRevision>
+<CDRevision>2</CDRevision>
+<CDComment>
+  Author: Nobuki Takayama
+</CDComment>
 <CDUses>
  <!-- private cd's -->
   <CDName>linalg1p</CDName>

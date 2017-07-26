@@ -4,11 +4,14 @@
 <CD xmlns="http://www.openmath.org/OpenMathCD">
 <CDName> freealg1 </CDName>
 <CDURL> http://www.math.kobe-u.ac.jp/OCD/freealg1.tfb </CDURL>
-<CDReviewDate> 2003-09-25 </CDReviewDate>
+<CDReviewDate>2017-12-31</CDReviewDate>
 <CDStatus> experimental </CDStatus>
 <CDDate> 2002-09-25 </CDDate>
 <CDVersion> 1 </CDVersion>
-<CDRevision> 0 </CDRevision>
+<CDRevision>1</CDRevision>
+<CDComment>
+  Author: Nobuki Takayama
+</CDComment>
 
 <Description> 
 This CD defines elements of a free algebra.

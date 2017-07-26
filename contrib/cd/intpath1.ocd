@@ -4,11 +4,14 @@
 <CD xmlns="http://www.openmath.org/OpenMathCD">
 <CDName> intpath1 </CDName>
 <CDURL> http://www.math.kobe-u.ac.jp/OCD/intpath1.ocd </CDURL>
-<CDReviewDate> 2003-07-08 </CDReviewDate>
+<CDReviewDate>2017-12-31</CDReviewDate>
 <CDStatus> experimental </CDStatus>
 <CDDate> 2004-12-12 </CDDate>
 <CDVersion> 1 </CDVersion>
-<CDRevision> 2 </CDRevision>
+<CDRevision>3</CDRevision>
+<CDComment>
+  Author: Nobuki Takayama
+</CDComment>
 <CDUses>
  <!-- official cd's  -->
   <CDName>arith1</CDName>

@@ -3,11 +3,14 @@
 <CD xmlns="http://www.openmath.org/OpenMathCD">
 <CDName> hypergeon1 </CDName>
 <CDURL> http://www.math.kobe-u.ac.jp/OCD/hypergeon1.tfb </CDURL>
-<CDReviewDate> 2003-07-30 </CDReviewDate>
+<CDReviewDate>2017-12-31</CDReviewDate>
 <CDStatus> experimental </CDStatus>
 <CDDate> 2003-11-30 </CDDate>
 <CDVersion> 1 </CDVersion>
-<CDRevision> 1 </CDRevision>
+<CDRevision>2</CDRevision>
+<CDComment>
+  Author: Nobuki Takayama
+</CDComment>
 <CDUses>
  <!-- private cd's -->
   <CDName>hypergeon0 </CDName>

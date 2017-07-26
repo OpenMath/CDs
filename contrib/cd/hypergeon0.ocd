@@ -3,11 +3,14 @@
 <CD xmlns="http://www.openmath.org/OpenMathCD">
 <CDName> hypergeon0 </CDName>
 <CDURL> http://www.math.kobe-u.ac.jp/OCD/hypergeon0.tfb </CDURL>
-<CDReviewDate> 2003-11-11 </CDReviewDate>
+<CDReviewDate>2017-12-31</CDReviewDate>
 <CDStatus> experimental </CDStatus>
 <CDDate> 2003-11-30 </CDDate>
 <CDVersion> 1 </CDVersion>
-<CDRevision> 2 </CDRevision>
+<CDRevision>3</CDRevision>
+<CDComment>
+  Author: Nobuki Takayama
+</CDComment>
 <CDUses>
  <CDName>arith1</CDName>
  <CDName>linalg1</CDName>

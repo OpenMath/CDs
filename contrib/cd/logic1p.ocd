@@ -3,10 +3,13 @@
 <CD xmlns="http://www.openmath.org/OpenMathCD">
 <CDName>logic1p</CDName>
  <CDDate>2002-10-04</CDDate>
- <CDReviewDate> 1999-10-19 </CDReviewDate>
+ <CDReviewDate>2017-12-31</CDReviewDate>
  <CDStatus>experimental</CDStatus>
  <CDVersion>0</CDVersion>
- <CDRevision>0</CDRevision>
+ <CDRevision>1</CDRevision>
+<CDComment>
+  Author: Nobuki Takayama
+</CDComment>
 
 
 <CDDefinition>
