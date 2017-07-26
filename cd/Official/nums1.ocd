@@ -39,7 +39,11 @@
 <CDReviewDate>2006-03-30</CDReviewDate>
 <CDDate>2004-03-30</CDDate>
 <CDVersion>3</CDVersion>
-<CDRevision>0</CDRevision>
+<CDRevision>1</CDRevision>
+<CDComment>
+  Author: OpenMath Consortium
+  SourceURL: https://github.com/OpenMath/CDs
+</CDComment>
 <CDStatus> official </CDStatus>
 <Description>
     This CD is intended to be `compatible' with the MathML view of

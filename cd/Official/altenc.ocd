@@ -40,7 +40,11 @@
 <CDStatus> official </CDStatus>
 <CDDate>2004-05-23</CDDate>
 <CDVersion>3</CDVersion>
-<CDRevision>1</CDRevision>
+<CDRevision>2</CDRevision>
+<CDComment>
+  Author: OpenMath Consortium
+  SourceURL: https://github.com/OpenMath/CDs
+</CDComment>
 
 <Description> 
 A CD of alternative encoding symbols 

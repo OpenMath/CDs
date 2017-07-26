@@ -41,7 +41,11 @@
 <CDStatus> official </CDStatus>
 <CDDate>2004-03-30</CDDate>
 <CDVersion>3</CDVersion>
-<CDRevision>0</CDRevision>
+<CDRevision>1</CDRevision>
+<CDComment>
+  Author: OpenMath Consortium
+  SourceURL: https://github.com/OpenMath/CDs
+</CDComment>
 
 <Description> 
 A CD of basic algebraic concepts

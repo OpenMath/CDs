@@ -40,7 +40,11 @@
 <CDStatus> official </CDStatus>
 <CDDate>2004-06-01</CDDate>
 <CDVersion>4</CDVersion>
-<CDRevision>1</CDRevision>
+<CDRevision>2</CDRevision>
+<CDComment>
+  Author: OpenMath Consortium
+  SourceURL: https://github.com/OpenMath/CDs
+</CDComment>
 <Description>
     This CD is intended to be compatible with the calculus operations
     in Content MathML.
