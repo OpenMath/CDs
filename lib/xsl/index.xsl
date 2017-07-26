@@ -3,16 +3,15 @@
   xmlns:cdg="http://www.openmath.org/OpenMathCDG"
   xmlns:cd="http://www.openmath.org/OpenMathCD"
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-   xmlns:x="http://xml.apache.org/xalan"
-  xmlns:exslt='http://exslt.org/common'
 >
   <xsl:strip-space elements="*"/>
   <xsl:output method="xml" omit-xml-declaration="yes" indent="yes"/>
   <xsl:template match="/">
-    <xsl:text>---
+---
 layout: page
 title: OpenMath Symbols
----&#xA;</xsl:text>
+---
+
 
 <table>
   <tr>
@@ -24,7 +23,7 @@ title: OpenMath Symbols
     <xsl:sort select="lower-case(cd:Name)"/>
     <tr>
       <td><xsl:value-of select="cd:Name"/></td>
-      <td><a href="../{substring-before(../../@path,'.ocd')}.xhtml">
+      <td><a href="cd/{../cd:CDName}.html">
 	<xsl:value-of select="../cd:CDName"/>
       </a>
       </td>
