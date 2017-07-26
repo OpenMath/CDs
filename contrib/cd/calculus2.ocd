@@ -39,7 +39,10 @@
 <CDStatus> experimental </CDStatus>
 <CDDate> 2004-03-24 </CDDate>
 <CDVersion> 1 </CDVersion>
-<CDRevision> 1 </CDRevision>
+<CDRevision>2</CDRevision>
+<CDComment>
+  Author: Mike Dewar
+</CDComment>
 <Description>
     This CD provides a vocabulary for talking about integrals.
 </Description>

@@ -38,7 +38,10 @@
 <CDDate> 2004-02-09 </CDDate> 
 <CDStatus> experimental </CDStatus>
 <CDVersion> 1 </CDVersion>
-<CDRevision> 0 </CDRevision>
+<CDRevision>1</CDRevision>
+<CDComment>
+  Author: Mike Dewar
+</CDComment>
 <CDUses>
 </CDUses>
    <Description>
