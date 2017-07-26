@@ -19,8 +19,8 @@ title: OpenMath Content Dictionaries by status
 <th><a href="../cdnamess">Status</a></th>
 </tr>
 <xsl:for-each select="CDS/OCD">
- <xsl:sort select="concat(normalize-space(*:CD/*:CDStatus),contains(@path,'contrib/'))"/>
- <xsl:sort select="normalize-space(*:CD/*:CDName)"/>
+ <xsl:sort select="lower-case(concat(normalize-space(*:CD/*:CDStatus),contains(@path,'contrib/')))"/>
+ <xsl:sort select="lower-case(normalize-space(*:CD/*:CDName))"/>
  <xsl:variable name="status" select="normalize-space(*:CD/*:CDStatus)"/> 
  <xsl:variable name="name" select="normalize-space(*:CD/*:CDName)"/>
   <tr>
