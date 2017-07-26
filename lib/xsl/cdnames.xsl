@@ -7,16 +7,16 @@
  
 <xsl:output method="html" indent="yes"/>
 <xsl:template match="/">
----
+<!-- -
 layout: page
 title: OpenMath Content Dictionaries by name
----
+- -->
 <xsl:comment>WARNING: This page is automatically generated, do not edit! WARNING</xsl:comment>
 <xsl:text>&#xA; &#xA;</xsl:text>
 <table border="1">
 <tr>
-<th><a href="../cdnames.html">Content Dictionary</a></th>
-<th><a href="../cdnamess.html">Status</a></th>
+<th><a href="../cdnames">Content Dictionary</a></th>
+<th><a href="../cdnamess">Status</a></th>
 </tr>
 <xsl:for-each select="CDS/OCD">
  <xsl:sort select="normalize-space(*:CD/*:CDName)"/>
