@@ -36,11 +36,15 @@
 <CDName> moreerrors </CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL> http://www.openmath.org/cd/moreerrors.ocd </CDURL>
-<CDReviewDate>2006-03-30</CDReviewDate>
+<CDReviewDate>2017-12-31</CDReviewDate>
 <CDStatus> experimental </CDStatus>
 <CDDate>2004-03-30</CDDate>
 <CDVersion>2</CDVersion>
-<CDRevision>0</CDRevision>
+<CDRevision>1</CDRevision>
+<CDComment>
+  Author: OpenMath Consortium
+  SourceURL: https://github.com/OpenMath/CDs
+</CDComment>
 
 <CDDefinition>
 <Name> encodingError </Name>

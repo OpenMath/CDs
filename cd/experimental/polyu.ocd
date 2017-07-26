@@ -35,11 +35,15 @@
    <CDName> polyu </CDName>
 <CDBase>http://www.openmath.org/cd</CDBase> 
    <CDURL> http://www.openmath.org/cd/polyu.ocd </CDURL>
-   <CDReviewDate>2006-03-30</CDReviewDate> 
+   <CDReviewDate>2017-12-31</CDReviewDate> 
    <CDDate>2004-03-30</CDDate> 
    <CDStatus> experimental </CDStatus>
    <CDVersion>2</CDVersion>
-   <CDRevision>0</CDRevision>
+   <CDRevision>1</CDRevision>
+<CDComment>
+  Author: OpenMath Consortium
+  SourceURL: https://github.com/OpenMath/CDs
+</CDComment>
    <Description>
      This CD contains operators to deal with polynomials and more precisely 
      Univariate Polynomials.

@@ -35,10 +35,14 @@
 
 
 <CDName> meta </CDName>
-<CDReviewDate>2006-03-30</CDReviewDate>
+<CDReviewDate>2017-12-31</CDReviewDate>
 <CDDate>2004-03-30</CDDate>
 <CDVersion>3</CDVersion>
-<CDRevision>0</CDRevision>
+<CDRevision>1</CDRevision>
+<CDComment>
+  Author: OpenMath Consortium
+  SourceURL: https://github.com/OpenMath/CDs
+</CDComment>
 <CDStatus> official </CDStatus>
 <CDURL> http://www.openmath.org/cd/meta.ocd </CDURL>
 <CDBase>http://www.openmath.org/cd</CDBase>

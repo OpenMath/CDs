@@ -36,11 +36,15 @@
    <CDName> poly </CDName>
 <CDBase>http://www.openmath.org/cd</CDBase> 
    <CDURL> http://www.openmath.org/cd/poly.ocd </CDURL>
-   <CDReviewDate>2006-03-30</CDReviewDate> 
+   <CDReviewDate>2017-12-31</CDReviewDate> 
    <CDDate>2004-03-30</CDDate> 
    <CDStatus> experimental </CDStatus>
    <CDVersion>5</CDVersion>
-   <CDRevision>0</CDRevision>
+   <CDRevision>1</CDRevision>
+<CDComment>
+  Author: OpenMath Consortium
+  SourceURL: https://github.com/OpenMath/CDs
+</CDComment>
    <Description>
      This CD contains generic operators to deal with various forms
      of polynomials. The arithmetic operators from arith1 etc. are valid
