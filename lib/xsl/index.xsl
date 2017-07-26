@@ -20,7 +20,7 @@ title: OpenMath Symbols
     <xsl:sort select="lower-case(normalize-space(*:Name))"/>
     <tr>
      <td>
-      <a href="cd/{normalize-space(../*:CDName)}.html#{normalize-space(*:Name)}">
+      <a href="../cd/{normalize-space(../*:CDName)}.html#{normalize-space(*:Name)}">
        <xsl:value-of select="normalize-space(../*:CDName)"/>
        <xsl:text>/</xsl:text><br/>
        <xsl:value-of select="normalize-space(*:Name)"/>
