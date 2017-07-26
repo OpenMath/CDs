@@ -189,7 +189,7 @@
 
 <xsl:template match="cd:CDComment/text()" name="url">
   <xsl:param name="t" select="."/>
-  <xsl:analyze-string select="$t" regex="http://[a-zA-Z:/_\-%0-9\.]+[a-zA-Z:/_\-%0-9]">
+  <xsl:analyze-string select="$t" regex="https?://[a-zA-Z:/_\-%0-9\.]+[a-zA-Z:/_\-%0-9]">
     <xsl:matching-substring>
       <a href="{.}"><xsl:value-of select="."/></a>
     </xsl:matching-substring>
