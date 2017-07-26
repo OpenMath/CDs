@@ -17,7 +17,7 @@ title: OpenMath Symbols
     <th>Description</th>
   </tr>
   <xsl:for-each select="CDS/OCD/*:CD/*:CDDefinition">
-    <xsl:sort select="lower-case(*:Name)"/>
+    <xsl:sort select="lower-case(normalize-space(*:Name))"/>
     <tr>
      <td>
       <a href="cd/{normalize-space(../*:CDName)}.html#{normalize-space(*:Name)}">
