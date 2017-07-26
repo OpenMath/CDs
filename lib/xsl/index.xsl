@@ -5,16 +5,15 @@
   <xsl:strip-space elements="*"/>
   <xsl:output method="xml" omit-xml-declaration="yes" indent="yes"/>
   <xsl:template match="/">
----
+<!-- -
 layout: page
 title: OpenMath Symbols
----
+- -->
 
 
 <table>
   <tr>
     <th>Symbol</th>
-    <th>CD</th>
     <th>Description</th>
   </tr>
   <xsl:for-each select="CDS/OCD/*:CD/*:CDDefinition">
@@ -23,7 +22,7 @@ title: OpenMath Symbols
      <td>
       <a href="cd/{normalize-space(../*:CDName)}.html#{normalize-space(*:Name)}">
        <xsl:value-of select="normalize-space(../*:CDName)"/>
-       <xsl:text>/</xsl:text>
+       <xsl:text>/</xsl:text><br/>
        <xsl:value-of select="normalize-space(*:Name)"/>
       </a>
       </td>
