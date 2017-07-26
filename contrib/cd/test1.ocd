@@ -36,7 +36,10 @@
 <CDReviewDate> 9999-01-01 </CDReviewDate>
 <CDDate> 2002-02-12 </CDDate>
 <CDVersion> 1 </CDVersion>
-<CDRevision> 0 </CDRevision>
+<CDRevision>1</CDRevision>
+<CDComment>
+  Author: David Carlisle
+</CDComment>
 <CDStatus> experimental </CDStatus>
 <CDUses>
   <CDName>alg1</CDName>

@@ -38,11 +38,14 @@
 <CDName> alg1 </CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL> http://www.openmath.org/cd/alg1.ocd </CDURL>
-<CDReviewDate>2006-03-30</CDReviewDate>
+<CDReviewDate>2017-12-31</CDReviewDate>
 <CDStatus> experimental </CDStatus>
 <CDDate>2004-03-30</CDDate>
 <CDVersion>3</CDVersion>
-<CDRevision>1</CDRevision>
+<CDRevision>2</CDRevision>
+<CDComment>
+  Author: David Carlisle
+</CDComment>
 
 <Description> 
 A CD of basic algebraic concepts

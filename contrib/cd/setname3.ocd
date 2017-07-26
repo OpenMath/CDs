@@ -35,9 +35,12 @@
 <CDName> setname3 </CDName>
 <CDURL> http://www.openmath.org/cd/setname3.ocd </CDURL>
 <CDDate> 2003-01-07 </CDDate>
-<CDReviewDate> 1999-10-19 </CDReviewDate>
+<CDReviewDate>2017-12-31</CDReviewDate>
 <CDVersion> 1 </CDVersion>
-<CDRevision> 0 </CDRevision>
+<CDRevision>1</CDRevision>
+<CDComment>
+  Author: David Carlisle
+</CDComment>
 <CDStatus> experimental </CDStatus>
 
 <Description>
