@@ -32,11 +32,11 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName>3Dgeo3</CDName>
-<CDURL> http://nash.sip.ucm.es/LAD-3D/3DgeoCDs/3Dgeo3.ocd </CDURL>
-<CDReviewDate> 2009-5-17 </CDReviewDate>
+<CDName>ThreeDgeo3</CDName>
+<CDURL> http://nash.sip.ucm.es/LAD-3D/3DgeoCDs/ThreeDgeo3.ocd </CDURL>
+<CDReviewDate> 2009-05-17 </CDReviewDate>
 <CDStatus>experimental</CDStatus>
-<CDDate> 2008-1-21 </CDDate>
+<CDDate> 2008-01-21 </CDDate>
 <CDVersion> 0 </CDVersion>
 <CDRevision> 2 </CDRevision>
 
@@ -57,10 +57,10 @@ The description of the point A with affine coordinates (4.8,0.6,10.2) is given b
 
 <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
   <OMA>
-    <OMS cd="3Dgeo1" name="point"/>
+    <OMS cd="ThreeDgeo1" name="point"/>
     <OMV name="A"/>
     <OMA>
-      <OMS cd="3Dgeo3" name="set_affine_coordinates"/>
+      <OMS cd="ThreeDgeo3" name="set_affine_coordinates"/>
       <OMV name="A"/>
       <OMA>
         <OMS cd="linalg2" name="vector"/>
@@ -88,7 +88,7 @@ distances between two affine points, one on O and one on O'.
 
 <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
   <OMA>
-    <OMS cd="3Dgeo3" name="distance"/>
+    <OMS cd="ThreeDgeo3" name="distance"/>
     <OMV name="A"/>
     <OMV name="B"/>
   </OMA>
@@ -109,16 +109,16 @@ is defined by:
 
 <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
   <OMA>
-    <OMS cd="3Dgeo3" name="configuration"/>
+    <OMS cd="ThreeDgeo3" name="configuration"/>
     <OMA>
-      <OMS cd="3Dgeo1" name="point"/> 
+      <OMS cd="ThreeDgeo1" name="point"/> 
       <OMV name="A"/>
     </OMA>
     <OMA>
-      <OMS cd="3Dgeo1" name="line"/>
+      <OMS cd="ThreeDgeo1" name="line"/>
       <OMV name="l"/>
       <OMA>
-        <OMS cd="3Dgeo2" name="incident"/>
+        <OMS cd="ThreeDgeo2" name="incident"/>
         <OMV name="A"/>
         <OMV name="l"/>
       </OMA>
@@ -133,13 +133,13 @@ The following is the description of the configuration consisting on two differen
 
 <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
   <OMA>
-    <OMS cd="3Dgeo3" name="configuration"/>
+    <OMS cd="ThreeDgeo3" name="configuration"/>
     <OMA>
-      <OMS cd="3Dgeo1" name="point"/>
+      <OMS cd="ThreeDgeo1" name="point"/>
       <OMV name="A"/>
     </OMA>
     <OMA>
-      <OMS cd="3Dgeo1" name="point"/>
+      <OMS cd="ThreeDgeo1" name="point"/>
       <OMV name="B"/>
       <OMA>
         <OMS cd="logic1" name="not"/>
@@ -151,15 +151,15 @@ The following is the description of the configuration consisting on two differen
       </OMA>
     </OMA>
     <OMA>
-      <OMS cd="3Dgeo1" name="line"/>
+      <OMS cd="ThreeDgeo1" name="line"/>
       <OMV name="l"/>
       <OMA>
-        <OMS cd="3Dgeo2" name="incident"/>
+        <OMS cd="ThreeDgeo2" name="incident"/>
         <OMV name="A"/>
         <OMV name="l"/>
       </OMA>
       <OMA>
-        <OMS cd="3Dgeo2" name="incident"/>
+        <OMS cd="ThreeDgeo2" name="incident"/>
         <OMV name="B"/>
         <OMV name="l"/>
       </OMA>
@@ -186,41 +186,41 @@ can be expressed as follows using the assertion symbol.
 
 <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
   <OMA>
-    <OMS cd="3Dgeo3" name="assertion"/>
+    <OMS cd="ThreeDgeo3" name="assertion"/>
     <OMA>
-      <OMS cd="3Dgeo3" name="configuration"/>
+      <OMS cd="ThreeDgeo3" name="configuration"/>
       <OMA>
-        <OMS cd="3Dgeo1" name="point"/> 
+        <OMS cd="ThreeDgeo1" name="point"/> 
         <OMV name="A"/>
       </OMA>
       <OMA>
-        <OMS cd="3Dgeo1" name="point"/> 
+        <OMS cd="ThreeDgeo1" name="point"/> 
         <OMV name="B"/>
       </OMA>
       <OMA>
-        <OMS cd="3Dgeo1" name="line"/>
+        <OMS cd="ThreeDgeo1" name="line"/>
         <OMV name="l"/>
         <OMA>
-          <OMS cd="3Dgeo2" name="incident"/>
+          <OMS cd="ThreeDgeo2" name="incident"/>
           <OMV name="A"/>
           <OMV name="l"/>
         </OMA>
         <OMA>
-          <OMS cd="3Dgeo2" name="incident"/>
+          <OMS cd="ThreeDgeo2" name="incident"/>
           <OMV name="B"/>
           <OMV name="l"/>
         </OMA>
       </OMA>
       <OMA>
-        <OMS cd="3Dgeo1" name="line"/>
+        <OMS cd="ThreeDgeo1" name="line"/>
         <OMV name="m"/>
         <OMA>
-          <OMS cd="3Dgeo2" name="incident"/>
+          <OMS cd="ThreeDgeo2" name="incident"/>
           <OMV name="A"/>
           <OMV name="m"/>
         </OMA>
         <OMA>
-          <OMS cd="3Dgeo2" name="incident"/>
+          <OMS cd="ThreeDgeo2" name="incident"/>
           <OMV name="B"/>
           <OMV name="m"/>
         </OMA>
@@ -258,34 +258,34 @@ The symbol takes the variable as the first argument, the tracer point T as secon
 <Example> 
 The following example describes a configuration with the locus set L of all points C equidistant to two given points A and B.
 
-<OMOBJ xmins="http://www.openmath.org/OpenMath" version="2.0"> 
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0"> 
   <OMA>
-    <OMS cd="3Dgeo3" name="configuration"/>
+    <OMS cd="ThreeDgeo3" name="configuration"/>
     <OMA>
-      <OMS cd="3Dgeo1" name="point"/>
+      <OMS cd="ThreeDgeo1" name="point"/>
       <OMV name="A"/>
     </OMA>
     <OMA>
-      <OMS cd="3Dgeo1" name="point"/>
+      <OMS cd="ThreeDgeo1" name="point"/>
       <OMV name="B"/>
     </OMA>
     <OMA>
-      <OMS cd="3Dgeo1" name="point"/>
+      <OMS cd="ThreeDgeo1" name="point"/>
       <OMV name="C"/>
     </OMA>
     <OMA>
-      <OMS cd="3Dgeo3" name="locus"/>
+      <OMS cd="ThreeDgeo3" name="locus"/>
       <OMV name="L"/>
       <OMV name="C"/>
       <OMA>
         <OMS cd="relation1" name="eq"/>
         <OMA>
-          <OMS cd="3Dgeo3" name="distance"/>
+          <OMS cd="ThreeDgeo3" name="distance"/>
           <OMV name="A"/>
           <OMV name="C"/>
         </OMA>
         <OMA>
-          <OMS cd="3Dgeo3" name="distance"/>
+          <OMS cd="ThreeDgeo3" name="distance"/>
           <OMV name="B"/>
           <OMV name="C"/>
         </OMA>
@@ -308,33 +308,33 @@ The symbol takes a configuration as the first argument and the properties for wh
 <Example> 
 The following example encodes the task of finding necessary conditions for a point C to be equidistant to the points A and B.
 
-<OMOBJ xmins="http://www.openmath.org/OpenMath" version="2.0"> 
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0"> 
   <OMA>
-    <OMS cd="3Dgeo3" name="discovery"/>
+    <OMS cd="ThreeDgeo3" name="discovery"/>
     <OMA>
-      <OMS cd="3Dgeo3" name="configuration"/>
+      <OMS cd="ThreeDgeo3" name="configuration"/>
       <OMA>
-        <OMS cd="3Dgeo1" name="point"/>
+        <OMS cd="ThreeDgeo1" name="point"/>
         <OMV name="A"/>
       </OMA>
       <OMA>
-        <OMS cd="3Dgeo1" name="point"/>
+        <OMS cd="ThreeDgeo1" name="point"/>
         <OMV name="B"/>
       </OMA>
       <OMA>
-        <OMS cd="3Dgeo1" name="point"/>
+        <OMS cd="ThreeDgeo1" name="point"/>
         <OMV name="C"/>
       </OMA>
     </OMA> 
     <OMA>
       <OMS cd="relation1" name="eq"/>
       <OMA>
-        <OMS cd="3Dgeo3" name="distance"/>
+        <OMS cd="ThreeDgeo3" name="distance"/>
         <OMV name="A"/>
         <OMV name="C"/>
       </OMA>
       <OMA>
-        <OMS cd="3Dgeo3" name="distance"/>
+        <OMS cd="ThreeDgeo3" name="distance"/>
         <OMV name="B"/>
         <OMV name="C"/>
       </OMA>

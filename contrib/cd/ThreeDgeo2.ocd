@@ -32,11 +32,11 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName>3Dgeo2</CDName>
-<CDURL> http://nash.sip.ucm.es/LAD-3D/3DgeoCDs/3Dgeo2.ocd </CDURL>
-<CDReviewDate> 2009-5-17 </CDReviewDate>
+<CDName>ThreeDgeo2</CDName>
+<CDURL> http://nash.sip.ucm.es/LAD-3D/3DgeoCDs/ThreeDgeo2.ocd </CDURL>
+<CDReviewDate> 2009-05-17 </CDReviewDate>
 <CDStatus>experimental</CDStatus>
-<CDDate> 2008-1-21 </CDDate>
+<CDDate> 2008-01-21 </CDDate>
 <CDVersion> 0 </CDVersion>
 <CDRevision> 2 </CDRevision>
 
@@ -57,7 +57,7 @@ That a point A is incident to a line l is given by:
 
 <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
   <OMA>
-    <OMS cd="3Dgeo2" name="incident"/>
+    <OMS cd="ThreeDgeo2" name="incident"/>
     <OMV name="A"/>
     <OMV name="l"/>
   </OMA>
@@ -77,7 +77,7 @@ This example states that C is the midpoint of A and B.
 
 <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
   <OMA>
-    <OMS cd="3Dgeo2" name="is_midpoint"/>
+    <OMS cd="ThreeDgeo2" name="is_midpoint"/>
     <OMV name="C"/>    
     <OMV name="A"/>    
     <OMV name="B"/>
@@ -100,15 +100,15 @@ The circle c with center at A and passing through the point B is given by:
 
 <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
   <OMA>
-    <OMS cd="3Dgeo1" name="circle"/>
+    <OMS cd="ThreeDgeo1" name="circle"/>
     <OMV name="c"/>
     <OMA>
-      <OMS cd="3Dgeo2" name="circle_center"/>
+      <OMS cd="ThreeDgeo2" name="circle_center"/>
       <OMV name="c"/>
       <OMV name="A"/>
     </OMA>
     <OMA>
-      <OMS cd="3Dgeo2" name="incident"/>
+      <OMS cd="ThreeDgeo2" name="incident"/>
       <OMV name="B"/>
       <OMV name="c"/>
     </OMA>
@@ -131,15 +131,15 @@ The sphere s with center at A and passing through the point B is given by:
 
 <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
   <OMA>
-    <OMS cd="3Dgeo1" name="sphere"/>
+    <OMS cd="ThreeDgeo1" name="sphere"/>
     <OMV name="s"/>
     <OMA>
-      <OMS cd="3Dgeo2" name="sphere_center"/>
+      <OMS cd="ThreeDgeo2" name="sphere_center"/>
       <OMV name="s"/>
       <OMV name="A"/>
     </OMA>
     <OMA>
-      <OMS cd="3Dgeo2" name="incident"/>
+      <OMS cd="ThreeDgeo2" name="incident"/>
       <OMV name="B"/>
       <OMV name="s"/>
     </OMA>
@@ -162,7 +162,7 @@ This example states that the lines l and m are perpendicular.
 
 <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
   <OMA>
-    <OMS cd="3Dgeo2" name="perpendicular"/>
+    <OMS cd="ThreeDgeo2" name="perpendicular"/>
     <OMV name="l"/>
     <OMV name="m"/>
   </OMA>
@@ -184,7 +184,7 @@ This example states that the lines l and m are parallel.
 
 <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
   <OMA>
-    <OMS cd="3Dgeo2" name="line_parallel"/>
+    <OMS cd="ThreeDgeo2" name="line_parallel"/>
     <OMV name="l"/>
     <OMV name="m"/>
   </OMA>
@@ -206,7 +206,7 @@ This example states that the planes m and n are parallel.
 
 <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
   <OMA>
-    <OMS cd="3Dgeo2" name="plane_parallel"/>
+    <OMS cd="ThreeDgeo2" name="plane_parallel"/>
     <OMV name="m"/>
     <OMV name="n"/>
   </OMA>
@@ -228,7 +228,7 @@ This example states that the line l is normal to the plane p.
 
 <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
   <OMA>
-    <OMS cd="3Dgeo2" name="normal"/>
+    <OMS cd="ThreeDgeo2" name="normal"/>
     <OMV name="l"/>
     <OMV name="p"/>
   </OMA>
@@ -249,7 +249,7 @@ When applied to a sequence of points in 3-dimensional Euclidean space, its evalu
 This example states that the points A, B, C, and D are collinear.
 <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
   <OMA>
-    <OMS cd="3Dgeo2" name="are_on_line"/>
+    <OMS cd="ThreeDgeo2" name="are_on_line"/>
     <OMV name="A"/>
     <OMV name="B"/>
     <OMV name="C"/>
@@ -272,7 +272,7 @@ When applied to a sequence of points in 3-dimensional Euclidean space, its evalu
 This example states that the points A, B, C, and D are coplanar.
 <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
   <OMA>
-    <OMS cd="3Dgeo2" name="are_on_plane"/>
+    <OMS cd="ThreeDgeo2" name="are_on_plane"/>
     <OMV name="A"/>
     <OMV name="B"/>
     <OMV name="C"/>
