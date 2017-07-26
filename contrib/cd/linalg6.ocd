@@ -34,11 +34,14 @@
 
 <CDName> linalg6 </CDName>
 <CDURL> http://www.openmath.org/cd/linalg6.ocd </CDURL>
-<CDReviewDate> 2005-01-01 </CDReviewDate>
+<CDReviewDate>2017-12-31</CDReviewDate>
 <CDStatus> experimental </CDStatus>
 <CDDate> 2002-11-15 </CDDate>
 <CDVersion> 0 </CDVersion>
-<CDRevision> 0 </CDRevision>
+<CDRevision>1</CDRevision>
+<CDComment>
+  Author: Bill Naylor
+</CDComment>
 
 <Description>
 Symbols for describing sparse matrices

@@ -35,11 +35,14 @@
 
 <CDName> algebraic_cats </CDName>
 <CDURL> http://www.openmath.org/cd/algebraic_cats.ocd </CDURL>
-<CDReviewDate> 2005-04-01 </CDReviewDate>
+<CDReviewDate>2017-12-31</CDReviewDate>
 <CDStatus> experimental </CDStatus>
 <CDDate> 2002-06-17 </CDDate>
 <CDVersion> 0 </CDVersion>
-<CDRevision> 1 </CDRevision>
+<CDRevision>2</CDRevision>
+<CDComment>
+  Author: Bill Naylor
+</CDComment>
 <CDUses>
   <CDName> generic_alg_cats </CDName>
   <CDName> logic1 </CDName>

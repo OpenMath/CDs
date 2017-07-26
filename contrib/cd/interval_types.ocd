@@ -34,11 +34,14 @@
 
 <CDName> interval_types </CDName>
 <CDURL> http://www.openmath.org/cd/interval_types.ocd </CDURL>
-<CDReviewDate> 2005-04-01 </CDReviewDate>
+<CDReviewDate>2017-12-31</CDReviewDate>
 <CDStatus> experimental </CDStatus>
 <CDDate> 2002-08-25 </CDDate>
 <CDVersion> 0 </CDVersion>
-<CDRevision> 0 </CDRevision>
+<CDRevision>1</CDRevision>
+<CDComment>
+  Author: Bill Naylor
+</CDComment>
 <CDUses>
   <CDName> aggregate_cats </CDName>
   <CDName> meta_cats </CDName>

@@ -38,7 +38,10 @@
 <CDStatus> experimental </CDStatus>
 <CDDate> 2003-03-22 </CDDate>
 <CDVersion> 1 </CDVersion>
-<CDRevision> 1 </CDRevision>
+<CDRevision>2</CDRevision>
+<CDComment>
+  Author: Bill Naylor
+</CDComment>
 <CDUses>
   <CDName>alg1</CDName>
   <CDName>arith1</CDName>

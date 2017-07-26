@@ -34,11 +34,14 @@
 
 <CDName> gen_hyperbolic1 </CDName>
 <CDURL> http://www.openmath.org/cd/gen_hyperbolic1.ocd </CDURL>
-<CDReviewDate> 2005-01-01 </CDReviewDate>
+<CDReviewDate>2017-12-31</CDReviewDate>
 <CDStatus> experimental </CDStatus>
 <CDDate> 2002-11-11 </CDDate>
 <CDVersion> 0 </CDVersion>
-<CDRevision> 0 </CDRevision>
+<CDRevision>1</CDRevision>
+<CDComment>
+  Author: Bill Naylor
+</CDComment>
 <CDUses>
   <CDName>alg1</CDName>
   <CDName>arith1</CDName>
