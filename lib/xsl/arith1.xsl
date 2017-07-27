@@ -160,7 +160,8 @@
  <xsl:param name="p"/>
  <xsl:choose>
   <xsl:when test="parent::om:OMA and not(preceding-sibling::*)">
-   <xsl:element name="{if($p&lt;100) then 'mrow' else 'mfenced'}">
+   <xsl:variable name="um">
+   <mrow>
    <mo>-</mo>
    <xsl:variable name="t">
    <xsl:apply-templates select="following-sibling::*[1]">
@@ -175,7 +176,16 @@
      <xsl:copy-of select="$t"/>
    </xsl:otherwise>
    </xsl:choose>
-   </xsl:element>
+   </mrow>
+   </xsl:variable>
+   <xsl:choose>
+    <xsl:when test="$p &lt; 100">
+     <xsl:copy-of select="$um"/>
+    </xsl:when>
+    <xsl:otherwise>
+     <mfenced><xsl:copy-of select="$um"/></mfenced>
+    </xsl:otherwise>
+   </xsl:choose>
   </xsl:when>
   <xsl:otherwise>
    <mo>-</mo>
