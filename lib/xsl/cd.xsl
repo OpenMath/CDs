@@ -76,19 +76,19 @@
 <a class="sidebar-nav-item"
    href="https://openmath.github.io/">Home</a> ,
 <a class="sidebar-nav-item"
-   href="https://openmath.github.io//about/">OpenMath</a>
+   href="https://openmath.github.io/about/">OpenMath</a>
 <br/>
 <a class="sidebar-nav-item"
-   href="https://openmath.github.io//society/">OM Society</a> , 
+   href="https://openmath.github.io/society/">OM Society</a> , 
 <a class="sidebar-nav-item"
-   href="https://openmath.github.io//meetings/">Meetings</a>
+   href="https://openmath.github.io/meetings/">Meetings</a>
 <br/>
 <a class="sidebar-nav-item"
-   href="https://openmath.github.io//standard/">Standards</a> ,
+   href="https://openmath.github.io/standard/">Standards</a> ,
 <a class="sidebar-nav-item"
-   href="https://openmath.github.io//documents/">Documents</a> , 
+   href="https://openmath.github.io/documents/">Documents</a> , 
 <a class="sidebar-nav-item"
-   href="https://openmath.github.io//cd/">CDs</a>
+   href="https://openmath.github.io/cd/">CDs</a>
 <br/>
 <a class="sidebar-nav-item"
    href="https://openmath.github.io/development/">Development</a> , 
