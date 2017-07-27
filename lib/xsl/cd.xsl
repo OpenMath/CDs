@@ -369,9 +369,11 @@
   <div>
     <button id="{generate-id()}mmla" style="width:20em; background-color:#AAFFAA" onclick="divfold('{generate-id()}mml')">Rendered Presentation MathML</button>
     <div id="{generate-id()}mml" style="display:block; margin-top: 0.5em">
+     <div style="overflow:auto;font-size:90%">
       <math   xmlns="http://www.w3.org/1998/Math/MathML" display="block">
 	<xsl:apply-templates/>
       </math>
+     </div>
     </div>
   </div>
 
