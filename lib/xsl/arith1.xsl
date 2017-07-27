@@ -4,7 +4,7 @@
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   xmlns:om="http://www.openmath.org/OpenMath"
   xmlns="http://www.w3.org/1998/Math/MathML"
-  version="1.0"
+  version="2.0"
 >
 
 
@@ -29,7 +29,7 @@
   <xsl:for-each select="following-sibling::*">
    <xsl:choose>
    <xsl:when test="position() &gt; 1 and 
-             self::om:OMI[translate(.,' ','') &lt; 0]">
+             self::om:OMI[number(translate(.,' ','')) &lt; 0]">
     <mo>-</mo>
     <mn><xsl:value-of select="translate(.,' -','')"/></mn>
    </xsl:when>
@@ -44,7 +44,7 @@
    <xsl:when test="position() &gt; 1 and 
              self::om:OMA[*[position()=1 and last()=3]
                          [self::om:OMS and @name='times']]/
-              *[2][self::om:OMI[translate(.,' ','') &lt; 0]]">
+              *[2][self::om:OMI[number(translate(.,' ','')) &lt; 0]]">
     <mo>-</mo>
    <mrow>
    <mn><xsl:value-of select="translate(*[2],' -','')"/></mn>
@@ -157,9 +157,10 @@
 </xsl:template>
 
 <xsl:template match="om:OMS[@cd='arith1' and @name='unary_minus']"  >
-  <xsl:choose>
+ <xsl:param name="p"/>
+ <xsl:choose>
   <xsl:when test="parent::om:OMA and not(preceding-sibling::*)">
-   <mrow>
+   <xsl:element name="{if($p&lt;100) then 'mrow' else 'mfenced'}">
    <mo>-</mo>
    <xsl:variable name="t">
    <xsl:apply-templates select="following-sibling::*[1]">
@@ -174,7 +175,7 @@
      <xsl:copy-of select="$t"/>
    </xsl:otherwise>
    </xsl:choose>
-   </mrow>
+   </xsl:element>
   </xsl:when>
   <xsl:otherwise>
    <mo>-</mo>
