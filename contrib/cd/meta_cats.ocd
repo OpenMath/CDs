@@ -38,10 +38,7 @@
 <CDStatus> experimental </CDStatus>
 <CDDate> 2002-06-17 </CDDate>
 <CDVersion> 0 </CDVersion>
-<CDRevision>2</CDRevision>
-<CDComment>
-  Author: J B Collins
-</CDComment>
+<CDRevision>1</CDRevision>
 <CDComment>
   Author: Bill Naylor
 </CDComment>

@@ -41,11 +41,14 @@ may apply.
 </CDComment>
   <CDName>SI_DerivedQuantities1</CDName>
   <CDURL> http://www.openmath.org/cd/SI_DerivedQuantities1.ocd </CDURL>
-  <CDReviewDate> 2009-04-01 </CDReviewDate>
+  <CDReviewDate>2017-12-31</CDReviewDate>
   <CDStatus> experimental </CDStatus>
   <CDDate>2009-01-10</CDDate>
   <CDVersion> 1 </CDVersion>
-  <CDRevision> 0 </CDRevision>
+  <CDRevision>1</CDRevision>
+<CDComment>
+  Author: J B Collins
+</CDComment>
   <CDUses>
   </CDUses>
 
