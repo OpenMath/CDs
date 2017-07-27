@@ -290,7 +290,7 @@ If the body is a lambda expression, use d^2/dx/dy otherwise use D_1,2
        <xsl:otherwise>
          <msup>
            <xsl:apply-templates select="$v/*[position()=current()]"/>
-           <xsl:value-of select="$n"/>
+           <mn><xsl:value-of select="$n"/></mn>
          </msup>
        </xsl:otherwise>
      </xsl:choose>
