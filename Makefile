@@ -29,12 +29,6 @@ cdnames.md: cds.xml lib/xsl/cdnames.xsl
 symbols.md: cds.xml lib/xsl/index.xsl
 	$(SAXON) -o:$@ $< lib/xsl/index.xsl 
 
-cds.tar.gz: all
-	tar fc cds.tar cd/*/*.html cd/*/*.ocd cd/*/*.omcd
-	tar fr cds.tar sts/*.html sts/*.sts
-	tar fr cds.tar cdgroups/*.cdg cdgroups/*.html
-	tar fr cds.tar contrib/*/*.html contrib/*/*.ocd contrib/*/*.omcd
-	gzip cds.tar -f
 
 echo:
 	@echo $(OCD)
