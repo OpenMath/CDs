@@ -107,7 +107,6 @@
     </a>
   </td>
   <td>
-   <xsl:message select="*/name()"/>
    <xsl:value-of select="normalize-space(preceding-sibling::*[1][self::cd:CDComment])"/>
   </td>
  </tr>
