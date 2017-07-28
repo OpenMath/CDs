@@ -7,7 +7,7 @@
   exclude-result-prefixes="om cd">
 
 
-<xsl:output method="html" indent="yes"/>
+<xsl:output method="xhtml" indent="yes"/>
 
 
 <xsl:template match="cd:CDGroup">
@@ -76,13 +76,15 @@
       <div class="page">
 
       <h1>OpenMath CD Group:
-      <xsl:value-of select="cd:CDGroupName"/>
+      <a href="{normalize-space(cd:CDGroupName)}.cdg"><xsl:value-of select="cd:CDGroupName"/></a>
       </h1>
       <b>Version: </b><xsl:value-of select="cd:CDGroupVersion"/>
       <hr/>
       <xsl:value-of select="cd:CDGroupDescription"/>
       <hr/>
+      <table>
       <xsl:apply-templates/>
+      </table>
       </div>
     </div>
       </body>
@@ -95,15 +97,20 @@
 <xsl:template match="cd:CDGroupVersion"/>
 <xsl:template match="cd:CDGroupRevision"/>
 <xsl:template match="cd:CDGroupMember">
-    <xsl:element name="a">
-      <xsl:attribute name="href">../cd/<xsl:value-of 
-      select="normalize-space(./cd:CDName)"/>.html</xsl:attribute>
-      <xsl:value-of select="cd:CDGroupName"/>
+ <tr>
+  <td>
+    <a>
+     <xsl:attribute name="href">../cd/<xsl:value-of 
+     select="normalize-space(cd:CDName)"/>.html</xsl:attribute>
       <xsl:value-of 
-	  select="normalize-space(./cd:CDName)"/>
-    </xsl:element>
-    <xsl:value-of  select="normalize-space(./cd:CDGroupMember)"/>
-    <br/>
+	  select="normalize-space(cd:CDName)"/>
+    </a>
+  </td>
+  <td>
+   <xsl:message select="*/name()"/>
+   <xsl:value-of select="normalize-space(preceding-sibling::*[1][self::cd:CDComment])"/>
+  </td>
+ </tr>
 </xsl:template>
 
 <xsl:template match="cd:CDURL|cd:CDName"/>
