@@ -55,7 +55,7 @@
 
 
   <xsl:template match="om:OMI" mode="om2cmml">
-    <cn>
+    <cn type="integer">
       <xsl:copy-of select="@id"/>
       <xsl:value-of select="."/>
     </cn>
