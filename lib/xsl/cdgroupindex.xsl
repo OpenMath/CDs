@@ -8,8 +8,7 @@
 
 <xsl:param name="cdg" select="'mathml.cdg arith.cdg types1.cdg'"/>
 
-<xsl:template name="cdg">
----
+<xsl:template name="cdg">---
 layout: page
 title: OpenMath Content Dictionaries - CD Groups
 ---
