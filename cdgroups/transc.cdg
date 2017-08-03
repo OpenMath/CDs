@@ -4,8 +4,9 @@
 <CDGroupRevision> 0 </CDGroupRevision>
 <CDGroupURL>
 http://www.openmath.org/cdfiles/cdgroups/transc.cdg</CDGroupURL>
-<CDGroupDescription></CDGroupDescription>
-<CDComment>Cds which describe transcendental functions</CDComment>
+<CDGroupDescription>
+Cds which describe transcendental functions
+</CDGroupDescription>
 
 <CDGroupMember>
 <CDName>transc1</CDName>

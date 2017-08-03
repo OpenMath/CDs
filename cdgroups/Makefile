@@ -17,11 +17,7 @@ install: all
 	cp *.html *.cdg index.md $(INSTALL)
 
 index.md:
-	@echo '---' > $@
-	@echo 'layout: page' >> $@
-	@echo 'title: OpenMath Content Dictionaries - CD Groups' >> $@
-	@echo '---' >> $@
-	@for d in $(CDG); do echo "* [$$d]($$d)" | sed -e 's/cdg)/html)/'  >> $@; done
+	$(SAXON) -it:cdg -o:$@ $(LIB)/xsl/cdgroupindex.xsl cdg="$(CDG)"
 
 echo:
 	@echo $(HTML)

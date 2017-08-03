@@ -4,8 +4,9 @@
 <CDGroupRevision> 0 </CDGroupRevision>
 <CDGroupURL>
 http://www.openmath.org/cdfiles/cdgroups/sets.cdg</CDGroupURL>
-<CDGroupDescription></CDGroupDescription>
-<CDComment>Cds which describe operations on sets and their names</CDComment>
+<CDGroupDescription>
+Cds which describe operations on sets and their names
+</CDGroupDescription>
 
 <CDComment>CD to describe operations on sets</CDComment>
 <CDGroupMember>
