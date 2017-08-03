@@ -1,0 +1,351 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+   <CDName> polyd1 </CDName> 
+<CDBase> http://www.openmath.org/cd </CDBase>
+   <CDURL> http://www.openmath.org/cd/polyd1.ocd </CDURL>
+   <CDReviewDate> 2006-04-01 </CDReviewDate> 
+   <CDDate> 2004-07-07 </CDDate> 
+   <CDStatus> experimental </CDStatus>
+   <CDVersion> 3 </CDVersion>
+   <CDRevision> 0 </CDRevision>
+<CDUses>
+</CDUses>
+   <Description>
+     This CD contains operators to deal with polynomials and more precisely 
+     Distributed Multivariate Polynomials.
+   </Description>
+
+<CDComment>
+Original OpenMath v1.1 Poly 1997
+Update to Current Format 1999-07-07 DPC
+Move the names of rings to setname.ocd 1999-11-09 JHD
+Delete those items moved to the new poly.ocd 1999-11-14 JHD
+Move items pertaining to orderings to polyd2 and those involving Groebner
+ bases to polygb1 and polygb2. 2004-07-07 AMC
+Comments also edited by AMC
+</CDComment>
+
+<CDComment>
+
+ This is our attempt at defining a first Content Dictionary to deal with
+ polynomials. There are many possible choices for a polynomial CD, and
+ several questions to answer. 
+
+
+ 1. Representation issues
+
+ One of the interests of OM is certainly to enable the use of specialized
+ servers. It is important to promote the writing of OM-compliant servers by
+ placing as few constraints as possible on the programmers of these
+ packages. This CD has been designed with the idea that it could be simple to
+ use for a server dealing only with polynomial computations. Hence we have
+ used a particular representation for polynomials (distributed with dense
+ monomials). This representation is rather abstract in the sense that it does
+ not introduce names for variables. It explicitly contains the polynomial
+ ring a polynomial belongs to as the set of the coefficients and the number
+ of variables. It seems (from our experience) that this information is
+ necessary for most specialized servers. 
+
+ Expressing constraints on the structure of OM objects made from the symbols
+ in this CD is not always easy. One of the main reason is that a symbol such
+ as "gcd" is meant to denote the GCD of a set of polynomials, no matter how
+ the polynomials are represented. Such a function should thus accept both
+ "symbolic" arguments (a list of symbolic object meant to be polynomials) and
+ the polynomials in the specific representation defined in this CD. Of
+ course, another solution will be to have one "gcd" for one (or several)
+ particular representation and another "gcd" to express the general notion
+ of polynomial "gcd". 
+
+ A question which is not entirely answered is whether or not it is
+ interesting to have "symbolic" objects inside some constructors (such as a
+ power which is not an OM integer in "Monom" or a symbolic "poly_ring_d" (a
+ variable) as an argument of "DMP"). We explicitly forbid that in the first
+ version of this CD.
+
+
+ 2. Specifying some "computational behaviour"
+
+ Of course it would be of no use to exactly specify the behaviour of any OM
+ application that receives an OM object. There are (at least) two reasons for
+ that:
+ - an OM object is intended to represent a mathematical object and thus the
+   same OM object could be sent to a typesetter as well as to a symbolic
+   computation system,
+ - even when dealing with programs that compute, exact specifications could be
+   impossible or too much constraining for a given system.
+
+ On the other hand, we believe that one of the goals of OM is certainly that a
+ program needing to factorize an integer could transparently use Maple, Axiom
+ or Pari to do the job. This is of course possible only if all severs that
+ "implement" (in the sense of really performing) the mathematical notion of
+ integer factorization answer in a similar way. In other words, we should not
+ hesitate to specify what a particulary useful class of OM applications (the
+ "computing" ones) should return (the form of the result) everytime
+ compliance to this specification is simple enough because it is obviously
+ very useful. 
+
+We have tried to express this idea in the polydx CDs through some
+ comments and the use of symbols such as "factored" or "groebner_basis" that
+ describe the required results of some functions. 
+
+ The general "compliance" rule can be stated as:
+   an OM application that understands this CD and implements some of the 
+   polynomials operation described is required to implement them using the
+   constructors defined in this CD, as indicated in the comments associated
+   with the operations.
+
+ This means that if the OM version of a computer algebra system claims to
+ implement polynomial factorization, another application can send him an
+ OM object as described in the "factor" comment (the symbol "factor" applied
+ to one argument, a DMP) and the result will be return as defined: a 
+ "factored" symbol whose arguments are described in the corresponding entry
+ of the poly CD.
+</CDComment>
+
+
+<CDComment>
+     Definition of data-structure constructors
+</CDComment>
+
+<CDComment>
+     The polynomial x^2*y^6 + 3*y^5 can be encoded as
+     DMP(poly_ring_d(Z, 2), SDMP(term(1, 2, 6), term(3, 0, 5)))
+
+     The polynomial 2*y^3*z^5 + x + 1 can be
+     DMP(poly_ring_d(Q, 3), 
+         SDMP(term(2, 0, 3, 5), term(1, 1, 0, 0), term(1, 0, 0, 0)))
+
+     Note that these are not real encodings but a "term-like" encoding (whose
+     understanding should be trivial) meant for the human readers of this
+     dictionary. Of course, actual encodings can be more compact...
+</CDComment>
+
+    <CDDefinition>
+       <Name> DMP </Name>
+       <Description>
+         The constructor of DMPs. The first argument is the polynomial
+         ring containing the polynomial and the second is a "SDMP". 
+         Should be of the form DMP(poly_ring_d(...), SDMP(...))
+       </Description>
+    </CDDefinition>
+
+
+    <CDDefinition>
+       <Name> ambient_ring </Name>
+       <Description>
+         This is a unary function, whose argument should be a DMP f. When
+       applied to  f, it represents the first argument of f, that is,
+      ring of the form poly_ring_d(...) used to define f.
+       </Description>
+    </CDDefinition>
+
+
+    <CDDefinition>
+       <Name> rank </Name>
+       <Description>
+         This is a unary function, whose argument can be a DMP, a poly_ring_d,
+       or a poly_ring_d_named. When
+       applied to  its argument, it represents the number of variables of the
+      polynomial ring involved.
+       </Description>
+    </CDDefinition>
+
+    <CDDefinition>
+       <Name> variables </Name>
+       <Description>
+         This is a unary function, whose argument is a poly_ring_d_named. When
+       applied to  its argument, it represents the list of variables of the
+      polynomial ring.
+       </Description>
+    </CDDefinition>
+
+
+
+    <CDDefinition>
+       <Name> DMPL </Name>
+       <Description>
+         The constructor for lists of multivariate polynomial members of the 
+         same polynomial ring. The first argument is a polynomial ring
+         and the rest are "SDMP"s. DMPL can be attributed with the "ordering" 
+         symbol to indicate a particular ordering for monomials of all its
+         polynomials. 
+         Should be of the form DMPL(poly_ring_d(...), SDMP(...)+)
+       </Description>
+    </CDDefinition>
+
+
+    <CDDefinition>
+       <Name> SDMP </Name>
+       <Description>
+         The constructor for multivariate polynomials without
+         any indication of variables or domain for the coefficients.
+	 Its arguments are just "monomial"s. No monomials should differ only by
+         the coefficient (i.e it is not permitted to have both "2*x*y" and
+         "x*y" as monomials in a SDMP). SDMP can be attributed with 
+         the "ordering" symbol to indicate a particular ordering of its
+         monomials. This attribute shall not be set if the SDMP is part of 
+         DMPL that has this attribute set. 
+       </Description>
+    </CDDefinition>
+
+    <CDDefinition>
+       <Name> term </Name>
+       <Description>
+         The constructor of monomials. Valid applications are of the form
+         Term(coeff, exp1, exp2, ... expn)
+	 which represents the monomial 
+         coeff * var1^exp1*...varn^expn
+         where n is the number of variables, expi are non-negative integers.
+       </Description>
+    </CDDefinition>
+
+<CDComment>
+    Polynomial rings constructors
+</CDComment>
+
+
+    <CDDefinition>
+       <Name> poly_ring_d </Name>
+       <Description> 
+         The constructor of polynomial ring. The first argument is a ring
+         (the ring of the coefficients), the second is the number 
+         of variables as an integer.
+       </Description>
+
+
+<Example> The ring of polynomials over the rationals in two variables.
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+       <OMA><OMS cd="polyd1" name="poly_ring_d"/>
+            <OMS cd="fieldname1" name="Q"/>
+            <OMI>2</OMI>
+       </OMA>
+</OMOBJ>
+</Example>
+
+
+    </CDDefinition>
+
+
+
+    <CDDefinition>
+       <Name> poly_ring_d_named </Name>
+       <Description> 
+         The constructor of polynomial ring. The first argument is a ring
+         (the ring of the coefficients), the remaining arguments are the 
+         names of the variables. The first variable given is the most
+         important from the point of view of lexicographic ordering, then
+         the second, and so on.
+       </Description>
+<Example>
+
+By Use of the expression symbol from the CD ring1, an arithmetic expression can be
+interpreted as a member of poly_ring_d_named. For instance,
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="ring1" name="expression"/>
+       <OMA><OMS cd="polyd1" name="poly_ring_d_named"/>
+            <OMS cd="fieldname1" name="Q"/>
+            <OMV name="X"/>
+       </OMA>
+       <OMA><OMS cd="arith1" name="times"/>
+            <OMV name="X"/>
+            <OMA><OMS cd="arith1" name="power"/>
+                 <OMA><OMS cd="arith1" name="plus"/>
+                      <OMV name="X"/><OMV name="b"/>
+                 </OMA>
+                 <OMI>2</OMI>
+            </OMA>
+       </OMA>
+  </OMA>
+</OMOBJ>
+
+represents the object
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="polyd1" name="DMP"/>
+       <OMA><OMS cd="polyd1" name="poly_ring_d_named"/>
+            <OMS cd="fieldname1" name="Q"/>
+            <OMV name="X"/>
+       </OMA>
+       <OMA><OMS cd="polyd1" name="SDMP"/>
+            <OMA><OMS cd="polyd1" name="term"/>
+                 <OMA><OMS cd="arith1" name="power"/>
+                      <OMV name="b"/><OMI>2</OMI>
+                 </OMA>
+                 <OMI>1</OMI>
+            </OMA>
+            <OMA><OMS cd="polyd1" name="term"/>
+                 <OMA><OMS cd="arith1" name="times"/>
+                      <OMI>2</OMI><OMV name="b"/>
+                 </OMA>
+                 <OMI>2</OMI>
+            </OMA>
+            <OMA><OMS cd="polyd1" name="term"/>
+                 <OMI>1</OMI><OMI>3</OMI>
+            </OMA>
+       </OMA>
+  </OMA>
+</OMOBJ>
+
+
+
+</Example>
+
+
+
+    </CDDefinition>
+
+
+
+    <CDDefinition>
+       <Name> anonymous </Name>
+       <Description> 
+         Indicates a variable that we do not want to name
+       </Description>
+    </CDDefinition>
+
+
+
+<CDComment>
+     Definition of operations
+</CDComment>
+
+
+    <CDDefinition>
+       <Name> plus </Name>
+       <Description>
+         The sum. The argument is a DMPL. The sum lies within the same
+         "poly_ring_d", i.e., a program implementing this operation
+         should return a DMP with the same "poly_ring_d".
+       </Description>
+    </CDDefinition>
+
+
+    <CDDefinition>
+       <Name> minus </Name>
+       <Description>
+         The sum. The argument is a DMPL. The sum lies within the same
+         "poly_ring_d", i.e., a program implementing this operation
+         should return a DMP with the same "poly_ring_d".
+       </Description>
+    </CDDefinition>
+
+    <CDDefinition>
+       <Name> times </Name>
+       <Description>
+         The product. The argument is a DMPL. The product lies within the same
+         "poly_ring_d", i.e., a program implementing this operation
+         should return a DMP with the same "poly_ring_d".
+       </Description>
+    </CDDefinition>
+
+    <CDDefinition>
+       <Name> power </Name>
+       <Description> The power. First argument is a DMP, second
+          argument is the integer power. The power lies within the same
+          "poly_ring_d",  i.e., a program implementing this operation 
+          should return a DMP with the same "poly_ring_d".
+       </Description>
+    </CDDefinition>
+
+</CD>
+

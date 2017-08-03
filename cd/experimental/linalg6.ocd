@@ -1,0 +1,110 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDName> linalg6 </CDName>
+<CDBase> http://www.openmath.org/cd </CDBase>
+<CDURL> http://www.openmath.org/cd/linalg6.ocd </CDURL>
+<CDReviewDate> 2003-04-01 </CDReviewDate>
+<CDDate> 1999-07-15 </CDDate>
+<CDVersion> 2 </CDVersion>
+<CDRevision> 0 </CDRevision>
+<CDStatus> experimental </CDStatus>
+<CDUses>
+  <CDName>alg1</CDName>
+  <CDName>arith1</CDName>
+  <CDName>linalg1</CDName>
+  <CDName>nums1</CDName>
+  <CDName>logic1</CDName>
+  <CDName>relation1</CDName>
+</CDUses>
+<Description>
+This CD contains symbols for the construction of some new matrices from old ones.
+</Description>
+
+<CDDefinition>
+<Name> matrix_tensor </Name>
+<Description>
+This symbol denotes a n-nary function which is used to construct 
+the tensor product matrix of its arguments, which must be matrices.
+</Description>
+
+<CMP>
+If
+A is an 
+m x r matrix
+B is an
+n x s matrix, then
+their Kronecker product is the 
+m n x rs matrix
+whose 
+i + (k-1) m, j + (l-1) n
+entry is
+A_{i,j} B_{k,l},
+</CMP>
+
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0"> 
+<OMA><OMS cd="logic1" name="implies"/>
+     <OMA><OMS cd="logic1" name="and"/>
+          <OMA><OMS cd="relation1" name="eq"/>
+               <OMA><OMS cd="linalg4" name="rowcount"/>
+                    <OMV name="A"/>
+               </OMA>
+               <OMV name="m"/>
+          </OMA>
+          <OMA><OMS cd="relation1" name="eq"/>
+               <OMA><OMS cd="linalg4" name="columncount"/>
+                    <OMV name="A"/>
+               </OMA>
+               <OMV name="n"/>
+          </OMA>
+     </OMA>
+     <OMA><OMS cd="relation1" name="eq"/>
+          <OMA><OMS cd="linalg1" name="matrix_selector"/>
+               <OMA><OMS cd="linalg6" name="matrix_tensor"/>
+                    <OMV name="A"/>         <OMV name="B"/>
+               </OMA>
+               <OMA><OMS cd="arith1" name="plus"/>
+                    <OMV name="i"/>
+                    <OMA><OMS cd="arith1" name="times"/>
+                         <OMA><OMS cd="arith1" name="minus"/>
+                              <OMV name="k"/><OMI>1</OMI>
+                         </OMA>
+                         <OMV name="m"/>
+                    </OMA>
+               </OMA>
+               <OMA><OMS cd="arith1" name="plus"/>
+                    <OMV name="j"/>
+                    <OMA><OMS cd="arith1" name="times"/>
+                         <OMA><OMS cd="arith1" name="minus"/>
+                              <OMV name="l"/><OMI>1</OMI>
+                         </OMA>
+                         <OMV name="n"/>
+                    </OMA>
+               </OMA>
+          </OMA>
+          <OMA><OMS cd="arith1" name="times"/>
+               <OMA><OMS cd="linalg1" name="matrix_selector"/>
+                    <OMV name="A"/>
+                    <OMV name="i"/><OMV name="j"/>
+               </OMA>
+               <OMA><OMS  cd="linalg1" name="matrix_selector"/>
+                    <OMV name="B"/>
+                    <OMV name="k"/><OMV name="l"/>
+               </OMA>
+          </OMA>
+     </OMA>
+</OMA>
+ </OMOBJ> 
+
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> vector_tensor </Name>
+<Description>
+This symbol denotes a n-nary function which is used to construct 
+the tensor product vector of its arguments, which must be vectors.
+</Description>
+</CDDefinition>
+
+</CD>

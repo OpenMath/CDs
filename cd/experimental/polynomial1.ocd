@@ -1,0 +1,245 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDName> polynomial1 </CDName>
+<CDBase> http://www.openmath.org/cd </CDBase>
+<CDURL> http://www.openmath.org/cd/polynomial1.ocd </CDURL>
+<CDReviewDate> 2006-07-12   </CDReviewDate>
+<CDDate> 2004-07-12 </CDDate>
+<CDVersion> 0 </CDVersion>
+<CDRevision> 0 </CDRevision>
+<CDStatus> experimental </CDStatus>
+<CDUses>
+  <CDName>alg1</CDName>
+  <CDName>arith1</CDName>
+  <CDName>logic1</CDName>
+  <CDName>quant1</CDName>
+  <CDName>set1</CDName>
+  <CDName>setname1</CDName>
+  <CDName>setname2</CDName>
+  <CDName>relation1</CDName>
+  <CDName>fns1</CDName>
+  <CDName>interval1</CDName>
+  <CDName>integer1</CDName>
+</CDUses>
+<Description>
+This CD holds a collection of basic constructs for univariate polynomials over rings.
+The data structures for polynomials can be arithmetic expressions, for
+instance using the ring1.expression symbol, or DMP as
+in the CD polyd1.
+</Description>
+
+
+
+
+
+
+<CDDefinition>
+    <Name>coefficient_ring </Name>
+<Role>application</Role>
+    <Description> 
+This symbol is a unary function whose argument should be a polynomial.
+It represents the coefficient ring of the polynomial. 
+    </Description>   
+
+
+<Example>
+
+The coefficient ring is often explicitly given as part of the polynomial:
+
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMA><OMS cd="relation1" name="eq"/>
+     <OMA><OMS cd="polynomial1" name="coefficient_ring"/>
+          <OMA><OMS cd="ring1" name="expression"/>
+               <OMA><OMS cd="ring1" name="expression"/>
+                    <OMA><OMS cd="ring3" name="poly_ring"/>
+                         <OMA><OMS cd="ringname1" name="Zm"/>
+                              <OMI>7</OMI>
+                         </OMA>
+                         <OMV name="X"/>
+                    </OMA>
+                    <OMA><OMS cd="arith1" name="power"/>
+                         <OMA><OMS cd="arith1" name="plus"/>
+                              <OMV name="X"/><OMI>1</OMI>
+                         </OMA>
+                         <OMI>2</OMI>
+                    </OMA>
+               </OMA>
+          </OMA>
+     </OMA>
+     <OMA><OMS cd="ringname1" name="Zm"/>
+          <OMI>7</OMI>
+     </OMA>
+</OMA>
+  </OMOBJ>
+
+</Example>
+
+
+</CDDefinition>
+
+
+<CDDefinition>
+    <Name>coefficient </Name>
+<Role>application</Role>
+    <Description> 
+This symbol is a binary function whose first argument should be a polynomial
+f    and whose second argument should be a non-negative integer n.
+It represents the coefficient of the i-th power of the variable in the
+    polynomial f. 
+    </Description>   
+
+
+<Example>
+
+The coefficient of the first power of X in the polynomial (X+1)^2 in (Z/7Z)[X]
+is equal to 2.
+
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMA><OMS cd="relation1" name="eq"/>
+     <OMA><OMS cd="polynomial1" name="coefficient"/>
+          <OMA><OMS cd="ring1" name="expression"/>
+               <OMA><OMS cd="ring1" name="expression"/>
+                    <OMA><OMS cd="ring3" name="poly_ring"/>
+                         <OMA><OMS cd="ringname1" name="Zm"/>
+                              <OMI>7</OMI>
+                         </OMA>
+                         <OMV name="X"/>
+                    </OMA>
+                    <OMA><OMS cd="arith1" name="power"/>
+                         <OMA><OMS cd="arith1" name="plus"/>
+                              <OMV name="X"/><OMI>1</OMI>
+                         </OMA>
+                         <OMI>2</OMI>
+                    </OMA>
+               </OMA>
+          </OMA>
+     </OMA>
+     <OMA><OMS cd="ring1" name="expression"/>
+          <OMA><OMS cd="ringname1" name="Zm"/>
+               <OMI>7</OMI>
+          </OMA>
+          <OMI>2</OMI>
+     </OMA>
+</OMA>
+  </OMOBJ>
+
+</Example>
+
+
+</CDDefinition>
+
+
+
+
+<CDDefinition>
+    <Name> expand </Name>
+<Role>application</Role>
+    <Description> 
+     Expands a polynomial. 
+    </Description>   
+
+
+<Example>
+The following expression is equivalent to the arithmetic expression X^2+2X+1 in (Z/7Z)[X].
+
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+    <OMA><OMS cd="polynomial1" name="expand"/>
+         <OMA><OMS cd="ring1" name="expression"/>
+              <OMA><OMS cd="ring1" name="expression"/>
+                   <OMA><OMS cd="ring3" name="poly_ring"/>
+                        <OMA><OMS cd="ringname1" name="Zm"/>
+                             <OMI>7</OMI>
+                        </OMA>
+                        <OMV name="X"/>
+                   </OMA>
+                   <OMA><OMS cd="arith1" name="power"/>
+                        <OMA><OMS cd="arith1" name="plus"/>
+                             <OMV name="X"/><OMI>1</OMI>
+                        </OMA>
+                        <OMI>2</OMI>
+                   </OMA>
+              </OMA>
+         </OMA>
+    </OMA>
+  </OMOBJ>
+
+</Example>
+</CDDefinition>
+
+
+
+<CDDefinition> 
+<Name>degree</Name> 
+<Description> This symbol represents a
+unary function, whose argument should be univariate polynomial.  When applied
+to a polynomial, it represents its degree, that is the highest power of the
+variable occurring in a term of the polynomial. If the polynomial has no
+terms, it is the zero polynomial, in which case the value represented is -1.
+</Description>
+
+</CDDefinition>
+
+<CDDefinition> 
+<Name>leading_term</Name> 
+<Description> This symbol represents a
+unary function, whose argument should be univariate polynomial.  When applied
+to a polynomial, it represents its leading term, that is the term  that is the
+product of
+the highest power of the variable and its coefficient.
+If the polynomial is zero, the value represented is zero.
+</Description>
+
+</CDDefinition>
+
+<CDDefinition> 
+<Name>leading_coefficient</Name> 
+<Description> This symbol represents a
+unary function, whose argument should be univariate polynomial.  When applied
+to a polynomial, it represents the coefficient of the monomial of highest degree.
+If the polynomial is zero, the value represented is zero.
+</Description>
+
+</CDDefinition>
+
+<CDDefinition> 
+<Name>leading_monomial</Name> 
+<Description> This symbol represents a
+unary function, whose argument should be a nonzero univariate polynomial.  When applied
+to such a polynomial, it represents the highest power of the variable
+occurring in the polynomial.
+</Description>
+
+<CMP>
+The leading term of a nonzero polynomial is the product of the
+leading monomial and the leading coefficient of the polynomial.
+</CMP>
+
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMA><OMS cd="relation1" name="eq"/>
+     <OMA><OMS cd="polynomial1" name="leading_term"/>
+          <OMV name="f"/>
+     </OMA>
+     <OMA><OMS cd="arith1" name="times"/>
+          <OMA><OMS cd="polynomial1" name="leading_coefficient"/>
+               <OMV name="f"/>
+          </OMA>
+          <OMA><OMS cd="polynomial1" name="leading_monomial"/>
+               <OMV name="f"/>
+          </OMA>
+     </OMA>
+</OMA>
+</OMOBJ>
+</FMP>
+
+
+</CDDefinition>
+
+
+
+</CD>
+
+
+
+
+

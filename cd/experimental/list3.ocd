@@ -1,0 +1,185 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDName> list3 </CDName>
+<CDBase> http://www.openmath.org/cd </CDBase>
+<CDURL> http://www.openmath.org/cd/list3.ocd </CDURL>
+<CDReviewDate> 2004-11-01 </CDReviewDate>
+<CDDate> 2004-03-02 </CDDate>
+<CDVersion> 1 </CDVersion>
+<CDRevision> 1 </CDRevision>
+<CDStatus> experimental </CDStatus>
+<CDUses>
+  <CDName>quant1</CDName>
+  <CDName>relation1</CDName>
+  <CDName>list1</CDName>
+</CDUses>
+
+
+<Description>
+    Several basic list functions related to length are given in this CD.
+</Description>
+
+
+<CDComment>
+Initiated by Arjeh M. Cohen 2004-03-02
+</CDComment>
+
+
+<CDDefinition>
+<Name> length </Name>
+<Description> 
+This symbol represents a function whose argument should be a list.
+It returns the length of
+its argument.
+</Description>
+
+<Example>
+The length of the list [1,2,3] is 3.
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="relation1" name="eq"/>
+       <OMA><OMS cd="list3" name="length"/>
+            <OMA><OMS cd="list1" name="list"/>
+                 <OMI> 1 </OMI>
+                 <OMI> 2 </OMI>
+                 <OMI> 3 </OMI>
+            </OMA>
+       </OMA>
+       <OMI> 3 </OMI>
+  </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> list_of_lengthn </Name>
+<Description> 
+This symbol represents a function with two arguments,
+the first of which is a natural number and the second of which is a list.
+The first argument is the length of the list.
+</Description>
+
+<Example>
+A list L of length 3:
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="list3" name="list_of_lengthn"/>
+       <OMI> 3 </OMI>
+       <OMA><OMS cd="list1" name="list"/>
+            <OMV name="L"/>
+       </OMA>
+  </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> entry </Name>
+<Description> 
+This symbol represents a binary function whose first argument should be a list
+L and whose second argument should be a positive integer i such that
+the absolute value of i is in the interval [1..n], where n is the length of L.
+If i is positive, it returns the i-th entry L[i] of L, if i is negative it
+returns
+the (n+1-i)-th entry of L.
+</Description>
+
+<Example>
+The second entry of the list [1,2,3] is 2.
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="relation1" name="eq"/>
+       <OMA><OMS cd="list3" name="entry"/>
+            <OMA><OMS cd="list1" name="list"/>
+                 <OMI> 1 </OMI>
+                 <OMI> 2 </OMI>
+                 <OMI> 3 </OMI>
+            </OMA>
+            <OMI> 2 </OMI>
+       </OMA>
+       <OMI> 2 </OMI>
+  </OMA>
+</OMOBJ>
+</Example>
+
+
+<Example>
+Specification of the second  element of the list [1,..,6]
+counted from the end.
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="relation1" name="eq"/>
+       <OMA><OMS cd="list3" name="entry"/>
+            <OMA><OMS cd="list1" name="list"/>
+                 <OMI> 1 </OMI>      <OMI> 2 </OMI>      <OMI> 3 </OMI>
+                 <OMI> 4 </OMI>      <OMI> 5 </OMI>      <OMI> 6 </OMI>
+            </OMA>
+            <OMI>-2</OMI> 
+       </OMA>
+       <OMI>5</OMI> 
+  </OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> difference </Name>
+<Description> 
+This symbol takes two arguments both a list. It represents a function which returns a list made up of all
+the elements of the first list which are not in the second.
+</Description>
+
+<Example>
+Specification of the list [1,..,6], apart from the first 3 elements.
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="relation1" name="eq"/>
+       <OMA><OMS cd="list3" name="difference"/>
+            <OMA><OMS cd="list1" name="list"/>
+                 <OMI> 1 </OMI>      <OMI> 2 </OMI>      <OMI> 3 </OMI>
+                 <OMI> 4 </OMI>      <OMI> 5 </OMI>      <OMI> 6 </OMI>
+            </OMA>
+            <OMA><OMS cd="list1" name="list"/>
+                 <OMI> 1 </OMI>      <OMI> 2 </OMI>      <OMI> 3 </OMI>
+            </OMA>
+       </OMA>
+       <OMA><OMS cd="list1" name="list"/>
+            <OMI> 4 </OMI>      <OMI> 5 </OMI>      <OMI> 6 </OMI>
+       </OMA>
+  </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> select </Name>
+<Description> 
+This symbol takes two lists as arguments, L and M say. The second argument is a
+ list containing only entries from [1..n], where n is the length of
+L. The symbol represents the 
+function which returns a list whose length is equal to the length of
+M, and having at position k the  value of L at position M_k.
+</Description>
+
+<Example>
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS name="eq" cd="relation1"/>
+       <OMA><OMS cd="list3" name="select"/>
+            <OMA><OMS cd="list1" name="list"/>
+                 <OMI> 4 </OMI>      <OMI> 5 </OMI>      <OMI> 6 </OMI>
+                 <OMI> 7 </OMI>      <OMI> 8 </OMI>      <OMI> 9 </OMI>
+            </OMA>
+            <OMA><OMS cd="list1" name="list"/>
+                 <OMI> 3 </OMI>      <OMI> 5 </OMI>
+                 <OMI> 2 </OMI>      <OMI> 2 </OMI>
+            </OMA>
+       </OMA>
+       <OMA><OMS cd="list1" name="list"/>
+            <OMI> 6 </OMI>   <OMI> 8 </OMI>
+            <OMI> 5 </OMI>   <OMI> 5 </OMI>
+       </OMA>
+  </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+</CD>

@@ -1,0 +1,49 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDName> arith3 </CDName>
+<CDBase> http://www.openmath.org/cd </CDBase>
+<CDURL> http://www.openmath.org/cd/arith3.ocd </CDURL>
+<CDReviewDate> 2006-06-01 </CDReviewDate>
+<CDDate> 2004-06-01 </CDDate>
+<CDVersion> 1 </CDVersion>
+<CDRevision> 2 </CDRevision>
+<CDStatus> experimental </CDStatus>
+<CDUses>
+  <CDName>arith3</CDName>
+</CDUses>
+
+<Description>
+Extended GCD
+</Description>
+
+
+<CDDefinition>
+<Name>extended_gcd</Name>
+<Description>  The symbol  represents the n-ary function,
+a_1,...,a_n  to return a list consisting of
+the gcd (greatest common divisor) of its arguments, together with
+n elements x_1,...,x_n such that 
+gcd(a_1,...,a_n)=x_1 a_1+...+x_n a_n
+</Description>
+
+<Example>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMA><OMS name="extended_gcd" cd="arith3"/>
+     <OMA><OMS cd="arith3" name="extended_gcd"/>
+          <OMI> 6 </OMI>
+          <OMI> 10 </OMI>
+          <OMI> 15 </OMI>
+     </OMA>
+     <OMA><OMS name="list" cd="list1"/> 
+          <OMI>1</OMI>
+          <OMI>1</OMI>
+          <OMI>-2</OMI>
+          <OMI>1</OMI>
+     </OMA>
+</OMA>
+</OMOBJ>
+
+</Example>
+
+</CDDefinition>
+
+</CD>

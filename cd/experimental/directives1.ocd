@@ -1,0 +1,350 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD"> 
+   <CDName>directives1 </CDName> 
+   <CDBase> http://www.openmath.org/cd </CDBase>
+   <CDURL> http://www.riaca.win.tue.nl/cds/directives/directives1.ocd </CDURL>
+   <CDReviewDate> 2006-06-01 </CDReviewDate> 
+   <CDDate> 2004-06-01 </CDDate> 
+   <CDStatus> experimental </CDStatus>
+   <CDVersion> 1 </CDVersion>
+   <CDRevision> 3 </CDRevision>
+
+   
+<Description> 
+
+The primal objective of OpenMath objects is to represent mathematical
+   expressions. In this Content Dictionary another objective is
+   addressed, namely to express an action related to a mathematical
+   expression. Such a request for an action is generally referred to
+   as a query.  The specific queries are called directives. In this CD
+   we define some.  An entity (software) carrying out the query is
+   referred to as a service.  The service might return an OpenMath
+   object. To formalize this object, we also introduce the symbol
+   response in this CD.
+
+amc 2004-03-18: added the directive explore.
+amc 2004-03-24: removed redundancies.
+
+</Description>
+
+
+<CDDefinition>
+<Name>evaluate</Name>
+<Description> 
+This symbol is a function with one argument, which should be a
+mathematical expression.
+When applied to a mathematical expression, it asks for an evaluation
+or simplification of the expression. The evaluation or simplification
+to be carried out by a service is a simpler mathematical expression (in some definition of complexity
+of objects) which is equal to the argument.
+</Description>
+<Example> The value of sin(Pi) is zero.
+The expression below asks for sin(Pi) to be evaluated, and so
+a service receiving the object is supposed to return zero.
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+ <OMA><OMS cd="directives1" name="evaluate"/>
+      <OMA><OMS cd="transc1" name="sin"/>
+           <OMS cd="nums1" name="pi"/>
+      </OMA>
+ </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+
+
+<CDDefinition>
+<Name> evaluate_to_type </Name>
+<Description>      
+This symbol is a function with two arguments, which should be
+a mathematical expression and a type.
+When applied to a mathematical expression E and a type T, it asks for an evaluation
+or simplification of E to a mathematical expression of type T.
+</Description>
+
+<Example> The value of (7*6)/2 is a natural number.
+The expression below asks for this integer.
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+ <OMA><OMS cd="directives1" name="evaluate"/>
+      <OMA><OMS cd="arith1" name="divide"/>
+           <OMA><OMS cd="arith1" name="times"/>
+                <OMI>7</OMI><OMI>6</OMI>
+           </OMA>
+           <OMI>2</OMI>
+      </OMA>
+      <OMS cd="setname1" name="N"/>
+ </OMA>
+</OMOBJ>
+</Example>
+
+
+<CMP>
+The type of the responded object should be equal to the
+specification,
+that is the second argument of the evaluate_to_type.
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+ <OMATTR>
+      <OMATP><OMS cd="ecc" name="type"/>
+             <OMV name="T"/>
+      </OMATP>
+      <OMA><OMS cd="directives1" name="response"/>
+           <OMA><OMS cd="directives1" name="evaluate_to_type"/>
+                <OMV name="x"/>                     <OMV name="T"/>
+           </OMA>
+      </OMA>
+ </OMATTR>
+</OMOBJ>
+</FMP>
+</CDDefinition>
+
+
+<CDDefinition>
+<Name>look_up</Name>
+<Description> 
+This symbol is a function with one argument, which should be a
+mathematical expression.
+When applied to a mathematical expression, it asks for mathematical
+expressions related to the argument. If the argument is a single
+OpenMath symbol, the service might respond by the list of all
+properties in the CD containing the argument.
+Alternatively, the service can provide a list of CDs which use the CD
+in which the argument occurs.
+
+Another service might return all documents in which the symbol occurs.
+
+If the argument is a more complicated object, the same services could
+be called for, but then with all OpenMath symbols occurring in the
+argument instead of the single one.
+</Description>
+
+<Example> Looking up sin is expressed as follows:
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+ <OMA><OMS cd="directives1" name="look_up"/>
+      <OMS cd="transc1" name="sin"/>
+ </OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> response </Name>
+<Description> 
+This symbol is a function of one argument, which should be a query.
+When applied to a query, it refers to the response a service might
+give.
+It will mainly be used in this CD to express formal mathematical
+properties
+of queries.
+</Description>
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> prove </Name>
+<Description> 
+This symbol is a function with one argument, which should be a clause.
+When applied to a clause C, it asks for a
+proof of C.
+</Description>
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> disprove </Name>
+<Description> 
+This symbol is a function with one argument, which should be a clause.
+When applied to a clause C, it asks for a
+proof of that C does not hold. 
+</Description>
+
+
+
+<CMP>
+Asking to disprove C  amounts to
+asking for a proof that C does not hold.
+(In other words, this symbol is completely redundant,
+even in multi-valued logic.***)
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+ <OMA><OMS cd="relation1" name="eq"/>
+      <OMA><OMS cd="directives1" name="disprove"/>
+           <OMV name="C"/>
+      </OMA>
+      <OMA><OMS cd="directives1" name="prove"/>
+           <OMA><OMS cd="logic1" name="not"/>
+                <OMV name="C"/>
+           </OMA>
+      </OMA>
+ </OMA>
+</OMOBJ>
+</FMP>
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> prove_in_theory </Name>
+<Description> 
+This symbol is a function with two arguments, the first of which
+should be a clause and the second of which should be a symbol
+indicating a logic theory.
+When applied to arguments C, T, it asks for a
+proof of C in theory T.
+</Description>
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> find </Name>
+<Description> 
+This symbol is a binder, whose body should be a clause.
+When bound to a variable (or list of variables) x with body P(x), it asks for a
+mathematical expression A such that P(A) holds.
+</Description>
+
+<Example>
+Searching for a real number x such that sin(x) = 0
+ <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+ <OMBIND><OMS cd="directives1" name="find"/>
+         <OMBVAR><OMV name="x"/></OMBVAR>
+         <OMA><OMS cd="logic1" name="and"/>
+              <OMA><OMS cd="set1" name="in"/>
+                   <OMV name="x"/><OMS cd="setname1" name="R"/>
+              </OMA>
+              <OMA><OMS cd="relation1" name="eq"/>
+                   <OMA><OMS cd="transc1" name="sin"/><OMV name="x"/></OMA>
+                   <OMI>0</OMI>
+              </OMA>
+         </OMA>
+ </OMBIND>
+</OMOBJ>
+
+
+is to be compared to asking for an inverse of x:
+
+ <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+ <OMA><OMS cd="directives1" name="evaluate_to_type"/>
+      <OMA><OMA><OMS cd="fns1" name="inverse"/>
+                <OMS cd="transc1" name="sin"/>
+           </OMA>
+           <OMI>0</OMI>
+      </OMA>
+      <OMS cd="setname1" name="R"/>
+ </OMA>
+</OMOBJ>
+</Example>
+
+<CMP>
+The body of argument with the binder x replaced by the response should
+be a true statement.
+</CMP>
+
+
+<FMP>
+ <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMV name="P"/>
+       <OMA><OMS cd="directives1" name="response"/>
+            <OMBIND><OMS cd="directives1" name="find"/>
+                    <OMBVAR><OMV name="x"/></OMBVAR>
+                    <OMV name="P"/>
+            </OMBIND>
+       </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> decide </Name>
+<Description> 
+This symbol is a function with one argument, which should be a clause.
+When applied to a clause, it asks whether
+the clause holds. 
+</Description>
+
+
+
+<Example>
+The question if sin(Pi) is equal to zero can be phrased as follows.
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+ <OMA><OMS cd="directives1" name="decide"/>
+      <OMA><OMS cd="relation1" name="eq"/>
+           <OMA><OMS cd="transc1" name="sin"/>
+                <OMS cd="nums1" name="pi"/>
+           </OMA>
+           <OMI>0</OMI>
+      </OMA>
+ </OMA>
+</OMOBJ>
+</Example>
+
+<CMP>
+The response to the decide query is logically equivalent to the truth of the argument.
+</CMP>
+
+
+<FMP>
+ <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+   <OMA><OMS cd="logic1" name="equivalent"/>
+        <OMA><OMS cd="directives1" name="response"/>
+             <OMA><OMS cd="directives1" name="decide"/>
+                  <OMV name="P"/>
+             </OMA>
+        </OMA>
+        <OMV name="P"/>
+   </OMA>
+</OMOBJ>
+</FMP>
+
+</CDDefinition>
+
+
+
+<CDDefinition>
+<Name> explore </Name>
+<Description>      
+This symbol is a unary function whose argument should be
+a mathematical assertion.
+When applied to an assertion A, it asks for conditions under which the
+assertion holds.
+</Description>
+
+<Example> Given the Pappos configuration P, the Pappos thesis T asserts that
+three points of the configuration are collinear.
+A conceivable answer to the explore directive with the assertion that in
+configuration P the thesis T holds, is a nondegeneracy condition that makes
+the assertion valid.
+</Example>
+
+<CMP>
+A response R should satisfy the requirement that R implies the
+assertion.
+
+</CMP>
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+      <OMA><OMS cd="logic1" name="implies"/>
+           <OMA><OMS cd="directives1" name="response"/>
+                <OMA><OMS cd="directives1" name="explore"/>
+                     <OMV name="A"/>                    
+                </OMA>
+           </OMA>
+           <OMV name="A"/>
+      </OMA>
+</OMOBJ>
+</FMP>
+</CDDefinition>
+
+
+
+</CD>
+
+
+
+

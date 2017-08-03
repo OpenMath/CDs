@@ -1,0 +1,103 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDName> group5 </CDName>
+<CDBase> http://www.openmath.org/cd </CDBase>
+<CDURL> http://www.openmath.org/cd/group5.ocd </CDURL>
+<CDReviewDate> 2006-06-01 </CDReviewDate>
+<CDDate> 2004-07-07 </CDDate>
+<CDVersion> 1 </CDVersion>
+<CDRevision> 1 </CDRevision>
+<CDStatus> experimental </CDStatus>
+
+<Description> A CD of 
+functions for relating group elements to their images in quotients.   </Description>
+
+<CDComment>
+Written by Arjeh M. Cohen 2004-07-07
+</CDComment>
+
+<CDDefinition>
+<Name> right_quotient_map</Name>
+<Description>
+This symbol is a binary function whose first argument is a group G and whose
+second argument is an subgroup H of G. When applied to G and H, its value is the
+natural quotient map from G to the quotient group G/H, sending x to the left
+coset xH of G.
+</Description>
+
+
+<CMP>
+The image of an element x is the left coset of x with respect to H.
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="relation1" name="eq"/>
+       <OMA><OMA><OMS cd="group5" name="right_quotient_map"/>
+                 <OMV name="G"/><OMV name="H"/>
+            </OMA>
+            <OMV name="x"/>
+       </OMA>
+       <OMA><OMS cd="group4" name="left_coset"/>
+            <OMV name="G"/><OMV name="H"/>
+            <OMV name="x"/>
+       </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> left_quotient_map</Name>
+<Description>
+This symbol is a binary function whose first argument is a group G and whose
+second argument is an subgroup H of G. When applied to G and H, its value is the
+natural quotient map from G to the quotient group G/H, sending x to the right
+coset Hx of G.
+</Description>
+
+
+<CMP>
+The image of an element x is the right coset of x with respect to H.
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="relation1" name="eq"/>
+       <OMA><OMA><OMS cd="group5" name="left_quotient_map"/>
+                 <OMV name="G"/><OMV name="H"/>
+            </OMA>
+            <OMV name="x"/>
+       </OMA>
+       <OMA><OMS cd="group4" name="right_coset"/>
+            <OMV name="G"/><OMV name="H"/>
+            <OMV name="x"/>
+       </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDComment>
+The left and right quotients have a natural group structure if and only if H
+is a normal subgroup of G.
+</CDComment>
+
+
+<CDDefinition>
+<Name>homomorphism_by_generators</Name>
+<Description>
+This is a function with three arguments the first two of which must be groups
+F and K.
+The third argument should be a set or a list L of ordered pairs (lists of length 2). Each
+pair [x,y] from L consists of an element x from F and an element y from K.
+When applied to F, K, and L, the symbol represents the group homomorphism from F
+to K that maps the first entry x of each pair [x,y] to the second entry y of the same pair.
+</Description>
+</CDDefinition>
+
+
+
+
+
+</CD>

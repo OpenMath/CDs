@@ -1,0 +1,159 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDName> plangeo2 </CDName>
+<CDBase> http://www.openmath.org/cd </CDBase>
+<CDURL> http://www.openmath.org/cd/plangeo2.ocd </CDURL>
+<CDReviewDate> 2006-06-01 </CDReviewDate>
+<CDStatus> experimental </CDStatus>
+<CDDate> 2004-06-01 </CDDate>
+<CDVersion> 0 </CDVersion>
+<CDRevision> 2 </CDRevision>
+
+
+<Description> 
+This CD defines symbols for planar Euclidean geometry.
+</Description>
+
+
+<CDDefinition>
+<Name>segment</Name>
+<Description> 
+The segment of a line between two points of the line.
+The segment is contained in the affine part of the line.
+The symbol takes as arguments the two points.
+</Description>
+
+
+<Example> 
+The segment AB:
+ 
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMA>
+    <OMS cd="plangeo2" name="segment"/>
+      <OMV name="A"/>
+      <OMV name="B"/>
+    </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+
+
+<CDDefinition>
+<Name>halfline</Name>
+<Description> 
+The halfline starting at A and going through B.
+The symbol takes as arguments the points A and B.
+</Description>
+
+
+<Example> 
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMA>
+    <OMS cd="plangeo2" name="halfline"/>
+      <OMV name="A"/>
+      <OMV name="B"/>
+    </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+
+
+<CDDefinition> <Name>corner</Name> <Description> The corner between
+two halflines L and M, both starting at the same point.  Given three
+points A, B and C, the corner A, B, C is the corner of the two
+halflines BA and BC.  Corresponding to the two cases, the symbol can
+have as arguments two halflines or three points.  
+</Description>
+
+
+<Example> 
+ 
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMA>
+    <OMS cd="plangeo2" name="corner"/>
+      <OMV name="L"/>
+      <OMV name="M"/>
+    </OMA>
+</OMOBJ>
+
+or 
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMA>
+    <OMS cd="plangeo2" name="corner"/>
+      <OMV name="A"/>
+      <OMV name="B"/>
+      <OMV name="C"/>
+    </OMA>
+</OMOBJ>
+
+</Example>
+</CDDefinition>
+
+
+
+
+
+<CDDefinition>
+<Name>endpoint</Name>
+<Description> 
+The endpoint of a halfline.
+</Description>
+
+
+<Example> 
+The endpoint of a halfline H is given by
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMA>
+  <OMS cd="plangeo2" name="endpoint"/>
+    <OMV name="H"/>
+</OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+
+<CDDefinition>
+<Name>endpoints</Name>
+<Description> 
+The two endpoints of a segment.
+</Description>
+
+
+<Example> 
+The set of the two endpoints of a segment S is given by
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMA>
+  <OMS cd="plangeo2" name="endpoints"/>
+    <OMV name="S"/>
+</OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+</CD>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

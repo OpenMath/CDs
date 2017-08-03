@@ -1,0 +1,170 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDName> fns3 </CDName>
+<CDBase> http://www.openmath.org/cd </CDBase>
+<CDURL> http://www.openmath.org/cd/fns3.ocd </CDURL>
+<CDReviewDate> 2006-06-01 </CDReviewDate>
+<CDDate> 2004-06-01 </CDDate>
+<CDVersion> 1 </CDVersion>
+<CDRevision> 1 </CDRevision>
+<CDStatus> experimental </CDStatus>
+
+
+<Description>
+    This CD holds further functions concerning functions themselves. A
+    particularly interesting function is
+
+    function
+
+    which constructs a function with given domain and range.
+
+</Description>
+
+<CDDefinition>
+<Name> function </Name>
+<Description> 
+This symbol denotes a function constructor.
+When aplied to at least two arguments, which are sets,
+the first argument is the domain and the second the range of the function.
+When applied to at least three arguments, the first two of which are
+stes and the third of which is a lambda expression, 
+the third argument gives the function specification.
+</Description>
+
+<CMP>The domain of the function f constructed this way is the first argument </CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="relation1" name="eq"/>
+       <OMA><OMS cd="fns1" name="domain"/>
+            <OMA><OMS cd="fns3" name="function"/>
+                 <OMV name="X"/>            <OMV name="Y"/>            <OMV name="Z"/>
+            </OMA>
+       </OMA>
+       <OMV name="X"/>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+<CMP>The range of the function f constructed this way is the second argument </CMP>
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="relation1" name="eq"/>
+       <OMA><OMS cd="fns1" name="range"/>
+            <OMA><OMS cd="fns3" name="function"/>
+                 <OMV name="X"/>            <OMV name="Y"/>            <OMV name="Z"/>
+            </OMA>
+       </OMA>
+       <OMV name="Y"/>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+
+<Example>
+The following object defines a function from the natural numbers into
+the integers specificied by the fact that n maps to n(n+1)/2.
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+   <OMA><OMS cd="fns3" name="function"/>
+        <OMS cd="setname1" name="N"/>
+        <OMS cd="setname1" name="Z"/>
+        <OMBIND><OMS cd="fns1" name="lambda"/>
+                <OMBVAR><OMV name="n"/></OMBVAR>
+                <OMA><OMS cd="arith1" name="divide"/>
+                     <OMA><OMS cd="arith1" name="times"/>
+                          <OMV name="n"/>
+                          <OMA><OMS cd="arith1" name="plus"/>
+                               <OMV name="n"/>
+                               <OMI> 1 </OMI>
+                          </OMA>
+                     </OMA>
+                     <OMI> 2 </OMI>
+                </OMA>
+        </OMBIND>
+   </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+
+
+<CDDefinition>
+<Name> specification </Name>
+<Description> 
+This symbol denotes the specification of a function.
+It is a unary function.
+When aplied to its argument, which should be a function applied to
+three arguments, it returns the third argument of the function, that is,
+the function specification.
+</Description>
+
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMA><OMS cd="relation1" name="eq"/>
+     <OMA><OMS cd="fns3" name="specification"/>
+          <OMA><OMS cd="fns3" name="function"/>
+               <OMS cd="setname1" name="N"/>
+               <OMS cd="setname1" name="Z"/>
+               <OMV name="f"/>
+          </OMA>
+     </OMA>
+     <OMV name="f"/>
+</OMA>
+</OMOBJ>
+</FMP>
+
+
+
+<Example>
+The following object defines a function from the natural numbers into
+the integers specificied by the fact that n maps to n(n+1)/2.
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMA><OMS cd="relation1" name="eq"/>
+   <OMA><OMS cd="fns3" name="specification"/>
+        <OMA><OMS cd="fns3" name="function"/>
+             <OMS cd="setname1" name="N"/>
+             <OMS cd="setname1" name="Z"/>
+             <OMBIND><OMS cd="fns1" name="lambda"/>
+                <OMBVAR><OMV name="n"/></OMBVAR>
+                <OMA><OMS cd="arith1" name="divide"/>
+                     <OMA><OMS cd="arith1" name="times"/>
+                          <OMV name="n"/>
+                          <OMA><OMS cd="arith1" name="plus"/>
+                               <OMV name="n"/>
+                               <OMI> 1 </OMI>
+                          </OMA>
+                     </OMA>
+                     <OMI> 2 </OMI>
+                </OMA>
+             </OMBIND>
+        </OMA>
+   </OMA>
+   <OMBIND><OMS cd="fns1" name="lambda"/>
+           <OMBVAR><OMV name="n"/></OMBVAR>
+           <OMA><OMS cd="arith1" name="divide"/>
+                <OMA><OMS cd="arith1" name="times"/>
+                     <OMV name="n"/>
+                     <OMA><OMS cd="arith1" name="plus"/>
+                          <OMV name="n"/>
+                          <OMI> 1 </OMI>
+                     </OMA>
+                </OMA>
+                <OMI> 2 </OMI>
+           </OMA>
+   </OMBIND>
+</OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+
+
+</CD>
+
+
+
+
+
+

@@ -1,0 +1,220 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+   <CDName> polyd3 </CDName> 
+<CDBase> http://www.openmath.org/cd </CDBase>
+   <CDURL> http://www.openmath.org/cd/polyd3.ocd </CDURL>
+   <CDReviewDate> 2006-04-01 </CDReviewDate> 
+   <CDDate> 2004-07-07 </CDDate> 
+   <CDStatus> experimental </CDStatus>
+   <CDVersion> 1 </CDVersion>
+   <CDRevision> 0 </CDRevision>
+<CDUses>
+</CDUses>
+   <Description>
+     This CD contains conversions between different data structures for polynomials.
+</Description>
+
+<CDComment>
+first attempt
+</CDComment>
+
+
+    <CDDefinition>
+       <Name> collect </Name>
+       <Description>
+This a binary function. Its first argument should be a DMP f, its second
+       argument a list of positive integers L.
+When applied to f and L, it represents the DMP with coefficients from the poly_ring_d
+whose variables only have indices i for i not occurring in the list L, and
+       whose monomials are built up from the variables indexed by the entries
+       of L.
+       </Description>
+
+    </CDDefinition>
+
+
+
+    <CDDefinition>
+       <Name> list_to_poly_d </Name>
+       <Description>
+      This symbol is a function with two arguments.
+The first argument is a ring R and the second argument is a list L. The
+       entries of L are  elements of R or can be cast canconically onto
+       elements of R.
+When applied to R and L, the symbol denotes the distributed (univariate)
+       polynomial over R with terms (L[i-1],i) for i running over the indices
+       of L (i=1, ..., length(L)).
+       </Description>
+
+
+<Example>
+
+The polynomial X^2+4X+7 with integers coefficients can be represented,
+without recourse to X, by
+
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+            <OMA><OMS cd="polyd3" name="list_to_poly_d"/>
+                 <OMS cd="ringname1" name="Z"/>
+                 <OMA><OMS cd="list1" name="list"/>
+                      <OMI>7</OMI><OMI>4</OMI><OMI>1</OMI>
+                 </OMA>
+            </OMA>
+</OMOBJ>
+
+Thus, the above expression is semantically equivalent to
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+            <OMA><OMS cd="polyd1" name="DMP"/>
+                 <OMS cd="ringname1" name="Z"/>
+                 <OMA><OMS cd="polyd1" name="SDMP"/>
+                      <OMA><OMS cd="polyd1" name="term"/>
+                           <OMI>7</OMI><OMI>0</OMI>
+                      </OMA>
+                      <OMA><OMS cd="polyd1" name="term"/>
+                           <OMI>4</OMI><OMI>1</OMI>
+                      </OMA>
+                      <OMA><OMS cd="polyd1" name="term"/>
+                           <OMI>1</OMI><OMI>2</OMI>
+                      </OMA>
+                 </OMA>
+            </OMA>
+</OMOBJ>
+
+
+</Example>
+
+
+    </CDDefinition>
+
+
+
+
+
+    <CDDefinition>
+       <Name>  poly_d_to_arith </Name>
+       <Description>
+      This symbol is a binary function.
+The first argument is a DMP and the second argument is a list of objects,
+       typically variables or arithmetic expressions, at least as
+       many as there are variables in the ring to which the DMP belongs. 
+When applied to R and L, the symbol denotes the arithmetic expression that is
+       the sum of the terms
+with the i-th variable of the ring of the DMP being substituted by the i-th expression or variable of
+       the list L.
+       </Description>
+<CDComment>
+This expression is very close to a substitute, or an application of the DMP, as
+viewed as a function, to
+as many arguments as there are variables.
+</CDComment>
+
+<Example>
+
+The polynomial X^2+4X+7 with integer coefficients 
+has poly_d form
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+       <OMA><OMS cd="polyd3" name="poly_d_to_arith"/>
+            <OMA><OMS cd="polyd1" name="DMP"/>
+                 <OMA><OMS cd="polyd1" name="poly_ring_d"/>
+                      <OMS cd="ringname1" name="Z"/>
+                      <OMI>1</OMI>
+                 </OMA>
+                 <OMA><OMS cd="polyd1" name="SDMP"/>
+                      <OMA><OMS cd="polyd1" name="term"/>
+                           <OMI>7</OMI><OMI>0</OMI>
+                      </OMA>
+                      <OMA><OMS cd="polyd1" name="term"/>
+                           <OMI>4</OMI><OMI>1</OMI>
+                      </OMA>
+                      <OMA><OMS cd="polyd1" name="term"/>
+                           <OMI>1</OMI><OMI>2</OMI>
+                      </OMA>
+                 </OMA>
+            </OMA>
+            <OMA><OMS cd="list1" name="list"/>
+                 <OMV name="X"/>
+            </OMA>
+       </OMA>
+</OMOBJ>
+
+This expression represents 
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+       <OMA><OMS cd="arith1" name="plus"/>
+            <OMI>7</OMI>
+            <OMA><OMS cd="arith1" name="times"/>
+                 <OMI>4</OMI>   <OMV name="X"/>
+            </OMA>
+            <OMA><OMS cd="arith1" name="power"/>
+                 <OMV name="X"/><OMI>2</OMI>
+            </OMA>
+       </OMA>
+</OMOBJ>
+</Example>
+
+
+    </CDDefinition>
+
+
+
+
+    <CDDefinition>
+       <Name> poly_d_named_to_arith </Name>
+       <Description>
+      This symbol is a unary function.
+Its argument is a DMP with named variables.
+When applied to R, the symbol denotes the arithmetic expression that is
+       the sum of the terms.
+       </Description>
+
+
+<Example>
+
+The polynomial X^2+4X+7 with integers coefficients 
+has poly_d_named form
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+       <OMA><OMS cd="polyd3" name="poly_d_to_arith"/>
+            <OMA><OMS cd="polyd1" name="DMP"/>
+                 <OMA><OMS cd="polyd1" name="poly_ring_d_named"/>
+                      <OMS cd="ringname1" name="Z"/>
+                      <OMV name="X"/>
+                 </OMA>
+                 <OMA><OMS cd="polyd1" name="SDMP"/>
+                      <OMA><OMS cd="polyd1" name="term"/>
+                           <OMI>7</OMI><OMI>0</OMI>
+                      </OMA>
+                      <OMA><OMS cd="polyd1" name="term"/>
+                           <OMI>4</OMI><OMI>1</OMI>
+                      </OMA>
+                      <OMA><OMS cd="polyd1" name="term"/>
+                           <OMI>1</OMI><OMI>2</OMI>
+                      </OMA>
+                 </OMA>
+            </OMA>
+       </OMA>
+</OMOBJ>
+
+This expression represents 
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+       <OMA><OMS cd="arith1" name="plus"/>
+            <OMI>7</OMI>
+            <OMA><OMS cd="arith1" name="times"/>
+                 <OMI>4</OMI>   <OMV name="X"/>
+            </OMA>
+            <OMA><OMS cd="arith1" name="power"/>
+                 <OMV name="X"/><OMI>2</OMI>
+            </OMA>
+       </OMA>
+</OMOBJ>
+</Example>
+
+
+    </CDDefinition>
+
+
+
+</CD>
+

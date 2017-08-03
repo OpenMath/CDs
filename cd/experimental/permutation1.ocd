@@ -1,0 +1,1082 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+	<CDName>permutation1</CDName>
+<CDBase> http://www.openmath.org/cd </CDBase>
+	<CDURL>http://www.win.tue.nl/~amc/oz/om/cds/permutation1.ocd</CDURL>
+	<CDDate> 2004-06-01 </CDDate>
+	<CDReviewDate> 2006-06-01 </CDReviewDate>
+	<CDStatus>experimental</CDStatus>
+	<CDVersion>1</CDVersion>
+	<CDRevision>7</CDRevision>
+	
+	<Description>
+		This CD defines permutations with finite support.
+
+In order to make available permutations of arbitrary objects,
+permutations are defined as sets of cycles.
+
+The set on which the permutation acts is not specified. To this end,
+cycles of length 0 or 1 do not occur in permutations.
+
+When viewed as the set of cycles which are its arguments, the symbol
+permutation has a normal form constructor.
+
+All symbols defined in this CD may appear as the head of an
+application.  For such symbols, we distinguish between functions and
+constructors.  A function is thought of as a mathematical function,
+which can be evaluated on its arguments, a constructor uses its
+arguments as fields of a structure. (In principle, the arguments of a constructor should
+be accessible; we have not introduced separate symbols to enable
+access because the `destruction' of the mathematical object can take place in phrasebooks.)
+
+The constructors in this CD are cycle, permutation, list_perm, and endomap.
+
+The operations inverse, left_compose, right_compose are also defined
+in this CD, although the most general purpose version already occurs
+in fns1, fns2. The reasons is two-fold: first, strictly
+speaking, our permutations are not maps, and so these notions havfe to
+redefined.  A more practical reason is that with dynamical loading, it
+is easier to encode and decode a new symbol in the CD at hand rather
+than a symbol in a CD that is previously dealt with.
+
+Revision 0.1: fix added; error in support example corrected.
+Revision 0.2: added endomap. Help of Henny Wilbrink.
+	</Description>
+
+
+	<CDDefinition>
+		<Name>endomap</Name>
+		<Description>
+		This symbol is an n-ary constructor. Its arguments should
+		be positive integers. When applied to arguments a_1,...,a_n,
+		the resulting value is the map sending i to a_i for i=1,...,n.
+		</Description>
+		<Example>
+			The following expression represents the map on
+on {1,2,3,4,5} sending 1, 2, and 5 to 2, and 3 and 4 to 1.
+			<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+				<OMA>   <OMS cd="permutation1" name="endomap"/>
+					<OMI>2</OMI>
+					<OMI>2</OMI>
+					<OMI>1</OMI>
+					<OMI>1</OMI>
+					<OMI>2</OMI>
+				</OMA>
+			</OMOBJ>
+			
+		</Example>
+		<Example>
+			The following expression evaluates to true.
+			<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+				<OMA>	<OMS cd="relation1" name="eq"/>
+                                  <OMA>	<OMA>	<OMS cd="permutation1" name="endomap"/>
+						<OMI> 5 </OMI>
+						<OMI> 1 </OMI>
+						<OMI> 3 </OMI>
+						<OMI> 2 </OMI>
+						<OMI> 4 </OMI>
+					</OMA>
+					<OMI> 4 </OMI>
+				  </OMA>
+				  <OMI> 2 </OMI>
+				</OMA>
+
+			</OMOBJ>
+		</Example>
+	</CDDefinition>
+
+
+	<CDDefinition>
+		<Name>list_perm</Name>
+		<Description>
+		This symbol is an n-ary constructor. Its arguments should
+		be distinct positive integers in the interval [1,n]. When applied to arguments a_1,...,a_n,
+		the resulting value is the permutation mapping i to a_i for
+		i=1,...,n.
+		</Description>
+		<Example>
+			The following two expressions represent the same
+			          permutation of {1,2,3,4,5}.
+			<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+				<OMA>   <OMS cd="permutation1" name="list_perm"/>
+					<OMI>2</OMI>
+					<OMI>3</OMI>
+					<OMI>1</OMI>
+					<OMI>5</OMI>
+					<OMI>4</OMI>
+				</OMA>
+			</OMOBJ>
+			
+			<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+				<OMA>	<OMS cd="permutation1" name="permutation"/>
+					<OMA>	<OMS cd="permutation1" name="cycle"/>
+						<OMI>1</OMI>
+						<OMI>2</OMI>
+						<OMI>3</OMI>
+					</OMA>
+					<OMA>	<OMS cd="permutation1" name="cycle"/>
+						<OMI>4</OMI>
+						<OMI>5</OMI>
+					</OMA>
+				</OMA>
+			</OMOBJ>
+			
+		</Example>
+		<Example>
+			The following expression evaluates to true.
+			<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+				<OMA>	<OMS cd="relation1" name="eq"/>
+                                  <OMA>	<OMA>	<OMS cd="permutation1" name="list_perm"/>
+						<OMI> 5 </OMI>
+						<OMI> 1 </OMI>
+						<OMI> 3 </OMI>
+						<OMI> 2 </OMI>
+						<OMI> 4 </OMI>
+					</OMA>
+					<OMI> 4 </OMI>
+				  </OMA>
+				  <OMI> 2 </OMI>
+				</OMA>
+
+			</OMOBJ>
+		</Example>
+	</CDDefinition>
+
+
+	<CDDefinition>
+		<Name>is_endomap</Name>
+		<Description>
+		This symbol is an n-ary function. Its arguments should be
+		positive integers. When applied to arguments a_1,...,a_n,
+		the resulting value is true if a_i is at most n for all i,
+		otherwise it is false.
+		</Description>
+		<Example>
+			The following expression evaluates to true
+			<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+				<OMA>   <OMS cd="permutation1" name="is_endomap"/>
+					<OMI>1</OMI>
+					<OMI>3</OMI>
+					<OMI>1</OMI>
+				</OMA>
+			</OMOBJ>
+</Example>
+<Example>
+			The following expression evaluates to false
+			<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+				<OMA>   <OMS cd="permutation1" name="is_endomap"/>
+					<OMI>2</OMI>
+					<OMI>3</OMI>
+					<OMI>5</OMI>
+				</OMA>
+			</OMOBJ>
+</Example>			
+
+	</CDDefinition>
+
+
+	<CDDefinition>
+		<Name>is_list_perm</Name>
+		<Description>
+		This symbol is an n-ary function. Its arguments should be
+		positive integers. When applied to arguments a_1,...,a_n,
+		the resulting value is true if a_i is at most n for all i and
+		all a_i are distinct, otherwise it is false.
+		</Description>
+		<Example>
+			The following expression evaluates to false
+			<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+				<OMA>   <OMS cd="permutation1" name="is_list_perm"/>
+					<OMI>1</OMI>
+					<OMI>3</OMI>
+					<OMI>1</OMI>
+				</OMA>
+			</OMOBJ>
+</Example>
+<Example>
+			The following expression evaluates to false
+			<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+				<OMA>   <OMS cd="permutation1" name="is_list_perm"/>
+					<OMI>2</OMI>
+					<OMI>3</OMI>
+					<OMI>5</OMI>
+				</OMA>
+			</OMOBJ>
+</Example>			
+<Example>
+			The following expression evaluates to true
+			<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+				<OMA>   <OMS cd="permutation1" name="is_list_perm"/>
+					<OMI>2</OMI>
+					<OMI>3</OMI>
+					<OMI>1</OMI>
+				</OMA>
+			</OMOBJ>
+</Example>			
+
+	</CDDefinition>
+
+
+
+<CDDefinition>
+<Name>domain</Name>
+<Description>
+
+This symbol is a function with one argument which is a endomap.  When
+applied to a endomap whose arguments are a_1,...,a_n, it represents the
+set {1,...,n}.
+
+</Description>
+
+<Example>
+
+The following expression represents the set {1,2,3,4,5}.
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMA><OMS cd="permutation1" name="domain"/>
+   <OMA><OMS cd="permutation1" name="endomap"/>
+      <OMI>4</OMI>
+      <OMI>3</OMI>
+      <OMI>5</OMI>
+      <OMI>5</OMI>
+      <OMI>5</OMI>
+   </OMA>
+</OMA>
+</OMOBJ>
+
+</Example>
+
+</CDDefinition>
+
+
+<CDDefinition>
+<Name>is_bijective</Name>
+<Description>
+
+This symbol has one argument which should be a endomap p. It returns true
+if {a_1,...,a_n}={1,...,n} where a_1,...a_n are the arguments of p and
+false otherwise.
+
+</Description>
+
+<Example>
+
+The following expression evaluates to true.
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+   <OMA><OMS cd="permutation1" name="is_bijective"/>
+      <OMA><OMS cd="permutation1" name="endomap"/>
+	<OMI>1</OMI>
+	<OMI>3</OMI>
+	<OMI>2</OMI>
+      </OMA>
+   </OMA>
+</OMOBJ>
+
+</Example>
+
+<Example>
+
+The following expression evaluates to false.
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+   <OMA><OMS cd="permutation1" name="is_bijective"/>
+      <OMA><OMS cd="permutation1" name="endomap"/>
+	<OMI>2</OMI>
+	<OMI>3</OMI>
+	<OMI>5</OMI>
+      </OMA>
+   </OMA>
+</OMOBJ>
+
+</Example>			
+
+</CDDefinition>
+
+<CDDefinition>
+<Name>endomap_left_compose</Name>
+<Description>
+
+This symbol is a binary function. Its arguments should be endomaps with
+identical domain D. When applied to arguments P1 and P2, the resulting
+value is the endomap which maps x in D to P1(P2(x)).
+
+</Description>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name>endomap_right_compose</Name>
+<Description>
+
+This symbol is a binary function. Its arguments should be endomaps with
+identical domain D. When applied to arguments P1 and P2, the resulting
+value is the endomap which maps x in D to P2(P1(x)).
+
+</Description>
+
+</CDDefinition>
+
+
+
+	<CDDefinition>
+		<Name>cycle</Name>
+		<Description>
+			This symbol is an n-ary constructor.
+			It marks a relation on the set of its arguments
+				a_1, a_2,...,a_n
+			consisting of the pairs (a_i,a_{i+1}) for i=1,...,n-1
+			and the pair (a_n,a_1). The arguments a_i should
+			all be distinct.
+                        The number n is referred to as the length of
+ 		        the cycle.
+		</Description>
+		<CMP>
+			for i = 1,..., n
+                        cycle(a_i, a_{i+1},...,a_n,a_1,...,a_{i-1}) = 
+                        cycle(a_1, a_2,...,a_n).
+		</CMP>
+		<Example>
+			The following expression represents the
+			relation on the set  {"jan","piet","klaas"} 
+			whose members are
+			("jan","piet"), ("piet","klaas"), and ("klaas","jan").
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA> <OMS cd="permutation1" name="cycle"/>
+        <OMSTR>jan</OMSTR>
+	<OMSTR>piet</OMSTR>
+	<OMSTR>klaas</OMSTR>
+  </OMA>
+</OMOBJ>
+			
+</Example>
+</CDDefinition>
+
+
+<CDDefinition> <Name>length</Name> 
+ <Description> 
+                This symbol is a function with one argument, which
+		must be a cycle. When applied to
+		cycle(a_1,a_2,...,a_n), it returns the number n.  This
+		number is referred to as the length of the cycle.
+
+ </Description>
+ <Example>
+ 
+  The following expression should evaluate to 3.
+
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">  <OMA><OMS cd="permutation1" name="length"/>
+              <OMA><OMS cd="permutation1" name="cycle"/>
+                   <OMI>2</OMI>	<OMI>4</OMI> <OMI>3</OMI>
+              </OMA>
+         </OMA>
+  </OMOBJ>
+			
+  </Example>
+</CDDefinition>
+
+<CDDefinition> <Name>permutation</Name> <Description> This symbol is
+  an n-ary constructor whose arguments are cycles of length at least 2
+  with the property that all entries of all cycles are mutually
+  distinct.
+	
+The permutation symbol constructs a bijective map from the set X of
+entries of the cycles to X. The map is defined as follows: if E occurs
+as an entry of a cycle, then the permutation maps E to the entry
+following E in the same cycle if it exists and to the first entry in
+the same cycle otherwise.
+
+When applied to an element y outside X, the constructed permutation is considered to fix y.
+
+</Description>
+		<CMP>
+			For valid arguments A and B both left_compose and
+					right compose of permutation(A) and permutation(B) are
+					permutations again (that is, evaluate to
+					permutation(C) and permutation(D), respectively, for
+					suitable C and D).
+		</CMP>
+		<CMP>
+			For a valid argument A the inverse of permutation(A)
+					is a permutation again (that is, evaluates to
+					permutation(C) for suitable argument C).
+		</CMP>
+		<CMP>
+			permutation() is the identity.
+		</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMA><OMS cd="relation1" name="eq"/>
+  <OMA><OMS cd="permutation1" name="permutation"/>
+  </OMA>
+  <OMS cd="fns1" name="identity"/>
+</OMA>
+</OMOBJ>
+</FMP>
+
+		<Example>
+			The permutation (1,5,4)(6,7) sending 1 to 5, 5 to 4, 4 to 1, 6 to 7, 7 to 6, is given by
+			<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+				<OMA>	<OMS cd="permutation1" name="permutation"/>
+					<OMA>	<OMS cd="permutation1" name="cycle"/>
+						<OMI> 1 </OMI>
+						<OMI> 5 </OMI>
+						<OMI> 4 </OMI>
+					</OMA>
+					<OMA>	<OMS cd="permutation1" name="cycle"/>
+						<OMI> 6 </OMI>
+						<OMI> 7 </OMI>
+					</OMA>
+				</OMA>
+			</OMOBJ>
+			
+		</Example>
+
+	</CDDefinition>
+
+	<CDDefinition> <Name>is_permutation</Name>
+
+		<Description> This symbol is a boolean function with
+			one argument.  If the argument is not a set of
+			cycles of length at least 2, the boolean value
+			is false. Otherwise it is true if and only if
+			the cycles are disjoint (that is, all entries
+			of all cycles in the argument are mutually
+			distinct.  
+               </Description>
+
+		<CMP>
+			If is_permutation(A) is true then permutation(A) is well defined.
+		</CMP>
+
+		<Example>
+			The following value is the boolean false
+			<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+				<OMA><OMS cd="permutation1" name="is_permutation"/>
+				  <OMA><OMS cd="set1" name="set"/>
+				    <OMA><OMS cd="permutation1" name="cycle"/>
+					 <OMI> 5 </OMI>	<OMI> 4 </OMI>	<OMI> 4 </OMI>	<OMI> 2 </OMI>	<OMI> 1 </OMI>
+				     </OMA>
+				  </OMA>
+				</OMA>
+			</OMOBJ>
+			whereas the following value is true
+			<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+			<OMA><OMS cd="permutation1" name="is_permutation"/>
+			  <OMA><OMS cd="set1" name="set"/>
+			    <OMA><OMS cd="permutation1" name="cycle"/>
+ 				 <OMI> 5 </OMI>	<OMI> 4 </OMI>	<OMI> 3 </OMI>	<OMI> 2 </OMI>	<OMI> 1 </OMI>
+			    </OMA>
+			  </OMA>
+			</OMA>
+			</OMOBJ>
+			
+		</Example>
+	</CDDefinition>
+
+	<CDDefinition>
+		<Name>support</Name>
+		<Description>
+		This symbol is a function with one argument which is a permutation.
+		When applied to a permutation  whose arguments
+		are the cycles A1,...,An, it represents
+		the set A which is the union of the entries of all Ai
+                for i=1,...,n.
+		</Description>
+		<Example>
+			The following expression represents the set
+			                        {jan,piet,klaas,3,4,5}.
+			<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+                           <OMA><OMS cd="permutation1" name="support"/>
+				<OMA>	<OMS cd="permutation1" name="permutation"/>
+					<OMA>	<OMS cd="permutation1" name="cycle"/>
+						<OMSTR>jan</OMSTR>
+						<OMI>4</OMI>
+						<OMSTR>klaas</OMSTR>
+					</OMA>
+					<OMA>	<OMS cd="permutation1" name="cycle"/>
+						<OMI>3</OMI>
+						<OMSTR>klaas</OMSTR>
+					</OMA>
+					<OMA>	<OMS cd="permutation1" name="cycle"/>
+						<OMSTR>piet</OMSTR>
+						<OMI>5</OMI>
+					</OMA>
+				</OMA>
+                           </OMA>
+			</OMOBJ>
+			
+		</Example>
+	</CDDefinition>
+
+	<CDDefinition>
+		<Name>fix</Name>
+		<Description>
+		This symbol is a function with two arguments. The
+		first argument should be a permutation, the second
+		argument a set.
+		When applied to a permutation g and a set X, it represents
+		the subset A of X all points that do not belong to the support of g.
+		</Description>
+		<Example>
+			The following expression represents the set
+			                        {1,2}.
+			<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+                           <OMA><OMS cd="permutation1" name="support"/>
+				<OMA>	<OMS cd="permutation1" name="permutation"/>
+					<OMA>	<OMS cd="permutation1" name="cycle"/>
+						<OMSTR>jan</OMSTR>
+						<OMI>4</OMI>
+						<OMSTR>klaas</OMSTR>
+					</OMA>
+					<OMA>	<OMS cd="permutation1" name="cycle"/>
+						<OMI>3</OMI>
+						<OMSTR>klaas</OMSTR>
+					</OMA>
+					<OMA>	<OMS cd="permutation1" name="cycle"/>
+						<OMSTR>piet</OMSTR>
+						<OMI>5</OMI>
+					</OMA>
+				</OMA>
+                                <OMA><OMS cd="set1" name="set"/>
+                                     <OMA><OMS cd="interval1" name="integer_interval"/>
+                                          <OMI>1</OMI> <OMI>5</OMI>
+                                     </OMA>
+                                </OMA>
+                           </OMA>
+			</OMOBJ>
+			
+		</Example>
+	</CDDefinition>
+
+
+
+<CDDefinition>
+<Name>cycles</Name>
+<Description>
+
+This symbol has one argument which should be a endomap p. It returns the
+list of cycles of p.
+
+</Description>
+
+<Example>
+The following two objects represent the same list.
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+   <OMA><OMS cd="permutation1" name="cycles"/>
+      <OMA><OMS cd="permutation1" name="endomap"/>
+	<OMI>2</OMI>
+	<OMI>3</OMI>
+	<OMI>4</OMI>
+	<OMI>2</OMI>
+	<OMI>5</OMI>
+      </OMA>
+   </OMA>
+</OMOBJ>
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+   <OMA> <OMS cd="list1" name="list"/>
+      <OMA> <OMS cd="permutation1" name="cycle"/>
+	   <OMI>2</OMI>
+	   <OMI>3</OMI>
+	   <OMI>4</OMI>
+      </OMA>
+   </OMA>
+</OMOBJ>
+
+</Example>
+
+</CDDefinition>
+
+
+	<CDDefinition>
+		<Name>listendomap</Name>
+		<Description>
+		This symbol is a function with one argument which is a
+		permutation whose support consists of positive integers.
+		When applied to such a permutation P, it represents
+		the list of length n whose i-th entry is the image of i
+		under P, where n is the maximum of the support of P.
+		</Description>
+		<Example>
+			The following two expressions represent the same list.
+			<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+				<OMA>   <OMS cd="permutation1" name="listendomap"/>
+					<OMA>   <OMS cd="permutation1" name="permutation"/>
+						<OMA>	<OMS cd="permutation1" name="cycle"/>
+							<OMI> 1 </OMI>	<OMI> 4 </OMI>
+						</OMA>
+					</OMA>
+				</OMA>
+			</OMOBJ>
+			
+			<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+				<OMA>	<OMS cd="list1" name="list"/>
+					<OMI>4</OMI><OMI>2</OMI><OMI>3</OMI><OMI>1</OMI>
+				</OMA>
+			</OMOBJ>
+			
+		</Example>
+	</CDDefinition>
+
+	<CDDefinition>
+		<Name>cycle_type</Name>
+		<Description>
+			This symbol is a function with one argument,
+			which is a permutation. 
+			When applied to a permutation P,
+			it represents the multiset of lengths of cycles 
+			occurring as arguments of P.
+		</Description>
+
+
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMBIND><OMS cd="quant1" name="forall"/>
+  <OMBVAR><OMV name="P"/><OMV name="Q"/></OMBVAR>
+  <OMA><OMS cd="logic1" name="implies"/>
+    <OMA><OMS cd="logic1" name="and"/>
+      <OMA><OMS cd="permutation1" name="is_permutation"/>
+           <OMV name="P"/>
+      </OMA>
+      <OMA><OMS cd="permutation1" name="is_permutation"/>
+           <OMV name="Q"/>
+      </OMA>
+    </OMA>
+    <OMA><OMS cd="relation1" name="eq"/>
+      <OMA><OMS cd="permutation1" name="cycle_type"/>
+      <OMA><OMS cd="fns2" name="apply_to_list"/>      
+          <OMS cd="permutation1" name="left_compose"/>
+          <OMA><OMS cd="list1" name="list"/>
+               <OMV name="Q"/>
+               <OMV name="P"/>
+               <OMA><OMS cd="fns1" name="inverse"/>
+                    <OMV name="Q"/>
+               </OMA>
+          </OMA>
+        </OMA>
+      </OMA>
+      <OMA><OMS cd="permutation1" name="cycle_type"/>
+           <OMV name="P"/>
+      </OMA>
+    </OMA> 
+  </OMA> 
+</OMBIND>
+</OMOBJ>
+</FMP>
+
+<Example>
+The cycle type of the permutation (4,3,2,1)(5,6)("jan","piet") equals
+{4,2,2}:
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMA><OMS cd="relation1" name="eq"/>
+  <OMA><OMS cd="permutation1" name="cycle_type"/>
+    <OMA><OMS cd="permutation1" name="permutation"/>
+      <OMA><OMS cd="permutation1" name="cycle"/>
+        <OMI> 4 </OMI> <OMI> 3 </OMI><OMI> 2 </OMI><OMI> 1 </OMI>
+      </OMA>
+      <OMA><OMS cd="permutation1" name="cycle"/>
+        <OMI> 5 </OMI><OMI> 6 </OMI>
+      </OMA>
+      <OMA><OMS cd="permutation1" name="cycle"/>
+        <OMSTR>jan</OMSTR><OMSTR>piet</OMSTR>
+      </OMA>
+    </OMA>
+  </OMA>
+  <OMA><OMS cd="multiset1" name="multiset"/>
+    <OMI> 4 </OMI><OMI> 2 </OMI><OMI> 2 </OMI>
+  </OMA>
+</OMA>
+</OMOBJ>
+</Example>
+
+	</CDDefinition>
+
+	<CDDefinition>
+		<Name>order</Name>
+
+		<Description>
+This symbol is a function with one argument which should be a
+permutation.
+When applied to a permutation P, it represents the least positive
+integer n for which composition of n copies of P represents the
+identity
+(that is, a permutation with empty support). 
+Note: in this definition of the order, it does not matter whether
+left_compose or right_compose is being used.
+		</Description>
+
+
+<CMP>The order of a permutation is the least common multiple of the elements of
+its cycle type.
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMBIND><OMS cd="quant1" name="forall"/>
+  <OMBVAR><OMV name="P"/></OMBVAR>
+  <OMA><OMS cd="logic1" name="implies"/>
+    <OMA><OMS cd="permutation1" name="is_permutation"/>
+      <OMV name="P"/>
+    </OMA>
+    <OMA><OMS cd="relation1" name="eq"/>
+      <OMA><OMS cd="permutation1" name="order"/>
+        <OMV name="P"/>
+      </OMA>
+      <OMA><OMS cd="fns2" name="apply_to_list"/>      
+           <OMS cd="arith1" name="lcm"/>
+           <OMA><OMS cd="permutation1" name="cycle_type"/>
+               <OMV name="P"/>
+           </OMA>
+      </OMA>
+    </OMA>
+  </OMA> 
+</OMBIND>
+</OMOBJ>
+</FMP>
+
+
+<Example>
+The order of the permutation (4,3,2,1)(5,6)("jan","piet") equals
+4:
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMA><OMS cd="relation1" name="eq"/>
+  <OMA><OMS cd="permutation1" name="order"/>
+    <OMA><OMS cd="permutation1" name="permutation"/>
+      <OMA><OMS cd="permutation1" name="cycle"/>
+        <OMI> 4 </OMI> <OMI> 3 </OMI><OMI> 2 </OMI><OMI> 1 </OMI>
+      </OMA>
+      <OMA><OMS cd="permutation1" name="cycle"/>
+        <OMI> 5 </OMI><OMI> 6 </OMI>
+      </OMA>
+      <OMA><OMS cd="permutation1" name="cycle"/>
+        <OMSTR>jan</OMSTR><OMSTR>piet</OMSTR>
+      </OMA>
+    </OMA>
+  </OMA>
+    <OMI> 4 </OMI>
+</OMA>
+</OMOBJ>
+</Example>
+
+
+	</CDDefinition>
+
+	<CDDefinition>
+		<Name>are_distinct</Name>
+		<Description>
+			This symbol is an n-ary boolean function.
+			When applied to a_1, ..., a_n, it is true if and
+			only if the arguments are mutually distinct (that
+			is, a_i and a_j are equal only if i=j).
+		</Description>
+		<CMP>
+			If are_distinct(a_1,...,a_n) is true then
+			a_1,...,a_n is a valid argument sequence of cycle.
+		</CMP>
+			
+	<Example>
+        The following expression evaluates to false.
+
+	<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">  <OMA> 	<OMS cd="permutation1" name="are_distinct"/>
+			<OMI> 1 </OMI>
+			<OMI> 3 </OMI>
+			<OMI> 2 </OMI>
+			<OMI> 3</OMI>
+                 </OMA>
+        </OMOBJ>
+
+	</Example>
+
+
+	</CDDefinition>
+
+
+	<CDDefinition>
+		<Name>sign</Name>
+
+		<Description>
+This symbol is a function with one argument which should be a
+permutation.
+When applied to a permutation P, it represents the sign of P,
+which is equal to -1 if P is an odd permutation and
+equal to 1 otherwise.
+   	</Description>
+
+
+<CMP>If the cycle type of a permutation P equals [a_1,...,a_m],
+then the sign is equal to (-1)^(s-m) where s = a_1+...+a_m.
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMBIND><OMS cd="quant1" name="forall"/>
+ <OMBVAR><OMV name="P"/></OMBVAR>
+ <OMA><OMS cd="relation1" name="eq"/>
+      <OMA><OMS cd="permutation1" name="sign"/>
+           <OMA><OMS cd="permutation1" name="permutation"/>
+                <OMV name="P"/>
+           </OMA>
+      </OMA>
+      <OMA><OMS cd="arith1" name="power"/>
+           <OMI>-1</OMI>
+           <OMA><OMS cd="fns2" name="apply_to_list"/>      
+                <OMA><OMS cd="arith1" name="plus"/>
+                     <OMA><OMS cd="list1" name="map"/>
+                          <OMBIND><OMS cd="fns1" name="lambda"/>
+                                  <OMBVAR><OMV name="x"/></OMBVAR>
+                                  <OMA><OMS cd="arith1" name="plus"/>
+                                       <OMV name="x"/>
+                                       <OMI>1</OMI>      
+                                  </OMA>
+                          </OMBIND>
+                     </OMA>
+                     <OMA><OMS cd="permutation1" name="cycle_type"/>
+                          <OMA><OMS cd="permutation1" name="permutation"/>
+                               <OMV name="P"/>
+                          </OMA>
+                     </OMA>
+
+                </OMA>
+           </OMA>
+      </OMA> 
+ </OMA>  
+</OMBIND>
+</OMOBJ>
+</FMP>
+
+
+<Example>
+The sign of the permutation (4,3,2,1)(5,6)("jan","piet") equals
+-1:
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMA><OMS cd="relation1" name="eq"/>
+  <OMA><OMS cd="permutation1" name="sign"/>
+    <OMA><OMS cd="permutation1" name="permutation"/>
+      <OMA><OMS cd="permutation1" name="cycle"/>
+        <OMI> 4 </OMI> <OMI> 3 </OMI><OMI> 2 </OMI><OMI> 1 </OMI>
+      </OMA>
+      <OMA><OMS cd="permutation1" name="cycle"/>
+        <OMI> 5 </OMI><OMI> 6 </OMI>
+      </OMA>
+      <OMA><OMS cd="permutation1" name="cycle"/>
+        <OMSTR>jan</OMSTR><OMSTR>piet</OMSTR>
+      </OMA>
+    </OMA>
+  </OMA>
+    <OMI> -1 </OMI>
+</OMA>
+</OMOBJ>
+</Example>
+
+
+	</CDDefinition>
+
+
+
+	<CDDefinition>
+		<Name>inverse</Name>
+		<Description>
+			This symbol is a unary function. Its
+		argument should be a permutation. When applied to
+		argument P, the resulting
+		value is the inverse permutation of P.
+		</Description>
+
+		<Example>
+			The following two expressions represent the same
+			          permutation	of {1,2,3,4,5}.
+			<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+				<OMA>	<OMS cd="fns1" name="inverse"/>
+					<OMA>	<OMS cd="permutation1" name="permutation"/>
+						<OMA>   <OMS cd="permutation1" name="cycle"/>
+							<OMI>1</OMI>
+							<OMI>3</OMI>
+							<OMI>2</OMI>
+						</OMA>
+						<OMA>	<OMS cd="permutation1" name="cycle"/>
+							<OMI>4</OMI>
+							<OMI>5</OMI>
+						</OMA>
+					</OMA>
+				</OMA>
+			</OMOBJ>
+			
+			<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+				<OMA>	<OMS cd="permutation1" name="permutation"/>
+					<OMA>	<OMS cd="permutation1" name="cycle"/>
+						<OMI>1</OMI>
+						<OMI>2</OMI>
+						<OMI>3</OMI>
+					</OMA>
+					<OMA>	<OMS cd="permutation1" name="cycle"/>
+						<OMI>4</OMI>
+						<OMI>5</OMI>
+					</OMA>
+				</OMA>
+			</OMOBJ>
+			
+		</Example>
+
+	</CDDefinition>
+
+
+	<CDDefinition>
+		<Name>left_compose</Name>
+		<Description>
+			This symbol is a binary function. Its
+		arguments should be permutations. When applied to
+		arguments P1 and P2, the resulting
+		value is the permutation which maps x in Support(P1)
+		union Support(P2) to P1(P2(x)).
+		</Description>
+
+		<Example>
+			Left and right composition of two permutations
+						may lead to distinct results:
+			<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+				<OMA>	<OMS cd="relation1" name="eq"/>
+					<OMA>	<OMS cd="permutation1" name="left_compose"/>
+						<OMA>	<OMS cd="permutation1" name="permutation"/>
+							<OMA>	<OMS cd="permutation1" name="cycle"/>
+								<OMI>1</OMI>
+								<OMI>2</OMI>
+							</OMA>
+						</OMA>
+						<OMA>	<OMS cd="permutation1" name="permutation"/>
+							<OMA>	<OMS cd="permutation1" name="cycle"/>
+								<OMI>1</OMI>
+								<OMI>2</OMI>
+								<OMI>3</OMI>
+							</OMA>
+						</OMA>
+					</OMA>
+					<OMA>	<OMS cd="permutation1" name="permutation"/>
+						<OMA>	<OMS cd="permutation1" name="cycle"/>
+							<OMI>2</OMI>
+							<OMI>3</OMI>
+						</OMA>
+					</OMA>
+				</OMA>
+			</OMOBJ>
+			
+		</Example>
+
+	</CDDefinition>
+
+	<CDDefinition>
+		<Name>right_compose</Name>
+		<Description>
+			This symbol is a binary function. Its
+		arguments should be permutations. When applied to
+		arguments P1 and P2, the resulting
+		value is the permutation which maps x in Support(P1)
+		union Support(P2) to P2(P1(x)).
+		</Description>
+
+		<Example>
+			Left and right composition of two permutations
+						may lead to distinct
+			results. Compare the following with the
+			corresponding example in the definition of left_compose.
+			
+			<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+				<OMA>	<OMS cd="relation1" name="eq"/>
+					<OMA>	<OMS cd="permutation1" name="right_compose"/>
+						<OMA>	<OMS cd="permutation1" name="permutation"/>
+							<OMA>	<OMS cd="permutation1" name="cycle"/>
+								<OMI>1</OMI>
+								<OMI>2</OMI>
+							</OMA>
+						</OMA>
+						<OMA>	<OMS cd="permutation1" name="permutation"/>
+							<OMA>	<OMS cd="permutation1" name="cycle"/>
+								<OMI>1</OMI>
+								<OMI>2</OMI>
+								<OMI>3</OMI>
+							</OMA>
+						</OMA>
+					</OMA>
+					<OMA>	<OMS cd="permutation1" name="permutation"/>
+						<OMA>	<OMS cd="permutation1" name="cycle"/>
+							<OMI>1</OMI>
+							<OMI>3</OMI>
+						</OMA>
+					</OMA>
+				</OMA>
+			</OMOBJ>
+			
+		</Example>
+
+	</CDDefinition>
+
+
+<CDDefinition> <Name>action</Name> <Description> This symbols is
+  a binary function whose first argument is a permutation (or a endomap)
+  and whose second argument is a point.
+	
+When applied to permutation or endomap p and point x, it represents the image of
+the point x under the permutation p.
+</Description>
+
+
+		<Example>
+			The permutation (1,5,4)(6,7) sends 1 to 5, so
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMA><OMS cd="relation1" name="eq"/>
+     <OMA><OMS cd="permutation1" name="action"/>
+          <OMA><OMS cd="permutation1" name="permutation"/>
+		    <OMA><OMS cd="permutation1" name="cycle"/>
+		         <OMI>1</OMI><OMI> 5 </OMI><OMI> 4 </OMI>
+                    </OMA>
+	            <OMA><OMS cd="permutation1" name="cycle"/>
+		         <OMI> 6 </OMI>	<OMI> 7 </OMI>
+                    </OMA>
+          </OMA>
+          <OMI>1</OMI>
+     </OMA>
+     <OMI>5</OMI>
+   </OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+
+
+<CDDefinition>
+                <Name>permutationsn</Name>
+		<Description>
+		This symbol is a unary function. Its argument should
+		be a positive integer. When applied to argument n,
+		the resulting value is the set of all permutations of the set
+                {1,..., n}.
+		</Description>
+		<Example>
+		Both sides of the following equality represent the two
+                permutations on {1,2}.
+			<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+                   	<OMA>   <OMS cd="relation1" name="eq"/>
+				<OMA>   <OMS cd="permutation1" name="permutationsn"/>
+					<OMI>2</OMI>
+				</OMA>
+				<OMA>   <OMS cd="set1" name="set"/>
+                                        <OMA><OMS cd="permutation1" name="permutation"/>
+                                        </OMA>
+                                        <OMA><OMS cd="permutation1" name="permutation"/>
+                                             <OMA><OMS cd="permutation1" name="cycle"/>
+                                                  <OMI>1</OMI><OMI>2</OMI>
+                                             </OMA>
+                                        </OMA>
+                                </OMA>
+			</OMA>
+			</OMOBJ>
+			
+		</Example>
+	</CDDefinition>
+
+
+
+
+</CD>
+

@@ -1,0 +1,620 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDName> ring1 </CDName>
+<CDBase> http://www.openmath.org/cd </CDBase>
+<CDURL> http://www.openmath.org/cd/ring1.ocd </CDURL>
+<CDReviewDate> 2006-06-01 </CDReviewDate>
+<CDDate> 2004-06-01 </CDDate>
+<CDVersion> 1 </CDVersion>
+<CDRevision> 1 </CDRevision>
+<CDStatus> experimental </CDStatus>
+
+<Description> A CD of basic functions for ring theory   </Description>
+
+<CDComment>
+Written by Arjeh M. Cohen 2004-02-25
+</CDComment>
+
+<CDDefinition>
+<Name> ring </Name>
+<Description>
+This symbol is a constructor for rings. It takes six arguments
+R,  a, o, i, m, e,: which are, respectively,
+a set R to specify the elements in the ring, 
+a binary operation a on R, an element o of R, and a unary
+operation i on R such that [R,a,o,i] is a commutative group,
+a
+binary operation m on R and an element e of R such that
+[R,m,e] is a monoid.
+</Description>
+
+<CMP>
+The distributive laws
+m(x,a(y,z)) = a(m(x,y),m(x,z)) and
+m(a(y,z),x) = a(m(y,x),m(z,x)),
+where x,y,z are elements of R, should hold.
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+ <OMA><OMS cd="logic1" name="implies"/>
+      <OMA><OMS cd="relation1" name="eq"/>
+           <OMV name="S"/>
+           <OMA><OMS cd="ring1" name="ring"/>
+                <OMV name="R"/>
+                <OMV name="add"/>
+                <OMV name="zero"/>
+                <OMV name="minus"/>
+                <OMV name="mult"/>
+                <OMV name="unit"/>
+           </OMA>
+           <OMBIND><OMS cd="quant1" name="forall"/>
+                <OMBVAR><OMV name="x"/><OMV name="y"/><OMV name="z"/>
+                </OMBVAR>
+                <OMA><OMS cd="logic1" name="implies"/>
+                     <OMA><OMS cd="logic1" name="and"/>
+                          <OMA><OMS cd="set1" name="in"/>
+                               <OMV name="x"/><OMV name="R"/>
+                          </OMA>
+                          <OMA><OMS cd="set1" name="in"/>
+                               <OMV name="y"/><OMV name="R"/>
+                          </OMA>
+                          <OMA><OMS cd="set1" name="in"/>
+                               <OMV name="z"/><OMV name="R"/>
+                          </OMA>
+                     </OMA>
+                     <OMA><OMS cd="logic1" name="and"/>
+                          <OMA><OMS cd="relation1" name="eq"/>
+                               <OMA><OMV name="mult"/>
+                                    <OMV name="x"/>
+                                    <OMA><OMV name="add"/>
+                                         <OMV name="y"/><OMV name="z"/>
+                                    </OMA>
+                               </OMA>
+                               <OMA><OMV name="add"/>
+                                    <OMA><OMV name="mult"/>
+                                         <OMV name="x"/> <OMV name="y"/>
+                                    </OMA>
+                                    <OMA><OMV name="mult"/>
+                                         <OMV name="x"/><OMV name="z"/>
+                                    </OMA>
+                               </OMA>
+                          </OMA>
+                          <OMA><OMS cd="relation1" name="eq"/>
+                               <OMA><OMV name="mult"/>
+                                    <OMA><OMV name="add"/>
+                                         <OMV name="y"/><OMV name="z"/>
+                                    </OMA>
+                                    <OMV name="x"/>
+                               </OMA>
+                               <OMA><OMV name="add"/>
+                                    <OMA><OMV name="mult"/>
+                                         <OMV name="y"/> <OMV name="x"/>
+                                    </OMA>
+                                    <OMA><OMV name="mult"/>
+                                         <OMV name="z"/><OMV name="x"/>
+                                    </OMA>
+                               </OMA>
+                          </OMA>
+                     </OMA>
+                </OMA>
+            </OMBIND>
+       </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+<Example>
+This example represents the ring which has as elements all
+rational integers. The ring addition is binary addition,
+the ring multiplication is binary multiplication.
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMA><OMS cd="ring1" name="ring"/>
+     <OMA><OMS cd="setname1" name="Z"/>
+          <OMS cd="arith1" name="plus"/>
+          <OMI>0</OMI>
+          <OMS cd="arith1" name="minus"/>
+          <OMS cd="arith1" name="times"/>
+          <OMI>1</OMI>
+     </OMA>
+</OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> carrier </Name>
+<Description>
+This symbol represents a unary function, whose argument should be a
+ring S (for instance constructed by ring).
+When applied to S, its value should be the set of elements of S. 
+</Description>
+
+<Example>
+The carrier of ring(R,+,0,-,*,1) is R.
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="relation1" name="eq"/>
+       <OMA><OMS cd="ring1" name="carrier"/>
+            <OMA><OMS cd="ring1" name="ring"/>
+                 <OMV name="R"/>
+                 <OMV name="plus"/>
+                 <OMV name="zero"/>
+                 <OMV name="minus"/>
+                 <OMV name="times"/>
+                 <OMV name="one"/>
+            </OMA>
+       </OMA>
+       <OMV name="R"/>
+  </OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> multiplication </Name>
+<Description>
+This symbol represents a unary function, whose argument should be a
+ring S.  It returns the multiplication map on S.
+We allow for the map to be n-ary.
+</Description>
+
+<Example>
+The multiplication of ring(R,+,0,-,*,1) is *.
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="relation1" name="eq"/>
+       <OMA><OMS cd="ring1" name="multiplication"/>
+            <OMA><OMS cd="ring1" name="ring"/>
+                 <OMV name="R"/>
+                 <OMV name="plus"/>
+                 <OMV name="zero"/>
+                 <OMV name="minus"/>
+                 <OMV name="times"/>
+                 <OMV name="one"/>
+            </OMA>
+       </OMA>
+       <OMV name="times"/>
+  </OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> negation </Name>
+<Description>
+This symbol represents a unary function, whose argument should be a
+ring S.  It returns the map sending an element of S to its additive inverse.
+</Description>
+
+<Example>
+The minus of ring(R,+,0,-,*,1) is -.
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="relation1" name="eq"/>
+       <OMA><OMS cd="ring1" name="negation"/>
+            <OMA><OMS cd="ring1" name="ring"/>
+                 <OMV name="R"/>
+                 <OMV name="plus"/>
+                 <OMV name="zero"/>
+                 <OMV name="minus"/>
+                 <OMV name="times"/>
+                 <OMV name="one"/>
+            </OMA>
+       </OMA>
+       <OMV name="minus"/>
+  </OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> identity </Name>
+<Description>
+This symbols represents a unary function, whose argument should be a
+ring.  It returns the identity element of the ring.
+</Description>
+<Example>
+The identity ring(R,+,0,-,*,1) is 1.
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="relation1" name="eq"/>
+       <OMA><OMS cd="ring1" name="identity"/>
+            <OMA><OMS cd="ring1" name="ring"/>
+                 <OMV name="R"/>
+                 <OMV name="plus"/>
+                 <OMV name="zero"/>
+                 <OMV name="minus"/>
+                 <OMV name="times"/>
+                 <OMV name="one"/>
+            </OMA>
+       </OMA>
+       <OMV name="one"/>
+  </OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> zero </Name>
+<Description>
+This symbols represents a unary function, whose argument should be a
+ring.  It returns the zero element of the ring.
+</Description>
+<Example>
+The identity ring(R,+,0,-,*,1) is 0.
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="relation1" name="eq"/>
+       <OMA><OMS cd="ring1" name="zero"/>
+            <OMA><OMS cd="ring1" name="ring"/>
+                 <OMV name="R"/>
+                 <OMV name="plus"/>
+                 <OMV name="zero"/>
+                 <OMV name="minus"/>
+                 <OMV name="times"/>
+                 <OMV name="one"/>
+            </OMA>
+       </OMA>
+       <OMV name="zero"/>
+  </OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> addition </Name>
+<Description>
+This symbols represents a unary function, whose argument should be a
+ring.  It returns the addition on the ring.
+We will allow for the map to be n-ary.
+</Description>
+<Example>
+The identity ring(R,+,0,-,*,1) is +.
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="relation1" name="eq"/>
+       <OMA><OMS cd="ring1" name="identity"/>
+            <OMA><OMS cd="ring1" name="ring"/>
+                 <OMV name="R"/>
+                 <OMV name="plus"/>
+                 <OMV name="zero"/>
+                 <OMV name="minus"/>
+                 <OMV name="times"/>
+                 <OMV name="one"/>
+            </OMA>
+       </OMA>
+       <OMV name="plus"/>
+  </OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+
+
+
+<CDDefinition>
+<Name> subtraction </Name>
+<Description>
+This symbols represents a unary function, whose argument should be a
+ring.  It returns the binary operation of subtraction on the ring.
+</Description>
+
+<Example>
+The subtraction of ring(R,+,0,-,*,1) is the map
+sending the pair (r,s) of elements of R to r-s.
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="relation1" name="eq"/>
+       <OMA><OMS cd="ring1" name="subtraction"/>
+            <OMA><OMS cd="ring1" name="ring"/>
+                 <OMV name="R"/>
+                 <OMV name="plus"/>
+                 <OMV name="zero"/>
+                 <OMV name="minus"/>
+                 <OMV name="times"/>
+                 <OMV name="one"/>
+            </OMA>
+       </OMA>
+       <OMBIND><OMS cd="fns1" name="lambda"/>
+            <OMBVAR><OMV name="x"/><OMV name="y"/>
+            </OMBVAR>
+            <OMA><OMV name="plus"/>
+                 <OMV name="x"/>
+                 <OMA><OMV name="minus"/>
+                      <OMV name="y"/>
+                 </OMA>
+            </OMA>
+       </OMBIND>
+  </OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+
+
+
+<CDDefinition>
+<Name> is_commutative </Name>
+<Description>
+The unary boolean function whose value is true iff the argument is a
+commutative ring.
+</Description>
+
+<CMP>
+If is_commutative(G) then for all a,b in carrier(G) a*b = b*a
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA>
+    <OMS cd="logic1" name="implies"/>
+    <OMA>
+      <OMS cd="ring1" name="is_commutative"/>
+      <OMV name="G"/>
+    </OMA>
+    <OMBIND>
+      <OMS cd="quant1" name="forall"/>
+      <OMBVAR>
+        <OMV name="a"/>
+        <OMV name="b"/>
+      </OMBVAR>
+      <OMA>
+        <OMS cd="logic1" name="implies"/>
+        <OMA>
+          <OMS cd="logic1" name="and"/>
+          <OMA>
+            <OMS cd="set1" name="in"/>
+            <OMV name="a"/>
+            <OMA>
+              <OMS cd="ring1" name="carrier"/>
+              <OMV name="G"/>
+            </OMA>
+          </OMA>
+          <OMA>
+            <OMS cd="set1" name="in"/>
+            <OMV name="b"/>
+            <OMA>
+              <OMS cd="ring1" name="carrier"/>
+              <OMV name="G"/>
+            </OMA>
+          </OMA>
+        </OMA>
+        <OMA>
+          <OMS cd="relation1" name="eq"/>
+            <OMA>
+              <OMS cd="ring1" name="multiplication"/>
+              <OMV name="G"/>
+            </OMA>
+            <OMV name="a"/>
+            <OMV name="b"/>
+          </OMA>
+          <OMA>
+            <OMA>
+              <OMS cd="ring1" name="multiplication"/>
+              <OMV name="G"/>
+            </OMA>
+            <OMV name="b"/>
+            <OMV name="a"/>
+          </OMA>
+        </OMA>
+    </OMBIND>
+  </OMA>
+</OMOBJ>
+</FMP>
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> is_subring </Name>
+<Description>
+The binary boolean function whose value is true iff the second
+argument is a subring of the second.
+</Description>
+
+<CMP> 
+If is_subring(G,H) then H is a nonempty set of elements of the carrier
+of G and H is closed under multiplication and taking inverses.  
+</CMP>
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> additive_group </Name>
+<Description>
+This symbol is a unary function, whose argument should be a ring S.
+When applied to S its value is the monoid underlying S.
+</Description>
+
+<Example>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+     <OMA><OMS cd="relation1" name="eq"/>
+          <OMA><OMS cd="ring1" name="additive_group"/>
+               <OMA><OMS cd="ring1" name="ring"/>
+                    <OMV name="R"/> 
+                    <OMV name="plus"/>
+                    <OMV name="zero"/>
+                    <OMV name="minus"/>
+                    <OMV name="times"/>
+                    <OMV name="one"/>
+               </OMA>
+          </OMA>
+          <OMA><OMS cd="group1" name="group"/>
+               <OMV name="R"/> 
+               <OMV name="plus"/>
+               <OMV name="zero"/>
+               <OMV name="minus"/>
+          </OMA>
+     </OMA>
+    </OMOBJ>
+</Example>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> multiplicative_monoid </Name>
+<Description>
+This symbol is a unary function, whose argument should be a ring S.
+When applied to S its value is the monoid underlying S.
+</Description>
+
+<Example>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+     <OMA><OMS cd="relation1" name="eq"/>
+          <OMA><OMS cd="ring1" name="multiplicative_monoid"/>
+               <OMA><OMS cd="ring1" name="ring"/>
+                    <OMV name="R"/> 
+                    <OMV name="plus"/>
+                    <OMV name="zero"/>
+                    <OMV name="minus"/>
+                    <OMV name="times"/>
+                    <OMV name="one"/>
+               </OMA>
+          </OMA>
+          <OMA><OMS cd="group1" name="monoid"/>
+               <OMV name="R"/> 
+               <OMV name="times"/>
+               <OMV name="one"/>
+          </OMA>
+     </OMA>
+    </OMOBJ>
+</Example>
+
+</CDDefinition>
+
+
+<CDDefinition>
+<Name>expression</Name>
+<Description>
+This symbol is a function with two arguments.  Its first
+argument should be a ring. The
+second should be an arithmetic expression A,
+whose operators are
+times, plus, minus, unary_minus, and power, and whose leaves are members of
+the carrier of G. 
+(Here an integer m will be interpreted as a member of G by interpreting it as 
+the sum of m copies of the identity element, the symbol alg1.one will be
+interpreted as the identity,
+and  the symbol alg1.zero will be
+interpreted as the zero of G.)
+When applied to
+G and A, it denotes the element (of G) that is the element obtained from the
+leaves by applying the arithmetic operations of G instead of those
+from the CD arith1.
+</Description>
+
+<Example>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+    <OMA><OMS cd="relation1" name="eq"/>
+         <OMA><OMS cd="ring1" name="expression"/>
+              <OMA><OMS cd="ring1" name="ring"/>
+                   <OMS cd="setname1" name="Z"/>
+                   <OMS cd="arith1" name="plus"/>
+                   <OMI>0</OMI>
+                   <OMS cd="arith1" name="unary_minus"/>
+                   <OMS cd="arith1" name="times"/>
+                   <OMI>1</OMI>
+              </OMA>
+              <OMA><OMS cd="arith1" name="times"/>
+                   <OMI>6</OMI><OMI>3</OMI>
+              </OMA>
+         </OMA>
+         <OMI>18</OMI>
+    </OMA>
+  </OMOBJ>
+</Example>
+
+</CDDefinition>
+
+
+
+
+<CDDefinition>
+<Name> subring </Name>
+<Description>
+This symbol is a constructor symbol with one or two arguments. The
+first argument is a list or set, D, of ring elements. The optional
+second argument is the ring G containing D. It denotes the subring
+of G generated by D.
+</Description>
+
+<Example>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+     <OMA><OMS cd="ring1" name="subring"/>
+          <OMV name="D"/> <OMV name="G"/>
+     </OMA>
+    </OMOBJ>
+</Example>
+
+<Example>
+This example represents the subring of the multiplicative ring of
+the nonzero reals generated by the constants Pi and E:
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMA><OMS cd="ring1" name="subring"/>
+     <OMA>
+       <OMS cd="list1" name="list"/>
+         <OMS cd="nums1" name="pi"/>
+         <OMS cd="nums1" name="e"/>
+     </OMA>
+     <OMA><OMS cd="ring1" name="ring"/>
+          <OMS cd="setname1" name="R"/>
+          <OMS cd="arith1" name="plus"/>
+          <OMI>0</OMI>
+          <OMS cd="arith1" name="unary_minus"/>
+          <OMS cd="arith1" name="times"/>
+          <OMI> 1 </OMI>
+     </OMA>
+</OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name>power</Name>
+<Description>
+This is a symbol with two or three arguments.  Its first argument
+should be a an element g of a ring and the second argument should be
+an integer. The optional third argument is the ring G containing g.
+It denotes the element g^k in G.
+</Description>
+
+<Example>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+    <OMA><OMS cd="relation1" name="eq"/>
+        <OMA><OMS cd="ring1" name="power"/>
+            <OMI>3</OMI>
+            <OMI>2</OMI>
+            <OMA><OMS cd="ring1" name="ring"/>
+                <OMS cd="setname1" name="Z"/>
+                <OMS cd="arith1" name="plus"/>
+                <OMI>0</OMI>
+                <OMS cd="arith1" name="unary_minus"/>
+                <OMS cd="arith1" name="times"/>
+                <OMI>1</OMI>
+            </OMA>
+        </OMA>
+        <OMI>6</OMI>
+    </OMA>
+  </OMOBJ>
+</Example>
+
+</CDDefinition>
+
+
+
+
+</CD>

@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDName> prog1 </CDName>
+<CDBase> http://www.openmath.org/cd </CDBase>
+<CDURL>http://www.openmath.org/cd/prog1.ocd</CDURL>
+<CDReviewDate> 2001-06-01 </CDReviewDate>
+<CDStatus> experimental </CDStatus>
+<CDDate> 2001-02-16 </CDDate>
+<CDVersion> 0 </CDVersion>
+<CDRevision> 1 </CDRevision>
+<CDUses>
+  <CDName>arith1</CDName>
+  <CDName>quant1</CDName>
+  <CDName>relation1</CDName>
+</CDUses>
+
+<Description>
+A CD for basic algorithmic concepts. We define the minimal machinery to write 
+small programs in OpenMath encoding.
+</Description>
+
+
+<CDDefinition>
+<Name> assignment </Name>
+<Description>
+This symbol is used to assign values to variables. The syntax is
+assignment(variable, value), where variable is the encoding of an 
+OpenMath variable (OMV) and value is an OpenMath object.
+</Description>
+<Example> The assignment a := 125 is encoded as
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+ <OMA>
+  <OMS cd="prog1" name="assignment"/>
+  <OMV name="a"/>
+  <OMI> 125 </OMI>
+ </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> block </Name>
+<Description>
+This symbol is meant to represent an arbitray block of code. A block of code 
+can be empty. The syntax is block(obj1, obj2,...,objN), where obji is the 
+OpenMath encoding of the ith sentence (or action) inside the body.
+</Description>
+<Example> The following block of code
+{
+ a := 153;
+ a := a+1;
+}
+is encoded as
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+ <OMA>
+  <OMS cd="prog1" name="block"/>
+  <OMA>
+   <OMS cd="prog1" name="assignment"/>
+   <OMV name="a"/>
+   <OMI> 153 </OMI>
+  </OMA>
+  <OMA>
+   <OMS cd="prog1" name="assignment"/>
+   <OMV name="a"/>
+   <OMA>
+    <OMS cd="arith1" name="plus"/>
+    <OMV name="a"/>
+   </OMA>
+  </OMA>
+ </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> local_var </Name>
+<Description>
+This symbol can be used to declare local variables.
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name> global_var </Name>
+<Description>
+This symbol can be used to declare global variables as know to function.
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name>return</Name>
+<Description>
+This symbol can be used to return values from fuctions.
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name> for </Name>
+<Description>
+This symbol can be used to encode the for loop. The syntax is
+for(block1,conditional_block,block3,block4), where block1 is the 
+inicialization block, conditional_block is the conditional block that 
+determines the end of the loop, block3 is the incremental block and block4
+is the body of the for loop. Each of this blocks should be present (althougth
+they can be empty).
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name> while </Name>
+<Description>
+The symbol the while loop. The syntax is while(conditional_block, block1), where
+conditional_block is the block that determines when to stop the while loop and 
+block1 is the body of the while loop.
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name> if </Name>
+<Description>
+The symbol can be used to encode the if, then, else construct. The syntax is
+if(conditional_block,block1,block2), where the conditional_block is the block 
+that determines wich of the block of codes block1 and block2 is going to be 
+executed, block1 is the then block and block2 if the else block. The 
+conditional_block and block1 are required but block2 is optional.
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name> call_arguments </Name>
+<Description>
+This symbol can be used to encode the arguments that will be pased to a function
+or procedure.
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name> def_arguments </Name>
+<Description>
+This symbol can be used to encode the arguments that a function or procedure 
+can receive.
+</Description>
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> function_block </Name>
+<Description>
+The block of code defining the body of the function. The syntax is
+function_block(local_var,block1), where local_var encodes the local 
+variables (private to the function body) and block1 is the body of
+the function. Both locar_var and block1 should be present (and of 
+course both can be also empty).
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name> function_definition </Name>
+<Description>
+The symbol function_definition can be is used to define a function. The syntax is
+function_definition(name, def_arguments, function_block), where name is the 
+encoding of an OpenMath variable (OMV) representing the name of the funtion, 
+def_arguments is the enconding of the arguments that the function receives and
+function_block is the body of the function (local variables declarations + 
+body of the function). Functions are completely unaware of the rest of the 
+"world" except for the information they received from the arguments. Functions 
+are only allowed to return values by means of the return construct.
+</Description>
+<Example>
+The function (in Maple notation), 
+MyFunction:=proc(N) local i, Result; Result := 1; for i from 2 to N do 
+Result := Result + i^10; od; Result; end;, is encoded as
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+ <OMA>
+  <OMS cd="prog1" name="function_definition"/>
+  <OMV name="MyFunct"/>
+  <OMA>
+   <OMS cd="prog1" name="def_arguments"/>
+   <OMV name="N"/>
+  </OMA>
+  <OMA>
+   <OMS cd="prog1" name="function_block"/>
+   <OMA>
+    <OMS cd="prog1" name="local_var"/>
+    <OMV name="i"/>
+    <OMV name="Result"/>
+   </OMA>
+   <OMA>
+    <OMS cd="prog1" name="block"/>
+    <OMA>
+     <OMS cd="prog1" name="assignment"/>
+     <OMV name="Result"/>
+     <OMI>1</OMI>
+    </OMA>
+    <OMA>
+     <OMS cd="prog1" name="for"/>
+     <OMA>
+      <OMS cd="prog1" name="block"/>
+      <OMA>
+       <OMS cd="prog1" name="assignment"/>
+       <OMV name ="i"/>
+       <OMI>2</OMI>
+      </OMA>
+     </OMA>
+     <OMA>
+      <OMS cd="prog1" name="block"/>
+      <OMA>
+       <OMS cd="relation1" name="leq"/>
+       <OMV name ="i"/>
+       <OMV name ="N"/>
+      </OMA>
+     </OMA>
+     <OMA>
+      <OMS cd="prog1" name="block"/>
+      <OMA>
+       <OMS cd="prog1" name="assignment"/>
+       <OMV name ="i"/>
+       <OMA>
+        <OMS cd="arith1" name="plus"/>
+        <OMV name ="i"/>
+        <OMI>1</OMI>
+       </OMA>
+      </OMA>
+     </OMA>
+     <OMA>
+      <OMS cd="prog1" name="block"/>
+      <OMA>
+       <OMS cd="prog1" name="assignment"/>
+       <OMV name ="Result"/>
+       <OMA>
+        <OMS cd="arith1" name="plus"/>
+        <OMA>
+         <OMS cd="arith1" name="power"/>
+         <OMV name ="i"/>
+         <OMI> 10 </OMI>
+        </OMA>
+        <OMI>1</OMI>
+       </OMA>
+      </OMA>
+     </OMA>
+    </OMA> 
+    <OMA> 
+     <OMS cd="prog1" name="return"/>
+     <OMV name="Result"/>
+    </OMA> 
+   </OMA>  
+  </OMA>
+ </OMA>
+</OMOBJ>
+</Example>
+
+<Example> The encoding of a function N --&gt; 1+2^3+...+N^3 (uses the while loop) 
+is
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+ <OMA>
+  <OMS cd="prog1" name="function_definition"/>
+  <OMV name="Prog1AddCubes"/>
+  <OMA>
+   <OMS cd="prog1" name="def_arguments"/>
+   <OMV name="n"/>
+  </OMA>
+  <OMA>
+   <OMS cd="prog1" name="function_block"/>
+   <OMA>
+    <OMS cd="prog1" name="local_var"/>
+    <OMV name="Total"/>
+    <OMV name="i"/>
+   </OMA>
+   <OMA>
+    <OMS cd="prog1" name="block"/>
+    <OMA>
+     <OMS cd="prog1" name="assignment"/>
+     <OMV name="i"/>
+     <OMI>1</OMI>
+    </OMA>
+    <OMA>
+     <OMS cd="prog1" name="assignment"/>
+     <OMV name="Total"/>
+     <OMI>0</OMI>
+    </OMA>
+    <OMA>
+     <OMS cd="prog1" name="while"/>
+     <OMA>
+      <OMS cd="prog1" name="block"/>
+      <OMA>
+       <OMS cd="relation1" name="leq"/>        
+       <OMV name="i"/>
+       <OMV name="n"/>
+      </OMA>
+     </OMA>
+     <OMA>
+      <OMS cd="prog1" name="block"/>
+      <OMA>
+       <OMS cd="prog1" name="assignment"/>
+       <OMV name="Total"/>
+       <OMA>
+        <OMS cd="arith1" name="plus"/>
+        <OMV name="Total"/>
+        <OMA>
+         <OMS cd="arith1" name="power"/>
+         <OMV name="i"/>
+         <OMI>3</OMI>
+        </OMA>
+       </OMA>
+      </OMA>
+      <OMA>
+       <OMS cd="prog1" name="assignment"/>
+       <OMV name="i"/>
+       <OMA>
+        <OMS cd="arith1" name="plus"/>
+        <OMV name="i"/>
+        <OMI>1</OMI>
+       </OMA> 
+      </OMA> 
+     </OMA>     
+    </OMA>
+    <OMA>
+     <OMS cd="prog1" name="return"/>
+     <OMV name="Total"/>
+    </OMA>  
+   </OMA>          
+  </OMA> 
+ </OMA>
+</OMOBJ>
+</Example>
+
+<Example> The encoding of a function the compute the Nth term of the Fibonacci 
+sequence is 
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+ <OMA>
+  <OMS cd="prog1" name="function_definition"/>
+  <OMV name="Prog1Fibonacci"/>
+  <OMA>
+   <OMS cd="prog1" name="def_arguments"/>
+   <OMV name="n"/>
+  </OMA>
+  <OMA>
+   <OMS cd="prog1" name="function_block"/>
+   <OMA>
+    <OMS cd="prog1" name="local_var"/>
+   </OMA>
+   <OMA>
+    <OMS cd="prog1" name="block"/>
+    <OMA>
+     <OMS cd="prog1" name="if"/>
+     <OMA>
+      <OMS cd="prog1" name="block"/>
+      <OMA>
+       <OMS cd="logic1" name="or"/>
+       <OMA>
+        <OMS cd="relation1" name="eq"/>
+        <OMV name="n"/>
+        <OMI>1</OMI>
+       </OMA>
+       <OMA>
+        <OMS cd="relation1" name="eq"/>
+        <OMV name="n"/>
+        <OMI>2</OMI>
+       </OMA>
+      </OMA>
+     </OMA>
+     <OMA>
+      <OMS cd="prog1" name="block"/>
+      <OMA>
+       <OMS cd="prog1" name="return"/>
+       <OMI>1</OMI>
+      </OMA>
+     </OMA>
+     <OMA>
+      <OMS cd="prog1" name="block"/>
+      <OMA>
+       <OMS cd="prog1" name="return"/>
+       <OMA>
+        <OMS cd="arith1" name="plus"/>
+        <OMA>
+         <OMS cd="prog1" name="function_call"/>
+         <OMV name="Prog1Fibonacci"/>
+         <OMA>
+          <OMS cd="prog1" name="call_arguments"/>
+          <OMA>
+           <OMS cd="arith1" name="minus"/>
+           <OMV name="n"/>
+           <OMI>1</OMI>
+          </OMA>
+         </OMA>
+        </OMA>
+        <OMA>
+         <OMS cd="prog1" name="function_call"/>
+         <OMV name="Prog1Fibonacci"/>
+         <OMA>
+          <OMS cd="prog1" name="call_arguments"/>
+          <OMA>
+           <OMS cd="arith1" name="minus"/>
+           <OMV name="n"/>
+           <OMI>2</OMI>
+          </OMA>
+         </OMA>
+        </OMA>
+       </OMA>
+      </OMA>
+     </OMA>
+    </OMA>
+   </OMA>          
+  </OMA> 
+ </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> function_call </Name>
+<Description>
+Symbol function_call can be used to "call" already defined functions. 
+The syntax is function_call(name, call_arguments), where name is the 
+encoding of an OpenMath variable (OMV) representing the name of the 
+function and call_arguments are the arguments to pass to the function. 
+Both, name and call_arguments, should be present but call_arguments can be 
+empty.
+</Description>
+<Example> The function call "MyFunction(100)" is encoded as
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+ <OMA>
+  <OMS cd="prog1" name="function_call"/>
+  <OMV name="MyFunct"/>
+  <OMA>
+   <OMS cd="prog1" name="call_arguments"/>
+   <OMI>100</OMI>
+  </OMA>
+ </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> procedure_definition </Name>
+<Description>
+ This symbol can be used to define a procedure. The sintax is
+procedure_definition(name, def_arguments,  procedure_block), where name is the 
+encoding of an OpenMath variable representing the name of the procedure, 
+def_arguments encodes the argument the procedure can receive and 
+procedure_block encodes the body of the procedure. Contrary to function 
+procedures can have knowledge about global objects by means of the 
+global_var construct (see procedure block).
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name> procedure_call </Name>
+<Description>
+Symbol procedure_call can be used to "call" already defined procedures. 
+The syntax is procedure_call(name, call_arguments), where name is the 
+encoding of an OpenMath variable (OMV) representing the name of the 
+function and call_arguments are the arguments to pass to the function. 
+Both, name and call_arguments, should be present but call_arguments can be 
+empty.
+</Description>
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> procedure_block </Name>
+<Description>
+The block of code defining the body of the procedure. The syntax is
+procedure_block(local_var, global_var, block1), where local_var encodes the local 
+variables (private to the procedure body), gloval_var are global variables that 
+are know to the procedure and block1 is the body of the procedure. All these 
+elements, locar_var, global_var and block1, should be present 
+(but they can also be empty).
+</Description>
+</CDDefinition>
+
+
+</CD>

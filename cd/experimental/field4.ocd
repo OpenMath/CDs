@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDName> field4 </CDName>
+<CDBase> http://www.openmath.org/cd </CDBase>
+<CDURL> http://www.openmath.org/cd/field4.ocd </CDURL>
+<CDReviewDate> 2006-06-01 </CDReviewDate>
+<CDDate> 2004-06-01 </CDDate>
+<CDVersion> 1 </CDVersion>
+<CDRevision> 1 </CDRevision>
+<CDStatus> experimental </CDStatus>
+
+<Description> A CD of 
+functions for morphisms of fields.
+</Description>
+
+<CDComment>
+Written by Arjeh M. Cohen 2004-07-07
+</CDComment>
+
+<CDDefinition>
+<Name>automorphism_group</Name>
+<Description>
+This is a function with a single argument which must be a field.
+It refers to the automorphism group of its argument.
+</Description>
+</CDDefinition>
+
+
+<CDDefinition>
+<Name>homomorphism_by_generators</Name>
+<Description>
+This is a function with three arguments the first two of which must be fields
+F and K.
+The third argument should be a set or a list L of ordered pairs (lists of length 2). Each
+pair [x,y] from L consists of an element x from F and an element y from K.
+when applied to F, K, and L, the symbol represents the homomorphism from F
+to K that maps the first entry x of each pair [x,y] to the second entry y of the same pair.
+</Description>
+</CDDefinition>
+
+
+
+
+<CDDefinition>
+<Name> field_by_poly_map</Name>
+<Description>
+Same as quotient_by_poly_map in CD ring5, except that R and the quotient ring R[X]/(f) are
+fields (so f is irreducible in R[X]).
+</Description>
+
+
+<Example>
+An element aX + b of the finite field GF(3)[X]/(X^2+1) is represented by
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMA><OMA><OMS cd="field4" name="field_by_poly_map"/>
+          <OMA id="pr"><OMS cd="polyd1" name="poly_ring_d"/>
+               <OMA><OMS cd="setname2" name="GFp"/>
+                    <OMI>3</OMI>
+               </OMA>
+               <OMI>1</OMI>
+          </OMA>
+          <OMA><OMS cd="polyd1" name="DMP"/>
+               <OMR href="#pr"/>
+               <OMA><OMS cd="polyd1" name="SDMP"/>
+                    <OMA><OMS cd="polyd1" name="term"/>
+                         <OMI>1</OMI><OMI>0</OMI>
+                    </OMA>
+                    <OMA><OMS cd="polyd1" name="term"/>
+                         <OMI>1</OMI><OMI>2</OMI>
+                    </OMA>
+               </OMA>
+          </OMA>
+     </OMA> 
+     <OMA><OMS cd="polyd1" name="DMP"/>
+          <OMR href="#pr"/>
+          <OMA><OMS cd="polyd1" name="SDMP"/>
+               <OMA><OMS cd="polyd1" name="term"/>
+                    <OMV name="b"/><OMI>0</OMI>
+               </OMA>
+          </OMA>
+          <OMA><OMS cd="polyd1" name="term"/>
+               <OMV name="a"/><OMI>1</OMI>
+          </OMA>
+     </OMA>
+</OMA>
+</OMOBJ>
+
+
+
+</Example>
+
+
+</CDDefinition>
+
+
+
+
+<CDDefinition>
+<Name>field_by_poly_vector</Name>
+<Description>
+
+This symbol is a binary function.  Its first argument should be
+a field_by_poly(R,f).  Its second argument should be a 
+list L of elements of F, the coefficient field of the univariate polynomial
+ring R = F[X].
+The length of the list L should be equal to the degree d of f.
+When applied to R and
+L, it represents the element L[0] + L[1] x + L[2] x^2 + ... + L[d-1] ^(d-1) of
+R/(f),
+where x stands for the image of x under the natural quotient map R -&gt; R/(f).
+
+If the first argument is a field_by_conway(p,n), defined in the CD finfield1, then 
+the same interpretation holds, where R and f are respectively poly_ring_d(GFp(p),1) and conway_polynomial(p,n).
+
+</Description>
+
+<CMP>
+later
+</CMP>
+
+<Example>
+The element x+1 of the Conway field of order 4:
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+   <OMA><OMS cd="field4" name="field_by_poly_vector"/>
+        <OMA><OMS cd="finfield1" name="field_by_conway"/>
+             <OMA><OMS cd="setname2" name="GFpn"/>
+                  <OMI>2</OMI><OMI>2</OMI>
+            </OMA>
+       </OMA>
+       <OMA><OMS cd="list1" name="list"/>       
+            <OMI>1</OMI>       
+            <OMI>1</OMI>
+       </OMA>
+  </OMA>
+</OMOBJ>
+
+</Example>
+
+
+</CDDefinition>
+
+
+
+
+
+
+</CD>

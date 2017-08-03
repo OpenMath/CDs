@@ -1,0 +1,476 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDName> magma1 </CDName>
+<CDBase> http://www.openmath.org/cd </CDBase>
+<CDURL> http://www.openmath.org/cd/magma1.ocd </CDURL>
+<CDReviewDate> 2006-06-01 </CDReviewDate>
+<CDDate> 2004-06-01 </CDDate>
+<CDVersion> 1 </CDVersion>
+<CDRevision> 2 </CDRevision>
+<CDStatus> experimental </CDStatus>
+
+<Description>  Basic functions for magma theory   </Description>
+
+<CDComment>
+Initiated by Arjeh M. Cohen 2003-10-03
+Edited by AMC 2004-0302
+</CDComment>
+
+
+<CDDefinition>
+<Name> magma </Name>
+<Description>
+This symbol is a constructor for magmas. It takes two arguments in
+the following order: a set to specify the elements in the magma and a
+binary operation to specify the magma operation.
+The binary operation should act on elements
+of the set and return an element of the set.
+</Description>
+
+<CMP>
+A magma is closed under its operation.
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="logic1" name="implies"/>
+       <OMA><OMS cd="relation1" name="eq"/>
+            <OMV name="G"/>
+            <OMA><OMS cd="magma1" name="magma"/>
+                 <OMV name="set"/>
+                 <OMV name="binop"/>
+            </OMA>
+       </OMA>
+       <OMA><OMS cd="logic1" name="implies"/>
+	    <OMA><OMS cd="logic1" name="and"/>
+                 <OMA><OMS cd="set1" name="in"/>
+                      <OMV name="x"/><OMV name="set"/>
+                 </OMA>
+                 <OMA><OMS cd="set1" name="in"/>
+                      <OMV name="y"/><OMV name="set"/>
+                 </OMA>
+            </OMA>
+            <OMA><OMS cd="set1" name="in"/>
+                 <OMA><OMV name="binop"/>
+                      <OMV name="x"/><OMV name="y"/>
+                 </OMA>
+                 <OMV name="set"/>
+            </OMA>
+      </OMA>
+ </OMA>
+</OMOBJ>
+</FMP>
+
+<Example>
+This example represents the magma which has as elements all integers, 
+and the magma operation is addition of the square of the first
+argument to the second.
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="magma1" name="magma"/>
+       <OMS cd="setname1" name="Z"/>
+       <OMBIND><OMS cd="fns1" name="lambda"/>
+            <OMBVAR><OMV name="x"/><OMV name="y"/></OMBVAR>
+            <OMA><OMS cd="arith1" name="plus"/>
+                 <OMA><OMS cd="arith1" name="power"/>
+                      <OMV name="x"/> <OMI>2</OMI>
+                 </OMA>
+                 <OMV name="y"/>
+            </OMA>
+       </OMBIND>
+  </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> carrier </Name>
+<Description>
+This symbol represents a unary function, whose argument should be a
+magma G (for instance constructed by magma).
+When applied to G, its value should be the set of elements of a magma. 
+</Description>
+
+<Example>
+The carrier of magma(G,*) is G.
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="relation1" name="eq"/>
+       <OMA><OMS cd="magma1" name="carrier"/>
+            <OMA><OMS cd="magma1" name="magma"/>
+                 <OMV name="G"/>  <OMV name="times"/>
+            </OMA>
+       </OMA>
+       <OMV name="G"/>
+  </OMA>
+</OMOBJ>
+</Example>
+
+
+</CDDefinition>
+
+
+<CDDefinition> <Name> multiplication </Name> 
+
+<Description> This symbol
+represents a unary function, whose argument should be a magma G.  It returns
+the multiplication map on G. We allow for the map to be n-ary. 
+</Description>
+
+<Example>
+The multiplication of magma(G,*) is *.
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="relation1" name="eq"/>
+       <OMA><OMS cd="magma1" name="multiplication"/>
+            <OMA><OMS cd="group1" name="group"/>
+                 <OMV name="G"/>
+                 <OMV name="times"/>
+            </OMA>
+       </OMA>
+       <OMV name="times"/>
+  </OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+
+
+<CDDefinition>
+<Name> is_commutative </Name>
+<Description>
+The unary boolean function whose value is true iff the argument is a
+commutative magma.
+</Description>
+
+<CMP>
+If is_commutative(G) then for all a,b in carrier(G) a*b = b*a
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA>
+    <OMS cd="logic1" name="implies"/>
+    <OMA>
+      <OMS cd="magma1" name="is_commutative"/>
+      <OMV name="G"/>
+    </OMA>
+    <OMBIND>
+      <OMS cd="quant1" name="forall"/>
+      <OMBVAR>
+        <OMV name="a"/>
+	<OMV name="b"/>
+      </OMBVAR>
+      <OMA>
+        <OMS cd="logic1" name="implies"/>
+	<OMA>
+	  <OMS cd="logic1" name="and"/>
+	  <OMA>
+	    <OMS cd="set1" name="in"/>
+	    <OMV name="a"/>
+	    <OMA>
+	      <OMS cd="magma1" name="carrier"/>
+	      <OMV name="G"/>
+	    </OMA>
+	  </OMA>
+	  <OMA>
+	    <OMS cd="set1" name="in"/>
+	    <OMV name="b"/>
+	    <OMA>
+	      <OMS cd="magma1" name="carrier"/>
+	      <OMV name="G"/>
+	    </OMA>
+	  </OMA>
+	</OMA>
+	<OMA>
+	  <OMS cd="relation1" name="eq"/>
+	  <OMA>
+            <OMA>
+              <OMS cd="magma1" name="multiplication"/>
+              <OMV name="G"/>
+            </OMA>
+	    <OMV name="a"/>
+	    <OMV name="b"/>
+	  </OMA>
+	  <OMA>
+            <OMA>
+              <OMS cd="magma1" name="multiplication"/>
+              <OMV name="G"/>
+            </OMA>
+	    <OMV name="b"/>
+	    <OMV name="a"/>
+	  </OMA>
+	</OMA>
+      </OMA>
+    </OMBIND>
+  </OMA>
+</OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> is_associative </Name>
+<Description>
+The unary boolean function whose value is true iff the argument is an
+associative magma.
+</Description>
+
+<CMP>
+If is_associative(G) then for all a,b in carrier(G) (a*b) * c = a*(b*c)
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="logic1" name="implies"/>
+       <OMA><OMS cd="magma1" name="is_associative"/>
+            <OMV name="G"/>
+       </OMA>
+       <OMBIND><OMS cd="quant1" name="forall"/>
+            <OMBVAR>  <OMV name="a"/> <OMV name="b"/><OMV name="c"/>
+            </OMBVAR>
+            <OMA><OMS cd="logic1" name="implies"/>
+                 <OMA><OMS cd="logic1" name="and"/>
+                      <OMA><OMS cd="set1" name="in"/>
+                           <OMV name="a"/>
+                           <OMA><OMS cd="magma1" name="carrier"/>
+                                <OMV name="G"/>
+                           </OMA>
+                      </OMA>
+                      <OMA><OMS cd="set1" name="in"/>
+                           <OMV name="b"/>
+                           <OMA><OMS cd="magma1" name="carrier"/>
+                                <OMV name="G"/>
+                           </OMA>
+                      </OMA>
+                      <OMA><OMS cd="set1" name="in"/>
+                           <OMV name="c"/>
+                           <OMA><OMS cd="magma1" name="carrier"/>
+                                <OMV name="G"/>
+                           </OMA>
+                      </OMA>
+                 </OMA>
+                 <OMA><OMS cd="relation1" name="eq"/>
+                      <OMA><OMA><OMS cd="magma1" name="multiplication"/>
+                                <OMV name="G"/>
+                           </OMA>
+                           <OMA><OMA><OMS cd="magma1" name="multiplication"/>
+                                     <OMV name="G"/>
+                                </OMA>
+                                <OMV name="a"/>
+                                <OMV name="b"/>
+                           </OMA>
+                           <OMV name="c"/>
+                      </OMA>
+                      <OMA><OMA><OMS cd="magma1" name="multiplication"/>
+                                <OMV name="G"/>
+                           </OMA>
+                           <OMV name="a"/>
+                           <OMA><OMA><OMS cd="magma1" name="multiplication"/>
+                                     <OMV name="G"/>
+                                </OMA>
+                                <OMV name="b"/>
+                                <OMV name="c"/>
+                           </OMA>
+                      </OMA>
+                 </OMA>
+            </OMA>
+    </OMBIND>
+  </OMA>
+</OMOBJ>
+</FMP>
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> is_submagma </Name>
+<Description>
+The binary boolean function whose value is true iff the second
+argument is a submagma of the first.
+</Description>
+
+<CMP>
+If is_submagma(G,H) then H is a set of elements of G and H
+is closed under multiplication.
+</CMP>
+</CDDefinition>
+
+
+<CDDefinition> 
+<Name> is_identity </Name> 
+
+<Description> This symbols represents a binary boolean function, whose
+arguments should be a magma and an element of the element set of the
+magma.  When applied to the arguments M and x, it returns true if the
+element x is an identity of the magma M, that is, x*y = y* x = y for
+all elements y of M.  
+</Description>
+
+</CDDefinition>
+
+
+
+
+<CDDefinition>
+<Name> submagma </Name>
+<Description>
+This symbol is a constructor symbol with two arguments.
+The first argument is a magma M,
+the second a list or set, D, of elements of M.
+When applied to M and D, it denotes the submagma of M generated by D.
+</Description>
+
+<Example>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+     <OMA><OMS cd="magma1" name="submagma"/>
+          <OMV name="M"/>  <OMV name="D"/>
+     </OMA>
+    </OMOBJ>
+</Example>
+
+<Example>
+This example represents the submagma of the multiplicative magma of
+the nonzero reals generated by the constants Pi and E:
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMA><OMS cd="magma1" name="magma"/>
+     <OMA><OMS cd="magma1" name="magma"/>
+          <OMA><OMS cd="set1" name="suchthat"/>
+               <OMS cd="setname1" name="R"/>
+               <OMBIND><OMS cd="fns1" name="lambda"/>
+                       <OMBVAR> <OMV name="x"/>
+                       </OMBVAR>
+                       <OMA><OMS cd="relation1" name="neq"/>
+                            <OMV name="x"/>
+                            <OMS cd="alg1" name="zero"/>
+                       </OMA>
+               </OMBIND>
+          </OMA>
+          <OMS cd="arith1" name="times"/>
+     </OMA>
+     <OMA>
+       <OMS cd="list1" name="list"/>
+         <OMS cd="nums1" name="pi"/>
+         <OMS cd="nums1" name="e"/>
+     </OMA>
+</OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+
+<CDDefinition>
+<Name>left_divides</Name>
+<Description>
+This symbol is a ternary function.  Its first argument should be a
+magma M and the second and third arguments should be elements of M.
+When applied to M, a, and b, it denotes the fact that a is a
+left_divisor of b in M. This means that there is v in M such that av=b.
+</Description>
+
+<Example>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+    <OMA><OMS cd="magma1" name="left_divides"/>
+         <OMV name="M"/><OMV name="a"/><OMV name="b"/>
+    </OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+
+<CDDefinition>
+<Name>right_divides</Name>
+<Description>
+This symbol is a ternary function.
+Its first argument should be a magma M and the second and third
+arguments
+should be elements of M.
+When applied to M, a, and b, it denotes the fact that a is a right_divisor of b in
+M. This means that there is v in M such that va = b.
+</Description>
+
+<Example>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+     <OMA><OMS cd="magma1" name="right_divides"/>
+          <OMV name="M"/>          <OMV name="a"/>          <OMV name="b"/>
+     </OMA>
+    </OMOBJ>
+</Example>
+
+</CDDefinition>
+
+
+<CDDefinition>
+<Name>left_expression</Name>
+<Description>
+This symbol is a binary function.
+Its first argument should be a magma M, the second argument 
+a list L of elements of M.
+When applied to M and L, it denotes the left product
+(L[1] * ( ... (L[n-1] * L[n]) ... )) of all elements in the list L.
+</Description>
+
+<Example>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+    <OMA><OMS cd="relation1" name="eq"/>
+         <OMA><OMS cd="magma1" name="left_expression"/>
+              <OMA><OMS cd="magma1" name="magma"/>
+                   <OMS cd="setname1" name="Z"/>
+                   <OMS cd="arith1" name="times"/>
+              </OMA>
+              <OMA><OMS cd="list1" name="list"/>
+                   <OMI>3</OMI><OMI>2</OMI>
+              </OMA>
+         </OMA>
+         <OMI>6</OMI>
+    </OMA>
+  </OMOBJ>
+</Example>
+
+</CDDefinition>
+
+
+
+<CDDefinition>
+<Name>right_expression</Name>
+<Description>
+This symbol is a binary function.
+Its first argument should be a magma M, the second argument a list L of elements of M
+When applied to M and L, it denotes the right product
+(( ... (L[1] * L[2]) *  ... ) * L[n]) of all elements in the list L.
+</Description>
+
+<Example>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+    <OMA><OMS cd="relation1" name="eq"/>
+         <OMA><OMS cd="magma1" name="right_expression"/>
+              <OMA><OMS cd="magma1" name="magma"/>
+                   <OMS cd="setname1" name="Z"/>
+                   <OMS cd="arith1" name="times"/>
+              </OMA>
+              <OMA><OMS cd="list1" name="list"/>
+                   <OMI>3</OMI><OMI>2</OMI>
+              </OMA>
+         </OMA>
+         <OMI>6</OMI>
+    </OMA>
+  </OMOBJ>
+</Example>
+
+</CDDefinition>
+
+
+
+</CD>
+
+
+
+
+
+
+
+
+
+
+

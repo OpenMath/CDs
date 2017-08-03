@@ -1,0 +1,388 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDName> semigroup1 </CDName>
+<CDBase> http://www.openmath.org/cd </CDBase>
+<CDURL> http://www.openmath.org/cd/semigroup1.ocd </CDURL>
+<CDReviewDate> 2006-06-01 </CDReviewDate>
+<CDDate> 2004-06-01 </CDDate>
+<CDVersion> 3 </CDVersion>
+<CDRevision> 1 </CDRevision>
+<CDStatus> experimental </CDStatus>
+
+<Description> Basic functions for semigroup theory   </Description>
+
+<CDComment>
+Initiated by Arjeh M. Cohen 2003-05-17
+Edited AMC 2004-0304
+</CDComment>
+
+
+
+<CDDefinition>
+<Name> semigroup </Name>
+<Description>
+This symbol is a constructor for semigroups. It takes two arguments in
+the following order: a set to specify the elements in the semigroup,
+and a binary operation to specify the semigroup operation. The binary
+operation should act on elements of the set and return an element of
+the set.
+</Description>
+
+<CMP>
+A semigroup is closed under its operation.
+A semigroup operation is associative.
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA>
+    <OMS cd="logic1" name="implies"/>
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMV name="S"/>
+      <OMA>
+        <OMS cd="semigroup1" name="semigroup"/>
+	<OMV name="set"/>
+	<OMV name="binop"/>
+      </OMA>
+    </OMA>
+    <OMA>
+      <OMS cd="logic1" name="and"/>
+      <OMA>
+        <OMS cd="logic1" name="implies"/>
+	<OMA>
+	  <OMS cd="logic1" name="and"/>
+	  <OMA>
+	    <OMS cd="set1" name="in"/>
+	    <OMV name="x"/>
+	    <OMV name="set"/>
+	  </OMA>
+	  <OMA>
+	    <OMS cd="set1" name="in"/>
+	    <OMV name="y"/>
+	    <OMV name="set"/>
+	  </OMA>
+	</OMA>
+	<OMA>
+	  <OMS cd="set1" name="in"/>
+	  <OMA>
+	    <OMV name="binop"/>
+	    <OMV name="x"/>
+	    <OMV name="y"/>
+	  </OMA>
+	  <OMV name="set"/>
+	</OMA>
+      </OMA>
+      <OMA>
+        <OMS cd="relation1" name="eq"/>
+	<OMA>
+	  <OMV name="binop"/>
+	  <OMV name="x"/>
+	  <OMA>
+	    <OMV name="binop"/>
+	    <OMV name="y"/>
+	    <OMV name="z"/>
+	  </OMA>
+	</OMA>
+	<OMA>
+	  <OMV name="binop"/>
+	  <OMA>
+	    <OMV name="binop"/>
+	    <OMV name="x"/>
+	    <OMV name="y"/>
+	  </OMA>
+	  <OMV name="z"/>
+	</OMA>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+<Example>
+This example represents the semigroup of all functions f: R -> R with
+function composition as the operation.
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="semigroup1" name="semigroup" />
+    <OMA><OMS cd="arith1" name="power" />
+      <OMS cd="setname1" name="R" />
+      <OMS cd="setname1" name="R" />
+    </OMA>
+    <OMS cd="fns1" name="left_compose"/>
+  </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> carrier </Name>
+<Description>
+This symbol represents a unary function, whose argument should be a
+semigroup S (for instance constructed by semigroup).  When
+applied to S, its value should be the set of elements of S.
+</Description>
+
+<Example>
+The carrier of semigroup(S,*) is S.
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="relation1" name="eq"/>
+       <OMA><OMS cd="semigroup1" name="carrier"/>
+            <OMA><OMS cd="semigroup1" name="semigroup"/>
+                 <OMV name="S"/>  <OMV name="times"/>
+            </OMA>
+       </OMA>
+       <OMV name="S"/>
+  </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> multiplication </Name>
+<Description>
+This symbol represents a unary function, whose argument should be a
+semigroup S.  It returns the multiplication map on S. 
+We allow for the map to be n-ary.
+</Description>
+
+<Example>
+The multiplication of semigroup(S,*) is *.
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="relation1" name="eq"/>
+       <OMA><OMS cd="semigroup1" name="multiplication"/>
+            <OMA><OMS cd="semigroup1" name="semigroup"/>
+                 <OMV name="S"/>  <OMV name="times"/>
+            </OMA>
+       </OMA>
+       <OMV name="times"/>
+  </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> is_commutative </Name>
+<Description>
+The unary boolean function whose value is true iff the argument is a
+commutative semigroup.
+</Description>
+
+<CMP>
+If is_commutative(S) then for all a,b in carrier(S) a*b = b*a
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA>
+    <OMS cd="logic1" name="implies"/>
+    <OMA>
+      <OMS cd="semigroup1" name="is_commutative"/>
+      <OMV name="S"/>
+    </OMA>
+    <OMBIND>
+      <OMS cd="quant1" name="forall"/>
+      <OMBVAR>
+        <OMV name="a"/>
+	<OMV name="b"/>
+      </OMBVAR>
+      <OMA>
+        <OMS cd="logic1" name="implies"/>
+	<OMA>
+	  <OMS cd="logic1" name="and"/>
+	  <OMA>
+	    <OMS cd="set1" name="in"/>
+	    <OMV name="a"/>
+	    <OMA>
+	      <OMS cd="semigroup1" name="carrier"/>
+	      <OMV name="S"/>
+	    </OMA>
+	  </OMA>
+	  <OMA>
+	    <OMS cd="set1" name="in"/>
+	    <OMV name="b"/>
+	    <OMA>
+	      <OMS cd="semigroup1" name="carrier"/>
+	      <OMV name="S"/>
+	    </OMA>
+	  </OMA>
+	</OMA>
+	<OMA><OMS cd="relation1" name="eq"/>
+          <OMA>
+            <OMA><OMS cd="semigroup1" name="multiplication"/>
+              <OMV name="S"/>
+            </OMA>
+	    <OMV name="a"/>
+	    <OMV name="b"/>
+	  </OMA>
+	  <OMA>
+            <OMA><OMS cd="semigroup1" name="multiplication"/>
+              <OMV name="S"/>
+            </OMA>
+	    <OMV name="b"/>
+	    <OMV name="a"/>
+	  </OMA>
+	</OMA>
+      </OMA>
+    </OMBIND>
+  </OMA>
+</OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> is_subsemigroup </Name>
+<Description>
+The binary boolean function whose value is true iff the second
+argument is a subsemigroup of the second.
+</Description>
+
+<CMP>
+If is_subsemigroup(S,T) then T is a set of elements of S and T
+is closed under multiplication.
+</CMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name>magma</Name>
+<Description>
+This symbol is a unary function.  Its argument should be a semigroup
+S.  When applied to S, it denotes the magma with the same element set
+and binary operation as S.
+</Description>
+
+<Example>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="relation1" name="eq" />
+    <OMA><OMS cd="semigroup1" name="magma"/>
+      <OMA><OMS cd="semigroup1" name="semigroup"/>
+        <OMV name="X" />
+        <OMV name="times"/>
+      </OMA>
+    </OMA>
+    <OMA><OMS cd="magma1" name="magma" />
+      <OMV name="X" />
+      <OMV name="times"/>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+
+
+<CDDefinition>
+<Name> subsemigroup </Name>
+<Description>
+This symbol is a constructor symbol with two arguments.  The first
+argument is a semigroup S, the second a list or set, D, of elements of S.
+When applied to S and D, it denotes the subsemigroup of S generated by D.
+</Description>
+
+<Example>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+     <OMA><OMS cd="semigroup1" name="subsemigroup"/>
+          <OMV name="S"/>  <OMV name="D"/>
+     </OMA>
+    </OMOBJ>
+</Example>
+
+<Example>
+This example represents the subsemigroup of the multiplicative semigroup of
+the nonzero reals generated by the constants Pi and E:
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMA><OMS cd="semigroup1" name="semigroup"/>
+     <OMA><OMS cd="semigroup1" name="semigroup"/>
+          <OMA><OMS cd="set1" name="suchthat"/>
+               <OMS cd="setname1" name="R"/>
+               <OMBIND><OMS cd="fns1" name="lambda"/>
+                       <OMBVAR> <OMV name="x"/>
+                       </OMBVAR>
+                       <OMA><OMS cd="relation1" name="neq"/>
+                            <OMV name="x"/>
+                            <OMS cd="alg1" name="zero"/>
+                       </OMA>
+               </OMBIND>
+          </OMA>
+          <OMS cd="arith1" name="times"/>
+     </OMA>
+     <OMA>
+       <OMS cd="list1" name="list"/>
+         <OMS cd="nums1" name="pi"/>
+         <OMS cd="nums1" name="e"/>
+     </OMA>
+</OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name>factor_of</Name>
+<Description>
+This symbol is a ternary function.  Its first argument should be a
+semigroup S and the second and third arguments should be elements of
+S.  When applied to S, a, and b, it denotes the fact that a is a
+divisor of b in S. This means that there are u,v in carrier(S) such
+that uav=b.
+</Description>
+
+<Example>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+     <OMA><OMS cd="semigroup1" name="factor_of"/>
+          <OMV name="S"/>          <OMV name="a"/>          <OMV name="b"/>
+     </OMA>
+    </OMOBJ>
+</Example>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name>expression</Name>
+<Description>
+This symbol is a function with two arguments.  Its first
+argument should be a semigroup G. The
+second should be an arithmetic expression A,
+whose operators are
+times and power, and whose leaves are members of the carrier of G. 
+The second argument of power should be positive. When applied to
+G and A, it denotes the element (of G) that is obtained from the
+leaves of A by applying the multiplication and the power map of G instead of the
+times and power of the CD arith1 appearing in A.
+</Description>
+
+<Example>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+    <OMA><OMS cd="relation1" name="eq"/>
+         <OMA><OMS cd="group1" name="expression"/>
+              <OMA><OMS cd="semigroup1" name="semigroup"/>
+                   <OMS cd="setname1" name="Z"/>
+                   <OMS cd="arith1" name="plus"/>
+              </OMA>
+              <OMA><OMS cd="arith1" name="times"/>
+                   <OMI>2</OMI><OMI>3</OMI>
+              </OMA>
+         </OMA>
+         <OMI>5</OMI>
+    </OMA>
+  </OMOBJ>
+</Example>
+
+</CDDefinition>
+
+</CD>
+
+
+
+
+
+
+
+
+
+
+

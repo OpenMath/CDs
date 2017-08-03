@@ -1,0 +1,398 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDName> relation3 </CDName>
+<CDBase> http://www.openmath.org/cd </CDBase>
+<CDURL> http://www.openmath.org/cd/relation3.ocd </CDURL>
+<CDReviewDate> 2003-04-01 </CDReviewDate>
+<CDDate> 2001-03-12 </CDDate>
+<CDVersion> 2 </CDVersion>
+<CDRevision> 0 </CDRevision>
+<CDStatus> official </CDStatus>
+<CDUses>
+  <CDName>arith1</CDName>
+  <CDName>logic1</CDName>
+  <CDName>nums1</CDName>
+  <CDName>set1</CDName>
+  <CDName>relation1</CDName>
+</CDUses>
+
+<Description>
+    This CD holds the basic equivalence relation notions. 
+</Description>
+
+<CDDefinition>
+<Name> is_relation </Name>
+<Description> 
+This symbol is a boolean function of two arguments, S and R.
+The first argument should be a set. When applied to S and R, the function
+returns true if and only if the second argument  is a subset of the Cartesian
+product of S with itself.
+</Description>
+<CMP>
+R a subset of S x S if and only if is_relation (S,R).
+</CMP>
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMA><OMS cd="logic1" name="equivalent"/>
+     <OMA><OMS cd="set1" name="subset"/>
+          <OMV name="R"/>
+          <OMA><OMS cd="set1" name="cartesian_product"/>
+               <OMV name="S"/>
+          </OMA>
+     </OMA>
+     <OMA><OMS cd="relation3" name="is_relation"/>
+          <OMV name="S"/>
+          <OMV name="R"/>
+     </OMA>
+</OMA>
+</OMOBJ></FMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name>equivalence_closure </Name>
+<Description> 
+This symbol represents a binary function whose first argument is a set S,
+whose second argument is a relation R on S.
+When applied to S and R, it represents the smallest equivalence relation
+(with respect to inclusion) on S containing R.
+</Description>
+
+</CDDefinition>
+
+
+<CDDefinition>
+<Name>transitive_closure </Name>
+<Description> 
+This symbol represents a binary function whose first argument is a set S,
+whose second argument is a relation R on S.
+When applied to S and R, it represents the smallest transitive relation
+(with respect to inclusion) on S containing R.
+</Description>
+
+</CDDefinition>
+
+
+<CDDefinition>
+<Name>reflexive_closure </Name>
+<Description> 
+This symbol represents a binary function whose first argument is a set S,
+whose second argument is a relation R on S.
+When applied to S and R, it represents the smallest reflexive relation
+(with respect to inclusion) on S containing R.
+</Description>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name>symmetric_closure </Name>
+<Description> 
+This symbol represents a binary function whose first argument is a set S,
+whose second argument is a relation R on S.
+When applied to S and R, it represents the smallest symmetric relation
+(with respect to inclusion) on S containing R.
+</Description>
+</CDDefinition>
+
+
+
+<CDDefinition>
+<Name> is_transitive </Name>
+<Description>
+This symbol represents the boolean binary function which returns
+true if and only if the second argument is a transitive relation on the first.
+</Description>
+
+<CMP>
+R is transitive on S if and only if, for all a,b,c in S with
+(a,b) in R and (b,c) in R, wehave (a,c) in R.
+</CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMA><OMS cd="logic1" name="equivalent"/>
+     <OMA><OMS cd="relation3" name="is_transitive"/>
+          <OMV name="S"/>    <OMV name="R"/>
+     </OMA>
+     <OMBIND><OMS cd="quant1" name="forall"/>
+          <OMBVAR> <OMV name="a"/> <OMV name="b"/><OMV name="c"/>
+          </OMBVAR>
+          <OMA><OMS cd="logic1" name="implies"/>
+               <OMA><OMS cd="logic1" name="and"/>
+                    <OMA><OMS cd="set1" name="in"/>
+                         <OMV name="a"/>
+                         <OMV name="S"/>
+                    </OMA>
+                    <OMA><OMS cd="set1" name="in"/>
+                         <OMV name="b"/>
+                         <OMV name="S"/>
+                    </OMA>
+                    <OMA><OMS cd="set1" name="in"/>
+                         <OMV name="c"/>
+                         <OMV name="S"/>
+                    </OMA>
+                    <OMA><OMS cd="set1" name="in"/>
+                         <OMA><OMS cd="list1" name="list"/>
+                              <OMV name="a"/>  <OMV name="b"/>
+                         </OMA>
+                         <OMV name="R"/>
+                    </OMA>
+                    <OMA><OMS cd="set1" name="in"/>
+                         <OMA><OMS cd="list1" name="list"/>
+                              <OMV name="b"/>  <OMV name="c"/>
+                         </OMA>
+                         <OMV name="R"/>
+                    </OMA>
+               </OMA>
+               <OMA><OMS cd="set1" name="in"/>
+                    <OMA><OMS cd="list1" name="list"/>
+                         <OMV name="a"/>  <OMV name="c"/>
+                    </OMA>
+                    <OMV name="R"/>
+               </OMA>
+          </OMA>
+    </OMBIND>
+</OMA>
+</OMOBJ>
+</FMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name>is_reflexive </Name>
+<Description> 
+This symbol represents the boolean binary function which returns
+true if and only if the second argument is a reflexive relation on the first.
+</Description>
+
+<CMP>
+is_reflexive(S,R) if and only if, for all, a in S, we have (a,a) in R.
+</CMP>
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMA><OMS cd="logic1" name="equivalent"/>
+     <OMA><OMS cd="relation3" name="is_reflexive"/>
+          <OMV name="S"/>    <OMV name="R"/>
+     </OMA>
+     <OMBIND><OMS cd="quant1" name="forall"/>
+          <OMBVAR> <OMV name="a"/>
+          </OMBVAR>
+          <OMA><OMS cd="logic1" name="implies"/>
+               <OMA><OMS cd="set1" name="in"/>
+                    <OMV name="a"/>
+                    <OMV name="S"/>
+              </OMA>
+              <OMA><OMS cd="set1" name="set"/>
+                   <OMA><OMS cd="list1" name="list"/>
+                        <OMV name="a"/>  <OMV name="a"/>
+                   </OMA>
+                   <OMV name="R"/>
+              </OMA>
+         </OMA>
+    </OMBIND>
+</OMA>
+</OMOBJ></FMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> is_symmetric </Name>
+<Description> 
+This symbol represents the boolean binary function which returns
+true if and only if the second argument is a symmetric relation on the first.
+</Description>
+
+<CMP> is_symmetric(S,R) if and only if, for all a, b in S with (a,b) in R,
+we have (b,a) in R. </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMA><OMS cd="logic1" name="equivalent"/>
+     <OMA><OMS cd="relation3" name="is_symmetric"/>
+          <OMV name="S"/>    <OMV name="R"/>
+     </OMA>
+     <OMBIND><OMS cd="quant1" name="forall"/>
+          <OMBVAR> <OMV name="a"/> <OMV name="b"/>
+          </OMBVAR>
+          <OMA><OMS cd="logic1" name="implies"/>
+               <OMA><OMS cd="logic1" name="and"/>
+                    <OMA><OMS cd="set1" name="in"/>
+                         <OMV name="a"/>
+                         <OMV name="S"/>
+                    </OMA>
+                    <OMA><OMS cd="set1" name="in"/>
+                         <OMV name="b"/>
+                         <OMV name="S"/>
+                    </OMA>
+                    <OMA><OMS cd="set1" name="in"/>
+                         <OMA><OMS cd="list1" name="list"/>
+                              <OMV name="a"/>  <OMV name="b"/>
+                         </OMA>
+                         <OMV name="R"/>
+                    </OMA>
+               </OMA>
+               <OMA><OMS cd="set1" name="in"/>
+                    <OMA><OMS cd="list1" name="list"/>
+                         <OMV name="b"/>  <OMV name="a"/>
+                    </OMA>
+                    <OMV name="R"/>
+               </OMA>
+          </OMA>
+    </OMBIND>
+</OMA>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> is_equivalence </Name>
+<Description> 
+This symbol represents the boolean binary function which returns
+true if and only if the second argument is a symmetric relation on the first.
+</Description>
+
+<CMP>
+R is an equivalence relation on S if and only if R is a symmetric, reflexive,
+transitive relation on S.
+</CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMA><OMS cd="logic1" name="equivalent"/>
+     <OMA><OMS cd="relation3" name="is_symmetric"/>
+          <OMV name="S"/>    <OMV name="R"/>
+     </OMA>
+     <OMA><OMS cd="logic1" name="and"/>
+          <OMA><OMS cd="relation3" name="is_relation"/>
+               <OMV name="S"/>    <OMV name="R"/>
+          </OMA>
+          <OMA><OMS cd="relation3" name="is_symmetric"/>
+               <OMV name="S"/>    <OMV name="R"/>
+          </OMA>
+          <OMA><OMS cd="relation3" name="is_reflexive"/>
+               <OMV name="S"/>    <OMV name="R"/>
+          </OMA>
+          <OMA><OMS cd="relation3" name="is_transitive"/>
+               <OMV name="S"/>    <OMV name="R"/>
+          </OMA>
+     </OMA>
+</OMA>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> class </Name>
+<Description> 
+This symbol represents a ternary function whose first argument is a set S,
+whose second argument is a relation R on S, and whose third argument is an
+element a of S.
+When applied to S, R, and a, it represents the set of all elements in S
+related to a by R, that is, the set {b in S | (a,b) in R}.
+</Description>
+
+<CMP>
+class(S,R,a) = {b in S | (a,b) in R}.
+</CMP>
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMA><OMS cd="relation1" name="eq"/>
+     <OMA><OMS cd="relation3" name="class"/>
+          <OMV name="S"/>    <OMV name="R"/> <OMV name="a"/>
+     </OMA>
+     <OMA><OMS cd="set1" name="suchthat"/>
+          <OMV name="S"/>
+          <OMBIND><OMS cd="fns1" name="lambda"/>
+               <OMBVAR> <OMV name="b"/></OMBVAR>
+               <OMA><OMS cd="set1" name="in"/>
+                    <OMA><OMS cd="list1" name="list"/>
+                         <OMV name="a"/>  <OMV name="b"/>
+                    </OMA>
+                    <OMV name="R"/>
+               </OMA>
+          </OMBIND>
+     </OMA>
+</OMA>
+</OMOBJ></FMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name>classes </Name>
+<Description> 
+This symbol represents a binary function whose first argument is a set S,
+whose second argument is a relation R on S.
+When applied to S and R, it represents the set of all elements in S
+of the form class(S,R,a) for a in S.
+</Description>
+
+
+<CMP>
+The classes of an equivalence relation R on S partition S.
+</CMP>
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMA><OMS cd="logic1" name="implies"/>
+     <OMA><OMS cd="relation3" name="is_equivalence"/>
+          <OMV name="S"/>    <OMV name="R"/> 
+     </OMA>
+     <OMBIND><OMS cd="quant1" name="forall"/>
+          <OMBVAR> <OMV name="a"/> <OMV name="b"/></OMBVAR>
+          <OMA><OMS cd="logic1" name="implies"/>
+               <OMA><OMS cd="set1" name="in"/>
+                    <OMA><OMS cd="list1" name="list"/>
+                         <OMV name="a"/>  <OMV name="b"/>
+                    </OMA>
+                    <OMA><OMS cd="set1" name="cartesian_product"/>
+                         <OMV name="S"/>  <OMV name="S"/>
+                    </OMA>
+               </OMA>
+               <OMA><OMS cd="logic1" name="or"/>
+                    <OMA><OMS cd="relation1" name="eq"/>
+                         <OMA><OMS cd="set1" name="intersect"/>
+                              <OMA><OMS cd="relation3" name="class"/>
+                                   <OMV name="S"/><OMV name="R"/><OMV name="a"/>
+                              </OMA>
+                              <OMA><OMS cd="relation3" name="class"/>
+                                   <OMV name="S"/>  <OMV name="R"/>  <OMV name="b"/>
+                              </OMA>
+                         </OMA>
+                         <OMS cd="set1" name="emptyset"/>
+                    </OMA>
+
+                    <OMA><OMS cd="relation1" name="eq"/>
+                         <OMA><OMS cd="relation3" name="class"/>
+                              <OMV name="S"/><OMV name="R"/><OMV name="a"/>
+                         </OMA>
+                         <OMA><OMS cd="relation3" name="class"/>
+                              <OMV name="S"/>  <OMV name="R"/>  <OMV name="b"/>
+                         </OMA>
+                    </OMA>
+               </OMA>
+          </OMA>
+     </OMBIND>
+ </OMA>
+</OMOBJ></FMP>
+
+
+
+<CMP>
+The classes of a reflexive relation R on S cover S, as a in S belongs to class(S,R,a).
+</CMP>
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMA><OMS cd="logic1" name="implies"/>
+     <OMA><OMS cd="relation3" name="is_reflexive"/>
+          <OMV name="S"/>    <OMV name="R"/> 
+     </OMA>
+     <OMBIND><OMS cd="quant1" name="forall"/>
+          <OMBVAR> <OMV name="a"/></OMBVAR>
+          <OMA><OMS cd="logic1" name="implies"/>
+               <OMA><OMS cd="set1" name="in"/>
+                    <OMV name="a"/> <OMV name="S"/> 
+               </OMA>
+               <OMA><OMS cd="set1" name="in"/>
+                    <OMV name="a"/>
+                    <OMA><OMS cd="relation3" name="class"/>
+                         <OMV name="S"/><OMV name="R"/><OMV name="a"/>
+                    </OMA>
+               </OMA>
+          </OMA>
+     </OMBIND>
+ </OMA>
+</OMOBJ></FMP>
+
+
+</CDDefinition>
+
+</CD>
+

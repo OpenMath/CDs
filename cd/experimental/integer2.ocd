@@ -1,0 +1,160 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDName> integer2 </CDName>
+<CDBase> http://www.openmath.org/cd </CDBase>
+<CDURL> http://www.openmath.org/cd/integer2.ocd </CDURL>
+<CDReviewDate> 2006-07-11  </CDReviewDate>
+<CDDate> 2004-07-11 </CDDate>
+<CDVersion> 0 </CDVersion>
+<CDRevision> 1 </CDRevision>
+<CDStatus> experimental </CDStatus>
+<CDUses>
+  <CDName>alg1</CDName>
+  <CDName>arith1</CDName>
+  <CDName>logic1</CDName>
+  <CDName>quant1</CDName>
+  <CDName>set1</CDName>
+  <CDName>setname1</CDName>
+  <CDName>setname2</CDName>
+  <CDName>relation1</CDName>
+  <CDName>fns1</CDName>
+  <CDName>interval1</CDName>
+  <CDName>integer1</CDName>
+</CDUses>
+<Description>
+    This CD holds a collection of basic modular arithmetic for integers.
+
+</Description>
+
+<CDDefinition>
+<Name>modulo_relation</Name>
+<Description>
+This symbol represents a univariate function, whose argument should be an integer.
+When applied to an integer m, it denotes the equivalence relation of being
+equal modulo m on Z.
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name>divides</Name>
+<Description>
+This symbol represents a bivariate Boolean function, whose arguments should be integers.
+When applied to integers a and b, it denotes the property that a divides b.
+</Description>
+
+
+<CMP>
+For two integers a and b, the number a divides b if and only, in the magma Z
+with multiplication, a is a left divisor of b.
+
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMA><OMS cd="logic1" name="equivalent"/>
+     <OMA><OMS cd="integer2" name="divides"/>
+          <OMV name="a"/><OMV name="b"/>
+     </OMA>
+     <OMA><OMS cd="magma1" name="left_divides"/>
+          <OMA><OMS cd="magma1" name="magma"/>
+               <OMS cd="setname1" name="Z"/>
+               <OMS cd="arith1" name="times"/>
+          </OMA>
+          <OMV name="a"/><OMV name="b"/>
+     </OMA>
+</OMA>
+</OMOBJ>
+</FMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name>eqmod</Name>
+<Description>
+This symbol represents a Boolean valued trivariate function, whose arguments should be integers.
+When applied to integers a, b, m, it denotes the Boolean 
+evalue of the assertion that a and b are equal modulo m.
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name>neqmod</Name>
+<Description>
+This symbol represents a Boolean valued trivariate function, whose arguments should be integers.
+When applied to integers a, b, m, it denotes the Boolean 
+evalue of the assertion that a and b are not equal modulo m.
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name>class</Name>
+<Description>
+This symbol represents a bivariate function, whose arguments should be integers.
+If a, m are integers, then class(a,m) denotes the residue class a mod m in setname2.Zm.
+</Description>
+</CDDefinition>
+
+<!--
+<CDDefinition>
+<Name>classring</Name>
+<Description>
+If  m is an integer, then classring(m) denotes the
+the residue class ring Z/mZ. 
+</Description>
+</CDDefinition>
+amc: This is taken care of by setname2.Zm
+-->
+
+<!--
+<CDDefinition>
+<Name>multgroup</Name>
+<Description>
+If  m is an integer, then multgroup(m) denotes the multiplicative
+group of invertible elements in 
+the residue class ring Z/mZ. 
+</Description>
+</CDDefinition>
+amc: this is taken care of by ring3.multiplicative_group
+-->
+
+<CDDefinition>
+<Name>euler</Name>
+<Description>
+This symbol denotes the univariate Euler totient function.
+If m is an integer, then euler(m) denotes the order of the multiplicative
+group of invertible elements in 
+the residue class ring Z/mZ. 
+</Description>
+</CDDefinition>
+
+
+
+<CDDefinition>
+<Name>ord</Name>
+<Description>
+This symbol  denotes a binary function. Its first argument shoud be a prime
+number p, the second an integer n.
+When applied to p and n, it represents the highest power of p occurring in a
+factorization of n.
+</Description>
+
+
+<Example>
+There are two factors 2 in 60:
+<OMOBJ  xmlns="http://www.openmath.org/OpenMath" version="2.0"> 
+<OMA><OMS name="ord" cd="integer2"/>
+    <OMA><OMS name="ord" cd="integer2"/>
+         <OMI>2</OMI>  <OMI>60</OMI>
+     </OMA>
+     <OMI>2</OMI>
+</OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+         
+</CD>
+
+
+
+
+

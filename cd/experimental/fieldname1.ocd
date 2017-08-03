@@ -1,0 +1,164 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDName> fieldname1 </CDName>
+<CDBase> http://www.openmath.org/cd </CDBase>
+<CDURL> http://www.openmath.org/cd/fieldname1.ocd </CDURL>
+<CDReviewDate> 2006-06-01 </CDReviewDate>
+<CDDate> 2004-06-01 </CDDate>
+<CDVersion> 1 </CDVersion>
+<CDRevision> 1 </CDRevision>
+<CDStatus> experimental </CDStatus>
+
+<Description> A CD of 
+functions for basic constructions in field theory.
+</Description>
+
+<CDComment>
+Written by Arjeh M. Cohen 2004-02-25
+</CDComment>
+
+
+<CDDefinition>
+<Name> C </Name>
+<Description>
+This is a symbol representing the field of complex numbers.
+</Description>
+
+
+<CMP>
+The field of complex numbers is (C, +,0,-,*,1,/), where +,-,*,/ are the standard
+arithmetic operations.
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="relation1" name="eq"/>
+       <OMS cd="fieldname1" name="C"/>
+       <OMA><OMS cd="field1" name="field"/>
+            <OMS cd="setname1" name="C"/>
+            <OMS cd="arith1" name="plus"/>
+            <OMI>0</OMI>
+            <OMS cd="arith1" name="minus"/>
+            <OMS cd="arith1" name="times"/>
+            <OMI>1</OMI>
+            <OMS cd="arith1" name="divide"/>
+       </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> R </Name>
+<Description>
+This is a symbol representing the field of real numbers.
+</Description>
+
+
+<CMP>
+The field of real numbers is (R, +,0,-,*,1,/), where +,-,*,/ are the standard
+arithmetic operations.
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="relation1" name="eq"/>
+       <OMS cd="fieldname1" name="R"/>
+       <OMA><OMS cd="field1" name="field"/>
+                 <OMS cd="setname1" name="R"/>
+                 <OMS cd="arith1" name="plus"/>
+                 <OMI>0</OMI>
+                 <OMS cd="arith1" name="minus"/>
+                 <OMS cd="arith1" name="times"/>
+                 <OMI>1</OMI>
+                 <OMS cd="arith1" name="divide"/>
+       </OMA>
+
+  </OMA>
+</OMOBJ>
+</FMP>
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> Q </Name>
+<Description>
+This is a symbol representing the field of rational numbers.
+</Description>
+
+
+<CMP>
+The field of rational numbers is (Q, +,0,-,*,1,/), where +,-,*,/ are the standard
+arithmetic operations.
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="relation1" name="eq"/>
+       <OMS cd="fieldname1" name="Q"/>
+       <OMA><OMS cd="field1" name="field"/>
+                 <OMS cd="setname1" name="Q"/>
+                 <OMS cd="arith1" name="plus"/>
+                 <OMI>0</OMI>
+                 <OMS cd="arith1" name="minus"/>
+                 <OMS cd="arith1" name="times"/>
+                 <OMI>1</OMI>
+                 <OMS cd="arith1" name="divide"/>
+       </OMA>
+
+  </OMA>
+</OMOBJ>
+</FMP>
+
+
+
+
+<CMP> 
+The carrier set of this field is the set of rational numbers.
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS name="eq" cd="relation1"/>
+       <OMA><OMS name="carrier" cd="ring1"/>
+            <OMS name="Q" cd="fieldname1"/>
+       </OMA>
+       <OMS name="Q" cd="setname1"/>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+
+
+<Example>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+    <OMA><OMS cd="relation1" name="eq"/>
+         <OMS cd="fieldname1" name="Q"/>
+         <OMA><OMS cd="field1" name="field"/>
+              <OMS cd="setname1" name="Q"/>
+              <OMS cd="arith1" name="plus"/>
+              <OMI>0</OMI>
+              <OMS cd="arith1" name="minus"/>
+              <OMS cd="arith1" name="times"/>
+              <OMI>1</OMI>
+              <OMBIND><OMS cd="fns1" name="lambda"/>
+                   <OMBVAR>  <OMV name="x"/>  </OMBVAR>
+                   <OMA><OMS cd="arith1" name="divide"/>
+                        <OMI> 1 </OMI>  <OMV name="x"/>
+                   </OMA>
+              </OMBIND>
+         </OMA>
+    </OMA>
+ </OMOBJ>
+</Example>
+
+
+</CDDefinition>
+
+
+
+
+
+
+
+</CD>

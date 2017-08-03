@@ -1,0 +1,192 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+   <CDName> polyd2 </CDName> 
+<CDBase> http://www.openmath.org/cd </CDBase>
+   <CDURL> http://www.openmath.org/cd/polyd2.ocd </CDURL>
+   <CDReviewDate> 2006-04-01 </CDReviewDate> 
+   <CDDate> 2004-07-07 </CDDate> 
+   <CDStatus> experimental </CDStatus>
+   <CDVersion> 3 </CDVersion>
+   <CDRevision> 0 </CDRevision>
+<CDUses>
+</CDUses>
+   <Description>
+     This CD defines symbols for ordering of monomial for
+     Distributed Multivariate Polynomials, which were defined in polyd1.
+</Description>
+
+<CDComment>
+Original OpenMath v1.1 Poly 1997
+Update to Current Format 1999-07-07 DPC
+Move the names of rings to setname.ocd 1999-11-09 JHD
+Delete those items moved to the new poly.ocd 1999-11-14 JHD
+Delete those items pertaining to Groebner bases 2004-07-07 AMC
+
+These are of use for canonical ways of writing polynomials and for Groebner bases
+</CDComment>
+    <CDDefinition>
+       <Name> ordering </Name>
+       <Description> 
+          Used as an attribute to indicate an ordering of the monomials in a
+          polynomial or list of polynomials. The value of this attribute
+          should be one of the constructors specifying ordering. 
+       </Description>
+    </CDDefinition>
+
+<CDComment>
+          The following orders on monomials have their standards definitions, 
+         see, for example, "Ideals, Varieties and Algorithms", D. Cox, 
+         J.B. Little and D. O'Shea, Springer Verlag.
+</CDComment>
+
+    <CDDefinition>
+       <Name> lexicographic </Name>
+       <Description> 
+          The lexicographic ordering of monomials.
+       </Description>
+    </CDDefinition>
+
+    <CDDefinition>
+       <Name> reverse_lexicographic </Name>
+       <Description> 
+          The reverse lexicographic ordering of monomials
+       </Description>
+    </CDDefinition>
+
+    <CDDefinition>
+       <Name> graded_lexicographic </Name>
+       <Description> 
+          Total degree order, graded with the lexicographic ordering.
+       </Description>
+    </CDDefinition>
+
+    <CDDefinition>
+       <Name> graded_reverse_lexicographic </Name>
+       <Description> 
+          Total degree order, graded with the reverse lexicographic ordering.
+       </Description>
+    </CDDefinition>
+
+    <CDDefinition>
+       <Name> elimination </Name>
+       <Description> 
+          This is an ordering, which is partially in terms of one
+          ordering, and partially in terms of another.
+          First argument is a number of variables.
+          Second is ordering to apply on the first so many variables.
+          Third is an ordering on the rest, to be used to break ties.
+       </Description>
+       <Example>
+         <OMOBJ  xmlns="http://www.openmath.org/OpenMath" version="2.0">
+           <OMA>
+             <OMS name="elimination" cd="polyd2"/>
+             <OMI> 1 </OMI>
+             <OMS name="lexicographic" cd="polyd2"/>
+             <OMS name="graded_reverse_lexicographic" cd="polyd2"/>
+           </OMA>
+         </OMOBJ>
+       </Example>
+    </CDDefinition>
+
+    <CDDefinition>
+       <Name> matrix_ordering </Name>
+       <Description> 
+          The argument is a matrix with as many columns as indeterminates
+          (= rank). Each row in turm is multiplied by the column vector of
+          exponents to produce a weighting for comparison purposes.
+       </Description> 
+    </CDDefinition>
+
+    <CDDefinition>
+       <Name> weighted </Name>
+       <Description> 
+          The first argument is a list of integers to act as variable weights,
+          and the second is an ordering. The result is an ordering.
+       </Description> 
+    </CDDefinition>
+
+
+
+<CDComment>
+  We need a few more orderings... 
+</CDComment>
+
+<CDComment>
+     Definition of some other constructors
+</CDComment>
+
+    <CDDefinition>
+      <Name> weighted_degree </Name>
+      <Description> 
+        The total degree of its argument, taking into account any weights 
+        declared. The value returned is an integer: non-negative if the 
+        weights are. We note that the degree of 0 is undefined.
+      </Description>
+      <Example>
+        <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+          <OMA>
+            <OMS name="eq" cd="relation1"/>
+            <OMA>
+              <OMS name="weighted_degree" cd="polyd2"/>
+              <OMA>
+                <OMS name="DMP" cd="polyd1"/>
+                <OMA>
+                  <OMS name="poly_ring_d" cd="polyd1"/>
+                  <OMS name="Q" cd="setname1"/>
+                  <OMI> 3 </OMI>
+                </OMA>
+                <OMATTR>
+                  <OMATP>
+                    <OMS name="ordering" cd="polyd2"/>
+                    <OMA>
+                      <OMS name="weighted" cd="polyd2"/>
+                      <OMA>
+                        <OMS name="list" cd="list1"/>
+                        <OMI> 1 </OMI>
+                        <OMI> 2 </OMI>
+                        <OMI> 3 </OMI>
+                      </OMA>
+                      <OMS name="graded_lexicographic" cd="polyd2"/>
+                    </OMA>
+                  </OMATP>
+                  <OMA>
+                    <OMS name="SDMP" cd="polyd1"/>
+                    <OMA>
+                      <OMS name="term" cd="polyd1"/>
+                      <OMI> 1 </OMI>
+                      <OMI> 0 </OMI>
+                      <OMI> 0 </OMI>
+                      <OMI> 1 </OMI>
+                    </OMA>
+                    <OMA>
+                      <OMS name="term" cd="polyd1"/>
+                      <OMI> 2 </OMI>
+                      <OMI> 2 </OMI>
+                      <OMI> 0 </OMI>
+                      <OMI> 0 </OMI>
+                    </OMA>
+                    <OMA>
+                      <OMS name="term" cd="polyd1"/>
+                      <OMI> 3 </OMI>
+                      <OMI> 0 </OMI>
+                      <OMI> 1 </OMI>
+                      <OMI> 0 </OMI>
+                    </OMA>
+                    <OMA>
+                      <OMS name="term" cd="polyd1"/>
+                      <OMI> 4 </OMI>
+                      <OMI> 1 </OMI>
+                      <OMI> 0 </OMI>
+                      <OMI> 0 </OMI>
+                    </OMA>
+                  </OMA>
+                </OMATTR>
+              </OMA>
+            </OMA>
+            <OMI> 3 </OMI>
+          </OMA>
+        </OMOBJ>
+      </Example>
+    </CDDefinition>
+
+
+</CD>

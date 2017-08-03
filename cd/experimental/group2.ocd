@@ -1,0 +1,356 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDName> group2 </CDName>
+<CDBase> http://www.openmath.org/cd </CDBase>
+<CDURL> http://www.openmath.org/cd/group2.ocd </CDURL>
+<CDReviewDate> 2006-06-01 </CDReviewDate>
+<CDDate> 2004-06-01 </CDDate>
+<CDVersion> 1 </CDVersion>
+<CDRevision> 3 </CDRevision>
+<CDStatus> experimental </CDStatus>
+
+<Description> A CD of functions like homomorphisms for groups   </Description>
+
+<CDComment>
+Written by Arjeh M. Cohen 2004-02-20.
+Edited AMC 2004-03-02
+</CDComment>
+
+
+<CDDefinition>
+<Name> is_homomorphism </Name>
+<Description>
+This symbol is a boolean function with three arguments.
+The first two arguments are groups M, N,
+the third is a map f from the element set of M to the element set of N.
+When applied to M, N, and f, it denotes that f is a group homomorphism from M
+to N.
+</Description>
+
+<CMP>
+If is_homomorphism(M,N,f) then, for each pair of elements x, y of M, we have
+f(x * y) = f(x) * f(y).
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="logic1" name="implies"/>
+       <OMA><OMS cd="group2" name="is_homomorphism"/>
+            <OMV name="M"/> <OMV name="N"/>  <OMV name="f"/>
+       </OMA>
+       <OMBIND><OMS cd="quant1" name="forall"/>
+            <OMBVAR><OMV name="x"/><OMV name="y"/>  </OMBVAR>
+            <OMA><OMS cd="logic1" name="implies"/>
+                 <OMA><OMS cd="logic1" name="and"/>
+                      <OMA><OMS cd="set1" name="in"/>
+                           <OMV name="x"/>
+                           <OMA><OMS cd="group1" name="carrier"/>
+                                <OMV name="M"/>
+                           </OMA>
+                      </OMA>
+	              <OMA><OMS cd="set1" name="in"/>
+                           <OMV name="y"/>
+                           <OMA><OMS cd="group1" name="carrier"/>
+                                <OMV name="G"/>
+                           </OMA>
+                      </OMA>
+                 </OMA>
+                 <OMA><OMS cd="relation1" name="eq"/>
+                      <OMA><OMV name="f"/>
+                           <OMA><OMS cd="arith1" name="times"/>
+	                        <OMV name="x"/> <OMV name="y"/>
+                           </OMA>
+                      </OMA>
+                      <OMA><OMS cd="arith1" name="times"/>
+                           <OMA><OMV name="f"/>
+                                <OMV name="y"/>
+                           </OMA>
+                           <OMA><OMV name="f"/>
+                                <OMV name="x"/>
+                           </OMA>
+                      </OMA>
+                 </OMA>
+             </OMA>
+        </OMBIND>
+   </OMA>
+</OMOBJ>
+</FMP>
+
+<Example>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+     <OMA><OMS cd="group2" name="is_homomorphism"/>
+          <OMV name="M"/>  <OMV name="N"/> <OMV name="f"/>
+     </OMA>
+    </OMOBJ>
+</Example>
+
+</CDDefinition>
+
+
+
+<CDDefinition>
+<Name> is_isomorphism </Name>
+<Description>
+This symbol is a boolean function with three arguments.
+The first and arguments are groups M, N,
+the third is a map f from the element set of M to the element set of N.
+When applied to M, N, and f, it denotes that f is a group isomorphism from M
+to N.
+This means that f is a homomorphism from M to N,
+that f is bijective, and that its inverse  is a homomorphism from N to M.
+</Description>
+
+<Example>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+     <OMA><OMS cd="group2" name="is_isomorphism"/>
+          <OMV name="M"/>  <OMV name="N"/> <OMV name="f"/>
+     </OMA>
+    </OMOBJ>
+</Example>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> isomorphic </Name>
+<Description>
+This symbol is a Boolean function with n arguments, n at least 2, which are groups.
+When applied to M_1, ..., M_n, it denotes the fact that there is an
+isomorphism from each M_i to each M_j.
+</Description>
+
+<Example>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+     <OMA><OMS cd="group2" name="isomorphic"/>
+          <OMV name="M"/>  <OMV name="N"/> 
+     </OMA>
+    </OMOBJ>
+</Example>
+
+</CDDefinition>
+
+
+
+<CDDefinition>
+<Name> is_endomorphism </Name>
+<Description>
+This symbol is a boolean function with two arguments.
+The first argument is a group M,
+the second is a map f from the element set of M to the element set of M.
+When applied to M and f, it denotes that f is a group endomorphism from M
+to M.
+</Description>
+
+<CMP>
+If is_endomorphism(M,f) then is_homomorphism(M,M,f)
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="logic1" name="implies"/>
+       <OMA><OMS cd="group2" name="is_endomorphism"/>
+            <OMV name="M"/>  <OMV name="f"/>
+       </OMA>
+       <OMA><OMS cd="group2" name="is_homomorphism"/>
+            <OMV name="M"/> <OMV name="M"/>  <OMV name="f"/>
+       </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+
+<Example>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+     <OMA><OMS cd="group2" name="is_endomorphism"/>
+          <OMV name="M"/> <OMV name="f"/>
+     </OMA>
+    </OMOBJ>
+</Example>
+
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> is_automorphism </Name>
+<Description>
+This symbol is a boolean function with two arguments.
+The first is a group M,
+the second is a map f from the element set of M to the element set of M.
+When applied to M and f, it denotes a group automorphism f of  M.
+</Description>
+
+<CMP>
+If is_automorphism(M,f) then is_isomorphism(M,M,f)
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="logic1" name="implies"/>
+       <OMA><OMS cd="group2" name="is_automorphism"/>
+            <OMV name="M"/>  <OMV name="f"/>
+       </OMA>
+       <OMA><OMS cd="group2" name="is_isomorphism"/>
+            <OMV name="M"/> <OMV name="M"/>  <OMV name="f"/>
+       </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+<Example>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+     <OMA><OMS cd="group2" name="is_automorphism"/>
+          <OMV name="M"/> <OMV name="f"/>
+     </OMA>
+    </OMOBJ>
+</Example>
+
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> left_multiplication </Name>
+<Description>
+This symbol is a function with two arguments, which should be a group M
+and an element x of M.
+When applied to M and x, it denotes left multiplication on M by x.
+</Description>
+
+<CMP>
+left_multiplication(M,x) (y) = x * y.
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+       <OMBIND><OMS cd="quant1" name="forall"/>
+            <OMBVAR><OMV name="M"/><OMV name="x"/><OMV name="y"/>  </OMBVAR>
+            <OMA><OMS cd="relation1" name="eq"/>
+                 <OMA><OMA><OMS cd="group2" name="left_multiplication"/>
+                           <OMV name="M"/> <OMV name="x"/>
+                      </OMA>
+                      <OMV name="y"/>
+                 </OMA>
+                 <OMA><OMS cd="group1" name="multiplication"/>
+                      <OMV name="M"/>
+                      <OMV name="x"/><OMV name="y"/>
+                 </OMA>
+             </OMA>
+        </OMBIND>
+</OMOBJ>
+</FMP>
+
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> right_multiplication </Name>
+<Description>
+This symbol is a function with two arguments, which should be a group M
+and an element x of M.
+When applied to M and x, it denotes right multiplication on M by x.
+</Description>
+
+<CMP>
+right_multiplication(M,x) (y) = y * x.
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+       <OMBIND><OMS cd="quant1" name="forall"/>
+            <OMBVAR><OMV name="M"/><OMV name="x"/><OMV name="y"/>  </OMBVAR>
+            <OMA><OMS cd="relation1" name="eq"/>
+                 <OMA><OMA><OMS cd="group2" name="right_multiplication"/>
+                           <OMV name="M"/> <OMV name="x"/>
+                      </OMA>
+                      <OMV name="y"/>
+                 </OMA>
+                 <OMA><OMS cd="group1" name="multiplication"/>
+                      <OMV name="M"/>
+                      <OMV name="y"/><OMV name="x"/>
+                 </OMA>
+             </OMA>
+        </OMBIND>
+</OMOBJ>
+</FMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> right_inverse_multiplication </Name>
+<Description>
+This symbol is a function with two arguments, which should be a group M
+and an element x of M.
+When applied to M and x, it denotes right multiplication on M by the inverse of x.
+</Description>
+
+<CMP>
+right_inverse_multiplication(M,x) (y) = y * x^(-1).
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+       <OMBIND><OMS cd="quant1" name="forall"/>
+            <OMBVAR><OMV name="M"/><OMV name="x"/><OMV name="y"/>  </OMBVAR>
+            <OMA><OMS cd="relation1" name="eq"/>
+                 <OMA><OMA><OMS cd="group2" name="right_inverse_multiplication"/>
+                           <OMV name="M"/> <OMV name="x"/>
+                      </OMA>
+                      <OMV name="y"/>
+                 </OMA>
+                 <OMA><OMS cd="group1" name="multiplication"/>
+                      <OMV name="M"/>
+                      <OMV name="y"/>
+                      <OMA><OMS cd="arith1" name="power"/>
+                           <OMV name="x"/><OMI>-1</OMI>
+                      </OMA>
+                 </OMA>
+             </OMA>
+        </OMBIND>
+</OMOBJ>
+</FMP>
+
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> conjugation </Name>
+<Description>
+This symbol is a function with two arguments, which should be a group M
+and an element x of M.
+When applied to M and x, it denotes conjugation on M by x.
+</Description>
+
+<CMP>
+conjugation(M,x) (y) = x * y * x^ {-1}.
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+       <OMBIND><OMS cd="quant1" name="forall"/>
+            <OMBVAR><OMV name="M"/><OMV name="x"/><OMV name="y"/>  </OMBVAR>
+            <OMA><OMS cd="relation1" name="eq"/>
+                 <OMA><OMA><OMS cd="group2" name="conjugation"/>
+                           <OMV name="M"/> <OMV name="x"/>
+                      </OMA>
+                      <OMV name="y"/>
+                 </OMA>
+                 <OMA><OMS cd="group1" name="expression"/>
+                      <OMV name="M"/>
+                      <OMA><OMS cd="arith1" name="times"/>
+                           <OMV name="x"/>
+                           <OMV name="y"/>
+                           <OMA><OMS cd="arith1" name="power"/>
+                                <OMV name="x"/>
+                                <OMI> -1</OMI>
+                           </OMA>
+                      </OMA>
+                 </OMA>
+            </OMA>
+       </OMBIND>
+</OMOBJ>
+</FMP>
+
+</CDDefinition>
+
+
+
+
+</CD>
+

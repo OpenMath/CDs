@@ -1,0 +1,134 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+
+<CDName> mathmlattr </CDName>
+<CDBase>http://www.openmath.org/cd</CDBase>
+<CDURL> http://www.openmath.org/cd/mathmlattr.ocd </CDURL>
+<CDReviewDate>2014-04-01</CDReviewDate>
+<CDDate>2009-04-26</CDDate>
+<CDVersion>1</CDVersion>
+<CDRevision>0</CDRevision>
+<CDStatus> official </CDStatus>
+<Description>
+    This CD holds symbols denoting various types of numbers, vectors
+    and similar constructs. Principally these are required for
+    compatibility with MathML.
+</Description>
+
+<CDDefinition>
+<Name> class </Name>
+<Role>attribution</Role>
+<Description> 
+A symbol to be used within an OpenMath attribute to specify the class
+attribute of the object. The annotation should be an OpenMath string
+representing the value of the class attribute.
+</Description>
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> style </Name>
+<Role>attribution</Role>
+<Description> 
+A symbol to be used within an OpenMath attribute to specify the style
+attribute of the object. The annotation should be an OpenMath string
+representing the value of the style attribute.
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name> definitionURL </Name>
+<Role>attribution</Role>
+<Description> 
+A symbol to be used within an OpenMath attribute to specify the definitionURL
+attribute of the object. The annotation should be an OpenMath string
+representing the value of the definitionURL attribute.
+</Description>
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> other </Name>
+<Role>attribution</Role>
+<Description> 
+A symbol to be used within an OpenMath attribute to specify the MathML 
+"other" attribute of the object. The annotation should be an OpenMath string
+representing the value of the other attribute.
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name> foreign </Name>
+<Role>attribution</Role>
+<Description> 
+A symbol to be used within an OpenMath attribute to specify an 
+attribute of the object. The annotation should be an quadruple
+of strings constructed via a head foreign_attribute.
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name> foreign_attribute </Name>
+<Role>application</Role>
+<Description> 
+A symbol to be used as the head of the OpenMath application
+to construct the object used as the value of the foreign attribution.
+The four arguments of this function should be OpenMath strings representing
+in order, the Namespace, prefix and local name and value of the
+MathML attribute. 
+</Description>
+<Example>
+The MathML attribute  xmlns:other="http://example.com" other:att="bla"
+on the object x may be represented by:
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMATTR>
+    <OMATP>
+      <OMS cd="mathmlattr" name="foreign"/>
+      <OMA>
+	<OMS cd="mathmlattr" name="foreign_attribute"/>
+	<OMSTR>http://example.com</OMSTR>
+	<OMSTR>other</OMSTR>
+	<OMSTR>att</OMSTR>
+	<OMSTR>bla</OMSTR>
+      </OMA>
+    </OMATP>
+    <OMV name="x"/>
+  </OMATTR>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+</CD>

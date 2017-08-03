@@ -1,0 +1,553 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDName> monoid1 </CDName>
+<CDBase> http://www.openmath.org/cd </CDBase>
+<CDURL> http://www.openmath.org/cd/monoid1.ocd </CDURL>
+<CDReviewDate> 2006-06-01 </CDReviewDate>
+<CDDate> 2004-06-01 </CDDate>
+<CDVersion> 3 </CDVersion>
+<CDRevision> 2 </CDRevision>
+<CDStatus> experimental </CDStatus>
+
+<Description> Basic functions for monoid theory   </Description>
+
+<CDComment>
+Initiated by Arjeh M. Cohen 2003-05-17
+Edited by AMC 2004-03-02
+</CDComment>
+
+<CDDefinition>
+<Name> monoid </Name>
+<Description>
+This symbol is a constructor for monoids. It takes three arguments in
+the following order: a set to specify the elements in the monoid, a
+binary operation to specify the monoid operation, and an element to
+specify the identity. The binary operation should act on elements of
+the set and return an element of the set.
+</Description>
+
+<CMP>
+A monoid is closed under its operation.
+A monoid operation is associative.
+A monoid has an identity element.
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA>
+    <OMS cd="logic1" name="implies"/>
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMV name="M"/>
+      <OMA>
+        <OMS cd="monoid1" name="monoid"/>
+        <OMV name="set"/>
+        <OMV name="binop"/>
+        <OMV name="elt"/>
+      </OMA>
+    </OMA>
+    <OMA>
+      <OMS cd="logic1" name="and"/>
+      <OMA>
+        <OMS cd="logic1" name="implies"/>
+        <OMA>
+          <OMS cd="logic1" name="and"/>
+          <OMA>
+            <OMS cd="set1" name="in"/>
+            <OMV name="x"/>
+            <OMV name="set"/>
+          </OMA>
+          <OMA>
+            <OMS cd="set1" name="in"/>
+            <OMV name="y"/>
+            <OMV name="set"/>
+          </OMA>
+        </OMA>
+        <OMA>
+          <OMS cd="set1" name="in"/>
+          <OMA>
+            <OMV name="binop"/>
+            <OMV name="x"/>
+            <OMV name="y"/>
+          </OMA>
+          <OMV name="set"/>
+        </OMA>
+      </OMA>
+      <OMA>
+        <OMS cd="relation1" name="eq"/>
+        <OMA>
+          <OMV name="binop"/>
+          <OMV name="x"/>
+          <OMA>
+            <OMV name="binop"/>
+            <OMV name="y"/>
+            <OMV name="z"/>
+          </OMA>
+        </OMA>
+        <OMA>
+          <OMV name="binop"/>
+          <OMA>
+            <OMV name="binop"/>
+            <OMV name="x"/>
+            <OMV name="y"/>
+          </OMA>
+          <OMV name="z"/>
+        </OMA>
+      </OMA>
+      <OMA>
+        <OMS cd="logic1" name="and"/>
+        <OMA>
+          <OMS cd="set1" name="in"/>
+          <OMV name="elt"/>
+          <OMV name="set"/>
+        </OMA>
+        <OMBIND>
+          <OMS cd="quant1" name="forall"/>
+          <OMBVAR>
+            <OMV name="x"/>
+          </OMBVAR>
+          <OMA>
+            <OMS cd="logic1" name="implies"/>
+            <OMA>
+              <OMS cd="set1" name="in"/>
+              <OMV name="x"/>
+              <OMV name="set"/>
+            </OMA>
+            <OMA>
+              <OMS cd="logic1" name="and"/>
+              <OMA>
+                <OMS cd="relation1" name="eq"/>
+                <OMA>
+                  <OMV name="binop"/>
+                  <OMV name="elt"/>
+                  <OMV name="x"/>
+                </OMA>
+                <OMV name="x"/>
+              </OMA>
+              <OMA>
+                <OMS cd="relation1" name="eq"/>
+                <OMA>
+                  <OMV name="binop"/>
+                  <OMV name="x"/>
+                  <OMV name="elt"/>
+                </OMA>
+                <OMV name="x"/>
+              </OMA>
+            </OMA>
+          </OMA>
+        </OMBIND>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+<Example>
+This example represents the monoid which has as elements all positive
+and negative even numbers, the monoid operation is binary addition,
+inverses are the negative of the element and the identity is the zero
+element.
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="monoid1" name="monoid"/>
+       <OMA><OMS cd="set1" name="suchthat"/>
+            <OMS cd="setname1" name="Z"/>
+            <OMBIND><OMS cd="fns1" name="lambda"/>
+                    <OMBVAR> <OMV name="x"/>  </OMBVAR>
+                    <OMA><OMS cd="set1" name="in"/>
+                         <OMA><OMS cd="arith1" name="divide"/>
+                              <OMV name="x"/>
+                              <OMI> 2 </OMI>
+                         </OMA>
+                         <OMS cd="setname1" name="Z"/>
+                    </OMA>
+            </OMBIND>
+       </OMA>
+       <OMS cd="arith1" name="plus"/>
+       <OMI>0</OMI>
+  </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> carrier </Name>
+<Description>
+This symbol represents a unary function, whose argument should be a
+monoid M (for instance constructed by monoid).
+When applied to M, its value should be the set of elements of a monoid. 
+</Description>
+
+<Example>
+The carrier of monoid(M,*,e) is M.
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="relation1" name="eq"/>
+       <OMA><OMS cd="monoid1" name="carrier"/>
+            <OMA><OMS cd="monoid1" name="monoid"/>
+                 <OMV name="M"/>  <OMV name="times"/> <OMV name="e"/>
+            </OMA>
+       </OMA>
+       <OMV name="M"/>
+  </OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> multiplication </Name>
+<Description>
+This symbol represents a unary function, whose argument should be a
+monoid M.  It returns the multiplication map on M. 
+We allow for the map to be n-ary.
+
+</Description>
+
+<Example>
+The multiplication of monoid(M,*,e) is *.
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="relation1" name="eq"/>
+       <OMA><OMS cd="monoid1" name="multiplication"/>
+            <OMA><OMS cd="monoid1" name="monoid"/>
+                 <OMV name="M"/>  <OMV name="times"/> <OMV name="e"/>
+            </OMA>
+       </OMA>
+       <OMV name="times"/>
+  </OMA>
+</OMOBJ>
+</Example>
+
+
+<Example>
+The product a_1 * ... * a_n of elements a_1, ..., a_n
+of M can be expressed as follows.
+
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+    <OMA><OMS cd="fns2" name="apply_to_list"/>
+         <OMA><OMA><OMS cd="monoid1" name="multiplication"/>
+                   <OMV name="M"/>
+              </OMA>         
+              <OMA><OMS cd="list3" name="list_of_lengthn"/>
+                   <OMV name="n"/>  <OMV name="a"/>
+              </OMA>
+         </OMA>
+    </OMA>
+  </OMOBJ>
+</Example>
+
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> identity </Name>
+<Description>
+This symbols represents a unary function, whose argument should be a
+monoid.  It returns the identity element of the monoid.
+</Description>
+<Example>
+The identity of monoid(M,*,e) is e.
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="relation1" name="eq"/>
+       <OMA><OMS cd="monoid1" name="identity"/>
+            <OMA><OMS cd="monoid1" name="monoid"/>
+                 <OMV name="M"/>  <OMV name="times"/> <OMV name="e"/>
+            </OMA>
+       </OMA>
+       <OMV name="e"/>
+  </OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> is_commutative </Name>
+<Description>
+The unary boolean function whose value is true iff the argument is a
+commutative monoid.
+</Description>
+
+<CMP>
+If is_commutative(M) then for all a,b in carrier(M) a*b = b*a
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA>
+    <OMS cd="logic1" name="implies"/>
+    <OMA>
+      <OMS cd="monoid1" name="is_commutative"/>
+      <OMV name="M"/>
+    </OMA>
+    <OMBIND>
+      <OMS cd="quant1" name="forall"/>
+      <OMBVAR>
+        <OMV name="a"/>
+        <OMV name="b"/>
+      </OMBVAR>
+      <OMA>
+        <OMS cd="logic1" name="implies"/>
+        <OMA>
+          <OMS cd="logic1" name="and"/>
+          <OMA>
+            <OMS cd="set1" name="in"/>
+            <OMV name="a"/>
+            <OMA>
+              <OMS cd="monoid1" name="carrier"/>
+              <OMV name="M"/>
+            </OMA>
+          </OMA>
+          <OMA>
+            <OMS cd="set1" name="in"/>
+            <OMV name="b"/>
+            <OMA>
+              <OMS cd="monoid1" name="carrier"/>
+              <OMV name="M"/>
+            </OMA>
+          </OMA>
+        </OMA>
+        <OMA>
+          <OMS cd="relation1" name="eq"/>
+            <OMA>
+              <OMS cd="monoid1" name="multiplication"/>
+              <OMV name="M"/>
+            </OMA>
+            <OMV name="a"/>
+            <OMV name="b"/>
+          </OMA>
+          <OMA>
+            <OMA>
+              <OMS cd="monoid1" name="multiplication"/>
+              <OMV name="M"/>
+            </OMA>
+            <OMV name="b"/>
+            <OMV name="a"/>
+          </OMA>
+        </OMA>
+    </OMBIND>
+  </OMA>
+</OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> is_invertible </Name>
+<Description>
+This symbol represents a binary function, whose first argument is a monoid M
+and whose second argument is an element x of M.
+Its value is true iff the argument if x is invertible (that is, has a left and
+a right inverse) in M.
+</Description>
+
+<CMP>
+x is invertible in M if and only if there is a in carrier(M)
+with  a*x = x*a = 1.
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="logic1" name="equivalent"/>
+       <OMA><OMS cd="monoid1" name="is_invertible"/>
+            <OMV name="M"/>            <OMV name="x"/>
+       </OMA>
+       <OMBIND><OMS cd="quant1" name="exists"/>
+            <OMBVAR>   <OMV name="a"/>      </OMBVAR>
+            <OMA><OMS cd="logic1" name="and"/>
+                 <OMA><OMS cd="set1" name="in"/>
+                      <OMV name="a"/>
+                      <OMA><OMS cd="monoid1" name="carrier"/>
+                           <OMV name="M"/>
+                      </OMA>
+                 </OMA>
+                 <OMA><OMS cd="relation1" name="eq"/>
+                      <OMA><OMA><OMS cd="monoid1" name="multiplication"/>
+                                <OMV name="M"/>
+                           </OMA>
+                           <OMV name="x"/>
+                           <OMV name="a"/>
+                      </OMA>
+                      <OMA><OMS cd="monoid1" name="identity"/>
+                           <OMV name="M"/>
+                      </OMA>
+                 </OMA>
+                 <OMA><OMS cd="relation1" name="eq"/>
+                      <OMA><OMA><OMS cd="monoid1" name="multiplication"/>
+                                <OMV name="M"/>
+                           </OMA>
+                           <OMV name="a"/>
+                           <OMV name="x"/>
+                      </OMA>
+                      <OMA><OMS cd="monoid1" name="identity"/>
+                           <OMV name="M"/>
+                      </OMA>
+                 </OMA>
+            </OMA>
+    </OMBIND>
+  </OMA>
+</OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> is_submonoid </Name>
+<Description>
+The binary boolean function whose value is true iff the second
+argument is a submonoid of the second.
+</Description>
+
+<CMP>
+If is_submonoid(M,N) then N is a nonempty set of elements of M and N
+is closed under multiplication and taking inverses.
+</CMP>
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> semigroup </Name>
+<Description>
+This symbol is a unary function, whose argument should be a monoid M.
+When applied to M its value is the semigroup underlying M.
+</Description>
+
+<Example>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+     <OMA><OMS cd="monoid1" name="semigroup"/>
+          <OMV name="M"/> 
+     </OMA>
+    </OMOBJ>
+</Example>
+
+</CDDefinition>
+
+
+
+
+<CDDefinition>
+<Name> submonoid </Name>
+<Description>
+This symbol is a constructor symbol with two arguments.  The first
+argument is a monoid M, the second a list or set, D, of elements of M.
+When applied to M and D, it denotes the submonoid of M generated by D.
+</Description>
+
+<Example>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+     <OMA><OMS cd="monoid1" name="submonoid"/>
+          <OMV name="M"/>  <OMV name="D"/>
+     </OMA>
+    </OMOBJ>
+</Example>
+
+<Example>
+This example represents the submonoid of the multiplicative monoid of
+the nonzero reals generated by the constants Pi and E:
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMA><OMS cd="monoid1" name="monoid"/>
+     <OMA><OMS cd="monoid1" name="monoid"/>
+          <OMA><OMS cd="set1" name="suchthat"/>
+               <OMS cd="setname1" name="R"/>
+               <OMBIND><OMS cd="fns1" name="lambda"/>
+                       <OMBVAR> <OMV name="x"/>
+                       </OMBVAR>
+                       <OMA><OMS cd="relation1" name="neq"/>
+                            <OMV name="x"/>
+                            <OMS cd="alg1" name="zero"/>
+                       </OMA>
+               </OMBIND>
+          </OMA>
+          <OMS cd="arith1" name="times"/>
+     </OMA>
+     <OMA>
+       <OMS cd="list1" name="list"/>
+         <OMS cd="nums1" name="pi"/>
+         <OMS cd="nums1" name="e"/>
+     </OMA>
+</OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name>invertibles </Name>
+<Description>
+This symbol is a unary function.  Its argument should be a monoid M.
+When applied to M, it denotes the submonoid of M consisting of all
+invertible elements in M. This is a group.
+</Description>
+
+<Example>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+     <OMA><OMS cd="monoid1" name="invertibles"/>
+          <OMV name="M"/>
+     </OMA>
+    </OMOBJ>
+</Example>
+
+</CDDefinition>
+
+
+<CDDefinition>
+<Name>divisor_of</Name>
+<Description>
+This symbol is a ternary function.  Its first argument should be a
+monoid M and the second and third arguments should be elements of M.
+When applied to M, a, and b, it denotes the fact that a is a divisor
+of b in M. This means that there are u,v in carrier(M) such that
+uav=b.
+</Description>
+
+<Example>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+     <OMA><OMS cd="monoid1" name="divisor_of"/>
+          <OMV name="M"/> <OMV name="a"/> <OMV name="b"/>
+     </OMA>
+    </OMOBJ>
+</Example>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name>expression</Name>
+<Description>
+This symbol is a function with two arguments.  Its first
+argument should be a monoid. The
+second should be an arithmetic expression A,
+whose operators are
+times and power, and whose leaves are members of the carrier of G. 
+The second argument of power should be nonnegative. When applied to
+G and A, it denotes the element (of G) that is obtained from the
+leaves of A by applying the multiplication and the power map of G instead of the
+times and power
+from the CD arith1  appearing in A.
+The symbol alg1.one occurring in A will be interpreted as 
+the identity of G.
+</Description>
+
+<Example>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+    <OMA><OMS cd="relation1" name="eq"/>
+         <OMA><OMS cd="group1" name="expression"/>
+              <OMA><OMS cd="monoid1" name="monoid"/>
+                   <OMS cd="setname1" name="Z"/>
+                   <OMS cd="arith1" name="plus"/>
+                   <OMI>0</OMI>
+              </OMA>
+              <OMA><OMS cd="arith1" name="times"/>
+                   <OMI>4</OMI><OMI>3</OMI>
+              </OMA>
+         </OMA>
+         <OMI>7</OMI>
+    </OMA>
+  </OMOBJ>
+</Example>
+
+</CDDefinition>
+
+
+
+</CD>

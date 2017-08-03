@@ -1,0 +1,39 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDName> linalg7 </CDName>
+<CDBase> http://www.openmath.org/cd </CDBase>
+<CDURL> http://www.openmath.org/cd/linalg7.ocd </CDURL>
+<CDReviewDate> 2006-04-01 </CDReviewDate>
+<CDDate> 2004-07-08 </CDDate>
+<CDVersion> 1 </CDVersion>
+<CDRevision> 0 </CDRevision>
+<CDStatus> experimental </CDStatus>
+
+<Description>
+This CD contains symbols for the construction of matrices from lists.
+</Description>
+
+<CDDefinition>
+<Name> list_to_vector </Name>
+<Description>
+This symbol denotes a binary function. Its first argument must be a ring R,
+its second argument must be list L with entries belonging to the ring R, up to ring1.expression.
+When applied to R and L it represents the vector  of the
+same length as the list L whose i-th coordinate  is
+L[i] (or ring1.expression(L[i])).
+</Description>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> list_to_matrix </Name>
+<Description>
+This symbol denotes a binary function. Its first argument must be a ring R,
+its second argument must be list L of lists of equal lengths whose entries
+belong to the ring R, up to ring1.expression.
+When applied to R and L it represents the matrix whose i,j entry consists of
+the j-th entry from the list L[i].
+In particular, the matrix has length(L) rows and length(L[1]) columns.
+</Description>
+</CDDefinition>
+
+</CD>

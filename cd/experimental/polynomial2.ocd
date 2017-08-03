@@ -1,0 +1,136 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDName> polynomial2 </CDName>
+<CDBase> http://www.openmath.org/cd </CDBase>
+<CDURL> http://www.openmath.org/cd/polynomial2.ocd </CDURL>
+<CDReviewDate> 2006-02-02 </CDReviewDate>
+<CDDate> 2004-07-09 </CDDate>
+<CDVersion> 1</CDVersion>
+<CDRevision> 0 </CDRevision>
+<CDStatus> experimental </CDStatus>
+<CDUses>
+  <CDName>alg1</CDName>
+  <CDName>arith1</CDName>
+  <CDName>logic1</CDName>
+  <CDName>quant1</CDName>
+  <CDName>set1</CDName>
+  <CDName>setname1</CDName>
+  <CDName>setname2</CDName>
+  <CDName>relation1</CDName>
+  <CDName>fns1</CDName>
+  <CDName>interval1</CDName>
+  <CDName>integer1</CDName>
+  <CDName>polynomial1</CDName>
+</CDUses>
+<Description>
+This CD holds a collection of basic modular arithmetic for univariate polynomials over rings.
+The data structures for polynomials can be arithmetic expressions, for
+instance using the ring1.expression symbol, or DMP as
+in the CD polyd1.
+</Description>
+
+
+
+
+
+
+<CDDefinition>
+<Name>modulo_relation</Name>
+<Description>
+This symbol represents a univariate function, whose argument should be a polynomial.
+When applied to a polynomial m, it denotes the equivalence relation of being
+equal modulo m.
+</Description>
+
+
+<CMP>
+modulo_relation(m)(a,b) is equivalent to eqmod(a,b,m).
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMA><OMS cd="logic1" name="equivalent"/>
+     <OMA><OMA><OMS cd="polynomial2" name="modulo_relation"/>
+               <OMV name="m"/>
+          </OMA>
+          <OMV name="a"/><OMV name="b"/>
+     </OMA>
+     <OMA><OMS cd="polynomial2" name="eqmod"/>
+          <OMV name="a"/><OMV name="b"/> <OMV name="m"/>
+     </OMA>
+</OMA>
+</OMOBJ>
+</FMP>
+
+
+
+</CDDefinition>
+
+<CDDefinition>
+<Name>divides</Name>
+<Description>
+This symbol represents a bivariate Boolean function, whose arguments should be
+polynomials in the same polynomial ring.
+When applied to a and b, it denotes the property that a divides b.
+</Description>
+
+<CMP>
+The polynomial a divides the polynomial b with the same coefficient ring as a
+if and only
+there is a polynomial q over this coefficient ring 
+such that a * q =  b.
+
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMA><OMS cd="logic1" name="equivalent"/>
+     <OMA><OMS cd="polynomial2" name="divides"/>
+          <OMV name="a"/><OMV name="b"/>
+     </OMA>
+     <OMA><OMS cd="magma1" name="left_divides"/>
+          <OMA><OMS cd="magma1" name="magma"/>
+               <OMS cd="setname1" name="Z"/>
+               <OMS cd="arith1" name="times"/>
+          </OMA>
+          <OMV name="a"/><OMV name="b"/>
+     </OMA>
+</OMA>
+</OMOBJ>
+</FMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name>eqmod</Name>
+<Description>
+This symbol represents a Boolean valued trivariate function, whose arguments should be polynomials.
+When applied to polynomials a, b, m, it denotes the Boolean 
+evalue of the assertion that a and b are equal modulo m.
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name>neqmod</Name>
+<Description>
+This symbol represents a Boolean valued trivariate function, whose arguments should be polynomials.
+When applied to polynomials a, b, m, it denotes the Boolean 
+evalue of the assertion that a and b are not equal modulo m.
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name>class</Name>
+<Description>
+This symbol represents a bivariate function, whose arguments should be polynomials.
+If a, m are polynomials in a polynomial ring R[X], then class(a,m) denotes the residue class a mod m in
+the quotient ring R[X]/ (mR[X]).
+</Description>
+</CDDefinition>
+
+
+</CD>
+
+
+
+
+

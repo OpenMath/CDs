@@ -1,0 +1,151 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDName> field3 </CDName>
+<CDBase> http://www.openmath.org/cd </CDBase>
+<CDURL> http://www.openmath.org/cd/field3.ocd </CDURL>
+<CDReviewDate> 2006-06-01 </CDReviewDate>
+<CDDate> 2004-06-01 </CDDate>
+<CDVersion> 1 </CDVersion>
+<CDRevision> 1 </CDRevision>
+<CDStatus> experimental </CDStatus>
+
+<Description> A CD of 
+functions for basic constructions in field theory.
+</Description>
+
+<CDComment>
+Written by Arjeh M. Cohen 2004-02-25
+</CDComment>
+
+<CDDefinition>
+<Name> free_field </Name>
+<Description>
+This symbol represents a binary function. The first argument should be a
+natural number p which is zero or a prime number,
+the second argument a list or a
+set L.  When evaluated on such arguments p and L, the function represents the
+field of rational functions in L over the rationals if p = 0 and over the
+field of integers mod p if p is a prime.
+</Description>
+
+<Example>
+The rational function field Q(a,b) in the indeterminates a, b is
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="field3" name="free_field"/>
+       <OMI>0</OMI>
+       <OMA><OMS cd="list1" name="list"/>
+            <OMV name="a"/>  <OMV name="b"/>
+       </OMA>
+  </OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+
+
+
+<CDDefinition>
+<Name> fraction_field </Name>
+<Description>
+This is a unary function. Its argument should be a domain (as in CD ring4).
+It denotes the fraction field of the domain.
+</Description>
+
+<Example> The rationals equals fraction_field(Integers)
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMA>
+  <OMS cd="relation1" name="eq"/>
+  <OMS cd="fieldname1" name="Q"/>
+  <OMA>
+    <OMS cd="field3" name="fraction_field"/>
+    <OMS cd="ringname1" name="Z"/>
+  </OMA>
+</OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> field_by_poly</Name>
+
+<Description>
+This symbol is a binary function whose first argument is a univariate
+polynomial ring R over a field, and whose second argument is an irreducible
+polynomial f in this polynomial ring R. So, when applied to R and f, the
+function has value the quotient ring R/(f).
+</Description>
+
+
+<Example>
+
+The finite field GF(2)[X]/(X^2+X+1) is represented by
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMA><OMA><OMS cd="field3" name="field_by_poly"/>
+          <OMA id="pr"><OMS cd="polyd1" name="poly_ring_d_named"/>
+               <OMA><OMS cd="setname2" name="GFp"/>
+                    <OMI>2</OMI>
+               </OMA>
+               <OMV name="X"/>
+          </OMA>
+          <OMA><OMS cd="polyd1" name="DMP"/>
+               <OMR href="#pr"/>
+               <OMA><OMS cd="polyd1" name="SDMP"/>
+                    <OMA><OMS cd="polyd1" name="term"/>
+                         <OMI>1</OMI><OMI>0</OMI>
+                    </OMA>
+                    <OMA><OMS cd="polyd1" name="term"/>
+                         <OMI>1</OMI><OMI>1</OMI>
+                    </OMA>
+                    <OMA><OMS cd="polyd1" name="term"/>
+                         <OMI>1</OMI><OMI>2</OMI>
+                    </OMA>
+               </OMA>
+          </OMA>
+     </OMA> 
+</OMA>
+</OMOBJ>
+
+
+or by
+
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+     <OMA><OMS cd="field3" name="field_by_poly"/>
+          <OMA id="prn"><OMS cd="polyd1" name="poly_ring_d_named"/>
+               <OMA><OMS cd="setname2" name="GFp"/>
+                    <OMI>2</OMI>
+               </OMA>
+               <OMV name="X"/>
+          </OMA>
+          <OMA><OMS cd="ring1" name="expression"/>
+               <OMR href="#prn"/>
+               <OMA><OMS cd="arith1" name="plus"/>
+                    <OMI>1</OMI>
+                    <OMV name="X"/>
+                    <OMA><OMS cd="arith1" name="power"/>
+                         <OMV name="X"/><OMI>2</OMI>
+                    </OMA>
+               </OMA>
+          </OMA>
+     </OMA> 
+</OMOBJ>
+
+
+
+
+</Example>
+
+
+
+</CDDefinition>
+
+
+
+
+
+</CD>

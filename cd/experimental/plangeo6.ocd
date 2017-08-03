@@ -1,0 +1,113 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDName> plangeo6 </CDName>
+<CDBase> http://www.openmath.org/cd </CDBase>
+<CDURL> http://www.openmath.org/cd/plangeo6.ocd </CDURL>
+<CDReviewDate> 2006-06-01 </CDReviewDate>
+<CDStatus> experimental </CDStatus>
+<CDDate> 2004-06-01 </CDDate>
+<CDVersion> 0 </CDVersion>
+<CDRevision> 4 </CDRevision>
+<CDUses>
+  <CDName>plangeo1</CDName>
+</CDUses>
+
+<Description> 
+This CD defines symbols for planar Euclidean geometry related to conics.
+amc: 18 March 2004 added are_on_conic
+</Description>
+
+<CDDefinition>
+<Name>conic</Name>
+<Description> 
+The symbol represents a conic.
+The conic may be subject to constraints.
+</Description>
+
+
+<Example> 
+The conic G, incident to A,B,C,D and E is given by
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA>
+    <OMS cd="plangeo6" name="conic"/>
+    <OMV name="G"/>
+    <OMA>
+      <OMS cd="plangeo1" name="incident"/>
+      <OMV name="G"/>
+      <OMV name="A"/>
+    </OMA>
+    <OMA>
+      <OMS cd="plangeo1" name="incident"/>
+      <OMV name="G"/>
+      <OMV name="B"/>
+    </OMA>
+    <OMA>
+      <OMS cd="plangeo1" name="incident"/>
+      <OMV name="G"/>
+      <OMV name="C"/>
+    </OMA>
+    <OMA>
+      <OMS cd="plangeo1" name="incident"/>
+      <OMV name="G"/>
+      <OMV name="D"/>
+    </OMA>
+    <OMA>
+      <OMS cd="plangeo1" name="incident"/>
+      <OMV name="G"/>
+      <OMV name="E"/>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name>are_on_conic</Name>
+<Description> 
+The symbol is a boolean n-ary function.
+Its arguments should be points. When applied to a sequence of points, its
+evaluated to true
+if and only if there is a conic on which all arguments lie.
+</Description>
+
+
+<CMP> 
+If G is the conic determined by A,B,C,D, and E, whereas F is a point incident
+with G, then
+A,B,C,D, E, and F are on a conic.
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="logic1" name="implies"/>
+       <OMA><OMS cd="set1" name="in"/>
+            <OMV name="F"/>
+            <OMA><OMS cd="plangeo6" name="conic"/>
+                 <OMV name="G"/>
+                 <OMA><OMS cd="plangeo1" name="incident"/>
+                      <OMV name="G"/>     <OMV name="A"/>
+                 </OMA>
+                 <OMA><OMS cd="plangeo1" name="incident"/>
+                      <OMV name="G"/>     <OMV name="B"/>
+                 </OMA>
+                 <OMA><OMS cd="plangeo1" name="incident"/>
+                      <OMV name="G"/>      <OMV name="C"/>
+                 </OMA>
+                 <OMA><OMS cd="plangeo1" name="incident"/>
+                      <OMV name="G"/>    <OMV name="D"/>
+                 </OMA>
+                 <OMA><OMS cd="plangeo1" name="incident"/>
+                      <OMV name="G"/>      <OMV name="E"/>
+                 </OMA>
+            </OMA>
+       </OMA>
+       <OMA><OMS cd="plangeo6" name="are_on_conic"/>
+            <OMV name="A"/><OMV name="B"/><OMV name="C"/>
+            <OMV name="D"/><OMV name="E"/><OMV name="F"/>
+       </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+</CDDefinition>
+
+</CD>

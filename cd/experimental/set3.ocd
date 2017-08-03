@@ -1,0 +1,221 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDName> set3 </CDName>
+<CDBase> http://www.openmath.org/cd </CDBase>
+<CDURL> http://www.openmath.org/cd/set3.ocd </CDURL>
+<CDReviewDate> 2003-04-01 </CDReviewDate>
+<CDDate> 1999-05-10 </CDDate>
+<CDVersion> 1 </CDVersion>
+<CDRevision> 1 </CDRevision>
+<CDStatus> experimental </CDStatus>
+<CDUses>
+  <CDName>relation1</CDName>
+  <CDName>set1</CDName>
+  <CDName>nums1</CDName>
+  <CDName>setname1</CDName>
+</CDUses>
+<Description>
+    This CD defines more set functions.
+</Description>
+
+
+
+<CDDefinition>
+<Name> big_intersect </Name>
+<Description> 
+This symbol is a unary function whose argument should be a collection C of
+subsets of a given set. When applied to C, it represents the intersection
+over all members of C.
+</Description>
+
+</CDDefinition>
+
+
+<CDDefinition>
+<Name>big_union </Name>
+<Description> 
+This symbol is a unary function whose argument should be a collection C of
+subsets of a given set. When applied to C, it represents the union over all members of C.
+</Description>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> cartesian_power </Name>
+<Description> 
+This symbol is a binary function whose first argument should be a set A and
+whose second argument should be a natural number k.
+When applied to A and k, it represents the Cartesian product of k copies of A.
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name> powerset </Name>
+<Description> 
+This symbol represents unary function whose argument should be a set.
+When applied to a set X, it represents the collection of all subsets of X.
+</Description>
+
+<CMP>
+The intersection over all subsets of a given set X is the empty set.
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="relation1" name="eq"/>
+       <OMA><OMS cd="set3" name="big_intersect"/>
+            <OMA><OMS cd="set3" name="powerset"/>
+                 <OMV name="X"/>
+            </OMA>
+       </OMA>
+       <OMS cd="set1" name="emptyset"/>
+  </OMA>
+</OMOBJ>
+</FMP>
+</CDDefinition>
+  
+
+<CDDefinition>
+<Name>k_subsets</Name>
+<Description>
+This symbol represents a binary function whose first argument should be a set
+and whose second argument should be a natural number.
+When applied to a set X and a number k, it represents the collection of all subsets of X of
+size k.
+</Description>
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> map_with_target </Name>
+<Description> 
+This symbol represents a function with three arguments.
+The first argument is a function assignment f (in the form of a lambda
+binding),
+the second argument is a set X on which the first argument f is defined.
+The third argument specifies the range Y of the function.
+The symbol is used to denote the image {f(x) in Y | x in X} of application of the
+function f on the elements of X (so as to form a subset of Y).
+</Description>
+
+<Example>
+One may form a set in the following way. This gives the set {1^2, 2^2,
+... , 10^2 }
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="set3" name="map_with_target"/>
+      <OMBIND><OMS cd="fns1" name="lambda"/>
+          <OMBVAR><OMV name="x"/></OMBVAR>
+          <OMA><OMS cd="arith1" name="power"/>
+               <OMV name="x"/>      <OMI> 2 </OMI>
+          </OMA>
+     </OMBIND>
+     <OMA><OMS cd="interval1" name="integer_interval"/>
+          <OMI> 1 </OMI>         <OMI> 10 </OMI>
+     </OMA>
+     <OMS name="Z" cd="setname1"/>
+ </OMA>
+</OMOBJ>
+</Example>
+
+<Example>
+The definition of a product of subsets X and Y of a group G:
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+     <OMA><OMS cd="relation1" name="eq"/>
+          <OMA><OMS cd="arith1" name="times"/>
+               <OMV name="X"/> <OMV name="Y"/>
+          </OMA>
+          <OMA><OMS cd="set3" name="map_with_target"/>
+               <OMBIND><OMS cd="fns1" name="lambda"/>
+                        <OMBVAR>      <OMV name="x"/>      <OMV name="y"/>  </OMBVAR>
+                        <OMA><OMS cd="arith1" name="times"/>
+                             <OMV name="x"/> <OMV name="y"/>
+                        </OMA>
+              </OMBIND>
+              <OMA><OMS cd="set1" name="cartesian_product"/>
+                   <OMV name="X"/>   <OMV name="Y"/>
+              </OMA>
+              <OMV name="G"/> 
+         </OMA>
+    </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> map_with_condition </Name>
+<Description> 
+This symbol represents a function with three arguments.
+The first argument is a function assignment f (in the form of a lambda
+binding),
+the second argument is a set X.
+The third argument specifies a Boolean function P on X defining the subset Z of X 
+(so Z = {x in X| P(x)}) on which the first argument f is defined, 
+The symbol is used to denote the image {f(x) | x in X and P(x)} of application of the
+function f on the elements of Z.
+</Description>
+
+<Example>
+One may form a set in the following way. This gives the set {2^2, 4^2,
+... , 10^2 }
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="set3" name="map_with_condition"/>
+      <OMBIND><OMS cd="fns1" name="lambda"/>
+          <OMBVAR><OMV name="x"/></OMBVAR>
+          <OMA><OMS cd="arith1" name="power"/>
+               <OMV name="x"/>      <OMI> 2 </OMI>
+          </OMA>
+     </OMBIND>
+     <OMA><OMS cd="interval1" name="integer_interval"/>
+          <OMI> 1 </OMI>         <OMI> 10 </OMI>
+     </OMA>
+      <OMBIND><OMS cd="fns1" name="lambda"/>
+          <OMBVAR><OMV name="x"/></OMBVAR>
+          <OMA><OMS cd="integer2" name="divides"/>
+               <OMI> 2 </OMI><OMV name="x"/>      
+          </OMA>
+     </OMBIND>
+ </OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> map_with_target_and_condition </Name>
+<Description> 
+This symbol represents a function with four arguments.
+The first argument is a function assignment f (in the form of a lambda
+binding),
+the second argument is a set X on which the first argument f is defined.
+The third argument specifies the range Y of the function.
+The fourth argument specifies a Boolean function P on X defining the subset Z of X 
+(so Z = {x in X| P(x)}) on which the first argument f is defined, 
+The symbol is used to denote the image {f(x) in Y | x in X and P(x)} of application of the
+function f on the elements of Z.
+</Description>
+
+<Example>
+One may form a set in the following way. This gives the set {1^2, 2^2,
+... , 10^2 }
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="set3" name="map_with_target_and_condition"/>
+       <OMBIND><OMS cd="fns1" name="lambda"/>
+            <OMBVAR><OMV name="x"/></OMBVAR>
+            <OMA><OMS cd="arith1" name="power"/>
+                 <OMV name="x"/>      <OMI> 2 </OMI>
+            </OMA>
+       </OMBIND>
+       <OMA><OMS cd="interval1" name="integer_interval"/>
+            <OMI> 1 </OMI>         <OMI> 10 </OMI>
+       </OMA>
+       <OMS cd="setname1" name="Z"/>
+       <OMBIND><OMS cd="fns1" name="lambda"/>
+            <OMBVAR><OMV name="x"/></OMBVAR>
+            <OMA><OMS cd="integer2" name="divides"/>
+                 <OMI> 2 </OMI><OMV name="x"/>      
+            </OMA>
+       </OMBIND>
+  </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+</CD>

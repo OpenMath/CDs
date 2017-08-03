@@ -1,0 +1,281 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+  <CDName> graph1 </CDName>
+  <CDBase> http://www.openmath.org/cd </CDBase>
+  <CDURL> http://www.dse.nl/~postma/graph1.ocd </CDURL>
+  <CDReviewDate> 2006-06-01 </CDReviewDate>
+  <CDStatus> experimental </CDStatus>
+  <CDDate> 2004-06-01 </CDDate>
+  <CDVersion> 0 </CDVersion>
+  <CDRevision> 13 </CDRevision>
+  
+  
+  <Description>
+  This CD defines symbols for handling directed and undirected graphs.
+Authored by Hans Cuypers and Erik Postma.
+This version is edited by amc; bugfix JHD after Robbins.
+  </Description>
+  
+  <CDDefinition>
+    <Name> graph </Name>
+    <Description>
+      This symbol represents an undirected graph. It takes two
+    arguments: the vertex set of the graph and the edge set. 
+   The vertices can be arbitrary OpenMath objects. Each edge should be a set consisting of two vertices.
+    </Description>
+    
+    <Example>
+    A path of length 2.
+    
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+      <OMA>
+        <OMS cd="graph1" name="graph"/>
+        <OMA>
+          <OMS cd="set1" name="set"/>
+          <OMI> 1 </OMI>
+          <OMI> 2 </OMI>
+          <OMI> 3 </OMI>
+        </OMA>
+        <OMA>
+          <OMS cd="set1" name="set"/>
+          <OMA>
+    	<OMS cd="set1" name="set"/>
+    	<OMI> 1 </OMI>
+    	<OMI> 2 </OMI>
+          </OMA>
+          <OMA>
+    	<OMS cd="set1" name="set"/>
+    	<OMI> 2 </OMI>
+    	<OMI> 3 </OMI>
+          </OMA>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+    </Example>
+  </CDDefinition>
+
+  <CDDefinition>
+    <Name> vertexset </Name>
+    <Description>
+      This symbol represents the vertex set of a (directed or undirected) graph. It takes one argument, the graph.
+    </Description>
+    <Example>
+      If Gamma is a graph, the following function tests whether its argument v is a vertex of Gamma.
+
+      <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+        <OMBIND>
+	<OMS cd="fns1" name="lambda"/>
+	<OMBVAR>
+	  <OMV name="v"/>
+	</OMBVAR>
+	<OMA>
+	  <OMS cd="set1" name="in"/>
+	  <OMV name="v"/>
+	  <OMA>
+	    <OMS cd="graph1" name="vertexset"/>
+	    <OMV name="Gamma"/>
+	  </OMA>
+	</OMA>
+	</OMBIND>
+      </OMOBJ>
+    </Example>
+  </CDDefinition>
+
+  <CDDefinition>
+    <Name> edgeset </Name>
+    <Description>
+      This symbol represents the set of edges of an undirected graph. It takes one argument, the undirected graph.
+    </Description>
+    <Example>
+      Given a graph Gamma and two of its vertices v and w, this predicate asserts that they are adjacent.
+
+      <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+	<OMA>
+	  <OMS cd="set1" name="in"/>
+	  <OMA>
+	    <OMS cd="set1" name="set"/>
+	    <OMV name="v"/>
+	    <OMV name="w"/>
+	  </OMA>
+	  <OMA>
+	    <OMS cd="graph1" name="edgeset"/>
+	    <OMV name="Gamma"/>
+	  </OMA>
+	</OMA>
+      </OMOBJ>
+    </Example>
+
+    <CMP>
+    Every edge in an undirected graph Gamma is a subset of the vertex set of size two.
+    </CMP>
+    <FMP>
+      <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+        <OMBIND>
+	  <OMS cd="quant1" name="forall"/>
+	  <OMBVAR>
+	    <OMV name="e"/>
+	    <OMV name="Gamma"/>
+	  </OMBVAR>
+	  <OMA>
+	    <OMS cd="logic1" name="implies"/>
+	    <OMA>
+	      <OMS cd="set1" name="in"/>
+	      <OMV name="e"/>
+	      <OMA>
+	        <OMS cd="graph1" name="vertexset"/>
+		<OMV name="Gamma"/>
+	      </OMA>
+	    </OMA>
+	    <OMA>
+	      <OMS cd="logic1" name="and"/>
+	      <OMA>
+	        <OMS cd="set1" name="subset"/>
+		<OMV name="e"/>
+		<OMA>
+		  <OMS cd="graph1" name="vertexset"/>
+		  <OMV name="Gamma"/>
+		</OMA>
+	      </OMA>
+	      <OMA>
+	        <OMS cd="relation1" name="eq"/>
+		<OMA>
+		  <OMS cd="set1" name="size"/>
+		  <OMV name="e"/>
+		</OMA>
+		<OMI> 2 </OMI>
+	      </OMA>
+	    </OMA>    
+	  </OMA>
+	</OMBIND>
+      </OMOBJ>
+    </FMP>
+
+  </CDDefinition>
+
+  <CDDefinition>
+    <Name> digraph </Name>
+    <Description>
+      This symbol refers to a digraph. It has two arguments. The first is the set of vertices, the second is the set of arrows. Arrows are represented by lists of length two, where a list represents the arrow from the first element to the second.
+    </Description>
+    <Example>
+      The two-sided infinite directed path.
+  
+      <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+        <OMA>
+          <OMS cd="graph1" name="digraph"/>
+          <OMS cd="setname1" name="Z"/>
+  	  <OMA>
+  	    <OMS cd="set1" name="map"/>
+            <OMBIND>
+  	      <OMS cd="fns1" name="lambda"/>
+  	      <OMBVAR>
+  	        <OMV name="x"/>
+  	      </OMBVAR>
+  	      <OMA>
+  	        <OMS cd="list1" name="list"/>
+  	        <OMV name="x"/>
+  	        <OMA>
+  	          <OMS cd="arith1" name="plus"/>
+  		  <OMV name="x"/>
+  		  <OMI> 1 </OMI>
+  	        </OMA>
+  	      </OMA>
+  	    </OMBIND>
+            <OMS cd="setname1" name="Z"/>
+  	  </OMA>
+        </OMA>
+      </OMOBJ>
+    </Example>
+  </CDDefinition>
+
+  <CDDefinition>
+    <Name> arrowset </Name>
+    <Description>
+      This symbol represents the set of arrows of a directed graph. It takes one argument, the directed graph.
+    </Description>
+    <Example>
+      The arrow set of the loop consists of one loop.
+
+      <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+        <OMA>
+	  <OMS cd="relation1" name="eq"/>
+	  <OMA>
+	    <OMS cd="graph1" name="arrowset"/>
+	    <OMA>
+	      <OMS cd="graph1" name="digraph"/>
+	      <OMA>
+	        <OMS cd="set1" name="set"/>
+		<OMI> 1 </OMI>
+	      </OMA>
+	      <OMA>
+    	        <OMS cd="set1" name="set"/>
+      	        <OMA>
+      	          <OMS cd="list1" name="list"/>
+      	          <OMI> 1 </OMI>
+      	          <OMI> 1 </OMI>
+      	        </OMA>
+	      </OMA>
+	    </OMA>
+	  </OMA>
+	  <OMA>
+	    <OMS cd="set1" name="set"/>
+	    <OMA>
+	      <OMS cd="list1" name="list"/>
+	      <OMI> 1 </OMI>
+	      <OMI> 1 </OMI>
+	    </OMA>
+	  </OMA>
+	</OMA>
+      </OMOBJ>
+    </Example>
+  </CDDefinition>
+
+  <CDDefinition>
+    <Name> source </Name>
+    <Description>
+      Given an arrow, this symbol refers to the vertex where the arrow starts. It takes one argument, the arrow.
+    </Description>
+    <Example>
+      The arrow [a, b] starts at a.
+
+      <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+        <OMA>
+	  <OMS cd="relation1" name="eq"/>
+	  <OMA>
+	    <OMS cd="graph1" name="source"/>
+	    <OMA>
+	      <OMS cd="list1" name="list"/>
+	      <OMV name="a"/>
+	      <OMV name="b"/>
+	    </OMA>
+	  </OMA>
+	  <OMV name="a"/>
+	</OMA>
+      </OMOBJ>
+    </Example>
+  </CDDefinition>
+
+  <CDDefinition>
+    <Name> target </Name>
+    <Description>
+      Given an arrow, this symbol refers to the vertex the arrow points to. It takes one argument, the arrow.
+    </Description>
+    <Example>
+      The arrow [a, b] points to b.
+
+      <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+        <OMA>
+	  <OMS cd="relation1" name="eq"/>
+	  <OMA>
+	    <OMS cd="graph1" name="target"/>
+	    <OMA>
+	      <OMS cd="list1" name="list"/>
+	      <OMV name="a"/>
+	      <OMV name="b"/>
+	    </OMA>
+	  </OMA>
+	  <OMV name="b"/>
+	</OMA>
+      </OMOBJ>
+    </Example>
+  </CDDefinition>
+</CD>

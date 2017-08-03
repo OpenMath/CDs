@@ -1,0 +1,521 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDName> plangeo3 </CDName>
+<CDBase> http://www.openmath.org/cd </CDBase>
+<CDURL> http://www.openmath.org/cd/plangeo3.ocd </CDURL>
+<CDReviewDate> 2006-06-01 </CDReviewDate>
+<CDStatus> experimental </CDStatus>
+<CDDate> 2004-06-01 </CDDate>
+<CDVersion> 0 </CDVersion>
+<CDRevision> 3 </CDRevision>
+
+
+<Description> 
+This CD defines symbols for planar Euclidean geometry related to distance.
+</Description>
+
+
+
+<CDDefinition>
+<Name>distance</Name>
+<Description> 
+The distance between two affine points is the Euclidean distance.
+The distance between two geometric objects O and O' is the infimum of the
+distances between two affine points, one on O and one on O'.  
+</Description>
+
+
+<Example> 
+The distance between two points A and B.
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMA>
+  <OMS cd="plangeo3" name="distance"/>
+   <OMV name="A"/>
+   <OMV name="B"/>
+</OMA>
+</OMOBJ> 
+</Example>
+</CDDefinition>
+
+
+
+<CDDefinition>
+<Name>perpendicular</Name>
+<Description> 
+perpendicular is a binary boolean function with input two lines,
+halflines or segments.
+Its value is true whenever the two inputs are perpendicular to each other. 
+</Description>
+
+
+<Example> 
+Testing perpendicularity of two lines L and M.
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMA>
+  <OMS cd="plangeo3" name="perpendicular"/>
+   <OMV name="L"/>
+   <OMV name="M"/>
+</OMA>
+</OMOBJ> 
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name>parallel</Name>
+<Description> 
+parallel is a binary boolean function with input two lines,
+halflines or segments.
+Its value is true whenever the two inputs are parallel.
+</Description>
+
+
+<Example> 
+Testing parallelism of two lines L and M.
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMA>
+  <OMS cd="plangeo3" name="parallel"/>
+   <OMV name="L"/>
+   <OMV name="M"/>
+</OMA>
+</OMOBJ> 
+</Example>
+</CDDefinition> 
+
+<CDDefinition>
+<Name>circle</Name>
+<Description> 
+The symbol represents a circle.
+The circle may be subject to constraints.
+</Description>
+
+
+<Example> 
+The circle C with center A and radius 1 is given by
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA>
+    <OMS cd="plangeo3" name="circle"/>
+    <OMV name="C"/>
+    <OMA>
+      <OMS cd="plangeo3" name="center"/>
+      <OMV name="C"/>
+      <OMV name="A"/>
+    </OMA>
+    <OMA>
+      <OMS cd="plangeo3" name="radius"/>
+      <OMV name="C"/>
+      <OMI>1</OMI>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+
+
+<CDDefinition>
+<Name>radius</Name>
+<Description> 
+The radius of a circle.
+</Description>
+
+
+<Example>
+The assertion that the radius of the circle C is 1:
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMA>
+    <OMS cd="plangeo3" name="radius"/>
+    <OMV name="C"/>
+    <OMI>1</OMI>
+</OMA>
+</OMOBJ>  
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name>radius_of</Name>
+<Description> 
+Gives the radius of a circle.
+</Description>
+
+
+<Example>
+The radius of the circle C is given by 
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMA>
+    <OMS cd="plangeo3" name="radius_of"/>
+    <OMV name="C"/>
+</OMA>
+</OMOBJ>  
+</Example>
+</CDDefinition>
+
+
+
+<CDDefinition>
+<Name>center</Name>
+<Description> 
+Defines the center of a circle.
+</Description>
+
+
+<Example> 
+The circle C with center A and radius 1 is given by
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA>
+    <OMS cd="plangeo3" name="circle"/>
+    <OMV name="C"/>
+    <OMA>
+      <OMS cd="plangeo3" name="center"/>
+      <OMV name="C"/>
+      <OMV name="A"/>
+    </OMA>
+    <OMA>
+      <OMS cd="plangeo3" name="radius"/>
+      <OMV name="C"/>
+      <OMI>1</OMI>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+
+<CDDefinition>
+<Name>center_of</Name>
+<Description> 
+Gives the center of the circle
+</Description>
+
+
+<Example> 
+If C is the circle of the previous example then the following gives A.
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMA>
+      <OMS cd="plangeo3" name="center_of"/>
+      <OMV name="C"/>
+    </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name>are_on_circle</Name>
+<Description> 
+The statement that a set of points is on one circle.
+</Description>
+
+<Example> 
+This example states that A, B, C, and D lie on one circle.
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMA>
+  <OMS cd="plangeo3" name="are_on_circle"/>
+  <OMV name="A"/>
+  <OMV name="B"/>
+  <OMV name="C"/>
+  <OMV name="D"/>
+</OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+
+<CDDefinition>
+<Name>angle</Name>
+<Description> 
+Angle of a corner, always measured in positive (anti-clockwise) direction.
+</Description>
+
+<Example> 
+Notice that 
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMA>
+  <OMS cd="plangeo3" name="angle"/>
+    <OMA>
+    <OMS cd="plangeo2" name="corner"/>
+      <OMV name="A"/>
+      <OMV name="B"/>
+      <OMV name="C"/>
+    </OMA>
+</OMA>
+</OMOBJ>
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMA>
+  <OMS cd="plangeo3" name="angle"/>
+    <OMA>
+    <OMS cd="plangeo2" name="corner"/>
+      <OMV name="C"/>
+      <OMV name="B"/>
+      <OMV name="A"/>
+    </OMA>
+</OMA>
+</OMOBJ>
+
+are not the same.
+
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name>midpoint</Name>
+<Description> 
+The midpoint between two points or two endpoints of a segment.
+</Description>
+
+
+<Example> 
+The midpoint of two points  A and B
+is the same as the midpoint of the segment S on A and B.
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMA>
+  <OMS cd="plangeo3" name="midpoint"/>
+      <OMV name="A"/>    
+      <OMV name="B"/>
+</OMA>
+</OMOBJ>
+
+equals
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMA>
+  <OMS cd="plangeo3" name="midpoint"/>
+  <OMA>
+    <OMS cd="plangeo2" name="segment"/>
+    <OMV name="A"/>
+    <OMV name="B"/>
+  </OMA>
+</OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name>is_midpoint</Name>
+<Description> 
+The statement that one point is the midpoint of two others.
+</Description>
+
+<Example> 
+This example states that C is the midpoint of A and B.
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMA>
+  <OMS cd="plangeo3" name="is_midpoint"/>
+  <OMV name="C"/>    
+  <OMV name="A"/>    
+  <OMV name="B"/>
+</OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+
+<CDDefinition>
+<Name>center_of_gravity</Name>
+<Description> 
+Center of gravity of a number  of points.
+</Description>
+
+
+<Example> 
+The center of gravity G of three points A, B and C is defined as follows.
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMA>
+<OMS cd="plangeo1" name="point"/>
+  <OMV name="G"/>
+  <OMA>
+    <OMS cd="plangeo3" name="center_of_gravity"/>
+      <OMV name="A"/>    
+      <OMV name="B"/>
+      <OMV name="C"/>
+  </OMA>
+</OMA>
+</OMOBJ>
+</Example>
+
+
+
+<FMP>
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMA>
+<OMS cd="relation1" name="eq"/>
+  <OMA>
+    <OMS cd="plangeo3" name="center_of_gravity"/>
+    <OMV name="A"/>    
+    <OMV name="B"/>
+  </OMA>
+  <OMA>
+    <OMS cd="plangeo3" name="midpoint"/>
+    <OMV name="A"/>    
+    <OMV name="B"/>
+  </OMA>
+</OMA>
+</OMOBJ>
+
+</FMP>
+</CDDefinition>
+
+
+
+<CDDefinition>
+<Name>perpbisector</Name>
+<Description> 
+Given two distinct points A and B, this is the line of all points at
+equal
+distance to both A and B.  
+</Description>
+
+
+<Example> 
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMA>
+  <OMS cd="plangeo3" name="perpbisector"/>
+      <OMV name="A"/>    
+      <OMV name="B"/>
+</OMA>
+</OMOBJ>
+
+</Example>
+</CDDefinition>
+
+
+
+<CDDefinition>
+<Name>altitude</Name>
+<Description> 
+Given a point p and a line L, this defines the segment starting at p
+and ending in the unique point of L closest to p.
+</Description>
+
+
+<Example> 
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMA>
+  <OMS cd="plangeo3" name="altitude"/>
+      <OMV name="p"/>    
+      <OMV name="L"/>
+</OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+
+<CDDefinition>
+<Name>perpline</Name>
+<Description> 
+Given a point p and a line L, this defines the line through p
+perpendicular to L.
+</Description>
+
+
+<Example> 
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMA>
+  <OMS cd="plangeo3" name="perpline"/>
+      <OMV name="p"/>    
+      <OMV name="L"/>
+</OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+
+<CDDefinition> <Name>polarline</Name> <Description> Given a point p
+and a circle C this defines the polar line of p with respect to C.
+</Description>
+
+<CMP> If p is incident with the circle C, the polar line of p with
+respect to C is the tangent line at p with respect to C.  
+</CMP>
+
+<Example> 
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMA>
+  <OMS cd="plangeo3" name="polarline"/>
+      <OMV name="p"/>    
+      <OMV name="C"/>
+</OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+
+<CDDefinition>
+<Name>tangent</Name>
+<Description> 
+Given a line L and  a circle C this boolean checks whether
+L is a  tangent  line to  C.
+</Description>
+
+
+<Example> 
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMA>
+  <OMS cd="plangeo3" name="tangent"/>
+      <OMV name="L"/>    
+      <OMV name="C"/>
+</OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name>arc</Name>
+<Description> 
+an arc of a circle M from A to B is the set of points of M that are
+encountered when traversing the circle clockwise from A to B.
+</Description>
+
+
+<Example> 
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMA>
+  <OMS cd="plangeo3" name="arc"/>
+  <OMA>
+    <OMS cd="plangeo3" name="circle"/>
+    <OMV name="M"/>
+  </OMA>
+  <OMA>
+    <OMS cd="plangeo1" name="point"/>
+    <OMV name="A"/>
+  </OMA>
+  <OMA>
+    <OMS cd="plangeo1" name="point"/>
+    <OMV name="B"/>
+  </OMA>
+</OMA>
+</OMOBJ> 
+</Example>
+</CDDefinition>
+
+</CD>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

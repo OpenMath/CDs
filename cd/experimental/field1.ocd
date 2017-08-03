@@ -1,0 +1,618 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDName> field1 </CDName>
+<CDBase> http://www.openmath.org/cd </CDBase>
+<CDURL> http://www.openmath.org/cd/field1.ocd </CDURL>
+<CDReviewDate> 2006-06-01 </CDReviewDate>
+<CDDate> 2004-06-01 </CDDate>
+<CDVersion> 1 </CDVersion>
+<CDRevision> 2 </CDRevision>
+<CDStatus> experimental </CDStatus>
+
+<Description> A CD of basic functions for field theory   </Description>
+
+<CDComment>
+Written by Arjeh M. Cohen 2004-02-26
+</CDComment>
+
+<CDDefinition>
+<Name> field </Name>
+<Description>
+This symbol is a constructor for fields. It takes seven arguments
+R, a, o, n, m, e, i: which are, respectively,
+a set R to specify the elements in the field, 
+a binary operation a on R, an element o of R, and a unary
+operation n on R such that [R,a,o,n] is a commutative group, a
+binary operation m on R, an element e of R, and a map from R - {o}
+to itself such that
+[R,m,e] is a monoid and such that [R - {o},m',e,i]
+is a group, where m' is the restriction of m to R -{o}.
+</Description>
+
+<Example>
+This example represents the field of rational numbers. 
+The field addition is binary addition,
+the field multiplication is binary multiplication.
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMA><OMS cd="field1" name="field"/>
+     <OMS cd="setname1" name="Q"/>
+     <OMS cd="arith1" name="plus"/>
+     <OMI>0</OMI>
+     <OMS cd="arith1" name="minus"/>
+     <OMS cd="arith1" name="times"/>
+     <OMI>1</OMI>
+     <OMBIND><OMS cd="fns1" name="lambda"/>
+         <OMBVAR>  <OMV name="x"/>  </OMBVAR>
+         <OMA><OMS cd="arith1" name="divide"/>
+              <OMI> 1 </OMI>  <OMV name="x"/>
+         </OMA>
+     </OMBIND>
+</OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> carrier </Name>
+<Description>
+This symbol represents a unary function, whose argument should be a
+field S (for instance constructed by field).
+When applied to S, its value should be the set of elements of S. 
+</Description>
+
+<Example>
+The carrier of field(R,+,0,-,*,1,inv) is R.
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="relation1" name="eq"/>
+       <OMA><OMS cd="field1" name="carrier"/>
+            <OMA><OMS cd="field1" name="field"/>
+                 <OMV name="R"/>
+                 <OMV name="plus"/>
+                 <OMV name="zero"/>
+                 <OMV name="minus"/>
+                 <OMV name="times"/>
+                 <OMV name="one"/>
+                 <OMV name="inv"/>
+            </OMA>
+       </OMA>
+       <OMV name="R"/>
+  </OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> multiplication </Name>
+<Description>
+This symbol represents a unary function, whose argument should be a
+field S.    It returns the multiplication map on the field.
+We allow for the map to be n-ary.
+</Description>
+
+<Example>
+The multiplication of field(R,+,0,-,*,1,inv) is *.
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="relation1" name="eq"/>
+       <OMA><OMS cd="field1" name="multiplication"/>
+            <OMA><OMS cd="field1" name="field"/>
+                 <OMV name="R"/>
+                 <OMV name="plus"/>
+                 <OMV name="zero"/>
+                 <OMV name="minus"/>
+                 <OMV name="times"/>
+                 <OMV name="one"/>
+                 <OMV name="inv"/>
+            </OMA>
+       </OMA>
+       <OMV name="times"/>
+  </OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> minus </Name>
+<Description>
+This symbol represents a unary function, whose argument should be a
+field S.  It returns the map sending an element of S to its additive inverse.
+</Description>
+
+<Example>
+The minus of field(R,+,0,-,*,1,inv) is -.
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="relation1" name="eq"/>
+       <OMA><OMS cd="field1" name="minus"/>
+            <OMA><OMS cd="field1" name="field"/>
+                 <OMV name="R"/>
+                 <OMV name="plus"/>
+                 <OMV name="zero"/>
+                 <OMV name="minus"/>
+                 <OMV name="times"/>
+                 <OMV name="one"/>
+                 <OMV name="inv"/>
+            </OMA>
+       </OMA>
+       <OMV name="minus"/>
+  </OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> inverse </Name>
+
+<Description>
+This symbol represents a unary function, whose argument should be a field S.
+It returns the map sending a nonzero element of S to its multiplicative
+inverse.
+</Description>
+
+<Example>
+The inverse of field(R,+,0,-,*,1,inv) is inv.
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="relation1" name="eq"/>
+       <OMA><OMS cd="field1" name="inverse"/>
+            <OMA><OMS cd="field1" name="field"/>
+                 <OMV name="R"/>
+                 <OMV name="plus"/>
+                 <OMV name="zero"/>
+                 <OMV name="minus"/>
+                 <OMV name="times"/>
+                 <OMV name="one"/>
+                 <OMV name="inv"/>
+            </OMA>
+       </OMA>
+       <OMV name="inv"/>
+  </OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> identity </Name>
+<Description>
+This symbols represents a unary function, whose argument should be a
+field.  It returns the identity element of the field.
+</Description>
+<Example>
+The identity field(R,+,0,-,*,1,inv) is 1.
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="relation1" name="eq"/>
+       <OMA><OMS cd="field1" name="identity"/>
+            <OMA><OMS cd="field1" name="field"/>
+
+
+                 <OMV name="R"/>
+                 <OMV name="plus"/>
+                 <OMV name="zero"/>
+                 <OMV name="minus"/>
+                 <OMV name="times"/>
+                 <OMV name="one"/>
+                 <OMV name="inv"/>
+            </OMA>
+       </OMA>
+       <OMV name="one"/>
+  </OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> zero </Name>
+<Description>
+This symbols represents a unary function, whose argument should be a
+field.  It returns the zero element of the field.
+</Description>
+<Example>
+The identity field(R,+,0,-,*,1,inv) is 0.
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="relation1" name="eq"/>
+       <OMA><OMS cd="field1" name="zero"/>
+            <OMA><OMS cd="field1" name="field"/>
+                 <OMV name="R"/>
+                 <OMV name="plus"/>
+                 <OMV name="zero"/>
+                 <OMV name="minus"/>
+                 <OMV name="times"/>
+                 <OMV name="one"/>
+                 <OMV name="inv"/>
+            </OMA>
+       </OMA>
+       <OMV name="zero"/>
+  </OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> addition </Name>
+<Description>
+This symbols represents a unary function, whose argument should be a
+field.    It returns the addition map on the field.
+We allow for the map to be n-ary.
+</Description>
+
+<Example>
+The identity field(R,+,0,-,*,1,inv) is +.
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="relation1" name="eq"/>
+       <OMA><OMS cd="field1" name="identity"/>
+            <OMA><OMS cd="field1" name="field"/>
+
+
+                 <OMV name="R"/>
+                 <OMV name="plus"/>
+                 <OMV name="zero"/>
+                 <OMV name="minus"/>
+                 <OMV name="times"/>
+                 <OMV name="one"/>
+                 <OMV name="inv"/>
+            </OMA>
+       </OMA>
+       <OMV name="plus"/>
+  </OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+
+
+
+<CDDefinition>
+<Name> subtraction </Name>
+<Description>
+This symbols represents a unary function, whose argument should be a
+field.  It returns the binary operation of subtraction on the field.
+</Description>
+
+<Example>
+The subtraction of field(R,+,0,-,*,1,inv) is the map
+sending the pair (r,s) of elements of R to r-s.
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="relation1" name="eq"/>
+       <OMA><OMS cd="field1" name="subtraction"/>
+            <OMA><OMS cd="field1" name="field"/>
+                 <OMV name="R"/>
+                 <OMV name="plus"/>
+                 <OMV name="zero"/>
+                 <OMV name="minus"/>
+                 <OMV name="times"/>
+                 <OMV name="one"/>
+                 <OMV name="inv"/>
+            </OMA>
+       </OMA>
+       <OMBIND><OMS cd="fns1" name="lambda"/>
+            <OMBVAR><OMV name="x"/><OMV name="y"/>
+            </OMBVAR>
+            <OMA><OMV name="plus"/>
+                 <OMV name="x"/>
+                 <OMA><OMV name="minus"/>
+                      <OMV name="y"/>
+                 </OMA>
+            </OMA>
+       </OMBIND>
+  </OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+
+
+
+<CDDefinition>
+<Name> is_commutative </Name>
+<Description>
+The unary boolean function whose value is true iff the argument is a
+commutative field.
+</Description>
+
+<CMP>
+If is_commutative(G) then for all a,b in carrier(G) a*b = b*a
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA>
+    <OMS cd="logic1" name="implies"/>
+    <OMA>
+      <OMS cd="field1" name="is_commutative"/>
+      <OMV name="G"/>
+    </OMA>
+    <OMBIND>
+      <OMS cd="quant1" name="forall"/>
+      <OMBVAR>
+        <OMV name="a"/>
+        <OMV name="b"/>
+      </OMBVAR>
+      <OMA>
+        <OMS cd="logic1" name="implies"/>
+        <OMA>
+          <OMS cd="logic1" name="and"/>
+          <OMA>
+            <OMS cd="set1" name="in"/>
+            <OMV name="a"/>
+            <OMA>
+              <OMS cd="field1" name="carrier"/>
+              <OMV name="G"/>
+            </OMA>
+          </OMA>
+          <OMA>
+            <OMS cd="set1" name="in"/>
+            <OMV name="b"/>
+            <OMA>
+              <OMS cd="field1" name="carrier"/>
+              <OMV name="G"/>
+            </OMA>
+          </OMA>
+        </OMA>
+        <OMA>
+          <OMS cd="relation1" name="eq"/>
+            <OMA>
+              <OMS cd="field1" name="multiplication"/>
+              <OMV name="G"/>
+            </OMA>
+            <OMV name="a"/>
+            <OMV name="b"/>
+          </OMA>
+          <OMA>
+            <OMA>
+              <OMS cd="field1" name="multiplication"/>
+              <OMV name="G"/>
+            </OMA>
+            <OMV name="b"/>
+            <OMV name="a"/>
+          </OMA>
+        </OMA>
+    </OMBIND>
+  </OMA>
+</OMOBJ>
+</FMP>
+</CDDefinition>
+
+
+
+<CDDefinition>
+<Name> is_subfield </Name>
+<Description>
+The binary boolean function whose value is true iff the second
+argument is a subfield of the second.
+</Description>
+
+<CMP> 
+If is_subfield(G,H) then H is a nonempty set of elements of the carrier
+of G and H is closed under multiplication and taking inverses.  
+</CMP>
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> additive_group </Name>
+<Description>
+This symbol is a unary function, whose argument should be a field S.
+When applied to S its value is the monoid underlying S.
+</Description>
+
+<Example>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+     <OMA><OMS cd="relation1" name="eq"/>
+          <OMA><OMS cd="field1" name="additive_group"/>
+               <OMA><OMS cd="field1" name="field"/>
+                    <OMV name="R"/> 
+                 <OMV name="plus"/>
+                 <OMV name="zero"/>
+                 <OMV name="minus"/>
+                 <OMV name="times"/>
+                 <OMV name="one"/>
+                 <OMV name="inv"/>
+               </OMA>
+          </OMA>
+          <OMA><OMS cd="group1" name="group"/>
+               <OMV name="R"/> 
+               <OMV name="plus"/>
+               <OMV name="zero"/>
+               <OMV name="minus"/>
+          </OMA>
+     </OMA>
+    </OMOBJ>
+</Example>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> multiplicative_group </Name>
+<Description>
+This symbol is a unary function, whose argument should be a field S.
+When applied to S its value is the multiplicative group on the nonzero
+elements of S.
+</Description>
+
+<Example>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+     <OMA><OMS cd="relation1" name="eq"/>
+          <OMA><OMS cd="field1" name="multiplicative_group"/>
+               <OMA><OMS cd="field1" name="field"/>
+                    <OMV name="R"/> 
+                    <OMV name="plus"/>
+                    <OMV name="zero"/>
+                    <OMV name="minus"/>
+                    <OMV name="times"/>
+                    <OMV name="one"/>
+                    <OMV name="inv"/>
+               </OMA>
+          </OMA>
+          <OMA><OMS cd="group1" name="group"/>
+               <OMV name="R"/> 
+               <OMV name="times"/>
+               <OMV name="one"/>
+               <OMV name="inv"/>
+          </OMA>
+     </OMA>
+    </OMOBJ>
+</Example>
+
+</CDDefinition>
+
+
+
+
+<CDDefinition>
+<Name> subfield </Name>
+<Description>
+This symbol is a constructor symbol with one or two arguments. The
+first argument is a list or set, D, of field elements. The optional
+second argument is the field G containing D. It denotes the subfield
+of G generated by D.
+</Description>
+
+<Example>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+     <OMA><OMS cd="field1" name="subfield"/>
+          <OMV name="D"/> <OMV name="G"/>
+     </OMA>
+    </OMOBJ>
+</Example>
+
+<Example>
+This example represents the subfield of the multiplicative field of
+the nonzero reals generated by the constants Pi and E:
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMA><OMS cd="field1" name="subfield"/>
+     <OMA>
+       <OMS cd="list1" name="list"/>
+         <OMS cd="nums1" name="pi"/>
+         <OMS cd="nums1" name="e"/>
+     </OMA>
+     <OMA><OMS cd="field1" name="field"/>
+          <OMA><OMS cd="set1" name="suchthat"/>
+               <OMS cd="setname1" name="R"/>
+               <OMBIND><OMS cd="fns1" name="lambda"/>
+                       <OMBVAR> <OMV name="x"/>
+                       </OMBVAR>
+                       <OMA><OMS cd="relation1" name="neq"/>
+                            <OMV name="x"/>
+                            <OMS cd="alg1" name="zero"/>
+                       </OMA>
+               </OMBIND>
+          </OMA>
+          <OMS cd="arith1" name="times"/>
+          <OMS cd="arith2" name="inverse"/>
+          <OMI> 1 </OMI>
+     </OMA>
+</OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name>power</Name>
+<Description>
+This is a symbol with two or three arguments.  Its first argument
+should be an element g of a field and the second argument should be
+an integer. The optional third argument is the field G containing g.
+It denotes the element g^k in G.
+</Description>
+
+<Example>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+    <OMA><OMS cd="relation1" name="eq"/>
+         <OMA><OMS cd="field1" name="power"/>
+              <OMI>3</OMI>
+              <OMI>2</OMI>
+              <OMA><OMS cd="field1" name="field"/>
+                   <OMS cd="setname1" name="Q"/>
+                   <OMS cd="arith1" name="plus"/>
+                   <OMI>0</OMI>
+                   <OMS cd="arith1" name="minus"/>
+                   <OMS cd="arith1" name="times"/>
+                   <OMI>1</OMI>
+                   <OMBIND><OMS cd="fns1" name="lambda"/>
+                           <OMBVAR>  <OMV name="x"/>  </OMBVAR>
+                           <OMA><OMS cd="arith1" name="divide"/>
+                                <OMI> 1 </OMI>  <OMV name="x"/>
+                           </OMA>
+                   </OMBIND>
+              </OMA>
+         </OMA>
+         <OMI>9</OMI>
+    </OMA>
+  </OMOBJ>
+</Example>
+
+</CDDefinition>
+
+
+
+
+<CDDefinition>
+<Name>expression</Name>
+<Description>
+This symbol is a function with two arguments.  Its first
+argument should be a field. The
+second should be an arithmetic expression A,
+whose operators are
+times, plus, minus, unary_minus, and power, and whose leaves are members of the carrier of G. 
+When applied to
+G and A, it denotes the element (of G) that is the element obtained from the
+leaves of A by applying the operations of G instead of those
+from the CD arith1 according to A. Here multiplication, addition, subtraction,
+minus, and power take over the roles of
+times, plus, minus, unary_minus, and power, respectively. 
+Also, an integer m occurring in A will be interpreted as a member of G by interpreting it as 
+the sum of m copies of the identity element, the symbol alg1.one will be
+interpreted as the identity,
+and  the symbol alg1.zero will be
+interpreted as the zero of G.
+
+</Description>
+
+<Example>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+    <OMA><OMS cd="relation1" name="eq"/>
+         <OMA><OMS cd="group1" name="expression"/>
+              <OMA><OMS cd="field1" name="field"/>
+                   <OMS cd="setname1" name="Z"/>
+                   <OMS cd="arith1" name="plus"/>
+                   <OMI>0</OMI>
+                   <OMS cd="arith1" name="unary_minus"/>
+                   <OMS cd="arith1" name="times"/>
+                   <OMI>1</OMI>
+              </OMA>
+              <OMA><OMS cd="arith1" name="times"/>
+                   <OMI>6</OMI><OMI>3</OMI>
+              </OMA>
+         </OMA>
+         <OMI>18</OMI>
+    </OMA>
+  </OMOBJ>
+</Example>
+
+</CDDefinition>
+
+
+
+
+</CD>

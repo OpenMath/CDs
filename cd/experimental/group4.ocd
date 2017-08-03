@@ -1,0 +1,220 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDName> group4 </CDName>
+<CDBase> http://www.openmath.org/cd </CDBase>
+<CDURL> http://www.openmath.org/cd/group4.ocd </CDURL>
+<CDReviewDate> 2006-06-01 </CDReviewDate>
+<CDDate> 2004-06-01 </CDDate>
+<CDVersion> 1 </CDVersion>
+<CDRevision> 2 </CDRevision>
+<CDStatus> experimental </CDStatus>
+
+<Description> A CD of sets constructed from groups   </Description>
+
+<CDComment>
+Written by Arjeh M. Cohen 2004-03-02.
+Edited AMC 2004-03-05
+</CDComment>
+
+
+
+<CDDefinition>
+<Name> conjugacy_classes </Name>
+<Description>
+This symbol represents a unary function whose argument should be a group.
+Its value on a group is the set of conjugacy classes of
+that group.
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name> conjugacy_class_representatives </Name>
+<Description>
+This symbol represents a unary function whose argument should be a group.
+Its value on a group is a set of representatives of the conjugacy classes of
+that group.
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name> are_conjugate </Name>
+<Description>
+This symbol represents a boolean ternary function whose first argument is a group G and
+whose second and third arguments are elements x and y of G. Its value on G, x,
+and y is true if and only if x and y are conjugate in G.
+</Description>
+
+<CMP>
+x and y are conjugate if and only if there is h in G such that x = h y h^(-1).
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="logic1" name="equivalent"/>
+       <OMA><OMS cd="group4" name="are_conjugate"/>
+            <OMV name="G"/>
+            <OMV name="x"/> <OMV name="y"/>
+       </OMA>
+       <OMBIND><OMS cd="quant1" name="exists"/>
+            <OMBVAR><OMV name="h"/></OMBVAR>
+            <OMA><OMS cd="logic1" name="and"/>
+                 <OMA><OMS cd="set1" name="in"/>
+                      <OMV name="h"/>
+                      <OMA><OMS cd="group1" name="carrier"/>
+                           <OMV name="G"/>
+                      </OMA>
+                 </OMA>
+                 <OMA><OMS cd="relation1" name="eq"/>
+                      <OMV name="x"/>
+                      <OMA><OMS cd="group1" name="expression"/>
+                           <OMV name="G"/>
+                           <OMA><OMS cd="arith1" name="times"/>
+                                <OMV name="h"/>
+                                <OMV name="y"/>
+                                <OMA><OMS cd="arith1" name="power"/>
+                                     <OMV name="h"/>
+                                     <OMI>-1</OMI>
+                                </OMA>
+                           </OMA>
+                      </OMA>
+                 </OMA>
+            </OMA>
+        </OMBIND>
+   </OMA>
+</OMOBJ>
+</FMP>
+
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> conjugacy_class </Name>
+<Description>
+This symbol represents a binary function, whose first argument is a group G and
+whose second argument is an element x of G. Its value on G and x is the set of elements which 
+are conjugate to x in G.
+</Description>
+
+<CMP>
+The conjugacy class in G of h is the subset {g^(-1) h g | g in G} of G.
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="relation1" name="eq"/>
+       <OMA><OMS cd="group4" name="conjugacy_class"/>
+            <OMV name="G"/>   <OMV name="h"/>
+       </OMA>
+       <OMA><OMS cd="set1" name="suchthat"/>
+            <OMA><OMS cd="group1" name="carrier"/>
+                 <OMV name="G"/>
+            </OMA>
+            <OMBIND><OMS cd="fns1" name="lambda"/>
+                 <OMBVAR> <OMV name="x"/></OMBVAR>
+                 <OMA><OMS cd="group4" name="are_conjugate"/>
+                      <OMV name="G"/><OMV name="x"/><OMV name="h"/>
+                 </OMA>
+            </OMBIND>
+       </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> left_transversal </Name>
+<Description>
+The binary function whose value is a set of representatives for the
+left cosets of the second argument as a subgroup of the first.
+</Description>
+</CDDefinition>
+
+
+
+<CDDefinition>
+<Name> right_transversal </Name>
+<Description>
+The binary function whose value is a set of representatives for the
+right cosets of the second argument as a subgroup of the first.
+</Description>
+</CDDefinition>
+
+
+
+
+<CDDefinition>
+<Name> left_coset </Name>
+<Description>
+This symbol represents a ternary function whose first argument is a group G,
+whose second argument is a subgroup H of G, and whose third argument is an
+element x of G. Its value on G, H, and x is the left coset of H in G
+containing x, that is, the set x H.
+</Description>
+
+
+
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> right_coset </Name>
+<Description>
+This symbol represents a ternary function whose first argument is a group G,
+whose second argument is a subgroup H of G, and whose third argument is an
+element x of G. Its value on G, H, and x is the right coset of H in G
+containing x, that is, the set H x.
+</Description>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> left_cosets </Name>
+<Description>
+The binary function whose value is the set of left cosets of the second argument in the first.
+</Description>
+
+
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> right_cosets </Name>
+<Description>
+The binary function whose value is the set of right cosets of the second argument in the first.
+</Description>
+
+
+</CDDefinition>
+
+
+
+<CDDefinition>
+<Name> left_coset_representative </Name>
+<Description>
+This symbol represents a quaternary function whose first argument is a group G,
+whose second argument is a subgroup H of G, whose third argument is
+left_transversal T
+of H in G, and whose fourth argument is an element of G.
+It assigns to G, H, T, g the element of t of T representing the left coset of
+H containing g, that is, t H  = g H .
+</Description>
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> right_coset_representative </Name>
+<Description>
+This symbol represents a quaternary function whose first argument is a group G,
+whose second argument is a subgroup H of G, whose third argument is
+right_transversal T
+of H in G, and whose fourth argument is an element of G.
+It assigns to G, H, T, g the element of t of T representing the right coset of
+H containing g, that is,  H t  =  H g.
+</Description>
+</CDDefinition>
+
+
+
+
+</CD>
+

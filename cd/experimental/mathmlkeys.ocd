@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+  <CDComment>     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+  <CDName>mathmlkeys</CDName>
+  <CDBase>http://www.openmath.org/cd</CDBase>
+  <CDURL>http://www.openmath.org/cd/mathmlkeys.ocd</CDURL>
+  <CDReviewDate>2014-05-31</CDReviewDate>
+  <CDDate>2009-05-31</CDDate>
+  <CDVersion>1</CDVersion>
+  <CDRevision>1</CDRevision>
+  <CDStatus>experimental</CDStatus>
+  <Description>MathML3 and OpenMath provide semantic annotation facilities where the relation of the annotation to the annotated object is specified by special symols called keys. This content dictionary provides some keys for specifying the relations in semantic annotations.</Description>
+
+  <CDDefinition>
+    <Role>attribution</Role>
+    <Name>alternate-representation</Name>
+    <Description>This key specifies that the corresponding value is an alternate
+    representation of the annotated element in some unspecified way.</Description>
+    <CDComment>
+    This key specifies that the corresponding value is an alternate 
+    representation of the annotated or attributed expression, it is expected 
+    that the encoding of the annotation is read either from the annotation 
+    content: in the case of MathML's annotation elements and in the case of the 
+    OMFOREIGN OpenMath expression, the encoding is provided as an attribute 
+    value.
+    This annotation key is used as the default relation for annotation and 
+    annotation-xml elements of MathML 3 that do not specify keys.
+    </CDComment>
+
+  <Example>
+    An OpenMath expression and one of its alternate representations: the
+    presentation MathML delivered in the context of a spanish speaking user.
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMATTR>
+	<OMATP>
+	  <OMS cd="mathmlkeys" name="alternate-representation"/>
+          <OMFOREIGN encoding="MathML-presentation">
+	    <math xmlns="http://www.w3.org/1998/Math/MathML">
+	      <mi>sen</mi><mfenced><mi>x</mi></mfenced>
+	    </math>
+	  </OMFOREIGN>
+	</OMATP>
+	<OMA>
+	  <OMS cd="transc1" name="sin"/>
+	  <OMV name="x"/>
+	</OMA>
+      </OMATTR>
+    </OMOBJ>
+  </Example>
+  
+  </CDDefinition>
+
+  <CDDefinition>
+    <Role>semantic-attribution</Role>
+    <Name>contentequiv</Name>
+    <Description>This key specifies that the corresponding value is the content
+      MathML equivalent of the annotated element.</Description>
+    </CDDefinition>
+</CD>

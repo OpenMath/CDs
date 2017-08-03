@@ -1,0 +1,615 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+	<CDName>plangeo5</CDName>
+<CDBase> http://www.openmath.org/cd </CDBase>
+	<CDURL>http://www.win.tue.nl/~amc/oz/om/cds/plangeo5.ocd</CDURL>
+	<CDDate> 2004-06-01 </CDDate>
+	<CDReviewDate> 2006-06-01 </CDReviewDate>
+	<CDVersion>0</CDVersion>
+	<CDRevision>2</CDRevision>
+	<CDStatus>experimental</CDStatus>
+	
+	<Description>
+		This CD contains symbols
+		for generating polynomial systems from affine planar geometry configurations.
+	</Description>
+
+
+
+<CDDefinition>
+<Name>coordinatize</Name>
+
+<Description>
+This symbol is a function of one argument which must be a
+configuration or an assertion (as defined in plangeo1).
+
+When applied to a configuration C, it stands for the same
+configuration but now with coordinates attached to each object of C.
+The new variables are bound within an OMBIND element with head element
+the lambda symbol. The bound variables (placed within an OMBVAR
+element) are the new variables, and the last argument of OMBIND is
+the expression C in which each object is coordinatized.
+
+If an object already has coordinates, these are left as they are. If
+not, then new variables are introduced to coordinatize the object.
+
+When applied to an assertion of the form assertion(C,S), it leads to
+the same result except that the last argument of OMBIND is the assertion
+whose configuration argument is the expression C in which each object
+is coordinatized, and whose thesis argument is S.
+
+</Description>
+
+<Example>
+The coordinatized version of the affine triangle with points A,B,C and lines
+a, b, c (through B and C, A and C, and A and B respectively)
+described in two ways:
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="plangeo5" name="coordinatize"/>
+    <OMA><OMS cd="plangeo1" name="configuration"/>
+      <OMA><OMS cd="plangeo1" name="point"/>
+        <OMV name="A"/>
+      </OMA>
+      <OMA><OMS cd="plangeo1" name="point"/>
+        <OMV name="B"/>
+      </OMA>
+      <OMA><OMS cd="plangeo1" name="line"/>
+        <OMV name="c"/>
+        <OMA><OMS cd="plangeo4" name="set_affine_coordinates"/>
+          <OMV name="c"/>
+          <OMA><OMS cd="linalg2" name="vector"/>
+            <OMI>1</OMI>
+            <OMI>1</OMI>
+            <OMI>1</OMI>
+          </OMA>
+        </OMA>
+        <OMA><OMS cd="plangeo1" name="incident"/>
+          <OMV name="c"/>
+          <OMV name="A"/>
+        </OMA>
+        <OMA><OMS cd="plangeo1" name="incident"/>
+          <OMV name="c"/>
+          <OMV name="B"/>
+        </OMA>
+      </OMA>
+      <OMA><OMS cd="plangeo1" name="point"/>
+        <OMV name="C"/>
+        <OMA><OMS cd="plangeo4" name="set_affine_coordinates"/>
+          <OMV name="C"/>
+          <OMA><OMS cd="linalg2" name="vector"/>
+            <OMI>1</OMI>
+            <OMI>0</OMI>
+            <OMI>1</OMI>
+          </OMA>
+        </OMA>
+      </OMA>
+      <OMA><OMS cd="plangeo1" name="line"/>
+       <OMV name="a"/>
+       <OMA><OMS cd="plangeo1" name="incident"/>
+         <OMV name="a"/>
+         <OMV name="B"/>
+       </OMA>
+       <OMA><OMS cd="plangeo1" name="incident"/>
+         <OMV name="a"/>
+         <OMV name="C"/>
+       </OMA>
+      </OMA>
+      <OMA><OMS cd="plangeo1" name="line"/>
+        <OMV name="b"/>
+        <OMA><OMS cd="plangeo1" name="incident"/>
+          <OMV name="b"/>
+          <OMV name="A"/>
+        </OMA>
+        <OMA><OMS cd="plangeo1" name="incident"/>
+          <OMV name="b"/>
+          <OMV name="C"/>
+        </OMA>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMBIND><OMS cd="fns1" name="lambda"/>
+    <OMBVAR>
+            <OMV name="xA"/>
+            <OMV name="yA"/>
+            <OMV name="xB"/>
+            <OMV name="yB"/>
+            <OMV name="xa"/>
+            <OMV name="ya"/>          
+            <OMV name="za"/>
+            <OMV name="xb"/>
+            <OMV name="yb"/>
+            <OMV name="zb"/>          
+    </OMBVAR>
+    <OMA><OMS cd="plangeo1" name="configuration"/>
+      <OMA><OMS cd="plangeo1" name="point"/>
+        <OMV name="A"/>
+        <OMA><OMS cd="plangeo4" name="set_affine_coordinates"/>
+          <OMV name="A"/>
+          <OMA><OMS cd="linalg2" name="vector"/>
+            <OMV name="xA"/>
+            <OMV name="yA"/>
+          </OMA>
+        </OMA>
+      </OMA>
+      <OMA><OMS cd="plangeo1" name="point"/>
+        <OMV name="B"/>
+        <OMA><OMS cd="plangeo4" name="set_affine_coordinates"/>
+          <OMV name="B"/>
+          <OMA><OMS cd="linalg2" name="vector"/>
+            <OMV name="xB"/>
+            <OMV name="yB"/>
+          </OMA>
+        </OMA>
+      </OMA>
+      <OMA><OMS cd="plangeo1" name="line"/>
+        <OMV name="c"/>
+        <OMA><OMS cd="plangeo4" name="set_coordinates"/>
+          <OMV name="c"/>
+          <OMA><OMS cd="linalg2" name="vector"/>
+            <OMI>1</OMI>
+            <OMI>1</OMI>
+            <OMI>1</OMI>
+          </OMA>
+        </OMA>
+        <OMA><OMS cd="plangeo1" name="incident"/>
+          <OMV name="c"/>
+          <OMV name="A"/>
+        </OMA>
+        <OMA><OMS cd="plangeo1" name="incident"/>
+          <OMV name="c"/>
+          <OMV name="B"/>
+        </OMA>
+      </OMA>
+      <OMA><OMS cd="plangeo1" name="point"/>
+        <OMV name="C"/>
+        <OMA><OMS cd="plangeo4" name="set_affine_coordinates"/>
+          <OMV name="C"/>
+          <OMA><OMS cd="linalg2" name="vector"/>
+            <OMI>1</OMI>
+            <OMI>0</OMI>
+          </OMA>
+        </OMA>
+      </OMA>
+      <OMA><OMS cd="plangeo1" name="line"/>
+        <OMV name="a"/>
+        <OMA><OMS cd="plangeo4" name="set_coordinates"/>
+          <OMV name="a"/>
+          <OMA><OMS cd="linalg2" name="vector"/>
+            <OMV name="xa"/>
+            <OMV name="ya"/>          
+            <OMV name="za"/>          
+          </OMA>
+        </OMA>
+        <OMA><OMS cd="plangeo1" name="incident"/>
+          <OMV name="a"/>
+          <OMV name="B"/>
+        </OMA>
+        <OMA><OMS cd="plangeo1" name="incident"/>
+          <OMV name="a"/>
+          <OMV name="C"/>
+        </OMA>
+      </OMA>
+      <OMA><OMS cd="plangeo1" name="line"/>
+        <OMV name="b"/>
+        <OMA><OMS cd="plangeo4" name="set_coordinates"/>
+          <OMV name="b"/>
+          <OMA><OMS cd="linalg2" name="vector"/>
+            <OMV name="xb"/>
+            <OMV name="yb"/>          
+            <OMV name="zb"/>          
+          </OMA>
+        </OMA>
+        <OMA><OMS cd="plangeo1" name="incident"/>
+          <OMV name="b"/>
+          <OMV name="A"/>
+        </OMA>
+        <OMA><OMS cd="plangeo1" name="incident"/>
+          <OMV name="b"/>
+          <OMV name="C"/>
+        </OMA>
+      </OMA>
+    </OMA>
+  </OMBIND>
+</OMOBJ>
+
+
+
+
+
+</Example>
+
+
+<Example> The coordinatization of the assertion that two distinct
+lines meet in only one point is expressed as follows.
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMA><OMS cd="plangeo5" name="coordinatize"/>
+     <OMA><OMS cd="plangeo1" name="assertion"/>
+          <OMA><OMS cd="plangeo1" name="configuration"/>
+               <OMA><OMS cd="plangeo1" name="point"/> 
+                    <OMV name="A"/>
+               </OMA>
+               <OMA><OMS cd="plangeo1" name="point"/> 
+                    <OMV name="B"/>
+               </OMA>
+               <OMA><OMS cd="plangeo1" name="line"/>
+                    <OMV name="l"/>
+                    <OMA><OMS cd="plangeo1" name="incident"/>
+                         <OMV name="A"/>
+                         <OMV name="l"/>
+                    </OMA>
+                    <OMA><OMS cd="plangeo1" name="incident"/>
+                         <OMV name="B"/>
+                         <OMV name="l"/>
+                    </OMA>
+               </OMA>
+               <OMA><OMS cd="plangeo1" name="line"/>
+                    <OMV name="m"/>
+                    <OMA><OMS cd="plangeo1" name="incident"/>
+                         <OMV name="A"/>
+                         <OMV name="m"/>
+                    </OMA>
+                    <OMA><OMS cd="plangeo1" name="incident"/>
+                         <OMV name="B"/>
+                         <OMV name="m"/>
+                    </OMA>
+                    <OMA><OMS cd="logic1" name="not"/>
+                         <OMA><OMS cd="relation1" name="eq"/>
+                              <OMV name="l"/>
+                              <OMV name="m"/>
+                         </OMA>
+                    </OMA>
+               </OMA>
+               <OMA><OMS cd="relation1" name="eq"/>
+                    <OMV name="A"/>
+                    <OMV name="B"/>
+               </OMA>
+          </OMA>
+     </OMA>
+</OMA>
+</OMOBJ>
+
+
+
+It is equivalent to following expression.
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMBIND><OMS cd="fns1" name="lambda"/>
+<OMBVAR><OMV name="xA"/><OMV name="yA"/>
+        <OMV name="xB"/><OMV name="yB"/>
+        <OMV name="xl"/><OMV name="yl"/><OMV name="zl"/>
+        <OMV name="xm"/><OMV name="ym"/><OMV name="zm"/>
+</OMBVAR>
+<OMA><OMS cd="plangeo1" name="assertion"/>
+     <OMA><OMS cd="plangeo1" name="configuration"/>
+          <OMA><OMS cd="plangeo1" name="point"/> 
+               <OMV name="A"/>
+               <OMA><OMS cd="plangeo4" name="set_affine_coordinates"/>
+                    <OMV name="A"/>
+                    <OMA><OMS cd="linalg2" name="vector"/>
+                         <OMV name="xA"/>
+                         <OMV name="yA"/>
+                    </OMA>
+               </OMA>
+          </OMA>
+          <OMA><OMS cd="plangeo1" name="point"/> 
+               <OMV name="B"/>
+               <OMA><OMS cd="plangeo4" name="set_affine_coordinates"/>
+                    <OMV name="B"/>
+                    <OMA><OMS cd="linalg2" name="vector"/>
+                         <OMV name="xB"/>
+                         <OMV name="yB"/>
+                    </OMA>
+               </OMA>
+
+          </OMA>
+          <OMA><OMS cd="plangeo1" name="line"/>
+               <OMV name="l"/>
+               <OMA><OMS cd="plangeo1" name="incident"/>
+                    <OMV name="A"/>
+                    <OMV name="l"/>
+               </OMA>
+               <OMA><OMS cd="plangeo1" name="incident"/>
+                    <OMV name="B"/>
+                    <OMV name="l"/>
+               </OMA>
+               <OMA><OMS cd="plangeo4" name="set_coordinates"/>
+                    <OMV name="l"/>
+                    <OMA><OMS cd="linalg2" name="vector"/>
+                         <OMV name="xl"/><OMV name="yl"/><OMV name="zl"/>
+                    </OMA>
+               </OMA>
+
+          </OMA>
+          <OMA><OMS cd="plangeo1" name="line"/>
+               <OMV name="m"/>
+               <OMA><OMS cd="plangeo1" name="incident"/>
+                    <OMV name="A"/>
+                    <OMV name="m"/>
+               </OMA>
+               <OMA><OMS cd="plangeo1" name="incident"/>
+                    <OMV name="B"/>
+                    <OMV name="m"/>
+               </OMA>
+               <OMA><OMS cd="logic1" name="not"/>
+                    <OMA><OMS cd="relation1" name="eq"/>
+                         <OMV name="l"/>
+                         <OMV name="m"/>
+                    </OMA>
+               </OMA>
+               <OMA><OMS cd="plangeo4" name="set_coordinates"/>
+                    <OMV name="m"/>
+                    <OMA><OMS cd="linalg2" name="vector"/>
+                         <OMV name="xm"/> <OMV name="ym"/><OMV name="zm"/>
+                    </OMA>
+               </OMA>
+          </OMA>
+          <OMA><OMS cd="relation1" name="eq"/>
+               <OMV name="A"/>
+               <OMV name="B"/>
+          </OMA>
+     </OMA>
+</OMA>
+</OMBIND>
+</OMOBJ>
+</Example>
+
+
+</CDDefinition>
+
+
+
+<CDDefinition>
+<Name>is_coordinatized</Name>
+
+<Description>
+This symbol is a boolean valued function of one argument which must be a
+configuration.
+
+When applied to an argument C, it represent the value true if C is a
+configuration such that each object occurring in C (as well as in its
+subconfigurations) has coordinates (that is, the set_affine_coordinates field
+is present as an argument to the object), and value false otherwise.
+
+If an object already has coordinates, these are left as they are. If
+not, then new variables are introduced to coordinatize the object.
+</Description>
+
+
+
+</CDDefinition>
+
+
+
+<CDDefinition> <Name>ideal</Name> 
+
+<Description> This symbol is a function in one argument, which should
+		be a coordinatized configuration (that is, each
+		geometric object involved has coordinates).  
+
+When evaluated at
+		a configuration C it represents a function (given by a
+		lambda binder) mapping the new parameters (arising
+		when the inequality properties in the configuration
+		are being translated into polynomials) to a list of
+		polynomials in the coordinates that are variables
+		which, when equated to zero, represent conditions
+		equivalent to those describing the configuration C.
+
+When evaluated at an assertion assertion(C,S) it represents a function (given by a
+		lambda binder) mapping the new parameters (arising
+		when the inequality properties in the configuration
+		are being translated into polynomials) to a list of
+		polynomials in the coordinates that are variables
+		which, when equated to zero, represent conditions
+		equivalent to those describing the configuration C.
+
+</Description>
+<Example>
+The following expression is an ideal of a coordinatized triangle.
+
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMA><OMS cd="plangeo5" name="ideal"/>
+  <OMA><OMS cd="plangeo1" name="configuration"/>
+    <OMA><OMS cd="plangeo1" name="point"/>
+      <OMV name="A"/>
+      <OMA><OMS cd="plangeo4" name="set_affine_coordinates"/>
+        <OMV name="A"/>
+        <OMA><OMS cd="linalg2" name="vector"/>
+          <OMV name="xA"/>
+          <OMV name="yA"/>
+        </OMA>
+      </OMA>
+    </OMA>
+    <OMA><OMS cd="plangeo1" name="point"/>
+      <OMV name="B"/>
+      <OMA><OMS cd="plangeo4" name="set_affine_coordinates"/>
+        <OMV name="B"/>
+        <OMA><OMS cd="linalg2" name="vector"/>
+          <OMV name="xB"/>
+          <OMV name="yB"/>
+        </OMA>
+      </OMA>
+      <OMA><OMS cd="logic1" name="not"/>
+        <OMA><OMS cd="relation1" name="eq"/>
+          <OMV name="B"/>
+          <OMV name="A"/>
+        </OMA>
+      </OMA>
+    </OMA>
+    <OMA><OMS cd="plangeo1" name="line"/>
+      <OMV name="c"/>
+      <OMA><OMS cd="plangeo4" name="set_coordinates"/>
+        <OMV name="c"/>
+        <OMA><OMS cd="linalg2" name="vector"/>
+          <OMI>1</OMI>
+          <OMI>1</OMI>
+          <OMI>1</OMI>
+        </OMA>
+      </OMA>
+      <OMA><OMS cd="plangeo1" name="incident"/>
+        <OMV name="c"/>
+        <OMV name="A"/>
+      </OMA>
+      <OMA><OMS cd="plangeo1" name="incident"/>
+        <OMV name="c"/>
+        <OMV name="B"/>
+      </OMA>
+    </OMA>
+    <OMA><OMS cd="plangeo1" name="point"/>
+      <OMV name="C"/>
+      <OMA><OMS cd="plangeo4" name="set_affine_coordinates"/>
+        <OMV name="C"/>
+        <OMA><OMS cd="linalg2" name="vector"/>
+          <OMI>1</OMI>
+          <OMI>0</OMI>
+        </OMA>
+      </OMA>
+    </OMA>
+    <OMA><OMS cd="plangeo1" name="line"/>
+      <OMV name="a"/>
+      <OMA><OMS cd="plangeo4" name="set_coordinates"/>
+        <OMV name="a"/>
+        <OMA><OMS cd="linalg2" name="vector"/>
+          <OMV name="xa"/><OMV name="ya"/><OMV name="za"/>          
+        </OMA>
+      </OMA>
+      <OMA><OMS cd="plangeo1" name="incident"/>
+        <OMV name="a"/>
+        <OMV name="B"/>
+      </OMA>
+      <OMA><OMS cd="plangeo1" name="incident"/>
+        <OMV name="a"/>
+        <OMV name="C"/>
+      </OMA>
+    </OMA>
+    <OMA><OMS cd="plangeo1" name="line"/>
+      <OMV name="b"/>
+      <OMA><OMS cd="plangeo4" name="set_coordinates"/>
+        <OMV name="b"/>
+        <OMA><OMS cd="linalg2" name="vector"/>
+          <OMV name="xb"/><OMV name="yb"/><OMV name="zb"/>          
+        </OMA>
+      </OMA>
+      <OMA><OMS cd="plangeo1" name="incident"/>
+        <OMV name="b"/>
+        <OMV name="A"/>
+      </OMA>
+      <OMA><OMS cd="plangeo1" name="incident"/>
+        <OMV name="b"/>
+        <OMV name="C"/>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMA>
+</OMOBJ>
+
+
+
+Its evaluation should be equivalent to
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMBIND><OMS cd="fns1" name="lambda"/>
+    <OMBVAR>
+            <OMV name="xh"/><OMV name="yh"/>
+    </OMBVAR>
+    <OMA><OMS cd="list1" name="list"/>
+         <OMA><OMS cd="arith1" name="plus"/>
+              <OMV name="xA"/><OMV name="yA"/>
+        </OMA>
+        <OMA><OMS cd="arith1" name="plus"/>
+             <OMV name="xB"/><OMV name="yB"/>
+        </OMA>
+        <OMA><OMS cd="fns2" name="apply_to_list"/>
+             <OMA><OMS cd="arith1" name="plus"/>
+                  <OMA><OMS cd="list1" name="list"/>
+                       <OMA><OMS cd="arith1" name="times"/>
+                            <OMV name="xa"/><OMV name="xB"/>
+                       </OMA>
+                       <OMA><OMS cd="arith1" name="times"/>
+                            <OMV name="ya"/><OMV name="yB"/>
+                       </OMA>
+                       <OMV name="za"/>
+                  </OMA>
+             </OMA>
+        </OMA>
+        <OMA><OMS cd="arith1" name="plus"/>
+              <OMV name="xa"/><OMV name="za"/>
+        </OMA>
+        <OMA><OMS cd="fns2" name="apply_to_list"/>
+             <OMA><OMS cd="arith1" name="plus"/>
+                  <OMA><OMS cd="list1" name="list"/>
+                       <OMA><OMS cd="arith1" name="times"/>
+                            <OMV name="xA"/><OMV name="xb"/>
+                       </OMA>
+                       <OMA><OMS cd="arith1" name="times"/>
+                            <OMV name="yA"/><OMV name="yb"/>
+                       </OMA>
+                       <OMV name="zb"/>
+                  </OMA>
+             </OMA>
+        </OMA>
+        <OMA><OMS cd="arith1" name="plus"/>
+           <OMV name="xb"/><OMV name="zb"/>
+        </OMA>
+        <OMA><OMS cd="fns2" name="apply_to_list"/>
+             <OMA><OMS cd="arith1" name="plus"/>
+                  <OMA><OMS cd="list1" name="list"/>
+                       <OMA><OMS cd="arith1" name="times"/>
+                            <OMA><OMS cd="arith1" name="minus"/>
+                                 <OMV name="xA"/><OMV name="xB"/>
+                            </OMA>
+                            <OMV name="xh"/>
+                       </OMA>
+                       <OMA><OMS cd="arith1" name="times"/>
+                            <OMA><OMS cd="arith1" name="minus"/>
+                                 <OMV name="yA"/><OMV name="yB"/>
+                            </OMA>
+                            <OMV name="yh"/>
+                       </OMA>
+                       <OMI>-1</OMI>
+                  </OMA>
+             </OMA>
+        </OMA>
+    </OMA>
+  </OMBIND>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+
+<CDDefinition> <Name>polynomial_assertion</Name> 
+
+<Description> This symbol is a function in one argument, which should
+		be an assertion whose configuration is coordinatized
+		(that is, each geometric object involved has
+		coordinates).
+
+When evaluated at an assertion assertion(C,T) it represents the
+assertion that the constant polynomial 1 belongs to the ideal of the
+polynomial ring over a coefficient ring R containing the rationals and
+all global (unbound) coordinates of C,
+in the bound variables of ideal(C) and an external variable t, generated by
+ideal(C)[bound variables] and 1-f_T t. Here
+f_T is a polynomial such that f_T=0  is equivalent to the thesis
+T being true. 
+
+This means f_T is in the radical ideal of ideal(C)[bound variables].
+The interpretation is as follows:
+There are no parameter choices for the bound variables such that
+f_T is nonzero. In other words, for all parameter choices of a
+coordinatization of C, we must have f_T=0.
+So the truth of the assertion that thesis T holds in configuration C is reflected by the truth of
+polynomial_assertion(C,T).
+
+
+</Description>
+
+</CDDefinition>
+
+</CD>

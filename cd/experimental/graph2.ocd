@@ -1,0 +1,248 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+  <CDName> graph2 </CDName>
+  <CDBase> http://www.openmath.org/cd </CDBase>
+  <CDURL> http://www.dse.nl/~postma/graph1.ocd </CDURL>
+  <CDReviewDate> 2006-06-01 </CDReviewDate>
+  <CDStatus> experimental </CDStatus>
+  <CDDate> 2004-06-27 </CDDate>
+  <CDVersion> 0 </CDVersion>
+  <CDRevision> 12 </CDRevision>
+  
+  
+  <Description>
+  This CD defines symbols for handling directed and undirected graphs.
+  Authored by Arjeh---to be merged with version of Erik Postma.
+  </Description>
+  
+  <CDDefinition>
+    <Name> automorphism_group </Name>
+    <Description>
+      This symbol is a unary function whose argument is an undirected graph. 
+      When applied to an undirected graph G, it represents the automorphism
+    group of  G.
+The resulting automorphism group is represented as a permutation group on the
+    vertices of the graph G.
+</Description>
+    
+    <Example>
+    The automorphism group of a path of length 2 (on three nodes) is the permutation group of
+    order two interchanging the two end nodes.
+    
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+      <OMA><OMS cd="relation1" name="eq"/>
+           <OMA><OMS cd="graph2" name="automorphism_group"/>
+                <OMA><OMS cd="graph1" name="graph"/>
+                     <OMA><OMS cd="set1" name="set"/>
+                          <OMI>1</OMI><OMI>2</OMI><OMI>3</OMI>
+                     </OMA>
+                     <OMA><OMS cd="set1" name="set"/>
+                          <OMA><OMS cd="set1" name="set"/>
+                               <OMI>1</OMI><OMI>2</OMI>
+                          </OMA>
+                          <OMA><OMS cd="set1" name="set"/>
+                               <OMI>2</OMI><OMI>3</OMI>
+                          </OMA>
+                     </OMA>
+                </OMA>
+           </OMA>
+           <OMA><OMS cd="permgp1" name="group"/>
+                <OMS cd="permutation1" name="right_compose"/>
+                <OMA><OMS cd="permutation1" name="permutation"/>
+                     <OMA><OMS cd="permutation1" name="cycle"/>
+                          <OMI>1</OMI><OMI>3</OMI>
+                     </OMA>
+                </OMA>
+           </OMA>
+       </OMA>
+    </OMOBJ>
+    </Example>
+  </CDDefinition>
+
+
+<CDDefinition>
+<Name> is_homomorphism </Name>
+<Description>
+This symbol is a boolean function with three arguments.
+The first and arguments are graphs M, N,
+the third is a map f from the vertex set of M to the vertex set of N.
+When applied to M, N, and f, it denotes that f is a graph homomorphism from M
+to N.
+</Description>
+
+<CMP>
+If is_homomorphism(M,N,f) then, for each pair of vertices x, y of M, we have
+if {x,y} is an edge of M, then {f(x), f(y)} is an edge of N.
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="logic1" name="implies"/>
+       <OMA><OMS cd="graph2" name="is_homomorphism"/>
+            <OMV name="M"/> <OMV name="N"/>  <OMV name="f"/>
+       </OMA>
+       <OMBIND><OMS cd="quant1" name="forall"/>
+            <OMBVAR><OMV name="x"/><OMV name="y"/>  </OMBVAR>
+            <OMA><OMS cd="logic1" name="implies"/>
+                 <OMA><OMS cd="logic1" name="and"/>
+                      <OMA><OMS cd="set1" name="in"/>
+                           <OMV name="x"/>
+                           <OMA><OMS cd="graph1" name="vertexset"/>
+                                <OMV name="M"/>
+                           </OMA>
+                      </OMA>
+	              <OMA><OMS cd="set1" name="in"/>
+                           <OMV name="y"/>
+                           <OMA><OMS cd="graph1" name="vertexset"/>
+                                <OMV name="M"/>
+                           </OMA>
+                      </OMA>
+	              <OMA><OMS cd="set1" name="in"/>
+                           <OMA><OMS cd="set1" name="set"/>
+                                <OMV name="x"/><OMV name="y"/>
+                           </OMA>
+                           <OMA><OMS cd="graph1" name="edgeset"/>
+                                <OMV name="M"/>
+                           </OMA>
+                      </OMA>
+                 </OMA>
+                 <OMA><OMS cd="set1" name="in"/>
+                      <OMA><OMS cd="set1" name="set"/>
+                           <OMA><OMV name="f"/>
+                                <OMV name="x"/> 
+                           </OMA>
+                           <OMA><OMV name="f"/>
+                                <OMV name="y"/> 
+                           </OMA>
+                      </OMA>
+                      <OMA><OMS cd="graph1" name="edgeset"/>
+                           <OMV name="N"/>
+                      </OMA>
+                 </OMA>
+             </OMA>
+        </OMBIND>
+   </OMA>
+</OMOBJ>
+</FMP>
+
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> is_isomorphism </Name>
+<Description>
+This symbol is a boolean function with three arguments.
+The first and arguments are graphs M, N,
+the third is a map f from the element set of M to the element set of N.
+When applied to M, N, and f, it denotes that f is a graph isomorphism from M
+to N.
+This means that f is a homomorphism from M to N,
+that f is bijective, and that its inverse  is a homomorphism from N to M.
+</Description>
+
+<Example>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+     <OMA><OMS cd="graph2" name="is_isomorphism"/>
+          <OMV name="M"/>  <OMV name="N"/> <OMV name="f"/>
+     </OMA>
+    </OMOBJ>
+</Example>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> is_endomorphism </Name>
+<Description>
+This symbol is a boolean function with two arguments.
+The first argument is a graph M,
+the second is a map f from the element set of M to the element set of M.
+When applied to M and f, it denotes that f is a graph endomorphism from M
+to M.
+</Description>
+
+<CMP>
+If is_endomorphism(M,f) then is_homomorphism(M,M,f)
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="logic1" name="implies"/>
+       <OMA><OMS cd="graph2" name="is_endomorphism"/>
+            <OMV name="M"/>  <OMV name="f"/>
+       </OMA>
+       <OMA><OMS cd="graph2" name="is_homomorphism"/>
+            <OMV name="M"/> <OMV name="M"/>  <OMV name="f"/>
+       </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+
+<Example>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+     <OMA><OMS cd="graph2" name="is_endomorphism"/>
+          <OMV name="M"/> <OMV name="f"/>
+     </OMA>
+    </OMOBJ>
+</Example>
+
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> is_automorphism </Name>
+<Description>
+This symbol is a boolean function with two arguments.
+The first is a graph M,
+the second is a map f from the element set of M to the element set of M.
+When applied to M and f, it denotes a graph automorphism f of  M.
+</Description>
+
+<CMP>
+If is_automorphism(M,f) then is_isomorphism(M,M,f)
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="logic1" name="implies"/>
+       <OMA><OMS cd="graph2" name="is_automorphism"/>
+            <OMV name="M"/>  <OMV name="f"/>
+       </OMA>
+       <OMA><OMS cd="graph2" name="is_isomorphism"/>
+            <OMV name="M"/> <OMV name="M"/>  <OMV name="f"/>
+       </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+<Example>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+     <OMA><OMS cd="graph2" name="is_automorphism"/>
+          <OMV name="M"/> <OMV name="f"/>
+     </OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+
+
+<CDDefinition>
+<Name> isomorphic </Name>
+<Description>
+This symbol is a Boolean function with n arguments, n at least 2, which are graphs.
+When applied to M_1, ..., M_n, it denotes the fact that there is an
+isomorphism from each M_i to each M_j.
+</Description>
+
+<Example>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+     <OMA><OMS cd="graph2" name="isomorphic"/>
+          <OMV name="M"/>  <OMV name="N"/> 
+     </OMA>
+    </OMOBJ>
+</Example>
+
+</CDDefinition>
+
+
+</CD>

@@ -1,0 +1,142 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDName> ring4 </CDName>
+<CDBase> http://www.openmath.org/cd </CDBase>
+<CDURL> http://www.openmath.org/cd/ring4.ocd </CDURL>
+<CDReviewDate> 2006-06-01 </CDReviewDate>
+<CDDate> 2004-06-01 </CDDate>
+<CDVersion> 1 </CDVersion>
+<CDRevision> 1 </CDRevision>
+<CDStatus> experimental </CDStatus>
+
+<Description> A CD of 
+functions for further basic properties of rings   </Description>
+
+<CDComment>
+Written by Arjeh M. Cohen 2004-02-25
+</CDComment>
+
+<CDDefinition>
+<Name> is_maximal_ideal</Name>
+<Description>
+The binary boolean function whose value is true iff the second
+argument is a maximal ideal of the first.
+</Description>
+
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> is_prime_ideal</Name>
+<Description>
+The binary boolean function whose value is true iff the second
+argument is a prime ideal of the first.
+</Description>
+
+</CDDefinition>
+
+
+
+
+
+<CDDefinition>
+<Name> is_domain </Name>
+<Description>
+This symbol represents a boolean 
+unary function. The argument is a ring R.
+When evaluated on R, the function returns true if R is a domain
+and false otherwise. A domain is a commutative ring without zero divisors.
+</Description>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> is_field </Name>
+<Description>
+This is unary boolean function whose argument should be a ring R.
+The value is true if and only if the ring is commutative and every nonzero 
+element has
+a multiplicative
+inverse.
+</Description>
+
+<CMP>
+If is_commutative(G) and for all a in carrier(G)
+there is b in carrier(G) such that a*b =  identity(G), then is_field(G).
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="logic1" name="implies"/>
+       <OMA><OMS cd="logic1" name="and"/>
+            <OMA><OMS cd="ring1" name="is_commutative"/>
+                 <OMV name="G"/>
+            </OMA>
+            <OMBIND><OMS cd="quant1" name="forall"/>
+                 <OMBVAR> <OMV name="a"/> </OMBVAR>
+                 <OMA><OMS cd="logic1" name="implies"/>
+                      <OMA><OMS cd="logic1" name="and"/>
+                           <OMA><OMS cd="set1" name="in"/>
+                                <OMV name="a"/>
+                                <OMA><OMS cd="ring1" name="carrier"/>
+                                     <OMV name="G"/>
+                                </OMA>
+                           </OMA>
+                           <OMA><OMS cd="relation1" name="neq"/>
+                                <OMV name="a"/>
+                                <OMA><OMS cd="ring1" name="zero"/>
+                                     <OMV name="G"/>
+                                </OMA>
+                           </OMA>
+                      </OMA>
+
+                      <OMBIND><OMS cd="quant1" name="exists"/>
+                           <OMBVAR> <OMV name="b"/> </OMBVAR>
+                           <OMA><OMS cd="logic1" name="and"/>
+                                <OMA><OMS cd="set1" name="in"/>
+                                     <OMV name="b"/>
+                                     <OMA><OMS cd="ring1" name="carrier"/>
+                                          <OMV name="G"/>
+                                     </OMA>
+                                </OMA>
+                                <OMA><OMS cd="relation1" name="eq"/>
+                                     <OMA><OMA><OMS cd="ring1" name="multiplication"/>
+                                               <OMV name="G"/>
+                                          </OMA>
+                                          <OMV name="a"/>
+                                          <OMV name="b"/>
+                                     </OMA>
+                                     <OMA><OMS cd="ring1" name="identity"/>
+                                          <OMV name="G"/>
+                                     </OMA>
+                                </OMA>
+                           </OMA>
+                      </OMBIND>
+                 </OMA>
+            </OMBIND>
+       </OMA>
+       <OMA><OMS cd="ring4" name="is_field"/>
+            <OMV name="G"/>
+       </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> is_zero_divisor </Name>
+<Description>
+This symbol represents a boolean 
+binary function. The first argument is a ring R, the second is an element x of R.
+When evaluated on R and x, the function returns true if x a zero divisor and
+nonzero in R.
+</Description>
+
+
+<CMP>
+An element x of a ring R
+is a zero divisor if and only if it
+nonzero and there is a nonzero y in R such that x * y = 0 or y * x = 0.
+</CMP>
+</CDDefinition>
+
+</CD>

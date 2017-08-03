@@ -1,0 +1,29 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDName> relation4 </CDName>
+<CDBase> http://www.openmath.org/cd </CDBase>
+<CDURL> http://www.openmath.org/cd/relation4.ocd </CDURL>
+<CDReviewDate> 2005-04-01 </CDReviewDate>
+<CDDate> 2004-03-10 </CDDate>
+<CDVersion> 1 </CDVersion>
+<CDRevision> 1 </CDRevision>
+<CDStatus> experimental </CDStatus>
+<CDUses>
+</CDUses>
+<Description>
+    This CD holds further definitions of symbols that represent
+    relations in some way; at present this only includes a definition
+    for n-ary equality.
+</Description>
+
+
+<CDDefinition>
+<Name> eqs </Name>
+<Description> 
+This symbol is used to denote the n-ary version of equality.
+When applied to n arguments a1, ..., an, it represents the boolean expression
+that
+a1, a2, ,,, and an are equal.
+</Description>
+</CDDefinition>
+
+</CD>

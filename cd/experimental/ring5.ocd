@@ -1,0 +1,65 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDName> ring5 </CDName>
+<CDBase> http://www.openmath.org/cd </CDBase>
+<CDURL> http://www.openmath.org/cd/ring5.ocd </CDURL>
+<CDReviewDate> 2006-06-01 </CDReviewDate>
+<CDDate> 2004-07-07 </CDDate>
+<CDVersion> 1 </CDVersion>
+<CDRevision> 1 </CDRevision>
+<CDStatus> experimental </CDStatus>
+
+<Description> A CD of 
+functions for relating ring elements their images in quotient rings   </Description>
+
+<CDComment>
+Written by Arjeh M. Cohen 2004-07-07
+</CDComment>
+
+<CDDefinition>
+<Name> quotient_map</Name>
+<Description>
+This symbol is a binary function whose first argument is a ring R and whose
+second argument is an ideal I of R. When applied to R and I, its value is the
+natural quotient map from R to the quotient ring R/I.
+</Description>
+</CDDefinition>
+
+<CDDefinition>
+<Name> quotient_by_poly_map</Name>
+<Description>
+This symbol is a binary function whose first argument is a 
+ring R,
+and whose
+second argument is a univariate polynomial f with coefficients from R. So, if
+the indeterminate is X,  when applied to R and f, the function has value the
+natural quotient map from R[X] to the quotient ring R[X]/(f).
+</Description>
+</CDDefinition>
+
+
+
+<CDDefinition>
+<Name>homomorphism_by_generators</Name>
+<Description>
+This is a function with three arguments the first two of which must be monoids
+F and K.
+The third argument should be a set or a list L of ordered pairs (lists of length 2). Each
+pair [x,y] from L consists of an element x from F and an element y from K.
+when applied to F, K, and L, the symbol represents the monoid homomorphism from F
+to K that maps the first entry x of each pair [x,y] to the second entry y of the same pair.
+</Description>
+</CDDefinition>
+
+
+
+
+
+<CDDefinition>
+<Name>automorphism_group</Name>
+<Description>
+This is a function with a single argument which must be a ring.
+It refers to the automorphism group of its argument.
+</Description>
+</CDDefinition>
+
+</CD>

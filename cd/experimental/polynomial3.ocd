@@ -1,0 +1,183 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDName> polynomial3 </CDName>
+<CDBase> http://www.openmath.org/cd </CDBase>
+<CDURL> http://www.openmath.org/cd/polynomial3.ocd </CDURL>
+<CDReviewDate>  2006-07-12  </CDReviewDate>
+<CDDate> 2004-07-12   </CDDate>
+<CDVersion> 0 </CDVersion>
+<CDRevision> 0 </CDRevision>
+<CDStatus> experimental </CDStatus>
+<CDUses>
+  <CDName>alg1</CDName>
+  <CDName>arith1</CDName>
+  <CDName>logic1</CDName>
+  <CDName>quant1</CDName>
+  <CDName>set1</CDName>
+  <CDName>setname1</CDName>
+  <CDName>setname2</CDName>
+  <CDName>relation1</CDName>
+  <CDName>fns1</CDName>
+  <CDName>interval1</CDName>
+  <CDName>integer1</CDName>
+  <CDName>polynomial1</CDName>
+  <CDName>polynomial2</CDName>
+</CDUses>
+<Description>
+This CD holds a collection of basic modular arithmetic for polynomials over fields.
+The data structures for polynomials can be arithmetic expressions, for
+instance using the ring1.expression symbol, or DMP as
+in the CD polyd1.
+</Description>
+
+<CDDefinition>
+    <Name> gcd </Name>
+    <Description> 
+     The n-ary greatest common divisor for univariate polynomials over fields.
+    </Description>
+     <Example> The gcd(X,Y,Z).
+     <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+      <OMA>
+        <OMS cd="polynomial3" name="gcd"/>        
+        <OMV name="X"/>
+        <OMV name="Y"/>
+        <OMV name="Z"/>
+      </OMA>
+     </OMOBJ>
+    </Example>
+</CDDefinition>
+
+<CDDefinition>
+    <Name> factors </Name>
+    <Description> 
+This symbol is a unary function, whose argument should be a polynomial f.
+When applied to f, it represents a complete list of irreducible factors of f.
+    </Description>
+
+     <Example>
+The following expression represents the list [X+1,X+1] of rational polynomials.
+
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+    <OMA><OMS cd="polynomial3" name="factors"/>        
+         <OMA><OMS cd="ring1" name="expression"/>
+              <OMA><OMS cd="ring1" name="expression"/>
+                   <OMA><OMS cd="ring3" name="poly_ring"/>
+                        <OMS cd="fieldname1" name="Q"/>
+                        <OMV name="X"/>
+                   </OMA>
+                   <OMA><OMS cd="arith1" name="plus"/>
+                        <OMA><OMS cd="arith1" name="power"/>
+                             <OMV name="X"/><OMI>2</OMI>
+                        </OMA>
+                        <OMA><OMS cd="arith1" name="times"/>
+                             <OMI>2</OMI><OMV name="X"/>
+                        </OMA>
+                        <OMI>1</OMI>
+                   </OMA>
+              </OMA>
+         </OMA>
+    </OMA>
+  </OMOBJ>
+
+    </Example>
+</CDDefinition>
+
+
+
+<CDDefinition>
+<Name> quotient </Name>
+<Role>application</Role>
+<Description>
+This symbol represents the binary division operator on univariate polynomials
+over fields. That is,
+for univariate polynomials a and b, quotient(a,b) denotes the polynomial q such that a=b*q+r, with degree(r)
+less than degree(b).
+</Description>
+<CMP>
+For all a,b with a,b univariate polynomials over a field F we have
+  a = b * quotient(a,b) + remainder(a,b) and degree(remainder(a,b)) is less than degree(b).
+</CMP>
+<FMP>
+   <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+     <OMBIND><OMS cd="quant1" name="forall"/>
+          <OMBVAR>     <OMV name="a"/>         <OMV name="b"/>       </OMBVAR>
+          <OMA><OMS cd="logic1" name="implies"/>
+               <OMA><OMS cd="logic1" name="and"/>
+                    <OMA><OMS cd="set1" name="in"/>
+                         <OMV name="a"/>
+                         <OMA id="pr"><OMS cd="polyd1" name="poly_ring_d"/>
+                              <OMV name="F"/><OMI>1</OMI>
+                         </OMA>
+                    </OMA>
+                    <OMA><OMS cd="set1" name="in"/>
+                         <OMV name="b"/>
+                         <OMR href="#pr"/>
+                    </OMA>
+               </OMA>
+               <OMA><OMS cd="logic1" name="and"/>
+                    <OMA><OMS cd="relation1" name="eq"/>
+                         <OMV name="a"/>
+                         <OMA><OMS cd="arith1" name="plus"/>
+                              <OMA><OMS cd="arith1" name="times"/>
+                                   <OMV name="b"/>
+                                   <OMA id="q"><OMS cd="polynomial3" name="quotient"/>
+                                        <OMV name="a"/><OMV name="b"/>
+                                   </OMA>
+                              </OMA>
+                              <OMA><OMS cd="polynomial3" name="remainder"/>
+                                   <OMV name="a"/><OMV name="b"/>
+                              </OMA>
+                         </OMA>
+                    </OMA>
+                    <OMA><OMS cd="relation1" name="lt"/>
+                         <OMA><OMS cd="polynomial1" name="degree"/>
+                              <OMR href="#r"/>
+                         </OMA>
+                         <OMA><OMS cd="polynomial1" name="degree"/>
+                              <OMV name="b"/>
+                         </OMA>
+                    </OMA>
+	       </OMA>
+          </OMA>
+     </OMBIND>
+   </OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> remainder </Name>
+<Role>application</Role>
+<Description> 
+The symbol represents a binary function, whose arguments should be univariate
+polynomials in the same polynomial ring whose coefficient ring is a field.
+When applied to a and b, it represents the polynomial remainder after division
+of a by b.
+</Description>
+
+<CDComment>
+For univariate polynomials a and b, remainder(a,b) denotes r such that a=b*q+r, with degree(r) less
+than degree(b).
+See remainder for a formal statement of this property.
+</CDComment>
+</CDDefinition>
+
+
+<!--
+<CDDefinition>
+<Name>ord</Name>
+<Description>
+This symbol  denotes a binary function. Its first argument shoud be a prime
+number p, the second an integer n.
+When applied to p and n, it represents the highest power of p occurring in a
+factorization of n.
+</Description>
+
+
+-->
+
+
+</CD>
+
+
+
+
+

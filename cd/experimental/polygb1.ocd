@@ -1,0 +1,162 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+   <CDName> polygb </CDName> 
+<CDBase> http://www.openmath.org/cd </CDBase>
+   <CDURL> http://www.win.tue.nl/~amc/oz/om/cds/polygb1.ocd </CDURL>
+   <CDReviewDate> 2006-06-01 </CDReviewDate> 
+   <CDDate> 2004-06-01 </CDDate> 
+   <CDStatus> experimental </CDStatus>
+   <CDVersion> 1 </CDVersion>
+   <CDRevision> 1 </CDRevision>
+
+   <Description>
+     This CD contains operators for Groebner basis computations with polynomial expressions.
+     It is derived from surgery of polyd.
+   </Description>
+
+
+
+<CDComment>
+     Definition of some constructors
+</CDComment>
+
+   <CDDefinition> <Name> groebner_basis </Name> <Description> The
+constructor for a Groebner basis (reduced, minimal). The first is a
+list of variables, the second argument is an ordering, the third is
+the Groebner Basis itself (with respect to the ordering) that should
+be represented as a polynomial expression.  </Description>
+</CDDefinition>
+
+<CDComment>
+     Definition of operations
+</CDComment>
+
+
+    <CDDefinition>
+       <Name> groebner </Name>
+       <Description> 
+         The groebner basis (reduced, minimal) of a set of polynomials, with
+         respect to a given ordering. First argument is  a list of
+	 variables, the second is an ordering, the
+ third is a list of polynomials. A program that can compute
+         the basis is required to return a "groebner_basis" object.
+       </Description>
+
+
+<Example>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+           <OMA><OMS name="groebner" cd="polygb1"/>
+                <OMA><OMS name="list" cd="list1"/>
+                               <OMV name="x"/>
+                               <OMV name="y"/>
+                </OMA>
+
+                <OMA><OMS name="ordering" cd="polyd2"/>
+                     <OMS name="lexicographic" cd="polyd2"/>
+                </OMA>
+
+                <OMA><OMS name="list" cd="list1"/>
+                     <OMA><OMS name="minus" cd="arith1"/>    
+                          <OMA><OMS name="times" cd="arith1"/>    
+                               <OMA><OMS name="power" cd="arith1"/>    
+                                    <OMV name="x"/>
+                                    <OMI> 2 </OMI>
+                               </OMA>
+                               <OMV name="y"/>
+                          </OMA>
+                          <OMI> 1 </OMI>
+                     </OMA>
+                     <OMA><OMS name="minus" cd="arith1"/>    
+                          <OMA><OMS name="times" cd="arith1"/>    
+                               <OMA><OMS name="power" cd="arith1"/>    
+                                    <OMV name="y"/>
+                                    <OMI> 2 </OMI>
+                               </OMA>
+                               <OMV name="x"/>
+                          </OMA>
+                     <OMI> 1 </OMI>
+                     </OMA>
+                </OMA>
+           </OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+   <CDDefinition>
+       <Name> groebnered </Name>
+       <Description> 
+          The constructor for a Groebner basis (reduced, minimal). The first
+          argument is an ordering, the second is the Groebner Basis itself
+          (with respect to the ordering) that should be represented as a DMPL.
+       </Description>
+    </CDDefinition>
+
+    <CDDefinition>
+       <Name> completely_reduced </Name>
+       <Description> 
+          This attribute, attached to a groebnered object, says 'true' if
+          the base is fully reduced, i.e. no monomial is divisible by the
+          leading monomial of any other polynomial.
+       </Description>
+    </CDDefinition>
+
+
+
+
+    <CDDefinition>
+       <Name> reduce </Name>
+       <Description>
+
+         The reduction of a polynomial with respect to a list P of
+	 polynomials.  First argument is a polynomial expression p, the
+	 second argument is the list P of polynomials, the third argument
+	 is a list of variables, the fourth argument is a monomial
+	 reduction ordering.  A program implementing this operation
+	 should return a polynomial which represents a polynomial
+	 reduced from p with respect to P.  This means
+	 that p is expressible as the sum of the
+	 returned polynomial and a linear combination of the
+	 polynomials from P with coefficients being polynomials
+	 in the variables given in the third argument, and that no
+	 monomial of the returned polynomial is divisible by the
+	 leading monomial of an element from P. </Description>
+
+
+<Example>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+           <OMA><OMS name="reduce" cd="polygb1"/>
+                <OMA><OMS name="power" cd="arith1"/>
+                     <OMV name="x"/>
+                     <OMI>3</OMI>
+                </OMA>
+                <OMA><OMS name="list" cd="list1"/>
+                     <OMA><OMS name="plus" cd="arith1"/>
+                          <OMA><OMS name="power" cd="arith1"/>
+                               <OMV name="y"/>
+                               <OMI>3</OMI>
+			  </OMA>			       
+                          <OMI>-1</OMI>
+                     </OMA>
+                     <OMA><OMS name="minus" cd="arith1"/>
+                          <OMV name="x"/>
+                          <OMV name="y"/>
+                     </OMA>
+                </OMA>
+                <OMA><OMS name="list" cd="list1"/>
+                     <OMV name="x"/><OMV name="y"/>
+                </OMA>
+                <OMA><OMS name="ordering" cd="polyd2"/>
+                     <OMS name="lexicographic" cd="polyd2"/>
+                </OMA>
+           </OMA>
+</OMOBJ>
+</Example>
+	 </CDDefinition>
+
+
+
+
+
+
+</CD>
+

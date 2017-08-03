@@ -1,0 +1,40 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDName> semigroup4 </CDName>
+<CDBase> http://www.openmath.org/cd </CDBase>
+<CDURL> http://www.openmath.org/cd/semigroup4.ocd </CDURL>
+<CDReviewDate> 2006-06-01 </CDReviewDate>
+<CDDate> 2004-06-01 </CDDate>
+<CDVersion> 1 </CDVersion>
+<CDRevision> 1 </CDRevision>
+<CDStatus> experimental </CDStatus>
+
+<Description> A CD of 
+functions for morphisms of semigroups.
+</Description>
+
+<CDComment>
+Written by Arjeh M. Cohen 2004-07-07
+</CDComment>
+
+<CDDefinition>
+<Name>automorphism_group</Name>
+<Description>
+This is a function with a single argument which must be a semigroup.
+It refers to the automorphism group of its argument.
+</Description>
+</CDDefinition>
+
+
+<CDDefinition>
+<Name>homomorphism_by_generators</Name>
+<Description>
+This is a function with three arguments the first two of which must be semigroups
+F and K.
+The third argument should be a set or a list L of ordered pairs (lists of length 2). Each
+pair [x,y] from L consists of an element x from F and an element y from K.
+when applied to F, K, and L, the symbol represents the homomorphism from F
+to K that maps the first entry x of each pair [x,y] to the second entry y of the same pair.
+</Description>
+</CDDefinition>
+
+</CD>
