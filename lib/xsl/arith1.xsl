@@ -108,7 +108,7 @@
 </xsl:template>
 
 <xsl:template match="om:OMS[@cd='arith1' and @name='divide']"  >
-  <xsl:param name="p"/>
+  <xsl:param name="p" select="0"/>
   <xsl:param name="inline" select="false()"/>
   <xsl:choose>
   <xsl:when test="$inline">
