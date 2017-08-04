@@ -120,7 +120,7 @@
   </xsl:template>
 
   <xsl:template match="om:OMR" mode="om2cmml">
-    <share href="{@href}"/>
+    <share src="{@href}"/>
   </xsl:template>
 
 <xsl:template match="om:OMFOREIGN"  mode="om2cmml">
