@@ -2,7 +2,7 @@
  <CDGroupName>mathml</CDGroupName>
  <CDGroupVersion> 2 </CDGroupVersion>
  <CDGroupRevision> 1 </CDGroupRevision>
- <CDGroupURL>http://www.openmath.org/cdfiles/cdgroups/mathml.cdg</CDGroupURL>
+ <CDGroupURL>http://www.openmath.org/cdgroups/mathml.cdg</CDGroupURL>
  <CDGroupDescription>MathML compatibility CD Group </CDGroupDescription>
  <CDComment>Algebra</CDComment>
  <CDGroupMember>

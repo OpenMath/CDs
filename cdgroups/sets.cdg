@@ -3,7 +3,7 @@
 <CDGroupVersion> 1 </CDGroupVersion>
 <CDGroupRevision> 0 </CDGroupRevision>
 <CDGroupURL>
-http://www.openmath.org/cdfiles/cdgroups/sets.cdg</CDGroupURL>
+http://www.openmath.org/cdgroups/sets.cdg</CDGroupURL>
 <CDGroupDescription>
 Cds which describe operations on sets and their names
 </CDGroupDescription>
