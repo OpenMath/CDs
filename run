@@ -1,4 +1,4 @@
-
+#!/usr/bin/bash
  
 set -e
 
@@ -34,8 +34,9 @@ if [ "$TRAVIS" = "true" ] && [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
 #	esac
 #	fi
         cd CDs
-        make
-	make install
+#       make
+# 	make install
+        ./make-all
 	cd ../OpenMath.github.io
 	git commit -a -m "from travis ci: $TRAVIS_COMMIT_MESSAGE" || echo no changes
 	git push

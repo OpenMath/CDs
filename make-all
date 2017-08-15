@@ -1,0 +1,76 @@
+#!/usr/bin/bash
+
+set -e
+
+rm -rf tmp-cd tmp-cdhtml tmp-cdom tmp-cdgroups tmp-cdghtml tmp-sts tmp-stshtml
+mkdir tmp-cd tmp-cdhtml tmp-cdom tmp-cdgroups tmp-cdghtml tmp-sts tmp-stshtml
+
+echo copying input
+cd tmp-cd
+cp ../contrib/cd/*.ocd . 
+cp ../cd/experimental/*.ocd .
+cp ../cd/Official/*.ocd .
+cd ..
+cd tmp-cdgroups
+cp ../cdgroups/*.cdg .
+cd ..
+cd tmp-sts
+cp ../contrib/sts/*.sts .
+cp ../sts/*.sts .
+cd ..
+
+echo generate cd html
+java -jar lib/saxon/saxon9he.jar -o:tmp-cdhtml tmp-cd lib/xsl/cd.xsl
+echo generate cd om
+java -jar lib/saxon/saxon9he.jar -o:tmp-cdom tmp-cd lib/xsl/cd2om.xsl
+echo generate sts html
+java -jar lib/saxon/saxon9he.jar -o:tmp-stshtml tmp-sts lib/xsl/sts2html.xsl
+echo generate cdg html
+java -jar lib/saxon/saxon9he.jar -o:tmp-cdghtml tmp-cdgroups lib/xsl/cdgroup.xsl
+echo cds.xml
+echo "<CDS>" > cds.xml
+for d in cd/*/*.ocd contrib/cd/*.ocd
+do
+    echo "<OCD path=\"$d\">" >> cds.xml
+    cat $d >> cds.xml
+	    echo "</OCD>" >> cds.xml
+done
+echo "</CDS>" >> cds.xml
+sed -i -E s/.*version=\"1.0\".*//g cds.xml
+echo cdnames
+java -jar lib/saxon/saxon9he.jar -o:cdnames.md cds.xml lib/xsl/cdnames.xsl
+java -jar lib/saxon/saxon9he.jar -o:cdnamess.md cds.xml lib/xsl/cdnamess.xsl
+echo symbols
+java -jar lib/saxon/saxon9he.jar -o:symbols.md cds.xml lib/xsl/index.xsl
+
+
+if [ -d ../OpenMath.github.io/cd ]; then
+    echo copying to website
+	    cd tmp-cd
+	    for i in *.ocd
+	    do
+		cp $i ../../OpenMath.github.io/cd
+		cp ../tmp-cdhtml/${i}.xml  ../../OpenMath.github.io/cd/${i/.ocd/.html}
+		cp ../tmp-cdom/${i}.xml  ../../OpenMath.github.io/cd/${i/.ocd/.omcd}
+	    done
+	    cd ..
+	    cd tmp-cdgroups
+	    for i in *.cdg
+	    do
+		cp $i ../../OpenMath.github.io/cdgroups
+		cp ../tmp-cdghtml/${i}.xml  ../../OpenMath.github.io/cdgroups/${i/.cdg/.html}
+	    done
+	    cd ..
+	    cd tmp-sts
+	    for i in *.sts
+	    do
+		cp $i ../../OpenMath.github.io/sts
+		cp ../tmp-stshtml/${i}.xml  ../../OpenMath.github.io/sts/${i/.sts/.html}
+	    done
+	    cd ..
+	    cp cdnames.md cdnamess.md symbols.md ../OpenMath.github.io
+else
+	    echo not copying to website
+fi
+
+	    
