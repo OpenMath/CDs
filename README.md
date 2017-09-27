@@ -6,10 +6,9 @@ This repository contains the [OpenMath](http://openmath.org) content dictionarie
 * `cdgroups` contains the CD groups specifications. 
 * `sts` contains the small type system (STS) libraries.
 * `contrib` contains the contributed CDs and and STS libraries. 
-* `build.xml` allows to run the html generation for [the OpenMath Web Site](http://www.openmath.org/cd), the other `*.xml` will probably be moved to the web site repository.
-* `lib` contains resources for the build
+* `make-all`, `run`, `.travis.yml`, `lib`:  allows to run the html generation for [the OpenMath Web Site](http://www.openmath.org/cd).
 
-To build the web site locally run `make install` in the top dir, assuming that the
+To build the web site locally run `run` in the top dir, assuming that the
 [OpenMath.github.io](https://github.com/OpenMath/OpenMath.github.io) repository is cloned
 as a sibling to the [CDs](https://github.com/OpenMath/CDs) repository. It only needs to be
 committed there. However normally this is not necessary, continuous integration via Travis CI 
