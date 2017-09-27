@@ -41,7 +41,7 @@
    <CDVersion>2</CDVersion>
    <CDRevision>1</CDRevision>
 <CDComment>
-  Author: OpenMath Consortium
+  Author: OpenMath Consortium (James Davenport)
   SourceURL: https://github.com/OpenMath/CDs
 </CDComment>
    <Description>
@@ -54,7 +54,8 @@
      being polynomials in the rest of the variables, and therefore univariates
      are a special case. This is provided as a separate CD to allow for 
      univariate-only operations (e.g. composition) and for systems that only
-     understand univariates, e.g. NTL.
+     understand univariates, e.g. NTL.  These polynomials are also used to 
+     express minimal polynomials for algebraic extensions (see setname2).
    </Description>
 
 <CDComment>
