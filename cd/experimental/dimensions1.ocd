@@ -150,7 +150,6 @@ derivative of distance with respect to time.
 </Description>
 
 <CMP> velocity = displacement/time</CMP>
-<CMP> speed is the Euclidean norm of velocity </CMP>
 <FMP>
     <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
       <OMA>
@@ -163,6 +162,19 @@ derivative of distance with respect to time.
         </OMA>
       </OMA>
     </OMOBJ>
+</FMP>
+<CMP> speed is the Euclidean norm of velocity </CMP>
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+  <OMA>
+    <OMS name="eq" cd="relation1"/>
+    <OMS name="speed" cd="dimensions1"/>
+    <OMA>
+      <OMS name="Euclidean_norm" cd="norm1"/>
+      <OMS name="velocity" cd="dimensions1"/>
+    </OMA>
+  </OMA>
+</OMOBJ>
 </FMP>
 
 </CDDefinition>
@@ -200,6 +212,7 @@ second derivative of distance with respect to time.
 <Role>constant</Role>
 <Description>
 This symbol represents the time physical dimension.
+Note that the main units for time are defined in the units_time1 CD.
 </Description>
 </CDDefinition>
 
@@ -399,8 +412,19 @@ This symbol represents the energy physical dimension.
 </Description>
 
 <CMP> energy = mass*length^2/time^2 </CMP>
-<CMP> energy = force*length </CMP>
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMS cd="dimensions1" name="energy"/>
+    <OMA>
+      <OMS cd="arith1" name="times"/>
+      <OMS cd="dimensions1" name="force"/>
+      <OMS cd="dimensions1" name="length"/>
+    </OMA>
+  </OMA>
+</OMOBJ></FMP>
 
+<CMP> energy = force*length </CMP>
 <FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
   <OMA>
     <OMS cd="relation1" name="eq"/>
@@ -436,7 +460,6 @@ amount of a substance in a volume.
 </Description>
 
 <CMP> concentration = mass/length^3 </CMP>
-
 <FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
   <OMA>
     <OMS cd="relation1" name="eq"/>
@@ -473,6 +496,29 @@ times velocity.
       <OMS cd="arith1" name="times"/>
       <OMS cd="dimensions1" name="mass"/>
       <OMS cd="dimensions1" name="velocity"/>
+    </OMA>
+  </OMA>
+</OMOBJ></FMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> power </Name>
+<Description>
+This symbol represents the power physical dimension, it is energy
+per time.
+</Description>
+
+<CMP> power = energy/time </CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMS cd="dimensions1" name="power"/>
+    <OMA>
+      <OMS cd="arith1" name="divide"/>
+      <OMS cd="dimensions1" name="energy"/>
+      <OMS cd="dimensions1" name="time"/>
     </OMA>
   </OMA>
 </OMOBJ></FMP>
