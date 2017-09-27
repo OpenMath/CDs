@@ -1,0 +1,16 @@
+<CDGroup  xmlns="http://www.openmath.org/OpenMathCDG">
+<CDGroupName>scscp</CDGroupName>
+<CDGroupVersion> 1 </CDGroupVersion>
+<CDGroupRevision> 0 </CDGroupRevision>
+<CDGroupURL>
+http://www.openmath.org/cdgroups/scscp.cdg</CDGroupURL>
+<CDGroupDescription> This CD group contains cds for the OpenMath SCSCP standard.</CDGroupDescription>
+
+<CDGroupMember>
+<CDName>scscp1</CDName>
+<CDURL>http://www.openmath.org/cd/scscp1.ocd</CDURL></CDGroupMember>
+
+<CDGroupMember>
+<CDName>scscp2</CDName>
+<CDURL>http://www.openmath.org/cd/scscp2.ocd</CDURL></CDGroupMember>
+</CDGroup>
