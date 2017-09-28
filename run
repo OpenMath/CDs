@@ -5,7 +5,7 @@ set -e
 
 
 
-if [ "$TRAVIS" = "true" ] && [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
+if [ "$TRAVIS" = "true" ] && [ "$TRAVIS_PULL_REQUEST" = "false" ] && [ "$TRAVIS_BRANCH" = "master" ] ; then
    echo "travis job push to om website"
         cd ..
    	rm -rf OpenMath.github.io.git
