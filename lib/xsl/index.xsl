@@ -10,6 +10,8 @@ layout: page
 title: OpenMath Symbols
 - -->
 
+<h1>OpenMath Symbols</h1>
+<p>A combined list of all <xsl:value-of select="count(CDS/OCD/*:CD/*:CDDefinition)"/> symbols defined in this Content Dictionary collection.</p>
 
 <table>
   <tr>

@@ -13,6 +13,8 @@ title: OpenMath Content Dictionaries by status
 - -->
 <xsl:comment>WARNING: This page is automatically generated, do not edit! WARNING</xsl:comment>
 <xsl:text>&#xA; &#xA;</xsl:text>
+<h1>OpenMath Content Dictionaries by status</h1>
+<p><xsl:value-of select="count(CDS/OCD)"/> Content Dictionaries, ordered by status.</p>
 <table border="1">
 <tr>
 <th><a href="../cdnames">Content Dictionary</a></th>
