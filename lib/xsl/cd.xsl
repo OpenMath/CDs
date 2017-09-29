@@ -331,16 +331,16 @@
 
 
   <div>
-    <button id="{generate-id()}xmla" style="width:20em; background-color:#CCCCCC" onclick="divfold('{generate-id()}xml')">OpenMath XML (source)</button>
-    <pre id="{generate-id()}xml" style="display:none">
+    <button id="{om:id(.)}xmla" style="width:20em; background-color:#CCCCCC" onclick="divfold('{om:id(.)}xml')">OpenMath XML (source)</button>
+    <pre id="{om:id(.)}xml" style="display:none">
       <xsl:copy-of select="preceding-sibling::node()[1][self::text()][not(normalize-space(.))]"/>
       <xsl:apply-templates mode="verb" select="."/>
     </pre>
   </div>
 
   <div>
-    <button id="{generate-id()}cmmla" style="width:20em; background-color:#CCCCCC" onclick="divfold('{generate-id()}cmml')">Strict Content MathML</button>
-    <pre id="{generate-id()}cmml" style="display:none; margin-top: 0.5em">
+    <button id="{om:id(.)}cmmla" style="width:20em; background-color:#CCCCCC" onclick="divfold('{om:id(.)}cmml')">Strict Content MathML</button>
+    <pre id="{om:id(.)}cmml" style="display:none; margin-top: 0.5em">
       <xsl:variable name="c">
 	<xsl:apply-templates  mode="om2cmml" select="."/>
       </xsl:variable>
@@ -354,21 +354,21 @@
     </pre>
   </div>
 
-  <button id="{generate-id()}prefa" style="width:20em; background-color:#CCCCCC" onclick="divfold('{generate-id()}pref')">Prefix</button>
-  <div id="{generate-id()}pref" style="display:none; margin-top: 0.5em">
+  <button id="{om:id(.)}prefa" style="width:20em; background-color:#CCCCCC" onclick="divfold('{om:id(.)}pref')">Prefix</button>
+  <div id="{om:id(.)}pref" style="display:none; margin-top: 0.5em">
     <xsl:apply-templates mode="term" select="."/>
   </div>
 
   <div>
-    <button id="{generate-id()}popa" style="width:20em; background-color:#CCCCCC" onclick="divfold('{generate-id()}pop')">Popcorn</button>
-    <div id="{generate-id()}pop" style="display:none; margin-top: 0.5em">
+    <button id="{om:id(.)}popa" style="width:20em; background-color:#CCCCCC" onclick="divfold('{om:id(.)}pop')">Popcorn</button>
+    <div id="{om:id(.)}pop" style="display:none; margin-top: 0.5em">
       <xsl:apply-templates mode="pop" select="."/>
     </div>
   </div>
 
   <div>
-    <button id="{generate-id()}mmla" style="width:20em; background-color:#AAFFAA" onclick="divfold('{generate-id()}mml')">Rendered Presentation MathML</button>
-    <div id="{generate-id()}mml" style="display:block; margin-top: 0.5em">
+    <button id="{om:id(.)}mmla" style="width:20em; background-color:#AAFFAA" onclick="divfold('{om:id(.)}mml')">Rendered Presentation MathML</button>
+    <div id="{om:id(.)}mml" style="display:block; margin-top: 0.5em">
      <div style="overflow:auto;font-size:90%">
       <math   xmlns="http://www.w3.org/1998/Math/MathML" display="block">
 	<xsl:apply-templates/>
@@ -520,5 +520,10 @@
   <xsl:copy-of select="."/>
 </xsl:template>
 
+
+<xsl:function name="om:id">
+ <xsl:param name="n"/>
+ <xsl:sequence select="concat('id.om.',count($n/preceding::*))"/>
+</xsl:function>
 
 </xsl:stylesheet>
