@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Schema for OpenMath CD groups -->
+<!-- info on the CD group itself -->
+<grammar ns="http://www.openmath.org/OpenMathCDG" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+  <define name="CDGroupName">
+    <element name="CDGroupName">
+      <data type="NCName"/>
+    </element>
+  </define>
+  <define name="CDGroupVersion">
+    <element name="CDGroupVersion">
+      <data type="nonNegativeInteger"/>
+    </element>
+  </define>
+  <define name="CDGroupRevision">
+    <element name="CDGroupRevision">
+      <data type="nonNegativeInteger"/>
+    </element>
+  </define>
+  <define name="CDGroupURL">
+    <element name="CDGroupURL">
+      <text/>
+    </element>
+  </define>
+  <define name="CDGroupDescription">
+    <element name="CDGroupDescription">
+      <text/>
+    </element>
+  </define>
+  <!-- info on the CDs in the group -->
+  <define name="CDComment">
+    <element name="CDComment">
+      <text/>
+    </element>
+  </define>
+  <define name="CDGroupMember">
+    <element name="CDGroupMember">
+      <optional>
+        <ref name="CDComment"/>
+      </optional>
+      <ref name="CDName"/>
+      <optional>
+        <ref name="CDVersion"/>
+      </optional>
+      <optional>
+        <ref name="CDURL"/>
+      </optional>
+    </element>
+  </define>
+  <define name="CDName">
+    <element name="CDName">
+      <data type="NCName"/>
+    </element>
+  </define>
+  <define name="CDVersion">
+    <element name="CDVersion">
+      <data type="nonNegativeInteger"/>
+    </element>
+  </define>
+  <define name="CDURL">
+    <element name="CDURL">
+      <text/>
+    </element>
+  </define>
+  <!-- structure of the group -->
+  <define name="CDGroup">
+    <element name="CDGroup">
+      <ref name="CDGroupName"/>
+      <ref name="CDGroupVersion"/>
+      <optional>
+        <ref name="CDGroupRevision"/>
+      </optional>
+      <ref name="CDGroupURL"/>
+      <ref name="CDGroupDescription"/>
+      <zeroOrMore>
+        <choice>
+          <ref name="CDGroupMember"/>
+          <ref name="CDComment"/>
+        </choice>
+      </zeroOrMore>
+    </element>
+  </define>
+  <start>
+    <ref name="CDGroup"/>
+  </start>
+</grammar>

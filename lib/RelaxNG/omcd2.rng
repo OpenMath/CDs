@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  *********************************************
+  
+  Relax NG Schema for OpenMath CD
+  
+  *********************************************
+-->
+<grammar ns="http://www.openmath.org/OpenMathCD" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+  <include href="openmath2.rng">
+    <start>
+      <ref name="CD"/>
+    </start>
+  </include>
+  <define name="CDComment">
+    <element name="CDComment">
+      <text/>
+    </element>
+  </define>
+  <define name="CDName">
+    <element name="CDName">
+      <data type="NCName"/>
+    </element>
+  </define>
+  <define name="CDUses">
+    <element name="CDUses">
+      <zeroOrMore>
+        <ref name="CDName"/>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="CDURL">
+    <element name="CDURL">
+      <data type="anyURI"/>
+    </element>
+  </define>
+  <define name="CDBase">
+    <element name="CDBase">
+      <data type="anyURI"/>
+    </element>
+  </define>
+  <define name="text-or-om">
+    <zeroOrMore>
+      <choice>
+        <text/>
+        <ref name="OMOBJ"/>
+      </choice>
+    </zeroOrMore>
+  </define>
+  <define name="CDReviewDate">
+    <element name="CDReviewDate">
+      <data type="date"/>
+    </element>
+  </define>
+  <define name="CDDate">
+    <element name="CDDate">
+      <data type="date"/>
+    </element>
+  </define>
+  <define name="CDVersion">
+    <element name="CDVersion">
+      <data type="nonNegativeInteger"/>
+    </element>
+  </define>
+  <define name="CDRevision">
+    <element name="CDRevision">
+      <data type="nonNegativeInteger"/>
+    </element>
+  </define>
+  <define name="CDStatus">
+    <element name="CDStatus">
+      <choice>
+        <value>official</value>
+        <value>experimental</value>
+        <value>private</value>
+        <value>obsolete</value>
+      </choice>
+    </element>
+  </define>
+  <define name="Description">
+    <element name="Description">
+      <text/>
+    </element>
+  </define>
+  <define name="Name">
+    <element name="Name">
+      <data type="NCName"/>
+    </element>
+  </define>
+  <define name="Role">
+    <element name="Role">
+      <choice>
+        <value>binder</value>
+        <value>attribution</value>
+        <value>semantic-attribution</value>
+        <value>error</value>
+        <value>application</value>
+        <value>constant</value>
+      </choice>
+    </element>
+  </define>
+  <define name="CMP">
+    <element name="CMP">
+      <text/>
+    </element>
+  </define>
+  <define name="FMP">
+    <element name="FMP">
+      <optional>
+        <attribute name="kind">
+          <data type="string"/>
+        </attribute>
+      </optional>
+      <ref name="OMOBJ"/>
+    </element>
+  </define>
+  <!-- allow embedded OM -->
+  <define name="Example">
+    <element name="Example">
+      <ref name="text-or-om"/>
+    </element>
+  </define>
+  <define name="CDDefinition">
+    <element name="CDDefinition">
+      <zeroOrMore>
+        <ref name="CDComment"/>
+      </zeroOrMore>
+      <interleave>
+        <ref name="Name"/>
+        <optional>
+          <ref name="Role"/>
+        </optional>
+        <ref name="Description"/>
+      </interleave>
+      <zeroOrMore>
+        <choice>
+          <ref name="CDComment"/>
+          <ref name="Example"/>
+          <ref name="FMP"/>
+          <ref name="CMP"/>
+        </choice>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="CD">
+    <element name="CD">
+      <interleave>
+        <zeroOrMore>
+          <ref name="CDComment"/>
+        </zeroOrMore>
+        <optional>
+          <ref name="Description"/>
+        </optional>
+        <ref name="CDName"/>
+        <optional>
+          <ref name="CDURL"/>
+        </optional>
+        <optional>
+          <ref name="CDBase"/>
+        </optional>
+        <optional>
+          <ref name="CDReviewDate"/>
+        </optional>
+        <ref name="CDDate"/>
+        <ref name="CDStatus"/>
+        <optional>
+          <ref name="CDUses"/>
+        </optional>
+        <ref name="CDVersion"/>
+        <ref name="CDRevision"/>
+      </interleave>
+      <oneOrMore>
+        <ref name="CDDefinition"/>
+        <zeroOrMore>
+          <ref name="CDComment"/>
+        </zeroOrMore>
+      </oneOrMore>
+    </element>
+  </define>
+</grammar>

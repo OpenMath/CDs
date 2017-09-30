@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  *********************************************
+  
+  Relax NG Schema for OpenMath CD Signatures
+  
+  *********************************************
+-->
+<grammar ns="http://www.openmath.org/OpenMathCDS" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+  <include href="openmath2.rng">
+    <start>
+      <ref name="CDSignatures"/>
+    </start>
+  </include>
+  <define name="CDSComment">
+    <element name="CDSComment">
+      <text/>
+    </element>
+  </define>
+  <define name="CDSReviewDate">
+    <element name="CDSReviewDate">
+      <text/>
+    </element>
+  </define>
+  <define name="CDSStatus">
+    <element name="CDSStatus">
+      <choice>
+        <value>official</value>
+        <value>experimental</value>
+        <value>private</value>
+        <value>obsolete</value>
+      </choice>
+    </element>
+  </define>
+  <define name="CDSignatures">
+    <element name="CDSignatures">
+      <ref name="attlist.CDSignatures"/>
+      <zeroOrMore>
+        <ref name="CDSComment"/>
+      </zeroOrMore>
+      <interleave>
+        <optional>
+          <ref name="CDSReviewDate"/>
+        </optional>
+        <ref name="CDSStatus"/>
+      </interleave>
+      <zeroOrMore>
+        <choice>
+          <ref name="CDSComment"/>
+          <ref name="Signature"/>
+        </choice>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="attlist.CDSignatures">
+    <attribute name="cd">
+      <data type="NCName"/>
+    </attribute>
+    <attribute name="type">
+      <data type="NCName"/>
+    </attribute>
+  </define>
+  <define name="Signature">
+    <element name="Signature">
+      <ref name="attlist.Signature"/>
+      <optional>
+        <ref name="OMOBJ"/>
+      </optional>
+    </element>
+  </define>
+  <define name="attlist.Signature">
+    <attribute name="name"/>
+  </define>
+</grammar>
