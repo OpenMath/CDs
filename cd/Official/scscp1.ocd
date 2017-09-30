@@ -1,21 +1,22 @@
 <?xml version="1.0"?>
-<CD xmlns="http://www.openmath.org/OpenMathCD" xmlns:html="http://www.w3.org/1999/XHTML">
+<CD xmlns="http://www.openmath.org/OpenMathCD">
   <CDName>scscp1</CDName>
-  <CDURL> http://www.win.tue.nl/SCIEnce/cds/scscp1.ocd </CDURL>
-  <CDReviewDate>  </CDReviewDate>
+  <CDURL>http://www.win.tue.nl/SCIEnce/cds/scscp1.ocd</CDURL>
+  <CDReviewDate> 2017-12-31 </CDReviewDate>
   <CDStatus>experimental</CDStatus>
   <CDDate> 2009-06-22 </CDDate>
   <CDVersion> 1 </CDVersion>
-  <CDRevision> 12 </CDRevision>
+  <CDRevision> 13 </CDRevision>
   <Description>
-    <html:p>This CD defines symbols for the description of the management
+    This CD defines symbols for the description of the management
     of mathematical queries.
-    In particular, it is used by the SCIEnce project [<html:a href="http://www.symbolic-computation.org/">SCIEnce website</html:a>] 
+
+    In particular, it is used by the SCIEnce project [http://www.symbolic-computation.org/](SCIEnce website)
     in the communication between a web service (i.e. computer algebra system, proof checker, etc) and a client.
     SCSCP is an abbreviation for "Symbolic Computation Software Composability Protocol"
-    [<html:a href="http://www.symbolic-computation.org/scscp/">SCSCP specification</html:a>].
-    </html:p>
-    <html:p>This version of the Content Dictionary agrees with version 1.3 of the SCSCP protocol.</html:p>
+    [http://www.symbolic-computation.org/scscp/](SCSCP specification)
+
+    This version of the Content Dictionary agrees with version 1.3 of the SCSCP protocol.
   </Description>
   <CDDefinition>
     <Name> procedure_call </Name>
@@ -71,10 +72,10 @@
 		The result of a successful computation. Should come along 
 		with a call_id and, possibly, some extra information.
 		</Description><Example><OMOBJ xmlns="http://www.openmath.org/OpenMath"><OMATTR><OMATP><OMS cd="scscp1" name="call_id"/><OMSTR>a1d0c6e83f027327d8461063f4ac58a6</OMSTR><OMS cd="scscp1" name="info_runtime"/><OMI>72643</OMI><OMS cd="scscp1" name="info_memory"/><OMI>52876</OMI></OMATP><OMA><OMS cd="scscp1" name="procedure_completed"/><OMI>26925748508234281076009</OMI></OMA></OMATTR></OMOBJ></Example>
-
+<CDComment>
 		Instead of the result, we may return a reference
 		to the result, as follows:
-
+</CDComment>
 		<Example><OMOBJ xmlns="http://www.openmath.org/OpenMath"><OMATTR><OMATP><OMS cd="scscp1" name="call_id"/><OMSTR>a1d0c6e83f027327d8461063f4ac58a6</OMSTR><OMS cd="scscp1" name="info_runtime"/><OMI>72643</OMI><OMS cd="scscp1" name="info_memory"/><OMI>52876</OMI></OMATP><OMA><OMS cd="scscp1" name="procedure_completed"/><OMR href="scscp://somehost:26133/92cfceb39d57d914ed8b14d0e37643de0797ae56"/></OMA></OMATTR></OMOBJ></Example>
 	</CDDefinition>
   <CDDefinition>
@@ -118,7 +119,7 @@
             <OMS cd="scscp1" name="call_id"/>
             <OMSTR>a1d0c6e83f027327d8461063f4ac58a6</OMSTR>
           </OMATP>
-          <!-- The OMA goes here -->
+          <OMSTR> The OMA goes here </OMSTR>
         </OMATTR>
       </OMOBJ>
     </Example>
@@ -141,7 +142,7 @@
             <OMS cd="scscp1" name="option_return_object"/>
             <OMSTR/>
           </OMATP>
-          <!-- The OMA goes here -->
+          <OMSTR> The OMA goes here </OMSTR>
         </OMATTR>
       </OMOBJ>
     </Example>
@@ -169,7 +170,7 @@
             <OMS cd="scscp1" name="option_return_object"/>
             <OMSTR/>
           </OMATP>
-          <!-- The OMA goes here -->
+          <OMSTR> The OMA goes here </OMSTR>
         </OMATTR>
       </OMOBJ>
     </Example>
@@ -192,7 +193,7 @@
             <OMS cd="scscp1" name="option_return_object"/>
             <OMSTR/>
           </OMATP>
-          <!-- The OMA goes here -->
+          <OMSTR> The OMA goes here </OMSTR>
         </OMATTR>
       </OMOBJ>
     </Example>
@@ -215,7 +216,7 @@
             <OMS cd="scscp1" name="option_return_object"/>
             <OMSTR/>
           </OMATP>
-          <!-- The OMA goes here -->
+          <OMSTR> The OMA goes here </OMSTR>
         </OMATTR>
       </OMOBJ>
     </Example>
@@ -225,10 +226,11 @@
 		indicating that the client would like to have a cookie (i.e.
 		a reference to an OpenMath object residing somewhere)
 		as return value.
-		</Description><Example><OMOBJ xmlns="http://www.openmath.org/OpenMath"><OMATTR><OMATP><OMS cd="scscp1" name="call_id"/><OMSTR>localhost:26137:18668:s2sYf1pg</OMSTR><OMS cd="scscp1" name="option_return_cookie"/><OMSTR/></OMATP><!-- The OMA goes here --></OMATTR></OMOBJ></Example>
-
+		</Description><Example><OMOBJ xmlns="http://www.openmath.org/OpenMath"><OMATTR><OMATP><OMS cd="scscp1" name="call_id"/><OMSTR>localhost:26137:18668:s2sYf1pg</OMSTR><OMS cd="scscp1" name="option_return_cookie"/><OMSTR/></OMATP><OMSTR> The OMA goes here </OMSTR></OMATTR></OMOBJ></Example>
+		<CDComment>
 		The reply from the server should then look like:
-
+		</CDComment>
+		
 		<Example><OMOBJ xmlns="http://www.openmath.org/OpenMath"><OMATTR><OMATP><OMS cd="scscp1" name="call_id"/><OMSTR>localhost:26137:18668:s2sYf1pg</OMSTR></OMATP><OMA><OMS cd="scscp1" name="procedure_completed"/><OMR href="scscp://somehost.somedomain:26133/q9t4eX"/></OMA></OMATTR></OMOBJ></Example>
 
 	</CDDefinition>
@@ -236,18 +238,22 @@
 		An option, to be given along with a procedure call, 
 		indicating that the client would like to have the actual OpenMath
 		object as return value.
-		</Description><Example><OMOBJ xmlns="http://www.openmath.org/OpenMath"><OMATTR><OMATP><OMS cd="scscp1" name="call_id"/><OMSTR>localhost:26137:18668:s2sYf1pg</OMSTR><OMS cd="scscp1" name="option_return_object"/><OMSTR/></OMATP><!-- The OMA goes here --></OMATTR></OMOBJ></Example>
+		</Description><Example><OMOBJ xmlns="http://www.openmath.org/OpenMath"><OMATTR><OMATP><OMS cd="scscp1" name="call_id"/><OMSTR>localhost:26137:18668:s2sYf1pg</OMSTR><OMS cd="scscp1" name="option_return_object"/><OMSTR/></OMATP><OMSTR> The OMA goes here </OMSTR></OMATTR></OMOBJ></Example>
 
-The reply from the server should then look like:
+		<CDComment>
+		 The reply from the server should then look like:
+		</CDComment>
 
 <Example><OMOBJ xmlns="http://www.openmath.org/OpenMath"><OMATTR><OMATP><OMS cd="scscp1" name="call_id"/><OMSTR>localhost:26137:18668:s2sYf1pg</OMSTR></OMATP><OMA><OMS cd="scscp1" name="procedure_completed"/><OMI>42</OMI></OMA></OMATTR></OMOBJ></Example>
 </CDDefinition>
   <CDDefinition><Name> option_return_nothing </Name><Description>
 An option, to be given along with a procedure call, 
 indicating that the client expects no return value.
-</Description><Example><OMOBJ xmlns="http://www.openmath.org/OpenMath"><OMATTR><OMATP><OMS cd="scscp1" name="call_id"/><OMSTR>localhost:26137:18668:s2sYf1pg</OMSTR><OMS cd="scscp1" name="option_return_nothing"/><OMSTR/></OMATP><!-- The OMA goes here --></OMATTR></OMOBJ></Example>
+</Description><Example><OMOBJ xmlns="http://www.openmath.org/OpenMath"><OMATTR><OMATP><OMS cd="scscp1" name="call_id"/><OMSTR>localhost:26137:18668:s2sYf1pg</OMSTR><OMS cd="scscp1" name="option_return_nothing"/><OMSTR/></OMATP><OMSTR> The OMA goes here </OMSTR></OMATTR></OMOBJ></Example>
 
-The reply from the server may then look like:
+<CDComment>
+ The reply from the server may then look like:
+</CDComment>
 
 <Example><OMOBJ xmlns="http://www.openmath.org/OpenMath"><OMATTR><OMATP><OMS cd="scscp1" name="call_id"/><OMSTR>localhost:26137:18668:s2sYf1pg</OMSTR></OMATP><OMA><OMS cd="scscp1" name="procedure_completed"/></OMA></OMATTR></OMOBJ></Example>
 
@@ -270,7 +276,7 @@ using an OMI.
             <OMS cd="scscp1" name="info_memory"/>
             <OMI>134218000</OMI>
           </OMATP>
-          <!-- The OMA goes here -->
+          <OMSTR> The OMA goes here </OMSTR>
         </OMATTR>
       </OMOBJ>
     </Example>
@@ -293,7 +299,7 @@ using an OMI.
             <OMS cd="scscp1" name="info_runtime"/>
             <OMI>76543</OMI>
           </OMATP>
-          <!-- The OMA goes here -->
+          <OMSTR> The OMA goes here </OMSTR>
         </OMATTR>
       </OMOBJ>
     </Example>
@@ -316,7 +322,7 @@ using an OMI.
             <OMS cd="scscp1" name="info_message"/>
             <OMSTR>The weather in St. Andrews is beautiful this time of year</OMSTR>
           </OMATP>
-          <!-- The OMA goes here -->
+          <OMSTR> The OMA goes here </OMSTR>
         </OMATTR>
       </OMOBJ>
     </Example>
@@ -333,11 +339,12 @@ using an OMI.
 
 		It carries one argument: An OMSTR, which may be empty.
 		</Description>
+<!--
     <Example>
       <OMOBJ xmlns="http://www.openmath.org/OpenMath">
         <OMATTR>
           <OMATP>
-            <!-- The header goes here -->
+            The header goes here
           </OMATP>
           <OMA>
             <OMS cd="scscp1" name="procedure_terminated"/>
@@ -349,6 +356,7 @@ using an OMI.
         </OMATTR>
       </OMOBJ>
     </Example>
+-->
   </CDDefinition>
   <CDDefinition>
     <Name> error_runtime </Name>
@@ -366,11 +374,12 @@ using an OMI.
 		used when a different runtime error occurred.
 		In those cases, one should use error_system_specific.
 		</Description>
+		<!--
     <Example>
       <OMOBJ xmlns="http://www.openmath.org/OpenMath">
         <OMATTR>
           <OMATP>
-            <!-- The header goes here -->
+             The header goes here
           </OMATP>
           <OMA>
             <OMS cd="scscp1" name="procedure_terminated"/>
@@ -381,7 +390,8 @@ using an OMI.
           </OMA>
         </OMATTR>
       </OMOBJ>
-    </Example>
+      </Example>
+      -->
   </CDDefinition>
   <CDDefinition>
     <Name> error_system_specific </Name>
@@ -395,11 +405,12 @@ using an OMI.
 		and it must be an OMSTR describing the error 
 		that occurred. 
 		</Description>
+<!--
     <Example>
       <OMOBJ xmlns="http://www.openmath.org/OpenMath">
         <OMATTR>
           <OMATP>
-            <!-- The header goes here -->
+            The header goes here 
           </OMATP>
           <OMA>
             <OMS cd="scscp1" name="procedure_terminated"/>
@@ -418,5 +429,6 @@ using an OMI.
         </OMATTR>
       </OMOBJ>
     </Example>
+-->
   </CDDefinition>
 </CD>
