@@ -5,3 +5,4 @@ site
 *.md
 cds.xml
 cds.tar.gz
+.DS_Store
