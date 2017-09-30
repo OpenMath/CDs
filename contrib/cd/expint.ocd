@@ -34,7 +34,7 @@
 </CDComment>
 
   <CDName> expint </CDName> 
-  <CDURL> http://www.openmath.org/CDs/expint.ocd </CDURL>
+  <CDURL>http://www.openmath.org/CDs/expint.ocd</CDURL>
   <CDReviewDate>2017-12-31</CDReviewDate>
   <CDDate> 2002-01-17 </CDDate>
   <CDVersion> 1 </CDVersion>

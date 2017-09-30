@@ -1,6 +1,6 @@
 <CD xmlns="http://www.openmath.org/OpenMathCD">
    <CDName> polygb1 </CDName> 
-   <CDURL> http://www.win.tue.nl/~amc/oz/om/cds/polygb1.ocd </CDURL>
+   <CDURL>http://www.win.tue.nl/~amc/oz/om/cds/polygb1.ocd</CDURL>
    <CDReviewDate> 2006-06-01 </CDReviewDate> 
    <CDDate> 2004-06-01 </CDDate> 
    <CDStatus> experimental </CDStatus>

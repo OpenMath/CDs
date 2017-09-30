@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <CD xmlns="http://www.openmath.org/OpenMathCD">
 <CDName> prog1 </CDName>
-<CDBase> http://www.openmath.org/cd </CDBase>
+<CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/prog1.ocd</CDURL>
 <CDReviewDate> 2001-06-01 </CDReviewDate>
 <CDStatus> experimental </CDStatus>

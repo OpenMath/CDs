@@ -35,7 +35,7 @@
 
 <CDName> altenc </CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
-<CDURL> http://www.openmath.org/cd/altenc.ocd </CDURL>
+<CDURL>http://www.openmath.org/cd/altenc.ocd</CDURL>
 <CDReviewDate>2006-03-30</CDReviewDate>
 <CDStatus> official </CDStatus>
 <CDDate>2004-05-23</CDDate>

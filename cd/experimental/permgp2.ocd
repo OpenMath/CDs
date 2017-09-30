@@ -1,6 +1,6 @@
 <CD xmlns="http://www.openmath.org/OpenMathCD">
    <CDName>permgp2</CDName>
-<CDBase> http://www.openmath.org/cd </CDBase>
+<CDBase>http://www.openmath.org/cd</CDBase>
    <CDURL>http://www.openmath.org/cd/permgp2.ocd</CDURL>
    <CDDate> 2004-06-01 </CDDate>
    <CDVersion>1</CDVersion>

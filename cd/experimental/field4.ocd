@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <CD xmlns="http://www.openmath.org/OpenMathCD">
 <CDName> field4 </CDName>
-<CDBase> http://www.openmath.org/cd </CDBase>
-<CDURL> http://www.openmath.org/cd/field4.ocd </CDURL>
+<CDBase>http://www.openmath.org/cd</CDBase>
+<CDURL>http://www.openmath.org/cd/field4.ocd</CDURL>
 <CDReviewDate> 2006-06-01 </CDReviewDate>
 <CDDate> 2004-06-01 </CDDate>
 <CDVersion> 1 </CDVersion>

@@ -1,7 +1,7 @@
 <CD xmlns="http://www.openmath.org/OpenMathCD">
    <CDName> polyd2 </CDName> 
-<CDBase> http://www.openmath.org/cd </CDBase>
-   <CDURL> http://www.openmath.org/cd/polyd2.ocd </CDURL>
+<CDBase>http://www.openmath.org/cd</CDBase>
+   <CDURL>http://www.openmath.org/cd/polyd2.ocd</CDURL>
    <CDReviewDate> 2006-04-01 </CDReviewDate> 
    <CDDate> 2004-07-07 </CDDate> 
    <CDStatus> experimental </CDStatus>
