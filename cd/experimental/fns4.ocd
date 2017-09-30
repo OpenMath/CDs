@@ -1,0 +1,151 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDName> fns4 </CDName>
+<CDURL> http://www.openmath.org/cd/fns4.ocd </CDURL>
+<CDReviewDate> 2006-06-01 </CDReviewDate>
+<CDDate> 2004-12-20 </CDDate>
+<CDVersion> 2 </CDVersion>
+<CDRevision> 1 </CDRevision>
+<CDStatus> experimental </CDStatus>
+
+
+<Description>
+    This CD holds further symbols concerning functions. A
+    particularly interesting symbol is
+
+    maps_to 
+
+    which extends the usual lambda binder.
+    Another is 
+
+   assign_to
+
+   which helps to specify (partially) the image of a function on a specific
+   element.  
+</Description>
+
+<CDDefinition>
+<Name> maps_to </Name>
+<Description> 
+This symbol denotes a binding constructor.
+The body of the binder should be a list [A1,A2] of length 2.
+It is used to represent a function assignment A1 -> A2, where the bound
+variables occur in A1 and possibly in A2. The expressions A1, A2 should
+represent objects uniquely determined by given values of the bound variables,
+wihtin the range of definition of the domain.
+</Description>
+
+
+<Example>
+The following object defines a function from the unit circle in R^2
+assigning the angle the vector from the origin to the point makes with the
+horizontal axis.
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+   <OMBIND><OMS cd="fns4" name="maps_to"/>
+        <OMBVAR><OMV name="x"/><OMV name="y"/></OMBVAR>
+        <OMA><OMS cd="list1" name="list"/>
+             <OMA><OMS cd="linalg2" name="vector"/>
+                  <OMA><OMS cd="arith1" name="divide"/>
+                       <OMA><OMS cd="arith1" name="minus"/>
+                            <OMA><OMS cd="arith1" name="power"/>
+                                 <OMV name="x"/> <OMI> 2 </OMI>
+                           </OMA>
+                            <OMA><OMS cd="arith1" name="power"/>
+                                 <OMV name="y"/> <OMI> 2 </OMI>
+                           </OMA>
+                      </OMA>
+                      <OMA><OMS cd="arith1" name="plus"/>
+                           <OMA><OMS cd="arith1" name="power"/>
+                                <OMV name="x"/> <OMI> 2 </OMI>
+                          </OMA>
+                           <OMA><OMS cd="arith1" name="power"/>
+                                <OMV name="y"/> <OMI> 2 </OMI>
+                          </OMA>
+                     </OMA>
+                </OMA>
+                <OMA><OMS cd="arith1" name="divide"/>
+                     <OMA><OMS cd="arith1" name="minus"/>
+                          <OMA><OMS cd="arith1" name="times"/>
+                                <OMI> 2 </OMI><OMV name="x"/><OMV name="y"/>
+                          </OMA>
+                     </OMA>
+                     <OMA><OMS cd="arith1" name="plus"/>
+                          <OMA><OMS cd="arith1" name="power"/>
+                               <OMV name="x"/> <OMI> 2 </OMI>
+                          </OMA>
+                          <OMA><OMS cd="arith1" name="power"/>
+                               <OMV name="y"/> <OMI> 2 </OMI>
+                         </OMA>
+                    </OMA>
+               </OMA>
+           </OMA>
+           <OMA><OMS cd="transc1" name="arcsin"/>
+                <OMA><OMS cd="arith1" name="divide"/>
+                     <OMA><OMS cd="arith1" name="minus"/>
+                          <OMA><OMS cd="arith1" name="times"/>
+                                <OMI> 2 </OMI><OMV name="x"/><OMV name="y"/>
+                          </OMA>
+                     </OMA>
+                     <OMA><OMS cd="arith1" name="minus"/>
+                          <OMA><OMS cd="arith1" name="power"/>
+                               <OMV name="x"/> <OMI> 2 </OMI>
+                          </OMA>
+                          <OMA><OMS cd="arith1" name="power"/>
+                               <OMV name="y"/> <OMI> 2 </OMI>
+                         </OMA>
+                    </OMA>
+               </OMA>
+          </OMA>
+     </OMA>
+   </OMBIND>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> assign_to </Name>
+<Description> 
+This symbol denotes a function with a even and positive number of arguments.
+When applied to a_1,b_1,....a_n,b_n, it represents the assignment
+of b_i to a_i for each index i=1,...,n. 
+It can be used to specify the behaviour of a function f,
+by giving the images b_i of a_i under f.
+</Description>
+
+
+<Example>
+The following object specifies that a permutation on the letters
+a,...,i is assigned to the permutation (1,2,3).
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+      <OMA><OMS cd="fns4" name="assign_to"/>
+           <OMA><OMS cd="permutation1" name="permutation"/>
+                <OMA><OMS cd="permutation1" name="cycle"/>
+                     <OMI>1</OMI> <OMI>2</OMI> <OMI>3</OMI>
+                </OMA>
+           </OMA>
+           <OMA><OMS cd="permutation1" name="permutation"/>
+                <OMA><OMS cd="permutation1" name="cycle"/>
+                     <OMV name="a"/> <OMV name="e"/>  <OMV name="b"/>
+                </OMA>
+                <OMA><OMS cd="permutation1" name="cycle"/>
+                     <OMV name="c"/> <OMV name="f"/>  <OMV name="h"/>
+                </OMA>
+                <OMA><OMS cd="permutation1" name="cycle"/>
+                     <OMV name="d"/> <OMV name="g"/>  <OMV name="i"/>
+                </OMA>
+           </OMA>
+      </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+
+
+</CD>
+
+
+
+
+
+

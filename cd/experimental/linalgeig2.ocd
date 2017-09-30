@@ -1,0 +1,134 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+
+<CDName> linalgeig2 </CDName>
+<CDBase>http://www.openmath.org/cd</CDBase>
+<CDURL> http://www.openmath.org/cd/linalgeig2.ocd </CDURL>
+<CDReviewDate>2006-03-30</CDReviewDate>
+<CDDate>2004-11-30</CDDate>
+<CDVersion>4</CDVersion>
+<CDRevision>1</CDRevision>
+<CDStatus> experimental </CDStatus>
+<Description>
+    This CD defines symbols for basic linear algebra over a field of
+    characteristic zero related to eigenvalues.
+
+    Regardless of the way of forming vectors and matrices, this CD
+    deals with eigenvalues, eigenvectors and related concepts.
+</Description>
+
+<CDDefinition>
+<Name> eigenvalue </Name>
+<Role>application</Role>
+<Description>
+This symbol represents a binary function. The first
+argument should be a square matrix A defined over the field of complex numbers, the second should be an
+index i to specify the eigenvalue. When applied to A and i it represents the
+i-th eigenvalue of A (counted without multiplicities). The ordering imposed on the
+eigenvalues is first on the modulus of the value, and second on the
+argument of the value. A definition of eigenvalue is
+given in Elementary Linear Algebra, Stanley I. Grossman in Definition 1 
+of chapter 6, page 533.
+</Description>
+
+<CMP> eigenvector(A,i) * A = eigenvalue(A,i)*eigenvector(A,i) </CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA><OMS cd="relation1" name="eq"/>
+       <OMA><OMS cd="arith1" name="times"/>
+            <OMA id="ev"><OMS cd="linalgeig2" name="eigenvector"/>
+                 <OMV name="A"/><OMV name="i"/>
+            </OMA>
+            <OMV name="A"/>
+       </OMA>
+       <OMA><OMS cd="arith1" name="times"/>
+            <OMA><OMS cd="linalgeig2" name="eigenvalue"/>
+                 <OMV name="A"/><OMV name="i"/>
+            </OMA>
+            <OMR href="#ev"/>
+       </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> eigenvector </Name>
+<Role>application</Role>
+<Description>
+This symbol represents a binary function. Its first argument should be a
+square matrix A defined over the
+complex numbers, the second should be an
+index i to specify which eigenvalue this eigenvector should be paired
+with, with the ordering specified in the definition of eigenvalue in this CD.
+When applied to A and i, it represents an eigenvector for A with respect to
+the i-th eigenvalue.
+</Description>
+
+<CMP> A*eigenvector(A) = eigenvalue(A)*eigenvector(A) </CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMS cd="arith1" name="times"/>
+      <OMV name="A"/>
+      <OMA>
+        <OMS cd="linalgeig2" name="eigenvector"/>
+	<OMV name="A"/>
+	<OMV name="i"/>
+      </OMA>
+    </OMA>
+    <OMA>
+      <OMS cd="arith1" name="times"/>
+      <OMA>
+        <OMS cd="linalgeig2" name="eigenvalue"/>
+	<OMV name="A"/>
+	<OMV name="i"/>
+      </OMA>
+      <OMA>
+        <OMS cd="linalgeig2" name="eigenvector"/>
+	<OMV name="A"/>
+	<OMV name="i"/>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+</CDDefinition>
+
+</CD>

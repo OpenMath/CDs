@@ -1,0 +1,259 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+
+<CDName> linalgeig1 </CDName>
+<CDBase>http://www.openmath.org/cd</CDBase>
+<CDURL> http://www.openmath.org/cd/linalgeig1.ocd </CDURL>
+<CDReviewDate>2006-03-30</CDReviewDate>
+<CDDate>2004-11-30</CDDate>
+<CDVersion>4</CDVersion>
+<CDRevision>1</CDRevision>
+<CDStatus> experimental </CDStatus>
+<Description>
+    This CD defines symbols for basic linear algebra related to eigenvalues.
+
+    Regardless of the way of forming vectors and matrices, this CD
+    deals with eigenvalues, eigenvectors and related concepts.
+</Description>
+
+
+<CDDefinition>
+<Name> is_eigenvalue </Name>
+<Role>application</Role>
+<Description>
+This symbol represents a Boolean binary function, whose first argument should
+be a square matrix A over a ring R and whose second argument should be an
+element of the ring R. 
+Here, the matrix A acts on (row) vectors from the right
+and
+the scalar lambda is written to the left of the vector v.
+When applied to A and lambda, it means that there is an eigenvector vector with
+eigenvalue lambda.
+</Description>
+
+<CMP>If is_eigenvalue(A,lambda), there is a nonzero row vector
+v such that v * A = lambda * v.  </CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA><OMS cd="logic1" name="implies"/>
+       <OMA><OMS cd="linalgeig1" name="is_eigenvalue"/>
+            <OMV name="A"/><OMV name="lambda"/>
+       </OMA>
+       <OMBIND><OMS cd="quant1" name="exists"/>
+               <OMBVAR><OMV name="v"/></OMBVAR>
+               <OMA><OMS cd="logic1" name="and"/>
+                    <OMA><OMS cd="relation1" name="neq"/>
+                         <OMV name="v"/>
+                         <OMS cd="alg1" name="zero"/>
+                    </OMA>
+                    <OMA><OMS cd="relation1" name="eq"/>
+                         <OMA><OMS cd="arith1" name="times"/>
+                              <OMV name="v"/><OMV name="A"/>
+                         </OMA>
+                         <OMA><OMS cd="arith1" name="times"/>
+                              <OMV name="lambda"/><OMV name="v"/>
+                         </OMA>
+                    </OMA>
+               </OMA>
+       </OMBIND>
+  </OMA>
+</OMOBJ>
+</FMP>
+</CDDefinition>
+
+
+
+<CDDefinition>
+<Name> is_eigenvector </Name>
+<Role>application</Role>
+<Description>
+This symbol represents a Boolean binary function, whose first argument should
+be a square matrix A over a ring R and whose second argument should be a
+vector v of size rowcount(A) over the ring R. 
+
+When applied to A and v, it means that v is a left eigenvector of A.
+</Description>
+
+<CMP> If is_eigenvector(A,v) then there is a scalar lambda such that
+v * A = lambda * v </CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA><OMS cd="logic1" name="implies"/>
+       <OMA><OMS cd="linalgeig1" name="is_eigenvector"/>
+            <OMV name="A"/><OMV name="v"/>
+       </OMA>
+       <OMBIND><OMS cd="quant1" name="exists"/>
+               <OMBVAR><OMV name="lambda"/></OMBVAR>
+               <OMA><OMS cd="relation1" name="eq"/>
+                    <OMA><OMS cd="arith1" name="times"/>
+                         <OMV name="v"/><OMV name="A"/>
+                    </OMA>
+                    <OMA><OMS cd="arith1" name="times"/>
+                         <OMV name="lambda"/><OMV name="v"/>
+                    </OMA>
+               </OMA>
+       </OMBIND>
+  </OMA>
+</OMOBJ>
+</FMP>
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> eigenvalues </Name>
+<Role>application</Role>
+<Description>
+This symbol represents a binary function, whose arguments should
+be a square matrix A and a field F over which the matrix A is defined.
+When applied to A and F, it returns a vector whose entries are the eigenvalues
+of A contained in F, with multiplicities.
+</Description>
+
+<Example>
+Consider the matrix A given by
+[[0,1],
+ [1,-1]
+].
+Its characteristic polynomial is X^2+X-1, and its eigenvalues are
+the roots of this equation. Hence, over the rationals, there are no
+eigenvalues:
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA><OMS cd="relation1" name="eq"/>
+       <OMA><OMS cd="linalgeig1" name="eigenvalues"/>
+            <OMA><OMS cd="linalg2" name="matrix"/>
+                 <OMA><OMS cd="linalg2" name="matrixrow"/>
+                      <OMI>0</OMI><OMI>1</OMI>
+                      <OMI>1</OMI><OMI>-1</OMI>
+                 </OMA>
+            </OMA>
+            <OMS cd="setname1" name="Q"/>
+       </OMA>
+       <OMA><OMS cd="linalg2" name="vector"/>
+       </OMA>
+  </OMA>
+</OMOBJ>
+
+Extending the field by solutions of the equation, X^2+x-1= 0,
+we find two eigenvalues:
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+       <OMA><OMS cd="linalgeig1" name="eigenvalues"/>
+            <OMA><OMS cd="linalg2" name="matrix"/>
+                 <OMA><OMS cd="linalg2" name="matrixrow"/>
+                      <OMI>0</OMI><OMI>1</OMI>
+                      <OMI>1</OMI><OMI>-1</OMI>
+                 </OMA>
+            </OMA>
+            <OMA id="qr"><OMS cd="ring3" name="quotient_ring"/>
+                 <OMA id="pr"><OMS cd="ring3" name="poly_ring"/>
+                      <OMS cd="setname1" name="Q"/>
+                      <OMV name="X"/>
+                 </OMA>
+                 <OMA><OMS cd="ring3" name="principal_ideal"/>
+                      <OMR href="#pr"/>
+                      <OMA><OMS cd="arith1" name="plus"/>
+                           <OMA><OMS cd="arith1" name="power"/>
+                                <OMV name="X"/><OMI>2</OMI>
+                           </OMA>
+                           <OMV name="X"/>
+                           <OMI>-1</OMI>
+                      </OMA>
+                 </OMA>
+            </OMA>
+       </OMA>
+</OMOBJ>
+
+could represent
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+       <OMA><OMS cd="linalg2" name="vector"/>
+            <OMA><OMS cd="ring1" name="expression"/>
+                 <OMR href="qr"/>
+                 <OMV name="X"/>
+            </OMA>
+            <OMA><OMS cd="ring1" name="expression"/>
+                 <OMA><OMS cd="ring1" name="expression"/>
+                      <OMA><OMS cd="arith1" name="unary_minus"/>
+                           <OMA><OMS cd="arith1" name="plus"/>
+                                <OMV name="X"/><OMI>1</OMI>
+                           </OMA>
+                      </OMA>
+                 </OMA>
+            </OMA>
+       </OMA>
+</OMOBJ>
+or the vector whose components are interchanged. (The order of the eigenvalues
+is not specified.)
+
+</Example>
+
+
+
+<CMP> The size of the vector eigenvalues(A,F) is at most rowcount(A). </CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA><OMS cd="relation1" name="leq"/>
+       <OMA><OMS cd="linalg3" name="size"/>
+            <OMA><OMS cd="linalgeig1" name="eigenvalues"/>
+                 <OMV name="A"/><OMV name="F"/>
+            </OMA>
+       </OMA>
+       <OMA><OMS cd="linalg3" name="rowcount"/>
+            <OMV name="A"/>
+       </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> eigenspace </Name>
+<Role>application</Role>
+<Description>
+This symbol represents a binary function, whose arguments should
+be a square matrix A over a field F and an element lambda of F.
+When applied to A and lambda, it returns a matrix whose rows are a basis of the eigenspace
+of A with respect to lambda.
+</Description>
+
+</CDDefinition>
+
+
+
+</CD>

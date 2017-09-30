@@ -46,6 +46,55 @@ in the CD polyd1.
     </Example>
 </CDDefinition>
 
+    <CDDefinition>
+       <Name> lcm </Name>
+<Role>application</Role>
+       <Description> 
+          The least common multiple of its polynomial arguments.
+          This is unique up to units, but the choice must be compatible with
+          that made for gcd, so that the product of the gcd and the lcm equals
+       the
+       product of all arguments.
+       </Description>
+       <CMP>
+         for all x,y we have lcm(x,y) = (x*y)/gcd(x,y)
+       </CMP>
+       <FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+       <OMBIND>
+         <OMS cd="quant1" name="forall"/>
+	 <OMBVAR>
+	   <OMV name="x"/>
+	   <OMV name="y"/>
+	 </OMBVAR>
+	 <OMA>
+	   <OMS name="eq" cd="relation1"/>
+	   <OMA>
+	     <OMS name="lcm" cd="polynomial3"/>
+	     <OMV name="x"/>
+	     <OMV name="y"/>
+	   </OMA>
+	   <OMA>
+	     <OMS name="divide" cd="arith1"/>
+	     <OMA>
+	       <OMS name="times" cd="arith1"/>
+	       <OMV name="x"/>
+	       <OMV name="y"/>
+	     </OMA>
+	     <OMA>
+	       <OMS name="gcd" cd="polynomial3"/>
+	       <OMV name="x"/>
+	       <OMV name="y"/>
+	     </OMA>
+	   </OMA>
+	 </OMA>
+       </OMBIND>
+       </OMOBJ></FMP>
+    </CDDefinition>
+
+
+
+
+
 <CDDefinition>
     <Name> factors </Name>
     <Description> 
@@ -156,7 +205,7 @@ of a by b.
 <CDComment>
 For univariate polynomials a and b, remainder(a,b) denotes r such that a=b*q+r, with degree(r) less
 than degree(b).
-See remainder for a formal statement of this property.
+See the definition of the symbol quotient for a formal statement of this property.
 </CDComment>
 </CDDefinition>
 

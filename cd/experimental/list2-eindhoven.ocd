@@ -1,0 +1,164 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDName> list2 </CDName>
+<CDBase>http://www.openmath.org/cd</CDBase>
+<CDURL> http://www.openmath.org/cd/list2.ocd </CDURL>
+<CDReviewDate>2006-03-30</CDReviewDate>
+<CDDate>2004-11-30</CDDate>
+<CDVersion>5</CDVersion>
+<CDRevision>1</CDRevision>
+<CDStatus> experimental </CDStatus>
+<CDUses>
+  <CDName>list1</CDName>
+  <CDName>quant1</CDName>
+  <CDName>relation1</CDName>
+</CDUses>
+
+<Description> 
+In this CD, two basic constructors and two deconstructor
+functions are given for lists.  
+</Description>
+
+
+<CDComment>
+Arjeh M. Cohen  2004-11-30: down to basics from earlier versions.
+Less basic but standard in list3, even less standard  but convenient operators
+in list4.
+</CDComment>
+
+
+<CDDefinition>
+<Name> first </Name>
+<Role>application</Role>
+<Description> 
+This symbol represents a function which returns the first elements of
+its argument, which should be a list.
+</Description>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMV name="a"/>
+      <OMA>
+        <OMS cd="list2" name="first"/>
+        <OMA>
+          <OMS cd="list2" name="cons"/>
+          <OMV name="a"/>
+          <OMV name="b"/>
+        </OMA>
+      </OMA>
+    </OMA>
+  </OMOBJ>
+</FMP>
+
+<Example>
+Specification of the first element of the list [1,2,3]
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="list2" name="first"/>
+    <OMA>
+      <OMS cd="list1" name="list"/>
+      <OMI> 1 </OMI>
+      <OMI> 2 </OMI>
+      <OMI> 3 </OMI>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> rest </Name>
+<Role>application</Role>
+<Description> 
+This symbol represents a function which returns a list made up of all
+the elements except the first of its argument, which should be a list.
+</Description>
+
+<FMP>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMV name="b"/>
+      <OMA>
+        <OMS cd="list2" name="rest"/>
+        <OMA>
+          <OMS cd="list2" name="cons"/>
+          <OMV name="a"/>
+          <OMV name="b"/>
+        </OMA>
+      </OMA>
+    </OMA>
+  </OMOBJ>
+</FMP>
+
+
+<Example>
+Specification of the list [1,2,3], apart from the first element
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="list2" name="rest"/>
+    <OMA>
+      <OMS cd="list1" name="list"/>
+      <OMI> 1 </OMI>
+      <OMI> 2 </OMI>
+      <OMI> 3 </OMI>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> cons </Name>
+<Role>application</Role>
+<Description> 
+This symbol represents the cons list function. It takes 2 arguments:
+the second must be a list, where the elements have the same type as
+the type of the first. The function denotes a new list which has
+the first argument as its first element followed by the elements of
+the second argument.
+</Description>
+
+<CMP>
+ cons(first(lst),rest(lst))=lst
+</CMP>
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMBIND>
+    <OMS cd="quant1" name="forall"/>
+    <OMBVAR>
+      <OMV name="lst"/>
+    </OMBVAR>
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="list2" name="cons"/>
+        <OMA>
+          <OMS cd="list2" name="first"/>
+          <OMV name="lst"/>
+        </OMA>
+        <OMA>
+          <OMS cd="list2" name="rest"/>
+          <OMV name="lst"/>
+        </OMA>
+      </OMA>
+      <OMV name="lst"/>
+    </OMA>
+  </OMBIND>
+</OMOBJ>
+</FMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> nil </Name>
+<Role>constant</Role>
+<Description>
+The empty list 
+</Description> 
+
+</CDDefinition>
+
+
+</CD>

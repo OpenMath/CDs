@@ -1,0 +1,187 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+
+<CDName> linalgspec2 </CDName>
+<CDBase>http://www.openmath.org/cd</CDBase>
+<CDURL> http://www.openmath.org/cd/linalgspec2.ocd </CDURL>
+<CDReviewDate>2006-03-30</CDReviewDate>
+<CDDate>2004-11-30</CDDate>
+<CDVersion>3</CDVersion>
+<CDRevision>1</CDRevision>
+<CDStatus> experimental </CDStatus>
+<Description>
+This CD contains symbols which represent a number of special types of
+matrix, such as Hessenberg. 
+</Description>
+
+<CDDefinition>
+<Name> upper_Hessenberg </Name>
+<Role>application</Role>
+<Description>
+This symbol represents an upper_Hessenberg matrix, it takes one argument,
+the argument is a vector of vectors representing the non-zero
+elements. The first element of the argument specifies the value of the
+first subdiagonal, the subsequent elements specify the value of the
+diagonal and subsequent super-diagonals, all other elements are zero.
+</Description>
+
+<Example>
+A specification of an upper_Hessenberg matrix of dimension 5:
+
+[[1  2  3  0  0]
+ [4  5  6  7  0]
+ [0  8  9  10 11]
+ [0  0  12 13 14]
+ [0  0  0  15 16]]
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="linalgspec2" name="upper_Hessenberg"/>
+    <OMA>
+      <OMS cd="linalg2" name="vector"/>
+      <OMA>
+        <OMS cd="linalg2" name="vector"/>
+	<OMI>4</OMI> <OMI>8</OMI> <OMI>12</OMI> <OMI>15</OMI>
+      </OMA>
+      <OMA>
+        <OMS cd="linalg2" name="vector"/>
+	<OMI>1</OMI> <OMI>5</OMI> <OMI>9</OMI> <OMI>13</OMI> <OMI>16</OMI>
+      </OMA>
+      <OMA>
+        <OMS cd="linalg2" name="vector"/>
+	<OMI>2</OMI> <OMI>6</OMI> <OMI>10</OMI> <OMI>14</OMI>
+      </OMA>
+      <OMA>
+        <OMS cd="linalg2" name="vector"/>
+	<OMI>3</OMI> <OMI>7</OMI> <OMI>11</OMI>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</Example>
+
+<CMP> the transpose of an upper_Hessenberg matrix is lower_Hessenberg </CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMS cd="linalg1" name="transpose"/>
+      <OMA>
+        <OMS cd="linalgspec2" name="upper_Hessenberg"/>
+	<OMV name="VV1"/>
+      </OMA>
+    </OMA>
+    <OMA>
+      <OMS cd="linalgspec2" name="lower_Hessenberg"/>
+      <OMV name="VV2"/>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> lower_Hessenberg </Name>
+<Role>application</Role>
+<Description>
+This symbol represents a lower_Hessenberg matrix, it takes one argument,
+the argument is a vector of vectors representing the non-zero
+elements. The first element of the argument specifies the value of the
+first super-diagonal, the subsequent elements specify the value of the
+diagonal and subsequent subdiagonals, all other elements are zero.
+</Description>
+
+<Example>
+A specification of a lower_Hessenberg matrix of dimension 5:
+
+[[1  2  0  0  0]
+ [3  4  5  0  0]
+ [6  7  8  9  0]
+ [0  10 11 12 13]
+ [0  0  14 15 16]]
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="linalgspec2" name="lower_Hessenberg"/>
+    <OMA>
+      <OMS cd="linalg2" name="vector"/>
+      <OMA>
+        <OMS cd="linalg2" name="vector"/>
+	<OMI>2</OMI> <OMI>5</OMI> <OMI>9</OMI> <OMI>13</OMI>
+      </OMA>
+      <OMA>
+        <OMS cd="linalg2" name="vector"/>
+	<OMI>1</OMI> <OMI>4</OMI> <OMI>8</OMI> <OMI>12</OMI> <OMI>16</OMI>
+      </OMA>
+      <OMA>
+        <OMS cd="linalg2" name="vector"/>
+	<OMI>3</OMI> <OMI>7</OMI> <OMI>11</OMI> <OMI>15</OMI>
+      </OMA>
+      <OMA>
+        <OMS cd="linalg2" name="vector"/>
+	<OMI>6</OMI> <OMI>10</OMI> <OMI>14</OMI>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</Example>
+
+<CMP> the transpose of a lower_Hessenberg matrix is upper_Hessenberg </CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMS cd="linalg1" name="transpose"/>
+      <OMA>
+        <OMS cd="linalgspec2" name="lower_Hessenberg"/>
+	<OMV name="VV1"/>
+      </OMA>
+    </OMA>
+    <OMA>
+      <OMS cd="linalgspec2" name="upper_Hessenberg"/>
+      <OMV name="VV2"/>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+</CDDefinition>
+
+</CD>

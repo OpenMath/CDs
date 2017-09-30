@@ -1,0 +1,310 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+
+<CDName> linalgpoly1 </CDName>
+<CDBase>http://www.openmath.org/cd</CDBase>
+<CDURL> http://www.openmath.org/cd/linalgpoly1.ocd </CDURL>
+<CDReviewDate>2006-03-30</CDReviewDate>
+<CDDate>2004-11-30</CDDate>
+<CDVersion>4</CDVersion>
+<CDRevision>1</CDRevision>
+<CDStatus> experimental </CDStatus>
+<Description>
+    This CD defines the following symbols for polynomials related to basic
+    linear algebra over a field:
+    the characteristic and the minimum polynomial, as well as a substitution
+    of a square matrix in a polynomial.
+</Description>
+
+
+<CDDefinition>
+<Name> characteristic_poly </Name>
+<Role>application</Role>
+<Description>
+This symbol represents a binary function. This first argument should be a
+square matrix A defined over a field F, the second argument a variable X.
+When applied to A and X, it represents the characteristic polynomial
+of A in the variable X over the field F.
+(The output should be semantically equivalent to an object obtained by
+the poly_ring_d_named constructor of the CD polyd1.)
+</Description>
+
+<Example>
+
+The characteristic polynomial of the matrix
+
+[[0,1],[-1,-1]] is equal to X^2+X+1.
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMA><OMS cd="relation1" name="eq"/>
+  <OMA><OMS cd="linalgpoly1" name="characteristic_poly"/>
+       <OMA><OMS cd="linalg2" name="matrix"/>
+            <OMA><OMS cd="linalg2" name="matrixrow"/>
+                 <OMI>0</OMI> <OMI>1</OMI>
+            </OMA>
+            <OMA><OMS cd="linalg2" name="matrixrow"/>
+                 <OMI>-1</OMI> <OMI>-1</OMI>
+            </OMA>
+       </OMA>
+       <OMV name="X"/>
+  </OMA>
+  <OMA><OMS cd="ring1" name="expression"/>
+       <OMA><OMS cd="polyd1" name="poly_ring_d_named"/>
+            <OMS cd="fieldname1" name="Q"/>
+            <OMV name="X"/>
+       </OMA>
+       <OMA><OMS cd="arith1" name="plus"/>
+            <OMA><OMS cd="arith1" name="power"/>
+                 <OMV name="X"/>
+                 <OMI>2</OMI>
+            </OMA>
+            <OMV name="X"/>
+            <OMI>1</OMI>
+       </OMA>
+  </OMA>
+</OMA>
+</OMOBJ>
+
+</Example>
+
+<CMP> 
+The characteristic
+polynomial with variable X is the determinant of the matrix A - X identity(columcount(A)).
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA><OMS cd="relation1" name="eq"/>
+       <OMA><OMS cd="linalgpoly1" name="characteristic_poly"/>
+            <OMV name="A"/> <OMV name="X"/>
+       </OMA>
+       <OMA><OMS cd="linalg1" name="determinant"/>
+            <OMA><OMS cd="arith1" name="minus"/>
+                 <OMV name="A"/>
+                 <OMA><OMS cd="arith1" name="times"/>
+                      <OMV name="X"/>
+                      <OMA><OMS cd="linalg4mat" name="identity"/>
+                           <OMA><OMS cd="linalg3" name="rowcount"/>
+                                <OMV name="A"/>
+                           </OMA>
+                      </OMA>
+                 </OMA>
+            </OMA>
+       </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+</CDDefinition>
+
+
+
+<CDDefinition>
+<Name> minimum_poly </Name>
+<Role>application</Role>
+<Description>
+This symbol represents a binary function. This first argument should be a
+square matrix A defined over a field F, the second argument a variable X.
+When applied to A and X, it represents the minimum polynomial
+of A in the variable X over the field F.
+(The output should be semantically equivalent to an object obtained by
+the poly_ring_d_named constructor of the CD polyd1.)
+</Description>
+
+<Example>
+
+The minimum polynomial of the matrix
+
+[[0,1,0,0],
+ [-1,-1,0,0], 
+ [0,0,0,1],
+ [0,0,-1,-1]
+] is equal to X^2+X+1.
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMA><OMS cd="relation1" name="eq"/>
+  <OMA><OMS cd="linalgpoly1" name="minimum_poly"/>
+       <OMA><OMS cd="linalg2" name="matrix"/>
+            <OMA><OMS cd="linalg2" name="matrixrow"/>
+                 <OMI>0</OMI> <OMI>1</OMI>  <OMI>0</OMI> <OMI>0</OMI>
+            </OMA>
+            <OMA><OMS cd="linalg2" name="matrixrow"/>
+                 <OMI>-1</OMI> <OMI>-1</OMI><OMI>0</OMI> <OMI>0</OMI>
+            </OMA>
+            <OMA><OMS cd="linalg2" name="matrixrow"/>
+                 <OMI>0</OMI> <OMI>0</OMI><OMI>0</OMI> <OMI>1</OMI>  
+            </OMA>
+            <OMA><OMS cd="linalg2" name="matrixrow"/>
+                 <OMI>0</OMI> <OMI>0</OMI><OMI>-1</OMI> <OMI>-1</OMI>
+            </OMA>
+       </OMA>
+       <OMV name="X"/>
+  </OMA>
+  <OMA><OMS cd="ring1" name="expression"/>
+       <OMA><OMS cd="polyd1" name="poly_ring_d_named"/>
+            <OMS cd="fieldname1" name="Q"/>
+            <OMV name="X"/>
+       </OMA>
+       <OMA><OMS cd="arith1" name="plus"/>
+            <OMA><OMS cd="arith1" name="power"/>
+                 <OMV name="X"/>
+                 <OMI>2</OMI>
+            </OMA>
+            <OMV name="X"/>
+            <OMI>1</OMI>
+       </OMA>
+  </OMA>
+</OMA>
+</OMOBJ>
+
+</Example>
+
+<CMP> 
+The minimum
+polynomial is the polynomial f of minimal degree such that f(A) = 0.
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA><OMS cd="logic1" name="implies"/>
+       <OMA><OMS cd="relation1" name="eq"/>
+            <OMV name="f_poly"/>
+            <OMA><OMS cd="linalgpoly1" name="characteristic_poly"/>
+                 <OMV name="A"/> <OMV name="X"/>
+            </OMA>
+       </OMA>
+       <OMA><OMS cd="logic1" name="and"/>
+            <OMA><OMS cd="relation1" name="eq"/>
+                 <OMA><OMS cd="linalgpoly1" name="substitute"/>
+                      <OMV name="f"/><OMV name="A"/>
+                 </OMA>
+                 <OMA><OMS cd="linalg4mat" name="zero"/>
+                      <OMA><OMS cd="linalg3" name="rowcount"/>
+                           <OMV name="A"/>
+                      </OMA>
+                      <OMA><OMS cd="linalg3" name="rowcount"/>
+                           <OMV name="A"/>
+                      </OMA>
+                 </OMA>
+            </OMA>
+            <OMBIND><OMS cd="quant1" name="forall"/>
+                    <OMBVAR><OMV name="g"/></OMBVAR>
+                    <OMA><OMS cd="logic1" name="implies"/>
+                         <OMA><OMS cd="logic1" name="and"/>
+                              <OMA><OMS cd="relation1" name="neq"/>
+                                   <OMV name="g"/><OMS cd="alg1" name="zero"/>
+                              </OMA>
+                              <OMA><OMS cd="arith1" name="eq"/>
+                                   <OMA><OMS cd="linalgpoly1" name="substitute"/>
+                                        <OMV name="g"/><OMV name="A"/>
+                                   </OMA>
+                                   <OMA><OMS cd="linalg4mat" name="zero"/>
+                                        <OMA><OMS cd="linalg3" name="rowcount"/>
+                                             <OMV name="A"/>
+                                        </OMA>
+                                        <OMA><OMS cd="linalg3" name="rowcount"/>
+                                             <OMV name="A"/>
+                                        </OMA>
+                                   </OMA>
+                              </OMA>
+                         </OMA>
+                         <OMA><OMS cd="relation1" name="geq"/>
+                             <OMA><OMS cd="poly" name="degree"/>  
+                                  <OMV name="g"/><OMV name="f"/>
+                             </OMA>
+                        </OMA>
+                   </OMA>
+           </OMBIND> 
+      </OMA>
+ </OMA>
+</OMOBJ>
+</FMP>
+</CDDefinition>
+
+
+
+
+<CDDefinition>
+<Name> substitute </Name>
+<Role>application</Role>
+<Description>
+This symbol represents a binary function. This first argument should be a
+polynomial f in a single variable X, the second should be a square matrix A defined over a field F.
+When applied to f and A, it represents the matrix obtained by
+replacing X by A and the constant term by the corresponding scalar matrix.
+</Description>
+
+<Example>
+
+The minimum polynomial of the matrix
+Substituting 
+[[0,1],
+ [-1,-1], 
+] 
+in the polynomial  X + 1 gives the matrix
+[[1,1],
+ [-1,0], 
+] 
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+<OMA><OMS cd="relation1" name="eq"/>
+  <OMA><OMS cd="linalgpoly1" name="substitute"/>
+       <OMA><OMS cd="ring1" name="expression"/>
+            <OMA><OMS cd="polyd1" name="poly_ring_d_named"/>
+                 <OMS cd="fieldname1" name="Q"/>
+                 <OMV name="X"/>
+            </OMA>
+            <OMA><OMS cd="arith1" name="plus"/>
+                 <OMV name="X"/> <OMI>1</OMI>
+            </OMA>
+      </OMA>
+      <OMA><OMS cd="linalg2" name="matrix"/>
+           <OMA><OMS cd="linalg2" name="matrixrow"/>
+                <OMI>1</OMI> <OMI>1</OMI>
+            </OMA>
+            <OMA><OMS cd="linalg2" name="matrixrow"/>
+                 <OMI>-1</OMI> <OMI>0</OMI>
+            </OMA>
+       </OMA>
+  </OMA>
+</OMA>
+</OMOBJ>
+
+</Example>
+
+</CDDefinition>
+
+
+
+</CD>

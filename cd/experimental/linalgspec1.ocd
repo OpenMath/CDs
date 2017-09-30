@@ -1,0 +1,266 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+
+<CDName> linalgspec1 </CDName>
+<CDBase>http://www.openmath.org/cd</CDBase>
+<CDURL> http://www.openmath.org/cd/linalgspec1.ocd </CDURL>
+<CDReviewDate>2006-03-30</CDReviewDate>
+<CDDate>2004-11-30</CDDate>
+<CDVersion>4</CDVersion>
+<CDRevision>2</CDRevision>
+<CDStatus> experimental </CDStatus>
+<Description>
+This CD contains symbols which represent a number of special types of
+matrix. 
+</Description>
+
+<CDDefinition>
+<Name> upper_triangular </Name>
+<Role>application</Role>
+<Description>
+This symbol represents an upper-triangular matrix, it takes one
+argument. The argument should be a vector of vectors of elements of
+the matrix.
+</Description>
+
+<CMP> the product of two upper-triangular matrices is upper-triangular </CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMS cd="linalgspec1" name="upper_triangular"/>
+      <OMV name="VV1"/>
+    </OMA>
+    <OMA>
+      <OMS cd="arith1" name="times"/>
+      <OMA>
+        <OMS cd="linalgspec1" name="upper_triangular"/>
+	<OMV name="VV2"/>
+      </OMA>
+      <OMA>
+        <OMS cd="linalgspec1" name="upper_triangular"/>
+	<OMV name="VV3"/>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+<Example>
+An example to describe the upper triangular matrix:
+[[1,2,3]
+ [0,4,5]
+ [0,0,6]]
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="linalgspec1" name="upper_triangular"/>
+    <OMA>
+      <OMS cd="linalg2" name="vector"/>
+      <OMA>
+        <OMS cd="linalg2" name="vector"/>
+	<OMI> 1 </OMI><OMI> 2 </OMI><OMI> 3 </OMI>
+      </OMA>
+      <OMA>
+        <OMS cd="linalg2" name="vector"/>
+	<OMI> 4 </OMI><OMI> 5 </OMI>
+      </OMA>
+      <OMA>
+        <OMS cd="linalg2" name="vector"/>
+	<OMI> 6 </OMI>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> lower_triangular </Name>
+<Role>application</Role>
+<Description>
+This symbol represents a lower-triangular matrix, it takes one
+argument. The argument should be a vector of vectors of elements of
+the matrix.
+</Description>
+
+<CMP> the product of two lower-triangular matrices is lower-triangular </CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMS cd="linalgspec1" name="lower_triangular"/>
+      <OMV name="VV1"/>
+    </OMA>
+    <OMA>
+      <OMS cd="arith1" name="times"/>
+      <OMA>
+        <OMS cd="linalgspec1" name="lower_triangular"/>
+	<OMV name="VV2"/>
+      </OMA>
+      <OMA>
+        <OMS cd="linalgspec1" name="lower_triangular"/>
+	<OMV name="VV3"/>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+<Example>
+An example to describe the lower triangular matrix:
+[[1,0,0]
+ [2,3,0]
+ [4,5,6]]
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="linalgspec1" name="lower_triangular"/>
+    <OMA>
+      <OMS cd="linalg2" name="vector"/>
+      <OMA>
+        <OMS cd="linalg2" name="vector"/>
+	<OMI> 1 </OMI>
+      </OMA>
+      <OMA>
+        <OMS cd="linalg2" name="vector"/>
+	<OMI> 2 </OMI><OMI> 3 </OMI>
+      </OMA>
+      <OMA>
+        <OMS cd="linalg2" name="vector"/>
+	<OMI> 4 </OMI><OMI> 5 </OMI><OMI> 6 </OMI>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> tridiagonal </Name>
+<Role>application</Role>
+<Description>
+This symbol represents a tridiagonal matrix, it takes one argument
+which should be a vector of vectors which should have three elements.
+These should be vectors representing the sub-diagonal, the diagonal
+and the super-diagonal in that order.
+</Description>
+
+<CMP> a tridiagonal matrix is a (1,1) banded matrix </CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="logic1" name="and"/>
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="linalg4" name="size"/>
+	<OMV name="VV"/>
+      </OMA>
+      <OMI> 3 </OMI>
+    </OMA>
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="linalg4" name="size"/>
+	<OMA>
+	  <OMS cd="linalg1" name="vector_selector"/>
+	  <OMI> 2 </OMI>
+	  <OMV name="VV"/>
+	</OMA>
+      </OMA>
+      <OMA>
+        <OMS cd="arith1" name="plus"/>
+	<OMA>
+          <OMS cd="linalg4" name="size"/>
+	  <OMA>
+	    <OMS cd="linalg1" name="vector_selector"/>
+	    <OMI> 1 </OMI>
+	    <OMV name="VV"/>
+	  </OMA>
+	</OMA>
+	<OMI> 1 </OMI>
+      </OMA>
+    </OMA>
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="linalgspec1" name="tridiagonal"/>
+	<OMV name="VV"/>
+      </OMA>
+      <OMA>
+        <OMS cd="linalgspec1" name="banded"/>
+	<OMV name="VV"/>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+<CMP> The product of two tridiagonal matrices is tridiagonal </CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMS cd="arith1" name="times"/>
+      <OMA>
+        <OMS cd="linalgspec1" name="tridiagonal"/>
+	<OMV name="VV1"/>
+      </OMA>
+      <OMA>
+        <OMS cd="linalgspec1" name="tridiagonal"/>
+	<OMV name="VV2"/>
+      </OMA>
+    </OMA>
+    <OMA>
+      <OMS cd="linalgspec1" name="tridiagonal"/>
+      <OMV name="VV3"/>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+</CDDefinition>
+
+</CD>

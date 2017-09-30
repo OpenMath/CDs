@@ -1,0 +1,298 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDName> linalg4vec </CDName>
+<CDURL> http://www.openmath.org/cd/linalg4vec.ocd </CDURL>
+<CDReviewDate> 2005-01-01 </CDReviewDate>
+<CDStatus> experimental </CDStatus>
+<CDDate> 2004-11-22 </CDDate>
+<CDVersion> 2 </CDVersion>
+<CDRevision> 1 </CDRevision>
+
+
+<Description> 
+A CD for the quick construction of some vectors.
+
+November 2004: A.M. Cohen built this CD from a former experimental CD called
+linalg7 (version 1, revision 0).  The descriptions have been edited and the
+example in the definition of the symbol sparse has been improved.
+</Description>
+
+
+<CDDefinition>
+<Name> zero </Name>
+<Role>application</Role>
+<Description>
+This symbol represents a function with one argument, which should be a natural
+number n.
+When applied to n, it represents the zero vector of size n
+(in the terminology of linalg3; dimension n in some terminology).
+</Description>
+
+<CMP>
+  If M is an n*m matrix and V is a zero vector of length m then
+  V*M = V2 where V2 is a zero vector of length n
+</CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMBIND>
+  <OMS cd="quant1" name="forall"/>
+  <OMBVAR>
+    <OMATTR>
+      <OMATP>
+        <OMS cd="mathmltypes" name="type"/>
+        <OMS cd="mathmltypes" name="matrix_type"/>
+      </OMATP>
+      <OMV name="M"/>
+    </OMATTR>
+  </OMBVAR>
+  <OMA>
+    <OMS cd="logic1" name="implies"/>
+    <OMA>
+      <OMS cd="logic1" name="and"/>
+      <OMA>
+        <OMS cd="relation1" name="eq"/>
+        <OMA>
+          <OMS cd="linalg3" name="columncount"/>
+          <OMV name="M"/>
+        </OMA>
+        <OMV name="m"/>
+      </OMA>
+      <OMA>
+        <OMS cd="relation1" name="eq"/>
+        <OMA>
+          <OMS cd="linalg3" name="rowcount"/>
+          <OMV name="M"/>
+        </OMA>
+        <OMV name="n"/>
+      </OMA>
+    </OMA>
+    <OMA><OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="arith1" name="times"/>
+        <OMA>
+          <OMS cd="linalg4vec" name="zero"/>
+          <OMV name="m"/>
+        </OMA>
+        <OMV name="M"/>
+      </OMA>
+      <OMA>
+        <OMS cd="linalg4vec" name="zero"/>
+        <OMV name="n"/>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMBIND>
+</OMOBJ></FMP>
+
+<CMP>
+  If M is an n*m matrix and V is a zero vector of length n then
+  M*V = V2 where V2 is a zero vector of length m
+</CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMBIND>
+  <OMS cd="quant1" name="forall"/>
+  <OMBVAR>
+    <OMATTR>
+      <OMATP>
+        <OMS cd="mathmltypes" name="type"/>
+        <OMS cd="mathmltypes" name="matrix_type"/>
+      </OMATP>
+      <OMV name="M"/>
+    </OMATTR>
+  </OMBVAR>
+  <OMA>
+    <OMS cd="logic1" name="implies"/>
+    <OMA>
+      <OMS cd="logic1" name="and"/>
+      <OMA>
+        <OMS cd="relation1" name="eq"/>
+        <OMA>
+          <OMS cd="linalg3" name="columncount"/>
+          <OMV name="M"/>
+        </OMA>
+        <OMV name="m"/>
+      </OMA>
+      <OMA>
+        <OMS cd="relation1" name="eq"/>
+        <OMA>
+          <OMS cd="linalg3" name="rowcount"/>
+          <OMV name="M"/>
+        </OMA>
+        <OMV name="n"/>
+      </OMA>
+    </OMA>
+    <OMA><OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="arith1" name="times"/>
+        <OMV name="M"/>
+        <OMA>
+          <OMS cd="linalg4vec" name="zero"/>
+          <OMV name="n"/>
+        </OMA>
+      </OMA>
+      <OMA>
+        <OMS cd="linalg4vec" name="zero"/>
+        <OMV name="m"/>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMBIND>
+</OMOBJ></FMP>
+
+<CMP>
+  If V is a zero vector of length n and V2 is a vector of length n
+then
+  V+V2 = V2+V = V2
+</CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMBIND>
+  <OMS cd="quant1" name="forall"/>
+  <OMBVAR>
+    <OMATTR>
+      <OMATP>
+        <OMS cd="mathmltypes" name="type"/>
+        <OMS cd="mathmltypes" name="vector_type"/>
+      </OMATP>
+      <OMV name="V2"/>
+    </OMATTR>
+  </OMBVAR>
+  <OMA>
+    <OMS cd="logic1" name="implies"/>
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="linalg4" name="size"/>
+        <OMV name="V2"/>
+      </OMA>
+      <OMV name="n"/>
+    </OMA>
+    <OMA>
+      <OMS cd="logic1" name="and"/>
+      <OMA>
+        <OMS cd="relation1" name="eq"/>
+        <OMV name="V2"/>
+        <OMA>
+          <OMS cd="arith1" name="plus"/>
+          <OMA>
+            <OMS cd="linalg4vec" name="zero"/>
+            <OMV name="n"/>
+          </OMA>
+          <OMV name="V2"/>
+        </OMA>
+      </OMA>
+      <OMA>
+        <OMS cd="relation1" name="eq"/>
+        <OMV name="V2"/>
+        <OMA>
+          <OMS cd="arith1" name="plus"/>
+          <OMV name="V2"/>
+          <OMA>
+            <OMS cd="linalg4vec" name="zero"/>
+            <OMV name="n"/>
+          </OMA>
+        </OMA>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMBIND>
+</OMOBJ></FMP>
+
+<CMP>
+  If V is a zero vector of length n and i is in the integral interval
+[1,n] then
+  V.i = 0
+</CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA><OMS cd="logic1" name="implies"/>
+  <OMA>
+    <OMS cd="set1" name="in"/>
+    <OMV name="i"/>
+    <OMA>
+      <OMS cd="interval1" name="integer_interval"/>
+      <OMS cd="alg1" name="one"/>
+      <OMV name="n"/>
+    </OMA>
+  </OMA>
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMS cd="linalg1" name="vector_selector"/>
+      <OMV name="i"/>
+      <OMA>
+        <OMS cd="linalg4vec" name="zero"/>
+        <OMV name="n"/>
+      </OMA>
+    </OMA>
+    <OMS cd="alg1" name="zero"/>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> constant </Name>
+<Description>
+This symbol represents a binary function whose first argument should be a
+natural number. When applied to n and c, it represents
+the constant (row) vector (so vector as defined in linalg2), so size (dimension) n all of whose components have the
+value c.
+</Description>
+
+<CMP>
+  If V is a constant vector of length n, with constant value c
+  and i is in the integral interval [1,n] then
+  V.i = c
+</CMP>
+
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath">
+<OMA><OMS cd="logic1" name="implies"/>
+  <OMA><OMS cd="set1" name="in"/>
+       <OMV name="i"/>
+       <OMA><OMS cd="interval1" name="integer_interval"/>
+            <OMS cd="alg1" name="one"/>
+            <OMV name="n"/>
+       </OMA>
+  </OMA>
+  <OMA><OMS cd="relation1" name="eq"/>
+       <OMA><OMS cd="linalg1" name="vector_selector"/>
+            <OMV name="i"/>
+            <OMA><OMS cd="linalg4vec" name="constant"/>
+                 <OMV name="n"/><OMV name="c"/>
+            </OMA>
+       </OMA>
+       <OMV name="c"/>
+  </OMA>
+</OMA>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> sparse </Name>
+<Role>application</Role>
+<Description>
+The sparse symbol is a constructor for sparse vectors. It is (n+1)-ary,
+where the first argument is the length (dimension) of the vector, and
+every following argument specifies a possibly non-zero element in the
+following way. The argument is a list which should have length two. 
+The first element in the list is the position (one based), whilst the second
+element in the list is the value. Every other element of the vector is
+implicitly zero.
+</Description>
+
+<Example>
+This example shows a representation of the sparse vector
+$$[0,0,0,0,1]$$
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA><OMS cd="linalg4vec" name="sparse"/>
+         <OMI>5</OMI>
+         <OMA><OMS cd="list1" name="list"/>
+              <OMI>5</OMI> <OMI>1</OMI>
+         </OMA>
+    </OMA>
+  </OMOBJ>
+</Example>
+
+</CDDefinition>
+</CD>

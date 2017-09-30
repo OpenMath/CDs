@@ -1,12 +1,11 @@
 <CD xmlns="http://www.openmath.org/OpenMathCD">
-   <CDName> polygb </CDName> 
-<CDBase> http://www.openmath.org/cd </CDBase>
+   <CDName> polygb1 </CDName> 
    <CDURL> http://www.win.tue.nl/~amc/oz/om/cds/polygb1.ocd </CDURL>
    <CDReviewDate> 2006-06-01 </CDReviewDate> 
    <CDDate> 2004-06-01 </CDDate> 
    <CDStatus> experimental </CDStatus>
    <CDVersion> 1 </CDVersion>
-   <CDRevision> 1 </CDRevision>
+   <CDRevision> 2 </CDRevision>
 
    <Description>
      This CD contains operators for Groebner basis computations with polynomial expressions.
@@ -19,17 +18,18 @@
      Definition of some constructors
 </CDComment>
 
-   <CDDefinition> <Name> groebner_basis </Name> <Description> The
-constructor for a Groebner basis (reduced, minimal). The first is a
-list of variables, the second argument is an ordering, the third is
-the Groebner Basis itself (with respect to the ordering) that should
-be represented as a polynomial expression.  </Description>
+<CDDefinition>
+  <Name> groebner_basis </Name>
+  <Description>
+    The constructor for a Groebner basis (reduced, minimal). The first is a list of
+    variables, the second argument is an ordering, the third is the Groebner Basis itself
+    (with respect to the ordering) that should be represented as a polynomial expression.
+    </Description>
 </CDDefinition>
 
 <CDComment>
      Definition of operations
 </CDComment>
-
 
     <CDDefinition>
        <Name> groebner </Name>

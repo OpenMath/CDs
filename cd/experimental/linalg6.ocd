@@ -16,7 +16,8 @@
   <CDName>relation1</CDName>
 </CDUses>
 <Description>
-This CD contains symbols for the construction of some new matrices from old ones.
+This CD contains symbols for the construction of some new vectors and matrices from old
+ones by means of the tensor product.
 </Description>
 
 <CDDefinition>
@@ -46,13 +47,13 @@ A_{i,j} B_{k,l},
 <OMA><OMS cd="logic1" name="implies"/>
      <OMA><OMS cd="logic1" name="and"/>
           <OMA><OMS cd="relation1" name="eq"/>
-               <OMA><OMS cd="linalg4" name="rowcount"/>
+               <OMA><OMS cd="linalg3" name="rowcount"/>
                     <OMV name="A"/>
                </OMA>
                <OMV name="m"/>
           </OMA>
           <OMA><OMS cd="relation1" name="eq"/>
-               <OMA><OMS cd="linalg4" name="columncount"/>
+               <OMA><OMS cd="linalg3" name="columncount"/>
                     <OMV name="A"/>
                </OMA>
                <OMV name="n"/>
@@ -60,9 +61,6 @@ A_{i,j} B_{k,l},
      </OMA>
      <OMA><OMS cd="relation1" name="eq"/>
           <OMA><OMS cd="linalg1" name="matrix_selector"/>
-               <OMA><OMS cd="linalg6" name="matrix_tensor"/>
-                    <OMV name="A"/>         <OMV name="B"/>
-               </OMA>
                <OMA><OMS cd="arith1" name="plus"/>
                     <OMV name="i"/>
                     <OMA><OMS cd="arith1" name="times"/>
@@ -81,15 +79,18 @@ A_{i,j} B_{k,l},
                          <OMV name="n"/>
                     </OMA>
                </OMA>
+               <OMA><OMS cd="linalg6" name="matrix_tensor"/>
+                    <OMV name="A"/>         <OMV name="B"/>
+               </OMA>
           </OMA>
           <OMA><OMS cd="arith1" name="times"/>
                <OMA><OMS cd="linalg1" name="matrix_selector"/>
-                    <OMV name="A"/>
                     <OMV name="i"/><OMV name="j"/>
+                    <OMV name="A"/>
                </OMA>
                <OMA><OMS  cd="linalg1" name="matrix_selector"/>
-                    <OMV name="B"/>
                     <OMV name="k"/><OMV name="l"/>
+                    <OMV name="B"/>
                </OMA>
           </OMA>
      </OMA>

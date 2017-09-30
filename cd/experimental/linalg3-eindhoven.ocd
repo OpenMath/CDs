@@ -1,0 +1,141 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+
+<CDName> linalg3 </CDName>
+<CDBase>http://www.openmath.org/cd</CDBase>
+<CDURL> http://www.openmath.org/cd/linalg3.ocd </CDURL>
+<CDReviewDate>2006-11-30</CDReviewDate>
+<CDDate>2004-11-30</CDDate>
+<CDVersion>4</CDVersion>
+<CDRevision>1</CDRevision>
+<CDStatus> experimental </CDStatus>
+<Description>
+    This CD deals with basic dimension notions of a matrix and a vector.
+
+    November, 2004, this CD was created from the former CD linalg4 by removing
+    all symbols referring to eigenvalues, eigenvectors, rank, and the characteristic
+    polynomial. As a result, this CD deals with basic dimension notions of a
+    matrix and a vector.
+</Description>
+
+<CDDefinition>
+<Name> size </Name>
+<Role>application</Role>
+<Description>
+This symbol represents the function which takes one vector argument
+and returns the length of that vector.
+</Description>
+<Example>
+The length of the vector [1,2,3] is equal to 3.
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA><OMS cd="relation1" name="eq"/>
+       <OMA><OMS cd="linalg3" name="size"/>
+            <OMA><OMS cd="linalg2" name="vector"/>
+                 <OMI> 1 </OMI>  <OMI> 2 </OMI> <OMI> 3 </OMI>
+            </OMA>
+       </OMA>
+   <OMI> 3 </OMI>
+  </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> rowcount </Name>
+<Role>application</Role>
+<Description>
+This symbol represents the function which takes one matrix argument 
+and returns the number of rows in that matrix.
+</Description>
+
+<Example>
+Specification of the number of rows in the matrix:
+[[1 2]
+ [3 4]
+ [5 6]]
+
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA><OMS cd="linalg3" name="rowcount"/>
+       <OMA><OMS cd="linalg2" name="matrix"/>
+            <OMA><OMS cd="linalg2" name="matrixrow"/>
+                 <OMI>1</OMI> <OMI>2</OMI>
+            </OMA>
+            <OMA><OMS cd="linalg2" name="matrixrow"/>
+                 <OMI>3</OMI> <OMI>4</OMI>
+            </OMA>
+            <OMA><OMS cd="linalg2" name="matrixrow"/>
+                 <OMI>5</OMI> <OMI>6</OMI>
+            </OMA>
+       </OMA>
+  </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> columncount </Name>
+<Role>application</Role>
+<Description>
+This symbol represents the function which takes one matrix argument
+and returns the number of columns in that matrix.
+</Description>
+<Example>
+Specification of the number of columns in the matrix:
+[[1 2]
+ [3 4]
+ [5 6]]
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA><OMS cd="linalg3" name="columncount"/>
+    <OMA><OMS cd="linalg2" name="matrix"/>
+         <OMA><OMS cd="linalg2" name="matrixrow"/>
+              <OMI>1</OMI> <OMI>2</OMI>
+         </OMA>
+         <OMA><OMS cd="linalg2" name="matrixrow"/>
+             <OMI>3</OMI> <OMI>4</OMI>
+        </OMA>
+        <OMA><OMS cd="linalg2" name="matrixrow"/>
+             <OMI>5</OMI> <OMI>6</OMI>
+        </OMA>
+   </OMA>
+ </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+</CD>
