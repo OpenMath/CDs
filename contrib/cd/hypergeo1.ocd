@@ -4,7 +4,7 @@
 <!-- The Gauss hypergeometric function, confluent hypergeometric functions,-->
 <!-- and generalized hypergeometric functions in one variables. -->
 <CDName> hypergeo1 </CDName>
-<CDURL> http://www.math.kobe-u.ac.jp/OCD/ </CDURL>
+<CDURL>http://www.math.kobe-u.ac.jp/OCD/</CDURL>
 <CDReviewDate>2017-12-31</CDReviewDate>
 <CDDate> 2002-11-29 </CDDate>
 <CDVersion> 0 </CDVersion>

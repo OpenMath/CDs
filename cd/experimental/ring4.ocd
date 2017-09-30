@@ -1,7 +1,7 @@
 <CD xmlns="http://www.openmath.org/OpenMathCD">
 <CDName> ring4 </CDName>
-<CDBase> http://www.openmath.org/cd </CDBase>
-<CDURL> http://www.openmath.org/cd/ring4.ocd </CDURL>
+<CDBase>http://www.openmath.org/cd</CDBase>
+<CDURL>http://www.openmath.org/cd/ring4.ocd</CDURL>
 <CDReviewDate> 2006-06-01 </CDReviewDate>
 <CDDate> 2004-06-01 </CDDate>
 <CDVersion> 1 </CDVersion>

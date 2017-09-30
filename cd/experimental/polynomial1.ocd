@@ -1,7 +1,7 @@
 <CD xmlns="http://www.openmath.org/OpenMathCD">
 <CDName> polynomial1 </CDName>
-<CDBase> http://www.openmath.org/cd </CDBase>
-<CDURL> http://www.openmath.org/cd/polynomial1.ocd </CDURL>
+<CDBase>http://www.openmath.org/cd</CDBase>
+<CDURL>http://www.openmath.org/cd/polynomial1.ocd</CDURL>
 <CDReviewDate> 2006-07-12   </CDReviewDate>
 <CDDate> 2004-07-12 </CDDate>
 <CDVersion> 0 </CDVersion>

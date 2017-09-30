@@ -33,7 +33,7 @@
 </CDComment>
 
 <CDName> cauchypv </CDName>
-<CDURL> http://www.openmath.org/cd/cauchypv.ocd </CDURL>
+<CDURL>http://www.openmath.org/cd/cauchypv.ocd</CDURL>
 <CDReviewDate>2017-12-31</CDReviewDate>
 <CDStatus> experimental </CDStatus>
 <CDDate> 2001-09-23 </CDDate>

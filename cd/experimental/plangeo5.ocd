@@ -1,6 +1,6 @@
 <CD xmlns="http://www.openmath.org/OpenMathCD">
 	<CDName>plangeo5</CDName>
-<CDBase> http://www.openmath.org/cd </CDBase>
+<CDBase>http://www.openmath.org/cd</CDBase>
 	<CDURL>http://www.win.tue.nl/~amc/oz/om/cds/plangeo5.ocd</CDURL>
 	<CDDate> 2004-06-01 </CDDate>
 	<CDReviewDate> 2006-06-01 </CDReviewDate>

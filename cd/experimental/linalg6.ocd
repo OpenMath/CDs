@@ -1,7 +1,7 @@
 <CD xmlns="http://www.openmath.org/OpenMathCD">
 <CDName> linalg6 </CDName>
-<CDBase> http://www.openmath.org/cd </CDBase>
-<CDURL> http://www.openmath.org/cd/linalg6.ocd </CDURL>
+<CDBase>http://www.openmath.org/cd</CDBase>
+<CDURL>http://www.openmath.org/cd/linalg6.ocd</CDURL>
 <CDReviewDate> 2003-04-01 </CDReviewDate>
 <CDDate> 1999-07-15 </CDDate>
 <CDVersion> 2 </CDVersion>

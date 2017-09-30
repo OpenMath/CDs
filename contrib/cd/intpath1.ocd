@@ -3,7 +3,7 @@
 
 <CD xmlns="http://www.openmath.org/OpenMathCD">
 <CDName> intpath1 </CDName>
-<CDURL> http://www.math.kobe-u.ac.jp/OCD/intpath1.ocd </CDURL>
+<CDURL>http://www.math.kobe-u.ac.jp/OCD/intpath1.ocd</CDURL>
 <CDReviewDate>2017-12-31</CDReviewDate>
 <CDStatus> experimental </CDStatus>
 <CDDate> 2004-12-12 </CDDate>

@@ -33,7 +33,7 @@
 </CDComment>
 
 <CDName> interval_types </CDName>
-<CDURL> http://www.openmath.org/cd/interval_types.ocd </CDURL>
+<CDURL>http://www.openmath.org/cd/interval_types.ocd</CDURL>
 <CDReviewDate>2017-12-31</CDReviewDate>
 <CDStatus> experimental </CDStatus>
 <CDDate> 2002-08-25 </CDDate>

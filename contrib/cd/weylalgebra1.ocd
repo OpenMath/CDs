@@ -3,7 +3,7 @@
 
 <CD xmlns="http://www.openmath.org/OpenMathCD">
 <CDName> weylalgebra1 </CDName>
-<CDURL> http://www.math.kobe-u.ac.jp/OCD/weylalgebra1.tfb </CDURL>
+<CDURL>http://www.math.kobe-u.ac.jp/OCD/weylalgebra1.tfb</CDURL>
 <CDReviewDate>2017-12-31</CDReviewDate>
 <CDStatus> experimental </CDStatus>
 <CDDate> 2003-11-28 </CDDate>

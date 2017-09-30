@@ -32,8 +32,8 @@
      society at http://www.openmath.org.
 </CDComment>
 <CDName>plangeo1</CDName>
-<CDBase> http://www.openmath.org/cd </CDBase>
-<CDURL> http://www.win.tue.nl/~amc/oz/om/cds/plangeo1.ocd </CDURL>
+<CDBase>http://www.openmath.org/cd</CDBase>
+<CDURL>http://www.win.tue.nl/~amc/oz/om/cds/plangeo1.ocd</CDURL>
 <CDReviewDate> 2006-06-01 </CDReviewDate>
 <CDStatus>experimental</CDStatus>
 <CDDate> 2004-06-01 </CDDate>

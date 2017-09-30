@@ -34,7 +34,7 @@
 
 <CDName> physical_consts1 </CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
-<CDURL> http://www.openmath.org/cd/physical_consts1.ocd </CDURL>
+<CDURL>http://www.openmath.org/cd/physical_consts1.ocd</CDURL>
 <CDReviewDate>2017-12-31</CDReviewDate>
 <CDStatus> experimental </CDStatus>
 <CDDate>2005-05-28</CDDate>

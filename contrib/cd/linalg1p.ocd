@@ -2,7 +2,7 @@
 <!-- $Id: linalg1p.tfb,v 1.1.1.1 2002/10/04 12:50:39 taka Exp $ -->
 <CD xmlns="http://www.openmath.org/OpenMathCD">
 <CDName> linalg1p </CDName>
-<CDURL> http://www.math.kobe-u.ac.jp/OCD/linalg1p.tfb </CDURL>
+<CDURL>http://www.math.kobe-u.ac.jp/OCD/linalg1p.tfb</CDURL>
 <CDReviewDate>2017-12-31</CDReviewDate>
 <CDStatus> experimental </CDStatus>
 <CDDate> 2002-07-30 </CDDate>

@@ -34,7 +34,7 @@
 </CDComment>
 
 <CDName> calculus1 </CDName>
-<CDURL> http://www.openmath.org/cd/calculus1.ocd </CDURL>
+<CDURL>http://www.openmath.org/cd/calculus1.ocd</CDURL>
 <CDReviewDate>2017-12-31</CDReviewDate>
 <CDStatus> experimental </CDStatus>
 <CDDate> 2002-09-19 </CDDate>

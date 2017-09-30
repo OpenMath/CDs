@@ -35,7 +35,7 @@
 
 <CDName> quant1 </CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
-<CDURL> http://www.openmath.org/cd/quant1.ocd </CDURL>
+<CDURL>http://www.openmath.org/cd/quant1.ocd</CDURL>
 <CDReviewDate>2006-03-30</CDReviewDate>
 <CDDate>2004-05-11</CDDate>
 <CDVersion>3</CDVersion>

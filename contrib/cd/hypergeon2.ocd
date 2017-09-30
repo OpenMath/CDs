@@ -2,7 +2,7 @@
 <!-- $Id: hypergeon2.tfb,v 1.4 2003/11/30 13:21:28 taka Exp $ -->
 <CD xmlns="http://www.openmath.org/OpenMathCD">
 <CDName> hypergeon2 </CDName>
-<CDURL> http://www.math.kobe-u.ac.jp/OCD/hypergeon2.tfb </CDURL>
+<CDURL>http://www.math.kobe-u.ac.jp/OCD/hypergeon2.tfb</CDURL>
 <CDReviewDate>2017-12-31</CDReviewDate>
 <CDStatus> experimental </CDStatus>
 <CDDate> 2003-11-30 </CDDate>

@@ -2,7 +2,7 @@
 <CD xmlns="http://www.openmath.org/OpenMathCD">
 <!-- $Id: hypergeo0.tfb,v 1.9 2002/11/29 07:26:41 taka Exp $ -->
 <CDName> hypergeo0 </CDName>
-<CDURL> http://www.math.kobe-u.ac.jp/OCD/ </CDURL>
+<CDURL>http://www.math.kobe-u.ac.jp/OCD/</CDURL>
 <CDReviewDate>2017-12-31</CDReviewDate>
 <CDDate> 2002-11-29 </CDDate>
 <CDVersion> 0 </CDVersion>

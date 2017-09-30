@@ -1,7 +1,7 @@
 <CD xmlns="http://www.openmath.org/OpenMathCD">
    <CDName> polygb2 </CDName> 
-<CDBase> http://www.openmath.org/cd </CDBase>
-   <CDURL> http://www.win.tue.nl/~amc/oz/om/cds/polygb2.ocd </CDURL>
+<CDBase>http://www.openmath.org/cd</CDBase>
+   <CDURL>http://www.win.tue.nl/~amc/oz/om/cds/polygb2.ocd</CDURL>
    <CDReviewDate> 2006-06-01 </CDReviewDate> 
    <CDDate> 2004-06-01 </CDDate> 
    <CDStatus> experimental </CDStatus>
