@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<locatingRules xmlns="http://thaiopensource.com/ns/locating-rules/1.0">
+  <uri pattern="*.sts" typeId="CDSignatures"/>
+  <documentElement localName="CDSignaures" typeId="CDSignatures"/>
+  <typeId id="CDSignatures" uri="../lib/RelaxNG/omcdsig2.rnc"/>
+</locatingRules>

@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<locatingRules xmlns="http://thaiopensource.com/ns/locating-rules/1.0">
+  <uri pattern="*.cdg" typeId="CDGroup"/>
+  <documentElement localName="CDGroup" typeId="CDGroup"/>
+  <typeId id="CDGroup" uri="../lib/RelaxNG/omcdgroup2.rnc"/>
+</locatingRules>
