@@ -3,8 +3,4 @@
   <uri pattern="*.cd" typeId="CD"/>
   <documentElement localName="CD" typeId="CD"/>
   <typeId id="CD" uri="../../lib/RelaxNG/omcd2.rnc"/>
-
-  <uri pattern="*.sts" typeId="CDSignatures"/>
-  <documentElement localName="CDSignaures" typeId="CDSignatures"/>
-  <typeId id="CDSignatures" uri="../../rnc/cdsig.rnc"/>
 </locatingRules>
