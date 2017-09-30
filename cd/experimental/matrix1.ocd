@@ -1,0 +1,506 @@
+<?xml version="1.0"?>
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+	<CDName> matrix1 </CDName>
+	<CDURL>http://www.win.tue.nl/SCIEnce/cds/matrix1.ocd</CDURL>
+	<CDReviewDate>2017-09-30</CDReviewDate>
+	<CDDate> 2009-06-22 </CDDate>
+	<CDVersion> 0 </CDVersion>
+	<CDRevision> 4 </CDRevision>
+	<CDStatus> experimental </CDStatus>
+	<CDUses>
+		<CDName>alg1</CDName>
+		<CDName>ringname1</CDName>
+		<CDName>linalg2</CDName>
+		<CDName>linalg3</CDName>
+	</CDUses>
+	<Description>
+	This CD holds a collection of matrix constructors over arbitrary rings.
+	</Description>
+	<CDDefinition>
+		<Name> entry_domain </Name>
+		<Description>
+		This symbol is a unary function, whose argument should be a ring r.
+		When applied to r, it represents the matrix-algebra ground domain (MAD).
+		</Description>
+		<Example>
+			<!-- the full matrix algebra of degree 12 -->
+			<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+				<OMA>
+					<OMS name="entry_domain" cd="matrix1"/>
+					<OMS name="Z" cd="ringname1"/>
+				</OMA>
+			</OMOBJ>
+		</Example>
+	</CDDefinition>
+	<CDDefinition>
+		<Name> matrix_domain </Name>
+		<Description>
+		This symbol is a ternary function, whose first argument should be a
+		matrix1.entry_domain application.
+		The second and third arguments must be matrix1.row_dimension
+		and matrix1.column_dimension.
+
+		When applied to these arguments this `creates' the domain of linear mappings
+		between modules of specified dimensions over a common ground domain,
+		conveniently represented by matrices.
+		</Description>
+		<Example>
+			<!-- the full matrix algebra of degree 12 -->
+			<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+				<OMA>
+					<OMS name="matrix_domain" cd="matrix1"/>
+					<OMA>
+						<OMS name="entry_domain" cd="matrix1"/>
+						<OMS name="Z" cd="ringname1"/>
+					</OMA>
+					<OMA>
+						<OMS name="row_dimension" cd="matrix1"/>
+						<OMI>12</OMI>
+					</OMA>
+					<OMA>
+						<OMS name="column_dimension" cd="matrix1"/>
+						<OMI>10</OMI>
+					</OMA>
+				</OMA>
+			</OMOBJ>
+		</Example>
+	</CDDefinition>
+	<CDDefinition>
+		<Name> row_dimension </Name>
+		<Description>
+		This symbol is a unary function whose first argument must be either a
+		non-negative OpenMath integer or nums1.infinity.
+
+		When applied this creates an object that denotes the dimension of the
+		codomain of the linear mapping represented by the matrix.
+		</Description>
+	</CDDefinition>
+	<CDDefinition>
+		<Name> column_dimension </Name>
+		<Description>
+		This symbol is a unary function whose first argument must be either a
+		non-negative OpenMath integer or nums1.infinity.
+
+		When applied this creates an object that denotes the dimension of the
+		domain of the linear mapping represented by the matrix.
+		</Description>
+	</CDDefinition>
+	<CDDefinition>
+		<Name> matrix </Name>
+		<Description>
+		This symbol is a binary function whose first argument must be a
+		matrix algebra constructor and the second argument can be any of the
+		below matrix entry constructors.
+
+		Additionally it is possible to use the matrix constructors of the
+		linalg2 or linalg3 CDs.
+		</Description>
+		<Example>
+			<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+				<OMSTR>Todo</OMSTR>
+			</OMOBJ>
+		</Example>
+	</CDDefinition>
+	<CDDefinition>
+		<Name> dense </Name>
+		<Description>
+		This symbol is an $(m \cdot n)$-ary function whose arguments specify
+		the entries of the matrix, where $m$ is the dimension of the codomain
+		and $n$ is the dimension of the domain.
+
+		The matrix (or block) must be filled row-wise, that is the first argument
+		denotes the entry in row 1, column 1 of the matrix (or block), the second
+		argument denotes the entry at row 1, column 2, and so forth.
+
+		The number of arguments MUST match the dimensions of either the matrix
+		algebra or the surrounding block (see below).
+		</Description>
+		<Example>
+			<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+				<OMA>
+					<OMS name="matrix" cd="matrix1"/>
+					<OMA>
+						<OMS name="matrix_domain" cd="matrix1"/>
+						<OMA>
+							<OMS name="entry_domain" cd="matrix1"/>
+							<OMS name="Z" cd="ringname1"/>
+						</OMA>
+						<OMA>
+							<OMS name="row_dimension" cd="matrix1"/>
+							<OMI>3</OMI>
+						</OMA>
+						<OMA>
+							<OMS name="column_dimension" cd="matrix1"/>
+							<OMI>3</OMI>
+						</OMA>
+					</OMA>
+					<OMA>
+						<OMS cd="matrix1" name="dense"/>
+						<OMI>1</OMI>
+						<OMI>2</OMI>
+						<OMI>3</OMI>
+						<OMI>4</OMI>
+						<OMI>5</OMI>
+						<OMI>6</OMI>
+						<OMI>7</OMI>
+						<OMI>8</OMI>
+						<OMI>9</OMI>
+					</OMA>
+				</OMA>
+			</OMOBJ>
+		</Example>
+	</CDDefinition>
+	<CDDefinition>
+		<Name> sparse </Name>
+		<Description>
+		The constructor for sparse matrices without any indication of dimension
+		or domain for the coefficients.
+		Its arguments are just matrix1.sparse_entrys.
+
+		Attention: No two matrix1.sparse_entrys must specify the 
+		same location.
+		</Description>
+	</CDDefinition>
+	<CDDefinition>
+		<Name> sparse_entry </Name>
+		<Description>
+		This symbol denotes a ternary function whose first two arguments specify
+		the location of an entry inside the matrix, and whose final argument is
+		the entry itself.
+
+		The entry MUST be either from the specified ground domain directly,
+		or be a diagonal constructor as described below, a block constructor
+		as described below, or a banded constructor as described below.
+
+		In the block case, the dimensions of the block MUST NOT exceed the total
+		dimensions of the matrix algebra.
+
+		In the diagonal case, the dimension of the diagonal MUST NOT exceed the
+		total dimensions of the matrix algebra.
+		</Description>
+		<Example>
+			<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+				<OMA>
+					<OMS name="matrix" cd="matrix1"/>
+					<OMA>
+						<OMS name="matrix_domain" cd="matrix1"/>
+						<OMA>
+							<OMS name="entry_domain" cd="matrix1"/>
+							<OMS name="Q" cd="fieldname1"/>
+						</OMA>
+						<OMA>
+							<OMS name="row_dimension" cd="matrix1"/>
+							<OMI>3</OMI>
+						</OMA>
+						<OMA>
+							<OMS name="column_dimension" cd="matrix1"/>
+							<OMI>3</OMI>
+						</OMA>
+					</OMA>
+					<OMA>
+						<OMS cd="matrix1" name="sparse"/>
+						<OMA>
+							<OMS cd="matrix1" name="sparse_entry"/>
+							<OMI>1</OMI>
+							<OMI>2</OMI>
+							<OMI>12</OMI>
+						</OMA>
+						<OMA>
+							<OMS cd="matrix1" name="sparse_entry"/>
+							<OMI>2</OMI>
+							<OMI>1</OMI>
+							<OMI>21</OMI>
+						</OMA>
+						<OMA>
+							<OMS cd="matrix1" name="sparse_entry"/>
+							<OMI>3</OMI>
+							<OMI>3</OMI>
+							<OMI>33</OMI>
+						</OMA>
+					</OMA>
+				</OMA>
+			</OMOBJ>
+		</Example>
+	</CDDefinition>
+	<CDDefinition>
+		<Name> diagonal </Name>
+		<Description>
+		This symbol is an $m$-ary function whose arguments specify the entries of
+		a (generalised) matrix diagonal.
+
+		The diagonal must be filled from top-left to bottom-right.  That is: the
+		first argument represents the entry in row 1, column 1 of the matrix,
+		the second argument denotes the entry at row 2, column 2, and so forth.
+		If used inside a sparse_entry object at location $(i, j)$, the first entry
+		is offset accordingly.
+
+		If not used inside a sparse_entry object, the number of arguments MUST
+		match the dimensions of either the matrix algebra (the smaller of $m$ and
+		$n$).
+
+		If used inside a sparse_entry object, the number of entries MUST NOT
+		exceed the total matrix dimensions.
+		</Description>
+		<Example>
+			<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+				<OMA>
+					<OMS name="matrix" cd="matrix1"/>
+					<OMA>
+						<OMS name="matrix_domain" cd="matrix1"/>
+						<OMA>
+							<OMS name="entry_domain" cd="matrix1"/>
+							<OMS name="C" cd="fieldname1"/>
+						</OMA>
+						<OMA>
+							<OMS name="row_dimension" cd="matrix1"/>
+							<OMI>3</OMI>
+						</OMA>
+						<OMA>
+							<OMS name="column_dimension" cd="matrix1"/>
+							<OMI>3</OMI>
+						</OMA>
+					</OMA>
+					<OMA>
+						<OMS cd="matrix1" name="diagonal"/>
+						<OMA>
+							<OMS cd="complex1" name="complex_cartesian"/>
+							<OMI>1</OMI>
+							<OMI>1</OMI>
+						</OMA>
+						<OMA>
+							<OMS cd="complex1" name="complex_cartesian"/>
+							<OMI>2</OMI>
+							<OMI>2</OMI>
+						</OMA>
+						<OMA>
+							<OMS cd="complex1" name="complex_cartesian"/>
+							<OMI>3</OMI>
+							<OMI>3</OMI>
+						</OMA>
+					</OMA>
+				</OMA>
+			</OMOBJ>
+		</Example>
+	</CDDefinition>
+	<CDDefinition>
+		<Name> block </Name>
+		<Description>
+		This symbol is like the matrix constructor as described above, but
+		intended for use inside matrix to form ``submatrices''.  The symbol
+		takes at least two arguments: a column_dimension and a row_dimension
+		object which denote the total extent of the block.
+		</Description>
+		<Example>
+			<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+				<OMA>
+					<OMS name="matrix" cd="matrix1"/>
+					<OMA>
+						<OMS name="matrix_domain" cd="matrix1"/>
+						<OMA>
+							<OMS name="entry_domain" cd="matrix1"/>
+							<OMS name="Q" cd="fieldname1"/>
+						</OMA>
+						<OMA>
+							<OMS name="row_dimension" cd="matrix1"/>
+							<OMI>30</OMI>
+						</OMA>
+						<OMA>
+							<OMS name="column_dimension" cd="matrix1"/>
+							<OMI>30</OMI>
+						</OMA>
+					</OMA>
+					<OMA>
+						<OMS cd="matrix1" name="sparse"/>
+						<OMA>
+							<OMS cd="matrix1" name="sparse_entry"/>
+							<!-- something starts in row 10, column 20 -->
+							<OMI>10</OMI>
+							<OMI>20</OMI>
+							<OMA>
+								<!-- It's a block of rectangle shape -->
+								<OMS cd="matrix1" name="block"/>
+								<!-- of dimensions 2 by 2 -->
+								<OMA>
+									<OMS name="row_dimension" cd="matrix1"/>
+									<OMI>2</OMI>
+								</OMA>
+								<OMA>
+									<OMS name="column_dimension" cd="matrix1"/>
+									<OMI>2</OMI>
+								</OMA>
+								<!-- and it's got dense entries -->
+								<OMA>
+									<OMS cd="matrix1" name="dense"/>
+									<OMI>11</OMI>
+									<OMI>12</OMI>
+									<OMI>21</OMI>
+									<OMI>22</OMI>
+								</OMA>
+							</OMA>
+						</OMA>
+					</OMA>
+				</OMA>
+			</OMOBJ>
+		</Example>
+		<Example>
+			<!-- very artificial ... don't read if you're faint-hearted -->
+			<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+				<OMA>
+					<OMS name="matrix" cd="matrix1"/>
+					<OMA>
+						<OMS name="matrix_domain" cd="matrix1"/>
+						<OMA>
+							<OMS name="entry_domain" cd="matrix1"/>
+							<OMS name="Z" cd="ringname1"/>
+						</OMA>
+						<OMA>
+							<OMS name="row_dimension" cd="matrix1"/>
+							<OMI>1000000</OMI>
+						</OMA>
+						<OMA>
+							<OMS name="column_dimension" cd="matrix1"/>
+							<OMI>1000000</OMI>
+						</OMA>
+					</OMA>
+					<OMA>
+						<OMS cd="matrix1" name="sparse"/>
+						<OMA>
+							<OMS cd="matrix1" name="sparse_entry"/>
+							<!-- something starts in row 24800, column 26133 -->
+							<OMI>24800</OMI>
+							<OMI>26133</OMI>
+							<OMA>
+								<!-- again, it's a block -->
+								<OMS cd="matrix1" name="block"/>
+								<!-- dimensions 99999 by 99999 -->
+								<OMA>
+									<OMS name="row_dimension" cd="matrix1"/>
+									<OMI>99999</OMI>
+								</OMA>
+								<OMA>
+									<OMS name="column_dimension" cd="matrix1"/>
+									<OMI>99999</OMI>
+								</OMA>
+								<!-- and it's got sparse entries. -->
+								<!-- Yes, it IS redundant, but this is an example after all -->
+								<OMA>
+									<OMS cd="matrix1" name="sparse"/>
+									<OMA>
+										<OMS cd="matrix1" name="sparse_entry"/>
+										<!-- position is relative to the top-left of block -->
+										<OMI>4</OMI>
+										<OMI>15</OMI>
+										<!-- more redundancy: we put a zero here -->
+										<OMI>0</OMI>
+									</OMA>
+								</OMA>
+							</OMA>
+						</OMA>
+					</OMA>
+				</OMA>
+			</OMOBJ>
+		</Example>
+	</CDDefinition>
+	<CDDefinition>
+		<Name> banded </Name>
+		<Description>
+		This symbol is a constructor for banded matrices.  It takes at least
+		2 arguments, the first of which being the number of upper bands and
+		the second being the number of lower bands.
+
+		Amongst the further arguments you can specify AT MOST one
+		matrix1.diagonal object.  You MUST exactly as many
+		matrix1.upper_band objects as you specified upper bands, and
+		you MUST specify as many matrix1.lower_band objects as you
+		specified lower bands.
+
+		This symbol facilitates the use of blas based systems which expect
+		to know the bands structure upfront.
+		</Description>
+		<Example>
+			<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+				<OMA>
+					<OMS name="matrix" cd="matrix1"/>
+					<OMA>
+						<OMS name="matrix_domain" cd="matrix1"/>
+						<OMA>
+							<OMS name="entry_domain" cd="matrix1"/>
+							<OMA>
+								<OMS name="Zm" cd="ringname1"/>
+								<OMI>7</OMI>
+							</OMA>
+						</OMA>
+						<OMA>
+							<OMS name="row_dimension" cd="matrix1"/>
+							<OMI>3</OMI>
+						</OMA>
+						<OMA>
+							<OMS name="column_dimension" cd="matrix1"/>
+							<OMI>3</OMI>
+						</OMA>
+					</OMA>
+					<OMA>
+						<OMS cd="matrix1" name="banded"/>
+						<OMI>1</OMI>
+						<!-- number of upper bands -->
+						<OMI>1</OMI>
+						<!-- number of lower bands -->
+						<OMA>
+							<OMS cd="matrix1" name="diagonal"/>
+							<!-- takes 3 args -->
+							<OMI>111</OMI>
+							<OMI>222</OMI>
+							<OMI>333</OMI>
+						</OMA>
+						<OMA>
+							<OMS cd="matrix1" name="upper_band"/>
+							<!-- first upper band -->
+							<OMI>1</OMI>
+							<OMA>
+								<OMS cd="matrix1" name="diagonal"/>
+								<!-- takes 2 args -->
+								<OMI>4</OMI>
+								<OMI>5</OMI>
+							</OMA>
+						</OMA>
+						<OMA>
+							<OMS cd="matrix1" name="lower_band"/>
+							<!-- first lower band -->
+							<OMI>1</OMI>
+							<OMA>
+								<OMS cd="matrix1" name="diagonal"/>
+								<!-- takes 2 args -->
+								<OMI>1</OMI>
+								<OMI>2</OMI>
+							</OMA>
+						</OMA>
+					</OMA>
+				</OMA>
+			</OMOBJ>
+		</Example>
+	</CDDefinition>
+	<CDDefinition>
+		<Name> upper_band </Name>
+		<Description>
+		This symbol is a binary function whose first argument is a non-negative
+		OpenMath integer which denotes the index of the upper band which is
+		specified in the second argument.
+
+		Hereby the first upper band is the one immediately above the main
+		(generalised) diagonal, its starting coordinates relative to the top-left
+		of the matrix thus are (1, 2).
+		</Description>
+	</CDDefinition>
+	<CDDefinition>
+		<Name> lower_band </Name>
+		<Description>
+		This symbol is a binary function whose first argument is a non-negative
+		OpenMath integer which denotes the index of the lower band which is
+		specified in the second argument.
+
+		Hereby the first lower band is the one immediately below the main
+		(generalised) diagonal, its starting coordinates relative to the top-left
+		of the matrix thus are (2, 1).
+		</Description>
+	</CDDefinition>
+</CD>

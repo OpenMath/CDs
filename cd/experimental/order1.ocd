@@ -1,0 +1,786 @@
+<?xml version="1.0"?>
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+	<CDName> order1 </CDName>
+	<CDDate>2009-07-02</CDDate>
+	<CDVersion>1</CDVersion>
+	<CDRevision>7</CDRevision>
+	<CDStatus> experimental </CDStatus>
+	<CDURL>http://www.win.tue.nl/SCIEnce/cds/order1.ocd</CDURL>
+	<CDReviewDate>2017-09-30</CDReviewDate>
+	<CDUses>
+		<CDName>alg1</CDName>
+		<CDName>arith1</CDName>
+		<CDName>fieldname1</CDName>
+		<CDName>logic1</CDName>
+		<CDName>nums1</CDName>
+		<CDName>polyd1</CDName>
+		<CDName>quant1</CDName>
+		<CDName>relation1</CDName>
+		<CDName>ring1</CDName>
+		<CDName>ringname1</CDName>
+		<CDName>set1</CDName>
+		<CDName>setname1</CDName>
+	</CDUses>
+	<Description>
+	This CD defines the basic functions and constructors for orders of number fields. Written by S. Lesseni (lesseni@math.tu-berlin.de).
+	</Description>
+	<CDComment>
+	A CD of basic functions for orders of number fields written for SCIEnce project. Note that all the rings used here will be considered unital.
+	The reference textbooks are: 
+	(1) M. Pohst and H. Zassenhaus, Algorithmic Algebraic Number Theory, Cambridge
+	Univ. Press, 1989.
+	(2) H. Cohen, A course in Computational Algebraic Number Theory. Berlin, Springer-Verlag (1993).
+	</CDComment>
+	<CDDefinition>
+		<Name> is_Dedekind</Name>
+		<Role>application</Role>
+		<Description>
+		This symbol represents a unary boolean function. The argument should be a ring R. When evaluated on R, the function returns true if R is a Dedekind ring and false otherwise. Note that a ring R is a Dedekind ring if it is  Noetherian, integrally closed (so integral) and such that every non-zero prime ideal is maximal.
+		</Description>
+		<CMP>
+		if R is a Dedekind ring and a subring of the rational field Q then R = Z.
+		</CMP>
+		<FMP>
+			<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+				<OMA>
+					<OMS cd="logic1" name="implies"/>
+					<OMA>
+						<OMS cd="logic1" name="and"/>
+						<OMA>
+							<OMS cd="order1" name="is_Dedekind"/>
+							<OMV name="R"/>
+						</OMA>
+						<OMA>
+							<OMS cd="ring1" name="is_subring"/>
+							<OMS cd="fieldname1" name="Q"/>
+							<OMV name="R"/>
+						</OMA>
+					</OMA>
+					<OMA>
+						<OMS cd="relation1" name="eq"/>
+						<OMV name="R"/>
+						<OMS cd="ringname1" name="Z"/>
+					</OMA>
+				</OMA>
+			</OMOBJ>
+		</FMP>
+		<Example>
+			if the ring (R,+,0,-,*,1) is a principal ideal domain then (R,+,0,-,*,1) is a Dedekind ring.
+			<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+				<OMBIND>
+					<OMS cd="quant1" name="forall"/>
+					<OMBVAR>
+						<OMV name="R"/>
+						<OMV name="plus"/>
+						<OMV name="zero"/>
+						<OMV name="minus"/>
+						<OMV name="times"/>
+						<OMV name="one"/>
+					</OMBVAR>
+					<OMA>
+						<OMS cd="logic1" name="implies"/>
+						<OMA>
+							<OMS cd="order1" name="is_principal_ideal_domain"/>
+							<OMA>
+								<OMS cd="ring1" name="ring"/>
+								<OMV name="R"/>
+								<OMV name="plus"/>
+								<OMV name="zero"/>
+								<OMV name="minus"/>
+								<OMV name="times"/>
+								<OMV name="one"/>
+							</OMA>
+						</OMA>
+						<OMA>
+							<OMS cd="order1" name="is_Dedekind"/>
+							<OMA>
+								<OMS cd="ring1" name="ring"/>
+								<OMV name="R"/>
+								<OMV name="plus"/>
+								<OMV name="zero"/>
+								<OMV name="minus"/>
+								<OMV name="times"/>
+								<OMV name="one"/>
+							</OMA>
+						</OMA>
+					</OMA>
+				</OMBIND>
+			</OMOBJ>
+		</Example>
+	</CDDefinition>
+	<CDDefinition>
+		<Name> is_nonzero_divisor</Name>
+		<Role>application</Role>
+		<Description>
+		This symbol represents a boolean binary function. The first argument is a ring 
+		R, the second is an element b of R. When evaluated on R and b, the function returns true if b is a nonzero divisor in R.
+		</Description>
+		<CMP>
+		if x is a non-zero divisor in the ring R then x is in  R and x is different from zero and for all non-zero y in R, x*y is  different from zero or y*x is different from zero.
+		</CMP>
+		<FMP>
+			<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+				<OMA>
+					<OMS cd="logic1" name="implies"/>
+					<OMA>
+						<OMS cd="order1" name="is_nonzero_divisor"/>
+						<OMV name="R"/>
+						<OMV name="x"/>
+					</OMA>
+					<OMA>
+						<OMS cd="logic1" name="and"/>
+						<OMA>
+							<OMS cd="set1" name="in"/>
+							<OMV name="x"/>
+							<OMA>
+								<OMS cd="ring1" name="carrier"/>
+								<OMV name="R"/>
+							</OMA>
+						</OMA>
+						<OMA>
+							<OMS cd="relation1" name="neq"/>
+							<OMV name="x"/>
+							<OMA>
+								<OMS cd="ring1" name="zero"/>
+								<OMV name="R"/>
+							</OMA>
+						</OMA>
+						<OMBIND>
+							<OMS cd="quant1" name="forall"/>
+							<OMBVAR>
+								<OMV name="y"/>
+							</OMBVAR>
+							<OMA>
+								<OMS cd="logic1" name="implies"/>
+								<OMA>
+									<OMS cd="logic1" name="and"/>
+									<OMA>
+										<OMS cd="set1" name="in"/>
+										<OMV name="y"/>
+										<OMA>
+											<OMS cd="ring1" name="carrier"/>
+											<OMV name="R"/>
+										</OMA>
+									</OMA>
+									<OMA>
+										<OMS cd="relation1" name="neq"/>
+										<OMV name="y"/>
+										<OMA>
+											<OMS cd="ring1" name="zero"/>
+											<OMV name="R"/>
+										</OMA>
+									</OMA>
+								</OMA>
+								<OMA>
+									<OMS cd="logic1" name="or"/>
+									<OMA>
+										<OMS cd="relation1" name="neq"/>
+										<OMA>
+											<OMA>
+												<OMS cd="ring1" name="multiplication"/>
+												<OMV name="R"/>
+											</OMA>
+											<OMV name="x"/>
+											<OMV name="y"/>
+										</OMA>
+										<OMA>
+											<OMS cd="ring1" name="zero"/>
+											<OMV name="R"/>
+										</OMA>
+									</OMA>
+									<OMA>
+										<OMS cd="relation1" name="neq"/>
+										<OMA>
+											<OMA>
+												<OMS cd="ring1" name="multiplication"/>
+												<OMV name="R"/>
+											</OMA>
+											<OMV name="y"/>
+											<OMV name="x"/>
+										</OMA>
+										<OMA>
+											<OMS cd="ring1" name="zero"/>
+											<OMV name="R"/>
+										</OMA>
+									</OMA>
+								</OMA>
+							</OMA>
+						</OMBIND>
+					</OMA>
+				</OMA>
+			</OMOBJ>
+		</FMP>
+		<Example>
+			<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+				<OMA>
+					<OMS cd="order1" name="is_nonzero_divisor"/>
+					<OMS cd="ringname1" name="Z"/>
+					<OMI>5</OMI>
+				</OMA>
+			</OMOBJ>
+		</Example>
+	</CDDefinition>
+	<CDDefinition>
+		<Name> is_principal_ideal_domain</Name>
+		<Role>application</Role>
+		<Description>
+		The unary boolean function whose value is true if and only if the argument is a principal ideal domain. R is a  principal ideal domain if R is a commutative ring without zero divisors and if  every ideal of R is a principal ideal.
+		</Description>
+		<CMP>
+		is_principal_ideal_domain(R) then for all a, b in R a*b=b*a and a different from zero in R then a is a non-zero divisor in R and I an ideal of R then there exists x in R such that I is the principal ideal generated by x in R. 
+		</CMP>
+		<FMP>
+			<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+				<OMA>
+					<OMS cd="logic1" name="implies"/>
+					<OMA>
+						<OMS cd="order1" name="is_principal_ideal_domain"/>
+						<OMV name="R"/>
+					</OMA>
+					<OMA>
+						<OMS cd="logic1" name="and"/>
+						<OMBIND>
+							<OMS cd="quant1" name="forall"/>
+							<OMBVAR>
+								<OMV name="a"/>
+								<OMV name="b"/>
+							</OMBVAR>
+							<OMA>
+								<OMS cd="logic1" name="implies"/>
+								<OMA>
+									<OMS cd="logic1" name="and"/>
+									<OMA>
+										<OMS cd="set1" name="in"/>
+										<OMV name="a"/>
+										<OMA>
+											<OMS cd="ring1" name="carrier"/>
+											<OMV name="R"/>
+										</OMA>
+									</OMA>
+									<OMA>
+										<OMS cd="set1" name="in"/>
+										<OMV name="b"/>
+										<OMA>
+											<OMS cd="ring1" name="carrier"/>
+											<OMV name="R"/>
+										</OMA>
+									</OMA>
+								</OMA>
+								<OMA>
+									<OMS cd="relation1" name="eq"/>
+									<OMA>
+										<OMA>
+											<OMS cd="ring1" name="multiplication"/>
+											<OMV name="R"/>
+										</OMA>
+										<OMV name="a"/>
+										<OMV name="b"/>
+									</OMA>
+									<OMA>
+										<OMA>
+											<OMS cd="ring1" name="multiplication"/>
+											<OMV name="R"/>
+										</OMA>
+										<OMV name="b"/>
+										<OMV name="a"/>
+									</OMA>
+								</OMA>
+							</OMA>
+						</OMBIND>
+						<OMA>
+							<OMS cd="logic1" name="implies"/>
+							<OMA>
+								<OMS cd="logic1" name="and"/>
+								<OMA>
+									<OMS cd="set1" name="in"/>
+									<OMV name="a"/>
+									<OMA>
+										<OMS cd="ring1" name="carrier"/>
+										<OMV name="R"/>
+									</OMA>
+									<OMA>
+										<OMS cd="relation1" name="neq"/>
+										<OMV name="a"/>
+										<OMA>
+											<OMS cd="ring1" name="zero"/>
+											<OMV name="R"/>
+										</OMA>
+									</OMA>
+								</OMA>
+							</OMA>
+							<OMA>
+								<OMS cd="order1" name="is_nonzero_divisor"/>
+								<OMV name="R"/>
+								<OMV name="a"/>
+							</OMA>
+						</OMA>
+						<OMA>
+							<OMS cd="logic1" name="implies"/>
+							<OMA>
+								<OMS cd="ring3" name="is_ideal"/>
+								<OMA>
+									<OMS cd="ring1" name="carrier"/>
+									<OMV name="R"/>
+								</OMA>
+								<OMV name="I"/>
+							</OMA>
+							<OMA>
+								<OMS cd="logic1" name="and"/>
+								<OMBIND>
+									<OMS cd="quant1" name="exists"/>
+									<OMBVAR>
+										<OMV name="x"/>
+									</OMBVAR>
+									<OMA>
+										<OMS cd="logic1" name="implies"/>
+										<OMA>
+											<OMS cd="set1" name="in"/>
+											<OMV name="x"/>
+											<OMA>
+												<OMS cd="ring1" name="carrier"/>
+												<OMV name="R"/>
+											</OMA>
+										</OMA>
+										<OMA>
+											<OMS cd="relation1" name="eq"/>
+											<OMV name="I"/>
+											<OMA>
+												<OMS cd="ring3" name="principal_ideal"/>
+												<OMV name="R"/>
+												<OMV name="x"/>
+											</OMA>
+										</OMA>
+									</OMA>
+								</OMBIND>
+							</OMA>
+						</OMA>
+					</OMA>
+				</OMA>
+			</OMOBJ>
+		</FMP>
+		<Example>
+			<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+				<OMA>
+					<OMS cd="order1" name="is_principal_ideal_domain"/>
+					<OMS cd="ringname1" name="Z"/>
+				</OMA>
+			</OMOBJ>
+		</Example>
+	</CDDefinition>
+	<CDDefinition>
+		<Name> order</Name>
+		<Role>application</Role>
+		<Description>
+		This is a binary function, whose first argument is a Dedekind ring R and the second is a polynomial f. When applied to R and f, it returns an order of f over 
+		the polynomial ring R: it is a ring A containing R, which is finitely generated R-module with no nilpotent non-zero ideal and as a R-module it is torsion-free.
+		Note that the result is not unique. Also this function allows to compute an order of a polynomial over another polynomial ring.
+		The idea behind this computation is to coerce f into the polynomial ring of R and then compute the order.
+		</Description>
+		<Example>
+			<!-- order(Z,X^2+3) -->
+			<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+				<OMA>
+					<OMS cd="order1" name="order"/>
+					<OMS cd="ringname1" name="Z"/>
+					<OMA>
+						<OMS name="DMP" cd="polyd1"/>
+						<OMA>
+							<OMS name="poly_ring_d" cd="polyd1"/>
+							<OMS name="Z" cd="ringname1"/>
+							<OMI>1</OMI>
+						</OMA>
+						<OMA>
+							<OMS name="SDMP" cd="polyd1"/>
+							<OMA>
+								<OMS name="term" cd="polyd1"/>
+								<OMI>1</OMI>
+								<OMI>2</OMI>
+							</OMA>
+							<OMA>
+								<OMS name="term" cd="polyd1"/>
+								<OMI>3</OMI>
+								<OMI>0</OMI>
+							</OMA>
+						</OMA>
+					</OMA>
+				</OMA>
+			</OMOBJ>
+		</Example>
+	</CDDefinition>
+	<CDDefinition>
+		<Name> maximal_order</Name>
+		<Role>application</Role>
+		<Description>
+		This is a binary function, whose first argument is a Dedekind ring R and the second is a polynomial f. When applied to R and f, it returns the maximal order A among the orders of f (over the polynomial ring of R) in the quotient field of A. 
+		Note that the result is unique.
+		</Description>
+		<Example>
+			<!-- maximal_order(Z,X^2+3) -->
+			<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+				<OMA>
+					<OMS cd="order1" name="maximal_order"/>
+					<OMS cd="ringname1" name="Z"/>
+					<OMA>
+						<OMS name="DMP" cd="polyd1"/>
+						<OMA>
+							<OMS name="poly_ring_d" cd="polyd1"/>
+							<OMS name="Z" cd="ringname1"/>
+							<OMI>1</OMI>
+						</OMA>
+						<OMA>
+							<OMS name="SDMP" cd="polyd1"/>
+							<OMA>
+								<OMS name="term" cd="polyd1"/>
+								<OMI>1</OMI>
+								<OMI>2</OMI>
+							</OMA>
+							<OMA>
+								<OMS name="term" cd="polyd1"/>
+								<OMI>3</OMI>
+								<OMI>0</OMI>
+							</OMA>
+						</OMA>
+					</OMA>
+				</OMA>
+			</OMOBJ>
+		</Example>
+	</CDDefinition>
+	<CDDefinition>
+		<Name> is_maximal_order</Name>
+		<Role>application</Role>
+		<Description>
+		The unary boolean function whose value is true if and only if the argument is a  maximal order.
+		</Description>
+		<Example>
+			<!-- is_maximal_order(maximal_order(Z,X^2+3)) -->
+			<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+				<OMA>
+					<OMS cd="order1" name="is_maximal_order"/>
+					<OMA>
+						<OMS cd="order1" name="maximal_order"/>
+						<OMS cd="ringname1" name="Z"/>
+						<OMA>
+							<OMS name="DMP" cd="polyd1"/>
+							<OMA>
+								<OMS name="poly_ring_d" cd="polyd1"/>
+								<OMS name="Z" cd="ringname1"/>
+								<OMI>1</OMI>
+							</OMA>
+							<OMA>
+								<OMS name="SDMP" cd="polyd1"/>
+								<OMA>
+									<OMS name="term" cd="polyd1"/>
+									<OMI>1</OMI>
+									<OMI>2</OMI>
+								</OMA>
+								<OMA>
+									<OMS name="term" cd="polyd1"/>
+									<OMI>3</OMI>
+									<OMI>0</OMI>
+								</OMA>
+							</OMA>
+						</OMA>
+					</OMA>
+				</OMA>
+			</OMOBJ>
+		</Example>
+	</CDDefinition>
+	<CDDefinition>
+		<Name> algebraic_integer</Name>
+		<Role>application</Role>
+		<Description>
+		This is a binary function. The first argument is an order O. The second argument should be a list L of elements of the Dedekind ring R, such that O is an order over the polynomial ring of R (cf. order). The length of L should be equal to the degree n of the polynomial generating the order O. When applied to O and L, it represents the element L[0] + L[1] b + L[2] b^2 + ... + L[n-1] b^(n-1) of O, where b stands for a primitive element of O.
+		</Description>
+		<Example>
+			<!-- algebraic_integer(order(Z,X^2+1),[7,2]) -->
+			<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+				<OMA>
+					<OMS cd="order1" name="algebraic_integer"/>
+					<OMA>
+						<OMS cd="order1" name="order"/>
+						<OMS cd="ringname1" name="Z"/>
+						<OMA>
+							<OMS name="DMP" cd="polyd1"/>
+							<OMA>
+								<OMS name="poly_ring_d" cd="polyd1"/>
+								<OMS name="Z" cd="ringname1"/>
+								<OMI>1</OMI>
+							</OMA>
+							<OMA>
+								<OMS name="SDMP" cd="polyd1"/>
+								<OMA>
+									<OMS name="term" cd="polyd1"/>
+									<OMI>1</OMI>
+									<OMI>2</OMI>
+								</OMA>
+								<OMA>
+									<OMS name="term" cd="polyd1"/>
+									<OMI>3</OMI>
+									<OMI>0</OMI>
+								</OMA>
+							</OMA>
+						</OMA>
+					</OMA>
+					<OMA>
+						<OMS cd="list1" name="list"/>
+						<OMI>7</OMI>
+						<OMI>2</OMI>
+					</OMA>
+				</OMA>
+			</OMOBJ>
+		</Example>
+	</CDDefinition>
+	<CDDefinition>
+		<Name> number_field</Name>
+		<Role>application</Role>
+		<Description>
+		This symbol is a constructor for number fields. It takes two arguments in the following order: a ring R and a monic irreducible univariate polynomial f. If the ring R is Z (or Q), it returns the absolute number field. Otherwise it returns the relative number field over the number field whose ring of integers is R.
+		
+		This symbol is intended to be used in upcoming CDs for e.g. describing discriminants of number fields,
+		or Galois groups, unit groups, class groups, regulators, etc.; all useful number theoretical notions.
+		</Description>
+		<Example>
+			<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+				<OMA>
+					<OMS cd="order1" name="number_field"/>
+					<OMS cd="ringname1" name="Z"/>
+					<OMA>
+						<OMS cd="polyd1" name="DMP"/>
+						<OMA>
+							<OMS cd="polyd1" name="poly_ring_d"/>
+							<OMS cd="ringname1" name="Z"/>
+							<OMI>1</OMI>
+						</OMA>
+						<OMA>
+							<OMS name="SDMP" cd="polyd1"/>
+							<OMA>
+								<OMS cd="polyd1" name="term"/>
+								<OMI>2</OMI>
+								<OMI>1</OMI>
+							</OMA>
+							<OMA>
+								<OMS cd="polyd1" name="term"/>
+								<OMI>0</OMI>
+								<OMI>1</OMI>
+							</OMA>
+						</OMA>
+					</OMA>
+				</OMA>
+			</OMOBJ>
+		</Example>
+		<Example>
+			<!-- number_field(ring_integers(number_field(X^2+1)), X^3+3) => -->
+			<!-- the relatiove number field defining  by the pynomial X^3+[3,0] -->
+			<!-- over the number field defining by the polynomial X^2+1 over Z -->
+			<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+				<OMA>
+					<OMS name="number_field" cd="order1"/>
+					<OMA>
+						<OMS name="ring_integers" cd="order1"/>
+						<OMA>
+							<OMS name="number_field" cd="order1"/>
+							<OMS name="Z" cd="setname1"/>
+							<OMA>
+								<OMS name="DMP" cd="polyd1"/>
+								<OMA>
+									<OMS name="poly_ring_d" cd="polyd1"/>
+									<OMS name="Z" cd="setname1"/>
+									<OMI>1</OMI>
+								</OMA>
+								<OMA>
+									<OMS name="SDMP" cd="polyd1"/>
+									<OMA>
+										<OMS name="term" cd="polyd1"/>
+										<OMI> 1 </OMI>
+										<OMI> 2 </OMI>
+									</OMA>
+									<OMA>
+										<OMS name="term" cd="polyd1"/>
+										<OMI> 2 </OMI>
+										<OMI> 0 </OMI>
+									</OMA>
+								</OMA>
+							</OMA>
+						</OMA>
+					</OMA>
+					<OMA>
+						<OMS name="DMP" cd="polyd1"/>
+						<OMA>
+							<OMS name="poly_ring_d" cd="polyd1"/>
+							<OMS name="Z" cd="ringname1"/>
+							<OMI>1</OMI>
+						</OMA>
+						<OMA>
+							<OMS name="SDMP" cd="polyd1"/>
+							<OMA>
+								<OMS name="term" cd="polyd1"/>
+								<OMI>1</OMI>
+								<OMI>2</OMI>
+							</OMA>
+							<OMA>
+								<OMS name="term" cd="polyd1"/>
+								<OMI>3</OMI>
+								<OMI>0</OMI>
+							</OMA>
+						</OMA>
+					</OMA>
+				</OMA>
+			</OMOBJ>
+		</Example>
+	</CDDefinition>
+	<CDDefinition>
+		<Name> algebraic_number</Name>
+		<Role>application</Role>
+		<Description>
+		This is a binary function. The first argument is a number field F. The second argument should be a list L of elements of Q in case of an absolute number field F. Otherwise the second argument is a list L of elements of the number field whose ring of integers is the ring R over which F is defined (cf. number_field). The length of the list L should be equal to the degree n of F. When applied to F and L, it represents the element L[0] + L[1] b + L[2] b^2 + ... + L[n-1] ^(b-1) of F, where b stands for a primitive element of F.
+		</Description>
+		<Example>
+			<!-- algebraic_number(number_field(Z,X^2+1),[123, 0]) -->
+			<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+				<OMA>
+					<OMS cd="order1" name="algebraic_number"/>
+					<OMA>
+						<OMS cd="order1" name="order"/>
+						<OMS cd="ringname1" name="Z"/>
+						<OMA>
+							<OMS name="DMP" cd="polyd1"/>
+							<OMA>
+								<OMS name="poly_ring_d" cd="polyd1"/>
+								<OMS name="Z" cd="ringname1"/>
+								<OMI>1</OMI>
+							</OMA>
+							<OMA>
+								<OMS name="SDMP" cd="polyd1"/>
+								<OMA>
+									<OMS name="term" cd="polyd1"/>
+									<OMI>1</OMI>
+									<OMI>2</OMI>
+								</OMA>
+								<OMA>
+									<OMS name="term" cd="polyd1"/>
+									<OMI>1</OMI>
+									<OMI>0</OMI>
+								</OMA>
+							</OMA>
+						</OMA>
+						<OMA>
+							<OMS cd="list1" name="list"/>
+							<OMI>123</OMI>
+							<OMI>0</OMI>
+						</OMA>
+					</OMA>
+				</OMA>
+			</OMOBJ>
+		</Example>
+	</CDDefinition>
+	<CDDefinition>
+		<Name> ring_integers</Name>
+		<Role>application</Role>
+		<Description>
+		This is a unary function, whose argument is a number field K. When applied to K, it returns the ring of integers of K. It is the Dedekind ring of K.
+		</Description>
+		<CMP>
+		if A is the ring of integers of the number field K then A is a subring of K and A is a Dedekind ring.
+		</CMP>
+		<FMP>
+			<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+				<OMA>
+					<OMS cd="logic1" name="implies"/>
+					<OMA>
+						<OMS cd="relation1" name="eq"/>
+						<OMV name="A"/>
+						<OMA>
+							<OMS cd="order1" name="ring_integers"/>
+							<OMV name="K"/>
+						</OMA>
+					</OMA>
+					<OMA>
+						<OMS cd="logic1" name="and"/>
+						<OMA>
+							<OMS cd="ring1" name="is_subring"/>
+							<OMV name="K"/>
+							<OMV name="A"/>
+						</OMA>
+						<OMA>
+							<OMS cd="order1" name="is_Dedekind"/>
+							<OMV name="A"/>
+						</OMA>
+					</OMA>
+				</OMA>
+			</OMOBJ>
+		</FMP>
+		<Example>
+			<!-- ring_integers(number_field(X^2+2)) -->
+			<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+				<OMA>
+					<OMS name="ring_integers" cd="order1"/>
+					<OMA>
+						<OMS name="number_field" cd="order1"/>
+						<OMS name="Z" cd="setname1"/>
+						<OMA>
+							<OMS name="DMP" cd="polyd1"/>
+							<OMA>
+								<OMS name="poly_ring_d" cd="polyd1"/>
+								<OMS name="Z" cd="setname1"/>
+								<OMI>1</OMI>
+							</OMA>
+							<OMA>
+								<OMS name="SDMP" cd="polyd1"/>
+								<OMA>
+									<OMS name="term" cd="polyd1"/>
+									<OMI> 1 </OMI>
+									<OMI> 2 </OMI>
+								</OMA>
+								<OMA>
+									<OMS name="term" cd="polyd1"/>
+									<OMI> 2 </OMI>
+									<OMI> 0 </OMI>
+								</OMA>
+							</OMA>
+						</OMA>
+					</OMA>
+				</OMA>
+			</OMOBJ>
+		</Example>
+	</CDDefinition>
+	<CDDefinition>
+		<Name> primitive_element</Name>
+		<Role>application</Role>
+		<Description>
+		This is a unary function, whose argument is a number field K. It returns a primitive element of K. Note that the result is not unique.
+		</Description>
+		<Example>
+			<!-- primitive_element(number_field(X^2+2)) -->
+			<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+				<OMA>
+					<OMS name="primitive_element" cd="order1"/>
+					<OMA>
+						<OMS name="number_field" cd="order1"/>
+						<OMS name="Z" cd="setname1"/>
+						<OMA>
+							<OMS name="DMP" cd="polyd1"/>
+							<OMA>
+								<OMS name="poly_ring_d" cd="polyd1"/>
+								<OMS name="Z" cd="setname1"/>
+								<OMI>1</OMI>
+							</OMA>
+							<OMA>
+								<OMS name="SDMP" cd="polyd1"/>
+								<OMA>
+									<OMS name="term" cd="polyd1"/>
+									<OMI> 1 </OMI>
+									<OMI> 2 </OMI>
+								</OMA>
+								<OMA>
+									<OMS name="term" cd="polyd1"/>
+									<OMI> 2 </OMI>
+									<OMI> 0 </OMI>
+								</OMA>
+							</OMA>
+						</OMA>
+					</OMA>
+				</OMA>
+			</OMOBJ>
+		</Example>
+	</CDDefinition>
+</CD>

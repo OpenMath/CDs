@@ -1,0 +1,501 @@
+<?xml version="1.0"?>
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+	<CDName> polynomial4 </CDName>
+	<CDURL>http://www.win.tue.nl/SCIEnce/cds/polynomial4.ocd</CDURL>
+	<CDReviewDate>2017-09-30</CDReviewDate>
+	<CDDate> 2009-06-22   </CDDate>
+	<CDVersion> 0 </CDVersion>
+	<CDRevision> 4 </CDRevision>
+	<CDStatus> experimental </CDStatus>
+	<CDUses>
+		<CDName>alg1</CDName>
+		<CDName>polyd1</CDName>
+	</CDUses>
+	<Description>
+	This CD holds a collection of for some operations of polynomials over rings.
+	The data structures for polynomials can be arithmetic expressions, for
+	instance using the ring1.expression symbol, or DMP as
+	in the CD polyd1.
+	</Description>
+	<CDDefinition>
+		<Name> factorise </Name>
+		<Description>
+		This symbol is a unary function, whose argument should be a polynomial f.
+		When applied to f, it represents a list of factors of f.
+		
+		Cf. polynomial4.factorisations for a description of the expected reply.
+		</Description>
+		<Example>
+			<!-- let's factorise X^2 - 1 over Z[X] -->
+			<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+				<OMA>
+					<OMS name="factorise" cd="polynomial4"/>
+					<OMA>
+						<OMS name="DMP" cd="polyd1"/>
+						<OMA>
+							<OMS name="poly_ring_d_named" cd="polyd1"/>
+							<OMS name="Z" cd="setname1"/>
+							<OMV name="X"/>
+						</OMA>
+						<OMA>
+							<OMS name="SDMP" cd="polyd1"/>
+							<OMA>
+								<OMS name="term" cd="polyd1"/>
+								<OMI> 1 </OMI>
+								<OMI> 2 </OMI>
+							</OMA>
+							<OMA>
+								<OMS name="term" cd="polyd1"/>
+								<OMI> -1 </OMI>
+								<OMI> 0 </OMI>
+							</OMA>
+						</OMA>
+					</OMA>
+				</OMA>
+			</OMOBJ>
+		</Example>
+	</CDDefinition>
+	<CDDefinition>
+		<Name> factorisations </Name>
+		<Description>
+		This symbol may be used in the reply of polynomial4.factorise and
+		takes at least 1 argument.
+
+		The first argument is one of polynomial4.factorisations_complete to
+		indicate that the following list of polynomial4.factors cells covers
+		all possible factorisations.  The counterpart would be
+		polynomial4.factorisations_possibly_incomplete to indicate that the
+		following list of factorisations are some of possibly many more
+		factorisations.
+		Note: If the polynomial algebra is a UFD (unique factorisation domain)
+		the uniqueness can be underpinned by giving exactly one
+		polynomial4.factors cell and using the symbol
+		polynomial4.factorisations_complete here.
+
+		The rest of the arguments are polynomial4.factors cells, each of
+		which being a possible factorisation.
+
+		Using the call of polynomial4.factorise above we might obtain:
+		</Description>
+		<Example>
+			<!-- we cracked a tough nut: X^2 - 1 over Z[X] -->
+			<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+				<OMA>
+					<OMS name="factorisations" cd="polynomial4"/>
+					<!-- are there more to come? -->
+					<OMS name="factorisations_complete" cd="polynomial4"/>
+					<!-- now the rain dance -->
+					<OMA>
+						<OMS name="factors" cd="polynomial4"/>
+						<!-- 1st arg, indicate how certain we are about this -->
+						<OMS name="definitely_irreducible" cd="polynomial4"/>
+						<!-- 2nd arg, we did the flip over the following domain -->
+						<OMA>
+							<OMS name="poly_ring_d_named" cd="polyd1"/>
+							<OMS name="Z" cd="ringname1"/>
+							<OMV name="X"/>
+						</OMA>
+						<!-- the common coefficient -->
+						<OMA>
+							<OMS name="one" cd="alg1"/>
+							<OMS name="Z" cd="ringname1"/>
+						</OMA>
+						<!-- the 1st factor -->
+						<OMA>
+							<OMS name="factor" cd="polynomial4"/>
+							<OMA>
+								<OMS name="DMP" cd="polyd1"/>
+								<OMA>
+									<OMS name="poly_ring_d_named" cd="polyd1"/>
+									<OMS name="Z" cd="ringname1"/>
+									<OMV name="X"/>
+								</OMA>
+								<OMA>
+									<OMS name="SDMP" cd="polyd1"/>
+									<OMA>
+										<OMS name="term" cd="polyd1"/>
+										<OMI> 1 </OMI>
+										<OMI> 1 </OMI>
+									</OMA>
+									<OMA>
+										<OMS name="term" cd="polyd1"/>
+										<OMI> -1 </OMI>
+										<OMI> 0 </OMI>
+									</OMA>
+								</OMA>
+							</OMA>
+							<OMA>
+								<OMS name="multiplicity" cd="polynomial4"/>
+								<OMI> 1 </OMI>
+							</OMA>
+						</OMA>
+						<!-- the 2nd factor -->
+						<OMA>
+							<OMS name="factor" cd="polynomial4"/>
+							<OMA>
+								<OMS name="DMP" cd="polyd1"/>
+								<OMA>
+									<OMS name="poly_ring_d_named" cd="polyd1"/>
+									<OMS name="Z" cd="ringname1"/>
+									<OMV name="X"/>
+								</OMA>
+								<OMA>
+									<OMS name="SDMP" cd="polyd1"/>
+									<OMA>
+										<OMS name="term" cd="polyd1"/>
+										<OMI> 1 </OMI>
+										<OMI> 1 </OMI>
+									</OMA>
+									<OMA>
+										<OMS name="term" cd="polyd1"/>
+										<OMI> 1 </OMI>
+										<OMI> 0 </OMI>
+									</OMA>
+								</OMA>
+							</OMA>
+							<OMA>
+								<OMS name="multiplicity" cd="polynomial4"/>
+								<OMI> 1 </OMI>
+							</OMA>
+						</OMA>
+					</OMA>
+				</OMA>
+			</OMOBJ>
+		</Example>
+	</CDDefinition>
+	<CDDefinition>
+		<Name> factors </Name>
+		<Description>
+		This symbol is used in the reply of polynomial4.factorise and takes
+		at least 2 arguments.  Note this symbol may also be used in a
+		polynomial4.factorisations cell.
+
+		The first argument is one of polynomial4.definitely_irreducible or
+		polynomial4.possibly_reducible and specifies whether the computed
+		factorisation is known to be irreducible or if the irreducibility of some
+		of the factors is not guaranteed.
+		Note: This symbol is mandatory even if the factors themselves (see
+		polynomial4.factor) can carry that information, this is simply to
+		connive at computer algebra systems that cannot figure out which of the
+		factors is the possibly reducible one.  Generally this slot must be
+		polynomial4.possibly_reducible if at least one of the factors is
+		possibly reducible.
+
+		The second argument contains a polyd1.poly_ring_d or
+		polyd1.poly_ring_d_named cell, as specified in e.g. polyd 
+		or polyd1 to indicate the underlying polynomial algebra.
+
+		The third argument is a symbol polynomial4.common_coefficient and
+		denotes the common coefficient of the factorisation.
+		Note: In case the ground ring itself is regarded as being injected into
+		the polynomial algebra, or the factorisation is normalised, this field may
+		be used to specify the unit giving the normalisation.
+
+		Furthermore, the cell comprises polynomial4.factor cells which in turn
+		represent the factors of the polynomial in a factorisation along with
+		their multiplicities.
+
+		Using the call of polynomial4.factorise above we might obtain:
+		</Description>
+		<Example>
+			<!-- We've factorised X^2 - 1 over Z[X] -->
+			<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+				<OMA>
+					<OMS name="factors" cd="polynomial4"/>
+					<!-- 1st arg, indicate how certain we are about this -->
+					<OMS name="definitely_irreducible" cd="polynomial4"/>
+					<!-- 2nd arg, we did the flip over the following domain -->
+					<OMA>
+						<OMS name="poly_ring_d_named" cd="polyd1"/>
+						<OMS name="Z" cd="ringname1"/>
+						<OMV name="X"/>
+					</OMA>
+					<!-- the common coefficient -->
+					<OMA>
+						<OMS name="one" cd="alg1"/>
+						<OMS name="Z" cd="ringname1"/>
+					</OMA>
+					<!-- the 1st factor -->
+					<OMA>
+						<OMS name="factor" cd="polynomial4"/>
+						<OMA>
+							<OMS name="DMP" cd="polyd1"/>
+							<OMA>
+								<OMS name="poly_ring_d_named" cd="polyd1"/>
+								<OMS name="Z" cd="ringname1"/>
+								<OMV name="X"/>
+							</OMA>
+							<OMA>
+								<OMS name="SDMP" cd="polyd1"/>
+								<OMA>
+									<OMS name="term" cd="polyd1"/>
+									<OMI> 1 </OMI>
+									<OMI> 1 </OMI>
+								</OMA>
+								<OMA>
+									<OMS name="term" cd="polyd1"/>
+									<OMI> -1 </OMI>
+									<OMI> 0 </OMI>
+								</OMA>
+							</OMA>
+						</OMA>
+						<OMA>
+							<OMS name="multiplicity" cd="polynomial4"/>
+							<OMI> 1 </OMI>
+						</OMA>
+					</OMA>
+					<!-- the 2nd factor -->
+					<OMA>
+						<OMS name="factor" cd="polynomial4"/>
+						<OMA>
+							<OMS name="DMP" cd="polyd1"/>
+							<OMA>
+								<OMS name="poly_ring_d_named" cd="polyd1"/>
+								<OMS name="Z" cd="ringname1"/>
+								<OMV name="X"/>
+							</OMA>
+							<OMA>
+								<OMS name="SDMP" cd="polyd1"/>
+								<OMA>
+									<OMS name="term" cd="polyd1"/>
+									<OMI> 1 </OMI>
+									<OMI> 1 </OMI>
+								</OMA>
+								<OMA>
+									<OMS name="term" cd="polyd1"/>
+									<OMI> 1 </OMI>
+									<OMI> 0 </OMI>
+								</OMA>
+							</OMA>
+						</OMA>
+						<OMA>
+							<OMS name="multiplicity" cd="polynomial4"/>
+							<OMI> 1 </OMI>
+						</OMA>
+					</OMA>
+				</OMA>
+			</OMOBJ>
+		</Example>
+	</CDDefinition>
+	<CDDefinition>
+		<Name> factor </Name>
+		<Description>
+		A symbol which represents one factor of a factorisation, it takes at least
+		2 arguments, the first of which being the factor polynomial, e.g. a
+		polyd1.DMP, and the second being its multiplicity
+		specified as an integer &gt;= 1.
+
+		Optionally, the third argument is one of
+		polynomial4.definitely_irreducible,
+		polynomial4.possibly_reducible to indicate whether or not the given
+		factor is guaranteed to be irreducible.
+
+		Furthermore, this symbol may contain polynomial4.ground_ring_injected
+		to indicate that the ground ring is considered to be embedded in the
+		polynomial algebra and hence the factor is actually the factorisation of
+		a polynomial coefficient.
+		</Description>
+	</CDDefinition>
+	<CDDefinition>
+		<Name> multiplicity </Name>
+		<Description>
+		A symbol which represents the multiplicity of a factor in a factorisation
+		and takes exactly one argument which must be a positive integer.
+		</Description>
+	</CDDefinition>
+	<CDDefinition>
+		<Name> factorisations_complete </Name>
+		<Description>
+		A symbol to indicate that a given list of factorisations of a polynomial
+		covers in fact all possible factorisations.
+		</Description>
+	</CDDefinition>
+	<CDDefinition>
+		<Name> factorisations_incomplete </Name>
+		<Description>
+		A symbol to indicate that a given list of factorisations is an
+		assortment of all possible factorisations.
+		</Description>
+	</CDDefinition>
+	<CDDefinition>
+		<Name> definitely_irreducible </Name>
+		<Description>
+		A symbol which denotes that a factor of the factorisation is definitely
+		irreducible.
+		</Description>
+	</CDDefinition>
+	<CDDefinition>
+		<Name> possibly_reducible </Name>
+		<Description>
+		A symbol which denotes that the irreducibility of a factor of the
+		factorisation is not guaranteed.
+		</Description>
+	</CDDefinition>
+	<CDDefinition>
+		<Name> ground_ring_injected </Name>
+		<Description>
+		A symbol which denotes that the ground ring of a polynomial algebra is
+		considered to be part of the latter.  This is used in the
+		polynomial4.factor symbol to indicate that the factor is part of the
+		factorisation of the common coefficient.
+		</Description>
+	</CDDefinition>
+	<CDDefinition>
+		<Name> divide </Name>
+		<Description>
+		This symbol is a binary function whose arguments are polynomials f and g
+		which must be defined over the same ground domain.
+		When applied to f and g, it represents the quotient arising from dividing
+		f by g and the remainder h such that h is congruent f modulo g.
+
+		The result is gathered in a polynomial4.quotient_remainder cell.
+
+		Hint: We consider named polynomial rings, i.e. the indeterminate is
+		explicitly specified by a named variable, different once the variable
+		names differ.  That is, a polynomial in Z[X] cannot be divided by a
+		polynomial in Z[Y] a priori.  However, we leave it up to the implementor
+		to handle this differently, though we strongly encourage implementors
+		to return a polynomial in an anonymous indeterminate (using
+		e.g. polyd1.poly_ring_d rather than polyd1.poly_ring_d_named).
+		</Description>
+		<Example>
+			<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+				<OMA>
+					<OMS name="divide" cd="polynomial4"/>
+					<!-- X^5 + 2*X^3 + 1 over Z[X] -->
+					<OMA>
+						<OMS name="DMP" cd="polyd1"/>
+						<OMA>
+							<OMS name="poly_ring_d" cd="polyd1"/>
+							<OMS name="Z" cd="ringname1"/>
+							<OMI>1</OMI>
+						</OMA>
+						<OMA>
+							<OMS name="SDMP" cd="polyd1"/>
+							<OMA>
+								<OMS name="term" cd="polyd1"/>
+								<OMI> 1 </OMI>
+								<OMI> 5 </OMI>
+							</OMA>
+							<OMA>
+								<OMS name="term" cd="polyd1"/>
+								<OMI> 2 </OMI>
+								<OMI> 3 </OMI>
+							</OMA>
+							<OMA>
+								<OMS name="term" cd="polyd1"/>
+								<OMI> 1 </OMI>
+								<OMI> 0 </OMI>
+							</OMA>
+						</OMA>
+					</OMA>
+					<!-- X^2 + 1 over Z[X] -->
+					<OMA>
+						<OMS name="DMP" cd="polyd1"/>
+						<OMA>
+							<OMS name="poly_ring_d" cd="polyd1"/>
+							<OMS name="Z" cd="ringname1"/>
+							<OMI>1</OMI>
+						</OMA>
+						<OMA>
+							<OMS name="SDMP" cd="polyd1"/>
+							<OMA>
+								<OMS name="term" cd="polyd1"/>
+								<OMI> 1 </OMI>
+								<OMI> 2 </OMI>
+							</OMA>
+							<OMA>
+								<OMS name="term" cd="polyd1"/>
+								<OMI> 1 </OMI>
+								<OMI> 0 </OMI>
+							</OMA>
+						</OMA>
+					</OMA>
+				</OMA>
+			</OMOBJ>
+		</Example>
+	</CDDefinition>
+	<CDDefinition>
+		<Name> quotient_remainder </Name>
+		<Description>
+		This symbol is a container for the result of polynomial4.divide.
+		It takes 2 arguments in unspecified order, polynomial4.quotient
+		and polynomial4.remainder.
+
+		Using the above polynomial4.divide call we may obtain:
+		</Description>
+		<Example>
+			<OMOBJ xmlns="http://www.openmath.org/OpenMath">
+				<OMA>
+					<OMS name="quotient_remainder" cd="polynomial4"/>
+					<!-- quotient is X^3 + X -->
+					<OMA>
+						<OMS name="quotient" cd="polynomial4"/>
+						<OMA>
+							<OMS name="DMP" cd="polyd1"/>
+							<OMA>
+								<OMS name="poly_ring_d" cd="polyd1"/>
+								<OMS name="Z" cd="ringname1"/>
+								<OMI>1</OMI>
+							</OMA>
+							<OMA>
+								<OMS name="SDMP" cd="polyd1"/>
+								<OMA>
+									<OMS name="term" cd="polyd1"/>
+									<OMI> 1 </OMI>
+									<OMI> 3 </OMI>
+								</OMA>
+								<OMA>
+									<OMS name="term" cd="polyd1"/>
+									<OMI> 1 </OMI>
+									<OMI> 1 </OMI>
+								</OMA>
+							</OMA>
+						</OMA>
+					</OMA>
+					<!-- remainder is -X + 1 -->
+					<OMA>
+						<OMS name="remainder" cd="polynomial4"/>
+						<OMA>
+							<OMS name="DMP" cd="polyd1"/>
+							<OMA>
+								<OMS name="poly_ring_d" cd="polyd1"/>
+								<OMS name="Z" cd="ringname1"/>
+								<OMI>1</OMI>
+							</OMA>
+							<OMA>
+								<OMS name="SDMP" cd="polyd1"/>
+								<OMA>
+									<OMS name="term" cd="polyd1"/>
+									<OMI> -1 </OMI>
+									<OMI> 1 </OMI>
+								</OMA>
+								<OMA>
+									<OMS name="term" cd="polyd1"/>
+									<OMI> 1 </OMI>
+									<OMI> 0 </OMI>
+								</OMA>
+							</OMA>
+						</OMA>
+					</OMA>
+				</OMA>
+			</OMOBJ>
+		</Example>
+	</CDDefinition>
+	<CDDefinition>
+		<Name> quotient </Name>
+		<Description>
+		This symbol contains the quotient of polynomial4.divide.
+
+		Cf. polynomial4.quotient_remainder for an example.
+		</Description>
+	</CDDefinition>
+	<CDDefinition>
+		<Name> remainder </Name>
+		<Description>
+		This symbol contains the remainder of polynomial4.divide.
+
+		Cf. polynomial4.quotient_remainder for an example.
+		</Description>
+	</CDDefinition>
+</CD>
