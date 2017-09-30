@@ -1,19 +1,15 @@
 # The OpenMath Content Dictionaries
 
-This repository contains the [OpenMath](http://openmath.org) content dictionaries
+This repository contains the [OpenMath](http://openmath.org) content dictionaries. 
 
 * `cd` contains the actual content dictionaries, there are two kinds official and experimental ones. 
 * `cdgroups` contains the CD groups specifications. 
 * `sts` contains the small type system (STS) libraries.
 * `contrib` contains the contributed CDs and and STS libraries. 
-* `make-all`, `run`, `.travis.yml`, `lib`:  allows to run the html generation for [the OpenMath Web Site](http://www.openmath.org/cd).
+* `make-all`, `lib`:  generates local html and other versions CDs (`lib` contains the necessary scripts and resources) 
+* `run`, `.travis.yml`: automates html generation and pushes them to  [the OpenMath Web Site](http://www.openmath.org/cd) (via travis).
 
-To build the web site locally run `run` in the top dir, assuming that the
-[OpenMath.github.io](https://github.com/OpenMath/OpenMath.github.io) repository is cloned
-as a sibling to the [CDs](https://github.com/OpenMath/CDs) repository. It only needs to be
-committed there. However normally this is not necessary, continuous integration via Travis CI 
-will rebuild the HTML view of all files after any commit is pushed to GitHub, and commit the
-resulting files to the OpenMath (GitHub) website, or send an email on failure.
+All CD development of the OpenMath Society is channeled through this repository. The `master` branch corresponds to the CDs published on the [OpenMath Web site](http://openmath.github.io). 
 
 # Contributing Content Dictionaries
 
@@ -39,6 +35,9 @@ The makefile supplied allows this process to be done locally if desired.
 Note that you can avoid triggering a rebuild via Travis CI by starting the commit message with
 `[ci skip] `
 
+To update the [OpenMath Web site](http://openmath.github.io) manually, locally run `run` in the top dir, assuming that the [OpenMath.github.io](https://github.com/OpenMath/OpenMath.github.io) repository is cloned as a sibling to the [CDs](https://github.com/OpenMath/CDs) repository.
+`run` automatically commits and pushes there.
+However normally this is not necessary, continuous integration via Travis CI will rebuild the HTML view of all files after any commit is pushed to GitHub, and commit the resulting files to the OpenMath (GitHub) website, or send an email on failure.
 
 # Version History
 
