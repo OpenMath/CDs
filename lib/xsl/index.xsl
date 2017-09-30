@@ -11,14 +11,16 @@ title: OpenMath Symbols
 - -->
 
 <h1>OpenMath Symbols</h1>
-<p>A combined list of all <xsl:value-of select="count(CDS/OCD/*:CD/*:CDDefinition)"/> symbols defined in this Content Dictionary collection.</p>
+<xsl:variable name="s" select="CDS/OCD/*:CD/*:CDDefinition"/>
+<xsl:message select="'cdsymbols:',count($s)"/>
+<p>A combined list of all <xsl:value-of select="count($s)"/> symbols defined in this Content Dictionary collection.</p>
 
 <table>
   <tr>
     <th>Symbol</th>
     <th>Description</th>
   </tr>
-  <xsl:for-each select="CDS/OCD/*:CD/*:CDDefinition">
+  <xsl:for-each select="$s">
     <xsl:sort select="lower-case(normalize-space(*:Name))"/>
     <xsl:sort select="lower-case(normalize-space(../*:CDName))"/>
     <xsl:sort select="lower-case(normalize-space(../../*/@path))"/>
