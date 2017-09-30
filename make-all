@@ -39,13 +39,13 @@ echo "</CDS>" >> cds.xml
 sed -i -E s/.*version=\"1.0\".*//g cds.xml
 
 echo cdnames
-java -jar lib/saxon/saxon9he.jar -o:cdnames.md cds.xml lib/xsl/cdnames.xsl 2> stats.yml
+java -jar lib/saxon/saxon9he.jar -o:cdnames.md cds.xml lib/xsl/cdnames.xsl 2>&1 | grep cds: > stats.yml
 java -jar lib/saxon/saxon9he.jar -o:cdnamess.md cds.xml lib/xsl/cdnamess.xsl
 echo symbols
-java -jar lib/saxon/saxon9he.jar -o:symbols.md cds.xml lib/xsl/index.xsl 2>> stats.yml
+java -jar lib/saxon/saxon9he.jar -o:symbols.md cds.xml lib/xsl/index.xsl 2>&1 | grep cdsymbols: >> stats.yml
 echo cdgroups
 cd tmp-cdgroups
-java -jar ../lib/saxon/saxon9he.jar -it:cdg -o:index.md ../lib/xsl/cdgroupindex.xsl cdg="`ls *.cdg`" 2>> ../stats.yml
+java -jar ../lib/saxon/saxon9he.jar -it:cdg -o:index.md ../lib/xsl/cdgroupindex.xsl cdg="`ls *.cdg`" 2>&1 | grep cdgroups: >> ../stats.yml
 cd ..
 
 if [ -d ../OpenMath.github.io/cd ]; then
