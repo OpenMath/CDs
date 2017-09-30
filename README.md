@@ -25,8 +25,7 @@ The [OpenMath Society](society) is actively soliciting CD submissions in all fie
 
 # Commenting on Content Dictionaries
 
-We use the [GitHub issue system](issues) to discuss and plan changes to the CDs. 
-
+We use the [GitHub issue system](issues) to discuss and plan changes to the CDs.  Note that there are a lot of issues left over from [a  previous discussion](OpenMath/OM3/issues), which may still be relevant.  
 # Admin: publishing CDs on the OpenMath Web Site
 
 After any edit to the CDs is pushed to the GitHub CDs repository, the html views will be rebuilt via Travis CI
