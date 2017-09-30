@@ -1,0 +1,440 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+
+<CDComment>
+
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+</CDComment>
+
+<CDName> linalg4mat </CDName>
+<CDBase>http://www.openmath.org/cd</CDBase>
+<CDURL> http://www.openmath.org/cd/linalg4mat.ocd </CDURL>
+<CDReviewDate>2006-03-30</CDReviewDate>
+<CDDate>2004-11-30</CDDate>
+<CDVersion>4</CDVersion>
+<CDRevision>2</CDRevision>
+<CDStatus> experimental </CDStatus>
+<Description>
+This CD contains symbols which represent a number of special types of
+matrix. 
+
+November 2004, A.M. Cohen constructed this CD from parts of the former
+experimental CD linalg5 by adding the symbol sparse. The other part of the
+former linalg5 have gone to linalg5s. The descriptions have been slightly
+edited.
+
+</Description>
+
+<CDDefinition>
+<Name> identity </Name>
+<Role>application</Role>
+<Description>
+This symbol denotes a unary function which is used to construct the
+(nxn) identity matrix where n is the single argument. The argument n must be a
+natural number.
+</Description>
+
+<CMP>
+for all M | identity(rowcount M) * M = M * identity(columncount M) = M
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMBIND><OMS cd="quant1" name="forall"/>
+          <OMBVAR><OMV name="M"/>
+    </OMBVAR>
+    <OMA>
+      <OMS cd="logic1" name="and"/>
+      <OMA>
+        <OMS cd="relation1" name="eq"/>
+        <OMA>
+          <OMS cd="arith1" name="times"/>
+	  <OMA>
+	    <OMS cd="linalg4mat" name="identity"/>
+	    <OMA>
+	      <OMS cd="linalg3" name="rowcount"/>
+	      <OMV name="M"/>
+	    </OMA>
+	  </OMA>
+	  <OMV name="M"/>
+        </OMA>
+        <OMV name="M"/>
+      </OMA>
+      <OMA>
+        <OMS cd="relation1" name="eq"/>
+        <OMA>
+          <OMS cd="arith1" name="times"/>
+	  <OMV name="M"/>
+	  <OMA>
+	    <OMS cd="linalg4mat" name="identity"/>
+	    <OMA>
+	      <OMS cd="linalg3" name="columncount"/>
+	      <OMV name="M"/>
+	    </OMA>
+	  </OMA>
+        </OMA>
+        <OMV name="M"/>
+      </OMA>
+    </OMA>
+  </OMBIND>
+</OMOBJ>
+</FMP>
+
+<Example>
+A representation of the 2x2 identity matrix [[1,0],[0,1]]
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="linalg4mat" name="identity"/>
+    <OMI> 2 </OMI>
+  </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> zero </Name>
+<Role>application</Role>
+<Description>
+This symbol denotes a function with two arguments, m and n, which should be natural
+numbers. When applied to m and n, it represents the m x n zero matrix.
+</Description>
+<CMP>
+for all M | M + zero(rowcount M,columncount M) = M
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMBIND>
+    <OMS cd="quant1" name="forall"/>
+    <OMBVAR>
+      <OMV name="M"/>
+    </OMBVAR>
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="arith1" name="plus"/>
+        <OMV name="M"/>
+        <OMA>
+          <OMS cd="linalg4mat" name="zero"/>
+	  <OMA>
+	    <OMS cd="linalg3" name="rowcount"/>
+	    <OMV name="M"/>
+	  </OMA>
+	  <OMA>
+	    <OMS cd="linalg3" name="columncount"/>
+	    <OMV name="M"/>
+	  </OMA>
+        </OMA>
+      </OMA>
+      <OMV name="M"/>
+    </OMA>
+  </OMBIND>
+</OMOBJ>
+</FMP>
+
+<CMP>
+for all M | 
+zero(rowcount M,rowcount M) * M = M * zero(columncount M,columncount M) = 
+zero(rowcount M,columncount M)
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMBIND>
+    <OMS cd="quant1" name="forall"/>
+    <OMBVAR>
+      <OMV name="M"/>
+    </OMBVAR>
+    <OMA>
+      <OMS cd="logic1" name="and"/>
+      <OMA>
+        <OMS cd="relation1" name="eq"/>
+        <OMA>
+          <OMS cd="arith1" name="times"/>
+	  <OMA>
+	    <OMS cd="linalg4mat" name="zero"/>
+	    <OMA>
+	      <OMS cd="linalg3" name="rowcount"/>
+	      <OMV name="M"/>
+	    </OMA>
+	    <OMA>
+	      <OMS cd="linalg3" name="rowcount"/>
+	      <OMV name="M"/>
+	    </OMA>
+	  </OMA>
+	  <OMV name="M"/>
+        </OMA>
+        <OMA>
+          <OMS cd="linalg4mat" name="zero"/>
+	  <OMA>
+	    <OMS cd="linalg3" name="rowcount"/>
+	    <OMV name="M"/>
+	  </OMA>
+	  <OMA>
+	    <OMS cd="linalg3" name="columncount"/>
+	    <OMV name="M"/>
+	  </OMA>
+        </OMA>
+      </OMA>
+      <OMA>
+        <OMS cd="relation1" name="eq"/>
+        <OMA>
+          <OMS cd="arith1" name="times"/>
+	  <OMV name="M"/>
+	  <OMA>
+	    <OMS cd="linalg4mat" name="zero"/>
+	    <OMA>
+	      <OMS cd="linalg3" name="columncount"/>
+	      <OMV name="M"/>
+	    </OMA>
+	    <OMA>
+	      <OMS cd="linalg3" name="columncount"/>
+	      <OMV name="M"/>
+	    </OMA>
+	  </OMA>
+        </OMA>
+        <OMA>
+          <OMS cd="linalg4mat" name="zero"/>
+	  <OMA>
+	    <OMS cd="linalg3" name="rowcount"/>
+	    <OMV name="M"/>
+	  </OMA>
+	  <OMA>
+	    <OMS cd="linalg3" name="columncount"/>
+	    <OMV name="M"/>
+	  </OMA>
+        </OMA>
+      </OMA>
+    </OMA>
+  </OMBIND>
+</OMOBJ>
+</FMP>
+
+<Example>
+A representation of the 2x2 zero matrix [[0,0],[0,0]]
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="linalg4mat" name="zero"/>
+    <OMI> 2 </OMI>
+    <OMI> 2 </OMI>
+  </OMA>
+</OMOBJ>
+
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> diagonal_matrix </Name>
+<Role>application</Role>
+<Description>
+This symbol denotes an n_ary function which is used to construct an
+(nxn) diagonal matrix, that is a matrix where every non-diagonal
+element is zero, the diagonal elements are equal to the n arguments.
+</Description>
+<CMP> given a diagonal matrix, it is equal to its transpose </CMP>
+
+<Example>
+The diagonal matrix with diagonal elements [1,2,3]
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="linalg4mat" name="diagonal_matrix"/>
+    <OMI> 1 </OMI>
+    <OMI> 2 </OMI>
+    <OMI> 3 </OMI>
+  </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> scalar </Name>
+<Role>application</Role>
+<Description>
+This symbol represents a square matrix which is a scalar constant times the
+identity matrix. It should take two arguments, the first  
+and second specify the number of rows and columns in the matrix, respectively, and
+the third specifies the scalar multiplier.
+</Description>
+
+<CMP>
+ The scalar matrix of size n, where the scalar multiple is s, is equal to
+ s * identity(n).
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA><OMS cd="linalg4mat" name="scalar"/>
+         <OMV name="n"/>      <OMV name="s"/>
+    </OMA>
+    <OMA><OMS cd="arith1" name="times"/>
+         <OMV name="s"/>
+         <OMA><OMS cd="linalg4mat" name="identity"/>
+              <OMV name="n"/>
+         </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+
+<Example>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+    <OMA>
+      <OMS cd="linalg4mat" name="scalar"/>
+      <OMI>4</OMI>
+      <OMF dec="1.5"/>
+    </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> constant </Name>
+<Role>application</Role>
+<Description>
+This symbol represents a matrix which has all entries of the same
+value. It takes three arguments, the first is the rowcount of the matrix,
+the second is the column count, and
+the third is the constant which determines every element.
+</Description>
+
+<CMP> The rank of a non-zero constant matrix is equal to 1. </CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA><OMS cd="logic1" name="implies"/>
+       <OMA><OMS cd="relation1" name="neq"/>
+            <OMV name="v"/><OMS cd="alg1" name="zero"/>
+       </OMA>
+       <OMA><OMS cd="relation1" name="eq"/>
+            <OMA><OMS cd="linalg5" name="rank"/>
+                 <OMA><OMS cd="linalg4mat" name="constant"/>
+                      <OMV name="n"/><OMV name="n"/><OMV name="v"/>
+                 </OMA>
+            </OMA>
+            <OMI>1</OMI>
+       </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name> banded </Name>
+<Role>application</Role>
+<Description>
+This symbol represents a square (p,q) banded matrix. It takes one
+argument. A (p,q) banded matrix should always be square. The lower non-zero
+subdiagonal is the first element of the argument, whilst the highest non-zero
+super-diagonal is given by the last element of the argument. The
+argument determines the band of possibly non-zero entries which 
+are positioned around the diagonal. It should be a vector of vectors,
+we note that they will not all be the same length, however the length
+of the vectors determine p and q. The longest element specifies the
+diagonal of the matrix and hence the size of the matrix. Every element
+not in the band is zero.
+</Description>
+
+<Example>
+A specification of the (2,1) banded matrix:
+[
+ [1  2  3  0  0],
+ [4  5  6  7  0],
+ [0  8  9  10 11],
+ [0  0  12 13 14],
+ [0  0  0  15 16]
+]
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="linalg4mat" name="banded"/>
+    <OMA><OMS cd="linalg2" name="vector"/>
+         <OMA><OMS cd="linalg2" name="vector"/>
+              <OMI>4</OMI> <OMI>8</OMI> <OMI>12</OMI> <OMI>15</OMI>
+         </OMA>
+         <OMA><OMS cd="linalg2" name="vector"/>
+              <OMI>1</OMI> <OMI>5</OMI> <OMI>9</OMI> <OMI>13</OMI> <OMI>16</OMI>
+         </OMA>
+         <OMA><OMS cd="linalg2" name="vector"/>
+              <OMI>2</OMI> <OMI>6</OMI> <OMI>10</OMI> <OMI>14</OMI>
+         </OMA>
+         <OMA><OMS cd="linalg2" name="vector"/>
+              <OMI>3</OMI> <OMI>7</OMI> <OMI>11</OMI>
+         </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</Example>
+
+</CDDefinition>
+
+
+
+<CDDefinition>
+<Name> sparse </Name>
+<Role>application</Role>
+
+<Description>
+The sparse symbol is a constructor for sparse matrices. It is (n+1)-ary,
+where the first argument is the rowcount (row dimension) of the matrix, the
+second
+argument is the columncount (column dimension) of the matrix and
+every following argument specifies a possibly non-zero element in the
+following way. The argument is a list which should have length three. 
+The first element in the list is the row index, the second element is the
+column index (one based), whilst the third
+element in the list is the value. Every other element of the matrix is
+implicitly zero.
+</Description>
+
+<Example>
+This example shows a representation of the sparse matrix
+[ [0,0,0],
+  [1,0,7]
+]
+
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+    <OMA><OMS cd="linalg4mat" name="sparse"/>
+         <OMI>2</OMI><OMI>3</OMI>
+         <OMA><OMS cd="list1" name="list"/>
+              <OMI>2</OMI> <OMI>1</OMI> <OMI>1</OMI>
+         </OMA>
+         <OMA><OMS cd="list1" name="list"/>
+              <OMI>2</OMI> <OMI>3</OMI> <OMI>7</OMI>
+         </OMA>
+    </OMA>
+  </OMOBJ>
+</Example>
+
+</CDDefinition>
+
+</CD>

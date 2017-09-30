@@ -5,7 +5,7 @@
 <CDURL>http://www.openmath.org/cd/prog1.ocd</CDURL>
 <CDReviewDate> 2001-06-01 </CDReviewDate>
 <CDStatus> experimental </CDStatus>
-<CDDate> 2001-02-16 </CDDate>
+<CDDate> 2004-02-16 </CDDate>
 <CDVersion> 0 </CDVersion>
 <CDRevision> 1 </CDRevision>
 <CDUses>
@@ -17,11 +17,16 @@
 <Description>
 A CD for basic algorithmic concepts. We define the minimal machinery to write 
 small programs in OpenMath encoding.
+
+Slightly edited by Arjeh Cohen on Decmeber 24, 2000.
+
 </Description>
 
 
 <CDDefinition>
 <Name> assignment </Name>
+<Role>application</Role>
+
 <Description>
 This symbol is used to assign values to variables. The syntax is
 assignment(variable, value), where variable is the encoding of an 
@@ -40,6 +45,7 @@ OpenMath variable (OMV) and value is an OpenMath object.
 
 <CDDefinition>
 <Name> block </Name>
+<Role>application</Role>
 <Description>
 This symbol is meant to represent an arbitray block of code. A block of code 
 can be empty. The syntax is block(obj1, obj2,...,objN), where obji is the 
@@ -75,31 +81,38 @@ is encoded as
 
 <CDDefinition>
 <Name> local_var </Name>
+<Role>application</Role>
 <Description>
-This symbol can be used to declare local variables.
+This symbol, which can have an aribtrary positive number of arguments which
+must all be variables, can be used to declare local variables. 
+represents
 </Description>
 </CDDefinition>
 
 <CDDefinition>
 <Name> global_var </Name>
+<Role>application</Role>
 <Description>
-This symbol can be used to declare global variables as know to function.
+This symbol, which can have an aribtrary positive number of arguments which
+must all be variables, can be used to declare global variables as known to functions.
 </Description>
 </CDDefinition>
 
 <CDDefinition>
 <Name>return</Name>
+<Role>application</Role>
 <Description>
-This symbol can be used to return values from fuctions.
+This symbol, which can have an aribtrary positive number of arguments, can be used to return values from functions.
 </Description>
 </CDDefinition>
 
 <CDDefinition>
 <Name> for </Name>
+<Role>application</Role>
 <Description>
 This symbol can be used to encode the for loop. The syntax is
 for(block1,conditional_block,block3,block4), where block1 is the 
-inicialization block, conditional_block is the conditional block that 
+initialization block, conditional_block is the conditional block that 
 determines the end of the loop, block3 is the incremental block and block4
 is the body of the for loop. Each of this blocks should be present (althougth
 they can be empty).
@@ -108,8 +121,9 @@ they can be empty).
 
 <CDDefinition>
 <Name> while </Name>
+<Role>application</Role>
 <Description>
-The symbol the while loop. The syntax is while(conditional_block, block1), where
+This symbol represents the while loop. The syntax is while(conditional_block, block1), where
 conditional_block is the block that determines when to stop the while loop and 
 block1 is the body of the while loop.
 </Description>
@@ -117,6 +131,7 @@ block1 is the body of the while loop.
 
 <CDDefinition>
 <Name> if </Name>
+<Role>application</Role>
 <Description>
 The symbol can be used to encode the if, then, else construct. The syntax is
 if(conditional_block,block1,block2), where the conditional_block is the block 
@@ -128,14 +143,16 @@ conditional_block and block1 are required but block2 is optional.
 
 <CDDefinition>
 <Name> call_arguments </Name>
+<Role>application</Role>
 <Description>
-This symbol can be used to encode the arguments that will be pased to a function
+This symbol can be used to encode the arguments that will be passed to a function
 or procedure.
 </Description>
 </CDDefinition>
 
 <CDDefinition>
 <Name> def_arguments </Name>
+<Role>application</Role>
 <Description>
 This symbol can be used to encode the arguments that a function or procedure 
 can receive.
@@ -145,6 +162,7 @@ can receive.
 
 <CDDefinition>
 <Name> function_block </Name>
+<Role>application</Role>
 <Description>
 The block of code defining the body of the function. The syntax is
 function_block(local_var,block1), where local_var encodes the local 
@@ -156,6 +174,7 @@ course both can be also empty).
 
 <CDDefinition>
 <Name> function_definition </Name>
+<Role>application</Role>
 <Description>
 The symbol function_definition can be is used to define a function. The syntax is
 function_definition(name, def_arguments, function_block), where name is the 
@@ -409,6 +428,7 @@ sequence is
 
 <CDDefinition>
 <Name> function_call </Name>
+<Role>application</Role>
 <Description>
 Symbol function_call can be used to "call" already defined functions. 
 The syntax is function_call(name, call_arguments), where name is the 
@@ -433,6 +453,7 @@ empty.
 
 <CDDefinition>
 <Name> procedure_definition </Name>
+<Role>application</Role>
 <Description>
  This symbol can be used to define a procedure. The sintax is
 procedure_definition(name, def_arguments,  procedure_block), where name is the 
@@ -446,6 +467,7 @@ global_var construct (see procedure block).
 
 <CDDefinition>
 <Name> procedure_call </Name>
+<Role>application</Role>
 <Description>
 Symbol procedure_call can be used to "call" already defined procedures. 
 The syntax is procedure_call(name, call_arguments), where name is the 
@@ -459,6 +481,7 @@ empty.
 
 <CDDefinition>
 <Name> procedure_block </Name>
+<Role>application</Role>
 <Description>
 The block of code defining the body of the procedure. The syntax is
 procedure_block(local_var, global_var, block1), where local_var encodes the local 

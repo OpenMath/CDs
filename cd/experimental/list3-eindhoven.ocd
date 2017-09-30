@@ -1,0 +1,334 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDName> list3 </CDName>
+<CDBase> http://www.openmath.org/cd </CDBase>
+<CDURL> http://www.openmath.org/cd/list3.ocd </CDURL>
+<CDReviewDate> 2004-11-01 </CDReviewDate>
+<CDDate> 2004-11-02 </CDDate>
+<CDVersion> 3 </CDVersion>
+<CDRevision> 1 </CDRevision>
+<CDStatus> experimental </CDStatus>
+<CDUses>
+  <CDName>arith1</CDName>
+  <CDName>list1</CDName>
+  <CDName>list2</CDName>
+  <CDName>logic1</CDName>
+  <CDName>quant1</CDName>
+  <CDName>relation1</CDName>
+</CDUses>
+
+
+<Description> 
+Several standard operations on lists, such as length and append, are given in
+this CD.
+</Description>
+
+
+<CDComment>
+Arjeh M. Cohen 2004-03-02 and 2004-11-02
+</CDComment>
+
+
+<CDDefinition>
+<Name> length </Name>
+<Role>application</Role>
+<Description> 
+This symbol represents a function whose argument should be a list.
+It returns the length of
+its argument.
+</Description>
+
+<Example>
+The length of the list [1,2,3] is 3.
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS cd="relation1" name="eq"/>
+       <OMA><OMS cd="list3" name="length"/>
+            <OMA><OMS cd="list1" name="list"/>
+                 <OMI> 1 </OMI>
+                 <OMI> 2 </OMI>
+                 <OMI> 3 </OMI>
+            </OMA>
+       </OMA>
+       <OMI> 3 </OMI>
+  </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+<CDDefinition>
+<Name> in </Name>
+<Role>application</Role>
+<Description> 
+This symbol represents a boolean function with two arguments, an element and a
+list. It is used to denote that the element is in the given list.
+</Description>
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> list_selector </Name>
+<Role>application</Role>
+<Description> 
+ This symbol takes a positive integer n and a list, and represents the n-th 
+ element of that list.
+</Description>
+<Example>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMA>
+  <OMS cd="relation1" name="eq"/>
+  <OMV name="b"/>
+  <OMA>
+    <OMS name="list_selector" cd="list3"/>
+    <OMI> 2 </OMI>
+    <OMA>
+      <OMS name="list" cd="list1"/>
+      <OMV name="a"/>
+      <OMV name="b"/>
+      <OMV name="c"/>
+    </OMA>
+  </OMA>
+</OMA>
+</OMOBJ>
+</Example>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMA>
+  <OMS cd="logic1" name="implies"/>
+  <OMA>
+    <OMS cd="relation1" name="gt"/>
+    <OMV name="n"/>
+    <OMI> 1 </OMI>
+  </OMA>
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMS name="list_selector" cd="list3"/>
+      <OMV name="n"/>
+      <OMV name="l"/>
+    </OMA>
+    <OMA>
+      <OMS name="list_selector" cd="list3"/>
+      <OMA>
+	<OMS name="minus" cd="arith1"/>
+        <OMV name="n"/>
+        <OMI> 1 </OMI>
+      </OMA>
+      <OMA>
+	<OMS name="rest" cd="list2"/>
+        <OMV name="l"/>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMA>
+</OMOBJ>
+</FMP>
+</CDDefinition>
+
+
+
+
+
+<CDDefinition>
+<Name> select </Name>
+<Description> 
+This symbol takes two lists as arguments, L and M say. The second argument is a
+ list containing only entries from [1..n], where n is the length of
+L. The symbol represents the 
+function which returns a list whose length is equal to the length of
+M, and having at position k the  value of L at position M_k.
+</Description>
+
+<Example>
+
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+  <OMA><OMS name="eq" cd="relation1"/>
+       <OMA><OMS cd="list3" name="select"/>
+            <OMA><OMS cd="list1" name="list"/>
+                 <OMI> 4 </OMI>      <OMI> 5 </OMI>      <OMI> 6 </OMI>
+                 <OMI> 7 </OMI>      <OMI> 8 </OMI>      <OMI> 9 </OMI>
+            </OMA>
+            <OMA><OMS cd="list1" name="list"/>
+                 <OMI> 3 </OMI>      <OMI> 5 </OMI>
+                 <OMI> 2 </OMI>      <OMI> 2 </OMI>
+            </OMA>
+       </OMA>
+       <OMA><OMS cd="list1" name="list"/>
+            <OMI> 6 </OMI>   <OMI> 8 </OMI>
+            <OMI> 5 </OMI>   <OMI> 5 </OMI>
+       </OMA>
+  </OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+
+<CDDefinition>
+<Name> append </Name>
+<Role>application</Role>
+<Description>
+This symbol represents a function with two arguments, the first of which
+should be a list. When applied to A and b, it represents the list
+obtained from A by appending the element b to it.
+</Description> 
+
+<CMP>
+Appending b to the list constructed from the first element a and the rest lst1
+gives the same list as the list constructed from the first element a and the
+rest the list obtained from appending b to lst1.
+</CMP>
+
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMBIND><OMS cd="quant1" name="forall"/>
+       <OMBVAR><OMV name="a"/><OMV name="lst1"/><OMV name="b"/>
+       </OMBVAR>
+       <OMA><OMS cd="relation1" name="eq"/>
+            <OMA><OMS cd="list2" name="cons"/>
+                 <OMV name="a"/>
+                 <OMA><OMS cd="list3" name="append"/>
+                      <OMV name="lst1"/><OMV name="b"/>
+                 </OMA>
+            </OMA>
+            <OMA><OMS cd="list3" name="append"/>
+                 <OMA><OMS cd="list2" name="cons"/>
+                      <OMV name="a"/><OMV name="lst1"/>
+                 </OMA>
+                 <OMV name="b"/>
+            </OMA>
+       </OMA>
+  </OMBIND>
+</OMOBJ>
+</FMP>
+
+
+<CMP>
+Appending b to the list lst increases the length of lst by one.
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMBIND><OMS cd="quant1" name="forall"/>
+       <OMBVAR><OMV name="lst"/><OMV name="b"/></OMBVAR>
+       <OMA><OMS cd="relation1" name="eq"/>
+            <OMA><OMS cd="arith1" name="plus"/>
+                 <OMA><OMS cd="list3" name="length"/>
+                      <OMV name="lst"/>
+                 </OMA>
+                 <OMI>1</OMI>
+            </OMA>
+            <OMA><OMS cd="list3" name="length"/>
+                 <OMA><OMS cd="list3" name="append"/>
+                      <OMV name="lst"/><OMV name="b"/>
+                 </OMA>
+            </OMA>
+       </OMA>
+  </OMBIND>
+</OMOBJ>
+</FMP>
+
+</CDDefinition>
+
+
+
+<CDDefinition>
+<Name> concatenate </Name>
+<Role>application</Role>
+<Description>
+The operation of joining one list to another 
+</Description> 
+
+
+<CMP>
+Concatenating b 
+to the list constructed from the first element a and the rest lst1
+gives the same list as the list constructed from the first element a and the
+rest the list obtained from concatenating b to lst1.
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMBIND>
+    <OMS cd="quant1" name="forall"/>
+    <OMBVAR>
+      <OMV name="a"/>
+      <OMV name="lst1"/>
+      <OMV name="lst2"/>
+    </OMBVAR>
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMA>
+        <OMS cd="list2" name="cons"/>
+        <OMV name="a"/>
+        <OMA>
+          <OMS cd="list3" name="concatenate"/>
+          <OMV name="lst1"/>
+          <OMV name="lst2"/>
+        </OMA>
+      </OMA>
+      <OMA>
+        <OMS cd="list3" name="concatenate"/>
+        <OMA>
+          <OMS cd="list2" name="cons"/>
+          <OMV name="a"/>
+          <OMV name="lst1"/>
+        </OMA>
+        <OMV name="lst2"/>
+      </OMA>
+    </OMA>
+  </OMBIND>
+</OMOBJ>
+</FMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMBIND>
+    <OMS cd="quant1" name="forall"/>
+    <OMBVAR>
+      <OMV name="lst"/>
+    </OMBVAR>
+    <OMA>
+      <OMS cd="relation1" name="eq"/>
+      <OMV name="lst"/>
+      <OMA><OMS cd="list3" name="concatenate"/>
+        <OMS cd="list2" name="nil"/>
+        <OMV name="lst"/>
+      </OMA>
+    </OMA>
+  </OMBIND>
+</OMOBJ>
+</FMP>
+
+<CMP>
+The length of the concatenation of the lists A and B is the sum of the lengths
+of A and of B.
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMBIND><OMS cd="quant1" name="forall"/>
+       <OMBVAR><OMV name="A"/><OMV name="B"/></OMBVAR>
+       <OMA><OMS cd="relation1" name="eq"/>
+            <OMA><OMS cd="arith1" name="plus"/>
+                 <OMA><OMS cd="list3" name="length"/>
+                      <OMV name="A"/>
+                 </OMA>
+                 <OMA><OMS cd="list3" name="length"/>
+                      <OMV name="B"/>
+                 </OMA>
+            </OMA>
+            <OMA><OMS cd="list3" name="length"/>
+                 <OMA><OMS cd="list3" name="concatenation"/>
+                      <OMV name="A"/><OMV name="B"/>
+                 </OMA>
+            </OMA>
+       </OMA>
+  </OMBIND>
+</OMOBJ>
+</FMP>
+
+</CDDefinition>
+
+
+</CD>
+

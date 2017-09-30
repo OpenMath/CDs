@@ -3,19 +3,23 @@
 <CDBase> http://www.openmath.org/cd </CDBase>
 <CDURL> http://www.openmath.org/cd/list3.ocd </CDURL>
 <CDReviewDate> 2004-11-01 </CDReviewDate>
-<CDDate> 2004-03-02 </CDDate>
-<CDVersion> 1 </CDVersion>
+<CDDate> 2004-11-02 </CDDate>
+<CDVersion> 3 </CDVersion>
 <CDRevision> 1 </CDRevision>
 <CDStatus> experimental </CDStatus>
 <CDUses>
+  <CDName>arith1</CDName>
+  <CDName>list1</CDName>
+  <CDName>list2</CDName>
+  <CDName>logic1</CDName>
   <CDName>quant1</CDName>
   <CDName>relation1</CDName>
-  <CDName>list1</CDName>
 </CDUses>
 
 
-<Description>
-    Several basic list functions related to length are given in this CD.
+<Description> 
+Several standard operations on lists, such as length and append, are given in
+this CD.
 </Description>
 
 
@@ -26,6 +30,7 @@ Initiated by Arjeh M. Cohen 2004-03-02
 
 <CDDefinition>
 <Name> length </Name>
+<Role>application</Role>
 <Description> 
 This symbol represents a function whose argument should be a list.
 It returns the length of
