@@ -9,8 +9,15 @@ http://www.openmath.org/cdgroups/scscp.cdg</CDGroupURL>
 <CDGroupMember>
 <CDName>scscp1</CDName>
 <CDURL>http://www.openmath.org/cd/scscp1.ocd</CDURL></CDGroupMember>
+<CDComment>
+Management of mathematical queries in the SCSCP protocol (mandatory part)
+</CDComment>
 
 <CDGroupMember>
 <CDName>scscp2</CDName>
 <CDURL>http://www.openmath.org/cd/scscp2.ocd</CDURL></CDGroupMember>
+<CDComment>
+  Management of mathematical queries in the SCSCP protocol (optional part)
+</CDComment>
+
 </CDGroup>
