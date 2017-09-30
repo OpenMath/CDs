@@ -42,7 +42,10 @@ java -jar lib/saxon/saxon9he.jar -o:cdnames.md cds.xml lib/xsl/cdnames.xsl
 java -jar lib/saxon/saxon9he.jar -o:cdnamess.md cds.xml lib/xsl/cdnamess.xsl
 echo symbols
 java -jar lib/saxon/saxon9he.jar -o:symbols.md cds.xml lib/xsl/index.xsl
-
+echo cdgroups
+cd tmp-cdgroups
+java -jar ../lib/saxon/saxon9he.jar -it:cdg -o:index.md ../lib/xsl/cdgroupindex.xsl cdg="`ls *.cdg`"
+cd ..
 
 if [ -d ../OpenMath.github.io/cd ]; then
     echo copying to website
@@ -69,6 +72,7 @@ if [ -d ../OpenMath.github.io/cd ]; then
 	    done
 	    cd ..
 	    cp cdnames.md cdnamess.md symbols.md ../OpenMath.github.io
+	    cp tmp-cdgroups/index.md ../OpenMath.github.io/cdgroups
 else
 	    echo not copying to website
 fi

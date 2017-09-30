@@ -13,7 +13,11 @@ layout: page
 title: OpenMath Content Dictionaries - CD Groups
 ---
 
-<xsl:for-each select="tokenize($cdg,'\s+')[.]">
+<xsl:variable name="cdgs" select="tokenize($cdg,'\s+')[.]"/>
+
+<p><xsl:value-of select="count($cdgs)"/> Content Dictionary Groups available on this site.</p>
+
+<xsl:for-each select="$cdgs">
  <xsl:text>&#10; |[</xsl:text>
  <xsl:value-of select="substring-before(.,'.cdg')"/>
  <xsl:text>](</xsl:text>
