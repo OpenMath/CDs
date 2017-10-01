@@ -2,7 +2,7 @@
 notifications:
   email:
     recipients:
-      - m.kohlhase@jacobs-university.de
+      - michael.kohlhase@fau.de
       - ion@ams.org
       - J.H.Davenport@bath.ac.uk
       - d.p.carlisle@gmail.com
