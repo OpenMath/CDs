@@ -18,6 +18,7 @@
 
     This version of the Content Dictionary agrees with version 1.3 of the SCSCP protocol.
   </Description>
+
   <CDDefinition>
     <Name> procedure_call </Name>
     <Description>
@@ -68,7 +69,7 @@
       </OMOBJ>
     </Example>
   </CDDefinition>
-  
+
   <CDDefinition>
     <Name> procedure_completed </Name>
     <Description>
@@ -77,44 +78,45 @@
     </Description>
     <Example>
       <OMOBJ xmlns="http://www.openmath.org/OpenMath">
-	<OMATTR>
-	  <OMATP>
-	    <OMS cd="scscp1" name="call_id"/>
-	    <OMSTR>a1d0c6e83f027327d8461063f4ac58a6</OMSTR>
-	    <OMS cd="scscp1" name="info_runtime"/>
-	    <OMI>72643</OMI>
-	    <OMS cd="scscp1" name="info_memory"/>
-	    <OMI>52876</OMI>
-	  </OMATP>
-	  <OMA>
-	    <OMS cd="scscp1" name="procedure_completed"/>
-	    <OMI>26925748508234281076009</OMI>
-	  </OMA>
-	</OMATTR>
+        <OMATTR>
+          <OMATP>
+            <OMS cd="scscp1" name="call_id"/>
+            <OMSTR>a1d0c6e83f027327d8461063f4ac58a6</OMSTR>
+            <OMS cd="scscp1" name="info_runtime"/>
+            <OMI>72643</OMI>
+            <OMS cd="scscp1" name="info_memory"/>
+            <OMI>52876</OMI>
+          </OMATP>
+          <OMA>
+            <OMS cd="scscp1" name="procedure_completed"/>
+            <OMI>26925748508234281076009</OMI>
+          </OMA>
+        </OMATTR>
       </OMOBJ>
     </Example>
-<CDComment>
+    <CDComment>
   Instead of the result, we may return a reference to the result, as follows:
 </CDComment>
-<Example>
-  <OMOBJ xmlns="http://www.openmath.org/OpenMath">
-    <OMATTR>
-      <OMATP>
-	<OMS cd="scscp1" name="call_id"/>
-	<OMSTR>a1d0c6e83f027327d8461063f4ac58a6</OMSTR>
-	<OMS cd="scscp1" name="info_runtime"/>
-	<OMI>72643</OMI>
-	<OMS cd="scscp1" name="info_memory"/>
-	<OMI>52876</OMI>
-      </OMATP>
-      <OMA>
-	<OMS cd="scscp1" name="procedure_completed"/>
-	<OMR href="scscp://somehost:26133/92cfceb39d57d914ed8b14d0e37643de0797ae56"/>
-      </OMA>
-    </OMATTR>
-  </OMOBJ>
-</Example>
+    <Example>
+      <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+        <OMATTR>
+          <OMATP>
+            <OMS cd="scscp1" name="call_id"/>
+            <OMSTR>a1d0c6e83f027327d8461063f4ac58a6</OMSTR>
+            <OMS cd="scscp1" name="info_runtime"/>
+            <OMI>72643</OMI>
+            <OMS cd="scscp1" name="info_memory"/>
+            <OMI>52876</OMI>
+          </OMATP>
+          <OMA>
+            <OMS cd="scscp1" name="procedure_completed"/>
+            <OMR href="scscp://somehost:26133/92cfceb39d57d914ed8b14d0e37643de0797ae56"/>
+          </OMA>
+        </OMATTR>
+      </OMOBJ>
+    </Example>
   </CDDefinition>
+
   <CDDefinition>
     <Name> procedure_terminated </Name>
     <Description>
@@ -141,13 +143,13 @@
       </OMOBJ>
     </Example>
   </CDDefinition>
+
   <CDDefinition>
     <Name> call_id </Name>
     <Description>
-		Uniquely identifies a procedure call. Used in subsequent
-		communication, so the parties know which call they are
-		talking about.
-		</Description>
+      Uniquely identifies a procedure call. Used in subsequent communication, so the
+      parties know which call they are talking about.
+    </Description>
     <Example>
       <OMOBJ xmlns="http://www.openmath.org/OpenMath">
         <OMATTR>
@@ -160,13 +162,13 @@
       </OMOBJ>
     </Example>
   </CDDefinition>
+
   <CDDefinition>
     <Name> option_max_memory </Name>
     <Description>
-		An option, to be given along with a procedure call, 
-		describing the maximum amount of memory (in bytes)
-		the system should spend on this call.
-		</Description>
+      An option, to be given along with a procedure call, describing the maximum amount of
+      memory (in bytes) the system should spend on this call.
+    </Description>
     <Example>
       <OMOBJ xmlns="http://www.openmath.org/OpenMath">
         <OMATTR>
@@ -183,18 +185,16 @@
       </OMOBJ>
     </Example>
   </CDDefinition>
+
   <CDDefinition>
     <Name> option_min_memory </Name>
     <Description>
-		An option, to be given along with a procedure call, 
-		describing the minimum amount of memory (in bytes)
-		the system should be able to spend on this call.
-		The idea is that in certain cases we know in advance
-		that we will need a large amount of memory. If the 
-		system will never be able to provide that, it would 
-		be a waste of time and resources to even start the 
-		computation.
-		</Description>
+      An option, to be given along with a procedure call, describing the minimum amount of
+      memory (in bytes) the system should be able to spend on this call.  The idea is that
+      in certain cases we know in advance that we will need a large amount of memory. If
+      the system will never be able to provide that, it would be a waste of time and
+      resources to even start the computation.
+    </Description>
     <Example>
       <OMOBJ xmlns="http://www.openmath.org/OpenMath">
         <OMATTR>
@@ -211,13 +211,13 @@
       </OMOBJ>
     </Example>
   </CDDefinition>
+
   <CDDefinition>
     <Name> option_runtime </Name>
     <Description>
-		An option, to be given along with a procedure call, 
-		describing the maximum amount of time (in milliseconds)
-		the system should spend on this call.
-		</Description>
+      An option, to be given along with a procedure call, describing the maximum amount of
+      time (in milliseconds) the system should spend on this call.
+    </Description>
     <Example>
       <OMOBJ xmlns="http://www.openmath.org/OpenMath">
         <OMATTR>
@@ -234,13 +234,13 @@
       </OMOBJ>
     </Example>
   </CDDefinition>
+
   <CDDefinition>
     <Name> option_debuglevel </Name>
     <Description>
-		An option, to be given along with a procedure call, 
-		describing the amount of debug information the
-		client is interested in. Should be an integer.
-		</Description>
+      An option, to be given along with a procedure call, describing the amount of debug
+      information the client is interested in. Should be an integer.
+    </Description>
     <Example>
       <OMOBJ xmlns="http://www.openmath.org/OpenMath">
         <OMATTR>
@@ -261,131 +261,125 @@
   <CDDefinition>
     <Name> option_return_cookie </Name>
     <Description>
- An option, to be given along with a procedure call, 
- indicating that the client would like to have a cookie (i.e.
- a reference to an OpenMath object residing somewhere)
- as return value.
+      An option, to be given along with a procedure call, indicating that the client would
+      like to have a cookie (i.e.  a reference to an OpenMath object residing somewhere)
+      as return value.
     </Description>
     <Example>
       <OMOBJ xmlns="http://www.openmath.org/OpenMath">
-	<OMATTR>
-	  <OMATP>
-	    <OMS cd="scscp1" name="call_id"/>
-	    <OMSTR>localhost:26137:18668:s2sYf1pg</OMSTR>
-	    <OMS cd="scscp1" name="option_return_cookie"/>
-	    <OMSTR/>
-	  </OMATP>
-	  <OMSTR>The OMA goes here </OMSTR>
-	</OMATTR>
+        <OMATTR>
+          <OMATP>
+            <OMS cd="scscp1" name="call_id"/>
+            <OMSTR>localhost:26137:18668:s2sYf1pg</OMSTR>
+            <OMS cd="scscp1" name="option_return_cookie"/>
+            <OMSTR/>
+          </OMATP>
+          <OMSTR>The OMA goes here </OMSTR>
+        </OMATTR>
       </OMOBJ>
     </Example>
     <CDComment>
       The reply from the server should then look like:
     </CDComment>
-		
     <Example>
       <OMOBJ xmlns="http://www.openmath.org/OpenMath">
-	<OMATTR>
-	  <OMATP>
-	    <OMS cd="scscp1" name="call_id"/>
-	    <OMSTR>localhost:26137:18668:s2sYf1pg</OMSTR>
-	  </OMATP>
-	  <OMA>
-	    <OMS cd="scscp1" name="procedure_completed"/>
-	    <OMR href="scscp://somehost.somedomain:26133/q9t4eX"/>
-	  </OMA>
-	</OMATTR>
+        <OMATTR>
+          <OMATP>
+            <OMS cd="scscp1" name="call_id"/>
+            <OMSTR>localhost:26137:18668:s2sYf1pg</OMSTR>
+          </OMATP>
+          <OMA>
+            <OMS cd="scscp1" name="procedure_completed"/>
+            <OMR href="scscp://somehost.somedomain:26133/q9t4eX"/>
+          </OMA>
+        </OMATTR>
       </OMOBJ>
     </Example>
-	</CDDefinition>
+  </CDDefinition>
 
-	<CDDefinition>
-	  <Name> option_return_object </Name>
-	  <Description>
-	    An option, to be given along with a procedure call, 
-	    indicating that the client would like to have the actual OpenMath
-	    object as return value.
-	  </Description>
-	  <Example>
-	    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
-	      <OMATTR>
-		<OMATP>
-		  <OMS cd="scscp1" name="call_id"/>
-		  <OMSTR>localhost:26137:18668:s2sYf1pg</OMSTR>
-		  <OMS cd="scscp1" name="option_return_object"/>
-		  <OMSTR/>
-		</OMATP>
-		<OMSTR> The OMA goes here </OMSTR>
-	      </OMATTR>
-	    </OMOBJ>
-	  </Example>
-	  <CDComment>
-	    The reply from the server should then look like:
-	  </CDComment>
+  <CDDefinition>
+    <Name> option_return_object </Name>
+    <Description>
+      An option, to be given along with a procedure call, indicating that the client would
+      like to have the actual OpenMath object as return value.
+    </Description>
+    <Example>
+      <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+        <OMATTR>
+          <OMATP>
+            <OMS cd="scscp1" name="call_id"/>
+            <OMSTR>localhost:26137:18668:s2sYf1pg</OMSTR>
+            <OMS cd="scscp1" name="option_return_object"/>
+            <OMSTR/>
+          </OMATP>
+          <OMSTR> The OMA goes here </OMSTR>
+        </OMATTR>
+      </OMOBJ>
+    </Example>
+    <CDComment>
+      The reply from the server should then look like:
+    </CDComment>
+    <Example>
+      <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+        <OMATTR>
+          <OMATP>
+            <OMS cd="scscp1" name="call_id"/>
+            <OMSTR>localhost:26137:18668:s2sYf1pg</OMSTR>
+          </OMATP>
+          <OMA>
+            <OMS cd="scscp1" name="procedure_completed"/>
+            <OMI>42</OMI>
+          </OMA>
+        </OMATTR>
+      </OMOBJ>
+    </Example>
+  </CDDefinition>
 
-	  <Example>
-	    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
-	      <OMATTR>
-		<OMATP>
-		  <OMS cd="scscp1" name="call_id"/>
-		  <OMSTR>localhost:26137:18668:s2sYf1pg</OMSTR>
-		</OMATP>
-		<OMA>
-		  <OMS cd="scscp1" name="procedure_completed"/>
-		  <OMI>42</OMI>
-		</OMA>
-	      </OMATTR>
-	    </OMOBJ>
-	  </Example>
-	</CDDefinition>
-
-	<CDDefinition>
-	  <Name> option_return_nothing </Name>
-	  <Description>
-	    An option, to be given along with a procedure call, indicating that the client
-	    expects no return value.
-	  </Description>
-	  <Example>
-	    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
-	      <OMATTR>
-		<OMATP>
-		  <OMS cd="scscp1" name="call_id"/>
-		  <OMSTR>localhost:26137:18668:s2sYf1pg</OMSTR>
-		  <OMS cd="scscp1" name="option_return_nothing"/>
-		  <OMSTR/>
-		</OMATP>
-		<OMSTR> The OMA goes here </OMSTR>
-	      </OMATTR>
-	    </OMOBJ>
-	  </Example>
-
-	  <CDComment>
+  <CDDefinition>
+    <Name> option_return_nothing </Name>
+    <Description>
+      An option, to be given along with a procedure call, indicating that the client
+      expects no return value.
+    </Description>
+    <Example>
+      <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+        <OMATTR>
+          <OMATP>
+            <OMS cd="scscp1" name="call_id"/>
+            <OMSTR>localhost:26137:18668:s2sYf1pg</OMSTR>
+            <OMS cd="scscp1" name="option_return_nothing"/>
+            <OMSTR/>
+          </OMATP>
+          <OMSTR> The OMA goes here </OMSTR>
+        </OMATTR>
+      </OMOBJ>
+    </Example>
+    <CDComment>
 	    The reply from the server may then look like:
 	  </CDComment>
+    <Example>
+      <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+        <OMATTR>
+          <OMATP>
+            <OMS cd="scscp1" name="call_id"/>
+            <OMSTR>localhost:26137:18668:s2sYf1pg</OMSTR>
+          </OMATP>
+          <OMA>
+            <OMS cd="scscp1" name="procedure_completed"/>
+          </OMA>
+        </OMATTR>
+      </OMOBJ>
+    </Example>
+  </CDDefinition>
 
-	  <Example>
-	    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
-	      <OMATTR>
-		<OMATP>
-		  <OMS cd="scscp1" name="call_id"/>
-		  <OMSTR>localhost:26137:18668:s2sYf1pg</OMSTR>
-		</OMATP>
-		<OMA>
-		  <OMS cd="scscp1" name="procedure_completed"/>
-		</OMA>
-	      </OMATTR>
-	    </OMOBJ>
-	  </Example>
-	</CDDefinition>
-	<CDDefinition>
-	  <Name> info_memory </Name>
-	  <Description>
-	    A piece of information from the system, to be used along with a
-	    procedure_completed or procedure_terminated message, describing how much
-	    memory was spent on the calculation. It should be in bytes, denoted using an
-	    OMI.
-	  </Description>
-	  <Example>
+  <CDDefinition>
+    <Name> info_memory </Name>
+    <Description>
+      A piece of information from the system, to be used along with a procedure_completed
+      or procedure_terminated message, describing how much memory was spent on the
+      calculation. It should be in bytes, denoted using an OMI.
+    </Description>
+    <Example>
       <OMOBJ xmlns="http://www.openmath.org/OpenMath">
         <OMATTR>
           <OMATP>
@@ -399,15 +393,14 @@
       </OMOBJ>
     </Example>
   </CDDefinition>
+
   <CDDefinition>
     <Name> info_runtime </Name>
     <Description>
-A piece of information from the system, to be used
-along with a procedure_completed or procedure_terminated message, 
-describing how much cputime was spent on the 
-calculation. It should be in milliseconds, denoted
-using an OMI.
-</Description>
+      A piece of information from the system, to be used along with a procedure_completed
+      or procedure_terminated message, describing how much cputime was spent on the
+      calculation. It should be in milliseconds, denoted using an OMI.
+    </Description>
     <Example>
       <OMOBJ xmlns="http://www.openmath.org/OpenMath">
         <OMATTR>
@@ -422,15 +415,14 @@ using an OMI.
       </OMOBJ>
     </Example>
   </CDDefinition>
+
   <CDDefinition>
     <Name> info_message </Name>
     <Description>
-		A piece of information from the server, to be used
-		along with a procedure_completed or procedure_terminated 
-		message, giving some additional information. The client 
-		may choose to present this information to its user.
-		The argument is an OMSTR.
-		</Description>
+      A piece of information from the server, to be used along with a procedure_completed
+      or procedure_terminated message, giving some additional information. The client may
+      choose to present this information to its user.  The argument is an OMSTR.
+    </Description>
     <Example>
       <OMOBJ xmlns="http://www.openmath.org/OpenMath">
         <OMATTR>
@@ -445,19 +437,18 @@ using an OMI.
       </OMOBJ>
     </Example>
   </CDDefinition>
+
   <CDDefinition>
     <Name> error_memory </Name>
     <Description>
-		A description of the error that caused a
-		procedure call to be terminated. This symbol
-		is used with a procedure_terminated, when
-		the system exceeded the amount of memory specified
-		in the option_max_memory option given in the
-		corresponding procedure call.
+      A description of the error that caused a procedure call to be terminated. This
+      symbol is used with a procedure_terminated, when the system exceeded the amount of
+      memory specified in the option_max_memory option given in the corresponding
+      procedure call.
 
-		It carries one argument: An OMSTR, which may be empty.
-		</Description>
-<!--
+      It carries one argument: An OMSTR, which may be empty.
+    </Description>
+    <!--
     <Example>
       <OMOBJ xmlns="http://www.openmath.org/OpenMath">
         <OMATTR>
@@ -476,23 +467,20 @@ using an OMI.
     </Example>
 -->
   </CDDefinition>
+
   <CDDefinition>
     <Name> error_runtime </Name>
     <Description>
-		A description of the error that caused a
-		procedure call to be terminated. This symbol
-		is used with a procedure_terminated, when
-		the system exceeded the runtime specified
-		in the option_runtime option given in the
-		corresponding procedure call.
+      A description of the error that caused a procedure call to be terminated. This
+      symbol is used with a procedure_terminated, when the system exceeded the runtime
+      specified in the option_runtime option given in the corresponding procedure call.
 
-		It carries one argument: An OMSTR, which may be empty.
+      It carries one argument: An OMSTR, which may be empty.
 
-		Note that this symbol is not intended to be
-		used when a different runtime error occurred.
-		In those cases, one should use error_system_specific.
-		</Description>
-		<!--
+      Note that this symbol is not intended to be used when a different runtime error
+      occurred.  In those cases, one should use error_system_specific.
+    </Description>
+    <!--
     <Example>
       <OMOBJ xmlns="http://www.openmath.org/OpenMath">
         <OMATTR>
@@ -511,19 +499,16 @@ using an OMI.
       </Example>
       -->
   </CDDefinition>
+
   <CDDefinition>
     <Name> error_system_specific </Name>
     <Description>
-		A description of the error that caused a
-		procedure call to be terminated. This symbol
-		is used with a procedure_terminated, when
-		the error is specific to the system that
-		carried out the calculation.
-		This error must carry exactly one argument, 
-		and it must be an OMSTR describing the error 
-		that occurred. 
-		</Description>
-<!--
+      A description of the error that caused a procedure call to be terminated. This
+      symbol is used with a procedure_terminated, when the error is specific to the system
+      that carried out the calculation.  This error must carry exactly one argument, and
+      it must be an OMSTR describing the error that occurred.
+    </Description>
+    <!--
     <Example>
       <OMOBJ xmlns="http://www.openmath.org/OpenMath">
         <OMATTR>
