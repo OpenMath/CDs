@@ -97,7 +97,7 @@
     <semantics>
       <xsl:apply-templates select="*[last()]" mode="om2cmml"/>
       <xsl:for-each select="om:OMATP/*[position() mod 2 = 1]">
-	<annotation-xml cd="{@cd}"  encoding="{@name}">
+	<annotation-xml cd="{@cd}"  name="{@name}">
 	  <xsl:apply-templates select="following-sibling::*[1]" mode="om2cmml"/>
 	</annotation-xml>
       </xsl:for-each>
