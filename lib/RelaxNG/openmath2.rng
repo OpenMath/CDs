@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- RELAX NG Schema for OpenMath 2 -->
+<!--
+  RELAX NG Schema for OpenMath 2
+  Revision 2: Corrected regex for OMI to match the documented standard and allow hex
+-->
 <grammar ns="http://www.openmath.org/OpenMath" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
   <start>
     <ref name="OMOBJ"/>
@@ -11,6 +14,11 @@
       <optional>
         <attribute name="version">
           <data type="string"/>
+        </attribute>
+      </optional>
+      <optional>
+        <attribute name="cdgroup">
+          <data type="anyURI"/>
         </attribute>
       </optional>
       <ref name="omel"/>
@@ -98,7 +106,7 @@
     <element name="OMI">
       <ref name="common.attributes"/>
       <data type="string">
-        <param name="pattern">\s*(-\s?)?[0-9]+(\s[0-9]+)*\s*</param>
+        <param name="pattern">\s*-?((\s*[0-9])+|x(\s*[0-9A-F])+)\s*</param>
       </data>
     </element>
   </define>
@@ -162,7 +170,7 @@
   <!-- error constructor -->
   <define name="OME">
     <element name="OME">
-      <ref name="common.attributes"/>
+      <ref name="compound.attributes"/>
       <ref name="OMS"/>
       <zeroOrMore>
         <choice>

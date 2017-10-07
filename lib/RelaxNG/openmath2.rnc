@@ -1,7 +1,6 @@
 # RELAX NG Schema for OpenMath 2
 # Revision 2: Corrected regex for OMI to match the documented standard and allow hex
 
-
 default namespace om = "http://www.openmath.org/OpenMath"
 
 start = OMOBJ
@@ -9,6 +8,7 @@ start = OMOBJ
 # OpenMath object constructor
 OMOBJ = element OMOBJ { compound.attributes,
                         attribute version { xsd:string }?,
+			attribute cdgroup { xsd:anyURI}?,
                         omel }
 
 
@@ -64,7 +64,7 @@ OMBIND = element OMBIND { compound.attributes, omel, OMBVAR, omel }
 OMBVAR = element OMBVAR { common.attributes, omvar+ }
 
 # error constructor
-OME = element OME { common.attributes, OMS, (omel|OMFOREIGN)* }
+OME = element OME { compound.attributes, OMS, (omel|OMFOREIGN)* }
 
 # attribution constructor and attribute pair constructor
 OMATTR = element OMATTR { compound.attributes, OMATP, omel }
