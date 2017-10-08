@@ -2,9 +2,7 @@
 <CDGroupName>fns</CDGroupName>
 <CDGroupVersion> 2 </CDGroupVersion>
 <CDGroupRevision> 0 </CDGroupRevision>
-<CDGroupURL>
-	http://www.openmath.org/cdgroups/fns.cdg
-</CDGroupURL>
+<CDGroupURL>http://www.openmath.org/cdgroups/fns.cdg</CDGroupURL>
 <CDGroupDescription>
 Basic Operations on functions 
 </CDGroupDescription>

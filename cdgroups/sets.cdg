@@ -2,8 +2,7 @@
 <CDGroupName>Sets</CDGroupName>
 <CDGroupVersion> 1 </CDGroupVersion>
 <CDGroupRevision> 0 </CDGroupRevision>
-<CDGroupURL>
-http://www.openmath.org/cdgroups/sets.cdg</CDGroupURL>
+<CDGroupURL>http://www.openmath.org/cdgroups/sets.cdg</CDGroupURL>
 <CDGroupDescription>
 Cds which describe operations on sets and their names
 </CDGroupDescription>
@@ -11,21 +10,25 @@ Cds which describe operations on sets and their names
 <CDComment>CD to describe operations on sets</CDComment>
 <CDGroupMember>
 <CDName>set1</CDName>
-<CDURL>http://www.openmath.org/cd/set1.ocd</CDURL></CDGroupMember>
+<CDURL>http://www.openmath.org/cd/set1.ocd</CDURL>
+</CDGroupMember>
 
 <CDComment>CD to describe further operations on sets</CDComment>
 <CDGroupMember>
 <CDName>set2</CDName>
-<CDURL>http://www.openmath.org/cd/set2.ocd</CDURL></CDGroupMember>
+<CDURL>http://www.openmath.org/cd/set2.ocd</CDURL>
+</CDGroupMember>
 
 <CDComment>CD to describe sets which are compliant with MathML </CDComment>
 <CDGroupMember>
 <CDName>setname1</CDName>
-<CDURL>http://www.openmath.org/cd/setname1.ocd</CDURL></CDGroupMember>
+<CDURL>http://www.openmath.org/cd/setname1.ocd</CDURL>
+</CDGroupMember>
 
 <CDComment>CD to describe some common mathematical sets</CDComment>
 <CDGroupMember>
 <CDName>setname2</CDName>
-<CDURL>http://www.openmath.org/cd/setname2.ocd</CDURL></CDGroupMember>
+<CDURL>http://www.openmath.org/cd/setname2.ocd</CDURL>
+</CDGroupMember>
 
 </CDGroup>

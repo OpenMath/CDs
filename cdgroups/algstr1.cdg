@@ -2,9 +2,7 @@
 <CDGroupName>algstr1</CDGroupName>
 <CDGroupVersion> 2 </CDGroupVersion>
 <CDGroupRevision> 1 </CDGroupRevision>
-<CDGroupURL>
-	http://www.openmath.org/cdgroups/algstr1.cdg
-</CDGroupURL>
+<CDGroupURL>http://www.openmath.org/cdgroups/algstr1.cdg</CDGroupURL>
 <CDGroupDescription>Basic Algebraic Structures
 This is the first version of the CC CD group.
 O.Caprotti 1999-20-08

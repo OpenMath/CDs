@@ -2,9 +2,7 @@
 <CDGroupName>arith</CDGroupName>
 <CDGroupVersion> 2 </CDGroupVersion>
 <CDGroupRevision> 0 </CDGroupRevision>
-<CDGroupURL>
-	http://www.openmath.org/cdgroups/arith.cdg
-</CDGroupURL>
+<CDGroupURL>http://www.openmath.org/cdgroups/arith.cdg</CDGroupURL>
 <CDGroupDescription>
 Basic Arithmetic functions
 </CDGroupDescription>

@@ -2,13 +2,13 @@
 <CDGroupName>constants</CDGroupName>
 <CDGroupVersion> 1 </CDGroupVersion>
 <CDGroupRevision> 0 </CDGroupRevision>
-<CDGroupURL>
-http://www.openmath.org/cdgroups/constants.cdg</CDGroupURL>
+<CDGroupURL>http://www.openmath.org/cdgroups/constants.cdg</CDGroupURL>
 <CDGroupDescription> This CD group contains cds describing constants</CDGroupDescription>
 
 <CDGroupMember>
 <CDName>physical_consts1</CDName>
-<CDURL>http://www.openmath.org/cd/physical_consts1.ocd</CDURL></CDGroupMember>
+<CDURL>http://www.openmath.org/cd/physical_consts1.ocd</CDURL>
+</CDGroupMember>
 
 
 

@@ -2,23 +2,25 @@
 <CDGroupName>Transcendental Functions</CDGroupName>
 <CDGroupVersion> 1 </CDGroupVersion>
 <CDGroupRevision> 0 </CDGroupRevision>
-<CDGroupURL>
-http://www.openmath.org/cdgroups/transc.cdg</CDGroupURL>
+<CDGroupURL>http://www.openmath.org/cdgroups/transc.cdg</CDGroupURL>
 <CDGroupDescription>
 Cds which describe transcendental functions
 </CDGroupDescription>
 
 <CDGroupMember>
 <CDName>transc1</CDName>
-<CDURL>http://www.openmath.org/cd/transc1.ocd</CDURL></CDGroupMember>
+<CDURL>http://www.openmath.org/cd/transc1.ocd</CDURL>
+</CDGroupMember>
 
 
 <CDGroupMember>
 <CDName>transc2</CDName>
-<CDURL>http://www.openmath.org/cd/transc2.ocd</CDURL></CDGroupMember>
+<CDURL>http://www.openmath.org/cd/transc2.ocd</CDURL>
+</CDGroupMember>
 
 <CDGroupMember>
 <CDName>transc3</CDName>
-<CDURL>http://www.openmath.org/cd/transc3.ocd</CDURL></CDGroupMember>
+<CDURL>http://www.openmath.org/cd/transc3.ocd</CDURL>
+</CDGroupMember>
 
 </CDGroup>

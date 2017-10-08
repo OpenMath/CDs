@@ -3,8 +3,7 @@
 <CDGroupName>types1</CDGroupName>
 <CDGroupVersion> 2 </CDGroupVersion>
 <CDGroupRevision> 0 </CDGroupRevision>
-<CDGroupURL>
-http://www.openmath.org/cdgroups/types1.ocd</CDGroupURL>
+<CDGroupURL>http://www.openmath.org/cdgroups/types1.ocd</CDGroupURL>
 <CDGroupDescription>Types1 CD Group</CDGroupDescription>
 <CDComment>
 David Carlisle 1999-05-04
