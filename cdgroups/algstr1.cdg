@@ -10,28 +10,28 @@
 </CDGroupDescription>
 
  <CDGroupMember>
+   <CDComment>relation0: Binary relations properties, equivalence relation, orders</CDComment>
    <CDName>relation0</CDName>
    <CDURL> http://www.openmath.org/cd/relation0.ocd</CDURL>
-   <CDComment>relation0: Binary relations properties, equivalence relation, orders</CDComment>
 </CDGroupMember>
 
 <CDGroupMember>
+  <CDComment>semigroup: semigroup as setoid with a binary operation</CDComment>
   <CDName>semigroup</CDName>
   <CDURL> http://www.openmath.org/cd/semigroup.ocd</CDURL>
-  <CDComment>semigroup: semigroup as setoid with a binary operation</CDComment>
 </CDGroupMember>
 
 <CDGroupMember>
+  <CDComment>setoid:: setoid as a set with an equivalence relations defined on its elements</CDComment>
   <CDName>setoid</CDName>
   <CDURL> http://www.openmath.org/cd/setoid.ocd</CDURL>
-  <CDComment>setoid:: setoid as a set with an equivalence relations defined on its elements</CDComment>
 </CDGroupMember>
 
 
 <CDGroupMember>
+  <CDComment>Inductive definition of natural numbers</CDComment>
   <CDName>indnat</CDName>
   <CDURL> http://www.openmath.org/cd/indnat.ocd</CDURL>
-  <CDComment>Inductive definition of natural numbers</CDComment>
 </CDGroupMember>
 
 </CDGroup>

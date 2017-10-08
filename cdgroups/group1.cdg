@@ -20,33 +20,33 @@
 </CDGroupMember>
 
 <CDGroupMember>
+  <CDComment>A CD of functions for group theory</CDComment>
   <CDName>group3</CDName>
   <CDURL>http://www.openmath.org/cd/group3.ocd</CDURL>
-  <CDComment>A CD of functions for group theory</CDComment>
 </CDGroupMember>
 
 <CDGroupMember>
+  <CDComment>A CD of functions for group theory</CDComment>
   <CDName>group4</CDName>
   <CDURL>http://www.openmath.org/cd/group4.ocd</CDURL>
-  <CDComment>A CD of functions for group theory</CDComment>
 </CDGroupMember>
 
 <CDGroupMember>
+  <CDComment>A CD of functions for group theory</CDComment>
   <CDName>group5</CDName>
   <CDURL>http://www.openmath.org/cd/group5.ocd</CDURL>
-  <CDComment>A CD of functions for group theory</CDComment>
 </CDGroupMember>
 
 <CDGroupMember>
+  <CDComment>A CD of names of common groups</CDComment>
   <CDName>groupname1</CDName>
   <CDURL>http://www.openmath.org/cd/groupname1.ocd</CDURL>
-  <CDComment>A CD of names of common groups</CDComment>
 </CDGroupMember>
 
 <CDGroupMember>
+  <CDComment>A CD of functions for permutation groups</CDComment>
   <CDName>permgrp</CDName>
   <CDURL>http://www.openmath.org/cd/permgrp.ocd</CDURL>
-  <CDComment>A CD of functions for permutation groups</CDComment>
 </CDGroupMember>
 
 </CDGroup>

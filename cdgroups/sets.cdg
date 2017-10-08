@@ -9,26 +9,26 @@
 </CDGroupDescription>
 
 <CDGroupMember>
+  <CDComment>CD to describe operations on sets</CDComment>
   <CDName>set1</CDName>
   <CDURL>http://www.openmath.org/cd/set1.ocd</CDURL>
-  <CDComment>CD to describe operations on sets</CDComment>
 </CDGroupMember>
 
 <CDGroupMember>
+  <CDComment>CD to describe further operations on sets</CDComment>
   <CDName>set2</CDName>
   <CDURL>http://www.openmath.org/cd/set2.ocd</CDURL>
-  <CDComment>CD to describe further operations on sets</CDComment>
 </CDGroupMember>
 
 <CDGroupMember>
+  <CDComment>CD to describe sets which are compliant with MathML </CDComment>
   <CDName>setname1</CDName>
   <CDURL>http://www.openmath.org/cd/setname1.ocd</CDURL>
-  <CDComment>CD to describe sets which are compliant with MathML </CDComment>
 </CDGroupMember>
 
 <CDGroupMember>
+  <CDComment>CD to describe some common mathematical sets</CDComment>
   <CDName>setname2</CDName>
   <CDURL>http://www.openmath.org/cd/setname2.ocd</CDURL>
-  <CDComment>CD to describe some common mathematical sets</CDComment>
 </CDGroupMember>
 </CDGroup>

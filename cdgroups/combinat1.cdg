@@ -7,19 +7,15 @@
 
 
 <CDGroupMember>
+  <CDComment>A CD of functions for combinatorics</CDComment>
   <CDName>combinat1</CDName>
   <CDURL>http://www.openmath.org/cd/combinat1.ocd</CDURL>
-  <CDComment>
-    A CD of functions for combinatorics
-  </CDComment>
 </CDGroupMember>
 
 <CDGroupMember>
+  <CDComment>A CD of functions for permutations</CDComment>
   <CDName>permut1</CDName>
   <CDURL>http://www.openmath.org/cd/permut1.ocd</CDURL>
-  <CDComment>
-    A CD of functions for permutations
-  </CDComment>
 </CDGroupMember>
 
 </CDGroup>

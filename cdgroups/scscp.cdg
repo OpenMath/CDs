@@ -6,14 +6,14 @@
 <CDGroupDescription> This CD group contains cds for the OpenMath SCSCP standard.</CDGroupDescription>
 
 <CDGroupMember>
+  <CDComment>Management of mathematical queries in the SCSCP protocol (mandatory part)</CDComment>
   <CDName>scscp1</CDName>
   <CDURL>http://www.openmath.org/cd/scscp1.ocd</CDURL>
-  <CDComment>Management of mathematical queries in the SCSCP protocol (mandatory part)</CDComment>
 </CDGroupMember>
 
 <CDGroupMember>
+  <CDComment>Management of mathematical queries in the SCSCP protocol (optional part)</CDComment>
   <CDName>scscp2</CDName>
   <CDURL>http://www.openmath.org/cd/scscp2.ocd</CDURL>
-  <CDComment>Management of mathematical queries in the SCSCP protocol (optional part)</CDComment>
 </CDGroupMember>
 </CDGroup>

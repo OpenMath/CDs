@@ -10,15 +10,15 @@
 </CDComment>
 
 <CDGroupMember>
+  <CDComment>Small Type System</CDComment>
   <CDName>sts</CDName>
   <CDURL>http://www.openmath.org/cd/sts.ocd</CDURL>
-  <CDComment>Small Type System</CDComment>
 </CDGroupMember>
 
 <CDGroupMember>
+  <CDComment>MathML Numerical Types</CDComment>
   <CDName>mathmltypes</CDName>
   <CDURL>http://www.openmath.org/cd/mathmltypes.ocd</CDURL>
-  <CDComment>MathML Numerical Types</CDComment>
 </CDGroupMember>
 
 </CDGroup>

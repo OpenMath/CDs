@@ -6,63 +6,63 @@
 <CDGroupDescription>Types CD Group</CDGroupDescription>
 
 <CDGroupMember>
+  <CDComment>Small Type System</CDComment>
   <CDName>sts</CDName>
   <CDURL>http://www.openmath.org/cd/sts.ocd</CDURL>
-  <CDComment>Small Type System</CDComment>
 </CDGroupMember>
 
 <CDGroupMember>
+  <CDComment>MathML Numerical Types</CDComment>
   <CDName>mathmltypes</CDName>
   <CDURL>http://www.openmath.org/cd/mathmltypes.ocd</CDURL>
-  <CDComment>MathML Numerical Types</CDComment>
 </CDGroupMember>
 
 <CDGroupMember>
+  <CDComment>Calculus of Constructions</CDComment>
   <CDName>cc</CDName>
   <CDURL> http://www.openmath.org/cd/cc.ocd</CDURL>
-  <CDComment>Calculus of Constructions</CDComment>
 </CDGroupMember>
 
 <CDGroupMember>
+  <CDComment>Type Sorts</CDComment>
   <CDName>typesorts</CDName>
   <CDURL>http://www.openmath.org/cd/typesorts.ocd</CDURL>
-  <CDComment>Type Sorts</CDComment>
 </CDGroupMember>
 
 <CDGroupMember>
+  <CDComment>Lambda Calculus</CDComment>
   <CDName>lc</CDName>
   <CDURL>http://www.openmath.org/cd/lc.ocd</CDURL>
-  <CDComment>Lambda Calculus</CDComment>
 </CDGroupMember>
 
 <CDGroupMember>
+  <CDComment>Sigma Types</CDComment>
   <CDName>sigma</CDName>
   <CDURL>http://www.openmath.org/cd/sigma.ocd</CDURL>
-  <CDComment>Sigma Types</CDComment>
 </CDGroupMember>
 
 <CDGroupMember>
+  <CDComment>Typing Attributes</CDComment>
   <CDName>ecc</CDName>
   <CDURL>http://www.openmath.org/cd/ecc.ocd</CDURL>
-  <CDComment>Typing Attributes</CDComment>
 </CDGroupMember>
 
 <CDGroupMember>
+  <CDComment>Typing Attributes</CDComment>
   <CDName>icc</CDName>
   <CDURL>http://www.openmath.org/cd/icc.ocd</CDURL>
-  <CDComment>Typing Attributes</CDComment>
 </CDGroupMember>
 
 <CDGroupMember>
+  <CDComment>Types for Basic OpenMath Objects</CDComment>
   <CDName>omtypes</CDName>
   <CDURL>http://www.openmath.org/cd/omtypes.ocd</CDURL>
-  <CDComment>Types for Basic OpenMath Objects</CDComment>
 </CDGroupMember>
 
 <CDGroupMember>
+  <CDComment>Type coercions</CDComment>
   <CDName>coercions</CDName>
   <CDURL>http://www.openmath.org/cd/coercions.ocd</CDURL>
-  <CDComment>Type coercions</CDComment>
 </CDGroupMember>
 
 </CDGroup>
