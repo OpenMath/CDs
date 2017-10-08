@@ -1,5 +1,5 @@
-<CDGroup  xmlns="http://www.openmath.org/OpenMathCDG">
-<CDGroupName>Directives 1</CDGroupName>
+<CDGroup  xmlns="http://www.openmath.org/OpenMathCDG" version="2.0">
+<CDGroupName>Directives1</CDGroupName>
 <CDGroupVersion> 1 </CDGroupVersion>
 <CDGroupRevision> 0 </CDGroupRevision>
 <CDGroupURL>http://www.openmath.org/cdfiles2/cdgroups/directives1.ocd</CDGroupURL>

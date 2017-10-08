@@ -1,5 +1,4 @@
-
-<CDGroup  xmlns="http://www.openmath.org/OpenMathCDG">
+<CDGroup  xmlns="http://www.openmath.org/OpenMathCDG" version="2.0">
 <CDGroupName>meta</CDGroupName>
 <CDGroupVersion> 2 </CDGroupVersion>
 <CDGroupRevision> 0 </CDGroupRevision>
