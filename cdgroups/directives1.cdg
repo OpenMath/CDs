@@ -4,12 +4,12 @@
 <CDGroupRevision> 0 </CDGroupRevision>
 <CDGroupURL>http://www.openmath.org/cdfiles2/cdgroups/directives1.ocd</CDGroupURL>
 <CDGroupDescription>
-CDs developed at RIACA
+  CDs developed at RIACA
 </CDGroupDescription>
 
 <CDGroupMember>
-<CDName>directives1</CDName>
-<CDURL>http://www.openmath.org/cd/directives1.ocd</CDURL>
+  <CDName>directives1</CDName>
+  <CDURL>http://www.openmath.org/cd/directives1.ocd</CDURL>
 </CDGroupMember>
 
 </CDGroup>

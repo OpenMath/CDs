@@ -4,17 +4,17 @@
 <CDGroupRevision> 0 </CDGroupRevision>
 <CDGroupURL>http://www.openmath.org/cdgroups/arith.cdg</CDGroupURL>
 <CDGroupDescription>
-Basic Arithmetic functions
+  Basic Arithmetic functions
 </CDGroupDescription>
 
 <CDGroupMember>
-<CDName>list1</CDName>
-<CDURL> http://www.openmath.org/cd/list1.ocd</CDURL>
+  <CDName>list1</CDName>
+  <CDURL> http://www.openmath.org/cd/list1.ocd</CDURL>
 </CDGroupMember>
 
 <CDGroupMember>
-<CDName>list2</CDName>
-<CDURL> http://www.openmath.org/cd/list2.ocd</CDURL>
+  <CDName>list2</CDName>
+  <CDURL> http://www.openmath.org/cd/list2.ocd</CDURL>
 </CDGroupMember>
 
 </CDGroup>

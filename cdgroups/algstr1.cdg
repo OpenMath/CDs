@@ -3,38 +3,35 @@
 <CDGroupVersion> 2 </CDGroupVersion>
 <CDGroupRevision> 1 </CDGroupRevision>
 <CDGroupURL>http://www.openmath.org/cdgroups/algstr1.cdg</CDGroupURL>
-<CDGroupDescription>Basic Algebraic Structures
-This is the first version of the CC CD group.
-O.Caprotti 1999-20-08
+<CDGroupDescription>
+  Basic Algebraic Structures
+  This is the first version of the CC CD group.
+  O.Caprotti 1999-20-08
 </CDGroupDescription>
 
-<CDComment>relation0:
- Binary relations properties, equivalence relation, orders</CDComment>
-<CDGroupMember>
-<CDName>relation0</CDName>
-<CDURL> http://www.openmath.org/cd/relation0.ocd</CDURL>
+ <CDGroupMember>
+   <CDName>relation0</CDName>
+   <CDURL> http://www.openmath.org/cd/relation0.ocd</CDURL>
+   <CDComment>relation0: Binary relations properties, equivalence relation, orders</CDComment>
 </CDGroupMember>
 
-<CDComment>semigroup: semigroup as setoid with a
-    binary operation</CDComment>
 <CDGroupMember>
-<CDName>semigroup</CDName>
-<CDURL> http://www.openmath.org/cd/semigroup.ocd</CDURL>
+  <CDName>semigroup</CDName>
+  <CDURL> http://www.openmath.org/cd/semigroup.ocd</CDURL>
+  <CDComment>semigroup: semigroup as setoid with a binary operation</CDComment>
 </CDGroupMember>
 
-<CDComment>setoid:: setoid as a set with an equivalence relations
-    defined on its elements
-</CDComment>
 <CDGroupMember>
-<CDName>setoid</CDName>
-<CDURL> http://www.openmath.org/cd/setoid.ocd</CDURL>
+  <CDName>setoid</CDName>
+  <CDURL> http://www.openmath.org/cd/setoid.ocd</CDURL>
+  <CDComment>setoid:: setoid as a set with an equivalence relations defined on its elements</CDComment>
 </CDGroupMember>
 
 
-<CDComment>Inductive definition of natural numbers</CDComment>
 <CDGroupMember>
-<CDName>indnat</CDName>
-<CDURL> http://www.openmath.org/cd/indnat.ocd</CDURL>
+  <CDName>indnat</CDName>
+  <CDURL> http://www.openmath.org/cd/indnat.ocd</CDURL>
+  <CDComment>Inductive definition of natural numbers</CDComment>
 </CDGroupMember>
 
 </CDGroup>

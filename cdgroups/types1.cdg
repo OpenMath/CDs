@@ -5,24 +5,21 @@
 <CDGroupRevision> 0 </CDGroupRevision>
 <CDGroupURL>http://www.openmath.org/cdgroups/types1.ocd</CDGroupURL>
 <CDGroupDescription>Types1 CD Group</CDGroupDescription>
-<CDComment>
-David Carlisle 1999-05-04
-</CDComment>
 
 <CDComment>
-Small Type System
+  David Carlisle 1999-05-04
 </CDComment>
+
 <CDGroupMember>
-<CDName>sts</CDName>
-<CDURL>http://www.openmath.org/cd/sts.ocd</CDURL>
+  <CDName>sts</CDName>
+  <CDURL>http://www.openmath.org/cd/sts.ocd</CDURL>
+  <CDComment>Small Type System</CDComment>
 </CDGroupMember>
 
-<CDComment>
-MathML Numerical Types
-</CDComment>
 <CDGroupMember>
-<CDName>mathmltypes</CDName>
-<CDURL>http://www.openmath.org/cd/mathmltypes.ocd</CDURL>
+  <CDName>mathmltypes</CDName>
+  <CDURL>http://www.openmath.org/cd/mathmltypes.ocd</CDURL>
+  <CDComment>MathML Numerical Types</CDComment>
 </CDGroupMember>
 
 </CDGroup>

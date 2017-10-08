@@ -8,13 +8,13 @@ Basic Operations on functions
 </CDGroupDescription>
 
 <CDGroupMember>
-<CDName>fns1</CDName>
-<CDURL> http://www.openmath.org/cd/fns1.ocd</CDURL>
+  <CDName>fns1</CDName>
+  <CDURL> http://www.openmath.org/cd/fns1.ocd</CDURL>
 </CDGroupMember>
 
 <CDGroupMember>
-<CDName>fns2</CDName>
-<CDURL> http://www.openmath.org/cd/fns2.ocd</CDURL>
+  <CDName>fns2</CDName>
+  <CDURL> http://www.openmath.org/cd/fns2.ocd</CDURL>
 </CDGroupMember>
 
 </CDGroup>
