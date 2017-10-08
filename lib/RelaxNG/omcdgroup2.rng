@@ -19,7 +19,7 @@
   </define>
   <define name="CDGroupURL">
     <element name="CDGroupURL">
-      <text/>
+      <data type="anyURI"/>
     </element>
   </define>
   <define name="CDGroupDescription">
@@ -45,6 +45,11 @@
       <optional>
         <ref name="CDURL"/>
       </optional>
+    </element>
+  </define>
+  <define name="CDGroupInclude">
+    <element name="CDGroupInclude">
+      <data type="anyURI"/>
     </element>
   </define>
   <define name="CDName">
@@ -76,6 +81,7 @@
         <choice>
           <ref name="CDGroupMember"/>
           <ref name="CDComment"/>
+          <ref name="CDGroupInclude"/>
         </choice>
       </zeroOrMore>
     </element>

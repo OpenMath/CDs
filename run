@@ -15,30 +15,10 @@ if [ "$TRAVIS" = "true" ] && [ "$TRAVIS_PULL_REQUEST" = "false" ] && [ "$TRAVIS_
 	git config --global push.default simple
 
 	git clone https://$ghauth@github.com/OpenMath/OpenMath.github.io.git
-# this doesn't work as git clone doesn't preserve timestamps
-#	if [ "$TRAVIS_EVENT_TYPE" = "push" ]; then
-# 	case "$TRAVIS_COMMIT_MESSAGE" in
-# 	*clean* )
-# 	echo "clean build not copying files from OpenMath.github.io";;
-# 	*)
-# 	cp -p  OpenMath.github.io/cd/Official/*.html CDs/cd/Official
-# 	cp -p  OpenMath.github.io/cd/Official/*.omcd CDs/cd/Official
-# 	cp -p  OpenMath.github.io/cd/experimental/*.html CDs/cd/experimental
-# 	cp -p  OpenMath.github.io/cd/experimental/*.omcd CDs/cd/experimental
-# 	cp -p  OpenMath.github.io/sts/*.html CDs/sts
-# 	cp -p  OpenMath.github.io/cdgroups/*.html CDs/cdgroups
-# 	cp -p  OpenMath.github.io/contrib/cd/*.html CDs/contrib/cd
-# 	cp -p  OpenMath.github.io/contrib/cd/*.omcd CDs/contrib/cd
-# 	cp -p  OpenMath.github.io/contrib/sts/*.html CDs/contrib/sts
-# 	;;
-#	esac
-#	fi
         cd CDs
-#       make
-# 	make install
         ./make-all
 	cd ../OpenMath.github.io
-	NEW_MSG=`echo $TRAVIS_COMMIT_MESSAGE | sed -e 's/#/iss./g'`
+	NEW_MSG=`echo "$TRAVIS_COMMIT_MESSAGE" | sed -e 's/#/iss./g' -e 's/[*?]//g'`
         git add --no-all cd/*.{html,ocd,omcd} cdgroups/*.{cdg,html} sts/*.{sts,html}
         git commit -a -m "from travis ci: $NEW_MSG" || echo no changes
 	git push
