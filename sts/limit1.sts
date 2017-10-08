@@ -1,4 +1,5 @@
-<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="limit1">
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" 
+   cd="limit1" cdurl="http://www.openmath.org/cd/limit1.ocd" version="2.0">
 <CDSStatus> official </CDSStatus>
 
 <CDSComment>

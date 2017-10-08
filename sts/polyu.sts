@@ -1,4 +1,5 @@
-<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="polyu">
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" 
+   cd="polyu" cdurl="http://www.openmath.org/cd/polyu.ocd" version="2.0">
 <CDSStatus> official </CDSStatus>
 
 <CDSComment>

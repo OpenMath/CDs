@@ -1,4 +1,5 @@
-<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="alg1">
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" 
+   cd="alg1" cdurl="http://www.openmath.org/cd/alg1.ocd" version="2.0">
 <CDSStatus> official </CDSStatus>
 
 <CDSComment>
@@ -8,16 +9,15 @@ Revised by : N. Hur on 2000-02-02
 </CDSComment>
 
 <Signature name="zero" >
-<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
- <OMV name="AbelianMonoid" />
-</OMOBJ>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+    <OMV name="AbelianMonoid" />
+  </OMOBJ>
 </Signature>
 
-
 <Signature name="one" >
-<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
- <OMV name="Monoid" />
-</OMOBJ>
+  <OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+    <OMV name="Monoid" />
+  </OMOBJ>
 </Signature>
 
 </CDSignatures>

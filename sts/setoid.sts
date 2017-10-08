@@ -1,4 +1,5 @@
-<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="setoid">
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" 
+   cd="setoid" cdurl="http://www.openmath.org/cd/setoid.ocd" version="2.0">
 <CDSStatus> official </CDSStatus>
 <CDSComment>
  No Signatures are currently supplied for the

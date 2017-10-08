@@ -1,4 +1,5 @@
-<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="polysts">
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" 
+   cd="polysts" cdurl="http://www.openmath.org/cd/polysts.ocd" version="2.0">
 <CDSStatus> official </CDSStatus>
 <CDSComment>
   1999-11-20 by JHD 

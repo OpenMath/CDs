@@ -1,4 +1,5 @@
-<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" cd="moreerrors">
+<CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" 
+   cd="moreerrors" cdurl="http://www.openmath.org/cd/moreerrors.ocd" version="2.0">
 <CDSStatus> official </CDSStatus>
 
 <CDSComment>
