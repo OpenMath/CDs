@@ -11,16 +11,7 @@
   Author: Yasushi Tamura
 </CDComment>
 <CDStatus> experimental </CDStatus>
-<CDUses>
-  <CDName>arith1</CDName>
-  <CDName>relation1</CDName>
-  <CDName>calculus1</CDName>
-  <CDName>alg1</CDName>
-  <CDName>interval1</CDName>
-  <CDName>nums1</CDName>
-  <CDName>hypergeo0</CDName>
-  <CDName>hypergeo1</CDName>
-</CDUses>
+
 <Description>
  This CD defines orthogonal polynomials which are hypergeometric polynomials.
  These functions are described in the following books.

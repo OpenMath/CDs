@@ -11,15 +11,6 @@
 <CDComment>
   Author: Nobuki Takayama
 </CDComment>
-<CDUses>
- <CDName>arith1</CDName>
- <CDName>linalg1</CDName>
- <CDName>linalg4</CDName>
- <CDName>linalg5</CDName>
- <CDName>quant1</CDName>
- <CDName>relation1</CDName>
- <CDName>set1</CDName>
-</CDUses>
 
 <Description> 
 This CD defines some supplementary symbols necessary for hypergeon1

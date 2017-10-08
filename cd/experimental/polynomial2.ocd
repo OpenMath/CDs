@@ -7,20 +7,7 @@
 <CDVersion> 1</CDVersion>
 <CDRevision> 0 </CDRevision>
 <CDStatus> experimental </CDStatus>
-<CDUses>
-  <CDName>alg1</CDName>
-  <CDName>arith1</CDName>
-  <CDName>logic1</CDName>
-  <CDName>quant1</CDName>
-  <CDName>set1</CDName>
-  <CDName>setname1</CDName>
-  <CDName>setname2</CDName>
-  <CDName>relation1</CDName>
-  <CDName>fns1</CDName>
-  <CDName>interval1</CDName>
-  <CDName>integer1</CDName>
-  <CDName>polynomial1</CDName>
-</CDUses>
+
 <Description>
 This CD holds a collection of basic modular arithmetic for univariate polynomials over rings.
 The data structures for polynomials can be arithmetic expressions, for

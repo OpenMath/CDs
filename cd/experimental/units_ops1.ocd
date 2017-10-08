@@ -43,11 +43,6 @@
   Author: OpenMath Consortium (James Davenport)
   SourceURL: https://github.com/OpenMath/CDs
 </CDComment>
-<CDUses>
-  <CDName>arith1</CDName>
-  <CDName>relations1</CDName>
-  <CDName>units_siprefix1</CDName>
-</CDUses>
 
 <Description> 
 This CD defines various symbols for use in the manipulation of units.

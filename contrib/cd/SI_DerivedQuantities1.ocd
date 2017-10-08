@@ -49,8 +49,6 @@ may apply.
 <CDComment>
   Author: J B Collins
 </CDComment>
-  <CDUses>
-  </CDUses>
 
   <CDDefinition>
     <Name>angle</Name>

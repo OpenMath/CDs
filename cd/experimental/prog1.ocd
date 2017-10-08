@@ -8,11 +8,6 @@
 <CDDate> 2004-02-16 </CDDate>
 <CDVersion> 0 </CDVersion>
 <CDRevision> 1 </CDRevision>
-<CDUses>
-  <CDName>arith1</CDName>
-  <CDName>quant1</CDName>
-  <CDName>relation1</CDName>
-</CDUses>
 
 <Description>
 A CD for basic algorithmic concepts. We define the minimal machinery to write 

@@ -42,19 +42,7 @@
 <CDComment>
   Author: James Davenport
 </CDComment>
-<CDUses>
-  <CDName>alg1</CDName>
-  <CDName>arith1</CDName>
-  <CDName>expint</CDName>
-  <CDName>fns1</CDName>
-  <CDName>interval1</CDName>
-  <CDName>list1</CDName>
-  <CDName>nums1</CDName>
-  <CDName>transc1</CDName>
-  <CDName>relation1</CDName>
-  <CDName>quant1</CDName>
-  <CDName>logic1</CDName>
-</CDUses>
+
 <Description>
     This CD extends calculus1 (compatible with the calculus operations
     in Content MathML) with a Cauchy principal value definite integral.

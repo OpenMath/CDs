@@ -42,9 +42,8 @@
 <CDComment>
   Author: James Davenport
 </CDComment>
-<CDUses>
-</CDUses>
-   <Description>
+
+<Description>
      This CD contains descriptors of tolerances (errors) for numerical methods.
      Note that there are two kinds: the (input) request for a computation
      within a certain error bound, and an (output) estimated bound for the

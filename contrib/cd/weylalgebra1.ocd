@@ -12,14 +12,6 @@
 <CDComment>
   Author: Yasushi Tamura and Nobuki Takayama
 </CDComment>
-<CDUses>
- <!-- private cd's -->
-  <CDName>freealg1</CDName>
- <!-- official cd's  -->
-  <CDName>arith1</CDName>
-  <CDName>list1</CDName>
-  <CDName>relation1</CDName>
-</CDUses>
 
 <Description> 
 This CD defines elements of the ring of differential operators

@@ -42,20 +42,6 @@
 <CDComment>
   Author: Bill Naylor
 </CDComment>
-<CDUses>
-  <CDName>alg1</CDName>
-  <CDName>arith1</CDName>
-  <CDName>fns1</CDName>
-  <CDName>integer1</CDName>
-  <CDName>interval1</CDName>
-  <CDName>logic1</CDName>
-  <CDName>nums1</CDName>
-  <CDName>quant1</CDName>
-  <CDName>relation1</CDName>
-  <CDName>set1</CDName>
-  <CDName>setname1</CDName>
-  <CDName>transc1</CDName>
-</CDUses>
 
 <Description>
 This CD contains a symbol to represent the generalised hyperbolic

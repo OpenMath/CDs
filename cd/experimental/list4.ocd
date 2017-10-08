@@ -7,16 +7,6 @@
 <CDVersion>5</CDVersion>
 <CDRevision>1</CDRevision>
 <CDStatus> experimental </CDStatus>
-<CDUses>
-  <CDName>list1</CDName>
-  <CDName>list2</CDName>
-  <CDName>list3</CDName>
-  <CDName>logic1</CDName>
-  <CDName>quant1</CDName>
-  <CDName>relation1</CDName>
-</CDUses>
-
-
 
 <Description>
     Several convenient but not basic list functions are given in this CD.

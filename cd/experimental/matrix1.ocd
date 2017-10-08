@@ -7,12 +7,7 @@
 	<CDVersion> 0 </CDVersion>
 	<CDRevision> 4 </CDRevision>
 	<CDStatus> experimental </CDStatus>
-	<CDUses>
-		<CDName>alg1</CDName>
-		<CDName>ringname1</CDName>
-		<CDName>linalg2</CDName>
-		<CDName>linalg3</CDName>
-	</CDUses>
+
 	<Description>
 	This CD holds a collection of matrix constructors over arbitrary rings.
 	</Description>

@@ -44,11 +44,6 @@
   Author: OpenMath Consortium (James Davenport)
   SourceURL: https://github.com/OpenMath/CDs
 </CDComment>
-<CDUses>
-<CDName>norm1</CDName>
-<CDName>arith1</CDName>
-<CDName>relation1</CDName>
-</CDUses>
 
 <Description> 
 This CD defines symbols which represent basic physical dimensions.

@@ -42,20 +42,7 @@
   Author: Bill Naylor
 </CDComment>
 <CDStatus> experimental </CDStatus>
-<CDUses>
-<CDName> alg1 </CDName>
-<CDName> arith1 </CDName>
-<CDName> fns1 </CDName>
-<CDName> limit1 </CDName>
-<CDName> linalg1 </CDName>
-<CDName> logic1 </CDName>
-<CDName> nums1 </CDName>
-<CDName> quant1 </CDName>
-<CDName> relation1 </CDName>
-<CDName> setname1 </CDName>
-<CDName> setname3 </CDName>
-<CDName> set1 </CDName>
-</CDUses>
+
 <Description>
  This CD provides a representation of various asymptotic set constructors (O, \Omega, etc.) The constructors represent sets of functions : R -> R.
 </Description>

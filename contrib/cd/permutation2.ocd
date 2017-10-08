@@ -42,32 +42,18 @@
 <CDComment>
   Author: Arjeh Cohen
 </CDComment>
-	<CDUses>
-		<CDName>arith1</CDName>
-		<CDName>fns1</CDName>
-		<CDName>fns2</CDName>
-		<CDName>list1</CDName>
-		<CDName>logic1</CDName>
-		<CDName>multiset1</CDName>
-		<CDName>nums1</CDName>
-		<CDName>quant1</CDName>
-		<CDName>relation1</CDName>
-		<CDName>set1</CDName>
-	</CDUses>
-	<Description>
-		This CD defines permutations with finite support.
+<Description>
+  This CD defines permutations with finite support.
 
-In order to make available permutations of arbitrary objects,
-permutations are defined as sets of cycles.
+  In order to make available permutations of arbitrary objects, permutations are defined
+  as sets of cycles.
 
-The set on which the permutation acts is not specified. To this end,
-cycles of length 0 or 1 do not occur in permutations.
+  The set on which the permutation acts is not specified. To this end, cycles of length 0
+  or 1 do not occur in permutations.
 
-When viewed as the set of cycles which are its arguments, the symbol
-permutation has a normal form constructor.
-
-
-	</Description>
+  When viewed as the set of cycles which are its arguments, the symbol permutation has a
+  normal form constructor.
+</Description>
 
 
 	<CDDefinition>

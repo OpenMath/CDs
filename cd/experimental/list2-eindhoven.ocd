@@ -7,11 +7,6 @@
 <CDVersion>5</CDVersion>
 <CDRevision>1</CDRevision>
 <CDStatus> experimental </CDStatus>
-<CDUses>
-  <CDName>list1</CDName>
-  <CDName>quant1</CDName>
-  <CDName>relation1</CDName>
-</CDUses>
 
 <Description> 
 In this CD, two basic constructors and two deconstructor

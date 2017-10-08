@@ -7,8 +7,7 @@
 <CDVersion> 1 </CDVersion>
 <CDRevision> 1 </CDRevision>
 <CDStatus> experimental </CDStatus>
-<CDUses>
-</CDUses>
+
 <Description>
     This CD holds further definitions of symbols that represent
     relations in some way; at present this only includes a definition

@@ -7,14 +7,7 @@
 <CDVersion> 2 </CDVersion>
 <CDRevision> 0 </CDRevision>
 <CDStatus> experimental </CDStatus>
-<CDUses>
-  <CDName>alg1</CDName>
-  <CDName>arith1</CDName>
-  <CDName>linalg1</CDName>
-  <CDName>nums1</CDName>
-  <CDName>logic1</CDName>
-  <CDName>relation1</CDName>
-</CDUses>
+
 <Description>
 This CD contains symbols for the construction of some new vectors and matrices from old
 ones by means of the tensor product.

@@ -42,11 +42,6 @@
 <CDComment>
   Author: James Davenport
 </CDComment>
-<CDUses>
-  <CDName>arith1</CDName>
-  <CDName>relations1</CDName>
-  <CDName>units_ops1</CDName>
-</CDUses>
 
 <Description> 
 This CD defines symbols for the IEC binary prefixes to indicate unit

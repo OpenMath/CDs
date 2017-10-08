@@ -7,8 +7,7 @@
    <CDStatus> experimental </CDStatus>
    <CDVersion> 3 </CDVersion>
    <CDRevision> 0 </CDRevision>
-<CDUses>
-</CDUses>
+
    <Description>
      This CD contains operators to deal with polynomials and more precisely 
      Distributed Multivariate Polynomials.

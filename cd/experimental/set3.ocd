@@ -7,12 +7,7 @@
 <CDVersion> 1 </CDVersion>
 <CDRevision> 1 </CDRevision>
 <CDStatus> experimental </CDStatus>
-<CDUses>
-  <CDName>relation1</CDName>
-  <CDName>set1</CDName>
-  <CDName>nums1</CDName>
-  <CDName>setname1</CDName>
-</CDUses>
+
 <Description>
     This CD defines more set functions.
 </Description>

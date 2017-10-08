@@ -7,9 +7,6 @@
 <CDVersion> 1 </CDVersion>
 <CDRevision> 2 </CDRevision>
 <CDStatus> experimental </CDStatus>
-<CDUses>
-  <CDName>arith3</CDName>
-</CDUses>
 
 <Description>
 Extended GCD

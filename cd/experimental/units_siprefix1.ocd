@@ -43,11 +43,6 @@
   Author: OpenMath Consortium (James Davenport)
   SourceURL: https://github.com/OpenMath/CDs
 </CDComment>
-<CDUses>
-  <CDName>arith1</CDName>
-  <CDName>relations1</CDName>
-  <CDName>units_ops1</CDName>
-</CDUses>
 
 <Description> 
 This CD defines symbols for the SI prefixes to indicate multiplication

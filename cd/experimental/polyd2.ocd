@@ -7,8 +7,7 @@
    <CDStatus> experimental </CDStatus>
    <CDVersion> 3 </CDVersion>
    <CDRevision> 0 </CDRevision>
-<CDUses>
-</CDUses>
+
    <Description>
      This CD defines symbols for ordering of monomial for
      Distributed Multivariate Polynomials, which were defined in polyd1.

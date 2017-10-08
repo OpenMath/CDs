@@ -13,18 +13,7 @@
   Author: Yasushi Tamura
 </CDComment>
 <CDStatus> experimental </CDStatus>
-<CDUses>
-  <CDName>alg1</CDName>
-  <CDName>arith1</CDName>
-  <CDName>calculus1</CDName>
-  <CDName>fns1</CDName>
-  <CDName>hypergeo0</CDName>
-  <CDName>interval1</CDName>
-  <CDName>linalg1</CDName>
-  <CDName>linalg4</CDName>
-  <CDName>nums1</CDName>
-  <CDName>relation1</CDName>
-</CDUses>
+
 <Description>
 	This CD defines the Gauss hypergeometric function, confluent
     hypergeometric functions, and generalized hypergeometric functions

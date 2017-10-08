@@ -43,12 +43,6 @@
   Author: OpenMath Consortium (James Davenport)
   SourceURL: https://github.com/OpenMath/CDs
 </CDComment>
-<CDUses>
-  <CDName>interval1</CDName>
-  <CDName>arith1</CDName>
-  <CDName>relations1</CDName>
-  <CDName>set1</CDName>
-</CDUses>
 
 <Description> 
 This CD defines symbols to represent the basic physical units of time in the SI

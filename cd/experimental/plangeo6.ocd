@@ -7,9 +7,6 @@
 <CDDate> 2004-06-01 </CDDate>
 <CDVersion> 0 </CDVersion>
 <CDRevision> 4 </CDRevision>
-<CDUses>
-  <CDName>plangeo1</CDName>
-</CDUses>
 
 <Description> 
 This CD defines symbols for planar Euclidean geometry related to conics.

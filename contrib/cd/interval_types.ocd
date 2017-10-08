@@ -42,10 +42,7 @@
 <CDComment>
   Author: Bill Naylor
 </CDComment>
-<CDUses>
-  <CDName> aggregate_cats </CDName>
-  <CDName> meta_cats </CDName>
-</CDUses>
+
 <Description>
 A CD of basic interval type constructors. This CD holds
 constructors of individual instances of the different types of intervals.

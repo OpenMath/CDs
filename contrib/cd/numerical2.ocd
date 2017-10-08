@@ -42,9 +42,8 @@
 <CDComment>
   Author: Mike Dewar
 </CDComment>
-<CDUses>
-</CDUses>
-   <Description>
+
+<Description>
      This CD contains descriptors of symbols used by search-based
      numerical algorithms.
    </Description>

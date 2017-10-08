@@ -42,21 +42,9 @@
 <CDComment>
   Author: James Davenport
 </CDComment>
-<CDUses>
-  <CDName>alg1</CDName>
-  <CDName>arith1</CDName>
-  <CDName>fns1</CDName>
-  <CDName>fns2</CDName>
-  <CDName>interval1</CDName>
-  <CDName>linalg1</CDName>
-  <CDName>list1</CDName>
-  <CDName>minmax1</CDName>
-  <CDName>relation1</CDName>
-  <CDName>set1</CDName>
-</CDUses>
-   <Description>
-      This CD contains definitions of various norms.
-   </Description>
+<Description>
+  This CD contains definitions of various norms.
+</Description>
 
 <CDDefinition>
    <Name> L_norm </Name>

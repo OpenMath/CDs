@@ -42,10 +42,6 @@
 <CDComment>
   Author: Arjeh Cohen
 </CDComment>
-<CDUses>
-  <CDName>logic1.ocd</CDName>
-  <CDName>relation1.ocd</CDName>
-</CDUses>
 
 <Description> 
 This CD defines symbols for planar Euclidean geometry.

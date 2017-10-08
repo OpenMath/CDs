@@ -43,12 +43,7 @@
 <CDComment>
   Author: Bill Naylor
 </CDComment>
-<CDUses>
-  <CDName> algebraic_cats </CDName>
-  <CDName> logic1 </CDName>
-  <CDName> meta_cats </CDName>
-  <CDName> set1 </CDName>
-</CDUses>
+
 <Description>
 A CD of generic algebraic categories. This CD holds information
 relating to the heirarchical sturcture of the algebraic category

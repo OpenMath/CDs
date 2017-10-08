@@ -7,10 +7,7 @@
 	<CDVersion> 0 </CDVersion>
 	<CDRevision> 4 </CDRevision>
 	<CDStatus> experimental </CDStatus>
-	<CDUses>
-		<CDName>alg1</CDName>
-		<CDName>polyd1</CDName>
-	</CDUses>
+
 	<Description>
 	This CD holds a collection of for some operations of polynomials over rings.
 	The data structures for polynomials can be arithmetic expressions, for

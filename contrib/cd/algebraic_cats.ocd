@@ -46,14 +46,7 @@
 <CDComment>
   Author: Bill Naylor
 </CDComment>
-<CDUses>
-  <CDName> generic_alg_cats </CDName>
-  <CDName> logic1 </CDName>
-  <CDName> meta_cats </CDName>
-  <CDName> quant1 </CDName>
-  <CDName> relation1 </CDName>
-  <CDName> set1 </CDName>
-</CDUses>
+
 <Description>
 A CD of basic algebraic category constructors. This CD holds
 constructors of individual instances of the categories, with

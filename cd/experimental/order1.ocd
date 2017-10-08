@@ -7,20 +7,7 @@
 	<CDStatus> experimental </CDStatus>
 	<CDURL>http://www.win.tue.nl/SCIEnce/cds/order1.ocd</CDURL>
 	<CDReviewDate>2017-09-30</CDReviewDate>
-	<CDUses>
-		<CDName>alg1</CDName>
-		<CDName>arith1</CDName>
-		<CDName>fieldname1</CDName>
-		<CDName>logic1</CDName>
-		<CDName>nums1</CDName>
-		<CDName>polyd1</CDName>
-		<CDName>quant1</CDName>
-		<CDName>relation1</CDName>
-		<CDName>ring1</CDName>
-		<CDName>ringname1</CDName>
-		<CDName>set1</CDName>
-		<CDName>setname1</CDName>
-	</CDUses>
+
 	<Description>
 	This CD defines the basic functions and constructors for orders of number fields. Written by S. Lesseni (lesseni@math.tu-berlin.de).
 	</Description>

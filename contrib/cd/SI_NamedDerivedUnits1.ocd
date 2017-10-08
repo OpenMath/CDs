@@ -48,10 +48,8 @@ may apply.
 <CDComment>
   Author: J B Collins
 </CDComment>
-  <CDUses>
-  </CDUses>
 
-  <Description>
+<Description>
 2010-08-25    This CD defines symbols to represent the names of named derived
     units the SI (Syst\'eme International) system of units.  (DRAFT
     INTERNATIONAL STANDARD ISO/DIS 80000-1 - "Quantities and units",

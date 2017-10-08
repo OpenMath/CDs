@@ -7,18 +7,7 @@
 <CDVersion> 3 </CDVersion>
 <CDRevision> 0 </CDRevision>
 <CDStatus> experimental </CDStatus>
-<CDUses>
-  <CDName>alg1</CDName>
-  <CDName>arith1</CDName>
-  <CDName>fns1</CDName>
-  <CDName>fns2</CDName>
-  <CDName>logic1</CDName>
-  <CDName>nums1</CDName>
-  <CDName>quant1</CDName>
-  <CDName>relation1</CDName>
-  <CDName>set1</CDName>
-  <CDName>setname1</CDName>
-</CDUses>
+
 <Description> A CD of basic functions for group theory   </Description>
 
 <CDComment>

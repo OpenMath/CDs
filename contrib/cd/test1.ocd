@@ -41,15 +41,7 @@
   Author: David Carlisle
 </CDComment>
 <CDStatus> experimental </CDStatus>
-<CDUses>
-  <CDName>alg1</CDName>
-  <CDName>arith1</CDName>
-  <CDName>linalg1</CDName>
-  <CDName>linalg2</CDName>
-  <CDName>logic1</CDName>
-  <CDName>relation18</CDName>
-  <CDName>transc1</CDName>
-</CDUses>
+
 <Description>
     Properties of &lt; &lt; &lt; functions, each symbol denotes a predicate
     that may be applied to an OM object of function type and returns
