@@ -33,11 +33,11 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName> permut1 </CDName>
+<CDName>permut1</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/permut1.ocd</CDURL>
 <CDReviewDate>2017-12-31</CDReviewDate>
-<CDStatus> experimental </CDStatus>
+<CDStatus>experimental</CDStatus>
 <CDDate>2004-03-30</CDDate>
 <CDVersion>3</CDVersion>
 <CDRevision>1</CDRevision>
@@ -55,7 +55,7 @@ of Permutation as reported by JHD 2000-02-05.
 </CDComment>
 
 <CDDefinition>
-<Name> permutation </Name>
+<Name>permutation</Name>
 <Role>application</Role>
 <Description>
 The n-ary constructor permutation. The arguments are the integers 

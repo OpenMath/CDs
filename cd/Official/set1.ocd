@@ -33,7 +33,7 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName> set1 </CDName>
+<CDName>set1</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/set1.ocd</CDURL>
 <CDReviewDate>2006-03-30</CDReviewDate>
@@ -44,7 +44,7 @@
   Author: OpenMath Consortium
   SourceURL: https://github.com/OpenMath/CDs
 </CDComment>
-<CDStatus> official </CDStatus>
+<CDStatus>official</CDStatus>
 <Description>
     This CD defines the set functions and constructors for basic
     set theory. It is intended to be `compatible' with the
@@ -52,7 +52,7 @@
 </Description>
 
 <CDDefinition>
-<Name> cartesian_product </Name>
+<Name>cartesian_product</Name>
 <Role>application</Role>
 <Description>
 This symbol represents an n-ary construction function for constructing
@@ -163,7 +163,7 @@ x ranges over the integral interval [0,10].
 </CDDefinition>
 
 <CDDefinition>
-<Name> size </Name>
+<Name>size</Name>
 <Role>application</Role>
 <Description> 
 This symbol is used to denote the number of elements in a set. It is
@@ -245,7 +245,7 @@ the suchthat constructor.
 </CDDefinition>
 
 <CDDefinition>
-<Name> set </Name>
+<Name>set</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents the set construct. It is an n-ary function. The
@@ -269,7 +269,7 @@ The set {3, 6, 9}
 
 
 <CDDefinition>
-<Name> intersect </Name>
+<Name>intersect</Name>
 <Role>application</Role>
 <Description> 
 This symbol is used to denote the n-ary intersection of sets. It takes
@@ -307,7 +307,7 @@ elements that occur in all of them.
 </CDDefinition>
 
 <CDDefinition>
-<Name> union </Name>
+<Name>union</Name>
 <Role>application</Role>
 <Description> 
 This symbol is used to denote the n-ary union of sets. It takes
@@ -389,7 +389,7 @@ union(A,intersect(B,C)) = intersect(union(A,B),union(A,C))
 </CDDefinition>
 
 <CDDefinition>
-<Name> setdiff </Name>
+<Name>setdiff</Name>
 <Role>application</Role>
 <Description> 
 This symbol is used to denote the set difference of two sets. It takes
@@ -413,7 +413,7 @@ elements that occur in the first set, but not in the second.
 </CDDefinition>
 
 <CDDefinition>
-<Name> subset </Name>
+<Name>subset</Name>
 <Role>application</Role>
 <Description>
 This symbol has two (set) arguments. It is used to denote that the
@@ -448,7 +448,7 @@ first set is a subset of the second.
 </CDDefinition>
 
 <CDDefinition>
-<Name> in </Name>
+<Name>in</Name>
 <Role>application</Role>
 <Description> 
 This symbol has two arguments, an element and a set. It is used to
@@ -487,7 +487,7 @@ denote that the element is in the given set.
 </CDDefinition>
 
 <CDDefinition>
-<Name> notin </Name>
+<Name>notin</Name>
 <Role>application</Role>
 <Description> 
 This symbol has two arguments, an element and a set. It is used to
@@ -536,7 +536,7 @@ denote that the element is not in the given set.
 </CDDefinition>
 
 <CDDefinition>
-<Name> prsubset </Name>
+<Name>prsubset</Name>
 <Role>application</Role>
 <Description> 
 This symbol has two (set) arguments. It is used to denote that the
@@ -595,7 +595,7 @@ A is a proper subset of B implies that A is a subset of B and A not= B
 </CDDefinition>
 
 <CDDefinition>
-<Name> notsubset </Name>
+<Name>notsubset</Name>
 <Role>application</Role>
 <Description> 
 This symbol has two (set) arguments. It is used to denote that the
@@ -661,7 +661,7 @@ there exists an x in B s.t. x is not a member of B
 </CDDefinition>
 
 <CDDefinition>
-<Name> notprsubset </Name>
+<Name>notprsubset</Name>
 <Role>application</Role>
 <Description> 
 This symbol has two (set) arguments. It is used to denote that the

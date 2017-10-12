@@ -36,8 +36,8 @@
 <CDURL>http://nash.sip.ucm.es/LAD-3D/3DgeoCDs/ThreeDgeo3.ocd</CDURL>
 <CDReviewDate>2017-12-31</CDReviewDate>
 <CDStatus>experimental</CDStatus>
-<CDDate> 2008-01-21 </CDDate>
-<CDVersion> 0 </CDVersion>
+<CDDate>2008-01-21</CDDate>
+<CDVersion>0</CDVersion>
 <CDRevision>3</CDRevision>
 <CDComment>
   Author: Jesús Escribano
@@ -48,7 +48,7 @@ This CD defines symbols for 3-dimensional Euclidean geometry
 </Description> 
 
 <CDDefinition>
-<Name> set_affine_coordinates</Name>
+<Name>set_affine_coordinates</Name>
 <Description> 
 Defines the affine coordinates of an a point in 3-dimensional Euclidean space. 
 Takes the point as first argument and the vector with the coordinates as second argument.
@@ -102,7 +102,7 @@ distances between two affine points, one on O and one on O'.
 </CDDefinition>
 
 <CDDefinition>
-<Name> configuration </Name>
+<Name>configuration</Name>
 <Description> 
 The symbol represents a configuration in Euclidean 3-dimensional geometry consisting of a sequence of geometric objects like points, lines,  etc, but also of other configurations.
 </Description>
@@ -175,7 +175,7 @@ The following is the description of the configuration consisting on two differen
 </CDDefinition>
 
 <CDDefinition>
-<Name> assertion </Name>
+<Name>assertion</Name>
 <Description> 
 The symbol is a constructor with two arguments.
 Its first argument is a 3-dimensional Euclidean geometry configuration, its second argument a statement about the

@@ -36,11 +36,11 @@
 
 <CDName>scscp2</CDName>
   <CDURL>http://www.win.tue.nl/SCIEnce/cds/scscp2.ocd</CDURL>
-  <CDReviewDate> 2017-12-31  </CDReviewDate>
+  <CDReviewDate>2017-12-31</CDReviewDate>
   <CDStatus>experimental</CDStatus>
-  <CDDate> 2009-06-25 </CDDate>
-  <CDVersion> 1 </CDVersion>
-  <CDRevision> 8 </CDRevision>
+  <CDDate>2009-06-25</CDDate>
+  <CDVersion>1</CDVersion>
+  <CDRevision>8</CDRevision>
   
   <Description>
     This CD defines symbols for the description of the management of mathematical queries.

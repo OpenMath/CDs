@@ -1,12 +1,12 @@
 <CD xmlns="http://www.openmath.org/OpenMathCD">
-  <CDName> graph1 </CDName>
+  <CDName>graph1</CDName>
   <CDBase>http://www.openmath.org/cd</CDBase>
   <CDURL>http://www.dse.nl/~postma/graph1.ocd</CDURL>
-  <CDReviewDate> 2006-06-01 </CDReviewDate>
-  <CDStatus> experimental </CDStatus>
-  <CDDate> 2004-06-01 </CDDate>
-  <CDVersion> 0 </CDVersion>
-  <CDRevision> 13 </CDRevision>
+  <CDReviewDate>2006-06-01</CDReviewDate>
+  <CDStatus>experimental</CDStatus>
+  <CDDate>2004-06-01</CDDate>
+  <CDVersion>0</CDVersion>
+  <CDRevision>13</CDRevision>
   
   
   <Description>
@@ -16,7 +16,7 @@ This version is edited by amc; bugfix JHD after Robbins.
   </Description>
   
   <CDDefinition>
-    <Name> graph </Name>
+    <Name>graph</Name>
     <Description>
       This symbol represents an undirected graph. It takes two
     arguments: the vertex set of the graph and the edge set. 
@@ -54,7 +54,7 @@ This version is edited by amc; bugfix JHD after Robbins.
   </CDDefinition>
 
   <CDDefinition>
-    <Name> vertexset </Name>
+    <Name>vertexset</Name>
     <Description>
       This symbol represents the vertex set of a (directed or undirected) graph. It takes one argument, the graph.
     </Description>
@@ -81,7 +81,7 @@ This version is edited by amc; bugfix JHD after Robbins.
   </CDDefinition>
 
   <CDDefinition>
-    <Name> edgeset </Name>
+    <Name>edgeset</Name>
     <Description>
       This symbol represents the set of edges of an undirected graph. It takes one argument, the undirected graph.
     </Description>
@@ -152,7 +152,7 @@ This version is edited by amc; bugfix JHD after Robbins.
   </CDDefinition>
 
   <CDDefinition>
-    <Name> digraph </Name>
+    <Name>digraph</Name>
     <Description>
       This symbol refers to a digraph. It has two arguments. The first is the set of vertices, the second is the set of arrows. Arrows are represented by lists of length two, where a list represents the arrow from the first element to the second.
     </Description>
@@ -188,7 +188,7 @@ This version is edited by amc; bugfix JHD after Robbins.
   </CDDefinition>
 
   <CDDefinition>
-    <Name> arrowset </Name>
+    <Name>arrowset</Name>
     <Description>
       This symbol represents the set of arrows of a directed graph. It takes one argument, the directed graph.
     </Description>
@@ -230,7 +230,7 @@ This version is edited by amc; bugfix JHD after Robbins.
   </CDDefinition>
 
   <CDDefinition>
-    <Name> source </Name>
+    <Name>source</Name>
     <Description>
       Given an arrow, this symbol refers to the vertex where the arrow starts. It takes one argument, the arrow.
     </Description>
@@ -255,7 +255,7 @@ This version is edited by amc; bugfix JHD after Robbins.
   </CDDefinition>
 
   <CDDefinition>
-    <Name> target </Name>
+    <Name>target</Name>
     <Description>
       Given an arrow, this symbol refers to the vertex the arrow points to. It takes one argument, the arrow.
     </Description>

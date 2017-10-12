@@ -33,11 +33,11 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName> moreerrors </CDName>
+<CDName>moreerrors</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/moreerrors.ocd</CDURL>
 <CDReviewDate>2017-12-31</CDReviewDate>
-<CDStatus> experimental </CDStatus>
+<CDStatus>experimental</CDStatus>
 <CDDate>2004-03-30</CDDate>
 <CDVersion>2</CDVersion>
 <CDRevision>1</CDRevision>
@@ -47,7 +47,7 @@
 </CDComment>
 
 <CDDefinition>
-<Name> encodingError </Name>
+<Name>encodingError</Name>
 <Role>error</Role>
 <Description>
 This symbol represents the error which is returned when an application
@@ -71,7 +71,7 @@ as first argument
 </CDDefinition>
 
 <CDDefinition>
-<Name> algorithm </Name>
+<Name>algorithm</Name>
 <Role>error</Role>
 <Description>
 This symbol represents the error which is returned when an application
@@ -97,7 +97,7 @@ multiplication by $\sqrt{-1}$ has not been implemented
 </CDDefinition>
 
 <CDDefinition>
-<Name> limitation </Name>
+<Name>limitation</Name>
 <Role>error</Role>
 <Description>
 This symbol represents the error which is returned when an application
@@ -126,7 +126,7 @@ Integers $&gt; 2^{32}-1$ are meaningless to this application
 </CDDefinition>
 
 <CDDefinition>
-<Name> unexpected </Name>
+<Name>unexpected</Name>
 <Role>error</Role>
 <Description>
 This symbol represents the error which is returned when an application
@@ -154,7 +154,7 @@ A kill was executed on the process whilst it was evaluating the expression
 </CDDefinition>
 
 <CDDefinition>
-<Name> asynchronousError </Name>
+<Name>asynchronousError</Name>
 <Role>error</Role>
 <Description>
 This symbol represents the error which is returned when an application

@@ -1,12 +1,12 @@
 <CD xmlns="http://www.openmath.org/OpenMathCD">
-<CDName> group5 </CDName>
+<CDName>group5</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/group5.ocd</CDURL>
-<CDReviewDate> 2006-06-01 </CDReviewDate>
-<CDDate> 2004-07-07 </CDDate>
-<CDVersion> 1 </CDVersion>
-<CDRevision> 1 </CDRevision>
-<CDStatus> experimental </CDStatus>
+<CDReviewDate>2006-06-01</CDReviewDate>
+<CDDate>2004-07-07</CDDate>
+<CDVersion>1</CDVersion>
+<CDRevision>1</CDRevision>
+<CDStatus>experimental</CDStatus>
 
 <Description> A CD of 
 functions for relating group elements to their images in quotients.   </Description>
@@ -16,7 +16,7 @@ Written by Arjeh M. Cohen 2004-07-07
 </CDComment>
 
 <CDDefinition>
-<Name> right_quotient_map</Name>
+<Name>right_quotient_map</Name>
 <Description>
 This symbol is a binary function whose first argument is a group G and whose
 second argument is an subgroup H of G. When applied to G and H, its value is the
@@ -48,7 +48,7 @@ The image of an element x is the left coset of x with respect to H.
 
 
 <CDDefinition>
-<Name> left_quotient_map</Name>
+<Name>left_quotient_map</Name>
 <Description>
 This symbol is a binary function whose first argument is a group G and whose
 second argument is an subgroup H of G. When applied to G and H, its value is the

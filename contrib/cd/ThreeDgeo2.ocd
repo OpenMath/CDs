@@ -36,8 +36,8 @@
 <CDURL>http://nash.sip.ucm.es/LAD-3D/3DgeoCDs/ThreeDgeo2.ocd</CDURL>
 <CDReviewDate>2017-12-31</CDReviewDate>
 <CDStatus>experimental</CDStatus>
-<CDDate> 2008-01-21 </CDDate>
-<CDVersion> 0 </CDVersion>
+<CDDate>2008-01-21</CDDate>
+<CDVersion>0</CDVersion>
 <CDRevision>3</CDRevision>
 <CDComment>
   Author: Jesús Escribano
@@ -48,7 +48,7 @@ This CD defines symbols for 3-dimensional Euclidean geometry
 </Description> 
 
 <CDDefinition>
-<Name> incident </Name>
+<Name>incident</Name>
 <Description> 
 The symbol represents the logical incidence function which is a
 binary function taking arguments representing geometric objects like points and lines and returning a boolean value.

@@ -1,12 +1,12 @@
 <CD xmlns="http://www.openmath.org/OpenMathCD">
-<CDName> plangeo3 </CDName>
+<CDName>plangeo3</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/plangeo3.ocd</CDURL>
-<CDReviewDate> 2006-06-01 </CDReviewDate>
-<CDStatus> experimental </CDStatus>
-<CDDate> 2004-06-01 </CDDate>
-<CDVersion> 0 </CDVersion>
-<CDRevision> 3 </CDRevision>
+<CDReviewDate>2006-06-01</CDReviewDate>
+<CDStatus>experimental</CDStatus>
+<CDDate>2004-06-01</CDDate>
+<CDVersion>0</CDVersion>
+<CDRevision>3</CDRevision>
 
 
 <Description> 
@@ -427,7 +427,7 @@ perpendicular to L.
 </CDDefinition>
 
 
-<CDDefinition> <Name>polarline</Name> <Description> Given a point p
+<CDDefinition><Name>polarline</Name> <Description> Given a point p
 and a circle C this defines the polar line of p with respect to C.
 </Description>
 

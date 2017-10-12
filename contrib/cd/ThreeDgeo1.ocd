@@ -37,7 +37,7 @@
 <CDReviewDate>2017-12-31</CDReviewDate>
 <CDStatus>experimental</CDStatus>
 <CDDate>2008-01-21</CDDate>
-<CDVersion> 0 </CDVersion>
+<CDVersion>0</CDVersion>
 <CDRevision>3</CDRevision>
 <CDComment>
   Author: Jesús Escribano
@@ -48,7 +48,7 @@ This CD defines symbols for 3-dimensional Euclidean geometry
 </Description> 
 
 <CDDefinition>
-<Name> point </Name>
+<Name>point</Name>
 <Description>
 The symbol is used to indicate a point of 3-dimensional Euclidean geometry by
 a variable. The point may (but need not) be subject to constraints.
@@ -81,7 +81,7 @@ constraints as further arguments.
 </CDDefinition>
 
 <CDDefinition>
-<Name> line  </Name>
+<Name>line</Name>
 <Description> 
 The symbol is used to indicate a line of 3-dimensional Euclidean geometry
 by a variable. The line may (but need not) be subject to constraints.
@@ -113,7 +113,7 @@ is defined  by:
 </CDDefinition>
 
 <CDDefinition>
-<Name> segment </Name>
+<Name>segment</Name>
 <Description> 
 The symbol is used to indicate a segment of a line in 3-dimensional Euclidean geometry by
 a variable. The segment is contained in the affine part of the line. 
@@ -136,7 +136,7 @@ The symbol takes the variable as the first argument and the endpoints as second 
 </CDDefinition>
 
 <CDDefinition>
-<Name> endpoints </Name>
+<Name>endpoints</Name>
 <Description>	
 The symbol is used to indicate the set of the two endpoints of a segment in 3-dimensional Euclidean geometry by
 a variable. The symbol takes the variable as the first argument and the segment as second argument.
@@ -181,7 +181,7 @@ The midpoint M of the segment s is given by
 </CDDefinition>
 
 <CDDefinition>
-<Name> plane </Name>
+<Name>plane</Name>
 <Description> 
 The symbol is used to indicate a plane in 3-dimensional Euclidean geometry
 by a variable. The plane may (but need not) be subject to constraints.

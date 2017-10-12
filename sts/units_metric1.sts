@@ -1,6 +1,6 @@
 <CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" 
    cd="units_metric1" cdurl="http://www.openmath.org/cd/units_metric1.ocd" version="2.0">
-<CDSStatus> experimental </CDSStatus>
+<CDSStatus>experimental</CDSStatus>
 
 
 <Signature name="metre" >

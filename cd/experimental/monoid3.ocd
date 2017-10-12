@@ -1,12 +1,12 @@
 <CD xmlns="http://www.openmath.org/OpenMathCD">
-<CDName> monoid3 </CDName>
+<CDName>monoid3</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/monoid3.ocd</CDURL>
-<CDReviewDate> 2006-06-01 </CDReviewDate>
-<CDDate> 2004-06-01 </CDDate>
-<CDVersion> 3 </CDVersion>
-<CDRevision> 2 </CDRevision>
-<CDStatus> experimental </CDStatus>
+<CDReviewDate>2006-06-01</CDReviewDate>
+<CDDate>2004-06-01</CDDate>
+<CDVersion>3</CDVersion>
+<CDRevision>2</CDRevision>
+<CDStatus>experimental</CDStatus>
 
 <Description> Monoid constructions   </Description>
 
@@ -17,7 +17,7 @@ Edited AMC 2004-06-27
 </CDComment>
 
 <CDDefinition>
-<Name> cyclic_monoid </Name>
+<Name>cyclic_monoid</Name>
 <Description>
 This symbol is a function of two natural numbers, the first of which should be
 positive. When evaluated at k and l, it
@@ -169,7 +169,7 @@ It refers to the direct product of n copies of M.
 
 
 <CDDefinition>
-<Name> free_monoid </Name>
+<Name>free_monoid</Name>
 <Description>
 This symbol represents a unary function. The argument is a list or a
 set.  When evaluated on such an argument, the function represents the
@@ -192,7 +192,7 @@ The free monoid on the letters a, b:
 
 
 <CDDefinition>
-<Name> strings </Name>
+<Name>strings</Name>
 <Description>
 This symbol represents a unary function. The argument is a list or a
 set.  When evaluated on such an argument, the function represents the
@@ -204,7 +204,7 @@ set of all strings whose characters are entries of the list or set.
 
 
 <CDDefinition>
-<Name> emptyword </Name>
+<Name>emptyword</Name>
 <Description>
 This symbol represents a constant. 
 It  represents the empty string.
@@ -213,7 +213,7 @@ It  represents the empty string.
 </CDDefinition>
 
 <CDDefinition>
-<Name> concatenation </Name>
+<Name>concatenation</Name>
 <Description>
 This symbol represents a binary concatenation operation on strings.
 </Description>

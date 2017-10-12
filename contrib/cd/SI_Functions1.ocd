@@ -39,13 +39,13 @@ may apply.
 
 </CDComment>
 
-  <CDName> SI_functions1 </CDName>
+  <CDName>SI_functions1</CDName>
   <CDBase>http://www.openmath.org/cd</CDBase>
   <CDURL>http://www.openmath.org/cd/SI_functions1.ocd</CDURL>
   <CDReviewDate>2017-12-31</CDReviewDate>
-  <CDStatus> experimental </CDStatus>
+  <CDStatus>experimental</CDStatus>
   <CDDate>2009-01-10</CDDate>
-  <CDVersion> 1 </CDVersion>
+  <CDVersion>1</CDVersion>
   <CDRevision>1</CDRevision>
 <CDComment>
   Author: J B Collins
@@ -57,7 +57,7 @@ may apply.
   </Description>
 
   <CDDefinition>
-    <Name> dim </Name>
+    <Name>dim</Name>
     <Role>application</Role>
     <Description> 
       The symbol to represent the function that returns the physical
@@ -83,7 +83,7 @@ may apply.
   </CDDefinition>
 
   <CDDefinition>
-    <Name> unit </Name>
+    <Name>unit</Name>
     <Role>application</Role>
     <Description> 
       The symbol to represent the function that returns the units

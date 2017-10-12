@@ -1,5 +1,5 @@
 <CD xmlns="http://www.openmath.org/OpenMathCD">
-<CDName> list2 </CDName>
+<CDName>list2</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/list2.ocd</CDURL>
 <CDReviewDate>2017-12-31</CDReviewDate>
@@ -10,7 +10,7 @@
   Author: OpenMath Consortium
   SourceURL: https://github.com/OpenMath/CDs
 </CDComment>
-<CDStatus> experimental </CDStatus>
+<CDStatus>experimental</CDStatus>
 
 <Description>
     Several basic list functions are given in this CD.
@@ -18,7 +18,7 @@
 
 
 <CDDefinition>
-<Name> list_selector </Name>
+<Name>list_selector</Name>
 <Role>application</Role>
 <Description> 
  This symbol takes a positive integer n and a list, and represents the n-th 
@@ -78,7 +78,7 @@
 </CDDefinition>
 
 <CDDefinition>
-<Name> first </Name>
+<Name>first</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents a function which returns the first elements of
@@ -119,7 +119,7 @@ Specification of the first element of the list [1,2,3]
 </CDDefinition>
 
 <CDDefinition>
-<Name> rest </Name>
+<Name>rest</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents a function which returns a list made up of all
@@ -161,7 +161,7 @@ Specification of the list [1,2,3], apart from the first element
 </CDDefinition>
 
 <CDDefinition>
-<Name> cons </Name>
+<Name>cons</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents the cons list function. It takes 2 arguments:
@@ -203,7 +203,7 @@ the second argument.
 </CDDefinition>
 
 <CDDefinition>
-<Name> nil </Name>
+<Name>nil</Name>
 <Role>constant</Role>
 <Description>
 The empty list 
@@ -212,7 +212,7 @@ The empty list
 </CDDefinition>
 
 <CDDefinition>
-<Name> append </Name>
+<Name>append</Name>
 <Role>application</Role>
 <Description>
 The operation of joining one list to another 
@@ -275,7 +275,7 @@ The operation of joining one list to another
 </CDDefinition>
 
 <CDDefinition>
-<Name> reverse </Name>
+<Name>reverse</Name>
 <Role>application</Role>
 <Description>
 The reverse of a list 
@@ -330,7 +330,7 @@ The reverse of a list
 </CDDefinition>
 
 <CDDefinition>
-<Name> size </Name>
+<Name>size</Name>
 <Role>application</Role>
 <Description> 
 This symbol is used to denote the number of elements in a list. It is
@@ -359,7 +359,7 @@ The size of the list (3,6,9) = 3
 </CDDefinition>
 
 <CDDefinition>
-<Name> in </Name>
+<Name>in</Name>
 <Role>application</Role>
 <Description> 
 This symbol has two arguments, an element and a list. It is used to

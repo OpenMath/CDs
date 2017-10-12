@@ -33,14 +33,14 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName> linalg4mat </CDName>
+<CDName>linalg4mat</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/linalg4mat.ocd</CDURL>
 <CDReviewDate>2006-03-30</CDReviewDate>
 <CDDate>2004-11-30</CDDate>
 <CDVersion>4</CDVersion>
 <CDRevision>2</CDRevision>
-<CDStatus> experimental </CDStatus>
+<CDStatus>experimental</CDStatus>
 <Description>
 This CD contains symbols which represent a number of special types of
 matrix. 
@@ -53,7 +53,7 @@ edited.
 </Description>
 
 <CDDefinition>
-<Name> identity </Name>
+<Name>identity</Name>
 <Role>application</Role>
 <Description>
 This symbol denotes a unary function which is used to construct the
@@ -119,7 +119,7 @@ A representation of the 2x2 identity matrix [[1,0],[0,1]]
 </CDDefinition>
 
 <CDDefinition>
-<Name> zero </Name>
+<Name>zero</Name>
 <Role>application</Role>
 <Description>
 This symbol denotes a function with two arguments, m and n, which should be natural
@@ -251,7 +251,7 @@ A representation of the 2x2 zero matrix [[0,0],[0,0]]
 </CDDefinition>
 
 <CDDefinition>
-<Name> diagonal_matrix </Name>
+<Name>diagonal_matrix</Name>
 <Role>application</Role>
 <Description>
 This symbol denotes an n_ary function which is used to construct an
@@ -275,7 +275,7 @@ The diagonal matrix with diagonal elements [1,2,3]
 </CDDefinition>
 
 <CDDefinition>
-<Name> scalar </Name>
+<Name>scalar</Name>
 <Role>application</Role>
 <Description>
 This symbol represents a square matrix which is a scalar constant times the
@@ -318,7 +318,7 @@ the third specifies the scalar multiplier.
 </CDDefinition>
 
 <CDDefinition>
-<Name> constant </Name>
+<Name>constant</Name>
 <Role>application</Role>
 <Description>
 This symbol represents a matrix which has all entries of the same
@@ -349,7 +349,7 @@ the third is the constant which determines every element.
 </CDDefinition>
 
 <CDDefinition>
-<Name> banded </Name>
+<Name>banded</Name>
 <Role>application</Role>
 <Description>
 This symbol represents a square (p,q) banded matrix. It takes one
@@ -400,7 +400,7 @@ A specification of the (2,1) banded matrix:
 
 
 <CDDefinition>
-<Name> sparse </Name>
+<Name>sparse</Name>
 <Role>application</Role>
 
 <Description>

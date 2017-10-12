@@ -33,7 +33,7 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName> setname2 </CDName>
+<CDName>setname2</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/setname2.ocd</CDURL>
 <CDReviewDate>2017-12-31</CDReviewDate>
@@ -44,7 +44,7 @@
   Author: OpenMath Consortium
   SourceURL: https://github.com/OpenMath/CDs
 </CDComment>
-<CDStatus> experimental </CDStatus>
+<CDStatus>experimental</CDStatus>
 <Description>
     This CD defines some common sets of mathematics.
 </Description>
@@ -55,7 +55,7 @@ Revised to add QuotientField and A on 1999-11-19.
 </CDComment>
 
 <CDDefinition>
-<Name> Boolean </Name>
+<Name>Boolean</Name>
 <Role>constant</Role>
 <Description> 
 This symbol represents the set of Booleans. That is the truth values,
@@ -114,7 +114,7 @@ nb not= b implies nb = not b)
 </CDDefinition>
 
 <CDDefinition>
-<Name> A </Name>
+<Name>A</Name>
 <Role>constant</Role>
 <Description> 
 This symbol represents the set of algebraic numbers.
@@ -146,7 +146,7 @@ This symbol represents the set of algebraic numbers.
 </CDDefinition>
 
 <CDDefinition>
-<Name> Zm </Name>
+<Name>Zm</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents the set of integers modulo m, where m is not necessarily
@@ -272,7 +272,7 @@ The integers mod m:
 </CDDefinition>
 
 <CDDefinition>
-<Name> GFp </Name>
+<Name>GFp</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents the finite field of integers modulo p, where p is a 
@@ -313,7 +313,7 @@ prime.
 </CDDefinition>
 
 <CDDefinition>
-<Name> GFpn </Name>
+<Name>GFpn</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents the finite field with p^n elements, where p is a prime.
@@ -337,7 +337,7 @@ This symbol represents the finite field with p^n elements, where p is a prime.
 </CDDefinition>
 
 <CDDefinition>
-<Name> QuotientField </Name>
+<Name>QuotientField</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents the quotient field of any integral domain.
@@ -384,7 +384,7 @@ This symbol represents the quotient field of any integral domain.
 </CDDefinition>
 
 <CDDefinition>
-<Name> H </Name>
+<Name>H</Name>
 <Role>constant</Role>
 <Description> 
 This  symbol represents the set of quaternions.

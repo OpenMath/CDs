@@ -32,12 +32,12 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName> interval_types </CDName>
+<CDName>interval_types</CDName>
 <CDURL>http://www.openmath.org/cd/interval_types.ocd</CDURL>
 <CDReviewDate>2017-12-31</CDReviewDate>
-<CDStatus> experimental </CDStatus>
-<CDDate> 2002-08-25 </CDDate>
-<CDVersion> 0 </CDVersion>
+<CDStatus>experimental</CDStatus>
+<CDDate>2002-08-25</CDDate>
+<CDVersion>0</CDVersion>
 <CDRevision>1</CDRevision>
 <CDComment>
   Author: Bill Naylor
@@ -49,7 +49,7 @@ constructors of individual instances of the different types of intervals.
 </Description>
 
 <CDDefinition>
-  <Name> intervalType </Name>
+  <Name>intervalType</Name>
   <Description>
 This symbol represents the type of intervals.
   </Description>
@@ -66,7 +66,7 @@ This symbol represents the type of intervals.
 </CDDefinition>
 
 <CDDefinition>
-  <Name> integerIntervalType </Name>
+  <Name>integerIntervalType</Name>
   <Description>
 This symbol represents the type of integer intervals.
   </Description>
@@ -93,7 +93,7 @@ This symbol represents the type of integer intervals.
 </CDDefinition>
 
 <CDDefinition>
-  <Name> rationalIntervalType </Name>
+  <Name>rationalIntervalType</Name>
   <Description>
 This symbol represents the type of rational intervals.
   </Description>
@@ -120,7 +120,7 @@ This symbol represents the type of rational intervals.
 </CDDefinition>
 
 <CDDefinition>
-  <Name> algebraicIntervalType </Name>
+  <Name>algebraicIntervalType</Name>
   <Description>
 This symbol represents the type of algebraic intervals.
   </Description>
@@ -147,7 +147,7 @@ This symbol represents the type of algebraic intervals.
 </CDDefinition>
 
 <CDDefinition>
-  <Name> realIntervalType </Name>
+  <Name>realIntervalType</Name>
   <Description>
 This symbol represents the type of real intervals.
   </Description>

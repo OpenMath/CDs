@@ -33,7 +33,7 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName> setname1 </CDName>
+<CDName>setname1</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/setname1.ocd</CDURL>
 <CDReviewDate>2006-03-30</CDReviewDate>
@@ -44,7 +44,7 @@
   Author: OpenMath Consortium
   SourceURL: https://github.com/OpenMath/CDs
 </CDComment>
-<CDStatus> official </CDStatus>
+<CDStatus>official</CDStatus>
 <Description>
     This CD defines common sets of mathematics
 </Description>
@@ -55,7 +55,7 @@ Revised to add QuotientField and A on 1999-11-19.
 </CDComment>
 
 <CDDefinition>
-<Name> P </Name>
+<Name>P</Name>
 <Role>constant</Role>
 <Description> 
 This symbol represents the set of positive prime numbers.
@@ -156,7 +156,7 @@ n is a natural number and n &gt; 1 and
 </CDDefinition>
 
 <CDDefinition>
-<Name> N </Name>
+<Name>N</Name>
 <Role>constant</Role>
 <Description> 
 This symbol represents the set of natural numbers (including zero).
@@ -202,7 +202,7 @@ n=0 or n-1 is a natural number </CMP>
 </CDDefinition>
 
 <CDDefinition>
-<Name> Z </Name>
+<Name>Z</Name>
 <Role>constant</Role>
 <Description> 
 This symbol represents the set of integers, positive, negative and zero.
@@ -250,7 +250,7 @@ or -z is a natural number are equivalent
 </CDDefinition>
 
 <CDDefinition>
-<Name> Q </Name>
+<Name>Q</Name>
 <Role>constant</Role>
 <Description> 
 This  symbol represents the set of rational numbers.
@@ -377,7 +377,7 @@ for all a,b | a,b rational with a&lt;b implies there exists rational a,c
 </CDDefinition>
 
 <CDDefinition>
-<Name> R </Name>
+<Name>R</Name>
 <Role>constant</Role>
 <Description> 
 This symbol represents the set of real numbers.
@@ -501,7 +501,7 @@ exists z in R such that
 </CDDefinition>
 
 <CDDefinition>
-<Name> C </Name>
+<Name>C</Name>
 <Role>constant</Role>
 <Description> 
 This  symbol represents the set of complex numbers.

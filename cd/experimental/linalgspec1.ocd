@@ -33,21 +33,21 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName> linalgspec1 </CDName>
+<CDName>linalgspec1</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/linalgspec1.ocd</CDURL>
 <CDReviewDate>2006-03-30</CDReviewDate>
 <CDDate>2004-11-30</CDDate>
 <CDVersion>4</CDVersion>
 <CDRevision>2</CDRevision>
-<CDStatus> experimental </CDStatus>
+<CDStatus>experimental</CDStatus>
 <Description>
 This CD contains symbols which represent a number of special types of
 matrix. 
 </Description>
 
 <CDDefinition>
-<Name> upper_triangular </Name>
+<Name>upper_triangular</Name>
 <Role>application</Role>
 <Description>
 This symbol represents an upper-triangular matrix, it takes one
@@ -111,7 +111,7 @@ An example to describe the upper triangular matrix:
 </CDDefinition>
 
 <CDDefinition>
-<Name> lower_triangular </Name>
+<Name>lower_triangular</Name>
 <Role>application</Role>
 <Description>
 This symbol represents a lower-triangular matrix, it takes one
@@ -176,7 +176,7 @@ An example to describe the lower triangular matrix:
 
 
 <CDDefinition>
-<Name> tridiagonal </Name>
+<Name>tridiagonal</Name>
 <Role>application</Role>
 <Description>
 This symbol represents a tridiagonal matrix, it takes one argument

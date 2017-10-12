@@ -1,8 +1,8 @@
 <CD xmlns="http://www.openmath.org/OpenMathCD">
 	<CDName>permutation1</CDName>
 	<CDURL>http://www.win.tue.nl/~amc/oz/om/cds/permutation1.ocd</CDURL>
-	<CDDate> 2004-06-01 </CDDate>
-	<CDReviewDate> 2006-06-01 </CDReviewDate>
+	<CDDate>2004-06-01</CDDate>
+	<CDReviewDate>2006-06-01</CDReviewDate>
 	<CDStatus>experimental</CDStatus>
 	<CDVersion>1</CDVersion>
 	<CDRevision>7</CDRevision>
@@ -349,7 +349,7 @@ value is the endomap which maps x in D to P2(P1(x)).
 </CDDefinition>
 
 
-<CDDefinition> <Name>length</Name> 
+<CDDefinition><Name>length</Name> 
  <Description> 
                 This symbol is a function with one argument, which
 		must be a cycle. When applied to
@@ -371,7 +371,7 @@ value is the endomap which maps x in D to P2(P1(x)).
   </Example>
 </CDDefinition>
 
-<CDDefinition> <Name>permutation</Name> <Description> This symbol is
+<CDDefinition><Name>permutation</Name> <Description> This symbol is
   an n-ary constructor whose arguments are cycles of length at least 2
   with the property that all entries of all cycles are mutually
   distinct.
@@ -431,7 +431,7 @@ When applied to an element y outside X, the constructed permutation is considere
 
 	</CDDefinition>
 
-	<CDDefinition> <Name>is_permutation</Name>
+	<CDDefinition><Name>is_permutation</Name>
 
 		<Description> This symbol is a boolean function with
 			one argument.  If the argument is not a set of
@@ -1010,7 +1010,7 @@ The sign of the permutation (4,3,2,1)(5,6)("jan","piet") equals
 	</CDDefinition>
 
 
-<CDDefinition> <Name>action</Name> <Description> This symbols is
+<CDDefinition><Name>action</Name> <Description> This symbols is
   a binary function whose first argument is a permutation (or a endomap)
   and whose second argument is a point.
 	

@@ -2,7 +2,7 @@
    <CDName>permgp1</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
    <CDURL>http://www.openmath.org/cd/permgp1.ocd</CDURL>
-   <CDDate> 2004-06-01 </CDDate>
+   <CDDate>2004-06-01</CDDate>
    <CDVersion>2</CDVersion>
    <CDRevision>1</CDRevision>
    <CDStatus>experimental</CDStatus>
@@ -20,7 +20,7 @@
 
 
 <CDDefinition>
-<Name> group </Name>
+<Name>group</Name>
 <Description>
 This symbol represents an n-ary function. The first argument is a
 group operation 

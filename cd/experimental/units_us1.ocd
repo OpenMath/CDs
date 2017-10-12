@@ -1,10 +1,10 @@
 <CD xmlns="http://www.openmath.org/OpenMathCD">
-<CDName> units_us1 </CDName>
+<CDName>units_us1</CDName>
 <CDURL>http://www.openmath.org/cd/units_us1.ocd</CDURL>
 <CDReviewDate>2017-12-31</CDReviewDate>
-<CDStatus> experimental </CDStatus>
-<CDDate> 2004-08-27 </CDDate>
-<CDVersion> 3 </CDVersion>
+<CDStatus>experimental</CDStatus>
+<CDDate>2004-08-27</CDDate>
+<CDVersion>3</CDVersion>
 <CDRevision>1</CDRevision>
 <CDComment>
   Author: OpenMath Consortium
@@ -17,7 +17,7 @@ This CD defines symbols to represent U.S. customary unit measures.
 </Description>
 
 <CDDefinition>
-<Name> foot_us_survey </Name>
+<Name>foot_us_survey</Name>
 <Description>
 This symbol represents the measure of one U.S. Survey foot.
 </Description>
@@ -45,7 +45,7 @@ This symbol represents the measure of one U.S. Survey foot.
 </CDDefinition>
 
 <CDDefinition>
-<Name> yard_us_survey </Name>
+<Name>yard_us_survey</Name>
 <Description>
 This symbol represents the measure of one U.S. Survey yard.
 </Description>
@@ -69,7 +69,7 @@ This symbol represents the measure of one U.S. Survey yard.
 </CDDefinition>
 
 <CDDefinition>
-<Name> mile_us_survey </Name>
+<Name>mile_us_survey</Name>
 <Description>
 This symbol represents the measure of one U.S. Survey mile.
 </Description>
@@ -93,7 +93,7 @@ This symbol represents the measure of one U.S. Survey mile.
 </CDDefinition>
 
 <CDDefinition>
-<Name> acre_us_survey </Name>
+<Name>acre_us_survey</Name>
 <Description>
 This symbol represents the measure of one U.S. Survey acre.
 </Description>
@@ -121,7 +121,7 @@ This symbol represents the measure of one U.S. Survey acre.
 </CDDefinition>
 
 <CDDefinition>
-<Name> pint_us_dry </Name>
+<Name>pint_us_dry</Name>
 <Description>
 This symbol represents the measure of one U.S. dry pint.
 </Description>
@@ -146,7 +146,7 @@ This symbol represents the measure of one U.S. dry pint.
 </CDDefinition>
 
 <CDDefinition>
-<Name> pint_us_liquid </Name>
+<Name>pint_us_liquid</Name>
 <Description>
 This symbol represents the measure of one U.S. liquid pint.
 </Description>

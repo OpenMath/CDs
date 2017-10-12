@@ -35,14 +35,14 @@
 
 <CDName>fns3</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
-<CDDate> 2004-02-05 </CDDate>
+<CDDate>2004-02-05</CDDate>
 <CDReviewDate>2017-12-31</CDReviewDate>
-<CDVersion> 1 </CDVersion>
+<CDVersion>1</CDVersion>
 <CDRevision>1</CDRevision>
 <CDComment>
   Author: Mike Dewar
 </CDComment>
-<CDStatus> experimental </CDStatus>
+<CDStatus>experimental</CDStatus>
 
 <Description> 
 Symbols to make statements about properties of a function
@@ -50,7 +50,7 @@ Symbols to make statements about properties of a function
 
 
 <CDDefinition>
-<Name> continuous </Name>
+<Name>continuous</Name>
 <Description> 
 A predicate to indicate that a function is continuous everywhere.
 </Description>
@@ -67,7 +67,7 @@ A predicate to indicate that a function is continuous everywhere.
 </CDDefinition>
 
 <CDDefinition>
-<Name> piecewise_continuous </Name>
+<Name>piecewise_continuous</Name>
 <Description> 
 A predicate to indicate that a function is piecewise continuous
 everywhere, i.e. continuous at all but a finite number of points in
@@ -98,7 +98,7 @@ its domain.
 
 
 <CDDefinition>
-<Name> differentiable </Name>
+<Name>differentiable</Name>
 <Description> 
 A predicate to indicate that a function is differentiable over its
 whole domain.
@@ -116,7 +116,7 @@ whole domain.
 </CDDefinition>
 
 <CDDefinition>
-<Name> continuous_on </Name>
+<Name>continuous_on</Name>
 <Description> 
 A predicate to indicate that a function is continuous over a
 particular region or range.
@@ -150,7 +150,7 @@ particular region or range.
 </CDDefinition>
 
 <CDDefinition>
-<Name> piecewise_continuous_on </Name>
+<Name>piecewise_continuous_on</Name>
 <Description> 
 A predicate to indicate that a function is continuous
 at all but a finite number of points in a region.
@@ -175,7 +175,7 @@ tan is piecewise continuous over the real interval [0,pi]
 
 
 <CDDefinition>
-<Name> differentiable_on </Name>
+<Name>differentiable_on</Name>
 <Description> 
 A predicate to indicate that a function is differentiable on
 a region.

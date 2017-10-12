@@ -1,12 +1,12 @@
 <CD xmlns="http://www.openmath.org/OpenMathCD">
-<CDName> polynomial1 </CDName>
+<CDName>polynomial1</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/polynomial1.ocd</CDURL>
-<CDReviewDate> 2006-07-12   </CDReviewDate>
-<CDDate> 2004-07-12 </CDDate>
-<CDVersion> 0 </CDVersion>
-<CDRevision> 0 </CDRevision>
-<CDStatus> experimental </CDStatus>
+<CDReviewDate>2006-07-12</CDReviewDate>
+<CDDate>2004-07-12</CDDate>
+<CDVersion>0</CDVersion>
+<CDRevision>0</CDRevision>
+<CDStatus>experimental</CDStatus>
 
 <Description>
 This CD holds a collection of basic constructs for univariate polynomials over rings.
@@ -119,7 +119,7 @@ is equal to 2.
 
 
 <CDDefinition>
-    <Name> expand </Name>
+    <Name>expand</Name>
 <Role>application</Role>
     <Description> 
      Expands a polynomial. 
@@ -155,7 +155,7 @@ The following expression is equivalent to the arithmetic expression X^2+2X+1 in 
 
 
 
-<CDDefinition> 
+<CDDefinition>
 <Name>degree</Name> 
 <Description> This symbol represents a
 unary function, whose argument should be univariate polynomial.  When applied
@@ -166,7 +166,7 @@ terms, it is the zero polynomial, in which case the value represented is -1.
 
 </CDDefinition>
 
-<CDDefinition> 
+<CDDefinition>
 <Name>leading_term</Name> 
 <Description> This symbol represents a
 unary function, whose argument should be univariate polynomial.  When applied
@@ -178,7 +178,7 @@ If the polynomial is zero, the value represented is zero.
 
 </CDDefinition>
 
-<CDDefinition> 
+<CDDefinition>
 <Name>leading_coefficient</Name> 
 <Description> This symbol represents a
 unary function, whose argument should be univariate polynomial.  When applied
@@ -188,7 +188,7 @@ If the polynomial is zero, the value represented is zero.
 
 </CDDefinition>
 
-<CDDefinition> 
+<CDDefinition>
 <Name>leading_monomial</Name> 
 <Description> This symbol represents a
 unary function, whose argument should be a nonzero univariate polynomial.  When applied

@@ -33,14 +33,14 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName> linalg2col </CDName>
+<CDName>linalg2col</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/linalg2col.ocd</CDURL>
 <CDReviewDate>2006-11-30</CDReviewDate>
 <CDDate>2004-11-30</CDDate>
 <CDVersion>4</CDVersion>
 <CDRevision>1</CDRevision>
-<CDStatus> experimental </CDStatus>
+<CDStatus>experimental</CDStatus>
 <Description>
     This CD  treats matrices and vectors in a column oriented fashion
     (using matrixcolumns).
@@ -54,7 +54,7 @@
 </Description>
 
 <CDDefinition>
-<Name> vector </Name>
+<Name>vector</Name>
 <Role>application</Role>
 <Description>
 This symbol represents an n-ary function used to construct (or describe)
@@ -121,7 +121,7 @@ The specific vector constructed in this example is transpose of [3,6,9].
 </CDDefinition>
 
 <CDDefinition>
-<Name> matrixcolumn </Name>
+<Name>matrixcolumn</Name>
 <Role>application</Role>
 <Description> 
 This symbol is an n-ary constructor used to represent columns of
@@ -141,7 +141,7 @@ Representation of a column of a matrix of length two containing the integers
 </CDDefinition>
 
 <CDDefinition>
-<Name> matrix </Name>
+<Name>matrix</Name>
 <Role>application</Role>
 <Description>
 This symbol is an n-ary matrix constructor which requires matrixcolumn's

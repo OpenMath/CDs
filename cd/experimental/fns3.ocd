@@ -1,12 +1,12 @@
 <CD xmlns="http://www.openmath.org/OpenMathCD">
-<CDName> fns3 </CDName>
+<CDName>fns3</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/fns3.ocd</CDURL>
-<CDReviewDate> 2006-06-01 </CDReviewDate>
-<CDDate> 2004-06-01 </CDDate>
-<CDVersion> 1 </CDVersion>
-<CDRevision> 1 </CDRevision>
-<CDStatus> experimental </CDStatus>
+<CDReviewDate>2006-06-01</CDReviewDate>
+<CDDate>2004-06-01</CDDate>
+<CDVersion>1</CDVersion>
+<CDRevision>1</CDRevision>
+<CDStatus>experimental</CDStatus>
 
 
 <Description>
@@ -20,7 +20,7 @@
 </Description>
 
 <CDDefinition>
-<Name> function </Name>
+<Name>function</Name>
 <Description> 
 This symbol denotes a function constructor.
 When aplied to at least two arguments, which are sets,
@@ -89,7 +89,7 @@ the integers specificied by the fact that n maps to n(n+1)/2.
 
 
 <CDDefinition>
-<Name> specification </Name>
+<Name>specification</Name>
 <Description> 
 This symbol denotes the specification of a function.
 It is a unary function.

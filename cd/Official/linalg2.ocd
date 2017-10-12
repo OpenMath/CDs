@@ -33,7 +33,7 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName> linalg2 </CDName>
+<CDName>linalg2</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/linalg2.ocd</CDURL>
 <CDReviewDate>2006-03-30</CDReviewDate>
@@ -44,14 +44,14 @@
   Author: OpenMath Consortium
   SourceURL: https://github.com/OpenMath/CDs
 </CDComment>
-<CDStatus> official </CDStatus>
+<CDStatus>official</CDStatus>
 <Description>
     This CD  treats matrices and vectors in a row oriented fashion
     (using matrixrow's).
 </Description>
 
 <CDDefinition>
-<Name> vector </Name>
+<Name>vector</Name>
 <Role>application</Role>
 <Description>
 This symbol represents an n-ary function used to construct (or describe)
@@ -74,7 +74,7 @@ The specific vector constructed in this example is [3,6,9].
 </CDDefinition>
 
 <CDDefinition>
-<Name> matrixrow </Name>
+<Name>matrixrow</Name>
 <Role>application</Role>
 <Description> 
 This symbol is an n-ary constructor used to represent rows of
@@ -94,7 +94,7 @@ Representation of a row of a matrix of length two containing the integers
 </CDDefinition>
 
 <CDDefinition>
-<Name> matrix </Name>
+<Name>matrix</Name>
 <Role>application</Role>
 <Description>
 This symbol is an n-ary matrix constructor which requires matrixrow's

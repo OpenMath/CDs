@@ -33,12 +33,12 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName> generic_alg_cats </CDName>
+<CDName>generic_alg_cats</CDName>
 <CDURL>http://www.openmath.org/cd/generic_alg_cats.ocd</CDURL>
 <CDReviewDate>2017-12-31</CDReviewDate>
-<CDStatus> experimental </CDStatus>
-<CDDate> 2002-06-17 </CDDate>
-<CDVersion> 0 </CDVersion>
+<CDStatus>experimental</CDStatus>
+<CDDate>2002-06-17</CDDate>
+<CDVersion>0</CDVersion>
 <CDRevision>1</CDRevision>
 <CDComment>
   Author: Bill Naylor
@@ -239,7 +239,7 @@ This Symbol represents the generic category of ordered Abelian group.
 </CDDefinition>
 
 <CDDefinition>
-  <Name> ringoid </Name>
+  <Name>ringoid</Name>
   <Description>
 This symbol represents the generic category of ringoid.
   </Description>

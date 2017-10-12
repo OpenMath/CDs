@@ -1,6 +1,6 @@
 <CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" 
    cd="veccalc1" cdurl="http://www.openmath.org/cd/veccalc1.ocd" version="2.0">
-<CDSStatus> official </CDSStatus>
+<CDSStatus>official</CDSStatus>
 
 <Signature name="divergence">
 <OMOBJ xmlns="http://www.openmath.org/OpenMath"> 

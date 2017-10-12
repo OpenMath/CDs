@@ -33,7 +33,7 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName> nums1 </CDName>
+<CDName>nums1</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/nums1.ocd</CDURL>
 <CDReviewDate>2006-03-30</CDReviewDate>
@@ -44,7 +44,7 @@
   Author: OpenMath Consortium
   SourceURL: https://github.com/OpenMath/CDs
 </CDComment>
-<CDStatus> official </CDStatus>
+<CDStatus>official</CDStatus>
 <Description>
     This CD is intended to be `compatible' with the MathML view of
     constructors for numbers (integers to an arbitrary base,
@@ -55,7 +55,7 @@
 </Description>
 
 <CDDefinition>
-<Name> based_integer </Name>
+<Name>based_integer</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents the constructor function for integers,
@@ -81,7 +81,7 @@ covered in the encodings of integers.
 </CDDefinition>
 
 <CDDefinition>
-<Name> rational </Name>
+<Name>rational</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents the constructor function for rational numbers.
@@ -100,7 +100,7 @@ A representation of the rational number 1/2
 </CDDefinition>
 
 <CDDefinition>
-<Name> infinity </Name>
+<Name>infinity</Name>
 <Role>constant</Role>
 <Description> 
 A symbol to represent the notion of infinity.
@@ -126,7 +126,7 @@ A symbol to represent the notion of infinity.
 </CDDefinition>
 
 <CDDefinition>
-<Name> e </Name>
+<Name>e</Name>
 <Role>constant</Role>
 <Description> 
 This symbol represents the base of the natural logarithm, approximately 2.718.
@@ -176,7 +176,7 @@ section 4.1.
 </CDDefinition>
 
 <CDDefinition>
-<Name> i </Name>
+<Name>i</Name>
 <Role>constant</Role>
 <Description> 
 This symbol represents the square root of -1.
@@ -203,7 +203,7 @@ i^2 = -1
 </CDDefinition>
 
 <CDDefinition>
-<Name> pi </Name>
+<Name>pi</Name>
 <Role>constant</Role>
 <Description> 
 A symbol to convey the notion of pi, approximately 3.142.
@@ -280,7 +280,7 @@ pi = 4 * the sum as j ranges from 0 to infinity of ((1/(4j+1))-(1/(4j+3)))
 </CDDefinition>
 
 <CDDefinition>
-<Name> gamma </Name>
+<Name>gamma</Name>
 <Role>constant</Role>
 <Description> 
 A symbol to convey the notion of the gamma constant
@@ -350,7 +350,7 @@ as m tends to infinity, this is approximately 0.5772 15664.
 </CDDefinition>
 
 <CDDefinition>
-<Name> NaN </Name>
+<Name>NaN</Name>
 <Role>constant</Role>
 <Description> 
 A symbol to convey the notion of not-a-number.

@@ -1,12 +1,12 @@
 <CD xmlns="http://www.openmath.org/OpenMathCD">
-<CDName> groupname1 </CDName>
+<CDName>groupname1</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/groupname1.ocd</CDURL>
-<CDReviewDate> 2006-06-01 </CDReviewDate>
-<CDDate> 2004-06-01 </CDDate>
-<CDVersion> 1 </CDVersion>
-<CDRevision> 2 </CDRevision>
-<CDStatus> experimental </CDStatus>
+<CDReviewDate>2006-06-01</CDReviewDate>
+<CDDate>2004-06-01</CDDate>
+<CDVersion>1</CDVersion>
+<CDRevision>2</CDRevision>
+<CDStatus>experimental</CDStatus>
 
 <Description> Well known groups in group theory   </Description>
 
@@ -17,7 +17,7 @@ Written by Arjeh M. Cohen 2003-04-15
 
 <CDDefinition>
 
-<Name> quaternion_group </Name>
+<Name>quaternion_group</Name>
 
 <Description>
 This symbol represents the quaternion group of order 8.
@@ -108,7 +108,7 @@ The derived subgroup of Q coincides with the center of Q.
 <CDDefinition>
 
 
-<Name> dihedral_group </Name>
+<Name>dihedral_group</Name>
 
 <Description> This symbol is a function with one argument, which should be a
 positive integer n. When applied to n it represents the dihedral group of

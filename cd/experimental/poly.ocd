@@ -33,12 +33,12 @@
      society at http://www.openmath.org.
 </CDComment>
 
-   <CDName> poly </CDName>
+   <CDName>poly</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase> 
    <CDURL>http://www.openmath.org/cd/poly.ocd</CDURL>
    <CDReviewDate>2017-12-31</CDReviewDate> 
    <CDDate>2004-03-30</CDDate> 
-   <CDStatus> experimental </CDStatus>
+   <CDStatus>experimental</CDStatus>
    <CDVersion>5</CDVersion>
    <CDRevision>1</CDRevision>
 <CDComment>
@@ -67,7 +67,7 @@ Updated following Abbott/Strotmann/Davenport at Dagstuhl October 2001 JHD
 </CDComment>
 
     <CDDefinition>
-      <Name> power </Name>
+      <Name>power</Name>
 <Role>application</Role>
       <Description>
          Takes a polynomial and a (non-negative) integer and produces a
@@ -88,7 +88,7 @@ Updated following Abbott/Strotmann/Davenport at Dagstuhl October 2001 JHD
     </CDDefinition>
 
     <CDDefinition>
-      <Name> factored </Name>
+      <Name>factored</Name>
 <Role>application</Role>
       <Description> 
          The constructor for a factorization. Its arguments are formal
@@ -131,7 +131,7 @@ Updated following Abbott/Strotmann/Davenport at Dagstuhl October 2001 JHD
     </CDDefinition>
 
     <CDDefinition>
-      <Name> squarefreed </Name>
+      <Name>squarefreed</Name>
 <Role>application</Role>
       <Description> 
          The constructor for a square-free factorization. Its arguments
@@ -170,7 +170,7 @@ Updated following Abbott/Strotmann/Davenport at Dagstuhl October 2001 JHD
     </CDDefinition>
 
     <CDDefinition>
-      <Name> partially_factored </Name>
+      <Name>partially_factored</Name>
 <Role>application</Role>
       <Description> 
          The constructor for a factorization. Its arguments are formal
@@ -218,7 +218,7 @@ Updated following Abbott/Strotmann/Davenport at Dagstuhl October 2001 JHD
 </CDComment>
 
     <CDDefinition>
-      <Name> expand </Name>
+      <Name>expand</Name>
 <Role>application</Role>
       <Description> 
         Converts a factored or squarefreed form into the expanded
@@ -281,7 +281,7 @@ Updated following Abbott/Strotmann/Davenport at Dagstuhl October 2001 JHD
     </CDDefinition>
 
     <CDDefinition>
-      <Name> degree </Name>
+      <Name>degree</Name>
 <Role>application</Role>
       <Description> 
         The total degree of its argument. The value returned is a
@@ -309,7 +309,7 @@ Updated following Abbott/Strotmann/Davenport at Dagstuhl October 2001 JHD
     </CDDefinition>
 
     <CDDefinition>
-       <Name> degree_wrt </Name>
+       <Name>degree_wrt</Name>
 <Role>application</Role>
        <Description> 
          The degree with respect to a variable (the second
@@ -344,7 +344,7 @@ Updated following Abbott/Strotmann/Davenport at Dagstuhl October 2001 JHD
     </CDDefinition>
 
     <CDDefinition>
-       <Name> leading_coefficient </Name>
+       <Name>leading_coefficient</Name>
 <Role>application</Role>
        <Description> 
          The leading coefficient with respect to a variable (the second
@@ -353,7 +353,7 @@ Updated following Abbott/Strotmann/Davenport at Dagstuhl October 2001 JHD
     </CDDefinition>
 
     <CDDefinition>
-       <Name> coefficient </Name>
+       <Name>coefficient</Name>
 <Role>application</Role>
        <Description> 
          The coefficient with respect to a list of variables (the second
@@ -363,7 +363,7 @@ Updated following Abbott/Strotmann/Davenport at Dagstuhl October 2001 JHD
     </CDDefinition>
 
     <CDDefinition>
-       <Name> coefficient_ring </Name>
+       <Name>coefficient_ring</Name>
 <Role>application</Role>
        <Description> 
          The coefficient ring.
@@ -371,7 +371,7 @@ Updated following Abbott/Strotmann/Davenport at Dagstuhl October 2001 JHD
     </CDDefinition>
 
     <CDDefinition>
-       <Name> evaluate </Name>
+       <Name>evaluate</Name>
 <Role>application</Role>
        <Description> 
          Evaluation of a polynomial at a value or vector of values.
@@ -379,7 +379,7 @@ Updated following Abbott/Strotmann/Davenport at Dagstuhl October 2001 JHD
     </CDDefinition>
 
     <CDDefinition>
-      <Name> factor </Name>
+      <Name>factor</Name>
 <Role>application</Role>
       <Description> 
          The decomposition of its argument into irreducible
@@ -443,7 +443,7 @@ Updated following Abbott/Strotmann/Davenport at Dagstuhl October 2001 JHD
     </CDDefinition>
 
     <CDDefinition>
-      <Name> squarefree </Name>
+      <Name>squarefree</Name>
 <Role>application</Role>
       <Description>  
          The square-free decomposition of its argument. A program that can
@@ -501,7 +501,7 @@ Updated following Abbott/Strotmann/Davenport at Dagstuhl October 2001 JHD
     </CDDefinition>
 
     <CDDefinition>
-       <Name> gcd </Name>
+       <Name>gcd</Name>
 <Role>application</Role>
        <Description> 
           The n-ary greatest common divisor of its polynomial arguments.
@@ -510,7 +510,7 @@ Updated following Abbott/Strotmann/Davenport at Dagstuhl October 2001 JHD
     </CDDefinition>
 
     <CDDefinition>
-       <Name> lcm </Name>
+       <Name>lcm</Name>
 <Role>application</Role>
        <Description> 
           The least common multiple of its polynomial arguments.
@@ -553,7 +553,7 @@ Updated following Abbott/Strotmann/Davenport at Dagstuhl October 2001 JHD
     </CDDefinition>
 
     <CDDefinition>
-       <Name> discriminant </Name>
+       <Name>discriminant</Name>
 <Role>application</Role>
        <Description> 
          Function taking two arguments, it represents the discriminant
@@ -603,7 +603,7 @@ Updated following Abbott/Strotmann/Davenport at Dagstuhl October 2001 JHD
     </CDDefinition>
 
     <CDDefinition>
-       <Name> resultant </Name>
+       <Name>resultant</Name>
 <Role>application</Role>
        <Description> 
          Function taking three arguments, it represents the resultant
@@ -702,7 +702,7 @@ Updated following Abbott/Strotmann/Davenport at Dagstuhl October 2001 JHD
     </CDDefinition>
 
     <CDDefinition>
-       <Name> convert </Name>
+       <Name>convert</Name>
 <Role>application</Role>
        <Description> 
          Conversion between polynomial rings. The first argument is a

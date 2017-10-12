@@ -33,14 +33,14 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName> linalg3 </CDName>
+<CDName>linalg3</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/linalg3.ocd</CDURL>
 <CDReviewDate>2006-11-30</CDReviewDate>
 <CDDate>2004-11-30</CDDate>
 <CDVersion>4</CDVersion>
 <CDRevision>1</CDRevision>
-<CDStatus> experimental </CDStatus>
+<CDStatus>experimental</CDStatus>
 <Description>
     This CD deals with basic dimension notions of a matrix and a vector.
 
@@ -51,7 +51,7 @@
 </Description>
 
 <CDDefinition>
-<Name> size </Name>
+<Name>size</Name>
 <Role>application</Role>
 <Description>
 This symbol represents the function which takes one vector argument
@@ -75,7 +75,7 @@ The length of the vector [1,2,3] is equal to 3.
 
 
 <CDDefinition>
-<Name> rowcount </Name>
+<Name>rowcount</Name>
 <Role>application</Role>
 <Description>
 This symbol represents the function which takes one matrix argument 
@@ -108,7 +108,7 @@ Specification of the number of rows in the matrix:
 </CDDefinition>
 
 <CDDefinition>
-<Name> columncount </Name>
+<Name>columncount</Name>
 <Role>application</Role>
 <Description>
 This symbol represents the function which takes one matrix argument

@@ -33,12 +33,12 @@
      society at http://www.openmath.org.
 </CDComment>
 
-   <CDName> polyd </CDName>
+   <CDName>polyd</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase> 
    <CDURL>http://www.openmath.org/cd/polyd.ocd</CDURL>
    <CDReviewDate>2017-12-31</CDReviewDate> 
    <CDDate>2004-03-30</CDDate> 
-   <CDStatus> experimental </CDStatus>
+   <CDStatus>experimental</CDStatus>
    <CDVersion>4</CDVersion>
    <CDRevision>1</CDRevision>
 <CDComment>
@@ -169,7 +169,7 @@ Added example to weighted_degree 2002-09-17 JHD
 </CDComment>
 
     <CDDefinition>
-       <Name> DMP </Name>
+       <Name>DMP</Name>
 <Role>application</Role>
        <Description>
          The constructor of DMPs. The first argument is the polynomial
@@ -179,7 +179,7 @@ Added example to weighted_degree 2002-09-17 JHD
     </CDDefinition>
 
     <CDDefinition>
-       <Name> DMPL </Name>
+       <Name>DMPL</Name>
 <Role>application</Role>
        <Description>
          The constructor for lists of multivariate polynomial members of the 
@@ -193,7 +193,7 @@ Added example to weighted_degree 2002-09-17 JHD
 
 
     <CDDefinition>
-       <Name> SDMP </Name>
+       <Name>SDMP</Name>
 <Role>application</Role>
        <Description>
          The constructor for multivariate polynomials without
@@ -211,7 +211,7 @@ Added example to weighted_degree 2002-09-17 JHD
     </CDDefinition>
 
     <CDDefinition>
-       <Name> term </Name>
+       <Name>term</Name>
 <Role>application</Role>
        <Description>
          The constructor of terms. Valid applications are of the form
@@ -229,7 +229,7 @@ Added example to weighted_degree 2002-09-17 JHD
 
 
     <CDDefinition>
-       <Name> poly_ring_d </Name>
+       <Name>poly_ring_d</Name>
 <Role>application</Role>
        <Description> 
          The constructor of polynomial ring. The first argument is a ring
@@ -239,7 +239,7 @@ Added example to weighted_degree 2002-09-17 JHD
     </CDDefinition>
 
     <CDDefinition>
-       <Name> poly_ring_d_named </Name>
+       <Name>poly_ring_d_named</Name>
 <Role>application</Role>
        <Description> 
          The constructor of polynomial ring. The first argument is a ring
@@ -251,7 +251,7 @@ Added example to weighted_degree 2002-09-17 JHD
     </CDDefinition>
 
     <CDDefinition>
-       <Name> anonymous </Name>
+       <Name>anonymous</Name>
 <Role>constant</Role>
        <Description> 
          Indicates a variable that we do not want to name
@@ -264,7 +264,7 @@ Added example to weighted_degree 2002-09-17 JHD
 
 
     <CDDefinition>
-       <Name> ordering </Name>
+       <Name>ordering</Name>
 <Role>semantic-attribution</Role>
        <Description> 
           Used as an attribute to indicate an ordering of the terms in a
@@ -280,7 +280,7 @@ Added example to weighted_degree 2002-09-17 JHD
 </CDComment>
 
     <CDDefinition>
-       <Name> lexicographic </Name>
+       <Name>lexicographic</Name>
 <Role>constant</Role>
        <Description> 
           The lexicographic ordering of terms.
@@ -291,7 +291,7 @@ Added example to weighted_degree 2002-09-17 JHD
     </CDDefinition>
 
     <CDDefinition>
-       <Name> reverse_lexicographic </Name>
+       <Name>reverse_lexicographic</Name>
 <Role>constant</Role>
        <Description> 
           The reverse lexicographic ordering of terms.
@@ -302,7 +302,7 @@ Added example to weighted_degree 2002-09-17 JHD
     </CDDefinition>
 
     <CDDefinition>
-       <Name> graded_lexicographic </Name>
+       <Name>graded_lexicographic</Name>
 <Role>constant</Role>
        <Description> 
           Total degree order, graded with the lexicographic ordering.
@@ -313,7 +313,7 @@ Added example to weighted_degree 2002-09-17 JHD
     </CDDefinition>
 
     <CDDefinition>
-       <Name> graded_reverse_lexicographic </Name>
+       <Name>graded_reverse_lexicographic</Name>
 <Role>constant</Role>
        <Description> 
           Total degree order, graded with the reverse lexicographic ordering.
@@ -324,7 +324,7 @@ Added example to weighted_degree 2002-09-17 JHD
     </CDDefinition>
 
     <CDDefinition>
-       <Name> elimination </Name>
+       <Name>elimination</Name>
 <Role>constant</Role>
        <Description> 
           This is an ordering, which is partially in terms of one
@@ -346,7 +346,7 @@ Added example to weighted_degree 2002-09-17 JHD
     </CDDefinition>
 
     <CDDefinition>
-       <Name> matrix_ordering </Name>
+       <Name>matrix_ordering</Name>
 <Role>application</Role>
        <Description> 
           The argument is a matrix with as many columns as indeterminates
@@ -356,7 +356,7 @@ Added example to weighted_degree 2002-09-17 JHD
     </CDDefinition>
 
     <CDDefinition>
-       <Name> weighted </Name>
+       <Name>weighted</Name>
 <Role>application</Role>
        <Description> 
           The first argument is a list of integers to act as variable weights,
@@ -373,7 +373,7 @@ Added example to weighted_degree 2002-09-17 JHD
 </CDComment>
 
     <CDDefinition>
-      <Name> weighted_degree </Name>
+      <Name>weighted_degree</Name>
 <Role>application</Role>
       <Description> 
         The total degree of its argument, taking into account any weights 
@@ -448,7 +448,7 @@ Added example to weighted_degree 2002-09-17 JHD
     </CDDefinition>
 
    <CDDefinition>
-       <Name> groebnered </Name>
+       <Name>groebnered</Name>
 <Role>application</Role>
        <Description> 
           The constructor for a Groebner basis (reduced, minimal). The first
@@ -458,7 +458,7 @@ Added example to weighted_degree 2002-09-17 JHD
     </CDDefinition>
 
     <CDDefinition>
-       <Name> completely_reduced </Name>
+       <Name>completely_reduced</Name>
 <Role>semantic-attribution</Role>
        <Description> 
           This attribute, attached to a groebnered object, says 'true' if
@@ -473,7 +473,7 @@ Added example to weighted_degree 2002-09-17 JHD
 
 
     <CDDefinition>
-       <Name> plus </Name>
+       <Name>plus</Name>
 <Role>application</Role>
        <Description>
          The sum. The argument is a DMPL. The sum lies within the same
@@ -484,7 +484,7 @@ Added example to weighted_degree 2002-09-17 JHD
     </CDDefinition>
 
     <CDDefinition>
-       <Name> times </Name>
+       <Name>times</Name>
 <Role>application</Role>
        <Description>
          The product. The argument is a DMPL. The product lies within the same
@@ -495,7 +495,7 @@ Added example to weighted_degree 2002-09-17 JHD
     </CDDefinition>
 
     <CDDefinition>
-       <Name> power </Name>
+       <Name>power</Name>
 <Role>application</Role>
        <Description> The power. First argument is a DMP, second
           argument is the integer power. The power lies within the same
@@ -506,7 +506,7 @@ Added example to weighted_degree 2002-09-17 JHD
     </CDDefinition>
 
     <CDDefinition>
-       <Name> groebner </Name>
+       <Name>groebner</Name>
 <Role>application</Role>
        <Description> 
          The groebner basis (lt-reduced, minimal) of a set of polynomials, 
@@ -517,7 +517,7 @@ Added example to weighted_degree 2002-09-17 JHD
     </CDDefinition>
 
     <CDDefinition>
-       <Name> reduce </Name>
+       <Name>reduce</Name>
 <Role>application</Role>
        <Description>
          The reduction of a polynomial with respect to a Groebner basis. 

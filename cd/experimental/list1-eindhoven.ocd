@@ -33,17 +33,17 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName> list1 </CDName>
+<CDName>list1</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/list1.ocd</CDURL>
-<CDReviewDate> 2006-04-01 </CDReviewDate>
-<CDDate> 2004-11-22 </CDDate>
-<CDVersion> 3 </CDVersion>
+<CDReviewDate>2006-04-01</CDReviewDate>
+<CDDate>2004-11-22</CDDate>
+<CDVersion>3</CDVersion>
 <CDRevision>1</CDRevision>
 <CDComment>
   Author: Arjeh Cohen
 </CDComment>
-<CDStatus> official </CDStatus>
+<CDStatus>official</CDStatus>
 
 <Description>
     This CD is intended to be `compatible' with MathML list
@@ -53,7 +53,7 @@ suchthat symbol
 </Description>
 
 <CDDefinition>
-<Name> map </Name>
+<Name>map</Name>
 <Description>
 This symbol represents a mapping function which may be used to
 construct lists; it takes as arguments a function from X to Y and a
@@ -140,7 +140,7 @@ than 100, using the suchthat constructor.
 </CDDefinition>
 
 <CDDefinition>
-<Name> list </Name>
+<Name>list</Name>
 <Description> 
 This symbol denotes the list construct which is an n-ary function. The
 list entries must be given explicitly.

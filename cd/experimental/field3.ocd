@@ -1,12 +1,12 @@
 <CD xmlns="http://www.openmath.org/OpenMathCD">
-<CDName> field3 </CDName>
+<CDName>field3</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/field3.ocd</CDURL>
-<CDReviewDate> 2006-06-01 </CDReviewDate>
-<CDDate> 2004-06-01 </CDDate>
-<CDVersion> 1 </CDVersion>
-<CDRevision> 1 </CDRevision>
-<CDStatus> experimental </CDStatus>
+<CDReviewDate>2006-06-01</CDReviewDate>
+<CDDate>2004-06-01</CDDate>
+<CDVersion>1</CDVersion>
+<CDRevision>1</CDRevision>
+<CDStatus>experimental</CDStatus>
 
 <Description> A CD of 
 functions for basic constructions in field theory.
@@ -17,7 +17,7 @@ Written by Arjeh M. Cohen 2004-02-25
 </CDComment>
 
 <CDDefinition>
-<Name> free_field </Name>
+<Name>free_field</Name>
 <Description>
 This symbol represents a binary function. The first argument should be a
 natural number p which is zero or a prime number,
@@ -46,7 +46,7 @@ The rational function field Q(a,b) in the indeterminates a, b is
 
 
 <CDDefinition>
-<Name> fraction_field </Name>
+<Name>fraction_field</Name>
 <Description>
 This is a unary function. Its argument should be a domain (as in CD ring4).
 It denotes the fraction field of the domain.
@@ -70,7 +70,7 @@ It denotes the fraction field of the domain.
 
 
 <CDDefinition>
-<Name> field_by_poly</Name>
+<Name>field_by_poly</Name>
 
 <Description>
 This symbol is a binary function whose first argument is a univariate

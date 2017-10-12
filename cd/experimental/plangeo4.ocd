@@ -1,12 +1,12 @@
 <CD xmlns="http://www.openmath.org/OpenMathCD">
-<CDName> plangeo4 </CDName>
+<CDName>plangeo4</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/plangeo4.ocd</CDURL>
-<CDReviewDate> 2006-06-01 </CDReviewDate>
-<CDStatus> experimental </CDStatus>
-<CDDate> 2004-06-01 </CDDate>
-<CDVersion> 0 </CDVersion>
-<CDRevision> 5 </CDRevision>
+<CDReviewDate>2006-06-01</CDReviewDate>
+<CDStatus>experimental</CDStatus>
+<CDDate>2004-06-01</CDDate>
+<CDVersion>0</CDVersion>
+<CDRevision>5</CDRevision>
 
 
 <Description> 
@@ -313,7 +313,7 @@ Boolean function testing whether a point or line is affine.
 </CDDefinition>
 
 <CDDefinition>
-<Name> affine_coordinates</Name>
+<Name>affine_coordinates</Name>
 <Description> 
 This function yields the affine coordinates vector if applied to a point or line with
 coordinates in the affine plane.
@@ -347,7 +347,7 @@ for the point A with projective coordinates (1,2,3).
 </CDDefinition>
 
 <CDDefinition>
-<Name> set_affine_coordinates</Name>
+<Name>set_affine_coordinates</Name>
 <Description> 
 Defines the affine coordinates of an affine point or line.
 </Description>

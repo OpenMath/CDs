@@ -32,16 +32,16 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName> logic3 </CDName>
+<CDName>logic3</CDName>
 <CDURL>http://www.openmath.org/cd/logic3.ocd</CDURL>
 <CDReviewDate>2017-12-31</CDReviewDate>
-<CDDate> 2001-07-31 </CDDate>
-<CDVersion> 0 </CDVersion>
+<CDDate>2001-07-31</CDDate>
+<CDVersion>0</CDVersion>
 <CDRevision>2</CDRevision>
 <CDComment>
   Author: James Davenport and Bill Naylor
 </CDComment>
-<CDStatus> experimental </CDStatus>
+<CDStatus>experimental</CDStatus>
 
 <Description>
     This CD holds the symbols for constructing formal proofs in the
@@ -49,7 +49,7 @@
 </Description>
 
 <CDDefinition>
-<Name> prop_theorem </Name>
+<Name>prop_theorem</Name>
 <Description> 
 This symbol is used to claim that a statement is a theorem of the 
 classical propositional calculus, i.e. that it follows by applications 
@@ -72,7 +72,7 @@ three involving 'implies', but need not be).
 </CDDefinition>
 
 <CDDefinition>
-<Name> pred_theorem </Name>
+<Name>pred_theorem</Name>
 <Description> 
 This symbol is used to claim that a statement is a theorem of the 
 classical first-order predicate calculus, i.e. that it follows by
@@ -110,7 +110,7 @@ not be).
 
 
 <CDDefinition>
-<Name> is_theorem </Name>
+<Name>is_theorem</Name>
 <Description> 
 This symbol expresses whether or not there is a theorem of the form
 quoted. Hence for items of type complete_prop_theorem, it is always true
@@ -118,7 +118,7 @@ quoted. Hence for items of type complete_prop_theorem, it is always true
 </CDDefinition>
 
 <CDDefinition>
-<Name> axiom_instance </Name>
+<Name>axiom_instance</Name>
 <Description> 
 This symbol represents a line in a formal proof which is an instance of
 an axiom. The first child is the line in the proof: the second is the
@@ -315,7 +315,7 @@ assumed that beta-reduction takes place when the axiom is instantiated.
 </CDDefinition>
 
 <CDDefinition>
-<Name> ModusPonens </Name>
+<Name>ModusPonens</Name>
 <Description> 
 This symbol represents the generation of a line of a proof by application
 of Modus Ponens. The first argument is the new well-formed formula (B),
@@ -339,7 +339,7 @@ number in the proof for A implies B.
 </CDDefinition>
 
 <CDDefinition>
-<Name> Generalisation </Name>
+<Name>Generalisation</Name>
 <Description> 
 This symbol represents the generation of a line of a proof by application
 of Generalisation. The first argument is the new well-formed formula
@@ -373,7 +373,7 @@ of Generalisation. The first argument is the new well-formed formula
 </CDDefinition>
 
 <CDDefinition>
-<Name> Hypothesis </Name>
+<Name>Hypothesis</Name>
 <Description> 
 This symbol represents that a wellformed formula is a hypothesis of a
 deduction of the propositional or predicate calculus.
@@ -393,7 +393,7 @@ deduction of the propositional or predicate calculus.
 </CDDefinition>
 
 <CDDefinition>
-<Name> proof </Name>
+<Name>proof</Name>
 <Description> 
 This symbol represents a sequence of justified well-formed formulae
 (i.e. objects of type ProofLine). The single argument is a List of
@@ -552,7 +552,7 @@ ProofLine objects.
 </CDDefinition>
 
 <CDDefinition>
-<Name> complete_prop_theorem </Name>
+<Name>complete_prop_theorem</Name>
 <Description> 
 This symbol is used to state, with proof (the second child), that a
 statement (the first child) is a theorem of the classical propositional
@@ -721,7 +721,7 @@ instantiations of the axioms (which may be the common three involving
 </CDDefinition>
 
 <CDDefinition>
-<Name> complete_pred_theorem </Name>
+<Name>complete_pred_theorem</Name>
 <Description> 
 This symbol is used to state, with justification, that a statement is a
 theorem of the classical first-order predicate calculus, i.e. that it
@@ -994,7 +994,7 @@ which is the second child).
 </CDDefinition>
 
 <CDDefinition>
-<Name> prop_deduction </Name>
+<Name>prop_deduction</Name>
 <Description> 
 This symbol is used to claim that a statement (the first child) is a
 deduction of the classical propositional calculus, i.e. that it follows by
@@ -1034,7 +1034,7 @@ hypotheses (elements of the set which is the second child).
 </CDDefinition>
 
 <CDDefinition>
-<Name> complete_prop_deduction </Name>
+<Name>complete_prop_deduction</Name>
 <Description> 
 This symbol is used to claim, with proof (the third child), that a
 statement (the first child) is a deduction of the classical propositional
@@ -1068,7 +1068,7 @@ is the second child).
 </CDDefinition>
 
 <CDDefinition>
-<Name> pred_deduction </Name>
+<Name>pred_deduction</Name>
 <Description> 
 This symbol is used to claim that a statement (the first child) is a
 deduction of the classical predicate calculus, i.e. that it follows by
@@ -1117,7 +1117,7 @@ not be), and the hypotheses (elements of the set which is the second child).
 </CDDefinition>
 
 <CDDefinition>
-<Name> complete_pred_deduction </Name>
+<Name>complete_pred_deduction</Name>
 <Description> 
 This symbol is used to claim, with proof (the third child), that a
 statement (the first child) is a deduction of the classical predicate
@@ -1132,7 +1132,7 @@ and moving forall inside implication, but need not be), and the hypotheses
 </CDDefinition>
 
 <CDDefinition>
-<Name> is_deduction </Name>
+<Name>is_deduction</Name>
 <Description> 
 This symbol expresses whether or not there is a deduction of the form
 quoted. Hence for items of type complete_pred_deduction, it is always true

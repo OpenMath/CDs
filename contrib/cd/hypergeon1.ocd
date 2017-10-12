@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <!-- $Id: hypergeon1.tfb,v 1.4 2003/11/30 13:21:28 taka Exp $ -->
 <CD xmlns="http://www.openmath.org/OpenMathCD">
-<CDName> hypergeon1 </CDName>
+<CDName>hypergeon1</CDName>
 <CDURL>http://www.math.kobe-u.ac.jp/OCD/hypergeon1.tfb</CDURL>
 <CDReviewDate>2017-12-31</CDReviewDate>
-<CDStatus> experimental </CDStatus>
-<CDDate> 2003-11-30 </CDDate>
-<CDVersion> 1 </CDVersion>
+<CDStatus>experimental</CDStatus>
+<CDDate>2003-11-30</CDDate>
+<CDVersion>1</CDVersion>
 <CDRevision>2</CDRevision>
 <CDComment>
   Author: Nobuki Takayama
@@ -17,14 +17,14 @@ This CD defines symbols for A-hypergeometric series
 </Description>
 
 <CDDefinition>
-<Name> falling_factorial </Name>
+<Name>falling_factorial</Name>
 <Description>
   falling_factorial(n,i) is equal to n*(n-1)* ... *(n-i+1).
 </Description>
 </CDDefinition>
 
 <CDDefinition>
-<Name> raising_multi_factorial </Name>
+<Name>raising_multi_factorial</Name>
 <Description>
   raising_multi_factorial is a product of pochhammer symbols.
   2-ary function.
@@ -98,7 +98,7 @@ This CD defines symbols for A-hypergeometric series
 </CDDefinition>
 
 <CDDefinition>
-<Name> falling_multi_factorial </Name>
+<Name>falling_multi_factorial</Name>
 <Description>
   falling_multi_factorial is a product of falling pochhammer symbols.
   2-ary function.
@@ -169,7 +169,7 @@ This CD defines symbols for A-hypergeometric series
 </CDDefinition>
 
 <CDDefinition>
-<Name> a_hypergeomeric </Name>
+<Name>a_hypergeomeric</Name>
 <Description>
   A-hypergeometric series
  reference:

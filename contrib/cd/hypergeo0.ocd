@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <CD xmlns="http://www.openmath.org/OpenMathCD">
 <!-- $Id: hypergeo0.tfb,v 1.9 2002/11/29 07:26:41 taka Exp $ -->
-<CDName> hypergeo0 </CDName>
+<CDName>hypergeo0</CDName>
 <CDURL>http://www.math.kobe-u.ac.jp/OCD/</CDURL>
 <CDReviewDate>2017-12-31</CDReviewDate>
-<CDDate> 2002-11-29 </CDDate>
-<CDVersion> 0 </CDVersion>
+<CDDate>2002-11-29</CDDate>
+<CDVersion>0</CDVersion>
 <CDRevision>1</CDRevision>
 <CDComment>
   Author: Yasushi Tamura
 </CDComment>
-<CDStatus> experimental </CDStatus>
+<CDStatus>experimental</CDStatus>
 
 <Description>
 	This CD defines some basic hypergeometric integrals and
@@ -23,7 +23,7 @@
 </Description>
 
 <CDDefinition>
-<Name> gamma </Name>
+<Name>gamma</Name>
 <Description>
 	Euler's gamma function
 </Description>
@@ -100,7 +100,7 @@
 </CDDefinition>
 
 <CDDefinition>
-<Name> beta </Name>
+<Name>beta</Name>
 <Description>
 	Euler's beta function
 </Description>
@@ -205,7 +205,7 @@
 </CDDefinition>
 
 <CDDefinition>
-<Name> pochhammer </Name>
+<Name>pochhammer</Name>
 <Description>
 	Pochhammer symbol
 </Description>

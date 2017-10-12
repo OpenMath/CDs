@@ -33,12 +33,12 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName> algebraic_cats </CDName>
+<CDName>algebraic_cats</CDName>
 <CDURL>http://www.openmath.org/cd/algebraic_cats.ocd</CDURL>
 <CDReviewDate>2017-12-31</CDReviewDate>
-<CDStatus> experimental </CDStatus>
-<CDDate> 2002-06-17 </CDDate>
-<CDVersion> 0 </CDVersion>
+<CDStatus>experimental</CDStatus>
+<CDDate>2002-06-17</CDDate>
+<CDVersion>0</CDVersion>
 <CDRevision>3</CDRevision>
 <CDComment>
   Author: J B Collins
@@ -55,7 +55,7 @@ access to attributes of the categories.
 </Description>
 
 <CDDefinition>
-<Name> monoid </Name>
+<Name>monoid</Name>
 <Description>
 This is the constructor for monoids. A monoid comprises a set and an operation over elements of the set. The set must contain a unique identity element
 (relative to the operation). That is an element, I, such that I*a=a*I=a where a
@@ -301,7 +301,7 @@ element in S </CMP>
 </CDDefinition>
 
 <CDDefinition>
-  <Name> monoid_set </Name>
+  <Name>monoid_set</Name>
   <Description>
 This symbol takes one argument which should be a monoid, it returns the set of 
 the monoid.
@@ -326,7 +326,7 @@ the monoid.
 </CDDefinition>
 
 <CDDefinition>
-  <Name> monoid_operation </Name>
+  <Name>monoid_operation</Name>
   <Description>
 This symbol takes one argument which should be a monoid, it returns
 the operation of the monoid.
@@ -351,7 +351,7 @@ the operation of the monoid.
 </CDDefinition>
 
 <CDDefinition>
-<Name> monoid_identity </Name>
+<Name>monoid_identity</Name>
 <Description>
 This symbol takes  one argument which should be a monoid, it returns
 the identity of the monoid.
@@ -376,7 +376,7 @@ the identity of the monoid.
 </CDDefinition>
 
 <CDDefinition>
-<Name> Abelian_monoid </Name>
+<Name>Abelian_monoid</Name>
 <Description>
 This is the constructor for Abelian monoids. An Abelian monoid is a monoid, 
 such that the operation is commutative between members of the Abelian monoid.
@@ -466,7 +466,7 @@ if (S,*,1) comprises an Abelian monoid then for all a,b in S | a*b=b*a
 </CDDefinition>
 
 <CDDefinition>
-  <Name> Abelian_monoid_set </Name>
+  <Name>Abelian_monoid_set</Name>
   <Description>
 This symbol takes one argument which should be an Abelian monoid, it returns the set of 
 the Abelian monoid.
@@ -491,7 +491,7 @@ the Abelian monoid.
 </CDDefinition>
 
 <CDDefinition>
-  <Name> Abelian_monoid_operation </Name>
+  <Name>Abelian_monoid_operation</Name>
   <Description>
 This symbol takes one argument which should be an Abelian monoid, it returns
 the operation of the Abelian monoid.
@@ -516,7 +516,7 @@ the operation of the Abelian monoid.
 </CDDefinition>
 
 <CDDefinition>
-<Name> Abelian_monoid_identity </Name>
+<Name>Abelian_monoid_identity</Name>
 <Description>
 This symbol takes  one argument which should be an Abelian monoid, it returns
 the identity of the Abelian monoid.
@@ -541,7 +541,7 @@ the identity of the Abelian monoid.
 </CDDefinition>
 
 <CDDefinition>
-<Name> ordered_monoid </Name>
+<Name>ordered_monoid</Name>
 <Description>
 This is the constructor for ordered monoids, that is monoids on which there is 
 an ordering relation. The ordered_monoid constructor takes four arguments, the 
@@ -768,7 +768,7 @@ for all a,b in S | if a\leq b and b\leq a then a=b
 </CDDefinition>
 
 <CDDefinition>
-<Name> ordered_monoid_set </Name>
+<Name>ordered_monoid_set</Name>
 <Description>
 This symbol takes one argument which should be an ordered monoid. It returns a 
 set which should be the set of the ordered monoid.
@@ -795,7 +795,7 @@ set which should be the set of the ordered monoid.
 </CDDefinition>
 
 <CDDefinition>
-<Name> ordered_monoid_operation </Name>
+<Name>ordered_monoid_operation</Name>
 <Description>
 This symbol takes one argument which should be an ordered monoid. It returns a
 binary function between elements of the set of the ordered monoid, which should
@@ -823,7 +823,7 @@ represent the operation of the ordered monoid.
 </CDDefinition>
 
 <CDDefinition>
-<Name> ordered_monoid_identity </Name>
+<Name>ordered_monoid_identity</Name>
 <Description>
 This symbol takes one argument which should be an ordered monoid. It returns an
 element of the set of the ordered monoid, which should be the identity of the 
@@ -851,7 +851,7 @@ ordered monoid.
 </CDDefinition>
 
 <CDDefinition>
-<Name> ordered_monoid_order </Name>
+<Name>ordered_monoid_order</Name>
 <Description>
 This symbol takes one argument which should be an ordered monoid. It returns a 
 binary function between elements of the set of the ordered monoid, which should
@@ -879,7 +879,7 @@ represent the ordering relation on the ordered monoid.
 </CDDefinition>
 
 <CDDefinition>
-<Name> ordered_Abelian_monoid </Name>
+<Name>ordered_Abelian_monoid</Name>
 <Description>
 This symbol is the constructor for ordered Abelian monoids, that is Abelian 
 monoids on which there is an ordering relation. The ordered_Abelian_monoid 
@@ -1106,7 +1106,7 @@ for all a,b in S | if a\leq b and b\leq a then a=b
 </CDDefinition>
 
 <CDDefinition>
-<Name> ordered_Abelian_monoid_set </Name>
+<Name>ordered_Abelian_monoid_set</Name>
 <Description>
 This symbol takes one argument which should be an ordered Abelian monoid. It returns a 
 set which should be the set of the ordered Abelian monoid.
@@ -1133,7 +1133,7 @@ set which should be the set of the ordered Abelian monoid.
 </CDDefinition>
 
 <CDDefinition>
-<Name> ordered_Abelian_monoid_operation </Name>
+<Name>ordered_Abelian_monoid_operation</Name>
 <Description>
 This symbol takes one argument which should be an ordered Abelian monoid. It returns a
 binary function between elements of the set of the ordered Abelian monoid, which should
@@ -1161,7 +1161,7 @@ represent the operation of the ordered Abelian monoid.
 </CDDefinition>
 
 <CDDefinition>
-<Name> ordered_Abelian_monoid_identity </Name>
+<Name>ordered_Abelian_monoid_identity</Name>
 <Description>
 This symbol takes one argument which should be an ordered Abelian monoid. It returns an
 element of the set of the ordered Abelian monoid, which should be the identity of the 
@@ -1189,7 +1189,7 @@ ordered Abelian monoid.
 </CDDefinition>
 
 <CDDefinition>
-<Name> ordered_Abelian_monoid_order </Name>
+<Name>ordered_Abelian_monoid_order</Name>
 <Description>
 This symbol takes one argument which should be an ordered Abelian monoid. It returns a 
 binary function between elements of the set of the ordered Abelian monoid, which should
@@ -1217,7 +1217,7 @@ represent the ordering relation on the ordered Abelian monoid.
 </CDDefinition>
 
 <CDDefinition>
-<Name> groupoid </Name>
+<Name>groupoid</Name>
 <Description>
 This symbol is the constructor for groupoids, that is an algebraic structure 
 on a set, with a binary operation. The operator of the groupoid must be closed 
@@ -1303,7 +1303,7 @@ if (S,*) comprises a groupoid, then for all a,b in S | a*b is a member of S
 </CDDefinition>
 
 <CDDefinition>
-<Name> groupoid_set </Name>
+<Name>groupoid_set</Name>
 <Description>
 This symbol takes one argument which should be a groupoid. It returns the set of the groupoid.
 </Description>
@@ -1327,7 +1327,7 @@ This symbol takes one argument which should be a groupoid. It returns the set of
 </CDDefinition>
 
 <CDDefinition>
-<Name> groupoid_operation </Name>
+<Name>groupoid_operation</Name>
 <Description>
 This symbol takes one argument which should be a groupoid. It returns a binary 
 function which should represent the operation of the groupoid.
@@ -1352,7 +1352,7 @@ function which should represent the operation of the groupoid.
 </CDDefinition>
 
 <CDDefinition>
-<Name> semigroup </Name>
+<Name>semigroup</Name>
 <Description>
 This symbol is the constructor for semigroups, that is groupoids for which 
 the operator of the semigroup is associative over the set of the semigroup.
@@ -1466,7 +1466,7 @@ if (S,*) comprises a semigroup then for all a,b,c in S | a*(b*c)=(a*b)*c
 </CDDefinition>
 
 <CDDefinition>
-<Name> semigroup_set </Name>
+<Name>semigroup_set</Name>
 <Description>
 This symbol takes one argument which should be a semigroup. It returns the set of the semigroup.
 </Description>
@@ -1490,7 +1490,7 @@ This symbol takes one argument which should be a semigroup. It returns the set o
 </CDDefinition>
 
 <CDDefinition>
-<Name> semigroup_operation </Name>
+<Name>semigroup_operation</Name>
 <Description>
 This symbol takes one argument which should be a semigroup. It returns a binary function which should represent the operation of the semigroup.
 </Description>
@@ -1514,7 +1514,7 @@ This symbol takes one argument which should be a semigroup. It returns a binary 
 </CDDefinition>
 
 <CDDefinition>
-<Name> Abelian_semigroup </Name>
+<Name>Abelian_semigroup</Name>
 <Description>
 This symbol is the constructor for an Abelian semigroup, that is a semigroup
 which has an operator which is commutative over the set of the semigroup.
@@ -1600,7 +1600,7 @@ binary function which represents the operation of the Abelian semigroup.
 </CDDefinition>
 
 <CDDefinition>
-<Name> Abelian_semigroup_set </Name>
+<Name>Abelian_semigroup_set</Name>
 <Description>
 This symbol takes one argument which should be an Abelian semigroup. It returns a set, which should be the set of the Abelian semigroup.
 </Description>
@@ -1624,7 +1624,7 @@ This symbol takes one argument which should be an Abelian semigroup. It returns 
 </CDDefinition>
 
 <CDDefinition>
-<Name> Abelian_semigroup_operation </Name>
+<Name>Abelian_semigroup_operation</Name>
 <Description>
 This symbol takes one argument which should be an Abelian semigroup. It returns a binary function, which should represent the operation of the Abelian semigroup.
 </Description>
@@ -1652,7 +1652,7 @@ This symbol takes one argument which should be an Abelian semigroup. It returns 
 This symbol is an alternative model for the symbol declare_group in
 the CD group1
 </CDComment>
-<Name> group </Name>
+<Name>group</Name>
 <Description>
 This symbol is the constructor for groups, that is a monoid for which every 
 element is invertible.
@@ -1759,7 +1759,7 @@ if (S,*,1,inv:S->S) comprises a group then for all a in S | inv(a) is a member o
 </CDDefinition>
 
 <CDDefinition>
-<Name> group_set </Name>
+<Name>group_set</Name>
 <Description>
 This symbol takes one argument which should be a group. It returns a set, which should be the set of the group.
 </Description>
@@ -1787,7 +1787,7 @@ This symbol takes one argument which should be a group. It returns a set, which 
 </CDDefinition>
 
 <CDDefinition>
-<Name> group_operation </Name>
+<Name>group_operation</Name>
 <Description>
 This symbol takes one argument which should be a group. It returns a binary function, which represents the operation of the group.
 </Description>
@@ -1815,7 +1815,7 @@ This symbol takes one argument which should be a group. It returns a binary func
 </CDDefinition>
 
 <CDDefinition>
-<Name> group_identity </Name>
+<Name>group_identity</Name>
 <Description>
 This symbol takes one argument which should be a group. It returns the identity of the group.
 </Description>
@@ -1843,7 +1843,7 @@ This symbol takes one argument which should be a group. It returns the identity 
 </CDDefinition>
 
 <CDDefinition>
-<Name> group_inverse </Name>
+<Name>group_inverse</Name>
 <Description>
 This symbol takes one argument which should be a group. It returns a unary function, which is the inverse mapping for the group.
 </Description>
@@ -1871,7 +1871,7 @@ This symbol takes one argument which should be a group. It returns a unary funct
 </CDDefinition>
 
 <CDDefinition>
-<Name> ordered_group </Name>
+<Name>ordered_group</Name>
 <Description>
 This symbol is the constructor for ordered groups, that is a group on which 
 there is an ordering relation. 
@@ -2101,7 +2101,7 @@ for all a,b in S | if a\leq b and b\leq a then a=b
 </CDDefinition>
 
 <CDDefinition>
-<Name> ordered_group_set </Name>
+<Name>ordered_group_set</Name>
 <Description>
 This symbol takes one argument which should be an ordered group. It returns the set of the ordered group.
 </Description>
@@ -2130,7 +2130,7 @@ This symbol takes one argument which should be an ordered group. It returns the 
 </CDDefinition>
 
 <CDDefinition>
-<Name> ordered_group_operation </Name>
+<Name>ordered_group_operation</Name>
 <Description>
 This symbol takes one argument which should be an ordered group. It returns a binary function, which represents the operation of the ordered group.
 </Description>
@@ -2159,7 +2159,7 @@ This symbol takes one argument which should be an ordered group. It returns a bi
 </CDDefinition>
 
 <CDDefinition>
-<Name> ordered_group_identity </Name>
+<Name>ordered_group_identity</Name>
 <Description>
 This symbol takes one argument which should be an ordered group. It returns the identity of the ordered group.
 </Description>
@@ -2188,7 +2188,7 @@ This symbol takes one argument which should be an ordered group. It returns the 
 </CDDefinition>
 
 <CDDefinition>
-<Name> ordered_group_inverse </Name>
+<Name>ordered_group_inverse</Name>
 <Description>
 This symbol takes one argument which should be an ordered group. It returns a unary function, which is the inverse function of the ordered group.
 </Description>
@@ -2217,7 +2217,7 @@ This symbol takes one argument which should be an ordered group. It returns a un
 </CDDefinition>
 
 <CDDefinition>
-<Name> ordered_group_order </Name>
+<Name>ordered_group_order</Name>
 <Description>
 This symbol takes one argument which should be an ordered group. It returns a binary function, which represents the ordering of the ordered group.
 </Description>
@@ -2246,7 +2246,7 @@ This symbol takes one argument which should be an ordered group. It returns a bi
 </CDDefinition>
 
 <CDDefinition>
-<Name> Abelian_group </Name>
+<Name>Abelian_group</Name>
 <Description>
 This symbol is the constructor for Abelian groups, that is a group such that 
 the operation is commutative between members of the group.
@@ -2339,7 +2339,7 @@ if (S,*,1,inv) comprises an Abelian group then for all a,b in S | a*b = b*a
 </CDDefinition>
 
 <CDDefinition>
-<Name> Abelian_group_set </Name>
+<Name>Abelian_group_set</Name>
 <Description>
 This symbol takes one argument which should be an Abelian group. It returns the set of the Abelian group.
 </Description>
@@ -2367,7 +2367,7 @@ This symbol takes one argument which should be an Abelian group. It returns the 
 </CDDefinition>
 
 <CDDefinition>
-<Name> Abelian_group_operation </Name>
+<Name>Abelian_group_operation</Name>
 <Description>
 This symbol takes one argument which should be an Abelian group. It returns a binary function, which represents the operation of the Abelian group.
 </Description>
@@ -2395,7 +2395,7 @@ This symbol takes one argument which should be an Abelian group. It returns a bi
 </CDDefinition>
 
 <CDDefinition>
-<Name> Abelian_group_identity </Name>
+<Name>Abelian_group_identity</Name>
 <Description>
 This symbol takes one argument which should be an Abelian group. It returns the identity of the Abelian group.
 </Description>
@@ -2423,7 +2423,7 @@ This symbol takes one argument which should be an Abelian group. It returns the 
 </CDDefinition>
 
 <CDDefinition>
-<Name> Abelian_group_inverse </Name>
+<Name>Abelian_group_inverse</Name>
 <Description>
 This symbol takes one argument which should be an Abelian group. It reurns a unary function, which should be the inverse function for the Abelian group.
 </Description>
@@ -2451,7 +2451,7 @@ This symbol takes one argument which should be an Abelian group. It reurns a una
 </CDDefinition>
 
 <CDDefinition>
-<Name> ordered_Abelian_group </Name>
+<Name>ordered_Abelian_group</Name>
 <Description>
 This symbol is the constructor for ordered Abelian groups, that is an  
 Abelian group on which there is an ordering relation. 
@@ -2681,7 +2681,7 @@ for all a,b in S | if a\leq b and b\leq a then a=b
 </CDDefinition>
 
 <CDDefinition>
-<Name> ordered_Abelian_group_set </Name>
+<Name>ordered_Abelian_group_set</Name>
 <Description>
 This symbol takes one argument which should be an ordered Abelian group. It returns the set of the ordered Abelian group.
 </Description>
@@ -2710,7 +2710,7 @@ This symbol takes one argument which should be an ordered Abelian group. It retu
 </CDDefinition>
 
 <CDDefinition>
-<Name> ordered_Abelian_group_operation </Name>
+<Name>ordered_Abelian_group_operation</Name>
 <Description>
 This symbol takes one argument which should be an ordered Abelian group. It returns a binary function, which represents the operation of the ordered Abelian group.
 </Description>
@@ -2739,7 +2739,7 @@ This symbol takes one argument which should be an ordered Abelian group. It retu
 </CDDefinition>
 
 <CDDefinition>
-<Name> ordered_Abelian_group_identity </Name>
+<Name>ordered_Abelian_group_identity</Name>
 <Description>
 This symbol takes one argument which should be an ordered Abelian group. It returns the identity of the ordered Abelian group.
 </Description>
@@ -2768,7 +2768,7 @@ This symbol takes one argument which should be an ordered Abelian group. It retu
 </CDDefinition>
 
 <CDDefinition>
-<Name> ordered_Abelian_group_inverse </Name>
+<Name>ordered_Abelian_group_inverse</Name>
 <Description>
 This symbol takes one argument which should be an ordered Abelian group. It returns a unary function, which is the inverse function of the ordered Abelian group.
 </Description>
@@ -2797,7 +2797,7 @@ This symbol takes one argument which should be an ordered Abelian group. It retu
 </CDDefinition>
 
 <CDDefinition>
-<Name> ordered_Abelian_group_order </Name>
+<Name>ordered_Abelian_group_order</Name>
 <Description>
 This symbol takes one argument which should be an ordered Abelian group. It returns a binary function, which should represent the ordering of the ordered Abelian group.
 </Description>
@@ -2826,7 +2826,7 @@ This symbol takes one argument which should be an ordered Abelian group. It retu
 </CDDefinition>
 
 <CDDefinition>
-  <Name> ringoid </Name>
+  <Name>ringoid</Name>
   <Description>
 This symbol is the constructor for ringoids. A ringoid is a set together with 
 two operations + and *. * is left and right distributive over +.
@@ -3021,7 +3021,7 @@ if (a,*,+) comprises a ringoid then for all a,b,c in S | a*(b+c) = a*b+a*c
 </CDDefinition>
 
 <CDDefinition>
-  <Name> ringoid_set </Name>
+  <Name>ringoid_set</Name>
   <Description>
 This symbol takes one argument which should be a ringoid. It returns a
 set which represents the set of the ringoid.
@@ -3049,7 +3049,7 @@ set which represents the set of the ringoid.
 </CDDefinition>
 
 <CDDefinition>
-  <Name> ringoid_times </Name>
+  <Name>ringoid_times</Name>
   <Description>
 This symbol takes one argument which should be a ringoid. It returns a
 binary function which represents the multiplicative operation (*) of
@@ -3078,7 +3078,7 @@ the ringoid.
 </CDDefinition>
 
 <CDDefinition>
-  <Name> ringoid_plus </Name>
+  <Name>ringoid_plus</Name>
   <Description>
 This symbol takes one argument which should be a ringoid. It returns a
 binary function which represents the additive operation (+) of the ringoid.
@@ -3106,7 +3106,7 @@ binary function which represents the additive operation (+) of the ringoid.
 </CDDefinition>
 
 <CDDefinition>
-<Name> ring </Name>
+<Name>ring</Name>
 <Description>
 This symbol is the constructor for rings. A ring is a set together with two 
 operations + and *. A ring is an Abelian group under + and a semigroup under *.
@@ -3279,7 +3279,7 @@ For all a,b,c in S, a*(b+c)=(a*b)+(a*c) and (b+c)*a=(b*a)+(c*a)
 </CDDefinition>
 
 <CDDefinition>
-<Name> ring_set </Name>
+<Name>ring_set</Name>
 <Description>
 This symbol takes one argument which should be a ring. It returns the set of the ring.
 </Description>
@@ -3308,7 +3308,7 @@ This symbol takes one argument which should be a ring. It returns the set of the
 </CDDefinition>
 
 <CDDefinition>
-<Name> ring_times </Name>
+<Name>ring_times</Name>
 <Description>
 This symbol takes one argument which should be a ring. It returns a binary function which represents the multiplicative operation of the ring.
 </Description>
@@ -3337,7 +3337,7 @@ This symbol takes one argument which should be a ring. It returns a binary funct
 </CDDefinition>
 
 <CDDefinition>
-<Name> ring_plus </Name>
+<Name>ring_plus</Name>
 <Description>
 This symbol takes one argument which should be a ring. It returns a binary function which represents the additive operation of the ring.
 </Description>
@@ -3366,7 +3366,7 @@ This symbol takes one argument which should be a ring. It returns a binary funct
 </CDDefinition>
 
 <CDDefinition>
-<Name> ring_zero </Name>
+<Name>ring_zero</Name>
 <Description>
 This symbol takes one argument which should be a ring. It returns the additive identity of the ring.
 </Description>
@@ -3395,7 +3395,7 @@ This symbol takes one argument which should be a ring. It returns the additive i
 </CDDefinition>
 
 <CDDefinition>
-<Name> ring_negative </Name>
+<Name>ring_negative</Name>
 <Description>
 This symbol takes one argument which should be a ring. It returns a unary function which should be the negative function of the ring.
 </Description>
@@ -3424,7 +3424,7 @@ This symbol takes one argument which should be a ring. It returns a unary functi
 </CDDefinition>
 
 <CDDefinition>
-<Name> ordered_ring </Name>
+<Name>ordered_ring</Name>
 <Description>
 This symbol is the constructor for ordered rings, that is a ring on which there
 is an ordering relation.
@@ -3658,7 +3658,7 @@ for all a,b in S | if a\leq b and b\leq a then a=b
 </CDDefinition>
 
 <CDDefinition>
-<Name> ordered_ring_set </Name>
+<Name>ordered_ring_set</Name>
 <Description>
 This symbol takes one argument which should be an ordered ring. It returns the set of the ordered ring.
 </Description>
@@ -3688,7 +3688,7 @@ This symbol takes one argument which should be an ordered ring. It returns the s
 </CDDefinition>
 
 <CDDefinition>
-<Name> ordered_ring_times </Name>
+<Name>ordered_ring_times</Name>
 <Description>
 This symbol takes one argument which should be an ordered ring. It returns a binary function, which represents the multiplicative operation of the ordered ring.
 </Description>
@@ -3718,7 +3718,7 @@ This symbol takes one argument which should be an ordered ring. It returns a bin
 </CDDefinition>
 
 <CDDefinition>
-<Name> ordered_ring_plus </Name>
+<Name>ordered_ring_plus</Name>
 <Description>
 This symbol takes one argument which should be an ordered ring. It returns a binary function, which represents the additive operation of the ordered ring.
 </Description>
@@ -3748,7 +3748,7 @@ This symbol takes one argument which should be an ordered ring. It returns a bin
 </CDDefinition>
 
 <CDDefinition>
-<Name> ordered_ring_zero </Name>
+<Name>ordered_ring_zero</Name>
 <Description>
 This symbol takes one argument which should be an ordered ring. It returns the zero of the ordered ring.
 </Description>
@@ -3778,7 +3778,7 @@ This symbol takes one argument which should be an ordered ring. It returns the z
 </CDDefinition>
 
 <CDDefinition>
-<Name> ordered_ring_negative </Name>
+<Name>ordered_ring_negative</Name>
 <Description>
 This symbol takes one argument which should be an ordered ring. It returns a unary function to represent the additive inverse function of the ordered ring.
 </Description>
@@ -3808,7 +3808,7 @@ This symbol takes one argument which should be an ordered ring. It returns a una
 </CDDefinition>
 
 <CDDefinition>
-<Name> ordered_ring_order </Name>
+<Name>ordered_ring_order</Name>
 <Description>
 This symbol takes one argument which should be an ordered ring. It returns a binary function, which represents the order function on the ordered ring.
 </Description>
@@ -3838,7 +3838,7 @@ This symbol takes one argument which should be an ordered ring. It returns a bin
 </CDDefinition>
 
 <CDDefinition>
-<Name> non_commutative_ring </Name>
+<Name>non_commutative_ring</Name>
 <Description>
 This symbol is the constructor for non commutative rings, these are rings 
 over which the * operator is not commutative.
@@ -3941,7 +3941,7 @@ there exist a,b in S such that a*b~=b*a
 </CDDefinition>
 
 <CDDefinition>
-<Name> non_commutative_ring_set </Name>
+<Name>non_commutative_ring_set</Name>
 <Description>
 This symbol takes one argument which should be a non-commutative ring. It returns the set of the non-commutative ring.
 </Description>
@@ -3970,7 +3970,7 @@ This symbol takes one argument which should be a non-commutative ring. It return
 </CDDefinition>
 
 <CDDefinition>
-<Name> non_commutative_ring_times </Name>
+<Name>non_commutative_ring_times</Name>
 <Description>
 This symbol takes one argument which should be a non-commutative ring. It returns a binary function, which represents the multiplicative function of the non-commutative ring.
 </Description>
@@ -3999,7 +3999,7 @@ This symbol takes one argument which should be a non-commutative ring. It return
 </CDDefinition>
 
 <CDDefinition>
-<Name> non_commutative_ring_plus </Name>
+<Name>non_commutative_ring_plus</Name>
 <Description>
 This symbol takes one argument which should be a non-commutative ring. It returns a binary function, which represents the additive function of the non-commutative ring.
 </Description>
@@ -4028,7 +4028,7 @@ This symbol takes one argument which should be a non-commutative ring. It return
 </CDDefinition>
 
 <CDDefinition>
-<Name> non_commutative_ring_zero </Name>
+<Name>non_commutative_ring_zero</Name>
 <Description>
 This symbol takes one argument which should be a non-commutative ring. It returns the zero of the non-commutative ring.
 </Description>
@@ -4057,7 +4057,7 @@ This symbol takes one argument which should be a non-commutative ring. It return
 </CDDefinition>
 
 <CDDefinition>
-<Name> non_commutative_ring_negative </Name>
+<Name>non_commutative_ring_negative</Name>
 <Description>
 This symbol takes one argument which should be a non-commutative ring. It returns a unary function, which represents the multiplicative inverse of the non-commutative ring.
 </Description>
@@ -4086,7 +4086,7 @@ This symbol takes one argument which should be a non-commutative ring. It return
 </CDDefinition>
 
 <CDDefinition>
-<Name> Euclidean_domain </Name>
+<Name>Euclidean_domain</Name>
 <Description>
 This symbol is the constructor for Euclidean domains. A Euclidean domain is a
 ring on which there is no zero divisors together with an integer norm function.
@@ -4361,7 +4361,7 @@ for every a,b ~= 0 in S then there exists q and r in S such that
 </CDDefinition>
 
 <CDDefinition>
-<Name> Euclidean_domain_set </Name>
+<Name>Euclidean_domain_set</Name>
 <Description>
 This symbol takes one argument which should be a Euclidean domain. It returns the set of the Euclidean domain.
 </Description>
@@ -4391,7 +4391,7 @@ This symbol takes one argument which should be a Euclidean domain. It returns th
 </CDDefinition>
 
 <CDDefinition>
-<Name> Euclidean_domain_times </Name>
+<Name>Euclidean_domain_times</Name>
 <Description>
 This symbol takes one argument which should be a Euclidean domain. It returns a binary function, which represents the multiplicative operation of the Euclidean domain.
 </Description>
@@ -4421,7 +4421,7 @@ This symbol takes one argument which should be a Euclidean domain. It returns a 
 </CDDefinition>
 
 <CDDefinition>
-<Name> Euclidean_domain_plus </Name>
+<Name>Euclidean_domain_plus</Name>
 <Description>
 This symbol takes one argument which should be a Euclidean domain. It returns a binary function, which represents the additive operation of the Euclidean domain.
 </Description>
@@ -4451,7 +4451,7 @@ This symbol takes one argument which should be a Euclidean domain. It returns a 
 </CDDefinition>
 
 <CDDefinition>
-<Name> Euclidean_domain_zero </Name>
+<Name>Euclidean_domain_zero</Name>
 <Description>
 This symbol takes one argument which should be a Euclidean domain. It returns the additive identity of the Euclidean domain.
 </Description>
@@ -4481,7 +4481,7 @@ This symbol takes one argument which should be a Euclidean domain. It returns th
 </CDDefinition>
 
 <CDDefinition>
-<Name> Euclidean_domain_negative </Name>
+<Name>Euclidean_domain_negative</Name>
 <Description>
 This symbol takes one argument which should be a Euclidean domain. It returns a unary function, which represents additive inverses of the Euclidean domain.
 </Description>
@@ -4511,7 +4511,7 @@ This symbol takes one argument which should be a Euclidean domain. It returns a 
 </CDDefinition>
 
 <CDDefinition>
-<Name> Euclidean_domain_abs </Name>
+<Name>Euclidean_domain_abs</Name>
 <Description>
 This symbol takes one argument which should be a Euclidean domain. It returns a unary function, which is the absolute value function of the Euclidean domain.
 </Description>
@@ -4541,7 +4541,7 @@ This symbol takes one argument which should be a Euclidean domain. It returns a 
 </CDDefinition>
 
 <CDDefinition>
-<Name> field </Name>
+<Name>field</Name>
 <Description>
   This symbol is the constructor for fields. A field is an Abelian group under
  +, the set of the field complement {0} with * is an Abelian group, a field 
@@ -4612,7 +4612,7 @@ represent the additive inverses (i.e. inverses under +, or negatives).
 </CDDefinition>
 
 <CDDefinition>
-<Name> field_set </Name>
+<Name>field_set</Name>
 <Description>
 This symbol takes one argument which should be a field. It returns the set of the field.
 </Description>
@@ -4643,7 +4643,7 @@ This symbol takes one argument which should be a field. It returns the set of th
 </CDDefinition>
 
 <CDDefinition>
-<Name> field_times </Name>
+<Name>field_times</Name>
 <Description>
 This symbol takes one argument which should be a field. It returns a binary function, to represent the multiplicative operation of the field.
 </Description>
@@ -4674,7 +4674,7 @@ This symbol takes one argument which should be a field. It returns a binary func
 </CDDefinition>
 
 <CDDefinition>
-<Name> field_plus </Name>
+<Name>field_plus</Name>
 <Description>
 This symbol takes one argument which should be a field. It returns a binary function, to represent the additive operation of the field.
 </Description>
@@ -4705,7 +4705,7 @@ This symbol takes one argument which should be a field. It returns a binary func
 </CDDefinition>
 
 <CDDefinition>
-<Name> field_one </Name>
+<Name>field_one</Name>
 <Description>
 This symbol takes one argument which should be a field. It returns the multiplicative identity of the field.
 </Description>
@@ -4736,7 +4736,7 @@ This symbol takes one argument which should be a field. It returns the multiplic
 </CDDefinition>
 
 <CDDefinition>
-<Name> field_zero </Name>
+<Name>field_zero</Name>
 <Description>
 This symbol takes one argument which should be a field. It returns the additive identity of the field.
 </Description>
@@ -4767,7 +4767,7 @@ This symbol takes one argument which should be a field. It returns the additive 
 </CDDefinition>
 
 <CDDefinition>
-<Name> field_reciprocal </Name>
+<Name>field_reciprocal</Name>
 <Description>
 This symbol takes one argument which should be a field. It returns a unary function, which is the multiplicative inverse function of the field.
 </Description>
@@ -4798,7 +4798,7 @@ This symbol takes one argument which should be a field. It returns a unary funct
 </CDDefinition>
 
 <CDDefinition>
-<Name> field_negative </Name>
+<Name>field_negative</Name>
 <Description>
 This symbol takes one argument which should be a field. It returns a unary function, which is the additive inverse function of the field.
 </Description>
@@ -4829,7 +4829,7 @@ This symbol takes one argument which should be a field. It returns a unary funct
 </CDDefinition>
 
 <CDDefinition>
-<Name> integral_domain </Name>
+<Name>integral_domain</Name>
 <Description>
 This symbol is the constructor for integral domains. An integral domain is a 
 ring which is commutative under *, it has a multiplicative identity (under *), 
@@ -5038,7 +5038,7 @@ and a unary function from the set into itself to represent additive inverses
 </CDDefinition>
 
 <CDDefinition>
-<Name> integral_domain_set </Name>
+<Name>integral_domain_set</Name>
 <Description>
 This symbol takes one argument which should be an integral domain. It
 returns the set of the integral domain.
@@ -5069,7 +5069,7 @@ returns the set of the integral domain.
 </CDDefinition>
 
 <CDDefinition>
-<Name> integral_domain_times </Name>
+<Name>integral_domain_times</Name>
 <Description>
 This symbol takes one argument which should be an integral domain. It
 returns a binary function which represents the multiplicative
@@ -5101,7 +5101,7 @@ operation of the integral domain.
 </CDDefinition>
 
 <CDDefinition>
-<Name> integral_domain_plus </Name>
+<Name>integral_domain_plus</Name>
 <Description>
 This symbol takes one argument which should be an integral domain. It returns a binary function which represents the additive operation of the integral domain.
 </Description>
@@ -5131,7 +5131,7 @@ This symbol takes one argument which should be an integral domain. It returns a 
 </CDDefinition>
 
 <CDDefinition>
-<Name> integral_domain_one </Name>
+<Name>integral_domain_one</Name>
 <Description>
 This symbol takes one argument which should be an integral domain. It returns the multiplicative identity of the integral domain.
 </Description>
@@ -5161,7 +5161,7 @@ This symbol takes one argument which should be an integral domain. It returns th
 </CDDefinition>
 
 <CDDefinition>
-<Name> integral_domain_zero </Name>
+<Name>integral_domain_zero</Name>
 <Description>
 This symbol takes one argument which should be an integral domain. It returns the additive identity of the integral domain.
 </Description>
@@ -5191,7 +5191,7 @@ This symbol takes one argument which should be an integral domain. It returns th
 </CDDefinition>
 
 <CDDefinition>
-<Name> integral_domain_negative </Name>
+<Name>integral_domain_negative</Name>
 <Description>
 This symbol takes one argument which should be an integral domain. It
 returns a unary function which represents the additive inverse

@@ -33,14 +33,14 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName> mathmlattr </CDName>
+<CDName>mathmlattr</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/mathmlattr.ocd</CDURL>
 <CDReviewDate>2014-04-01</CDReviewDate>
 <CDDate>2009-04-26</CDDate>
 <CDVersion>1</CDVersion>
 <CDRevision>0</CDRevision>
-<CDStatus> official </CDStatus>
+<CDStatus>official</CDStatus>
 <Description>
     This CD holds symbols denoting various types of numbers, vectors
     and similar constructs. Principally these are required for
@@ -48,7 +48,7 @@
 </Description>
 
 <CDDefinition>
-<Name> class </Name>
+<Name>class</Name>
 <Role>attribution</Role>
 <Description> 
 A symbol to be used within an OpenMath attribute to specify the class
@@ -59,7 +59,7 @@ representing the value of the class attribute.
 
 
 <CDDefinition>
-<Name> style </Name>
+<Name>style</Name>
 <Role>attribution</Role>
 <Description> 
 A symbol to be used within an OpenMath attribute to specify the style
@@ -69,7 +69,7 @@ representing the value of the style attribute.
 </CDDefinition>
 
 <CDDefinition>
-<Name> definitionURL </Name>
+<Name>definitionURL</Name>
 <Role>attribution</Role>
 <Description> 
 A symbol to be used within an OpenMath attribute to specify the definitionURL
@@ -80,7 +80,7 @@ representing the value of the definitionURL attribute.
 
 
 <CDDefinition>
-<Name> other </Name>
+<Name>other</Name>
 <Role>attribution</Role>
 <Description> 
 A symbol to be used within an OpenMath attribute to specify the MathML 
@@ -90,7 +90,7 @@ representing the value of the other attribute.
 </CDDefinition>
 
 <CDDefinition>
-<Name> foreign </Name>
+<Name>foreign</Name>
 <Role>attribution</Role>
 <Description> 
 A symbol to be used within an OpenMath attribute to specify an 
@@ -100,7 +100,7 @@ of strings constructed via a head foreign_attribute.
 </CDDefinition>
 
 <CDDefinition>
-<Name> foreign_attribute </Name>
+<Name>foreign_attribute</Name>
 <Role>application</Role>
 <Description> 
 A symbol to be used as the head of the OpenMath application

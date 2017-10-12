@@ -32,12 +32,12 @@
      society at http://www.openmath.org.
 </CDComment> 
 
-<CDName> numerical1 </CDName> 
+<CDName>numerical1</CDName> 
 <CDURL>http://www.openmath.org/cd/numerical1.ocd</CDURL>
 <CDReviewDate>2017-12-31</CDReviewDate> 
-<CDDate> 2003-09-16 </CDDate> 
-<CDStatus> experimental </CDStatus>
-<CDVersion> 1 </CDVersion>
+<CDDate>2003-09-16</CDDate> 
+<CDStatus>experimental</CDStatus>
+<CDVersion>1</CDVersion>
 <CDRevision>1</CDRevision>
 <CDComment>
   Author: James Davenport
@@ -54,7 +54,7 @@
    </Description>
 
     <CDDefinition>
-       <Name> absolute_error_requested </Name>
+       <Name>absolute_error_requested</Name>
        <Description>
            This symbol marks a requirement for the absolute error
 	   ( |true-computed| ) on a computation.
@@ -70,7 +70,7 @@
     </CDDefinition>
 
     <CDDefinition>
-       <Name> relative_error_requested </Name>
+       <Name>relative_error_requested</Name>
        <Description>
            This symbol marks a requirement for the relative error
 	   ( |true-computed|/|computed| ) on a computation.
@@ -78,7 +78,7 @@
     </CDDefinition>
 
     <CDDefinition>
-       <Name> absolute_error_bound </Name>
+       <Name>absolute_error_bound</Name>
        <Description>
            This symbol marks an estimated upper bound for the absolute error
 	   ( |true-computed| ) on a computation.
@@ -86,7 +86,7 @@
     </CDDefinition>
 
     <CDDefinition>
-       <Name> relative_error_bound </Name>
+       <Name>relative_error_bound</Name>
        <Description>
            This symbol marks an estimated upper bound for the relative error
 	   ( |true-computed|/|computed| ) on a computation.

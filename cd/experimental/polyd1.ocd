@@ -1,12 +1,12 @@
 <CD xmlns="http://www.openmath.org/OpenMathCD">
-   <CDName> polyd1 </CDName> 
+   <CDName>polyd1</CDName> 
 <CDBase>http://www.openmath.org/cd</CDBase>
    <CDURL>http://www.openmath.org/cd/polyd1.ocd</CDURL>
-   <CDReviewDate> 2006-04-01 </CDReviewDate> 
-   <CDDate> 2004-07-07 </CDDate> 
-   <CDStatus> experimental </CDStatus>
-   <CDVersion> 3 </CDVersion>
-   <CDRevision> 0 </CDRevision>
+   <CDReviewDate>2006-04-01</CDReviewDate> 
+   <CDDate>2004-07-07</CDDate> 
+   <CDStatus>experimental</CDStatus>
+   <CDVersion>3</CDVersion>
+   <CDRevision>0</CDRevision>
 
    <Description>
      This CD contains operators to deal with polynomials and more precisely 
@@ -119,7 +119,7 @@ We have tried to express this idea in the polydx CDs through some
 </CDComment>
 
     <CDDefinition>
-       <Name> DMP </Name>
+       <Name>DMP</Name>
        <Description>
          The constructor of DMPs. The first argument is the polynomial
          ring containing the polynomial and the second is a "SDMP". 
@@ -129,7 +129,7 @@ We have tried to express this idea in the polydx CDs through some
 
 
     <CDDefinition>
-       <Name> ambient_ring </Name>
+       <Name>ambient_ring</Name>
        <Description>
          This is a unary function, whose argument should be a DMP f. When
        applied to  f, it represents the first argument of f, that is,
@@ -139,7 +139,7 @@ We have tried to express this idea in the polydx CDs through some
 
 
     <CDDefinition>
-       <Name> rank </Name>
+       <Name>rank</Name>
        <Description>
          This is a unary function, whose argument can be a DMP, a poly_ring_d,
        or a poly_ring_d_named. When
@@ -149,7 +149,7 @@ We have tried to express this idea in the polydx CDs through some
     </CDDefinition>
 
     <CDDefinition>
-       <Name> variables </Name>
+       <Name>variables</Name>
        <Description>
          This is a unary function, whose argument is a poly_ring_d_named. When
        applied to  its argument, it represents the list of variables of the
@@ -160,7 +160,7 @@ We have tried to express this idea in the polydx CDs through some
 
 
     <CDDefinition>
-       <Name> DMPL </Name>
+       <Name>DMPL</Name>
        <Description>
          The constructor for lists of multivariate polynomial members of the 
          same polynomial ring. The first argument is a polynomial ring
@@ -173,7 +173,7 @@ We have tried to express this idea in the polydx CDs through some
 
 
     <CDDefinition>
-       <Name> SDMP </Name>
+       <Name>SDMP</Name>
        <Description>
          The constructor for multivariate polynomials without
          any indication of variables or domain for the coefficients.
@@ -187,7 +187,7 @@ We have tried to express this idea in the polydx CDs through some
     </CDDefinition>
 
     <CDDefinition>
-       <Name> term </Name>
+       <Name>term</Name>
        <Description>
          The constructor of monomials. Valid applications are of the form
          Term(coeff, exp1, exp2, ... expn)
@@ -203,7 +203,7 @@ We have tried to express this idea in the polydx CDs through some
 
 
     <CDDefinition>
-       <Name> poly_ring_d </Name>
+       <Name>poly_ring_d</Name>
        <Description> 
          The constructor of polynomial ring. The first argument is a ring
          (the ring of the coefficients), the second is the number 
@@ -226,7 +226,7 @@ We have tried to express this idea in the polydx CDs through some
 
 
     <CDDefinition>
-       <Name> poly_ring_d_named </Name>
+       <Name>poly_ring_d_named</Name>
        <Description> 
          The constructor of polynomial ring. The first argument is a ring
          (the ring of the coefficients), the remaining arguments are the 
@@ -296,7 +296,7 @@ represents the object
 
 
     <CDDefinition>
-       <Name> anonymous </Name>
+       <Name>anonymous</Name>
        <Description> 
          Indicates a variable that we do not want to name
        </Description>
@@ -310,7 +310,7 @@ represents the object
 
 
     <CDDefinition>
-       <Name> plus </Name>
+       <Name>plus</Name>
        <Description>
          The sum. The argument is a DMPL. The sum lies within the same
          "poly_ring_d", i.e., a program implementing this operation
@@ -320,7 +320,7 @@ represents the object
 
 
     <CDDefinition>
-       <Name> minus </Name>
+       <Name>minus</Name>
        <Description>
          The sum. The argument is a DMPL. The sum lies within the same
          "poly_ring_d", i.e., a program implementing this operation
@@ -329,7 +329,7 @@ represents the object
     </CDDefinition>
 
     <CDDefinition>
-       <Name> times </Name>
+       <Name>times</Name>
        <Description>
          The product. The argument is a DMPL. The product lies within the same
          "poly_ring_d", i.e., a program implementing this operation
@@ -338,7 +338,7 @@ represents the object
     </CDDefinition>
 
     <CDDefinition>
-       <Name> power </Name>
+       <Name>power</Name>
        <Description> The power. First argument is a DMP, second
           argument is the integer power. The power lies within the same
           "poly_ring_d",  i.e., a program implementing this operation 

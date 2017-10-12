@@ -33,7 +33,7 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName> combinat1 </CDName>
+<CDName>combinat1</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/combinat1.ocd</CDURL>
 <CDReviewDate>2017-12-31</CDReviewDate>
@@ -44,7 +44,7 @@
   Author: OpenMath Consortium
   SourceURL: https://github.com/OpenMath/CDs
 </CDComment>
-<CDStatus> experimental </CDStatus>
+<CDStatus>experimental</CDStatus>
 <Description>
 This CD defines some basic combinatorics definitions.
 </Description>
@@ -54,7 +54,7 @@ project.
 </CDComment>
 
 <CDDefinition>
-<Name> binomial </Name>
+<Name>binomial</Name>
 <Role>application</Role>
 <Description>
 The binomial coefficients. binomial(n, m) is the number of ways of choosing m
@@ -116,7 +116,7 @@ binomial(n,m) = n!/(m!*(n-m)!)
 </CDDefinition>
 
 <CDDefinition>
-<Name> multinomial </Name>
+<Name>multinomial</Name>
 <Role>application</Role>
 <Description>
 The multinomial coefficient, multinomial(n, n1, ... nk) is the number of
@@ -212,7 +212,7 @@ multinomial(n, n1, ... nk) is equal to n!/(n1!*n2! ...*nk!) where n=n1+...+nk
 </CDDefinition>
 
 <CDDefinition>
-<Name> Stirling1 </Name>
+<Name>Stirling1</Name>
 <Role>application</Role>
 <Description>
 The Stirling numbers of the first kind. (-1)^(n-m)*Stirling1(n,m) is the
@@ -330,7 +330,7 @@ binomial(2n-m,n-m-k) * Stirling2(n,m)
 </CDDefinition>
 
 <CDDefinition>
-<Name> Stirling2 </Name>
+<Name>Stirling2</Name>
 <Role>application</Role>
 <Description>
 The Stirling numbers of the second kind. Stirling2(n, m) is the number of
@@ -422,7 +422,7 @@ binomial(m,k) * k^n
 </CDDefinition>
 
 <CDDefinition>
-<Name> Fibonacci </Name>
+<Name>Fibonacci</Name>
 <Role>application</Role>
 <Description>
 The Fibonacci numbers, defined by the linear recurrence:
@@ -500,7 +500,7 @@ Fibonacci(n + 1) = Fibonacci(n) + Fibonacci(n - 1)
 </CDDefinition>
 
 <CDDefinition>
-<Name> Bell </Name>
+<Name>Bell</Name>
 <Role>application</Role>
 <Description>
 The Bell numbers: Bell(n) is the total number of possible partitions of a set

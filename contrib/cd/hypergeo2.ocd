@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <CD xmlns="http://www.openmath.org/OpenMathCD">
 <!-- $Id: hypergeo2.tfb,v 1.6 2003/11/30 12:56:08 taka Exp $ -->
-<CDName> hypergeo2 </CDName>
+<CDName>hypergeo2</CDName>
 <CDURL>http://www.openxm.org/...</CDURL>
 <CDReviewDate>2017-12-31</CDReviewDate>
-<CDDate> 2003-11-30 </CDDate>
-<CDVersion> 0 </CDVersion>
+<CDDate>2003-11-30</CDDate>
+<CDVersion>0</CDVersion>
 <CDRevision>3</CDRevision>
 <CDComment>
   Author: Yasushi Tamura
 </CDComment>
-<CDStatus> experimental </CDStatus>
+<CDStatus>experimental</CDStatus>
 
 <Description>
 	This CD defines some famous hypergeometric functions such as
@@ -21,7 +21,7 @@
 </Description>
 
 <CDDefinition>
-<Name> kummer </Name>
+<Name>kummer</Name>
 <Description>
 	Kummer's hypergeometric function.
 </Description>
@@ -49,7 +49,7 @@
 </CDDefinition>
 
 <CDDefinition>
-<Name> besselJ </Name>
+<Name>besselJ</Name>
 <Description>
 	The Bessel function.
 	This function is one of the famous two solutions of the Bessel
@@ -200,7 +200,7 @@
 </CDDefinition>
 
 <CDDefinition>
-<Name> besselY </Name>
+<Name>besselY</Name>
 <Description>
 	The Bessel function.
 	This function is the another one of the famous two solutions of the Bessel
@@ -323,7 +323,7 @@
 </CDDefinition>
 
 <CDDefinition>
-<Name> hankel1 </Name>
+<Name>hankel1</Name>
 <Description>
 	The first Hankel function.
 	This function is one of the famous two solutions of the Bessel
@@ -361,7 +361,7 @@
 </CDDefinition>
 
 <CDDefinition>
-<Name> hankel2 </Name>
+<Name>hankel2</Name>
 <Description>
 	The second Hankel function.
 	This function is the another one of the famous two solutions of the Bessel
@@ -399,7 +399,7 @@
 </CDDefinition>
 
 <CDDefinition>
-<Name> airyAi </Name>
+<Name>airyAi</Name>
 <Description>
 	The first Airy function.
 	This function is one of the famous two solutions of the Airy
@@ -447,7 +447,7 @@
 </CDDefinition>
 
 <CDDefinition>
-<Name> airyBi </Name>
+<Name>airyBi</Name>
 <Description>
 	The second Airy function.
 	This function is the another one of the famous two solutions of the Airy

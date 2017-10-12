@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <CD xmlns="http://www.openmath.org/OpenMathCD">
 <!-- $Id: orthpoly1.tfb,v 1.5 2003/11/30 13:10:52 taka Exp $ -->
-<CDName> orthpoly </CDName>
+<CDName>orthpoly</CDName>
 <CDURL>http://www.openxm.org/...</CDURL>
 <CDReviewDate>2017-12-31</CDReviewDate>
-<CDDate> 2003-11-30 </CDDate>
-<CDVersion> 0 </CDVersion>
+<CDDate>2003-11-30</CDDate>
+<CDVersion>0</CDVersion>
 <CDRevision>3</CDRevision>
 <CDComment>
   Author: Yasushi Tamura
 </CDComment>
-<CDStatus> experimental </CDStatus>
+<CDStatus>experimental</CDStatus>
 
 <Description>
  This CD defines orthogonal polynomials which are hypergeometric polynomials.
@@ -20,7 +20,7 @@
 </Description>
 
 <CDDefinition>
-<Name> legendreP </Name>
+<Name>legendreP</Name>
 <Description>
 	The first Legendre function.
 	This function is one of the two famous solutions of Legendre
@@ -62,7 +62,7 @@
 </CDDefinition>
 
 <CDDefinition>
-<Name> legendreQ </Name>
+<Name>legendreQ</Name>
 <Description>
 	The second Legendre function.
 	This function is the another one of the famous two solutions of Legendre
@@ -156,7 +156,7 @@
 </CDDefinition>
 
 <CDDefinition>
-<Name> jacobiG </Name>
+<Name>jacobiG</Name>
 <Description>
 	The Jacobi polynomial.
 </Description>

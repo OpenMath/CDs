@@ -33,12 +33,12 @@
      society at http://www.openmath.org.
 </CDComment>
 
-  <CDName> indnat </CDName>
+  <CDName>indnat</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
-  <CDURL>  http://www.openmath.org/cd/indnat.ocd </CDURL>
+  <CDURL>http://www.openmath.org/cd/indnat.ocd</CDURL>
   <CDDate>2004-03-30</CDDate>
   <CDReviewDate>2017-12-31</CDReviewDate>
-  <CDStatus> experimental </CDStatus>
+  <CDStatus>experimental</CDStatus>
   <CDVersion>2</CDVersion>	
   <CDRevision>1</CDRevision>
 <CDComment>
@@ -53,7 +53,7 @@
 
 
   <CDDefinition>
-    <Name> indNat </Name>
+    <Name>indNat</Name>
 <Role>constant</Role> 
     <Description> Attribution tag to denote the
     type of inductively defined natural numbers. It is also denoted as
@@ -64,7 +64,7 @@
   
 
   <CDDefinition>
-    <Name> zero </Name>
+    <Name>zero</Name>
 <Role>constant</Role>
     <Description> The natural number 0, also constant base function
           for the inductive definition of the type of natural numbers
@@ -72,7 +72,7 @@
   </CDDefinition>
 
   <CDDefinition>
-    <Name> succ </Name>
+    <Name>succ</Name>
 <Role>application</Role>
     <Description> Successor function on the natural number. 
            Constructor for the inductively defined natural numbers. 
@@ -82,7 +82,7 @@
   </CDDefinition>
 
   <CDDefinition>
-    <Name> plus </Name>
+    <Name>plus</Name>
 <Role>application</Role>
     <Description> Addition of natural numbers defined recursively
            by using the successor.
@@ -109,7 +109,7 @@
   </CDDefinition>
 
   <CDDefinition>
-    <Name> times </Name>
+    <Name>times</Name>
 <Role>application</Role>
     <Description> Multiplication of natural numbers defined recursively
            by using the successor and plus.

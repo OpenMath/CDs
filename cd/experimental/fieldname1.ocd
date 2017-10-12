@@ -1,12 +1,12 @@
 <CD xmlns="http://www.openmath.org/OpenMathCD">
-<CDName> fieldname1 </CDName>
+<CDName>fieldname1</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/fieldname1.ocd</CDURL>
-<CDReviewDate> 2006-06-01 </CDReviewDate>
-<CDDate> 2004-06-01 </CDDate>
-<CDVersion> 1 </CDVersion>
-<CDRevision> 1 </CDRevision>
-<CDStatus> experimental </CDStatus>
+<CDReviewDate>2006-06-01</CDReviewDate>
+<CDDate>2004-06-01</CDDate>
+<CDVersion>1</CDVersion>
+<CDRevision>1</CDRevision>
+<CDStatus>experimental</CDStatus>
 
 <Description> A CD of 
 functions for basic constructions in field theory.
@@ -18,7 +18,7 @@ Written by Arjeh M. Cohen 2004-02-25
 
 
 <CDDefinition>
-<Name> C </Name>
+<Name>C</Name>
 <Description>
 This is a symbol representing the field of complex numbers.
 </Description>
@@ -49,7 +49,7 @@ arithmetic operations.
 
 
 <CDDefinition>
-<Name> R </Name>
+<Name>R</Name>
 <Description>
 This is a symbol representing the field of real numbers.
 </Description>
@@ -81,7 +81,7 @@ arithmetic operations.
 
 
 <CDDefinition>
-<Name> Q </Name>
+<Name>Q</Name>
 <Description>
 This is a symbol representing the field of rational numbers.
 </Description>

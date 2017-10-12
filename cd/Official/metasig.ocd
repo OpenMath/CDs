@@ -34,7 +34,7 @@
 </CDComment>
 
 
-<CDName> metasig </CDName>
+<CDName>metasig</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 
 <CDReviewDate>2017-12-31</CDReviewDate>
@@ -45,7 +45,7 @@
   Author: OpenMath Consortium
   SourceURL: https://github.com/OpenMath/CDs
 </CDComment>
-<CDStatus> official </CDStatus>
+<CDStatus>official</CDStatus>
 <CDURL>http://www.openmath.org/cd/metasig.ocd</CDURL>
 
 <Description> 
@@ -63,7 +63,7 @@ OpenMath Applications.
 
 
 <CDDefinition>
-<Name> CDSignatures </Name>
+<Name>CDSignatures</Name>
 <Role>application</Role>
 <Description>
 This symbol is used to represent the outermost element of the
@@ -79,7 +79,7 @@ elements of type corresponding to the other symbols defined in this file.
 </CDDefinition>
 
 <CDDefinition>
-<Name> CDSComment </Name>
+<Name>CDSComment</Name>
 <Role>application</Role>
 <Description>
 This symbol is used to represent the element of a signature file which
@@ -89,7 +89,7 @@ argument which makes that explanation.
 </CDDefinition>
 
 <CDDefinition>
-<Name> CDSReviewDate </Name>
+<Name>CDSReviewDate</Name>
 <Role>application</Role>
 <Description>
 This symbol is used to represent the element of a signature file which
@@ -100,7 +100,7 @@ date should be in the format YYYY-MM-DD, e.g. 2000-02-29.
 </CDDefinition>
 
 <CDDefinition>
-<Name> CDSStatus </Name>
+<Name>CDSStatus</Name>
 <Role>application</Role>
 <Description>
 This symbol is used to represent the element of a signature file which
@@ -114,7 +114,7 @@ signature file, kept only for archival purposes).
 </CDDefinition>
 
 <CDDefinition>
-<Name> Signature </Name>
+<Name>Signature</Name>
 <Role>application</Role>
 <Description>
 This symbol is used to represent the element of a signature file which

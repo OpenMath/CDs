@@ -32,12 +32,12 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName> units_time1 </CDName>
+<CDName>units_time1</CDName>
 <CDURL>http://www.openmath.org/cd/units_time1.ocd</CDURL>
 <CDReviewDate>2017-12-31</CDReviewDate>
-<CDStatus> experimental </CDStatus>
-<CDDate> 2004-08-27 </CDDate>
-<CDVersion> 1 </CDVersion>
+<CDStatus>experimental</CDStatus>
+<CDDate>2004-08-27</CDDate>
+<CDVersion>1</CDVersion>
 <CDRevision>1</CDRevision>
 <CDComment>
   Author: OpenMath Consortium (James Davenport)
@@ -51,7 +51,7 @@ systems such as "Imperial" and "U.S.".
 </Description>
 
 <CDDefinition>
-<Name> second </Name>
+<Name>second</Name>
 <Description>
 This symbol represents the measure of one second of time. This is the standard
 SI unit measure for time.
@@ -60,7 +60,7 @@ SI unit measure for time.
 </CDDefinition>
 
 <CDDefinition>
-<Name> minute </Name>
+<Name>minute</Name>
 <Description>
 This symbol represents the measure of one minute of time.
 </Description>
@@ -86,7 +86,7 @@ This symbol represents the measure of one minute of time.
 </CDDefinition>
 
 <CDDefinition>
-<Name> hour </Name>
+<Name>hour</Name>
 <Description>
 This symbol represents the measure of one hour of time.
 </Description>
@@ -112,7 +112,7 @@ This symbol represents the measure of one hour of time.
 </CDDefinition>
 
 <CDDefinition>
-<Name> day </Name>
+<Name>day</Name>
 <Description>
 This symbol represents the measure of one day of time.
 The definitions below ignore the possibilities of "leap seconds".
@@ -139,7 +139,7 @@ The definitions below ignore the possibilities of "leap seconds".
 </CDDefinition>
 
 <CDDefinition>
-<Name> week </Name>
+<Name>week</Name>
 <Description>
 This symbol represents the measure of one week of time.
 </Description>
@@ -165,7 +165,7 @@ This symbol represents the measure of one week of time.
 </CDDefinition>
 
 <CDDefinition>
-<Name> calendar_month </Name>
+<Name>calendar_month</Name>
 <Description>
 This symbol represents the measure of one month of (calendar) time.
 </Description>
@@ -191,7 +191,7 @@ This symbol represents the measure of one month of (calendar) time.
 </CDDefinition>
 
 <CDDefinition>
-<Name> calendar_year </Name>
+<Name>calendar_year</Name>
 <Description>
 This symbol represents the measure of one year of (calendar) time.
 </Description>

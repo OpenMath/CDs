@@ -35,14 +35,14 @@
 
 <CDName>sts2</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
-<CDDate> 2004-02-02 </CDDate>
+<CDDate>2004-02-02</CDDate>
 <CDReviewDate>2017-12-31</CDReviewDate>
-<CDVersion> 1 </CDVersion>
+<CDVersion>1</CDVersion>
 <CDRevision>1</CDRevision>
 <CDComment>
   Author: Mike Dewar
 </CDComment>
-<CDStatus> experimental </CDStatus>
+<CDStatus>experimental</CDStatus>
 
 <Description> 
 Symbols for constructing compound (parameterised) types in the OpenMath
@@ -51,7 +51,7 @@ small type system.
 
 
 <CDDefinition>
-<Name> list  </Name>
+<Name>list</Name>
 <Description> 
 A constructor for the type of a homogeneous list 
 </Description>
@@ -69,7 +69,7 @@ A list of integers
 </CDDefinition>
 
 <CDDefinition>
-<Name> interval </Name>
+<Name>interval</Name>
 <Description> 
 A constructor for an interval over a set.
 </Description>
@@ -87,7 +87,7 @@ A real interval
 </CDDefinition>
 
 <CDDefinition>
-<Name> matrix </Name>
+<Name>matrix</Name>
 <Description> 
 A constructor for the type of a matrix
 </Description>
@@ -105,7 +105,7 @@ A matrix of integers
 </CDDefinition>
 
 <CDDefinition>
-<Name> vector </Name>
+<Name>vector</Name>
 <Description> 
 A constructor for the type of a vector
 </Description>
@@ -123,7 +123,7 @@ A vector of integers
 </CDDefinition>
 
 <CDDefinition>
-<Name> vector_n </Name>
+<Name>vector_n</Name>
 <Description> 
 A constructor for the type of a vector of size n
 </Description>
@@ -142,7 +142,7 @@ A 3-vector of integers
 </CDDefinition>
 
 <CDDefinition>
-<Name> square_matrix</Name>
+<Name>square_matrix</Name>
 <Description> 
 A constructor for the type of a square matrix
 </Description>

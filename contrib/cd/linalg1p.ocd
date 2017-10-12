@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <!-- $Id: linalg1p.tfb,v 1.1.1.1 2002/10/04 12:50:39 taka Exp $ -->
 <CD xmlns="http://www.openmath.org/OpenMathCD">
-<CDName> linalg1p </CDName>
+<CDName>linalg1p</CDName>
 <CDURL>http://www.math.kobe-u.ac.jp/OCD/linalg1p.tfb</CDURL>
 <CDReviewDate>2017-12-31</CDReviewDate>
-<CDStatus> experimental </CDStatus>
-<CDDate> 2002-07-30 </CDDate>
-<CDVersion> 1 </CDVersion>
+<CDStatus>experimental</CDStatus>
+<CDDate>2002-07-30</CDDate>
+<CDVersion>1</CDVersion>
 <CDRevision>1</CDRevision>
 <CDComment>
   Author: Nobuki Takayama
@@ -18,7 +18,7 @@ This CD defines symbols for linear algebra used for hypergeon1
 </Description>
 
 <CDDefinition>
-<Name>  plus_part </Name>
+<Name>plus_part</Name>
 <Description>
   The argument is a vector. It replaces negative elements in the vector 
   to zero.
@@ -26,7 +26,7 @@ This CD defines symbols for linear algebra used for hypergeon1
 </CDDefinition>
 
 <CDDefinition>
-<Name>   minus_part </Name>
+<Name>minus_part</Name>
 <Description>
   The argument is a vector. It replaces positive elements in the vector 
   to zero and negative elements to their absolute values.
@@ -53,7 +53,7 @@ This CD defines symbols for linear algebra used for hypergeon1
 </CDDefinition>
 
 <CDDefinition>
-<Name> ones </Name>
+<Name>ones</Name>
 <Description>
  It returns a vector of a specifed size of which elements are one.
  1-ary function.
@@ -62,7 +62,7 @@ This CD defines symbols for linear algebra used for hypergeon1
 </CDDefinition>
 
 <CDDefinition>
-<Name> kernel </Name>
+<Name>kernel</Name>
 <Description>
  It returns the kernel of the map defined by a matrix in a specified
  domain.

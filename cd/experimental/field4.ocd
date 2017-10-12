@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <CD xmlns="http://www.openmath.org/OpenMathCD">
-<CDName> field4 </CDName>
+<CDName>field4</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/field4.ocd</CDURL>
-<CDReviewDate> 2006-06-01 </CDReviewDate>
-<CDDate> 2004-06-01 </CDDate>
-<CDVersion> 1 </CDVersion>
-<CDRevision> 1 </CDRevision>
-<CDStatus> experimental </CDStatus>
+<CDReviewDate>2006-06-01</CDReviewDate>
+<CDDate>2004-06-01</CDDate>
+<CDVersion>1</CDVersion>
+<CDRevision>1</CDRevision>
+<CDStatus>experimental</CDStatus>
 
 <Description> A CD of 
 functions for morphisms of fields.
@@ -42,7 +42,7 @@ to K that maps the first entry x of each pair [x,y] to the second entry y of the
 
 
 <CDDefinition>
-<Name> field_by_poly_map</Name>
+<Name>field_by_poly_map</Name>
 <Description>
 Same as quotient_by_poly_map in CD ring5, except that R and the quotient ring R[X]/(f) are
 fields (so f is irreducible in R[X]).

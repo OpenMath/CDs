@@ -31,16 +31,16 @@
      If you have questions about this license please contact the OpenMath
      society at http://www.openmath.org.
 </CDComment>
-<CDName> function_properties </CDName>
+<CDName>function_properties</CDName>
 <CDURL>http://www.openmath.org/cd/function_properties.ocd</CDURL>
-<CDReviewDate> 9999-01-01 </CDReviewDate>
-<CDDate> 2002-02-12 </CDDate>
-<CDVersion> 1 </CDVersion>
+<CDReviewDate>9999-01-01</CDReviewDate>
+<CDDate>2002-02-12</CDDate>
+<CDVersion>1</CDVersion>
 <CDRevision>1</CDRevision>
 <CDComment>
   Author: David Carlisle
 </CDComment>
-<CDStatus> experimental </CDStatus>
+<CDStatus>experimental</CDStatus>
 
 <Description>
     Properties of &lt; &lt; &lt; functions, each symbol denotes a predicate
@@ -49,13 +49,13 @@
 </Description>
 
 <CDDefinition>
-<Name> differentiable </Name>
+<Name>differentiable</Name>
 <Description>
 </Description>
 </CDDefinition>
 
 <CDDefinition>
-<Name> continuous </Name>
+<Name>continuous</Name>
 <Description>
 </Description>
 </CDDefinition>

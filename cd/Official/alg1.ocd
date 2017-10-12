@@ -33,11 +33,11 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName> alg1 </CDName>
+<CDName>alg1</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/alg1.ocd</CDURL>
 <CDReviewDate>2006-03-30</CDReviewDate>
-<CDStatus> official </CDStatus>
+<CDStatus>official</CDStatus>
 <CDDate>2004-03-30</CDDate>
 <CDVersion>3</CDVersion>
 <CDRevision>1</CDRevision>
@@ -56,7 +56,7 @@ deliberately defined here without specifying any particular structure
 
 
 <CDDefinition>
-<Name> zero </Name>
+<Name>zero</Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the additive identity element.
@@ -136,7 +136,7 @@ This symbol represents the additive identity element.
 </CDDefinition>
 
 <CDDefinition>
-<Name> one </Name>
+<Name>one</Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the multiplicative identity element.

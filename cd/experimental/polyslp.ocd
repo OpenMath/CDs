@@ -33,12 +33,12 @@
      society at http://www.openmath.org.
 </CDComment>
 
-  <CDName> polyslp </CDName>
+  <CDName>polyslp</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase> 
   <CDURL>http://www.openmath.org/cd/polyslp.ocd</CDURL>
   <CDReviewDate>2017-12-31</CDReviewDate>
   <CDDate>2004-03-30</CDDate>
-  <CDStatus> experimental </CDStatus>
+  <CDStatus>experimental</CDStatus>
   <CDVersion>3</CDVersion>
  <CDRevision>2</CDRevision>
 <CDComment>
@@ -56,7 +56,7 @@
   </CDComment>
 
   <CDDefinition>
-     <Name> polynomial_SLP </Name>
+     <Name>polynomial_SLP</Name>
 <Role>application</Role>
      <Description>
        The constructor of Polynomials built with Straight Line Program
@@ -125,7 +125,7 @@
   </CDDefinition>
 
   <CDDefinition>
-    <Name> prog_body </Name>
+    <Name>prog_body</Name>
 <Role>application</Role>
     <Description>
       The constructor of the body of the straight line program
@@ -137,7 +137,7 @@
   </CDDefinition>
 
   <CDDefinition>
-    <Name> op_node </Name>
+    <Name>op_node</Name>
 <Role>application</Role>
     <Description>
       This constructor takes three arguments.
@@ -149,7 +149,7 @@
   </CDDefinition>
 
   <CDDefinition>
-    <Name> inp_node </Name>
+    <Name>inp_node</Name>
 <Role>application</Role>
     <Description>
       This constructor takes one argument, which is a variable. The return
@@ -158,7 +158,7 @@
   </CDDefinition>
 
   <CDDefinition>
-    <Name> const_node </Name>
+    <Name>const_node</Name>
 <Role>application</Role>
     <Description>
       This constructor takes one argument, which is a value from the 
@@ -171,7 +171,7 @@
   </CDComment>
 
   <CDDefinition>
-    <Name> length </Name>
+    <Name>length</Name>
 <Role>application</Role>
     <Description>
       A unary function taking an slp as argument and returning the
@@ -180,7 +180,7 @@
   </CDDefinition>
 
   <CDDefinition>
-    <Name> depth </Name>
+    <Name>depth</Name>
 <Role>application</Role>
     <Description>
       A unary function taking an slp as argument and returning the
@@ -190,7 +190,7 @@
   </CDDefinition>
 
   <CDDefinition>
-    <Name> slp_degree </Name>
+    <Name>slp_degree</Name>
 <Role>application</Role>
     <Description>
       A unary function taking an slp as argument and returning the
@@ -258,7 +258,7 @@
   </CDDefinition>
 
   <CDDefinition>
-    <Name> return_node </Name>
+    <Name>return_node</Name>
 <Role>application</Role>
     <Description>
       Takes an slp as the argument, and
@@ -267,7 +267,7 @@
   </CDDefinition>
 
   <CDDefinition>
-    <Name> node_selector </Name>
+    <Name>node_selector</Name>
 <Role>application</Role>
     <Description>
       Takes an slp as the first argument, the second argument is the
@@ -277,7 +277,7 @@
   </CDDefinition>
 
   <CDDefinition>
-    <Name> left_ref </Name>
+    <Name>left_ref</Name>
 <Role>application</Role>
     <Description>
       Takes as argument a node of an slp.
@@ -286,7 +286,7 @@
   </CDDefinition>
 
   <CDDefinition>
-    <Name> right_ref </Name>
+    <Name>right_ref</Name>
 <Role>application</Role>
     <Description>
       Takes as argument a node of an slp.
@@ -299,7 +299,7 @@
   </CDComment>
 
   <CDDefinition>
-    <Name> quotient </Name>
+    <Name>quotient</Name>
 <Role>application</Role>
     <Description>
       A quotient function for polynomials represented by slps. It is a
@@ -308,7 +308,7 @@
   </CDDefinition>
 
   <CDDefinition>
-    <Name> monte_carlo_eq </Name>
+    <Name>monte_carlo_eq</Name>
 <Role>application</Role>
     <Description>
       This is a Monte-Carlo equality test,
@@ -322,7 +322,7 @@
   </CDDefinition>
 
   <CDDefinition>
-    <Name> poly_ring_SLP </Name>
+    <Name>poly_ring_SLP</Name>
 <Role>application</Role>
     <Description>
       The constructor of the polynomial ring. The first argument is a ring, 

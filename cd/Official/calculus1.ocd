@@ -33,11 +33,11 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName> calculus1 </CDName>
+<CDName>calculus1</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/calculus1.ocd</CDURL>
 <CDReviewDate>2006-03-30</CDReviewDate>
-<CDStatus> official </CDStatus>
+<CDStatus>official</CDStatus>
 <CDDate>2004-06-01</CDDate>
 <CDVersion>4</CDVersion>
 <CDRevision>2</CDRevision>
@@ -54,7 +54,7 @@
 </Description>
 
 <CDDefinition>
-<Name> diff </Name>
+<Name>diff</Name>
 <Role>application</Role>
 <Description>
 This symbol is used to express ordinary differentiation of a unary
@@ -246,7 +246,7 @@ This represents the equation:
 </CDDefinition>
 
 <CDDefinition>
-<Name> nthdiff </Name>
+<Name>nthdiff</Name>
 <Role>application</Role>
 <Description>
 This symbol is used to express the nth-iterated ordinary differentiation of 
@@ -295,7 +295,7 @@ a unary function. The first argument is n, and the second the unary function.
 </CDDefinition>
 
 <CDDefinition>
-<Name> partialdiff </Name>
+<Name>partialdiff</Name>
 <Role>application</Role>
 <Description>
 This symbol is used to express partial differentiation of a function
@@ -340,7 +340,7 @@ An example to represent the equation:
 </CDDefinition>
 
 <CDDefinition>
-<Name> int </Name>
+<Name>int</Name>
 <Role>application</Role>
 <Description> 
 This symbol is used to represent indefinite integration of unary functions.
@@ -425,7 +425,7 @@ integral(x +-&gt; sin(x)) w.r.t. x = x +-&gt; -cos(x)
 </CDDefinition>
 
 <CDDefinition>
-<Name> defint </Name>
+<Name>defint</Name>
 <Role>application</Role>
 <Description> 
 This symbol is used to represent definite integration of unary

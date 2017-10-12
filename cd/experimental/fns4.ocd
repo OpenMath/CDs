@@ -1,11 +1,11 @@
 <CD xmlns="http://www.openmath.org/OpenMathCD">
-<CDName> fns4 </CDName>
+<CDName>fns4</CDName>
 <CDURL>http://www.openmath.org/cd/fns4.ocd</CDURL>
-<CDReviewDate> 2006-06-01 </CDReviewDate>
-<CDDate> 2004-12-20 </CDDate>
-<CDVersion> 2 </CDVersion>
-<CDRevision> 1 </CDRevision>
-<CDStatus> experimental </CDStatus>
+<CDReviewDate>2006-06-01</CDReviewDate>
+<CDDate>2004-12-20</CDDate>
+<CDVersion>2</CDVersion>
+<CDRevision>1</CDRevision>
+<CDStatus>experimental</CDStatus>
 
 
 <Description>
@@ -24,7 +24,7 @@
 </Description>
 
 <CDDefinition>
-<Name> maps_to </Name>
+<Name>maps_to</Name>
 <Description> 
 This symbol denotes a binding constructor.
 The body of the binder should be a list [A1,A2] of length 2.
@@ -103,7 +103,7 @@ horizontal axis.
 </CDDefinition>
 
 <CDDefinition>
-<Name> assign_to </Name>
+<Name>assign_to</Name>
 <Description> 
 This symbol denotes a function with a even and positive number of arguments.
 When applied to a_1,b_1,....a_n,b_n, it represents the assignment

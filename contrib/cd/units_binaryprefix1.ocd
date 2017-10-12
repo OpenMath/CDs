@@ -32,12 +32,12 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName> units_binaryprefix1 </CDName>
+<CDName>units_binaryprefix1</CDName>
 <CDURL>http://www.openmath.org/cd/units_binaryprefix1.ocd</CDURL>
 <CDReviewDate>2017-12-31</CDReviewDate>
-<CDStatus> experimental </CDStatus>
-<CDDate> 2003-08-22 </CDDate>
-<CDVersion> 1 </CDVersion>
+<CDStatus>experimental</CDStatus>
+<CDDate>2003-08-22</CDDate>
+<CDVersion>1</CDVersion>
 <CDRevision>1</CDRevision>
 <CDComment>
   Author: James Davenport
@@ -50,7 +50,7 @@ multiplication by a power of 2.
 
 
     <CDDefinition>
-      <Name> exbi </Name>
+      <Name>exbi</Name>
       <Description>
 This symbol represents the fact that the subsequent unit has been 
 effectively multiplied by $2^60$. The full technical name 
@@ -84,7 +84,7 @@ is exabinary.
     </CDDefinition>
   
     <CDDefinition>
-      <Name> pebi </Name>
+      <Name>pebi</Name>
       <Description>
 This symbol represents the fact that the subsequent unit has been 
 effectively multiplied by $2^50$. The full technical name 
@@ -118,7 +118,7 @@ is petabinary.
     </CDDefinition>
   
     <CDDefinition>
-      <Name> tebi </Name>
+      <Name>tebi</Name>
       <Description>
 This symbol represents the fact that the subsequent unit has been 
 effectively multiplied by $2^40$. The full technical name 
@@ -152,7 +152,7 @@ is terabinary.
     </CDDefinition>
   
     <CDDefinition>
-      <Name> gibi </Name>
+      <Name>gibi</Name>
       <Description>
 This symbol represents the fact that the subsequent unit has been 
 effectively multiplied by $2^30$. The full technical name 
@@ -186,7 +186,7 @@ is gigabinary.
     </CDDefinition>
   
     <CDDefinition>
-      <Name> mebi </Name>
+      <Name>mebi</Name>
       <Description>
 This symbol represents the fact that the subsequent unit has been 
 effectively multiplied by $2^20$. The full technical name 
@@ -220,7 +220,7 @@ is megabinary.
     </CDDefinition>
   
     <CDDefinition>
-      <Name> kibi </Name>
+      <Name>kibi</Name>
       <Description>
 This symbol represents the fact that the subsequent unit has been 
 effectively multiplied by $2^10$. The full technical name 

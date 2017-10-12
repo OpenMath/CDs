@@ -33,7 +33,7 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName> multiset1 </CDName>
+<CDName>multiset1</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/multiset1.ocd</CDURL>
 <CDReviewDate>2006-03-30</CDReviewDate>
@@ -44,7 +44,7 @@
   Author: OpenMath Consortium
   SourceURL: https://github.com/OpenMath/CDs
 </CDComment>
-<CDStatus> official </CDStatus>
+<CDStatus>official</CDStatus>
 <Description>
     This CD defines the set functions and constructors for basic
     multiset theory. It is intended to be `compatible' with the
@@ -56,7 +56,7 @@ Based on set1.ocd
 </CDComment>
 
 <CDDefinition>
-<Name> size </Name>
+<Name>size</Name>
 <Role>application</Role>
 <Description> 
 This symbol is used to denote the number of elements in a multiset. It is
@@ -87,7 +87,7 @@ The size of the multiset{3,3,9} = 3
 
 
 <CDDefinition>
-<Name> cartesian_product </Name>
+<Name>cartesian_product</Name>
 <Role>application</Role>
 <Description>
 This symbol represents an n-ary construction function for constructing
@@ -150,7 +150,7 @@ contains no members. It takes no parameters.
 </CDDefinition>
 
 <CDDefinition>
-<Name> multiset </Name>
+<Name>multiset</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents the multiset construct. It is either an
@@ -176,7 +176,7 @@ The multiset {4, 1, 0, 1 4}
 
 
 <CDDefinition>
-<Name> intersect </Name>
+<Name>intersect</Name>
 <Role>application</Role>
 <Description> 
 This symbol is used to denote the n-ary intersection of 
@@ -217,7 +217,7 @@ in all multisets.
 </CDDefinition>
 
 <CDDefinition>
-<Name> union </Name>
+<Name>union</Name>
 <Role>application</Role>
 <Description> 
 This symbol is used to denote the n-ary union of multisets. It
@@ -302,7 +302,7 @@ union(A,intersect(B,C)) = intersect(union(A,B),union(A,C))
 </CDDefinition>
 
 <CDDefinition>
-<Name> setdiff </Name>
+<Name>setdiff</Name>
 <Role>application</Role>
 <Description> 
 This symbol is used to denote the multiset difference of two 
@@ -328,7 +328,7 @@ The multiplicity in the result is the difference of the two.
 </CDDefinition>
 
 <CDDefinition>
-<Name> subset </Name>
+<Name>subset</Name>
 <Role>application</Role>
 <Description>
 This symbol has two (multiset) arguments. It is used to denote 
@@ -366,7 +366,7 @@ second.
 </CDDefinition>
 
 <CDDefinition>
-<Name> in </Name>
+<Name>in</Name>
 <Role>application</Role>
 <Description> 
 This symbol has two arguments, an element and a multiset. It is 
@@ -405,7 +405,7 @@ used to denote that the element is in the given multiset.
 </CDDefinition>
 
 <CDDefinition>
-<Name> notin </Name>
+<Name>notin</Name>
 <Role>application</Role>
 <Description> 
 This symbol has two arguments, an element and a multiset. It is 
@@ -431,7 +431,7 @@ used to denote that the element is not in the given multiset.
 </CDDefinition>
 
 <CDDefinition>
-<Name> prsubset </Name>
+<Name>prsubset</Name>
 <Role>application</Role>
 <Description> 
 This symbol has two (multiset) arguments. It is used to denote 
@@ -461,7 +461,7 @@ a subset of the second multiset but not actually equal to it.
 </CDDefinition>
 
 <CDDefinition>
-<Name> notsubset </Name>
+<Name>notsubset</Name>
 <Role>application</Role>
 <Description> 
 This symbol has two (multiset) arguments. It is used to denote 
@@ -491,7 +491,7 @@ that the first multiset is not a subset of the second.
 </CDDefinition>
 
 <CDDefinition>
-<Name> notprsubset </Name>
+<Name>notprsubset</Name>
 <Role>application</Role>
 <Description> 
 This symbol has two (multiset) arguments. It is used to denote 

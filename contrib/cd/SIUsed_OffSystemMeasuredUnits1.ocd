@@ -38,12 +38,12 @@ subject to copyright protection in the United States. Foreign copyrights
 may apply.
 
 </CDComment>
-  <CDName> SIUsed_OffSystemMeasuredUnits1 </CDName>
+  <CDName>SIUsed_OffSystemMeasuredUnits1</CDName>
   <CDURL>http://www.openmath.org/cd/SIUsed_OffSystemMeasuredUnits1.ocd</CDURL>
   <CDReviewDate>2017-12-31</CDReviewDate>
-  <CDStatus> experimental </CDStatus>
-  <CDDate> 2009-01-10 </CDDate>
-  <CDVersion> 1 </CDVersion>
+  <CDStatus>experimental</CDStatus>
+  <CDDate>2009-01-10</CDDate>
+  <CDVersion>1</CDVersion>
   <CDRevision>2</CDRevision>
 <CDComment>
   Author: J B Collins
@@ -58,7 +58,7 @@ may apply.
   </Description>
 
 <CDDefinition>
-<Name> electronvolt </Name>
+<Name>electronvolt</Name>
 <Description>
 This symbol represents the measure of one electronvolt of energy.
 It has the short symbol form, "eV".
@@ -90,7 +90,7 @@ Its measured value is
 </CDDefinition>
 
 <CDDefinition>
-<Name> dalton </Name>
+<Name>dalton</Name>
 <Description>
 This symbol represents the measure of one dalton of mass.
 It has the short symbol form, "Da".
@@ -122,7 +122,7 @@ Its measured value is
 </CDDefinition>
 
 <CDDefinition>
-<Name> astronomical-unit </Name>
+<Name>astronomical-unit</Name>
 <Description>
 This symbol represents the measure of one astronomical unit of distance.
 It has the short symbol form, "ua".

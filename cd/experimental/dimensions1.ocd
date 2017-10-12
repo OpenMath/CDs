@@ -32,11 +32,11 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName> dimensions1 </CDName>
+<CDName>dimensions1</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/dimensions1.ocd</CDURL>
 <CDReviewDate>2017-12-31</CDReviewDate>
-<CDStatus> experimental </CDStatus>
+<CDStatus>experimental</CDStatus>
 <CDDate>2017-09-27</CDDate>
 <CDVersion>4</CDVersion>
 <CDRevision>3</CDRevision>
@@ -50,7 +50,7 @@ This CD defines symbols which represent basic physical dimensions.
 </Description>
 
 <CDDefinition>
-<Name> length </Name>
+<Name>length</Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the length physical dimension.
@@ -59,7 +59,7 @@ This symbol represents the length physical dimension.
 </CDDefinition>
 
 <CDDefinition>
-<Name> area </Name>
+<Name>area</Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the area physical dimension.
@@ -81,7 +81,7 @@ This symbol represents the area physical dimension.
 </CDDefinition>
 
 <CDDefinition>
-<Name> volume </Name>
+<Name>volume</Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the volume physical dimension.
@@ -104,7 +104,7 @@ This symbol represents the volume physical dimension.
 </CDDefinition>
 
 <CDDefinition>
-<Name> speed </Name>
+<Name>speed</Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the speed physical dimension. It is the size of the
@@ -127,7 +127,7 @@ derivative of distance with respect to time.
 </CDDefinition>
 
 <CDDefinition>
-  <Name> displacement </Name>
+  <Name>displacement</Name>
 <Role>constant</Role>
   <Description>
 This symbol represents the spatial difference between two points.
@@ -137,7 +137,7 @@ distance between the points.
 </CDDefinition>
 
 <CDDefinition>
-<Name> velocity </Name>
+<Name>velocity</Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the velocity physical dimension. It is the
@@ -175,7 +175,7 @@ derivative of distance with respect to time.
 </CDDefinition>
 
 <CDDefinition>
-<Name> acceleration </Name>
+<Name>acceleration</Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the acceleration physical dimension. It is the
@@ -203,7 +203,7 @@ second derivative of distance with respect to time.
 </CDDefinition>
 
 <CDDefinition>
-<Name> time </Name>
+<Name>time</Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the time physical dimension.
@@ -212,7 +212,7 @@ Note that the main units for time are defined in the units_time1 CD.
 </CDDefinition>
 
 <CDDefinition>
-<Name> mass </Name>
+<Name>mass</Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the mass physical dimension.
@@ -220,7 +220,7 @@ This symbol represents the mass physical dimension.
 </CDDefinition>
 
 <CDDefinition>
-<Name> force </Name>
+<Name>force</Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the force physical dimension. 
@@ -251,7 +251,7 @@ This symbol represents the force physical dimension.
 </CDDefinition>
 
 <CDDefinition>
-<Name> temperature </Name>
+<Name>temperature</Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the temperature physical dimension.
@@ -260,7 +260,7 @@ This symbol represents the temperature physical dimension.
 </CDDefinition>
 
 <CDDefinition>
-<Name> pressure </Name>
+<Name>pressure</Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the pressure physical dimension.
@@ -283,7 +283,7 @@ This symbol represents the pressure physical dimension.
 </CDDefinition>
 
 <CDDefinition>
-<Name> charge </Name>
+<Name>charge</Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the charge physical dimension.
@@ -306,7 +306,7 @@ This symbol represents the charge physical dimension.
 </CDDefinition>
 
 <CDDefinition>
-<Name> current </Name>
+<Name>current</Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the current physical dimension.
@@ -329,7 +329,7 @@ This symbol represents the current physical dimension.
 </CDDefinition>
 
 <CDDefinition>
-<Name> voltage </Name>
+<Name>voltage</Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the voltage physical dimension.
@@ -352,7 +352,7 @@ This symbol represents the voltage physical dimension.
 </CDDefinition>
 
 <CDDefinition>
-<Name> resistance </Name>
+<Name>resistance</Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the resistance physical dimension, it is the
@@ -376,7 +376,7 @@ resistance that an electrical circuit has to flow of charge.
 </CDDefinition>
 
 <CDDefinition>
-<Name> density </Name>
+<Name>density</Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the density physical dimension, it is the mass
@@ -400,7 +400,7 @@ per unit volume.
 </CDDefinition>
 
 <CDDefinition>
-<Name> energy </Name>
+<Name>energy</Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the energy physical dimension.
@@ -447,7 +447,7 @@ This symbol represents the energy physical dimension.
 </CDDefinition>
 
 <CDDefinition>
-<Name> concentration </Name>
+<Name>concentration</Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the concentration physical dimension, it is the
@@ -474,7 +474,7 @@ amount of a substance in a volume.
 </CDDefinition>
 
 <CDDefinition>
-<Name> momentum </Name>
+<Name>momentum</Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the momentum physical dimension, it is mass
@@ -498,7 +498,7 @@ times velocity.
 </CDDefinition>
 
 <CDDefinition>
-<Name> power </Name>
+<Name>power</Name>
 <Description>
 This symbol represents the power physical dimension, it is energy
 per time.

@@ -1,18 +1,18 @@
 <?xml version="1.0"?>
 <CD xmlns="http://www.openmath.org/OpenMathCD">
-	<CDName> matrix1 </CDName>
+	<CDName>matrix1</CDName>
 	<CDURL>http://www.win.tue.nl/SCIEnce/cds/matrix1.ocd</CDURL>
 	<CDReviewDate>2017-09-30</CDReviewDate>
-	<CDDate> 2009-06-22 </CDDate>
-	<CDVersion> 0 </CDVersion>
-	<CDRevision> 4 </CDRevision>
-	<CDStatus> experimental </CDStatus>
+	<CDDate>2009-06-22</CDDate>
+	<CDVersion>0</CDVersion>
+	<CDRevision>4</CDRevision>
+	<CDStatus>experimental</CDStatus>
 
 	<Description>
 	This CD holds a collection of matrix constructors over arbitrary rings.
 	</Description>
 	<CDDefinition>
-		<Name> entry_domain </Name>
+		<Name>entry_domain</Name>
 		<Description>
 		This symbol is a unary function, whose argument should be a ring r.
 		When applied to r, it represents the matrix-algebra ground domain (MAD).
@@ -28,7 +28,7 @@
 		</Example>
 	</CDDefinition>
 	<CDDefinition>
-		<Name> matrix_domain </Name>
+		<Name>matrix_domain</Name>
 		<Description>
 		This symbol is a ternary function, whose first argument should be a
 		matrix1.entry_domain application.
@@ -61,7 +61,7 @@
 		</Example>
 	</CDDefinition>
 	<CDDefinition>
-		<Name> row_dimension </Name>
+		<Name>row_dimension</Name>
 		<Description>
 		This symbol is a unary function whose first argument must be either a
 		non-negative OpenMath integer or nums1.infinity.
@@ -71,7 +71,7 @@
 		</Description>
 	</CDDefinition>
 	<CDDefinition>
-		<Name> column_dimension </Name>
+		<Name>column_dimension</Name>
 		<Description>
 		This symbol is a unary function whose first argument must be either a
 		non-negative OpenMath integer or nums1.infinity.
@@ -81,7 +81,7 @@
 		</Description>
 	</CDDefinition>
 	<CDDefinition>
-		<Name> matrix </Name>
+		<Name>matrix</Name>
 		<Description>
 		This symbol is a binary function whose first argument must be a
 		matrix algebra constructor and the second argument can be any of the
@@ -97,7 +97,7 @@
 		</Example>
 	</CDDefinition>
 	<CDDefinition>
-		<Name> dense </Name>
+		<Name>dense</Name>
 		<Description>
 		This symbol is an $(m \cdot n)$-ary function whose arguments specify
 		the entries of the matrix, where $m$ is the dimension of the codomain
@@ -146,7 +146,7 @@
 		</Example>
 	</CDDefinition>
 	<CDDefinition>
-		<Name> sparse </Name>
+		<Name>sparse</Name>
 		<Description>
 		The constructor for sparse matrices without any indication of dimension
 		or domain for the coefficients.
@@ -157,7 +157,7 @@
 		</Description>
 	</CDDefinition>
 	<CDDefinition>
-		<Name> sparse_entry </Name>
+		<Name>sparse_entry</Name>
 		<Description>
 		This symbol denotes a ternary function whose first two arguments specify
 		the location of an entry inside the matrix, and whose final argument is
@@ -218,7 +218,7 @@
 		</Example>
 	</CDDefinition>
 	<CDDefinition>
-		<Name> diagonal </Name>
+		<Name>diagonal</Name>
 		<Description>
 		This symbol is an $m$-ary function whose arguments specify the entries of
 		a (generalised) matrix diagonal.
@@ -278,7 +278,7 @@
 		</Example>
 	</CDDefinition>
 	<CDDefinition>
-		<Name> block </Name>
+		<Name>block</Name>
 		<Description>
 		This symbol is like the matrix constructor as described above, but
 		intended for use inside matrix to form ``submatrices''.  The symbol
@@ -397,7 +397,7 @@
 		</Example>
 	</CDDefinition>
 	<CDDefinition>
-		<Name> banded </Name>
+		<Name>banded</Name>
 		<Description>
 		This symbol is a constructor for banded matrices.  It takes at least
 		2 arguments, the first of which being the number of upper bands and
@@ -475,7 +475,7 @@
 		</Example>
 	</CDDefinition>
 	<CDDefinition>
-		<Name> upper_band </Name>
+		<Name>upper_band</Name>
 		<Description>
 		This symbol is a binary function whose first argument is a non-negative
 		OpenMath integer which denotes the index of the upper band which is
@@ -487,7 +487,7 @@
 		</Description>
 	</CDDefinition>
 	<CDDefinition>
-		<Name> lower_band </Name>
+		<Name>lower_band</Name>
 		<Description>
 		This symbol is a binary function whose first argument is a non-negative
 		OpenMath integer which denotes the index of the lower band which is

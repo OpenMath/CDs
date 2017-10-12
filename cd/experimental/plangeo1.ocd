@@ -34,11 +34,11 @@
 <CDName>plangeo1</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.win.tue.nl/~amc/oz/om/cds/plangeo1.ocd</CDURL>
-<CDReviewDate> 2006-06-01 </CDReviewDate>
+<CDReviewDate>2006-06-01</CDReviewDate>
 <CDStatus>experimental</CDStatus>
-<CDDate> 2004-06-01 </CDDate>
-<CDVersion> 0 </CDVersion>
-<CDRevision> 5 </CDRevision>
+<CDDate>2004-06-01</CDDate>
+<CDVersion>0</CDVersion>
+<CDRevision>5</CDRevision>
 <CDComment>
   Author: Arjeh Cohen
 </CDComment>
@@ -47,7 +47,7 @@
 This CD defines symbols for planar Euclidean geometry.
 </Description> 
 
-<CDDefinition> 
+<CDDefinition>
 
 <Name> point </Name>
 <Description> 
@@ -83,7 +83,7 @@ Given two lines l and m, a point A on l and m is defined by:
 
 
 <CDDefinition>
-<Name> line  </Name>
+<Name>line</Name>
 <Description> 
 The symbol is used to indicate a line of  planar Euclidean geometry
 by a variable. The line may (but need not) be subject to constraints.
@@ -116,7 +116,7 @@ is defined  by:
 
 
 <CDDefinition>
-<Name> incident </Name>
+<Name>incident</Name>
 <Description> 
 The symbol represents the logical incidence function which is a
 binary function taking arguments representing
@@ -142,7 +142,7 @@ is given by:
 
 
 <CDDefinition>
-<Name> configuration </Name>
+<Name>configuration</Name>
 <Description> 
 The symbol represents a configuration in Euclidean 
 planar geometry consisting of a sequence of geometric objects like points,
@@ -298,7 +298,7 @@ We describe a triangle on the distinct points A, B, C and lines a, b, c:
 
 
 <CDDefinition>
-<Name> type </Name>
+<Name>type</Name>
 <Description> 
 The symbol represents the type of the basic geometric objects: points,
 lines, configuration.
@@ -341,7 +341,7 @@ If A and B are objects of the same type, then they are not incident.
 
 
 <CDDefinition>
-<Name> assertion </Name>
+<Name>assertion</Name>
 <Description> 
 The symbol is a constructor with two arguments.
 Its first argument should be a 

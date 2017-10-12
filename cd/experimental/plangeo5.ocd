@@ -2,8 +2,8 @@
 	<CDName>plangeo5</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 	<CDURL>http://www.win.tue.nl/~amc/oz/om/cds/plangeo5.ocd</CDURL>
-	<CDDate> 2004-06-01 </CDDate>
-	<CDReviewDate> 2006-06-01 </CDReviewDate>
+	<CDDate>2004-06-01</CDDate>
+	<CDReviewDate>2006-06-01</CDReviewDate>
 	<CDVersion>0</CDVersion>
 	<CDRevision>2</CDRevision>
 	<CDStatus>experimental</CDStatus>
@@ -385,7 +385,7 @@ not, then new variables are introduced to coordinatize the object.
 
 
 
-<CDDefinition> <Name>ideal</Name> 
+<CDDefinition><Name>ideal</Name> 
 
 <Description> This symbol is a function in one argument, which should
 		be a coordinatized configuration (that is, each
@@ -583,7 +583,7 @@ Its evaluation should be equivalent to
 </CDDefinition>
 
 
-<CDDefinition> <Name>polynomial_assertion</Name> 
+<CDDefinition><Name>polynomial_assertion</Name> 
 
 <Description> This symbol is a function in one argument, which should
 		be an assertion whose configuration is coordinatized

@@ -14,7 +14,7 @@
   Author: Nobuki Takayama
 </CDComment>
 <CDDefinition>
-<Name> cartesian_product_n </Name>
+<Name>cartesian_product_n</Name>
 <Description>
   the cartesian product of n copies of the first argument.
   Binary function.

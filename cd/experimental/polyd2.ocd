@@ -1,12 +1,12 @@
 <CD xmlns="http://www.openmath.org/OpenMathCD">
-   <CDName> polyd2 </CDName> 
+   <CDName>polyd2</CDName> 
 <CDBase>http://www.openmath.org/cd</CDBase>
    <CDURL>http://www.openmath.org/cd/polyd2.ocd</CDURL>
-   <CDReviewDate> 2006-04-01 </CDReviewDate> 
-   <CDDate> 2004-07-07 </CDDate> 
-   <CDStatus> experimental </CDStatus>
-   <CDVersion> 3 </CDVersion>
-   <CDRevision> 0 </CDRevision>
+   <CDReviewDate>2006-04-01</CDReviewDate> 
+   <CDDate>2004-07-07</CDDate> 
+   <CDStatus>experimental</CDStatus>
+   <CDVersion>3</CDVersion>
+   <CDRevision>0</CDRevision>
 
    <Description>
      This CD defines symbols for ordering of monomial for
@@ -23,7 +23,7 @@ Delete those items pertaining to Groebner bases 2004-07-07 AMC
 These are of use for canonical ways of writing polynomials and for Groebner bases
 </CDComment>
     <CDDefinition>
-       <Name> ordering </Name>
+       <Name>ordering</Name>
        <Description> 
           Used as an attribute to indicate an ordering of the monomials in a
           polynomial or list of polynomials. The value of this attribute
@@ -38,35 +38,35 @@ These are of use for canonical ways of writing polynomials and for Groebner base
 </CDComment>
 
     <CDDefinition>
-       <Name> lexicographic </Name>
+       <Name>lexicographic</Name>
        <Description> 
           The lexicographic ordering of monomials.
        </Description>
     </CDDefinition>
 
     <CDDefinition>
-       <Name> reverse_lexicographic </Name>
+       <Name>reverse_lexicographic</Name>
        <Description> 
           The reverse lexicographic ordering of monomials
        </Description>
     </CDDefinition>
 
     <CDDefinition>
-       <Name> graded_lexicographic </Name>
+       <Name>graded_lexicographic</Name>
        <Description> 
           Total degree order, graded with the lexicographic ordering.
        </Description>
     </CDDefinition>
 
     <CDDefinition>
-       <Name> graded_reverse_lexicographic </Name>
+       <Name>graded_reverse_lexicographic</Name>
        <Description> 
           Total degree order, graded with the reverse lexicographic ordering.
        </Description>
     </CDDefinition>
 
     <CDDefinition>
-       <Name> elimination </Name>
+       <Name>elimination</Name>
        <Description> 
           This is an ordering, which is partially in terms of one
           ordering, and partially in terms of another.
@@ -87,7 +87,7 @@ These are of use for canonical ways of writing polynomials and for Groebner base
     </CDDefinition>
 
     <CDDefinition>
-       <Name> matrix_ordering </Name>
+       <Name>matrix_ordering</Name>
        <Description> 
           The argument is a matrix with as many columns as indeterminates
           (= rank). Each row in turm is multiplied by the column vector of
@@ -96,7 +96,7 @@ These are of use for canonical ways of writing polynomials and for Groebner base
     </CDDefinition>
 
     <CDDefinition>
-       <Name> weighted </Name>
+       <Name>weighted</Name>
        <Description> 
           The first argument is a list of integers to act as variable weights,
           and the second is an ordering. The result is an ordering.
@@ -114,7 +114,7 @@ These are of use for canonical ways of writing polynomials and for Groebner base
 </CDComment>
 
     <CDDefinition>
-      <Name> weighted_degree </Name>
+      <Name>weighted_degree</Name>
       <Description> 
         The total degree of its argument, taking into account any weights 
         declared. The value returned is an integer: non-negative if the 

@@ -1,6 +1,6 @@
 <CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" 
    cd="rounding" cdurl="http://www.openmath.org/cd/rounding.ocd" version="2.0">
-<CDSStatus> official </CDSStatus>
+<CDSStatus>official</CDSStatus>
 
 <CDSComment>
 Date:  1999-07-27

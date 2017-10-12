@@ -34,11 +34,11 @@
 </CDComment>
 
 
-    <CDName> lc </CDName>
+    <CDName>lc</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
     <CDURL>http://www.openmath.org/cd/lc.ocd</CDURL>
     <CDReviewDate>2017-12-31</CDReviewDate>
-    <CDStatus> experimental </CDStatus>
+    <CDStatus>experimental</CDStatus>
     <CDDate>2004-03-30</CDDate>
     <CDVersion>2</CDVersion>
     <CDRevision>1</CDRevision>
@@ -56,14 +56,14 @@
 
 
    <CDDefinition>
-        <Name> type </Name>
+        <Name>type</Name>
 <Role>semantic-attribution</Role>
         <Description> Attribution tag to denote type-judgement
         </Description>
     </CDDefinition>
 
    <CDDefinition>
-        <Name> typecoerce </Name>
+        <Name>typecoerce</Name>
 <Role>semantic-attribution</Role>
         <Description> Attribution tag to denote type-judgement with coercion
         </Description>
@@ -71,7 +71,7 @@
 
 
  <CDDefinition>
-        <Name> PiType </Name>
+        <Name>PiType</Name>
 <Role>application</Role>
         <Description> The type constructor of dependant function space.
                It binds the (type-attributed) variables in the body, that is 
@@ -84,7 +84,7 @@
 
 
  <CDDefinition>
-        <Name> mapsto </Name>
+        <Name>mapsto</Name>
 <Role>application</Role>
         <Description> The type constructor of non-dependant function space.
         The first n-1 children denote the types of the arguments, 
@@ -96,7 +96,7 @@
 
 
  <CDDefinition>
-        <Name> Lambda </Name>
+        <Name>Lambda</Name>
 <Role>application</Role>
         <Description> The abstraction constructor. It is 
                followed by a list of  variables

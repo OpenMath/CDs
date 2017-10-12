@@ -33,7 +33,7 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName> logic1 </CDName>
+<CDName>logic1</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/logic1.ocd</CDURL>
 <CDReviewDate>2006-03-30</CDReviewDate>
@@ -44,13 +44,13 @@
   Author: OpenMath Consortium
   SourceURL: https://github.com/OpenMath/CDs
 </CDComment>
-<CDStatus> official </CDStatus>
+<CDStatus>official</CDStatus>
 <Description>
     This CD holds the basic logic functions.
 </Description>
 
 <CDDefinition>
-<Name> equivalent </Name>
+<Name>equivalent</Name>
 <Role>application</Role>
 <Description> 
 This symbol is used to show that two boolean expressions are logically 
@@ -88,7 +88,7 @@ condition that (A implies B and B implies A) </CMP>
 </CDDefinition>
 
 <CDDefinition>
-<Name> not </Name>
+<Name>not</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents the logical not function which takes one boolean
@@ -119,7 +119,7 @@ argument, and returns the opposite boolean value.
 </CDDefinition>
 
 <CDDefinition>
-<Name> and </Name>
+<Name>and</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents the logical and function which is an n-ary
@@ -150,7 +150,7 @@ for all x | x and not(x) = false
 </CDDefinition>
 
 <CDDefinition>
-<Name> xor </Name>
+<Name>xor</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents the logical xor function which is an n-ary
@@ -201,7 +201,7 @@ for all x | x xor not(x) = true
 </CDDefinition>
 
 <CDDefinition>
-<Name> or </Name>
+<Name>or</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents the logical or function which is an n-ary
@@ -270,7 +270,7 @@ for all a,b | not(a and b)= (not(a) or not(b))
 </CDDefinition>
 
 <CDDefinition>
-<Name> implies </Name>
+<Name>implies</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents the logical implies function which takes two
@@ -297,7 +297,7 @@ evaluates to true.
 </CDDefinition>
 
 <CDDefinition>
-<Name> true </Name>
+<Name>true</Name>
 <Role>constant</Role>
 <Description> 
 This symbol represents the boolean value true.
@@ -318,7 +318,7 @@ This symbol represents the boolean value true.
 </CDDefinition>
 
 <CDDefinition>
-<Name> false </Name>
+<Name>false</Name>
 <Role>constant</Role>
 <Description> 
 This symbol represents the boolean value false.

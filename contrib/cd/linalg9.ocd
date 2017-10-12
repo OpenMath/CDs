@@ -32,12 +32,12 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName> linalg7 </CDName>
+<CDName>linalg7</CDName>
 <CDURL>http://www.openmath.org/cd/linalg7.ocd</CDURL>
-<CDReviewDate> 2017-12-31 </CDReviewDate>
-<CDStatus> experimental </CDStatus>
-<CDDate> 2003-03-22 </CDDate>
-<CDVersion> 1 </CDVersion>
+<CDReviewDate>2017-12-31</CDReviewDate>
+<CDStatus>experimental</CDStatus>
+<CDDate>2003-03-22</CDDate>
+<CDVersion>1</CDVersion>
 <CDRevision>3</CDRevision>
 <CDComment>
   Author: J B Collins
@@ -51,7 +51,7 @@ A CD of structured vectors
 </Description>
 
 <CDDefinition>
-<Name> zero </Name>
+<Name>zero</Name>
 <Description>
 The zero symbol represents the zero vector, it takes one parameter
 which should be the length (dimension in some terminology) of the vector.
@@ -261,7 +261,7 @@ then
 </CDDefinition>
 
 <CDDefinition>
-<Name> constant </Name>
+<Name>constant</Name>
 <Description>
 The constant symbol represents the constant vector. It takes two parameters, 
 the length (dimension) of the vector and the constant value, which all
@@ -303,7 +303,7 @@ the elements are equal to.
 </CDDefinition>
 
 <CDDefinition>
-<Name> sparse </Name>
+<Name>sparse</Name>
 <Description>
 The sparse symbol is a constructor for sparse vectors, it is (n+1)-ary,
 where the first parameter is the length (dimension) of the vector, and

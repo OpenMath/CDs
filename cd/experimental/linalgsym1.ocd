@@ -33,14 +33,14 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName> linalgsym1 </CDName>
+<CDName>linalgsym1</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/linalgsym1.ocd</CDURL>
 <CDReviewDate>2006-03-30</CDReviewDate>
 <CDDate>2004-05-11</CDDate>
 <CDVersion>3</CDVersion>
 <CDRevision>1</CDRevision>
-<CDStatus> experimental </CDStatus>
+<CDStatus>experimental</CDStatus>
 <Description>
 This CD contains symbols which represent a number of special types of
 matrix related to symmetry. 
@@ -50,7 +50,7 @@ renamed it from linalg5 to linalgsym1.
 </Description>
 
 <CDDefinition>
-<Name> symmetric </Name>
+<Name>symmetric</Name>
 <Role>application</Role>
 <Description>
 This symbol represents a symmetric matrix, it takes one argument. The
@@ -176,7 +176,7 @@ An example to represent the symmetric matrix:
 </CDDefinition>
 
 <CDDefinition>
-<Name> skew_symmetric </Name>
+<Name>skew_symmetric</Name>
 <Role>application</Role>
 <Description>
 This symbol represents a skew-symmetric matrix, it takes one
@@ -267,7 +267,7 @@ An example to represent the skew-symmetric matrix:
 </CDDefinition>
 
 <CDDefinition>
-<Name> Hermitian </Name>
+<Name>Hermitian</Name>
 <Role>application</Role>
 <Description>
 This symbol represents a Hermitian matrix, it takes one
@@ -331,7 +331,7 @@ An example to describe the Hermitian matrix:
 </CDDefinition>
 
 <CDDefinition>
-<Name> anti_Hermitian </Name>
+<Name>anti_Hermitian</Name>
 <Role>application</Role>
 <Description>
 This symbol represents an anti-Hermitian matrix, it takes one

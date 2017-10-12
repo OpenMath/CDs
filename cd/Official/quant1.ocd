@@ -33,7 +33,7 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName> quant1 </CDName>
+<CDName>quant1</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/quant1.ocd</CDURL>
 <CDReviewDate>2006-03-30</CDReviewDate>
@@ -44,7 +44,7 @@
   Author: OpenMath Consortium
   SourceURL: https://github.com/OpenMath/CDs
 </CDComment>
-<CDStatus> official </CDStatus>
+<CDStatus>official</CDStatus>
 <Description>
     This CD holds the definitions of the basic universal ("for all")
     quantifier and existential ("there exists") quantifier. It is
@@ -54,7 +54,7 @@
 
 
 <CDDefinition>
-<Name> forall </Name>
+<Name>forall</Name>
 <Role>binder</Role>
 <Description> 
 This symbol represents the universal ("for all") quantifier which takes two
@@ -94,7 +94,7 @@ An example to represent the statement for all real x, |sin(x)| &lt;= 1
 </CDDefinition>
 
 <CDDefinition>
-<Name> exists </Name>
+<Name>exists</Name>
 <Role>binder</Role>
 <Description> 
 This symbol represents the existential ("there exists") quantifier

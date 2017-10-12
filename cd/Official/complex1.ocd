@@ -33,7 +33,7 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName> complex1 </CDName>
+<CDName>complex1</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/complex1.ocd</CDURL>
 <CDReviewDate>2006-03-30</CDReviewDate>
@@ -44,14 +44,14 @@
   Author: OpenMath Consortium
   SourceURL: https://github.com/OpenMath/CDs
 </CDComment>
-<CDStatus> official </CDStatus>
+<CDStatus>official</CDStatus>
 <Description>
     This CD is intended to be `compatible' with the MathML view of
     operations on and constructors for  complex numbers.
 </Description>
 
 <CDDefinition>
-<Name> complex_cartesian </Name>
+<Name>complex_cartesian</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents a constructor function for complex numbers
@@ -94,7 +94,7 @@ for all x,y | complex_cartesian(x,y) = x + iy
 </CDDefinition>
 
 <CDDefinition>
-<Name> real </Name>
+<Name>real</Name>
 <Role>application</Role>
 <Description> 
 This represents the real part of a complex number
@@ -128,7 +128,7 @@ This represents the real part of a complex number
 </CDDefinition>
 
 <CDDefinition>
-<Name> imaginary </Name>
+<Name>imaginary</Name>
 <Role>application</Role>
 <Description> 
 This represents the imaginary part of a complex number
@@ -162,7 +162,7 @@ for all x,y | y = imaginary(x+iy)
 </CDDefinition>
 
 <CDDefinition>
-<Name> complex_polar </Name>
+<Name>complex_polar</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents a constructor function for complex numbers
@@ -338,7 +338,7 @@ complex_cartesian(x,y)
 </CDDefinition>
 
 <CDDefinition>
-<Name> argument </Name>
+<Name>argument</Name>
 <Role>application</Role>
 <Description>
 This symbol represents the unary function which returns the argument
@@ -435,7 +435,7 @@ argument is being taken.
 </CDDefinition>
 
 <CDDefinition>
-<Name> conjugate </Name>
+<Name>conjugate</Name>
 <Role>application</Role>
 <Description> 
 A unary operator representing the complex conjugate of its argument.

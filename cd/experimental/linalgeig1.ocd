@@ -33,14 +33,14 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName> linalgeig1 </CDName>
+<CDName>linalgeig1</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/linalgeig1.ocd</CDURL>
 <CDReviewDate>2006-03-30</CDReviewDate>
 <CDDate>2004-11-30</CDDate>
 <CDVersion>4</CDVersion>
 <CDRevision>1</CDRevision>
-<CDStatus> experimental </CDStatus>
+<CDStatus>experimental</CDStatus>
 <Description>
     This CD defines symbols for basic linear algebra related to eigenvalues.
 
@@ -50,7 +50,7 @@
 
 
 <CDDefinition>
-<Name> is_eigenvalue </Name>
+<Name>is_eigenvalue</Name>
 <Role>application</Role>
 <Description>
 This symbol represents a Boolean binary function, whose first argument should
@@ -97,7 +97,7 @@ v such that v * A = lambda * v.  </CMP>
 
 
 <CDDefinition>
-<Name> is_eigenvector </Name>
+<Name>is_eigenvector</Name>
 <Role>application</Role>
 <Description>
 This symbol represents a Boolean binary function, whose first argument should
@@ -134,7 +134,7 @@ v * A = lambda * v </CMP>
 
 
 <CDDefinition>
-<Name> eigenvalues </Name>
+<Name>eigenvalues</Name>
 <Role>application</Role>
 <Description>
 This symbol represents a binary function, whose arguments should
@@ -243,7 +243,7 @@ is not specified.)
 
 
 <CDDefinition>
-<Name> eigenspace </Name>
+<Name>eigenspace</Name>
 <Role>application</Role>
 <Description>
 This symbol represents a binary function, whose arguments should

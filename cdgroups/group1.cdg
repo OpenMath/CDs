@@ -1,7 +1,7 @@
 <CDGroup  xmlns="http://www.openmath.org/OpenMathCDG" version="2.0">
 <CDGroupName>group1</CDGroupName>
-<CDGroupVersion> 2 </CDGroupVersion>
-<CDGroupRevision> 0 </CDGroupRevision>
+<CDGroupVersion>2</CDGroupVersion>
+<CDGroupRevision>0</CDGroupRevision>
 <CDGroupURL>http://www.openmath.org/cdgroups/group1.cdg</CDGroupURL>
 <CDGroupDescription>Group Theory CD Group</CDGroupDescription>
 

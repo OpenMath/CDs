@@ -34,11 +34,11 @@
 </CDComment>
 
 
-    <CDName> ecc </CDName>
+    <CDName>ecc</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
     <CDURL>http://http://www.openmath.org/cd/ecc.ocd</CDURL>
     <CDReviewDate>2017-12-31</CDReviewDate>
-    <CDStatus> experimental </CDStatus>
+    <CDStatus>experimental</CDStatus>
     <CDDate>2004-03-30</CDDate>
     <CDVersion>2</CDVersion>
     <CDRevision>1</CDRevision>
@@ -54,14 +54,14 @@
     
   
    <CDDefinition>
-        <Name> type </Name>
+        <Name>type</Name>
 <Role>semantic-attribution</Role>
         <Description> Attribution tag to denote type-judgement
         </Description>
     </CDDefinition>
 
    <CDDefinition>
-        <Name> typecoerce </Name>
+        <Name>typecoerce</Name>
 <Role>semantic-attribution</Role>
         <Description> Attribution tag to denote type-judgement with coercion
         </Description>
@@ -70,7 +70,7 @@
  
 
  <CDDefinition>
-        <Name> SigmaType </Name>
+        <Name>SigmaType</Name>
 <Role>binder</Role>
         <Description> The binder symbol used to construct the
   	type of Cartesian products.  The (either plain or attributed)
@@ -80,7 +80,7 @@
 
  
 <CDDefinition>
-        <Name> Pair </Name>
+        <Name>Pair</Name>
 <Role>application</Role>
         <Description> The pairing constructor. It takes two 
                OpenMath objects as first element and second 
@@ -100,7 +100,7 @@
     </CDDefinition>
 
 <CDDefinition>
-        <Name> PairProj1 </Name>
+        <Name>PairProj1</Name>
 <Role>application</Role>
         <Description> The first projection function that extracts the first
 	component of a Pair. It satisfies the sigma-reduction rule.
@@ -121,7 +121,7 @@
     </CDDefinition>
 
 <CDDefinition>
-        <Name> PairProj2 </Name>
+        <Name>PairProj2</Name>
 <Role>application</Role>
         <Description> The second projection function that extracts the second
 	component of a Pair. It satisfies sigma-reduction rule.
@@ -144,7 +144,7 @@
 
 
 <CDDefinition>
-        <Name> Tuple </Name>
+        <Name>Tuple</Name>
 <Role>application</Role> 
 	<Description> The n-ary tupling constructor when n&gt;2.  The
         arguments are the element of the tuple. Tuple objects can also

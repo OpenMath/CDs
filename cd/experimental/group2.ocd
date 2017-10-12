@@ -1,12 +1,12 @@
 <CD xmlns="http://www.openmath.org/OpenMathCD">
-<CDName> group2 </CDName>
+<CDName>group2</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/group2.ocd</CDURL>
-<CDReviewDate> 2006-06-01 </CDReviewDate>
-<CDDate> 2004-06-01 </CDDate>
-<CDVersion> 1 </CDVersion>
-<CDRevision> 3 </CDRevision>
-<CDStatus> experimental </CDStatus>
+<CDReviewDate>2006-06-01</CDReviewDate>
+<CDDate>2004-06-01</CDDate>
+<CDVersion>1</CDVersion>
+<CDRevision>3</CDRevision>
+<CDStatus>experimental</CDStatus>
 
 <Description> A CD of functions like homomorphisms for groups   </Description>
 
@@ -17,7 +17,7 @@ Edited AMC 2004-03-02
 
 
 <CDDefinition>
-<Name> is_homomorphism </Name>
+<Name>is_homomorphism</Name>
 <Description>
 This symbol is a boolean function with three arguments.
 The first two arguments are groups M, N,
@@ -88,7 +88,7 @@ f(x * y) = f(x) * f(y).
 
 
 <CDDefinition>
-<Name> is_isomorphism </Name>
+<Name>is_isomorphism</Name>
 <Description>
 This symbol is a boolean function with three arguments.
 The first and arguments are groups M, N,
@@ -110,7 +110,7 @@ that f is bijective, and that its inverse  is a homomorphism from N to M.
 </CDDefinition>
 
 <CDDefinition>
-<Name> isomorphic </Name>
+<Name>isomorphic</Name>
 <Description>
 This symbol is a Boolean function with n arguments, n at least 2, which are groups.
 When applied to M_1, ..., M_n, it denotes the fact that there is an
@@ -130,7 +130,7 @@ isomorphism from each M_i to each M_j.
 
 
 <CDDefinition>
-<Name> is_endomorphism </Name>
+<Name>is_endomorphism</Name>
 <Description>
 This symbol is a boolean function with two arguments.
 The first argument is a group M,
@@ -169,7 +169,7 @@ If is_endomorphism(M,f) then is_homomorphism(M,M,f)
 
 
 <CDDefinition>
-<Name> is_automorphism </Name>
+<Name>is_automorphism</Name>
 <Description>
 This symbol is a boolean function with two arguments.
 The first is a group M,
@@ -206,7 +206,7 @@ If is_automorphism(M,f) then is_isomorphism(M,M,f)
 
 
 <CDDefinition>
-<Name> left_multiplication </Name>
+<Name>left_multiplication</Name>
 <Description>
 This symbol is a function with two arguments, which should be a group M
 and an element x of M.
@@ -240,7 +240,7 @@ left_multiplication(M,x) (y) = x * y.
 
 
 <CDDefinition>
-<Name> right_multiplication </Name>
+<Name>right_multiplication</Name>
 <Description>
 This symbol is a function with two arguments, which should be a group M
 and an element x of M.
@@ -273,7 +273,7 @@ right_multiplication(M,x) (y) = y * x.
 </CDDefinition>
 
 <CDDefinition>
-<Name> right_inverse_multiplication </Name>
+<Name>right_inverse_multiplication</Name>
 <Description>
 This symbol is a function with two arguments, which should be a group M
 and an element x of M.
@@ -310,7 +310,7 @@ right_inverse_multiplication(M,x) (y) = y * x^(-1).
 
 
 <CDDefinition>
-<Name> conjugation </Name>
+<Name>conjugation</Name>
 <Description>
 This symbol is a function with two arguments, which should be a group M
 and an element x of M.

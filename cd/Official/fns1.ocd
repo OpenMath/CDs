@@ -33,7 +33,7 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName> fns1 </CDName>
+<CDName>fns1</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/fns1.ocd</CDURL>
 <CDReviewDate>2006-03-30</CDReviewDate>
@@ -44,7 +44,7 @@
   Author: OpenMath Consortium
   SourceURL: https://github.com/OpenMath/CDs
 </CDComment>
-<CDStatus> official </CDStatus>
+<CDStatus>official</CDStatus>
 
 <Description>
     This CD is intended to be `compatible' with the corresponding
@@ -57,7 +57,7 @@
 </Description>
 
 <CDDefinition>
-<Name> domainofapplication </Name>
+<Name>domainofapplication</Name>
 <Role>application</Role>
 <Description> 
 The domainofapplication element denotes the domain over which a given 
@@ -68,7 +68,7 @@ such quantifier elements as bvar, lowlimit or condition.
 </CDDefinition>
 
 <CDDefinition>
-<Name> domain </Name>
+<Name>domain</Name>
 <Role>application</Role>
 <Description> 
 This symbol denotes the domain of a given function, which is the set of
@@ -124,7 +124,7 @@ there exists a y in the range of f and f(x) = y
 </CDDefinition>
 
 <CDDefinition>
-<Name> range </Name>
+<Name>range</Name>
 <Role>application</Role>
 <Description>
 This symbol denotes the range of a function, that is a set that the
@@ -156,7 +156,7 @@ the range of f is a subset of the image of f
 </CDDefinition>
 
 <CDDefinition>
-<Name> image </Name>
+<Name>image</Name>
 <Role>application</Role>
 <Description> 
 This symbol denotes the image of a given function, which is the set of
@@ -194,7 +194,7 @@ values the domain of the given function maps to.
 </CDDefinition>
 
 <CDDefinition>
-<Name> identity </Name>
+<Name>identity</Name>
 <Role>application</Role>
 <Description> 
 The identity function, it takes one argument and returns the same value.
@@ -223,7 +223,7 @@ The identity function, it takes one argument and returns the same value.
 </CDDefinition>
 
 <CDDefinition>
-<Name> left_inverse </Name>
+<Name>left_inverse</Name>
 <Role>application</Role>
 <Description> 
 This symbol is used to describe the left inverse of its argument (a
@@ -236,7 +236,7 @@ the semantics of this left inverse.
 </CDDefinition>
 
 <CDDefinition>
-<Name> right_inverse </Name>
+<Name>right_inverse</Name>
 <Role>application</Role>
 <Description> 
 This symbol is used to describe the right inverse of its argument (a
@@ -249,7 +249,7 @@ the semantics of this right inverse.
 </CDDefinition>
 
 <CDDefinition>
-<Name> inverse </Name>
+<Name>inverse</Name>
 <Role>application</Role>
 <Description> 
 This symbol is used to describe the inverse of its argument (a
@@ -362,7 +362,7 @@ f(inverse(f)(y)) = y
 </CDDefinition>
 
 <CDDefinition>
-<Name> left_compose </Name>
+<Name>left_compose</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents the function which forms the left-composition
@@ -402,7 +402,7 @@ of its two (function) arguments.
 </CDDefinition>
 
 <CDDefinition>
-<Name> lambda </Name>
+<Name>lambda</Name>
 <Role>binder</Role>
 <Description>
 This symbol is used to represent anonymous functions as lambda expansions. 

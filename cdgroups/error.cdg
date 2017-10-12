@@ -1,7 +1,7 @@
 <CDGroup  xmlns="http://www.openmath.org/OpenMathCDG" version="2.0">
 <CDGroupName>error</CDGroupName>
-<CDGroupVersion> 2 </CDGroupVersion>
-<CDGroupRevision> 0 </CDGroupRevision>
+<CDGroupVersion>2</CDGroupVersion>
+<CDGroupRevision>0</CDGroupRevision>
 <CDGroupURL>http://www.openmath.org/cdgroups/error.cdg</CDGroupURL>
 <CDGroupDescription> This CD group contains cds describing error symbols </CDGroupDescription>
 <CDComment> The basic error symbols </CDComment>

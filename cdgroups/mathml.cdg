@@ -1,7 +1,7 @@
 <CDGroup  xmlns="http://www.openmath.org/OpenMathCDG" version="2.0">
  <CDGroupName>mathml</CDGroupName>
- <CDGroupVersion> 2 </CDGroupVersion>
- <CDGroupRevision> 1 </CDGroupRevision>
+ <CDGroupVersion>2</CDGroupVersion>
+ <CDGroupRevision>1</CDGroupRevision>
  <CDGroupURL>http://www.openmath.org/cdgroups/mathml.cdg</CDGroupURL>
 
  <CDGroupDescription>MathML compatibility CD Group </CDGroupDescription>

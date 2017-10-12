@@ -3,16 +3,16 @@
 <CD xmlns="http://www.openmath.org/OpenMathCD">
 <!-- The Gauss hypergeometric function, confluent hypergeometric functions,-->
 <!-- and generalized hypergeometric functions in one variables. -->
-<CDName> hypergeo1 </CDName>
+<CDName>hypergeo1</CDName>
 <CDURL>http://www.math.kobe-u.ac.jp/OCD/</CDURL>
 <CDReviewDate>2017-12-31</CDReviewDate>
-<CDDate> 2002-11-29 </CDDate>
-<CDVersion> 0 </CDVersion>
+<CDDate>2002-11-29</CDDate>
+<CDVersion>0</CDVersion>
 <CDRevision>1</CDRevision>
 <CDComment>
   Author: Yasushi Tamura
 </CDComment>
-<CDStatus> experimental </CDStatus>
+<CDStatus>experimental</CDStatus>
 
 <Description>
 	This CD defines the Gauss hypergeometric function, confluent
@@ -26,7 +26,7 @@
 </Description>
 
 <CDDefinition>
-<Name> hypergeometric0F1 </Name>
+<Name>hypergeometric0F1</Name>
 <Description>
 	Hypergeometric function {}_0 F_1.
 </Description>
@@ -82,7 +82,7 @@
 </CDDefinition>
 
 <CDDefinition>
-<Name> hypergeometric1F1 </Name>
+<Name>hypergeometric1F1</Name>
 <Description>
 	Kummer's confluent hypergeometric function.
 </Description>
@@ -142,7 +142,7 @@
 </CDDefinition>
 
 <CDDefinition>
-<Name> hypergeometric2F1 </Name>
+<Name>hypergeometric2F1</Name>
 <Description>
 	The Gauss hypergeometric function.
 	This function has a branch cut on [1,+infinity).
@@ -296,7 +296,7 @@
 </CDDefinition>
 
 <CDDefinition>
-<Name> hypergeometric_pFq </Name>
+<Name>hypergeometric_pFq</Name>
 <Description>
 	Generalized hypergeometric function.
 	This function has a branch cut on [1,+infinity).

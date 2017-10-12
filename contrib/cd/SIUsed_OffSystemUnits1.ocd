@@ -38,12 +38,12 @@ subject to copyright protection in the United States. Foreign copyrights
 may apply.
 
 </CDComment>
-  <CDName> SIUsed_OffSystemUnits1 </CDName>
+  <CDName>SIUsed_OffSystemUnits1</CDName>
   <CDURL>http://www.openmath.org/cd/SIUsed_OffSystemUnits1.ocd</CDURL>
   <CDReviewDate>2017-12-31</CDReviewDate>
-  <CDStatus> experimental </CDStatus>
-  <CDDate> 2009-01-10 </CDDate>
-  <CDVersion> 1 </CDVersion>
+  <CDStatus>experimental</CDStatus>
+  <CDDate>2009-01-10</CDDate>
+  <CDVersion>1</CDVersion>
   <CDRevision>2</CDRevision>
 <CDComment>
   Author: J B Collins
@@ -58,7 +58,7 @@ may apply.
   </Description>
 
 <CDDefinition>
-<Name> minute </Name>
+<Name>minute</Name>
 <Description>
 This symbol represents the measure of one minute of time.
 It has the short symbol form, "min".
@@ -159,7 +159,7 @@ circle, Unicode: U+00B0 or HTML: &#176;.
 </CDDefinition>
 
 <CDDefinition>
-<Name> minute-of-arc </Name>
+<Name>minute-of-arc</Name>
 <Description>
 This symbol represents the angular measure of one minute of arc.
 It has the short symbol form, "'".
@@ -183,7 +183,7 @@ It has the short symbol form, "'".
 </CDDefinition>
 
 <CDDefinition>
-<Name> second-of-arc </Name>
+<Name>second-of-arc</Name>
 <Description>
 This symbol represents the angular measure of one second-of-arc.
 It has the short symbol form, '"'.
@@ -207,7 +207,7 @@ It has the short symbol form, '"'.
 </CDDefinition>
 
 <CDDefinition>
-<Name> litre </Name>
+<Name>litre</Name>
 <Description>
 This symbol represents the volume measure of one litre.
 It has the short symbol form, "l" or "L".
@@ -235,7 +235,7 @@ It has the short symbol form, "l" or "L".
 </CDDefinition>
 
 <CDDefinition>
-<Name> tonne </Name>
+<Name>tonne</Name>
 <Description>
 This symbol represents the mass measure of one tonne.
 It has the short symbol form, "t".
@@ -259,7 +259,7 @@ It has the short symbol form, "t".
 </CDDefinition>
 
 <CDDefinition>
-<Name> neper </Name>
+<Name>neper</Name>
 <Description>
 This symbol represents the dimensionless measure of one neper,
 the natural unit for representing logarithms of ratios of field
@@ -286,7 +286,7 @@ It has the short symbol form, "Np".
 </CDDefinition>
 
 <CDDefinition>
-<Name> bel </Name>
+<Name>bel</Name>
 <Description>
 This symbol represents the dimensionless measure of one bel.
 It has the short symbol form, "B".

@@ -34,11 +34,11 @@
 </CDComment>
 
 
-<CDName> typesorts </CDName>
+<CDName>typesorts</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/typesorts.ocd</CDURL>
 <CDReviewDate>2017-12-31</CDReviewDate>
-<CDStatus> experimental </CDStatus>
+<CDStatus>experimental</CDStatus>
 <CDDate>2004-03-30</CDDate>
 <CDVersion>2</CDVersion>
 <CDRevision>1</CDRevision>
@@ -61,7 +61,7 @@ Initial version: O. Caprotti
 
 
 <CDDefinition>
-        <Name> Prop </Name>
+        <Name>Prop</Name>
 <Role>constant</Role>
         <Description> The type of propositions
         </Description>
@@ -77,7 +77,7 @@ Initial version: O. Caprotti
     </CDDefinition>
 
 <CDDefinition>
-        <Name> Type0 </Name>
+        <Name>Type0</Name>
 <Role>constant</Role>
         <Description> The type of sets in a hierarchy of types.
         </Description>
@@ -95,7 +95,7 @@ Initial version: O. Caprotti
 
 
 <CDDefinition>
-        <Name> Type </Name>
+        <Name>Type</Name>
 <Role>constant</Role>
         <Description> The cumulative type of the type of sets 
 	              in a hierarchy of types.

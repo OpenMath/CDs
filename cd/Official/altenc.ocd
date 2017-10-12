@@ -33,11 +33,11 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName> altenc </CDName>
+<CDName>altenc</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/altenc.ocd</CDURL>
 <CDReviewDate>2006-03-30</CDReviewDate>
-<CDStatus> official </CDStatus>
+<CDStatus>official</CDStatus>
 <CDDate>2004-05-23</CDDate>
 <CDVersion>3</CDVersion>
 <CDRevision>2</CDRevision>
@@ -73,7 +73,7 @@ define a symbol to describe the encoding.
 </CDComment>
 
 <CDDefinition>
-<Name> MathML_encoding </Name>
+<Name>MathML_encoding</Name>
 <Role>attribution</Role>
 <Description>
 A symbol which heads a piece of MathML encoding in an attribution. The
@@ -131,7 +131,7 @@ http://www.w3.org/Math/Overview.html
 </CDDefinition>
 
 <CDDefinition>
-<Name> LaTeX_encoding </Name>
+<Name>LaTeX_encoding</Name>
 <Role>attribution</Role>
 <Description>
 A symbol which heads a piece of LaTeX encoding in an attribution.

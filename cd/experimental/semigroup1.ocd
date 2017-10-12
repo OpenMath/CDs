@@ -1,12 +1,12 @@
 <CD xmlns="http://www.openmath.org/OpenMathCD">
-<CDName> semigroup1 </CDName>
+<CDName>semigroup1</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/semigroup1.ocd</CDURL>
-<CDReviewDate> 2006-06-01 </CDReviewDate>
-<CDDate> 2004-06-01 </CDDate>
-<CDVersion> 3 </CDVersion>
-<CDRevision> 1 </CDRevision>
-<CDStatus> experimental </CDStatus>
+<CDReviewDate>2006-06-01</CDReviewDate>
+<CDDate>2004-06-01</CDDate>
+<CDVersion>3</CDVersion>
+<CDRevision>1</CDRevision>
+<CDStatus>experimental</CDStatus>
 
 <Description> Basic functions for semigroup theory   </Description>
 
@@ -18,7 +18,7 @@ Edited AMC 2004-0304
 
 
 <CDDefinition>
-<Name> semigroup </Name>
+<Name>semigroup</Name>
 <Description>
 This symbol is a constructor for semigroups. It takes two arguments in
 the following order: a set to specify the elements in the semigroup,
@@ -115,7 +115,7 @@ function composition as the operation.
 </CDDefinition>
 
 <CDDefinition>
-<Name> carrier </Name>
+<Name>carrier</Name>
 <Description>
 This symbol represents a unary function, whose argument should be a
 semigroup S (for instance constructed by semigroup).  When
@@ -140,7 +140,7 @@ The carrier of semigroup(S,*) is S.
 
 
 <CDDefinition>
-<Name> multiplication </Name>
+<Name>multiplication</Name>
 <Description>
 This symbol represents a unary function, whose argument should be a
 semigroup S.  It returns the multiplication map on S. 
@@ -164,7 +164,7 @@ The multiplication of semigroup(S,*) is *.
 </CDDefinition>
 
 <CDDefinition>
-<Name> is_commutative </Name>
+<Name>is_commutative</Name>
 <Description>
 The unary boolean function whose value is true iff the argument is a
 commutative semigroup.
@@ -233,7 +233,7 @@ If is_commutative(S) then for all a,b in carrier(S) a*b = b*a
 </CDDefinition>
 
 <CDDefinition>
-<Name> is_subsemigroup </Name>
+<Name>is_subsemigroup</Name>
 <Description>
 The binary boolean function whose value is true iff the second
 argument is a subsemigroup of the second.
@@ -275,7 +275,7 @@ and binary operation as S.
 
 
 <CDDefinition>
-<Name> subsemigroup </Name>
+<Name>subsemigroup</Name>
 <Description>
 This symbol is a constructor symbol with two arguments.  The first
 argument is a semigroup S, the second a list or set, D, of elements of S.

@@ -34,7 +34,7 @@
 </CDComment>
 
 
-<CDName> meta </CDName>
+<CDName>meta</CDName>
 <CDReviewDate>2017-12-31</CDReviewDate>
 <CDDate>2004-03-30</CDDate>
 <CDVersion>3</CDVersion>
@@ -43,7 +43,7 @@
   Author: OpenMath Consortium
   SourceURL: https://github.com/OpenMath/CDs
 </CDComment>
-<CDStatus> official </CDStatus>
+<CDStatus>official</CDStatus>
 <CDURL>http://www.openmath.org/cd/meta.ocd</CDURL>
 <CDBase>http://www.openmath.org/cd</CDBase>
 
@@ -57,7 +57,7 @@ draft of the "OpenMath Standard".
 </Description>
 
 <CDDefinition>
-<Name> CD </Name>
+<Name>CD</Name>
 <Role>application</Role>
 <Description>
 The top level element for the Content Dictionary. It just acts
@@ -67,7 +67,7 @@ as a container for the elements described below.
 
 
 <CDDefinition>
-<Name> CDDefinition </Name>
+<Name>CDDefinition</Name>
 <Role>application</Role>
 <Description>
 This symbol is used to represent the element which contains the
@@ -78,7 +78,7 @@ an arbitrary number of 'Example', 'FMP' or 'CMP' elements.
 </CDDefinition>
 
 <CDDefinition>
-<Name> CDName </Name>
+<Name>CDName</Name>
 <Role>application</Role>
 <Description>
 An element which contains the string corresponding to the name of the CD.
@@ -89,7 +89,7 @@ end of the string will be ignored.
 </CDDefinition>
 
 <CDDefinition>
-<Name> CDURL </Name>
+<Name>CDURL</Name>
 <Role>application</Role>
 <Description>
 An optional element.
@@ -99,7 +99,7 @@ canonical reference copy of this CD is stored.
 </CDDefinition>
 
 <CDDefinition>
-<Name> CDBase </Name>
+<Name>CDBase</Name>
 <Role>application</Role>
 <Description>
 An optional element.
@@ -110,7 +110,7 @@ for symbols in the CD.
 </CDDefinition>
 
 <CDDefinition>
-<Name> Example </Name>
+<Name>Example</Name>
 <Role>application</Role>
 <Description>
 An element which contains an arbitrary number of children,
@@ -122,7 +122,7 @@ enclosing symbol definition.
 </CDDefinition>
 
 <CDDefinition>
-<Name> CDDate </Name>
+<Name>CDDate</Name>
 <Role>application</Role>
 <Description>
 An element which contains a date as a string in the ISO-8601
@@ -132,7 +132,7 @@ was last edited.
 </CDDefinition>
 
 <CDDefinition>
-<Name> CDVersion </Name>
+<Name>CDVersion</Name>
 <Role>application</Role>
 <Description>
 An element which contains a version number for the CD.
@@ -143,7 +143,7 @@ should result in an increase in the version number.
 </CDDefinition>
 
 <CDDefinition>
-<Name> CDRevision </Name>
+<Name>CDRevision</Name>
 <Role>application</Role>
 <Description>
 An element which contains a revision number (or minor version number)
@@ -155,7 +155,7 @@ to a CD requiring a new revision number.
 
 
 <CDDefinition>
-<Name> CDReviewDate </Name>
+<Name>CDReviewDate</Name>
 <Role>application</Role>
 <Description>
 An element which contains a date as a string in the ISO-8601
@@ -166,7 +166,7 @@ until at least this date.
 </CDDefinition>
 
 <CDDefinition>
-<Name> CDStatus </Name>
+<Name>CDStatus</Name>
 <Role>application</Role>
 <Description>
 An element giving information on the status of the CD.
@@ -183,7 +183,7 @@ obsolete (an obsolete CD kept only for archival purposes).
 </CDDefinition>
 
 <CDDefinition>
-<Name> CDComment </Name>
+<Name>CDComment</Name>
 <Role>application</Role>
 <Description>
 This symbol is used to represent the element of a content dictionary which
@@ -195,7 +195,7 @@ argument which makes that explanation.
 
 
 <CDDefinition>
-<Name> CDUses </Name>
+<Name>CDUses</Name>
 <Role>application</Role>
 <Description>
 An element which contains zero or more CDNames which correspond
@@ -205,7 +205,7 @@ the CD is dependent on any other CDs they may be present here.
 </CDDefinition>
 
 <CDDefinition>
-<Name> Description </Name>
+<Name>Description</Name>
 <Role>application</Role>
 <Description>
 An element which contains a string corresponding to the
@@ -215,7 +215,7 @@ description of either the CD or the symbol
 </CDDefinition>
 
 <CDDefinition>
-<Name> Name </Name>
+<Name>Name</Name>
 <Role>application</Role>
 <Description>
 An element containing the string  corresponding to the name of
@@ -226,7 +226,7 @@ space occurring at the begining or end of the string will be ignored.
 </CDDefinition>
 
 <CDDefinition>
-<Name> Role </Name>
+<Name>Role</Name>
 <Role>application</Role>
 <Description>
 An element containing the string  corresponding to the role of
@@ -235,7 +235,7 @@ the symbol being defined.
 </CDDefinition>
 
 <CDDefinition>
-<Name> CMP </Name>
+<Name>CMP</Name>
 <Role>application</Role>
 <Description>
 An optional element (which may be repeated many times) which contains
@@ -245,7 +245,7 @@ defined.
 </CDDefinition>
 
 <CDDefinition>
-<Name> FMP </Name>
+<Name>FMP</Name>
 <Role>application</Role>
 <Description>
 An optional element which contains an OpenMath Object.

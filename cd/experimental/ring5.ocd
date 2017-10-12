@@ -1,12 +1,12 @@
 <CD xmlns="http://www.openmath.org/OpenMathCD">
-<CDName> ring5 </CDName>
+<CDName>ring5</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/ring5.ocd</CDURL>
-<CDReviewDate> 2006-06-01 </CDReviewDate>
-<CDDate> 2004-07-07 </CDDate>
-<CDVersion> 1 </CDVersion>
-<CDRevision> 1 </CDRevision>
-<CDStatus> experimental </CDStatus>
+<CDReviewDate>2006-06-01</CDReviewDate>
+<CDDate>2004-07-07</CDDate>
+<CDVersion>1</CDVersion>
+<CDRevision>1</CDRevision>
+<CDStatus>experimental</CDStatus>
 
 <Description> A CD of 
 functions for relating ring elements their images in quotient rings   </Description>
@@ -16,7 +16,7 @@ Written by Arjeh M. Cohen 2004-07-07
 </CDComment>
 
 <CDDefinition>
-<Name> quotient_map</Name>
+<Name>quotient_map</Name>
 <Description>
 This symbol is a binary function whose first argument is a ring R and whose
 second argument is an ideal I of R. When applied to R and I, its value is the
@@ -25,7 +25,7 @@ natural quotient map from R to the quotient ring R/I.
 </CDDefinition>
 
 <CDDefinition>
-<Name> quotient_by_poly_map</Name>
+<Name>quotient_by_poly_map</Name>
 <Description>
 This symbol is a binary function whose first argument is a 
 ring R,

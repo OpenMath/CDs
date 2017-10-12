@@ -33,7 +33,7 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName> fns2 </CDName>
+<CDName>fns2</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/fns2.ocd</CDURL>
 <CDReviewDate>2017-12-31</CDReviewDate>
@@ -44,7 +44,7 @@
   Author: OpenMath Consortium
   SourceURL: https://github.com/OpenMath/CDs
 </CDComment>
-<CDStatus> official </CDStatus>
+<CDStatus>official</CDStatus>
 
 <Description>
     This CD holds further functions concerning functions themselves. A
@@ -58,7 +58,7 @@
 </Description>
 
 <CDDefinition>
-<Name> kernel </Name>
+<Name>kernel</Name>
 <Role>application</Role>
 <Description> 
 This symbol denotes the kernel of a given function. This may be
@@ -96,7 +96,7 @@ null space of the function.
 </CDDefinition>
 
 <CDDefinition>
-<Name> apply_to_list </Name>
+<Name>apply_to_list</Name>
 <Role>application</Role>
 <Description> 
 This symbol is used to denote the repeated application of an n-ary
@@ -173,7 +173,7 @@ One may form a set in the following way. This gives the set {1^2, 2^2,
 </CDDefinition>
 
 <CDDefinition>
-<Name> right_compose </Name>
+<Name>right_compose</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents a function forming the right-composition of its

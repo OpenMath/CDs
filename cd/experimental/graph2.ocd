@@ -1,12 +1,12 @@
 <CD xmlns="http://www.openmath.org/OpenMathCD">
-  <CDName> graph2 </CDName>
+  <CDName>graph2</CDName>
   <CDBase>http://www.openmath.org/cd</CDBase>
   <CDURL>http://www.dse.nl/~postma/graph1.ocd</CDURL>
-  <CDReviewDate> 2006-06-01 </CDReviewDate>
-  <CDStatus> experimental </CDStatus>
-  <CDDate> 2004-06-27 </CDDate>
-  <CDVersion> 0 </CDVersion>
-  <CDRevision> 12 </CDRevision>
+  <CDReviewDate>2006-06-01</CDReviewDate>
+  <CDStatus>experimental</CDStatus>
+  <CDDate>2004-06-27</CDDate>
+  <CDVersion>0</CDVersion>
+  <CDRevision>12</CDRevision>
   
   
   <Description>
@@ -15,7 +15,7 @@
   </Description>
   
   <CDDefinition>
-    <Name> automorphism_group </Name>
+    <Name>automorphism_group</Name>
     <Description>
       This symbol is a unary function whose argument is an undirected graph. 
       When applied to an undirected graph G, it represents the automorphism
@@ -60,7 +60,7 @@ The resulting automorphism group is represented as a permutation group on the
 
 
 <CDDefinition>
-<Name> is_homomorphism </Name>
+<Name>is_homomorphism</Name>
 <Description>
 This symbol is a boolean function with three arguments.
 The first and arguments are graphs M, N,
@@ -128,7 +128,7 @@ if {x,y} is an edge of M, then {f(x), f(y)} is an edge of N.
 
 
 <CDDefinition>
-<Name> is_isomorphism </Name>
+<Name>is_isomorphism</Name>
 <Description>
 This symbol is a boolean function with three arguments.
 The first and arguments are graphs M, N,
@@ -150,7 +150,7 @@ that f is bijective, and that its inverse  is a homomorphism from N to M.
 </CDDefinition>
 
 <CDDefinition>
-<Name> is_endomorphism </Name>
+<Name>is_endomorphism</Name>
 <Description>
 This symbol is a boolean function with two arguments.
 The first argument is a graph M,
@@ -189,7 +189,7 @@ If is_endomorphism(M,f) then is_homomorphism(M,M,f)
 
 
 <CDDefinition>
-<Name> is_automorphism </Name>
+<Name>is_automorphism</Name>
 <Description>
 This symbol is a boolean function with two arguments.
 The first is a graph M,
@@ -227,7 +227,7 @@ If is_automorphism(M,f) then is_isomorphism(M,M,f)
 
 
 <CDDefinition>
-<Name> isomorphic </Name>
+<Name>isomorphic</Name>
 <Description>
 This symbol is a Boolean function with n arguments, n at least 2, which are graphs.
 When applied to M_1, ..., M_n, it denotes the fact that there is an

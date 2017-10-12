@@ -32,12 +32,12 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName> aggregate_cats </CDName>
+<CDName>aggregate_cats</CDName>
 <CDURL>http://www.openmath.org/cd/aggregate_cats.ocd</CDURL>
 <CDReviewDate>2017-12-31</CDReviewDate>
-<CDStatus> experimental </CDStatus>
-<CDDate> 2002-08-25 </CDDate>
-<CDVersion> 0 </CDVersion>
+<CDStatus>experimental</CDStatus>
+<CDDate>2002-08-25</CDDate>
+<CDVersion>0</CDVersion>
 <CDRevision>1</CDRevision>
 <CDComment>
   Author: Bill Naylor
@@ -50,7 +50,7 @@ defining properties of the categories.
 </Description>
 
 <CDDefinition>
-  <Name> aggregateType </Name>
+  <Name>aggregateType</Name>
   <Description>
 This symbol represents a generic type for aggregates (or collections
 of objects.
@@ -58,7 +58,7 @@ of objects.
 </CDDefinition>
 
 <CDDefinition>
-  <Name> multisetType </Name>
+  <Name>multisetType</Name>
   <Description>
 This symbol represents the type of multisets.
   </Description>
@@ -77,7 +77,7 @@ This symbol represents the type of multisets.
 </CDDefinition>
 
 <CDDefinition>
-  <Name> setType </Name>
+  <Name>setType</Name>
   <Description>
 This symbol represents the type of sets.
   </Description>
@@ -96,7 +96,7 @@ This symbol represents the type of sets.
 </CDDefinition>
 
 <CDDefinition>
-  <Name> finiteSetType </Name>
+  <Name>finiteSetType</Name>
   <Description>
 This symbol represents the type of finite sets.
   </Description>
@@ -115,7 +115,7 @@ This symbol represents the type of finite sets.
 </CDDefinition>
 
 <CDDefinition>
-  <Name> infiniteSetType </Name>
+  <Name>infiniteSetType</Name>
   <Description>
 This symbol represents the type of infinite sets.
   </Description>
@@ -136,7 +136,7 @@ This symbol represents the type of infinite sets.
 </CDDefinition>
 
 <CDDefinition>
-  <Name> continuousSetType </Name>
+  <Name>continuousSetType</Name>
   <Description>
 This symbol represents the type of continuous sets.
   </Description>
@@ -155,7 +155,7 @@ This symbol represents the type of continuous sets.
 </CDDefinition>
 
 <CDDefinition>
-  <Name> piecewiseContinuousSetType </Name>
+  <Name>piecewiseContinuousSetType</Name>
   <Description>
 This symbol represents the type of piecewise continuous sets.
   </Description>
@@ -174,7 +174,7 @@ This symbol represents the type of piecewise continuous sets.
 </CDDefinition>
 
 <CDDefinition>
-  <Name> non_continuousSetType </Name>
+  <Name>non_continuousSetType</Name>
   <Description>
 This symbol represents the type of non-continuous sets.
   </Description>
@@ -208,7 +208,7 @@ This symbol represents the type of non-continuous sets.
 </CDDefinition>
 
 <CDDefinition>
-  <Name> discreteSetType </Name>
+  <Name>discreteSetType</Name>
   <Description>
 This symbol represents the type of discrete sets.
   </Description>

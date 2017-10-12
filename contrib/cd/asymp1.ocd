@@ -32,23 +32,23 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName> asymp1 </CDName>
+<CDName>asymp1</CDName>
 <CDURL>http://www.openmath.org/cd/asymp1.ocd</CDURL>
-<CDDate> 1999-10-19 </CDDate>
+<CDDate>1999-10-19</CDDate>
 <CDReviewDate>2017-12-31</CDReviewDate>
-<CDVersion> 2 </CDVersion>
+<CDVersion>2</CDVersion>
 <CDRevision>1</CDRevision>
 <CDComment>
   Author: Bill Naylor
 </CDComment>
-<CDStatus> experimental </CDStatus>
+<CDStatus>experimental</CDStatus>
 
 <Description>
  This CD provides a representation of various asymptotic set constructors (O, \Omega, etc.) The constructors represent sets of functions : R -> R.
 </Description>
 
 <CDDefinition>
-<Name> O </Name>
+<Name>O</Name>
 <Description> 
 The O symbol represents a unary function which constructs a set of certain
 functions of type reals to reals. The condition f(n)=O(g(n))
@@ -156,7 +156,7 @@ is intended to express an upper bound condition on f.
 </CDDefinition>
 
 <CDDefinition>
-<Name> o </Name>
+<Name>o</Name>
 <Description>
 The o symbol represents a unary function which constructs a set
 of certain functions of type reals to positive reals. The condition
@@ -224,7 +224,7 @@ o(g) =
 </CDDefinition>
 
 <CDDefinition>
-<Name> theta </Name>
+<Name>theta</Name>
 <Description>
 The theta symbol represents a unary function which constructs a set
 of certain functions of type reals to positive reals. The theta
@@ -334,7 +334,7 @@ all x > x_0 it is true that c_1*g(x) &lt; f(x) &lt; c_2*g(x)
 </CDDefinition>
 
 <CDDefinition>
-<Name> asymptotic </Name>
+<Name>asymptotic</Name>
 <Description>
 The asymptotic symbol represents a binary relation between two
 functions of type reals to reals. The asymptotic relation between two
@@ -392,7 +392,7 @@ f(x)/g(x) = 1
 </CDDefinition>
 
 <CDDefinition>
-<Name> omega </Name>
+<Name>omega</Name>
 <Description>
 The omega symbol represents a unary function which constructs a set
 of certain functions of type reals to positive reals. The omega
@@ -520,7 +520,7 @@ abs(f(x_j)) > epsilon * g(x_j).
 </CDDefinition>
 
 <CDDefinition>
-<Name> Omega </Name>
+<Name>Omega</Name>
 <Description>
 The Omega symbol represents a unary function which constructs a set
 of certain functions of type reals to positive reals. The Omega

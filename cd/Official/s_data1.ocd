@@ -33,7 +33,7 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName> s_data1 </CDName>
+<CDName>s_data1</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/s_data1.ocd</CDURL>
 <CDReviewDate>2006-03-30</CDReviewDate>
@@ -44,7 +44,7 @@
   Author: OpenMath Consortium
   SourceURL: https://github.com/OpenMath/CDs
 </CDComment>
-<CDStatus> official </CDStatus>
+<CDStatus>official</CDStatus>
 
 <Description>
     This CD holds the definitions of the basic statistical functions
@@ -56,7 +56,7 @@
 
 
 <CDDefinition>
-<Name> mean </Name>
+<Name>mean</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents an n-ary function denoting the mean of its
@@ -107,7 +107,7 @@ The mean of n arguments is their sum divided by their number
 </CDDefinition>
 
 <CDDefinition>
-<Name> sdev </Name>
+<Name>sdev</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents a function requiring two or more arguments,
@@ -195,7 +195,7 @@ This is an example to denote the standard deviation of a set of data
 </CDDefinition>
 
 <CDDefinition>
-<Name> variance </Name>
+<Name>variance</Name>
 <Role>application</Role>
 <Description>
 This symbol represents a function requiring two or more arguments,
@@ -248,7 +248,7 @@ This is an example to denote the variance of a set of data
 </CDDefinition>
 
 <CDDefinition>
-<Name> mode </Name>
+<Name>mode</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents an n-ary function denoting the mode of its
@@ -271,7 +271,7 @@ The mode of n arguments is that value which occurs with the greatest frequency.
 </CDDefinition>
 
 <CDDefinition>
-<Name> median </Name>
+<Name>median</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents an n-ary function denoting the median of its
@@ -295,7 +295,7 @@ average of the middle two (in the case of an even amount of data).
 </CDDefinition>
 
 <CDDefinition>
-<Name> moment </Name>
+<Name>moment</Name>
 <Role>application</Role>
 <Description> 
 This symbol is used to denote the i'th moment of a set of data. The

@@ -34,7 +34,7 @@
 </CDComment>
 
 
-<CDName> metagrp </CDName>
+<CDName>metagrp</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 
 <CDReviewDate>2017-12-31</CDReviewDate>
@@ -45,7 +45,7 @@
   Author: OpenMath Consortium
   SourceURL: https://github.com/OpenMath/CDs
 </CDComment>
-<CDStatus> official </CDStatus>
+<CDStatus>official</CDStatus>
 <CDURL>http://www.openmath.org/cd/metagrp.ocd</CDURL>
 
 <Description> 
@@ -62,7 +62,7 @@ OpenMath Applications.
 
 
 <CDDefinition>
-<Name> CDGroupName </Name>
+<Name>CDGroupName</Name>
 <Role>application</Role>
 <Description>
 This symbol represents the element of a CDGroup which describes the
@@ -73,7 +73,7 @@ the OpenMath standard.
 </CDDefinition>
 
 <CDDefinition>
-<Name> CDGroupVersion </Name>
+<Name>CDGroupVersion</Name>
 <Role>application</Role>
 <Description>
 </Description>
@@ -81,7 +81,7 @@ the OpenMath standard.
 
 
 <CDDefinition>
-<Name> CDGroupURL </Name>
+<Name>CDGroupURL</Name>
 <Role>application</Role>
 <Description>
 This symbol represents the element of a CDGroup which describes the
@@ -94,7 +94,7 @@ standard.
 
 
 <CDDefinition>
-<Name> CDGroupDescription </Name>
+<Name>CDGroupDescription</Name>
 <Role>application</Role>
 <Description>
 This symbol represents the element of a CDGroup which describes the
@@ -105,7 +105,7 @@ the mathematical area of the CDGroup.
 </CDDefinition>
 
 <CDDefinition>
-<Name> CDComment </Name>
+<Name>CDComment</Name>
 <Role>application</Role>
 <Description>
 This symbol is used to represent the element of a CDGroup which
@@ -116,7 +116,7 @@ should have one string argument which makes that explanation.
 
 
 <CDDefinition>
-<Name> CDGroupMember </Name>
+<Name>CDGroupMember</Name>
 <Role>application</Role>
 <Description>
 This symbol represents the element of a CDGroup which describes each
@@ -127,7 +127,7 @@ should be used to identify each member of the CDGroup.
 </CDDefinition>
 
 <CDDefinition>
-<Name> CDName </Name>
+<Name>CDName</Name>
 <Role>application</Role>
 <Description>
 This symbol represents the element of a CDGroup which describes each
@@ -137,7 +137,7 @@ corresponding to the name of a content dictionary which is in this CDGroup.
 </CDDefinition>
 
 <CDDefinition>
-<Name> CDVersion</Name>
+<Name>CDVersion</Name>
 <Role>application</Role>
 <Description>
 This symbol represents the element of a CDGroup which describes each
@@ -149,7 +149,7 @@ version is the one included in the CDGroup.
 </CDDefinition>
 
 <CDDefinition>
-<Name> CDURL </Name>
+<Name>CDURL</Name>
 <Role>application</Role>
 <Description>
 This symbol represents the element of a CDGroup which describes each
@@ -162,7 +162,7 @@ CDGroupURL is assumed.
 </CDDefinition>
 
 <CDDefinition>
-<Name> CDGroup </Name>
+<Name>CDGroup</Name>
 <Role>application</Role>
 <Description>
 This symbol represents the outermost element of a CDGroup. It has an

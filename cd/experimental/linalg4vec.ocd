@@ -1,11 +1,11 @@
 <CD xmlns="http://www.openmath.org/OpenMathCD">
-<CDName> linalg4vec </CDName>
+<CDName>linalg4vec</CDName>
 <CDURL>http://www.openmath.org/cd/linalg4vec.ocd</CDURL>
-<CDReviewDate> 2005-01-01 </CDReviewDate>
-<CDStatus> experimental </CDStatus>
-<CDDate> 2004-11-22 </CDDate>
-<CDVersion> 2 </CDVersion>
-<CDRevision> 1 </CDRevision>
+<CDReviewDate>2005-01-01</CDReviewDate>
+<CDStatus>experimental</CDStatus>
+<CDDate>2004-11-22</CDDate>
+<CDVersion>2</CDVersion>
+<CDRevision>1</CDRevision>
 
 
 <Description> 
@@ -18,7 +18,7 @@ example in the definition of the symbol sparse has been improved.
 
 
 <CDDefinition>
-<Name> zero </Name>
+<Name>zero</Name>
 <Role>application</Role>
 <Description>
 This symbol represents a function with one argument, which should be a natural
@@ -232,7 +232,7 @@ then
 </CDDefinition>
 
 <CDDefinition>
-<Name> constant </Name>
+<Name>constant</Name>
 <Description>
 This symbol represents a binary function whose first argument should be a
 natural number. When applied to n and c, it represents
@@ -269,7 +269,7 @@ value c.
 </CDDefinition>
 
 <CDDefinition>
-<Name> sparse </Name>
+<Name>sparse</Name>
 <Role>application</Role>
 <Description>
 The sparse symbol is a constructor for sparse vectors. It is (n+1)-ary,

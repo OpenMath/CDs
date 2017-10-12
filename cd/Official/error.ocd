@@ -33,11 +33,11 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName> error </CDName>
+<CDName>error</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/error.ocd</CDURL>
 <CDReviewDate>2017-12-31</CDReviewDate>
-<CDStatus> official </CDStatus>
+<CDStatus>official</CDStatus>
 <CDDate>2004-03-30</CDDate>
 <CDVersion>3</CDVersion>
 <CDRevision>1</CDRevision>
@@ -47,7 +47,7 @@
 </CDComment>
 
 <CDDefinition>
-<Name> unhandled_symbol </Name>
+<Name>unhandled_symbol</Name>
 <Role>error</Role>
 <Description>
 This symbol represents the error which is raised when an application
@@ -71,7 +71,7 @@ The application does not implement the Complex numbers:
 </CDDefinition>
 
 <CDDefinition>
-<Name> unexpected_symbol </Name>
+<Name>unexpected_symbol</Name>
 <Role>error</Role>
 <Description>
 This symbol represents the error which is raised when an application
@@ -93,7 +93,7 @@ The application received a mistyped symbol
 </CDDefinition>
 
 <CDDefinition>
-<Name> unsupported_CD </Name>
+<Name>unsupported_CD</Name>
 <Role>error</Role>
 <Description>
 This symbol represents the error which is raised when an application

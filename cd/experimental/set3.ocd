@@ -1,12 +1,12 @@
 <CD xmlns="http://www.openmath.org/OpenMathCD">
-<CDName> set3 </CDName>
+<CDName>set3</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/set3.ocd</CDURL>
-<CDReviewDate> 2003-04-01 </CDReviewDate>
-<CDDate> 1999-05-10 </CDDate>
-<CDVersion> 1 </CDVersion>
-<CDRevision> 1 </CDRevision>
-<CDStatus> experimental </CDStatus>
+<CDReviewDate>2003-04-01</CDReviewDate>
+<CDDate>1999-05-10</CDDate>
+<CDVersion>1</CDVersion>
+<CDRevision>1</CDRevision>
+<CDStatus>experimental</CDStatus>
 
 <Description>
     This CD defines more set functions.
@@ -15,7 +15,7 @@
 
 
 <CDDefinition>
-<Name> big_intersect </Name>
+<Name>big_intersect</Name>
 <Description> 
 This symbol is a unary function whose argument should be a collection C of
 subsets of a given set. When applied to C, it represents the intersection
@@ -35,7 +35,7 @@ subsets of a given set. When applied to C, it represents the union over all memb
 </CDDefinition>
 
 <CDDefinition>
-<Name> cartesian_power </Name>
+<Name>cartesian_power</Name>
 <Description> 
 This symbol is a binary function whose first argument should be a set A and
 whose second argument should be a natural number k.
@@ -44,7 +44,7 @@ When applied to A and k, it represents the Cartesian product of k copies of A.
 </CDDefinition>
 
 <CDDefinition>
-<Name> powerset </Name>
+<Name>powerset</Name>
 <Description> 
 This symbol represents unary function whose argument should be a set.
 When applied to a set X, it represents the collection of all subsets of X.
@@ -81,7 +81,7 @@ size k.
 
 
 <CDDefinition>
-<Name> map_with_target </Name>
+<Name>map_with_target</Name>
 <Description> 
 This symbol represents a function with three arguments.
 The first argument is a function assignment f (in the form of a lambda
@@ -136,7 +136,7 @@ The definition of a product of subsets X and Y of a group G:
 </CDDefinition>
 
 <CDDefinition>
-<Name> map_with_condition </Name>
+<Name>map_with_condition</Name>
 <Description> 
 This symbol represents a function with three arguments.
 The first argument is a function assignment f (in the form of a lambda
@@ -175,7 +175,7 @@ One may form a set in the following way. This gives the set {2^2, 4^2,
 </CDDefinition>
 
 <CDDefinition>
-<Name> map_with_target_and_condition </Name>
+<Name>map_with_target_and_condition</Name>
 <Description> 
 This symbol represents a function with four arguments.
 The first argument is a function assignment f (in the form of a lambda

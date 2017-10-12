@@ -1,11 +1,11 @@
 <CD xmlns="http://www.openmath.org/OpenMathCD">
-   <CDName> polygb1 </CDName> 
+   <CDName>polygb1</CDName> 
    <CDURL>http://www.win.tue.nl/~amc/oz/om/cds/polygb1.ocd</CDURL>
-   <CDReviewDate> 2006-06-01 </CDReviewDate> 
-   <CDDate> 2004-06-01 </CDDate> 
-   <CDStatus> experimental </CDStatus>
-   <CDVersion> 1 </CDVersion>
-   <CDRevision> 2 </CDRevision>
+   <CDReviewDate>2006-06-01</CDReviewDate> 
+   <CDDate>2004-06-01</CDDate> 
+   <CDStatus>experimental</CDStatus>
+   <CDVersion>1</CDVersion>
+   <CDRevision>2</CDRevision>
 
    <Description>
      This CD contains operators for Groebner basis computations with polynomial expressions.
@@ -19,7 +19,7 @@
 </CDComment>
 
 <CDDefinition>
-  <Name> groebner_basis </Name>
+  <Name>groebner_basis</Name>
   <Description>
     The constructor for a Groebner basis (reduced, minimal). The first is a list of
     variables, the second argument is an ordering, the third is the Groebner Basis itself
@@ -32,7 +32,7 @@
 </CDComment>
 
     <CDDefinition>
-       <Name> groebner </Name>
+       <Name>groebner</Name>
        <Description> 
          The groebner basis (reduced, minimal) of a set of polynomials, with
          respect to a given ordering. First argument is  a list of
@@ -83,7 +83,7 @@
 </CDDefinition>
 
    <CDDefinition>
-       <Name> groebnered </Name>
+       <Name>groebnered</Name>
        <Description> 
           The constructor for a Groebner basis (reduced, minimal). The first
           argument is an ordering, the second is the Groebner Basis itself
@@ -92,7 +92,7 @@
     </CDDefinition>
 
     <CDDefinition>
-       <Name> completely_reduced </Name>
+       <Name>completely_reduced</Name>
        <Description> 
           This attribute, attached to a groebnered object, says 'true' if
           the base is fully reduced, i.e. no monomial is divisible by the
@@ -104,7 +104,7 @@
 
 
     <CDDefinition>
-       <Name> reduce </Name>
+       <Name>reduce</Name>
        <Description>
 
          The reduction of a polynomial with respect to a list P of

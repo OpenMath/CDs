@@ -32,12 +32,12 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName> meta_cats </CDName>
+<CDName>meta_cats</CDName>
 <CDURL>http://www.openmath.org/cd/meta_cats.ocd</CDURL>
 <CDReviewDate>2017-12-31</CDReviewDate>
-<CDStatus> experimental </CDStatus>
-<CDDate> 2002-06-17 </CDDate>
-<CDVersion> 0 </CDVersion>
+<CDStatus>experimental</CDStatus>
+<CDDate>2002-06-17</CDDate>
+<CDVersion>0</CDVersion>
 <CDRevision>1</CDRevision>
 <CDComment>
   Author: Bill Naylor
@@ -47,7 +47,7 @@
 This CD holds symbols for making meta statements about categories
 </Description>
 <CDDefinition>
-<Name> has </Name>
+<Name>has</Name>
 <Description>
 This symbol represents the notion of category inclusion. It takes two
 arguments, which should both be categories. It implies that axioms of
@@ -58,7 +58,7 @@ in the second category are also in the first.
 </CDDefinition>
 
 <CDDefinition>
-<Name> Category </Name>
+<Name>Category</Name>
 <Description>
 This symbol is intended to denote the type of a category.
 </Description>
@@ -66,7 +66,7 @@ This symbol is intended to denote the type of a category.
 </CDDefinition>
 
 <CDDefinition>
-<Name> domain </Name>
+<Name>domain</Name>
 <Description>
 These objects have categories as there types and specific implementations of 
 their functions. 
@@ -77,7 +77,7 @@ arguments are the functions (e.g. lambda bindings or unapplied functions).
 </CDDefinition>
 
 <CDDefinition>
-<Name> type </Name>
+<Name>type</Name>
 <Description>
 This symbol is unary and returns the type of its argument.
 </Description>

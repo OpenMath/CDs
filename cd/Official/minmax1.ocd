@@ -33,7 +33,7 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName> minmax1 </CDName>
+<CDName>minmax1</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/minmax1.ocd</CDURL>
 <CDReviewDate>2006-03-30</CDReviewDate>
@@ -44,14 +44,14 @@
   Author: OpenMath Consortium
   SourceURL: https://github.com/OpenMath/CDs
 </CDComment>
-<CDStatus> official </CDStatus>
+<CDStatus>official</CDStatus>
 
 <Description>
     This CD holds the definitions of min and max.
 </Description>
 
 <CDDefinition>
-<Name> min </Name>
+<Name>min</Name>
 <Role>application</Role>
 <Description> 
  This symbol denotes the unary minimum function which takes a set as
@@ -78,7 +78,7 @@ Representation of the equation minimum{1,9,5} = 1.
 </CDDefinition>
 
 <CDDefinition>
-<Name> max </Name>
+<Name>max</Name>
 <Role>application</Role>
 <Description> 
  This symbol denotes the unary maximum function which takes a set as

@@ -35,14 +35,14 @@
 
 <CDName>equations1</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
-<CDDate> 2004-02-04 </CDDate>
+<CDDate>2004-02-04</CDDate>
 <CDReviewDate>2017-12-31</CDReviewDate>
-<CDVersion> 1 </CDVersion>
+<CDVersion>1</CDVersion>
 <CDRevision>1</CDRevision>
 <CDComment>
   Author: Mike Dewar
 </CDComment>
-<CDStatus> experimental </CDStatus>
+<CDStatus>experimental</CDStatus>
 
 <Description> 
 Symbols to provide a vocabulary for talking about properties of (systems of)
@@ -51,7 +51,7 @@ equations.
 
 
 <CDDefinition>
-<Name> linear </Name>
+<Name>linear</Name>
 <Description> 
 A predicate to indicate that an equation or system of equations is linear,
 i.e. is expressed in terms of constants and first order terms.
@@ -73,7 +73,7 @@ i.e. is expressed in terms of constants and first order terms.
 </CDDefinition>
 
 <CDDefinition>
-<Name> non_linear </Name>
+<Name>non_linear</Name>
 <Description> 
 A predicate to indicate that an equation or system of equations is non-linear,
 i.e. contains terms of order greater than 1.
@@ -96,7 +96,7 @@ i.e. contains terms of order greater than 1.
 
 
 <CDDefinition>
-<Name> sparse </Name>
+<Name>sparse</Name>
 <Description> 
 A predicate to indicate that an equation or system of equations is sparse.
 </Description>
@@ -114,7 +114,7 @@ A predicate to indicate that an equation or system of equations is sparse.
 
 
 <CDDefinition>
-<Name> dense </Name>
+<Name>dense</Name>
 <Description> 
 A predicate to indicate that an equation or system of equations is dense.
 </Description>

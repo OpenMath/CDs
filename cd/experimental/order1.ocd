@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <CD xmlns="http://www.openmath.org/OpenMathCD">
-	<CDName> order1 </CDName>
+	<CDName>order1</CDName>
 	<CDDate>2009-07-02</CDDate>
 	<CDVersion>1</CDVersion>
 	<CDRevision>7</CDRevision>
-	<CDStatus> experimental </CDStatus>
+	<CDStatus>experimental</CDStatus>
 	<CDURL>http://www.win.tue.nl/SCIEnce/cds/order1.ocd</CDURL>
 	<CDReviewDate>2017-09-30</CDReviewDate>
 
@@ -19,7 +19,7 @@
 	(2) H. Cohen, A course in Computational Algebraic Number Theory. Berlin, Springer-Verlag (1993).
 	</CDComment>
 	<CDDefinition>
-		<Name> is_Dedekind</Name>
+		<Name>is_Dedekind</Name>
 		<Role>application</Role>
 		<Description>
 		This symbol represents a unary boolean function. The argument should be a ring R. When evaluated on R, the function returns true if R is a Dedekind ring and false otherwise. Note that a ring R is a Dedekind ring if it is  Noetherian, integrally closed (so integral) and such that every non-zero prime ideal is maximal.
@@ -96,7 +96,7 @@
 		</Example>
 	</CDDefinition>
 	<CDDefinition>
-		<Name> is_nonzero_divisor</Name>
+		<Name>is_nonzero_divisor</Name>
 		<Role>application</Role>
 		<Description>
 		This symbol represents a boolean binary function. The first argument is a ring 
@@ -208,7 +208,7 @@
 		</Example>
 	</CDDefinition>
 	<CDDefinition>
-		<Name> is_principal_ideal_domain</Name>
+		<Name>is_principal_ideal_domain</Name>
 		<Role>application</Role>
 		<Description>
 		The unary boolean function whose value is true if and only if the argument is a principal ideal domain. R is a  principal ideal domain if R is a commutative ring without zero divisors and if  every ideal of R is a principal ideal.
@@ -355,7 +355,7 @@
 		</Example>
 	</CDDefinition>
 	<CDDefinition>
-		<Name> order</Name>
+		<Name>order</Name>
 		<Role>application</Role>
 		<Description>
 		This is a binary function, whose first argument is a Dedekind ring R and the second is a polynomial f. When applied to R and f, it returns an order of f over 
@@ -395,7 +395,7 @@
 		</Example>
 	</CDDefinition>
 	<CDDefinition>
-		<Name> maximal_order</Name>
+		<Name>maximal_order</Name>
 		<Role>application</Role>
 		<Description>
 		This is a binary function, whose first argument is a Dedekind ring R and the second is a polynomial f. When applied to R and f, it returns the maximal order A among the orders of f (over the polynomial ring of R) in the quotient field of A. 
@@ -433,7 +433,7 @@
 		</Example>
 	</CDDefinition>
 	<CDDefinition>
-		<Name> is_maximal_order</Name>
+		<Name>is_maximal_order</Name>
 		<Role>application</Role>
 		<Description>
 		The unary boolean function whose value is true if and only if the argument is a  maximal order.
@@ -473,7 +473,7 @@
 		</Example>
 	</CDDefinition>
 	<CDDefinition>
-		<Name> algebraic_integer</Name>
+		<Name>algebraic_integer</Name>
 		<Role>application</Role>
 		<Description>
 		This is a binary function. The first argument is an order O. The second argument should be a list L of elements of the Dedekind ring R, such that O is an order over the polynomial ring of R (cf. order). The length of L should be equal to the degree n of the polynomial generating the order O. When applied to O and L, it represents the element L[0] + L[1] b + L[2] b^2 + ... + L[n-1] b^(n-1) of O, where b stands for a primitive element of O.
@@ -518,7 +518,7 @@
 		</Example>
 	</CDDefinition>
 	<CDDefinition>
-		<Name> number_field</Name>
+		<Name>number_field</Name>
 		<Role>application</Role>
 		<Description>
 		This symbol is a constructor for number fields. It takes two arguments in the following order: a ring R and a monic irreducible univariate polynomial f. If the ring R is Z (or Q), it returns the absolute number field. Otherwise it returns the relative number field over the number field whose ring of integers is R.
@@ -616,7 +616,7 @@
 		</Example>
 	</CDDefinition>
 	<CDDefinition>
-		<Name> algebraic_number</Name>
+		<Name>algebraic_number</Name>
 		<Role>application</Role>
 		<Description>
 		This is a binary function. The first argument is a number field F. The second argument should be a list L of elements of Q in case of an absolute number field F. Otherwise the second argument is a list L of elements of the number field whose ring of integers is the ring R over which F is defined (cf. number_field). The length of the list L should be equal to the degree n of F. When applied to F and L, it represents the element L[0] + L[1] b + L[2] b^2 + ... + L[n-1] ^(b-1) of F, where b stands for a primitive element of F.
@@ -661,7 +661,7 @@
 		</Example>
 	</CDDefinition>
 	<CDDefinition>
-		<Name> ring_integers</Name>
+		<Name>ring_integers</Name>
 		<Role>application</Role>
 		<Description>
 		This is a unary function, whose argument is a number field K. When applied to K, it returns the ring of integers of K. It is the Dedekind ring of K.
@@ -731,7 +731,7 @@
 		</Example>
 	</CDDefinition>
 	<CDDefinition>
-		<Name> primitive_element</Name>
+		<Name>primitive_element</Name>
 		<Role>application</Role>
 		<Description>
 		This is a unary function, whose argument is a number field K. It returns a primitive element of K. Note that the result is not unique.

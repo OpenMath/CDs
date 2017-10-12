@@ -90,7 +90,7 @@
 </CDDefinition>
 
 
-<CDDefinition> <Name>length</Name> 
+<CDDefinition><Name>length</Name> 
  <Description> 
 
                 This symbol is a function with one argument, which
@@ -263,7 +263,7 @@ the same cycle otherwise.
 		</Example>
 	</CDDefinition>
 
-	<CDDefinition> <Name>is_perm</Name>
+	<CDDefinition><Name>is_perm</Name>
 
 		<Description> This symbol is a boolean function with
 			one argument.  If the argument is not a set of

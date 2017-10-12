@@ -1,6 +1,6 @@
 <CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" 
    cd="setname1" cdurl="http://www.openmath.org/cd/setname1.ocd" version="2.0">
-<CDSStatus> official </CDSStatus>
+<CDSStatus>official</CDSStatus>
 <CDSComment>
  Written by JHD 1999-11-19, using the "structure"
  construct added to STS.

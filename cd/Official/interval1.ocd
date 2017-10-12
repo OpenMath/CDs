@@ -33,7 +33,7 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName> interval1 </CDName>
+<CDName>interval1</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/interval1.ocd</CDURL>
 <CDReviewDate>2006-03-30</CDReviewDate>
@@ -44,7 +44,7 @@
   Author: OpenMath Consortium
   SourceURL: https://github.com/OpenMath/CDs
 </CDComment>
-<CDStatus> official </CDStatus>
+<CDStatus>official</CDStatus>
 <Description>
     This CD holds symbols which describe both discrete and continuous
     1-dimensional intervals (with open/closed end points).
@@ -52,7 +52,7 @@
 
 
 <CDDefinition>
-<Name> integer_interval </Name>
+<Name>integer_interval</Name>
 <Role>application</Role>
 <Description> 
 A symbol to denote a discrete 1 dimensional interval from the first
@@ -73,7 +73,7 @@ The integer interval 1, 2, ..., 10.
 </CDDefinition>
 
 <CDDefinition>
-<Name> interval </Name>
+<Name>interval</Name>
 <Role>application</Role>
 <Description> 
 A symbol to denote a continuous 1-dimensional interval without any
@@ -94,7 +94,7 @@ The interval 1.0, ..., 10.0.
 </CDDefinition>
 
 <CDDefinition>
-<Name> interval_oo </Name>
+<Name>interval_oo</Name>
 <Role>application</Role>
 <Description> 
 A symbol to denote a continuous 1-dimensional interval with both end
@@ -114,7 +114,7 @@ The continuous open interval (1,10).
 </CDDefinition>
 
 <CDDefinition>
-<Name> interval_cc </Name>
+<Name>interval_cc</Name>
 <Role>application</Role>
 <Description> 
 A symbol to denote a continuous 1-dimensional interval with both end
@@ -134,7 +134,7 @@ The continuous closed interval [1,10].
 </CDDefinition>
 
 <CDDefinition>
-<Name> interval_oc </Name>
+<Name>interval_oc</Name>
 <Role>application</Role>
 <Description> 
 A symbol to denote a continuous 1-dimensional interval with the first
@@ -155,7 +155,7 @@ bound (1,10].
 </CDDefinition>
 
 <CDDefinition>
-<Name> interval_co </Name>
+<Name>interval_co</Name>
 <Role>application</Role>
 <Description> 
 A symbol to denote a continuous 1-dimensional interval with the first

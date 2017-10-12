@@ -33,7 +33,7 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName> transc1 </CDName>
+<CDName>transc1</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/transc1.ocd</CDURL>
 <CDReviewDate>2006-03-30</CDReviewDate>
@@ -44,7 +44,7 @@
   Author: OpenMath Consortium
   SourceURL: https://github.com/OpenMath/CDs
 </CDComment>
-<CDStatus> official </CDStatus>
+<CDStatus>official</CDStatus>
 
 <Description>
     This CD holds the definitions of many transcendental
@@ -61,7 +61,7 @@
 </Description>
 
 <CDDefinition>
-<Name> log </Name>
+<Name>log</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents a binary log function; the first argument is the base,
@@ -111,7 +111,7 @@ log 100 to base 10 (which is 2).
 </CDDefinition>
 
 <CDDefinition>
-<Name> ln </Name>
+<Name>ln</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents the ln function (natural logarithm) as
@@ -168,7 +168,7 @@ ln 1 (which is 0).
 </CDDefinition>
 
 <CDDefinition>
-<Name> exp </Name>
+<Name>exp</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents the exponentiation function as described in
@@ -215,7 +215,7 @@ Abramowitz and Stegun, section 4.2. It takes one argument.
 </CDDefinition>
 
 <CDDefinition>
-<Name> sin </Name>
+<Name>sin</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents the sin function as described in Abramowitz and
@@ -339,7 +339,7 @@ sin A = - sin(-A)
 </CDDefinition>
 
 <CDDefinition>
-<Name> cos </Name>
+<Name>cos</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents the cos function as described in Abramowitz and
@@ -450,7 +450,7 @@ cos A = cos(-A)
 </CDDefinition>
 
 <CDDefinition>
-<Name> tan </Name>
+<Name>tan</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents the tan function as described in Abramowitz and
@@ -482,7 +482,7 @@ tan A = sin A / cos A
 </CDDefinition>
 
 <CDDefinition>
-<Name> sec </Name>
+<Name>sec</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents the sec function as described in Abramowitz and
@@ -512,7 +512,7 @@ sec A = 1/cos A
 </CDDefinition>
 
 <CDDefinition>
-<Name> csc </Name>
+<Name>csc</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents the csc function as described in Abramowitz and
@@ -542,7 +542,7 @@ csc A = 1/sin A
 </CDDefinition>
 
 <CDDefinition>
-<Name> cot </Name>
+<Name>cot</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents the cot function as described in Abramowitz and
@@ -572,7 +572,7 @@ cot A = 1/tan A
 </CDDefinition>
 
 <CDDefinition>
-<Name> sinh </Name>
+<Name>sinh</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents the sinh function as described in Abramowitz
@@ -615,7 +615,7 @@ and Stegun, section 4.5. It takes one argument.
 </CDDefinition>
 
 <CDDefinition>
-<Name> cosh </Name>
+<Name>cosh</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents the cosh function as described in Abramowitz
@@ -658,7 +658,7 @@ and Stegun, section 4.5. It takes one argument.
 </CDDefinition>
 
 <CDDefinition>
-<Name> tanh </Name>
+<Name>tanh</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents the tanh function as described in Abramowitz
@@ -688,7 +688,7 @@ and Stegun, section 4.5. It takes one argument.
 </CDDefinition>
 
 <CDDefinition>
-<Name> sech </Name>
+<Name>sech</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents the sech function as described in Abramowitz
@@ -716,7 +716,7 @@ and Stegun, section 4.5. It takes one argument.
 </CDDefinition>
 
 <CDDefinition>
-<Name> csch </Name>
+<Name>csch</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents the csch function as described in Abramowitz
@@ -745,7 +745,7 @@ and Stegun, section 4.5. It takes one argument.
 </CDDefinition>
 
 <CDDefinition>
-<Name> coth </Name>
+<Name>coth</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents the coth function as described in Abramowitz
@@ -773,7 +773,7 @@ and Stegun, section 4.5. It takes one argument.
 </CDDefinition>
 
 <CDDefinition>
-<Name> arcsin </Name>
+<Name>arcsin</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents the arcsin function. This is the inverse of the
@@ -867,7 +867,7 @@ arcsin(z) = -i ln (sqrt(1-z^2)+iz)
 </CDDefinition>
 
 <CDDefinition>
-<Name> arccos </Name>
+<Name>arccos</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents the arccos function. This is the inverse of the
@@ -949,7 +949,7 @@ takes one argument.
 </CDDefinition>
 
 <CDDefinition>
-<Name> arctan </Name>
+<Name>arctan</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents the arctan function. This is the inverse of the
@@ -1044,7 +1044,7 @@ arctan(z) = (i/2)ln((1-iz)/(1+iz))
 </CDDefinition>
 
 <CDDefinition>
-<Name> arcsec </Name>
+<Name>arcsec</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents the arcsec function as described in Abramowitz
@@ -1132,7 +1132,7 @@ and Stegun, section 4.4.
 </CDDefinition>
 
 <CDDefinition>
-<Name> arccsc </Name>
+<Name>arccsc</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents the arccsc function as described in Abramowitz
@@ -1237,7 +1237,7 @@ and Stegun, section 4.4.
 </CDDefinition>
 
 <CDDefinition>
-<Name> arccot </Name>
+<Name>arccot</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents the arccot function as described in Abramowitz
@@ -1306,7 +1306,7 @@ and Stegun, section 4.4.
 </CDDefinition>
 
 <CDDefinition>
-<Name> arcsinh </Name>
+<Name>arcsinh</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents the arcsinh function as described in Abramowitz
@@ -1377,7 +1377,7 @@ and Stegun, section 4.6.
 </CDDefinition>
 
 <CDDefinition>
-<Name> arccosh </Name>
+<Name>arccosh</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents the arccosh function as described in Abramowitz
@@ -1460,7 +1460,7 @@ and Stegun, section 4.6.
 </CDDefinition>
 
 <CDDefinition>
-<Name> arctanh </Name>
+<Name>arctanh</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents the arctanh function as described in Abramowitz
@@ -1563,7 +1563,7 @@ arctanh(x) = 1/2 * ln((1 + x)/(1 - x))
 </CDDefinition>
 
 <CDDefinition>
-<Name> arcsech </Name>
+<Name>arcsech</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents the arcsech function as described in Abramowitz
@@ -1690,7 +1690,7 @@ and Stegun, section 4.6.
 </CDDefinition>
 
 <CDDefinition>
-<Name> arccsch </Name>
+<Name>arccsch</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents the arccsch function as described in Abramowitz
@@ -1765,7 +1765,7 @@ and Stegun, section 4.6.
 </CDDefinition>
 
 <CDDefinition>
-<Name> arccoth </Name>
+<Name>arccoth</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents the arccoth function as described in Abramowitz

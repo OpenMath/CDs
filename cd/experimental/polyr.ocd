@@ -33,12 +33,12 @@
      society at http://www.openmath.org.
 </CDComment>
 
-   <CDName> polyr </CDName>
+   <CDName>polyr</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase> 
    <CDURL>http://www.openmath.org/cd/polyd.ocd</CDURL>
    <CDReviewDate>2017-12-31</CDReviewDate> 
    <CDDate>2004-03-30</CDDate> 
-   <CDStatus> experimental </CDStatus>
+   <CDStatus>experimental</CDStatus>
    <CDVersion>3</CDVersion>
    <CDRevision>1</CDRevision>
 <CDComment>
@@ -89,7 +89,7 @@ Convert to recursive polynomials 1999-11-20 JHD
 </CDComment>
 
     <CDDefinition>
-       <Name> term </Name>
+       <Name>term</Name>
 <Role>application</Role>
        <Description>
           A constructor for monomials, that is products of powers and
@@ -102,7 +102,7 @@ Convert to recursive polynomials 1999-11-20 JHD
     </CDDefinition>
 
     <CDDefinition>
-       <Name> poly_r_rep </Name>
+       <Name>poly_r_rep</Name>
 <Role>application</Role>
        <Description>
          A constructor for the representation of polynomials.
@@ -150,7 +150,7 @@ Convert to recursive polynomials 1999-11-20 JHD
     </CDDefinition>
 
     <CDDefinition>
-       <Name> polynomial_r </Name>
+       <Name>polynomial_r</Name>
 <Role>application</Role>
        <Description>
          The constructor of Recursive Polynomials. The first argument
@@ -213,7 +213,7 @@ Convert to recursive polynomials 1999-11-20 JHD
 
 
     <CDDefinition>
-       <Name> polynomial_ring_r </Name>
+       <Name>polynomial_ring_r</Name>
 <Role>application</Role>
        <Description> 
          The constructor of a recursive polynomial ring. The first argument

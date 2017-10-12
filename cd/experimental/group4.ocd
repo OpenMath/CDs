@@ -1,12 +1,12 @@
 <CD xmlns="http://www.openmath.org/OpenMathCD">
-<CDName> group4 </CDName>
+<CDName>group4</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/group4.ocd</CDURL>
-<CDReviewDate> 2006-06-01 </CDReviewDate>
-<CDDate> 2004-06-01 </CDDate>
-<CDVersion> 1 </CDVersion>
-<CDRevision> 2 </CDRevision>
-<CDStatus> experimental </CDStatus>
+<CDReviewDate>2006-06-01</CDReviewDate>
+<CDDate>2004-06-01</CDDate>
+<CDVersion>1</CDVersion>
+<CDRevision>2</CDRevision>
+<CDStatus>experimental</CDStatus>
 
 <Description> A CD of sets constructed from groups   </Description>
 
@@ -18,7 +18,7 @@ Edited AMC 2004-03-05
 
 
 <CDDefinition>
-<Name> conjugacy_classes </Name>
+<Name>conjugacy_classes</Name>
 <Description>
 This symbol represents a unary function whose argument should be a group.
 Its value on a group is the set of conjugacy classes of
@@ -27,7 +27,7 @@ that group.
 </CDDefinition>
 
 <CDDefinition>
-<Name> conjugacy_class_representatives </Name>
+<Name>conjugacy_class_representatives</Name>
 <Description>
 This symbol represents a unary function whose argument should be a group.
 Its value on a group is a set of representatives of the conjugacy classes of
@@ -36,7 +36,7 @@ that group.
 </CDDefinition>
 
 <CDDefinition>
-<Name> are_conjugate </Name>
+<Name>are_conjugate</Name>
 <Description>
 This symbol represents a boolean ternary function whose first argument is a group G and
 whose second and third arguments are elements x and y of G. Its value on G, x,
@@ -87,7 +87,7 @@ x and y are conjugate if and only if there is h in G such that x = h y h^(-1).
 </CDDefinition>
 
 <CDDefinition>
-<Name> conjugacy_class </Name>
+<Name>conjugacy_class</Name>
 <Description>
 This symbol represents a binary function, whose first argument is a group G and
 whose second argument is an element x of G. Its value on G and x is the set of elements which 
@@ -122,7 +122,7 @@ The conjugacy class in G of h is the subset {g^(-1) h g | g in G} of G.
 
 
 <CDDefinition>
-<Name> left_transversal </Name>
+<Name>left_transversal</Name>
 <Description>
 The binary function whose value is a set of representatives for the
 left cosets of the second argument as a subgroup of the first.
@@ -132,7 +132,7 @@ left cosets of the second argument as a subgroup of the first.
 
 
 <CDDefinition>
-<Name> right_transversal </Name>
+<Name>right_transversal</Name>
 <Description>
 The binary function whose value is a set of representatives for the
 right cosets of the second argument as a subgroup of the first.
@@ -143,7 +143,7 @@ right cosets of the second argument as a subgroup of the first.
 
 
 <CDDefinition>
-<Name> left_coset </Name>
+<Name>left_coset</Name>
 <Description>
 This symbol represents a ternary function whose first argument is a group G,
 whose second argument is a subgroup H of G, and whose third argument is an
@@ -157,7 +157,7 @@ containing x, that is, the set x H.
 
 
 <CDDefinition>
-<Name> right_coset </Name>
+<Name>right_coset</Name>
 <Description>
 This symbol represents a ternary function whose first argument is a group G,
 whose second argument is a subgroup H of G, and whose third argument is an
@@ -168,7 +168,7 @@ containing x, that is, the set H x.
 </CDDefinition>
 
 <CDDefinition>
-<Name> left_cosets </Name>
+<Name>left_cosets</Name>
 <Description>
 The binary function whose value is the set of left cosets of the second argument in the first.
 </Description>
@@ -178,7 +178,7 @@ The binary function whose value is the set of left cosets of the second argument
 
 
 <CDDefinition>
-<Name> right_cosets </Name>
+<Name>right_cosets</Name>
 <Description>
 The binary function whose value is the set of right cosets of the second argument in the first.
 </Description>
@@ -189,7 +189,7 @@ The binary function whose value is the set of right cosets of the second argumen
 
 
 <CDDefinition>
-<Name> left_coset_representative </Name>
+<Name>left_coset_representative</Name>
 <Description>
 This symbol represents a quaternary function whose first argument is a group G,
 whose second argument is a subgroup H of G, whose third argument is
@@ -202,7 +202,7 @@ H containing g, that is, t H  = g H .
 
 
 <CDDefinition>
-<Name> right_coset_representative </Name>
+<Name>right_coset_representative</Name>
 <Description>
 This symbol represents a quaternary function whose first argument is a group G,
 whose second argument is a subgroup H of G, whose third argument is

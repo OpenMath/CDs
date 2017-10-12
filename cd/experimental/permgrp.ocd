@@ -33,7 +33,7 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName> permgrp </CDName>
+<CDName>permgrp</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/permgrp.ocd</CDURL>
 <CDReviewDate>2017-12-31</CDReviewDate>
@@ -44,7 +44,7 @@
   Author: OpenMath Consortium
   SourceURL: https://github.com/OpenMath/CDs
 </CDComment>
-<CDStatus> experimental </CDStatus>
+<CDStatus>experimental</CDStatus>
 <Description> A CD of functions for permutation groups   </Description>
 <CDComment>
 Written by A. Solomon on 1998-11-19
@@ -54,7 +54,7 @@ Modified by David Carlisle 1999-04-28
 
 
 <CDDefinition>
-<Name> orbit </Name>
+<Name>orbit</Name>
 <Role>application</Role>
 <Description>
 The binary function whose value is the set of integers which 
@@ -65,7 +65,7 @@ argument which is a permutation group.
 
 
 <CDDefinition>
-<Name> stabilizer </Name>
+<Name>stabilizer</Name>
 <Role>application</Role>
 <Description>
 The first argument is a permutation group, the second is 
@@ -78,7 +78,7 @@ stabilize the second argument.
 
 
 <CDDefinition>
-<Name> is_transitive </Name>
+<Name>is_transitive</Name>
 <Role>application</Role>
 <Description>
 The unary function whose value is true iff the permutation group argument acts
@@ -89,7 +89,7 @@ transitively.
 
 
 <CDDefinition>
-<Name> is_primitive </Name>
+<Name>is_primitive</Name>
 <Role>application</Role>
 <Description>
 The unary function whose value is true iff its permutation group argument acts

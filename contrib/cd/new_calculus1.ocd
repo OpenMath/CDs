@@ -33,12 +33,12 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName> calculus1 </CDName>
+<CDName>calculus1</CDName>
 <CDURL>http://www.openmath.org/cd/calculus1.ocd</CDURL>
 <CDReviewDate>2017-12-31</CDReviewDate>
-<CDStatus> experimental </CDStatus>
-<CDDate> 2002-09-19 </CDDate>
-<CDVersion> 3 </CDVersion>
+<CDStatus>experimental</CDStatus>
+<CDDate>2002-09-19</CDDate>
+<CDVersion>3</CDVersion>
 <CDRevision>2</CDRevision>
 <CDComment>
   Author: Bill Naylor
@@ -53,7 +53,7 @@
 </Description>
 
 <CDDefinition>
-<Name> diff </Name>
+<Name>diff</Name>
 <Description>
 This symbol is used to express ordinary differentiation of a unary
 function. The single argument is the unary function.
@@ -244,7 +244,7 @@ This represents the equation:
 </CDDefinition>
 
 <CDDefinition>
-<Name> nthdiff </Name>
+<Name>nthdiff</Name>
 <Description>
 This symbol is used to express the nth-iterated ordinary differentiation of 
 a unary function. The first argument is n, and the second the unary function.
@@ -293,7 +293,7 @@ a unary function. The first argument is n, and the second the unary function.
 </CDDefinition>
 
 <CDDefinition>
-<Name> partialdiff </Name>
+<Name>partialdiff</Name>
 <Description>
 This symbol is used to express partial differentiation of a function
 of more than one variable. It has two arguments, the first is a list
@@ -342,7 +342,7 @@ An example to represent the equation:
 </CDDefinition>
 
 <CDDefinition>
-  <Name> nthpartialdiff </Name>
+  <Name>nthpartialdiff</Name>
   <Description>
 This symbol is used to express the nth-iterated partial
 differentiation of a function of more than one variable. It has three
@@ -411,7 +411,7 @@ first argument.
 </CDDefinition>
 
 <CDDefinition>
-<Name> int </Name>
+<Name>int</Name>
 <Description> 
 This symbol is used to represent indefinite integration of unary functions.
 The argument is the unary function.
@@ -513,7 +513,7 @@ integral(x +-> sin(x)) w.r.t. x = x +-> -cos(x)
 </CDDefinition>
 
 <CDDefinition>
-<Name> defint </Name>
+<Name>defint</Name>
 <Description> 
 This symbol is used to represent definite integration of unary
 functions. It takes two arguments; the first being the range (e.g. a

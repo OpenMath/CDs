@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <!-- $Id: hypergeon0.tfb,v 1.7 2003/11/30 13:10:52 taka Exp $ -->
 <CD xmlns="http://www.openmath.org/OpenMathCD">
-<CDName> hypergeon0 </CDName>
+<CDName>hypergeon0</CDName>
 <CDURL>http://www.math.kobe-u.ac.jp/OCD/hypergeon0.tfb</CDURL>
 <CDReviewDate>2017-12-31</CDReviewDate>
-<CDStatus> experimental </CDStatus>
-<CDDate> 2003-11-30 </CDDate>
-<CDVersion> 1 </CDVersion>
+<CDStatus>experimental</CDStatus>
+<CDDate>2003-11-30</CDDate>
+<CDVersion>1</CDVersion>
 <CDRevision>3</CDRevision>
 <CDComment>
   Author: Nobuki Takayama
@@ -21,7 +21,7 @@ These symbols may be included in CD's linalg, logic, poly, and set.
 
 <!-- linalg1p -->
 <CDDefinition>
-<Name>  plus_part </Name>
+<Name>plus_part</Name>
 <Description>
   The argument is a vector. It replaces negative elements in the vector 
   to zero.
@@ -29,7 +29,7 @@ These symbols may be included in CD's linalg, logic, poly, and set.
 </CDDefinition>
 
 <CDDefinition>
-<Name>   minus_part </Name>
+<Name>minus_part</Name>
 <Description>
   The argument is a vector. It replaces positive elements in the vector 
   to zero and negative elements to their absolute values.
@@ -57,7 +57,7 @@ These symbols may be included in CD's linalg, logic, poly, and set.
 
 
 <CDDefinition>
-<Name> kernel </Name>
+<Name>kernel</Name>
 <Description>
  It returns the kernel of the map defined by a matrix in a specified
  domain.
@@ -100,7 +100,7 @@ These symbols may be included in CD's linalg, logic, poly, and set.
 
 <!-- logic1p -->
 <CDDefinition>
-<Name>  where </Name>
+<Name>where</Name>
 <Description>
   The word "where" is often used in mathematical expressions
   to set variables or to say side conditions.
@@ -145,7 +145,7 @@ These symbols may be included in CD's linalg, logic, poly, and set.
 
 <!-- poly1p -->
 <CDDefinition>
-<Name> multi_power </Name>
+<Name>multi_power</Name>
 <Description>
   multi_power is for using the multi-index notation.
 </Description>
@@ -191,7 +191,7 @@ These symbols may be included in CD's linalg, logic, poly, and set.
 <!-- set1p -->
 
 <CDDefinition>
-<Name> cartesian_product_n </Name>
+<Name>cartesian_product_n</Name>
 <Description>
   the cartesian product of n copies of the first argument.
   Binary function.

@@ -32,12 +32,12 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName> units_imperial1 </CDName>
+<CDName>units_imperial1</CDName>
 <CDURL>http://www.openmath.org/cd/units_imperial1.ocd</CDURL>
 <CDReviewDate>2017-12-31</CDReviewDate>
-<CDStatus> experimental </CDStatus>
-<CDDate> 2004-08-27 </CDDate>
-<CDVersion> 3 </CDVersion>
+<CDStatus>experimental</CDStatus>
+<CDDate>2004-08-27</CDDate>
+<CDVersion>3</CDVersion>
 <CDRevision>2</CDRevision>
 <CDComment>
   Author: OpenMath Consortium (James Davenport)
@@ -49,7 +49,7 @@ This CD defines symbols to represent imperial standard measures.
 </Description>
 
 <CDDefinition>
-<Name> foot </Name>
+<Name>foot</Name>
 <Description>
 This symbol represents the measure of one foot. This is the standard
 imperial measure for distance.
@@ -75,7 +75,7 @@ imperial measure for distance.
 </CDDefinition>
 
 <CDDefinition>
-<Name> yard </Name>
+<Name>yard</Name>
 <Description>
 This symbol represents the measure of one yard. This is a
 standard imperial measure for distance, defined in terms of the foot.
@@ -101,7 +101,7 @@ standard imperial measure for distance, defined in terms of the foot.
 </CDDefinition>
 
 <CDDefinition>
-<Name> mile </Name>
+<Name>mile</Name>
 <Description>
 This symbol represents the measure of one (land, or statute) mile. This is a
 standard imperial measure for distance, defined in terms of the foot.
@@ -127,7 +127,7 @@ standard imperial measure for distance, defined in terms of the foot.
 </CDDefinition>
 
 <CDDefinition>
-<Name> acre </Name>
+<Name>acre</Name>
 <Description>
 This symbol represents the measure of one acre. This is a standard
 imperial measure for area.
@@ -157,7 +157,7 @@ imperial measure for area.
 </CDDefinition>
 
 <CDDefinition>
-<Name> pint </Name>
+<Name>pint</Name>
 <Description>
 This symbol represents the measure of one (imperial) pint. This is the standard
 imperial measure for volume. See units_us1 for the U.S. pint.
@@ -184,7 +184,7 @@ imperial measure for volume. See units_us1 for the U.S. pint.
 </CDDefinition>
 
 <CDDefinition>
-<Name> miles_per_hr </Name>
+<Name>miles_per_hr</Name>
 <Description>
 This symbol represents the measure of one mile per hour. This is a standard
 imperial measure for speed.
@@ -205,7 +205,7 @@ imperial measure for speed.
 </CDDefinition>
 
 <CDDefinition>
-<Name> miles_per_hr_sqrd </Name>
+<Name>miles_per_hr_sqrd</Name>
 <Description>
 This symbol represents the measure of one mile per hour
 squared. This is a standard imperial measure for acceleration.
@@ -227,7 +227,7 @@ squared. This is a standard imperial measure for acceleration.
 </CDDefinition>
 
 <CDDefinition>
-<Name> pound_mass </Name>
+<Name>pound_mass</Name>
 <Description>
 This symbol represents the measure of the mass which weighs one pound
 under the influence of standard gravity.
@@ -254,7 +254,7 @@ under the influence of standard gravity.
 </CDDefinition>
 
 <CDDefinition>
-<Name> pound_force </Name>
+<Name>pound_force</Name>
 <Description>
 This symbol represents the measure of force of one pound.
 </Description>
@@ -280,7 +280,7 @@ This symbol represents the measure of force of one pound.
 </CDDefinition>
 
 <CDDefinition>
-<Name> degree_Fahrenheit </Name>
+<Name>degree_Fahrenheit</Name>
 <Description>
 This symbol represents the measure of one degree Fahrenheit. This is
 the standard imperial measure for temperature.
@@ -310,7 +310,7 @@ the standard imperial measure for temperature.
 </CDDefinition>
 
 <CDDefinition>
-<Name> bar </Name>
+<Name>bar</Name>
 <Description>
 This symbol represents the measure of one bar. This is the standard
 imperial measure for pressure.

@@ -32,12 +32,12 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName> units_ops1 </CDName>
+<CDName>units_ops1</CDName>
 <CDURL>http://www.openmath.org/cd/units_ops1.ocd</CDURL>
 <CDReviewDate>2017-12-31</CDReviewDate>
-<CDStatus> experimental </CDStatus>
-<CDDate> 2004-08-27 </CDDate>
-<CDVersion> 1 </CDVersion>
+<CDStatus>experimental</CDStatus>
+<CDDate>2004-08-27</CDDate>
+<CDVersion>1</CDVersion>
 <CDRevision>1</CDRevision>
 <CDComment>
   Author: OpenMath Consortium (James Davenport)
@@ -49,7 +49,7 @@ This CD defines various symbols for use in the manipulation of units.
 </Description>
 
 <CDDefinition>
-<Name> prefix </Name>
+<Name>prefix</Name>
 <Description>
 This symbol represents the fact that the subsequent unit has been 
 effectively multiplied by 1,000 ($10^{3}$)

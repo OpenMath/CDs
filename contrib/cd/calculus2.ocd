@@ -33,12 +33,12 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName> calculus2 </CDName>
+<CDName>calculus2</CDName>
 <CDURL>http://www.openmath.org/cd/calculus2.ocd</CDURL>
-<CDReviewDate> 2017-12-31 </CDReviewDate>
-<CDStatus> experimental </CDStatus>
-<CDDate> 2004-03-24 </CDDate>
-<CDVersion> 1 </CDVersion>
+<CDReviewDate>2017-12-31</CDReviewDate>
+<CDStatus>experimental</CDStatus>
+<CDDate>2004-03-24</CDDate>
+<CDVersion>1</CDVersion>
 <CDRevision>2</CDRevision>
 <CDComment>
   Author: Mike Dewar
@@ -48,7 +48,7 @@
 </Description>
 
 <CDDefinition>
-<Name> variable_of_integration </Name>
+<Name>variable_of_integration</Name>
 <Description>
 This symbol represents the variable with respect to which an integral
 is calculated.
@@ -82,7 +82,7 @@ is calculated.
 </CDDefinition>
 
 <CDDefinition>
-<Name> integrand </Name>
+<Name>integrand</Name>
 <Description>
 This symbol represents the integrand of the integral.
 </Description>

@@ -1,7 +1,7 @@
 <CDGroup  xmlns="http://www.openmath.org/OpenMathCDG" version="2.0">
 <CDGroupName>linalg</CDGroupName>
-<CDGroupVersion> 2 </CDGroupVersion>
-<CDGroupRevision> 0 </CDGroupRevision>
+<CDGroupVersion>2</CDGroupVersion>
+<CDGroupRevision>0</CDGroupRevision>
 <CDGroupURL>http://www.openmath.org/cdgroups/linalg.cdg</CDGroupURL>
 <CDGroupDescription>Linear Algebra CD Group</CDGroupDescription>
 <CDComment>

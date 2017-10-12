@@ -33,14 +33,14 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName> linalgpoly1 </CDName>
+<CDName>linalgpoly1</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/linalgpoly1.ocd</CDURL>
 <CDReviewDate>2006-03-30</CDReviewDate>
 <CDDate>2004-11-30</CDDate>
 <CDVersion>4</CDVersion>
 <CDRevision>1</CDRevision>
-<CDStatus> experimental </CDStatus>
+<CDStatus>experimental</CDStatus>
 <Description>
     This CD defines the following symbols for polynomials related to basic
     linear algebra over a field:
@@ -50,7 +50,7 @@
 
 
 <CDDefinition>
-<Name> characteristic_poly </Name>
+<Name>characteristic_poly</Name>
 <Role>application</Role>
 <Description>
 This symbol represents a binary function. This first argument should be a
@@ -131,7 +131,7 @@ polynomial with variable X is the determinant of the matrix A - X identity(colum
 
 
 <CDDefinition>
-<Name> minimum_poly </Name>
+<Name>minimum_poly</Name>
 <Role>application</Role>
 <Description>
 This symbol represents a binary function. This first argument should be a
@@ -256,7 +256,7 @@ polynomial is the polynomial f of minimal degree such that f(A) = 0.
 
 
 <CDDefinition>
-<Name> substitute </Name>
+<Name>substitute</Name>
 <Role>application</Role>
 <Description>
 This symbol represents a binary function. This first argument should be a

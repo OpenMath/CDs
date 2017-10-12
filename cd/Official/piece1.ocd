@@ -33,7 +33,7 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName> piece1 </CDName>
+<CDName>piece1</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/piece1.ocd</CDURL>
 <CDReviewDate>2006-03-30</CDReviewDate>
@@ -44,7 +44,7 @@
   Author: OpenMath Consortium
   SourceURL: https://github.com/OpenMath/CDs
 </CDComment>
-<CDStatus> official </CDStatus>
+<CDStatus>official</CDStatus>
 
 <Description>
     This CD is intended to be compatible with the corresponding
@@ -54,7 +54,7 @@
 </Description>
 
 <CDDefinition>
-<Name> piecewise </Name>
+<Name>piecewise</Name>
 <Role>application</Role>
 <Description> 
 This operator heads an expression that is being defined piecewise. Its 
@@ -89,7 +89,7 @@ followed by one built with otherwise constructor.
 </CDDefinition>
 
 <CDDefinition>
-<Name> piece </Name>
+<Name>piece</Name>
 <Role>application</Role>
 <Description> 
 This introduces an individual component of a piecewise definition. It has
@@ -125,7 +125,7 @@ provide the value of the piecewise construct.
 </CDDefinition>
 
 <CDDefinition>
-<Name> otherwise </Name>
+<Name>otherwise</Name>
 <Role>application</Role>
 <Description>
 This symbol introduces the 'default' value of a piecewise construct.

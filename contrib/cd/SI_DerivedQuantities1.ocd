@@ -42,9 +42,9 @@ may apply.
   <CDName>SI_DerivedQuantities1</CDName>
   <CDURL>http://www.openmath.org/cd/SI_DerivedQuantities1.ocd</CDURL>
   <CDReviewDate>2017-12-31</CDReviewDate>
-  <CDStatus> experimental </CDStatus>
+  <CDStatus>experimental</CDStatus>
   <CDDate>2009-01-10</CDDate>
-  <CDVersion> 1 </CDVersion>
+  <CDVersion>1</CDVersion>
   <CDRevision>1</CDRevision>
 <CDComment>
   Author: J B Collins
@@ -94,7 +94,7 @@ may apply.
   </CDDefinition>
 
 <CDDefinition>
-<Name> frequency </Name>
+<Name>frequency</Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the physical quantity of frequency.
@@ -119,7 +119,7 @@ italic, lower case greek variable, "\omega;".
 </CDDefinition>
 
 <CDDefinition>
-<Name> force </Name>
+<Name>force</Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the physical quantity of force. 
@@ -152,7 +152,7 @@ italic, upper case letter, "F".
 </CDDefinition>
 
 <CDDefinition>
-<Name> pressure </Name>
+<Name>pressure</Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the physical quantity of pressure.
@@ -191,7 +191,7 @@ the italic, lower case letter, "p".
 </CDDefinition>
 
 <CDDefinition>
-<Name> energy </Name>
+<Name>energy</Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the physical quantity of energy.
@@ -230,7 +230,7 @@ italic, upper case letter, "E".
 </CDDefinition>
 
 <CDDefinition>
-<Name> power </Name>
+<Name>power</Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the physical quantity of power, or energy
@@ -271,7 +271,7 @@ italic, upper case letter, "P".
 </CDDefinition>
 
 <CDDefinition>
-<Name> charge </Name>
+<Name>charge</Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the physical quantity of electric charge.
@@ -296,7 +296,7 @@ italic, upper case letter, "Q".
 </CDDefinition>
 
 <CDDefinition>
-<Name> voltage </Name>
+<Name>voltage</Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the physical quantity of voltage or electric tension.
@@ -337,7 +337,7 @@ italic, upper case letter, "V".
 </CDDefinition>
 
 <CDDefinition>
-<Name> capacitance </Name>
+<Name>capacitance</Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the physical quantity of electric capacitance.
@@ -380,7 +380,7 @@ italic, upper case letter, "C".
 </CDDefinition>
 
 <CDDefinition>
-<Name> resistance </Name>
+<Name>resistance</Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the physical quantity of electrical resistance,
@@ -424,7 +424,7 @@ with the italic, upper case letter, "R".
 </CDDefinition>
 
 <CDDefinition>
-<Name> conductance </Name>
+<Name>conductance</Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the physical quantity of electrical conductance,
@@ -468,7 +468,7 @@ italic, upper case letter, "G" or "S".
 </CDDefinition>
 
 <CDDefinition>
-<Name> magnetic-flux </Name>
+<Name>magnetic-flux</Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the physical quantity of magnetic flux.
@@ -508,7 +508,7 @@ italic, upper case greek letter, "\Phi;".
 </CDDefinition>
 
 <CDDefinition>
-<Name> magnetic-flux-density </Name>
+<Name>magnetic-flux-density</Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the physical quantity of magnetic flux density.
@@ -549,7 +549,7 @@ with the italic, upper case letter, "B".
 </CDDefinition>
 
 <CDDefinition>
-<Name> inductance </Name>
+<Name>inductance</Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the physical quantity of electrical inductance.
@@ -594,7 +594,7 @@ italic, upper case letter, "L".
 </CDDefinition>
 
 <CDDefinition>
-<Name> Celsius-temperature </Name>
+<Name>Celsius-temperature</Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the physical quantity of Celsius temperature.
@@ -628,7 +628,7 @@ italic, upper case letter, "T".
 </CDDefinition>
 
 <CDDefinition>
-<Name> luminous-flux </Name>
+<Name>luminous-flux</Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the physical quantity of luminous flux.
@@ -656,7 +656,7 @@ italic, upper case letter, "Φv" (\phi; sub V).
 </CDDefinition>
 
 <CDDefinition>
-<Name> illuminance </Name>
+<Name>illuminance</Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the physical quantity of illuminance.
@@ -695,7 +695,7 @@ italic, upper case letter, "E".
 </CDDefinition>
 
 <CDDefinition>
-<Name> radioactivity </Name>
+<Name>radioactivity</Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the physical quantity of radio nuclide activity,
@@ -721,7 +721,7 @@ italic, upper case letter, "A".
 </CDDefinition>
 
 <CDDefinition>
-<Name> absorbed-dose </Name>
+<Name>absorbed-dose</Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the physical quantity of absorbed dose of ionizing radiation.
@@ -749,7 +749,7 @@ italic, upper case letter, "D".
 </CDDefinition>
 
 <CDDefinition>
-<Name> equivalent-dose </Name>
+<Name>equivalent-dose</Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the physical quantity of equivalent dose of ionizing
@@ -779,7 +779,7 @@ italic, upper case letter, "H".
 </CDDefinition>
 
 <CDDefinition>
-<Name> catalytic-activity </Name>
+<Name>catalytic-activity</Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the physical quantity of catalytic activity,
@@ -826,7 +826,7 @@ This symbol represents the physical quantity of area.
 </CDDefinition>
 
 <CDDefinition>
-  <Name> volume </Name>
+  <Name>volume</Name>
   <Role>constant</Role>
   <Description>
     This symbol represents the physical quantity of volume.
@@ -848,7 +848,7 @@ This symbol represents the physical quantity of area.
 </CDDefinition>
 
 <CDDefinition>
-  <Name> speed </Name>
+  <Name>speed</Name>
   <Role>constant</Role>
   <Description>
     This symbol represents the physical quantity of speed. It is the size of the
@@ -871,7 +871,7 @@ This symbol represents the physical quantity of area.
 </CDDefinition>
 
 <CDDefinition>
-  <Name> momentum </Name>
+  <Name>momentum</Name>
   <Role>constant</Role>
   <Description>
     This symbol represents the physical quantity of momentum.
@@ -932,7 +932,7 @@ This symbol represents the physical quantity of area.
 </CDDefinition>
 
 <CDDefinition>
-  <Name> density </Name>
+  <Name>density</Name>
   <Role>constant</Role>
   <Description>
     This symbol represents the physical quantity of volumic mass density.
@@ -957,7 +957,7 @@ This symbol represents the physical quantity of area.
 </CDDefinition>
 
 <CDDefinition>
-  <Name> concentration </Name>
+  <Name>concentration</Name>
   <Role>constant</Role>
   <Description>
     This symbol represents the physical quantity of concentration, the
@@ -983,7 +983,7 @@ This symbol represents the physical quantity of area.
 </CDDefinition>
 
 <CDDefinition>
-  <Name> heat </Name>
+  <Name>heat</Name>
   <Role>constant</Role>
   <Description>
     This symbol represents the physical quantity of energy that is transferred
@@ -1016,7 +1016,7 @@ This symbol represents the physical quantity of area.
 </CDDefinition>
 
 <CDDefinition>
-  <Name> entropy </Name>
+  <Name>entropy</Name>
   <Role>constant</Role>
   <Description>
     This symbol represents the physical quantity of entropy, a measure

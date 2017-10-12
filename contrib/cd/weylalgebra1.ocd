@@ -2,12 +2,12 @@
 <!-- $Id: weylalgebra1.tfb,v 1.10 2003/11/28 06:08:16 taka Exp $ -->
 
 <CD xmlns="http://www.openmath.org/OpenMathCD">
-<CDName> weylalgebra1 </CDName>
+<CDName>weylalgebra1</CDName>
 <CDURL>http://www.math.kobe-u.ac.jp/OCD/weylalgebra1.tfb</CDURL>
 <CDReviewDate>2017-12-31</CDReviewDate>
-<CDStatus> experimental </CDStatus>
-<CDDate> 2003-11-28 </CDDate>
-<CDVersion> 1 </CDVersion>
+<CDStatus>experimental</CDStatus>
+<CDDate>2003-11-28</CDDate>
+<CDVersion>1</CDVersion>
 <CDRevision>2</CDRevision>
 <CDComment>
   Author: Yasushi Tamura and Nobuki Takayama
@@ -20,7 +20,7 @@ with coefficients in the polynomial ring.
 
 
 <CDDefinition>
-<Name> diffop </Name>
+<Name>diffop</Name>
 <Description>
   constructor of a differential operator from a polynomial or
   from an element of the finitely generated free algebra.
@@ -70,7 +70,7 @@ with coefficients in the polynomial ring.
 </CDDefinition>
 
 <CDDefinition>
-<Name> gr </Name>
+<Name>gr</Name>
 <Description>
   the symbol polynomial of a given differential operator.
   The inverse of diffop.
@@ -122,7 +122,7 @@ with coefficients in the polynomial ring.
 </CDDefinition>
 
 <CDDefinition>
-<Name> diff </Name>
+<Name>diff</Name>
 <Description>
   Differentiation of a given function in one variable.
 </Description>
@@ -148,7 +148,7 @@ with coefficients in the polynomial ring.
 </CDDefinition>
 
 <CDDefinition>
-<Name> partialdiff </Name>
+<Name>partialdiff</Name>
 <!-- We do not use partialdiff in calculus1 by lambda. -->
 <Description>
   partial differentiation of a given function.
@@ -185,7 +185,7 @@ with coefficients in the polynomial ring.
 </CDDefinition>
 
 <CDDefinition>
-<Name> times </Name>
+<Name>times</Name>
 <Description>
   multiplication in D
 </Description>
@@ -213,7 +213,7 @@ with coefficients in the polynomial ring.
 </CDDefinition>
 
 <CDDefinition>
-<Name> act </Name>
+<Name>act</Name>
 <Description>
   action of a differential operator to a function.
 </Description>
@@ -282,7 +282,7 @@ with coefficients in the polynomial ring.
 </CDDefinition>
 
 <CDDefinition>
-<Name> act_of_poly </Name>
+<Name>act_of_poly</Name>
 <Description>
   action of a polynomial as a differential operator to a function.
   act_of_poly is equivalent to  the composition of act and diffop.

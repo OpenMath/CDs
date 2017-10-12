@@ -1,19 +1,19 @@
 <CD xmlns="http://www.openmath.org/OpenMathCD">
-<CDName> relation3 </CDName>
+<CDName>relation3</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/relation3.ocd</CDURL>
-<CDReviewDate> 2003-04-01 </CDReviewDate>
-<CDDate> 2001-03-12 </CDDate>
-<CDVersion> 2 </CDVersion>
-<CDRevision> 0 </CDRevision>
-<CDStatus> official </CDStatus>
+<CDReviewDate>2003-04-01</CDReviewDate>
+<CDDate>2001-03-12</CDDate>
+<CDVersion>2</CDVersion>
+<CDRevision>0</CDRevision>
+<CDStatus>official</CDStatus>
 
 <Description>
     This CD holds the basic equivalence relation notions. 
 </Description>
 
 <CDDefinition>
-<Name> is_relation </Name>
+<Name>is_relation</Name>
 <Description> 
 This symbol is a boolean function of two arguments, S and R.
 The first argument should be a set. When applied to S and R, the function
@@ -88,7 +88,7 @@ When applied to S and R, it represents the smallest symmetric relation
 
 
 <CDDefinition>
-<Name> is_transitive </Name>
+<Name>is_transitive</Name>
 <Description>
 This symbol represents the boolean binary function which returns
 true if and only if the second argument is a transitive relation on the first.
@@ -185,7 +185,7 @@ is_reflexive(S,R) if and only if, for all, a in S, we have (a,a) in R.
 </CDDefinition>
 
 <CDDefinition>
-<Name> is_symmetric </Name>
+<Name>is_symmetric</Name>
 <Description> 
 This symbol represents the boolean binary function which returns
 true if and only if the second argument is a symmetric relation on the first.
@@ -232,7 +232,7 @@ we have (b,a) in R. </CMP>
 </CDDefinition>
 
 <CDDefinition>
-<Name> is_equivalence </Name>
+<Name>is_equivalence</Name>
 <Description> 
 This symbol represents the boolean binary function which returns
 true if and only if the second argument is a symmetric relation on the first.
@@ -267,7 +267,7 @@ transitive relation on S.
 </CDDefinition>
 
 <CDDefinition>
-<Name> class </Name>
+<Name>class</Name>
 <Description> 
 This symbol represents a ternary function whose first argument is a set S,
 whose second argument is a relation R on S, and whose third argument is an

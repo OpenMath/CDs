@@ -1,12 +1,12 @@
 <CD xmlns="http://www.openmath.org/OpenMathCD">
-<CDName> ring4 </CDName>
+<CDName>ring4</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/ring4.ocd</CDURL>
-<CDReviewDate> 2006-06-01 </CDReviewDate>
-<CDDate> 2004-06-01 </CDDate>
-<CDVersion> 1 </CDVersion>
-<CDRevision> 1 </CDRevision>
-<CDStatus> experimental </CDStatus>
+<CDReviewDate>2006-06-01</CDReviewDate>
+<CDDate>2004-06-01</CDDate>
+<CDVersion>1</CDVersion>
+<CDRevision>1</CDRevision>
+<CDStatus>experimental</CDStatus>
 
 <Description> A CD of 
 functions for further basic properties of rings   </Description>
@@ -16,7 +16,7 @@ Written by Arjeh M. Cohen 2004-02-25
 </CDComment>
 
 <CDDefinition>
-<Name> is_maximal_ideal</Name>
+<Name>is_maximal_ideal</Name>
 <Description>
 The binary boolean function whose value is true iff the second
 argument is a maximal ideal of the first.
@@ -26,7 +26,7 @@ argument is a maximal ideal of the first.
 
 
 <CDDefinition>
-<Name> is_prime_ideal</Name>
+<Name>is_prime_ideal</Name>
 <Description>
 The binary boolean function whose value is true iff the second
 argument is a prime ideal of the first.
@@ -39,7 +39,7 @@ argument is a prime ideal of the first.
 
 
 <CDDefinition>
-<Name> is_domain </Name>
+<Name>is_domain</Name>
 <Description>
 This symbol represents a boolean 
 unary function. The argument is a ring R.
@@ -50,7 +50,7 @@ and false otherwise. A domain is a commutative ring without zero divisors.
 </CDDefinition>
 
 <CDDefinition>
-<Name> is_field </Name>
+<Name>is_field</Name>
 <Description>
 This is unary boolean function whose argument should be a ring R.
 The value is true if and only if the ring is commutative and every nonzero 
@@ -123,7 +123,7 @@ there is b in carrier(G) such that a*b =  identity(G), then is_field(G).
 </CDDefinition>
 
 <CDDefinition>
-<Name> is_zero_divisor </Name>
+<Name>is_zero_divisor</Name>
 <Description>
 This symbol represents a boolean 
 binary function. The first argument is a ring R, the second is an element x of R.

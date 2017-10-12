@@ -33,16 +33,16 @@
      society at http://www.openmath.org.
 </CDComment>
 
-  <CDName> airy </CDName> 
+  <CDName>airy</CDName> 
   <CDURL>http://www.openmath.org/CDs/airy.ocd</CDURL>
   <CDReviewDate>2017-12-31</CDReviewDate>
-  <CDDate> 2002-01-19 </CDDate>
-  <CDVersion> 1 </CDVersion>
+  <CDDate>2002-01-19</CDDate>
+  <CDVersion>1</CDVersion>
   <CDRevision>2</CDRevision>
 <CDComment>
   Author: James Davenport
 </CDComment>
-  <CDStatus> experimental </CDStatus>
+  <CDStatus>experimental</CDStatus>
 
   <Description>
     This content dictionary contains symbols to describe the Airy functions
@@ -50,7 +50,7 @@
   </Description>
 
   <CDDefinition>
-    <Name> Ai </Name>
+    <Name>Ai</Name>
     <Description>
   The symbol Ai defines the unary Airy Ai function; as in Abramovitz &amp; 
   Stegun equation 10.4.1. This is a solution to the equation:
@@ -186,7 +186,7 @@
   </CDDefinition>
 
   <CDDefinition>
-    <Name> Bi </Name>
+    <Name>Bi</Name>
     <Description>
   The symbol Bi defines the unary Airy Bi function. This is defined in 
   Abramivitz and Stegun 10.4.1 and is a solution to the equation:
@@ -322,7 +322,7 @@
   </CDDefinition>
 
   <CDDefinition>
-    <Name> Ai2 </Name>
+    <Name>Ai2</Name>
     <Description>
   The symbol Ai2 takes two arguments, it represents derivatives of
   the Airy Ai function. The symbol Ai2(n,z) represents the n'th
@@ -380,7 +380,7 @@
   </CDDefinition>
 
   <CDDefinition>
-    <Name> Bi2 </Name>
+    <Name>Bi2</Name>
     <Description>
   The symbol Bi2 takes two arguments, it represents derivatives of
   the Airy Bi function. The symbol Bi2(n,z) represents the n'th

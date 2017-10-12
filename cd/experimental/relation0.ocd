@@ -33,13 +33,13 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName>       relation0    </CDName>
+<CDName>relation0</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL> 
                http://www.openmath.org/cd/relation0.ocd 
 </CDURL>
 <CDReviewDate>2017-12-31</CDReviewDate>
-<CDStatus>     experimental </CDStatus>
+<CDStatus>experimental</CDStatus>
 <CDDate>2004-03-30</CDDate>
 <CDVersion>2</CDVersion>
 <CDRevision>1</CDRevision>
@@ -57,7 +57,7 @@
 
 
 <CDDefinition>
- <Name> relation </Name>
+ <Name>relation</Name>
 <Role>application</Role>
 <Description> Type constructor; returns the type of binary relations on a set.
 </Description>	
@@ -67,7 +67,7 @@
 
 
 <CDDefinition>
- <Name> reflexive </Name>
+ <Name>reflexive</Name>
 <Role>application</Role>
 <Description> Proposition; the type of reflexive binary relations.
 </Description>	
@@ -75,7 +75,7 @@
 </CDDefinition>
 
 <CDDefinition>
- <Name> irreflexive </Name>
+ <Name>irreflexive</Name>
 <Role>application</Role>
 <Description> Proposition; the type of irreflexive binary relations.
 </Description>	
@@ -86,7 +86,7 @@
 
 
 <CDDefinition>
- <Name> transitive </Name>
+ <Name>transitive</Name>
 <Role>application</Role>
 <Description> Proposition; the type of transitive binary relations.
 </Description>	
@@ -95,7 +95,7 @@
 
 
 <CDDefinition>
- <Name> symmetric </Name>
+ <Name>symmetric</Name>
 <Role>application</Role>
 <Description> Proposition; the type of symmetric binary relations.
 </Description>	
@@ -103,7 +103,7 @@
 </CDDefinition>
 
 <CDDefinition>
- <Name> antisymmetric </Name>
+ <Name>antisymmetric</Name>
 <Role>application</Role>
 <Description> Proposition; the type of antisymmetric binary relations.
 </Description>	
@@ -111,7 +111,7 @@
 </CDDefinition>
 
 <CDDefinition>
- <Name> partial_equivalence </Name>
+ <Name>partial_equivalence</Name>
 <Role>application</Role>
 <Description> Proposition; the type of partial_equivalence relations, 
               namely relations that are symmetric, and transitive.
@@ -120,7 +120,7 @@
 </CDDefinition>
 
 <CDDefinition>
- <Name> equivalence </Name>
+ <Name>equivalence</Name>
 <Role>application</Role>
 <Description> Proposition; the type of equivalence relations, 
               namely relations that are reflexive, symmetric and transitive.
@@ -129,7 +129,7 @@
 </CDDefinition>
 
 <CDDefinition>
- <Name> order </Name>
+ <Name>order</Name>
 <Role>application</Role>
 <Description> Proposition; the type of order relations, 
               namely relations that are reflexive, antisymmetric and transitive.
@@ -138,7 +138,7 @@
 </CDDefinition>
 
 <CDDefinition>
- <Name> strict_order </Name>
+ <Name>strict_order</Name>
 <Role>application</Role>
 <Description> Proposition; the type of strict order relations, 
               namely relations that are irreflexive, antisymmetric and transitive.
@@ -147,7 +147,7 @@
 </CDDefinition>
 
 <CDDefinition>
- <Name> pre_order </Name>
+ <Name>pre_order</Name>
 <Role>application</Role>
 <Description> Proposition; the type of preorder relations, 
               namely relations that are reflexive and transitive.

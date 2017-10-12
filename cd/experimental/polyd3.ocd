@@ -1,12 +1,12 @@
 <CD xmlns="http://www.openmath.org/OpenMathCD">
-   <CDName> polyd3 </CDName> 
+   <CDName>polyd3</CDName> 
 <CDBase>http://www.openmath.org/cd</CDBase>
    <CDURL>http://www.openmath.org/cd/polyd3.ocd</CDURL>
-   <CDReviewDate> 2006-04-01 </CDReviewDate> 
-   <CDDate> 2004-07-07 </CDDate> 
-   <CDStatus> experimental </CDStatus>
-   <CDVersion> 1 </CDVersion>
-   <CDRevision> 0 </CDRevision>
+   <CDReviewDate>2006-04-01</CDReviewDate> 
+   <CDDate>2004-07-07</CDDate> 
+   <CDStatus>experimental</CDStatus>
+   <CDVersion>1</CDVersion>
+   <CDRevision>0</CDRevision>
 
    <Description>
      This CD contains conversions between different data structures for polynomials.
@@ -18,7 +18,7 @@ first attempt
 
 
     <CDDefinition>
-       <Name> collect </Name>
+       <Name>collect</Name>
        <Description>
 This a binary function. Its first argument should be a DMP f, its second
        argument a list of positive integers L.
@@ -33,7 +33,7 @@ whose variables only have indices i for i not occurring in the list L, and
 
 
     <CDDefinition>
-       <Name> list_to_poly_d </Name>
+       <Name>list_to_poly_d</Name>
        <Description>
       This symbol is a function with two arguments.
 The first argument is a ring R and the second argument is a list L. The
@@ -90,7 +90,7 @@ Thus, the above expression is semantically equivalent to
 
 
     <CDDefinition>
-       <Name>  poly_d_to_arith </Name>
+       <Name>poly_d_to_arith</Name>
        <Description>
       This symbol is a binary function.
 The first argument is a DMP and the second argument is a list of objects,
@@ -159,7 +159,7 @@ This expression represents
 
 
     <CDDefinition>
-       <Name> poly_d_named_to_arith </Name>
+       <Name>poly_d_named_to_arith</Name>
        <Description>
       This symbol is a unary function.
 Its argument is a DMP with named variables.

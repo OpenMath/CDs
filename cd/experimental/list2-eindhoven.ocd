@@ -1,12 +1,12 @@
 <CD xmlns="http://www.openmath.org/OpenMathCD">
-<CDName> list2 </CDName>
+<CDName>list2</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/list2.ocd</CDURL>
 <CDReviewDate>2006-03-30</CDReviewDate>
 <CDDate>2004-11-30</CDDate>
 <CDVersion>5</CDVersion>
 <CDRevision>1</CDRevision>
-<CDStatus> experimental </CDStatus>
+<CDStatus>experimental</CDStatus>
 
 <Description> 
 In this CD, two basic constructors and two deconstructor
@@ -22,7 +22,7 @@ in list4.
 
 
 <CDDefinition>
-<Name> first </Name>
+<Name>first</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents a function which returns the first elements of
@@ -63,7 +63,7 @@ Specification of the first element of the list [1,2,3]
 </CDDefinition>
 
 <CDDefinition>
-<Name> rest </Name>
+<Name>rest</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents a function which returns a list made up of all
@@ -105,7 +105,7 @@ Specification of the list [1,2,3], apart from the first element
 </CDDefinition>
 
 <CDDefinition>
-<Name> cons </Name>
+<Name>cons</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents the cons list function. It takes 2 arguments:
@@ -147,7 +147,7 @@ the second argument.
 </CDDefinition>
 
 <CDDefinition>
-<Name> nil </Name>
+<Name>nil</Name>
 <Role>constant</Role>
 <Description>
 The empty list 

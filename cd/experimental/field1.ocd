@@ -1,12 +1,12 @@
 <CD xmlns="http://www.openmath.org/OpenMathCD">
-<CDName> field1 </CDName>
+<CDName>field1</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/field1.ocd</CDURL>
-<CDReviewDate> 2006-06-01 </CDReviewDate>
-<CDDate> 2004-06-01 </CDDate>
-<CDVersion> 1 </CDVersion>
-<CDRevision> 2 </CDRevision>
-<CDStatus> experimental </CDStatus>
+<CDReviewDate>2006-06-01</CDReviewDate>
+<CDDate>2004-06-01</CDDate>
+<CDVersion>1</CDVersion>
+<CDRevision>2</CDRevision>
+<CDStatus>experimental</CDStatus>
 
 <Description> A CD of basic functions for field theory   </Description>
 
@@ -15,7 +15,7 @@ Written by Arjeh M. Cohen 2004-02-26
 </CDComment>
 
 <CDDefinition>
-<Name> field </Name>
+<Name>field</Name>
 <Description>
 This symbol is a constructor for fields. It takes seven arguments
 R, a, o, n, m, e, i: which are, respectively,
@@ -54,7 +54,7 @@ the field multiplication is binary multiplication.
 </CDDefinition>
 
 <CDDefinition>
-<Name> carrier </Name>
+<Name>carrier</Name>
 <Description>
 This symbol represents a unary function, whose argument should be a
 field S (for instance constructed by field).
@@ -85,7 +85,7 @@ The carrier of field(R,+,0,-,*,1,inv) is R.
 </CDDefinition>
 
 <CDDefinition>
-<Name> multiplication </Name>
+<Name>multiplication</Name>
 <Description>
 This symbol represents a unary function, whose argument should be a
 field S.    It returns the multiplication map on the field.
@@ -117,7 +117,7 @@ The multiplication of field(R,+,0,-,*,1,inv) is *.
 
 
 <CDDefinition>
-<Name> minus </Name>
+<Name>minus</Name>
 <Description>
 This symbol represents a unary function, whose argument should be a
 field S.  It returns the map sending an element of S to its additive inverse.
@@ -148,7 +148,7 @@ The minus of field(R,+,0,-,*,1,inv) is -.
 
 
 <CDDefinition>
-<Name> inverse </Name>
+<Name>inverse</Name>
 
 <Description>
 This symbol represents a unary function, whose argument should be a field S.
@@ -181,7 +181,7 @@ The inverse of field(R,+,0,-,*,1,inv) is inv.
 
 
 <CDDefinition>
-<Name> identity </Name>
+<Name>identity</Name>
 <Description>
 This symbols represents a unary function, whose argument should be a
 field.  It returns the identity element of the field.
@@ -213,7 +213,7 @@ The identity field(R,+,0,-,*,1,inv) is 1.
 
 
 <CDDefinition>
-<Name> zero </Name>
+<Name>zero</Name>
 <Description>
 This symbols represents a unary function, whose argument should be a
 field.  It returns the zero element of the field.
@@ -243,7 +243,7 @@ The identity field(R,+,0,-,*,1,inv) is 0.
 
 
 <CDDefinition>
-<Name> addition </Name>
+<Name>addition</Name>
 <Description>
 This symbols represents a unary function, whose argument should be a
 field.    It returns the addition map on the field.
@@ -279,7 +279,7 @@ The identity field(R,+,0,-,*,1,inv) is +.
 
 
 <CDDefinition>
-<Name> subtraction </Name>
+<Name>subtraction</Name>
 <Description>
 This symbols represents a unary function, whose argument should be a
 field.  It returns the binary operation of subtraction on the field.
@@ -322,7 +322,7 @@ sending the pair (r,s) of elements of R to r-s.
 
 
 <CDDefinition>
-<Name> is_commutative </Name>
+<Name>is_commutative</Name>
 <Description>
 The unary boolean function whose value is true iff the argument is a
 commutative field.
@@ -394,7 +394,7 @@ If is_commutative(G) then for all a,b in carrier(G) a*b = b*a
 
 
 <CDDefinition>
-<Name> is_subfield </Name>
+<Name>is_subfield</Name>
 <Description>
 The binary boolean function whose value is true iff the second
 argument is a subfield of the second.
@@ -408,7 +408,7 @@ of G and H is closed under multiplication and taking inverses.
 
 
 <CDDefinition>
-<Name> additive_group </Name>
+<Name>additive_group</Name>
 <Description>
 This symbol is a unary function, whose argument should be a field S.
 When applied to S its value is the monoid underlying S.
@@ -441,7 +441,7 @@ When applied to S its value is the monoid underlying S.
 </CDDefinition>
 
 <CDDefinition>
-<Name> multiplicative_group </Name>
+<Name>multiplicative_group</Name>
 <Description>
 This symbol is a unary function, whose argument should be a field S.
 When applied to S its value is the multiplicative group on the nonzero
@@ -478,7 +478,7 @@ elements of S.
 
 
 <CDDefinition>
-<Name> subfield </Name>
+<Name>subfield</Name>
 <Description>
 This symbol is a constructor symbol with one or two arguments. The
 first argument is a list or set, D, of field elements. The optional

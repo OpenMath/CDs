@@ -33,7 +33,7 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName> linalg4 </CDName>
+<CDName>linalg4</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/linalg4.ocd</CDURL>
 <CDReviewDate>2017-12-31</CDReviewDate>
@@ -44,7 +44,7 @@
   Author: OpenMath Consortium
   SourceURL: https://github.com/OpenMath/CDs
 </CDComment>
-<CDStatus> experimental </CDStatus>
+<CDStatus>experimental</CDStatus>
 <Description>
     This CD defines symbols for basic linear algebra.
 
@@ -53,7 +53,7 @@
 </Description>
 
 <CDDefinition>
-<Name> eigenvalue </Name>
+<Name>eigenvalue</Name>
 <Role>application</Role>
 <Description>
 This symbol represents the eigenvalue of a matrix. It takes two
@@ -99,7 +99,7 @@ of chapter 6, page 533.
 </CDDefinition>
 
 <CDDefinition>
-<Name> eigenvector </Name>
+<Name>eigenvector</Name>
 <Role>application</Role>
 <Description>
 This symbol represents the eigenvector of a matrix. It takes two
@@ -144,7 +144,7 @@ I. Grossman in Definition 1 of chapter 6, page 533.
 </CDDefinition>
 
 <CDDefinition>
-<Name> characteristic_eqn </Name>
+<Name>characteristic_eqn</Name>
 <Role>application</Role>
 <Description>
 This symbol represents the polynomial which appears in the left hand
@@ -210,7 +210,7 @@ where p is the characteristic equation of A
 </CDDefinition>
 
 <CDDefinition>
-<Name> size </Name>
+<Name>size</Name>
 <Role>application</Role>
 <Description>
 This symbol represents the function which takes one vector argument
@@ -238,7 +238,7 @@ the length of the vector [1,2,3] = 3
 </CDDefinition>
 
 <CDDefinition>
-<Name> rank </Name>
+<Name>rank</Name>
 <Role>application</Role>
 <Description>
 This symbol represents the function which takes one matrix argument
@@ -266,7 +266,7 @@ that matrix.
 </CDDefinition>
 
 <CDDefinition>
-<Name> rowcount </Name>
+<Name>rowcount</Name>
 <Role>application</Role>
 <Description>
 This symbol represents the function which takes one matrix argument
@@ -301,7 +301,7 @@ Specification of the number of rows in the matrix:
 </CDDefinition>
 
 <CDDefinition>
-<Name> columncount </Name>
+<Name>columncount</Name>
 <Role>application</Role>
 <Description>
 This symbol represents the function which takes one matrix argument

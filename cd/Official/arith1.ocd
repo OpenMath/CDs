@@ -33,11 +33,11 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName> arith1 </CDName>
+<CDName>arith1</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/arith1.ocd</CDURL>
 <CDReviewDate>2006-03-30</CDReviewDate>
-<CDStatus> official </CDStatus>
+<CDStatus>official</CDStatus>
 <CDDate>2004-03-30</CDDate>
 <CDVersion>3</CDVersion>
 <CDRevision>1</CDRevision>
@@ -51,7 +51,7 @@ This CD defines symbols for common arithmetic functions.
 </Description>
 
 <CDDefinition>
-<Name> lcm </Name>
+<Name>lcm</Name>
 <Role>application</Role>
 <Description> 
 The symbol to represent the n-ary function to return the least common
@@ -157,7 +157,7 @@ Integer and lcm(a,b) &gt; c.
 </CDDefinition>
 
 <CDDefinition>
-<Name> gcd </Name>
+<Name>gcd</Name>
 <Role>application</Role>
 <Description> 
 The symbol to represent the n-ary function to return the gcd (greatest
@@ -256,7 +256,7 @@ gcd(6,9) = 3
 </CDDefinition>
 
 <CDDefinition>
-<Name> plus </Name>
+<Name>plus</Name>
 <Role>application</Role>
 <Description>
 The symbol representing an n-ary commutative function plus.
@@ -289,7 +289,7 @@ The symbol representing an n-ary commutative function plus.
 </CDDefinition>
 
 <CDDefinition>
-<Name> unary_minus </Name>
+<Name>unary_minus</Name>
 <Role>application</Role>
 <Description> 
 This symbol denotes unary minus, i.e. the additive inverse.
@@ -320,7 +320,7 @@ This symbol denotes unary minus, i.e. the additive inverse.
 </CDDefinition>
 
 <CDDefinition>
-<Name> minus </Name>
+<Name>minus</Name>
 <Role>application</Role>
 <Description> 
 The symbol representing a binary minus function. This is equivalent to
@@ -357,7 +357,7 @@ adding the additive inverse.
 </CDDefinition>
 
 <CDDefinition>
-<Name> times </Name>
+<Name>times</Name>
 <Role>application</Role>
 <Description> 
 The symbol representing an n-ary multiplication function.
@@ -495,7 +495,7 @@ The symbol representing an n-ary multiplication function.
 </CDDefinition>
 
 <CDDefinition>
-<Name> divide </Name>
+<Name>divide</Name>
 <Role>application</Role>
 <Description>
 This symbol represents a (binary) division function denoting the first argument
@@ -533,7 +533,7 @@ inverse of the multiplication function defined by the symbol times in this CD.
 </CDDefinition>
 
 <CDDefinition>
-<Name> power </Name>
+<Name>power</Name>
 <Role>application</Role>
 <Description>
 This symbol represents a power function. The first argument is raised
@@ -689,7 +689,7 @@ x\in C implies x^a = exp(a ln x)
 </CDDefinition>
 
 <CDDefinition>
-<Name> abs </Name>
+<Name>abs</Name>
 <Role>application</Role>
 <Description> 
 A unary operator which represents the absolute value of its
@@ -733,7 +733,7 @@ In the complex case this is often referred to as the modulus.
 </CDDefinition>
 
 <CDDefinition>
-<Name> root </Name>
+<Name>root</Name>
 <Role>application</Role>
 <Description> 
 A binary operator which represents its first argument "lowered" to its
@@ -813,7 +813,7 @@ CMP is not valid in general.
 
 
 <CDDefinition>
-<Name> sum </Name>
+<Name>sum</Name>
 <Role>application</Role>
 <Description>
 An operator taking two arguments, the first being the range of summation,
@@ -848,7 +848,7 @@ summed. Note that the sum may be over an infinite interval.
 </CDDefinition>
 
 <CDDefinition>
-<Name> product </Name>
+<Name>product</Name>
 <Role>application</Role>
 <Description>
 An operator taking two arguments, the first being the range of multiplication

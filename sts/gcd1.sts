@@ -1,6 +1,6 @@
 <CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" 
    cd="gcd1" cdurl="http://www.openmath.org/cd/gcd1.ocd" version="2.0">
-<CDSStatus> official </CDSStatus>
+<CDSStatus>official</CDSStatus>
 
 <CDSComment>
 Date:  2000-03-10

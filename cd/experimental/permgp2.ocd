@@ -2,7 +2,7 @@
    <CDName>permgp2</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
    <CDURL>http://www.openmath.org/cd/permgp2.ocd</CDURL>
-   <CDDate> 2004-06-01 </CDDate>
+   <CDDate>2004-06-01</CDDate>
    <CDVersion>1</CDVersion>
    <CDRevision>1</CDRevision>
    <CDStatus>experimental</CDStatus>
@@ -19,7 +19,7 @@
 
 
 <CDDefinition>
-<Name> symmetric_group </Name>
+<Name>symmetric_group</Name>
 <Description>
 This symbol represents a unary function. Its argument is either a
 positive integer or a set.
@@ -59,7 +59,7 @@ symmetric group on {1,2,3}.
 
 
 <CDDefinition>
-<Name> alternating_group </Name>
+<Name>alternating_group</Name>
 <Description>
 This symbol represents a unary function. Its argument is either a
 positive integer or a set.

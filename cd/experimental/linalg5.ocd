@@ -33,7 +33,7 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName> linalg5 </CDName>
+<CDName>linalg5</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/linalg5.ocd</CDURL>
 <CDReviewDate>2017-12-31</CDReviewDate>
@@ -44,14 +44,14 @@
   Author: OpenMath Consortium
   SourceURL: https://github.com/OpenMath/CDs
 </CDComment>
-<CDStatus> experimental </CDStatus>
+<CDStatus>experimental</CDStatus>
 <Description>
 This CD contains symbols which represent a number of special types of
 matrix. 
 </Description>
 
 <CDDefinition>
-<Name> identity </Name>
+<Name>identity</Name>
 <Role>application</Role>
 <Description>
 This symbol denotes a unary function which is used to construct an
@@ -117,7 +117,7 @@ A representation of the 2x2 identity matrix [[1,0],[0,1]]
 </CDDefinition>
 
 <CDDefinition>
-<Name> zero </Name>
+<Name>zero</Name>
 <Role>application</Role>
 <Description>
 This symbol denotes a function with two integral arguments m,n which
@@ -249,7 +249,7 @@ A representation of the 2x2 zero matrix [[0,0],[0,0]]
 </CDDefinition>
 
 <CDDefinition>
-<Name> diagonal_matrix </Name>
+<Name>diagonal_matrix</Name>
 <Role>application</Role>
 <Description>
 This symbol denotes an n_ary function which is used to construct an
@@ -273,7 +273,7 @@ The diagonal matrix with diagonal elements [1,2,3]
 </CDDefinition>
 
 <CDDefinition>
-<Name> scalar </Name>
+<Name>scalar</Name>
 <Role>application</Role>
 <Description>
 This symbol represents a matrix which is a scalar constant times the
@@ -320,7 +320,7 @@ the third specifies the scalar multiplier.
 </CDDefinition>
 
 <CDDefinition>
-<Name> constant </Name>
+<Name>constant</Name>
 <Role>application</Role>
 <Description>
 This symbol represents a matrix which has all entries of the same
@@ -357,7 +357,7 @@ the second is the constant which determines every element.
 </CDDefinition>
 
 <CDDefinition>
-<Name> banded </Name>
+<Name>banded</Name>
 <Role>application</Role>
 <Description>
 This symbol represents a (p,q) banded matrix, it takes one
@@ -410,7 +410,7 @@ A specification of the (2,1) banded matrix:
 </CDDefinition>
 
 <CDDefinition>
-<Name> symmetric </Name>
+<Name>symmetric</Name>
 <Role>application</Role>
 <Description>
 This symbol represents a symmetric matrix, it takes one argument. The
@@ -536,7 +536,7 @@ An example to represent the symmetric matrix:
 </CDDefinition>
 
 <CDDefinition>
-<Name> skew-symmetric </Name>
+<Name>skew-symmetric</Name>
 <Role>application</Role>
 <Description>
 This symbol represents a skew-symmetric matrix, it takes one
@@ -627,7 +627,7 @@ An example to represent the skew-symmetric matrix:
 </CDDefinition>
 
 <CDDefinition>
-<Name> Hermitian </Name>
+<Name>Hermitian</Name>
 <Role>application</Role>
 <Description>
 This symbol represents a Hermitian matrix, it takes one
@@ -697,7 +697,7 @@ An example to describe the Hermitian matrix:
 </CDDefinition>
 
 <CDDefinition>
-<Name> anti-Hermitian </Name>
+<Name>anti-Hermitian</Name>
 <Role>application</Role>
 <Description>
 This symbol represents an anti-Hermitian matrix, it takes one
@@ -756,7 +756,7 @@ An example to describe the anti-Hermitian matrix:
 </CDDefinition>
 
 <CDDefinition>
-<Name> upper-triangular </Name>
+<Name>upper-triangular</Name>
 <Role>application</Role>
 <Description>
 This symbol represents an upper-triangular matrix, it takes one
@@ -820,7 +820,7 @@ An example to describe the upper triangular matrix:
 </CDDefinition>
 
 <CDDefinition>
-<Name> lower-triangular </Name>
+<Name>lower-triangular</Name>
 <Role>application</Role>
 <Description>
 This symbol represents a lower-triangular matrix, it takes one
@@ -884,7 +884,7 @@ An example to describe the lower triangular matrix:
 </CDDefinition>
 
 <CDDefinition>
-<Name> upper-Hessenberg </Name>
+<Name>upper-Hessenberg</Name>
 <Role>application</Role>
 <Description>
 This symbol represents an upper-Hessenberg matrix, it takes one argument,
@@ -953,7 +953,7 @@ A specification of an upper-Hessenberg matrix of dimension 5:
 </CDDefinition>
 
 <CDDefinition>
-<Name> lower-Hessenberg </Name>
+<Name>lower-Hessenberg</Name>
 <Role>application</Role>
 <Description>
 This symbol represents a lower-Hessenberg matrix, it takes one argument,
@@ -1022,7 +1022,7 @@ A specification of a lower-Hessenberg matrix of dimension 5:
 </CDDefinition>
 
 <CDDefinition>
-<Name> tridiagonal </Name>
+<Name>tridiagonal</Name>
 <Role>application</Role>
 <Description>
 This symbol represents a tridiagonal matrix, it takes one argument

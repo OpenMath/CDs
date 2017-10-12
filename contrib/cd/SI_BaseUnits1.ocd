@@ -38,13 +38,13 @@ subject to copyright protection in the United States. Foreign copyrights
 may apply.
 
 </CDComment>
-  <CDName> SI_BaseUnits1 </CDName>
+  <CDName>SI_BaseUnits1</CDName>
   <CDURL>http://www.openmath.org/cd/SI_BaseUnits1.ocd</CDURL>
-  <CDReviewDate> 2009-04-01 </CDReviewDate>
-  <CDStatus> experimental </CDStatus>
-  <CDDate> 2009-01-10 </CDDate>
-  <CDVersion> 1 </CDVersion>
-  <CDRevision> 1 </CDRevision>
+  <CDReviewDate>2009-04-01</CDReviewDate>
+  <CDStatus>experimental</CDStatus>
+  <CDDate>2009-01-10</CDDate>
+  <CDVersion>1</CDVersion>
+  <CDRevision>1</CDRevision>
 
   <Description>
     This CD defines symbols to represent the seven base units of the SI

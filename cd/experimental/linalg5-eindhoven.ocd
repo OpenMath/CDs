@@ -1,11 +1,11 @@
 <CD xmlns="http://www.openmath.org/OpenMathCD">
-<CDName> linalg5 </CDName>
+<CDName>linalg5</CDName>
 <CDURL>http://www.openmath.org/cd/linalg7.ocd</CDURL>
-<CDReviewDate> 2006-04-01 </CDReviewDate>
-<CDDate> 2004-11-30 </CDDate>
-<CDVersion> 2 </CDVersion>
-<CDRevision> 0 </CDRevision>
-<CDStatus> experimental </CDStatus>
+<CDReviewDate>2006-04-01</CDReviewDate>
+<CDDate>2004-11-30</CDDate>
+<CDVersion>2</CDVersion>
+<CDRevision>0</CDRevision>
+<CDStatus>experimental</CDStatus>
 
 <Description>
 This CD contains symbols for the construction of matrices from lists, and back.
@@ -15,7 +15,7 @@ Constructed by Arjeh M. Cohen. Formerly named linalg7. Current name linalg5.
 </Description>
 
 <CDDefinition>
-<Name> list_to_vector </Name>
+<Name>list_to_vector</Name>
 <Description>
 This symbol denotes a binary function. Its first argument must be a ring R,
 its second argument must be list L with entries belonging to the ring R, up to ring1.expression.
@@ -27,7 +27,7 @@ L[i] (or ring1.expression(L[i])).
 
 
 <CDDefinition>
-<Name> vector_to_list </Name>
+<Name>vector_to_list</Name>
 <Description>
 This symbol denotes a unary function. Its argument must be a vector v.
 When applied to v it represents the list whose entries are the
@@ -38,7 +38,7 @@ coordinates of v (with the same indexing).
 </CDDefinition>
 
 <CDDefinition>
-<Name> matrix_to_list </Name>
+<Name>matrix_to_list</Name>
 <Description>
 This symbol denotes a unary function. Its argument must be a matrix A.
 When applied to A it represents the list L whose i-th entry 

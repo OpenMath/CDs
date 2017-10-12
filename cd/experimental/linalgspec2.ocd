@@ -33,21 +33,21 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName> linalgspec2 </CDName>
+<CDName>linalgspec2</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/linalgspec2.ocd</CDURL>
 <CDReviewDate>2006-03-30</CDReviewDate>
 <CDDate>2004-11-30</CDDate>
 <CDVersion>3</CDVersion>
 <CDRevision>1</CDRevision>
-<CDStatus> experimental </CDStatus>
+<CDStatus>experimental</CDStatus>
 <Description>
 This CD contains symbols which represent a number of special types of
 matrix, such as Hessenberg. 
 </Description>
 
 <CDDefinition>
-<Name> upper_Hessenberg </Name>
+<Name>upper_Hessenberg</Name>
 <Role>application</Role>
 <Description>
 This symbol represents an upper_Hessenberg matrix, it takes one argument,
@@ -116,7 +116,7 @@ A specification of an upper_Hessenberg matrix of dimension 5:
 </CDDefinition>
 
 <CDDefinition>
-<Name> lower_Hessenberg </Name>
+<Name>lower_Hessenberg</Name>
 <Role>application</Role>
 <Description>
 This symbol represents a lower_Hessenberg matrix, it takes one argument,

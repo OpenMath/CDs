@@ -32,16 +32,16 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName> setname3 </CDName>
+<CDName>setname3</CDName>
 <CDURL>http://www.openmath.org/cd/setname3.ocd</CDURL>
-<CDDate> 2003-01-07 </CDDate>
+<CDDate>2003-01-07</CDDate>
 <CDReviewDate>2017-12-31</CDReviewDate>
-<CDVersion> 1 </CDVersion>
+<CDVersion>1</CDVersion>
 <CDRevision>1</CDRevision>
 <CDComment>
   Author: David Carlisle
 </CDComment>
-<CDStatus> experimental </CDStatus>
+<CDStatus>experimental</CDStatus>
 
 <Description>
  The function_set operator generates the set of functions
@@ -49,7 +49,7 @@
 </Description>
 
 <CDDefinition>
-<Name> function_set </Name>
+<Name>function_set</Name>
 <Description> 
  The function_set operator generates the set of functions
  between the sets specified as its arguments.

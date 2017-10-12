@@ -36,11 +36,11 @@
   
   <CDName>scscp1</CDName>
   <CDURL>http://www.win.tue.nl/SCIEnce/cds/scscp1.ocd</CDURL>
-  <CDReviewDate> 2017-12-31 </CDReviewDate>
+  <CDReviewDate>2017-12-31</CDReviewDate>
   <CDStatus>experimental</CDStatus>
-  <CDDate> 2009-06-22 </CDDate>
-  <CDVersion> 1 </CDVersion>
-  <CDRevision> 13 </CDRevision>
+  <CDDate>2009-06-22</CDDate>
+  <CDVersion>1</CDVersion>
+  <CDRevision>13</CDRevision>
   <Description>
     This CD defines symbols for the description of the management
     of mathematical queries.
@@ -54,7 +54,7 @@
   </Description>
 
   <CDDefinition>
-    <Name> procedure_call </Name>
+    <Name>procedure_call</Name>
     <Description>
       The actual procedure call. Its only argument is an OpenMath Application,
       whose head symbol describes the procedure to be called,
@@ -105,7 +105,7 @@
   </CDDefinition>
 
   <CDDefinition>
-    <Name> procedure_completed </Name>
+    <Name>procedure_completed</Name>
     <Description>
       The result of a successful computation. Should come along 
       with a call_id and, possibly, some extra information.
@@ -152,7 +152,7 @@
   </CDDefinition>
 
   <CDDefinition>
-    <Name> procedure_terminated </Name>
+    <Name>procedure_terminated</Name>
     <Description>
       The result of a failed computation. Should come along with a call_id, an error
       description, and possibly some extra information.
@@ -179,7 +179,7 @@
   </CDDefinition>
 
   <CDDefinition>
-    <Name> call_id </Name>
+    <Name>call_id</Name>
     <Description>
       Uniquely identifies a procedure call. Used in subsequent communication, so the
       parties know which call they are talking about.
@@ -198,7 +198,7 @@
   </CDDefinition>
 
   <CDDefinition>
-    <Name> option_max_memory </Name>
+    <Name>option_max_memory</Name>
     <Description>
       An option, to be given along with a procedure call, describing the maximum amount of
       memory (in bytes) the system should spend on this call.
@@ -221,7 +221,7 @@
   </CDDefinition>
 
   <CDDefinition>
-    <Name> option_min_memory </Name>
+    <Name>option_min_memory</Name>
     <Description>
       An option, to be given along with a procedure call, describing the minimum amount of
       memory (in bytes) the system should be able to spend on this call.  The idea is that
@@ -247,7 +247,7 @@
   </CDDefinition>
 
   <CDDefinition>
-    <Name> option_runtime </Name>
+    <Name>option_runtime</Name>
     <Description>
       An option, to be given along with a procedure call, describing the maximum amount of
       time (in milliseconds) the system should spend on this call.
@@ -270,7 +270,7 @@
   </CDDefinition>
 
   <CDDefinition>
-    <Name> option_debuglevel </Name>
+    <Name>option_debuglevel</Name>
     <Description>
       An option, to be given along with a procedure call, describing the amount of debug
       information the client is interested in. Should be an integer.
@@ -293,7 +293,7 @@
   </CDDefinition>
 
   <CDDefinition>
-    <Name> option_return_cookie </Name>
+    <Name>option_return_cookie</Name>
     <Description>
       An option, to be given along with a procedure call, indicating that the client would
       like to have a cookie (i.e.  a reference to an OpenMath object residing somewhere)
@@ -332,7 +332,7 @@
   </CDDefinition>
 
   <CDDefinition>
-    <Name> option_return_object </Name>
+    <Name>option_return_object</Name>
     <Description>
       An option, to be given along with a procedure call, indicating that the client would
       like to have the actual OpenMath object as return value.
@@ -370,7 +370,7 @@
   </CDDefinition>
 
   <CDDefinition>
-    <Name> option_return_nothing </Name>
+    <Name>option_return_nothing</Name>
     <Description>
       An option, to be given along with a procedure call, indicating that the client
       expects no return value.
@@ -407,7 +407,7 @@
   </CDDefinition>
 
   <CDDefinition>
-    <Name> info_memory </Name>
+    <Name>info_memory</Name>
     <Description>
       A piece of information from the system, to be used along with a procedure_completed
       or procedure_terminated message, describing how much memory was spent on the
@@ -429,7 +429,7 @@
   </CDDefinition>
 
   <CDDefinition>
-    <Name> info_runtime </Name>
+    <Name>info_runtime</Name>
     <Description>
       A piece of information from the system, to be used along with a procedure_completed
       or procedure_terminated message, describing how much cputime was spent on the
@@ -451,7 +451,7 @@
   </CDDefinition>
 
   <CDDefinition>
-    <Name> info_message </Name>
+    <Name>info_message</Name>
     <Description>
       A piece of information from the server, to be used along with a procedure_completed
       or procedure_terminated message, giving some additional information. The client may
@@ -473,7 +473,7 @@
   </CDDefinition>
 
   <CDDefinition>
-    <Name> error_memory </Name>
+    <Name>error_memory</Name>
     <Description>
       A description of the error that caused a procedure call to be terminated. This
       symbol is used with a procedure_terminated, when the system exceeded the amount of
@@ -503,7 +503,7 @@
   </CDDefinition>
 
   <CDDefinition>
-    <Name> error_runtime </Name>
+    <Name>error_runtime</Name>
     <Description>
       A description of the error that caused a procedure call to be terminated. This
       symbol is used with a procedure_terminated, when the system exceeded the runtime
@@ -535,7 +535,7 @@
   </CDDefinition>
 
   <CDDefinition>
-    <Name> error_system_specific </Name>
+    <Name>error_system_specific</Name>
     <Description>
       A description of the error that caused a procedure call to be terminated. This
       symbol is used with a procedure_terminated, when the error is specific to the system

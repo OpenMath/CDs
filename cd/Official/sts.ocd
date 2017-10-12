@@ -44,7 +44,7 @@
   Author: OpenMath Consortium
   SourceURL: https://github.com/OpenMath/CDs
 </CDComment>
-<CDStatus> official </CDStatus>
+<CDStatus>official</CDStatus>
 
 <Description> 
 Definitions of the symbols used by the OpenMath Small Type System.
@@ -52,7 +52,7 @@ Definitions of the symbols used by the OpenMath Small Type System.
 
 
 <CDDefinition>
-<Name> type </Name>
+<Name>type</Name>
 <Role>semantic-attribution</Role>
 <Description> 
 A symbol to be used within an OpenMath attribute to specify the type of

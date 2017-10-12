@@ -1,11 +1,11 @@
 <CD xmlns="http://www.openmath.org/OpenMathCD">
-<CDName> linalgspars1 </CDName>
+<CDName>linalgspars1</CDName>
 <CDURL>http://www.openmath.org/cd/linalgspars1.ocd</CDURL>
-<CDReviewDate> 2005-01-01 </CDReviewDate>
-<CDStatus> experimental </CDStatus>
-<CDDate> 2002-11-15 </CDDate>
-<CDVersion> 0 </CDVersion>
-<CDRevision> 1 </CDRevision>
+<CDReviewDate>2005-01-01</CDReviewDate>
+<CDStatus>experimental</CDStatus>
+<CDDate>2002-11-15</CDDate>
+<CDVersion>0</CDVersion>
+<CDRevision>1</CDRevision>
 
 <Description>
 Symbols for describing sparse matrices.
@@ -16,7 +16,7 @@ was linalg6, but this led to a name clash. Hence the renaming.
 </Description>
 
 <CDDefinition>
-  <Name> sparseMatrixElement1 </Name>
+  <Name>sparseMatrixElement1</Name>
   <Description>
 This symbol may be used to represent a non-zero element of a sparse
 matrix in the following way. It takes three arguments, the first of
@@ -30,7 +30,7 @@ this content dictionary.
 </CDDefinition>
 
 <CDDefinition>
-  <Name> sparseMatrixElement2 </Name>
+  <Name>sparseMatrixElement2</Name>
   <Description>
 This symbol may be used to represent a non-zero element of a sparse
 matrix in the following way. It takes two arguments, the first of
@@ -43,7 +43,7 @@ of the symbol nonZeroRowSparseMatrix only.
 </CDDefinition>
 
 <CDDefinition>
-  <Name> sparseMatrixElement3 </Name>
+  <Name>sparseMatrixElement3</Name>
   <Description>
 This symbol may be used to represent a non-zero element of a sparse
 matrix over Z_2 in the following way. The first and second arguments
@@ -54,7 +54,7 @@ arguments of arguments of the symbol sparseMatrix01 only.
 </CDDefinition>
 
 <CDDefinition>
-  <Name> sparseMatrixElement4 </Name>
+  <Name>sparseMatrixElement4</Name>
   <Description>
 This symbol may be used to represent a non-zero element of a sparse
 matrix over Z_2 in the following way. The single argument is the
@@ -65,7 +65,7 @@ of the symbol nonZeroRowSparseMatrix01 only.
 </CDDefinition>
 
 <CDDefinition>
-  <Name> sparseMatrixRow </Name>
+  <Name>sparseMatrixRow</Name>
   <Description>
 This symbol may be used to represent rows of sparse matrices, it is a
 fairly general symbol in that it may be used to represent rows of any
@@ -76,7 +76,7 @@ as described in that symbols description.
 </CDDefinition>
 
 <CDDefinition>
-  <Name> sparseMatrix </Name>
+  <Name>sparseMatrix</Name>
   <Description>
 This symbol may be used for representing matrices, it is designed for
 efficiently representing sparse matrices. The symbol is n+2 ary, where
@@ -123,7 +123,7 @@ may be represented as:
 </CDDefinition>
 
 <CDDefinition>
-  <Name> nonZeroRowSparseMatrix </Name>
+  <Name>nonZeroRowSparseMatrix</Name>
   <Description>
 This symbol may be used for representing matrices, it is designed for
 efficiently representing sparse matrices where every row has at least
@@ -185,7 +185,7 @@ may be represented as:
 </CDDefinition>
 
 <CDDefinition>
-  <Name> sparseMatrix01 </Name>
+  <Name>sparseMatrix01</Name>
   <Description>
 This symbol may be used for representing matrices which have all entries 
 in the modular field Z_2, i.e. 1 or 0. It allows efficient representation 
@@ -233,7 +233,7 @@ may be represented as:
 </CDDefinition>
 
 <CDDefinition>
-  <Name> nonZeroRowSparseMatrix01 </Name>
+  <Name>nonZeroRowSparseMatrix01</Name>
   <Description>
 This symbol may be used to represent matrices which have no zero rows,
 and for which every row is in Z_2 efficiently. The first argument is

@@ -1,7 +1,7 @@
 <CDGroup  xmlns="http://www.openmath.org/OpenMathCDG" version="2.0">
 <CDGroupName>meta</CDGroupName>
-<CDGroupVersion> 2 </CDGroupVersion>
-<CDGroupRevision> 0 </CDGroupRevision>
+<CDGroupVersion>2</CDGroupVersion>
+<CDGroupRevision>0</CDGroupRevision>
 <CDGroupURL>http://www.openmath.org/cdgroups/meta.cdg</CDGroupURL>
 <CDGroupDescription>Meta CD Group</CDGroupDescription>
 

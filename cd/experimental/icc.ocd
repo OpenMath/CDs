@@ -34,12 +34,12 @@
 </CDComment>
 
 
-    <CDName> icc </CDName>
+    <CDName>icc</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
     <CDURL>http://www.openmath.org/cd/icc.ocd</CDURL>
     <CDDate>2004-03-30</CDDate>
     <CDReviewDate>2017-12-31</CDReviewDate>
-    <CDStatus> experimental </CDStatus>
+    <CDStatus>experimental</CDStatus>
     <CDVersion>2</CDVersion>
     <CDRevision>1</CDRevision>
 <CDComment>
@@ -60,14 +60,14 @@ also adding CDUses.
 
 
    <CDDefinition>
-        <Name> type </Name>
+        <Name>type</Name>
 <Role>semantic-attribution</Role>
         <Description> Attribution tag to denote type-judgement
         </Description>
     </CDDefinition>
 
    <CDDefinition>
-        <Name> typecoerce </Name>
+        <Name>typecoerce</Name>
 <Role>semantic-attribution</Role>
         <Description> Attribution tag to denote type-judgement with coercion
         </Description>
@@ -75,7 +75,7 @@ also adding CDUses.
 
  
    <CDDefinition>
-        <Name> IndType </Name>
+        <Name>IndType</Name>
 <Role>application</Role>
         <Description> Constructor for Inductive Types. 
         Takes arguments the constructor functions for the

@@ -1,12 +1,12 @@
 <CD xmlns="http://www.openmath.org/OpenMathCD">
-<CDName> magma1 </CDName>
+<CDName>magma1</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/magma1.ocd</CDURL>
-<CDReviewDate> 2006-06-01 </CDReviewDate>
-<CDDate> 2004-06-01 </CDDate>
-<CDVersion> 1 </CDVersion>
-<CDRevision> 2 </CDRevision>
-<CDStatus> experimental </CDStatus>
+<CDReviewDate>2006-06-01</CDReviewDate>
+<CDDate>2004-06-01</CDDate>
+<CDVersion>1</CDVersion>
+<CDRevision>2</CDRevision>
+<CDStatus>experimental</CDStatus>
 
 <Description>  Basic functions for magma theory   </Description>
 
@@ -17,7 +17,7 @@ Edited by AMC 2004-0302
 
 
 <CDDefinition>
-<Name> magma </Name>
+<Name>magma</Name>
 <Description>
 This symbol is a constructor for magmas. It takes two arguments in
 the following order: a set to specify the elements in the magma and a
@@ -83,7 +83,7 @@ argument to the second.
 </CDDefinition>
 
 <CDDefinition>
-<Name> carrier </Name>
+<Name>carrier</Name>
 <Description>
 This symbol represents a unary function, whose argument should be a
 magma G (for instance constructed by magma).
@@ -109,7 +109,7 @@ The carrier of magma(G,*) is G.
 </CDDefinition>
 
 
-<CDDefinition> <Name> multiplication </Name> 
+<CDDefinition><Name> multiplication </Name> 
 
 <Description> This symbol
 represents a unary function, whose argument should be a magma G.  It returns
@@ -137,7 +137,7 @@ The multiplication of magma(G,*) is *.
 
 
 <CDDefinition>
-<Name> is_commutative </Name>
+<Name>is_commutative</Name>
 <Description>
 The unary boolean function whose value is true iff the argument is a
 commutative magma.
@@ -209,7 +209,7 @@ If is_commutative(G) then for all a,b in carrier(G) a*b = b*a
 </CDDefinition>
 
 <CDDefinition>
-<Name> is_associative </Name>
+<Name>is_associative</Name>
 <Description>
 The unary boolean function whose value is true iff the argument is an
 associative magma.
@@ -282,7 +282,7 @@ If is_associative(G) then for all a,b in carrier(G) (a*b) * c = a*(b*c)
 
 
 <CDDefinition>
-<Name> is_submagma </Name>
+<Name>is_submagma</Name>
 <Description>
 The binary boolean function whose value is true iff the second
 argument is a submagma of the first.
@@ -295,7 +295,7 @@ is closed under multiplication.
 </CDDefinition>
 
 
-<CDDefinition> 
+<CDDefinition>
 <Name> is_identity </Name> 
 
 <Description> This symbols represents a binary boolean function, whose
@@ -311,7 +311,7 @@ all elements y of M.
 
 
 <CDDefinition>
-<Name> submagma </Name>
+<Name>submagma</Name>
 <Description>
 This symbol is a constructor symbol with two arguments.
 The first argument is a magma M,

@@ -2,12 +2,12 @@
 <!-- $Id: freealg1.tfb,v 1.1.1.1 2002/10/04 12:50:39 taka Exp $ -->
 
 <CD xmlns="http://www.openmath.org/OpenMathCD">
-<CDName> freealg1 </CDName>
+<CDName>freealg1</CDName>
 <CDURL>http://www.math.kobe-u.ac.jp/OCD/freealg1.tfb</CDURL>
 <CDReviewDate>2017-12-31</CDReviewDate>
-<CDStatus> experimental </CDStatus>
-<CDDate> 2002-09-25 </CDDate>
-<CDVersion> 1 </CDVersion>
+<CDStatus>experimental</CDStatus>
+<CDDate>2002-09-25</CDDate>
+<CDVersion>1</CDVersion>
 <CDRevision>1</CDRevision>
 <CDComment>
   Author: Nobuki Takayama
@@ -19,7 +19,7 @@ This CD defines elements of a free algebra.
 
 
 <CDDefinition>
-<Name> times </Name>
+<Name>times</Name>
 <Description>
   Multiplication in the free algebra.
 </Description>

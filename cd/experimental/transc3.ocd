@@ -33,7 +33,7 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName> transc3 </CDName>
+<CDName>transc3</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/transc3.ocd</CDURL>
 <CDReviewDate>2017-12-31</CDReviewDate>
@@ -44,7 +44,7 @@
   Author: OpenMath Consortium
   SourceURL: https://github.com/OpenMath/CDs
 </CDComment>
-<CDStatus> experimental </CDStatus>
+<CDStatus>experimental</CDStatus>
 
 <Description>
     This CD holds the definitions of many transcendental and related
@@ -59,7 +59,7 @@
 </Description>
 
 <CDDefinition>
-<Name> log </Name>
+<Name>log</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents a binary log function; the first argument is the base,
@@ -115,7 +115,7 @@ log 100 to base 10 (which is {2+2n\pi i}).
 </CDDefinition>
 
 <CDDefinition>
-<Name> ln </Name>
+<Name>ln</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents the ln function (natural logarithm) as
@@ -202,7 +202,7 @@ Ln 1 (which is 0+2n\pi i).
 </CDDefinition>
 
 <CDDefinition>
-<Name> arcsin </Name>
+<Name>arcsin</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents the arcsin function. This is the multi-valued inverse 
@@ -337,7 +337,7 @@ deliverable.
 </CDDefinition>
 
 <CDDefinition>
-<Name> arccos </Name>
+<Name>arccos</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents the arccos function. This is the multivalued
@@ -468,7 +468,7 @@ deliverable.
 </CDDefinition>
 
 <CDDefinition>
-<Name> arctan </Name>
+<Name>arctan</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents the arctan function. This is the multi-valued
@@ -570,7 +570,7 @@ Arctan(z) = (i/2)Ln((1-iz)/(1+iz)),
 </CDDefinition>
 
 <CDDefinition>
-<Name> arcsec </Name>
+<Name>arcsec</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents the multivalued arcsec function as the inverse of
@@ -714,7 +714,7 @@ Arcsec(z) = -i(ln(1/z+i \sqrt(1-1/z^2)) union ln(1/z-i \sqrt(1-1/z^2)))
 </CDDefinition>
 
 <CDDefinition>
-<Name> arccsc </Name>
+<Name>arccsc</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents the multivalued arccsc function as the inverse of
@@ -862,7 +862,7 @@ Arccsc(z) = -i [ Ln (sqrt(1-1/z^2)+i/z) union  Ln (-sqrt(1-1/z^2)+i/z),
 </CDDefinition>
 
 <CDDefinition>
-<Name> arccot </Name>
+<Name>arccot</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents the multi-valued arccot function as the inverse of cot
@@ -996,7 +996,7 @@ Arccot(z) = (i/2)Ln((1+iz)/(1-iz)),
 </CDDefinition>
 
 <CDDefinition>
-<Name> arcsinh </Name>
+<Name>arcsinh</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents the Arcsinh function as described in Abramowitz
@@ -1133,7 +1133,7 @@ y in Arcsinh(x) &lt;=&gt; sinh(y)=x
 </CDDefinition>
 
 <CDDefinition>
-<Name> arccosh </Name>
+<Name>arccosh</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents the Arccosh function as described in Abramowitz
@@ -1271,7 +1271,7 @@ y in Arccosh(x) &lt;=&gt; cosh(y)=x
 </CDDefinition>
 
 <CDDefinition>
-<Name> arctanh </Name>
+<Name>arctanh</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents the Arctanh function as described in Abramowitz
@@ -1402,7 +1402,7 @@ y in Arctanh(x) &lt;=&gt; tanh(y)=x
 </CDDefinition>
 
 <CDDefinition>
-<Name> arcsech </Name>
+<Name>arcsech</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents the Arcsech function as described in Abramowitz
@@ -1555,7 +1555,7 @@ y in Arcsech(x) &lt;=&gt; sech(y)=x
 </CDDefinition>
 
 <CDDefinition>
-<Name> arccsch </Name>
+<Name>arccsch</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents the Arccsch function as described in Abramowitz
@@ -1704,7 +1704,7 @@ y in Arccsch(x) &lt;=&gt; csch(y)=x
 </CDDefinition>
 
 <CDDefinition>
-<Name> arccoth </Name>
+<Name>arccoth</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents the Arccoth function as described in Abramowitz

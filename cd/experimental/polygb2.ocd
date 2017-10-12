@@ -1,12 +1,12 @@
 <CD xmlns="http://www.openmath.org/OpenMathCD">
-   <CDName> polygb2 </CDName> 
+   <CDName>polygb2</CDName> 
 <CDBase>http://www.openmath.org/cd</CDBase>
    <CDURL>http://www.win.tue.nl/~amc/oz/om/cds/polygb2.ocd</CDURL>
-   <CDReviewDate> 2006-06-01 </CDReviewDate> 
-   <CDDate> 2004-06-01 </CDDate> 
-   <CDStatus> experimental </CDStatus>
-   <CDVersion> 1 </CDVersion>
-   <CDRevision> 1 </CDRevision>
+   <CDReviewDate>2006-06-01</CDReviewDate> 
+   <CDDate>2004-06-01</CDDate> 
+   <CDStatus>experimental</CDStatus>
+   <CDVersion>1</CDVersion>
+   <CDRevision>1</CDRevision>
 
    <Description>
  
@@ -21,7 +21,7 @@ this happen.  Suggestion:
    </Description>
 
     <CDDefinition>
-       <Name> in </Name>
+       <Name>in</Name>
        <Description> 
      This symbol is a function of at least 4 arguments. The first argument
      is a polynomial p, 
@@ -85,7 +85,7 @@ this happen.  Suggestion:
 
 
     <CDDefinition>
-       <Name> in_radical </Name>
+       <Name>in_radical</Name>
        <Description> 
 
       This symbol is a function of at least 4 arguments. The first argument
@@ -202,7 +202,7 @@ The following evaluates to false:
     </CDDefinition>
 
    <CDDefinition>
-       <Name> minimal_groebner_element </Name>
+       <Name>minimal_groebner_element</Name>
        <Description> 
 
        This symbol is a function with 3 arguments.  First argument is
@@ -273,7 +273,7 @@ The following evaluates to the polynomial 1-2y^3+y^6 (up to a scalar multiple)
 
 
 <CDDefinition>
-    <Name> extended_in </Name>
+    <Name>extended_in</Name>
     <Description> 
         This symbol is a function of at least 3 arguments. The first argument is a list of variables. 
         The second and third argument are lists of polynomials in the variables from the first 

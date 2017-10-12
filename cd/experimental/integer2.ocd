@@ -1,12 +1,12 @@
 <CD xmlns="http://www.openmath.org/OpenMathCD">
-<CDName> integer2 </CDName>
+<CDName>integer2</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/integer2.ocd</CDURL>
-<CDReviewDate> 2006-07-11  </CDReviewDate>
-<CDDate> 2004-07-11 </CDDate>
-<CDVersion> 0 </CDVersion>
-<CDRevision> 1 </CDRevision>
-<CDStatus> experimental </CDStatus>
+<CDReviewDate>2006-07-11</CDReviewDate>
+<CDDate>2004-07-11</CDDate>
+<CDVersion>0</CDVersion>
+<CDRevision>1</CDRevision>
+<CDStatus>experimental</CDStatus>
 
 <Description>
     This CD holds a collection of basic modular arithmetic for integers.

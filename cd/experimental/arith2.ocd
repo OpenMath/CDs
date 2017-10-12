@@ -33,11 +33,11 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName> arith2 </CDName>
+<CDName>arith2</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/arith2.ocd</CDURL>
 <CDReviewDate>2017-12-31</CDReviewDate>
-<CDStatus> experimental </CDStatus>
+<CDStatus>experimental</CDStatus>
 <CDDate>2004-03-30</CDDate>
 <CDVersion>2</CDVersion>
 <CDRevision>1</CDRevision>
@@ -53,7 +53,7 @@ exhibits the use of inheritance within the CD's.
 
 
 <CDDefinition>
-<Name> times </Name>
+<Name>times</Name>
 <Role>application</Role>
 <Description>
 The symbol representing an n-ary multiplication function inheriting
@@ -88,7 +88,7 @@ be commutative.
 </CDDefinition>
 
 <CDDefinition>
-<Name> inverse </Name>
+<Name>inverse</Name>
 <Role>application</Role>
 <Description>
 A unary operator which represents the inverse of an element of a set. This

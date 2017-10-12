@@ -32,11 +32,11 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName> physical_consts1 </CDName>
+<CDName>physical_consts1</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/physical_consts1.ocd</CDURL>
 <CDReviewDate>2017-12-31</CDReviewDate>
-<CDStatus> experimental </CDStatus>
+<CDStatus>experimental</CDStatus>
 <CDDate>2005-05-28</CDDate>
 <CDVersion>3</CDVersion>
 <CDRevision>2</CDRevision>
@@ -50,7 +50,7 @@ This CD defines symbols which represent some elementary physical constants.
 </Description>
 
 <CDDefinition>
-<Name> absolute_zero </Name>
+<Name>absolute_zero</Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the absolute zero of temperature, synonymous
@@ -59,7 +59,7 @@ with the object of that temperature having zero latent heat.
 </CDDefinition>
 
 <CDDefinition>
-<Name> zero_Celsius </Name>
+<Name>zero_Celsius</Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the zero of the Celsius temperature scale.
@@ -67,7 +67,7 @@ This symbol represents the zero of the Celsius temperature scale.
 </CDDefinition>
 
 <CDDefinition>
-<Name> zero_Fahrenheit </Name>
+<Name>zero_Fahrenheit</Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the zero of the Fahrenheit temperature scale.
@@ -75,7 +75,7 @@ This symbol represents the zero of the Fahrenheit temperature scale.
 </CDDefinition>
 
 <CDDefinition>
-<Name> light_year </Name>
+<Name>light_year</Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the distant for which a beam of light would
@@ -98,7 +98,7 @@ take a year to traverse, in a vacuum.
 </CDDefinition>
 
 <CDDefinition>
-<Name> speed_of_light </Name>
+<Name>speed_of_light</Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the speed of light in a vacuum. It is
@@ -120,7 +120,7 @@ approximately 299792458 metres per second.
 </CDDefinition>
 
 <CDDefinition>
-<Name> Planck_constant </Name>
+<Name>Planck_constant</Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the fundamental constant equal to the ratio of
@@ -194,7 +194,7 @@ There exists P s.t.
 </CDDefinition>
 
 <CDDefinition>
-<Name> mole </Name>
+<Name>mole</Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the number of atoms in one gramme of carbon(12).
@@ -202,7 +202,7 @@ This symbol represents the number of atoms in one gramme of carbon(12).
 </CDDefinition>
 
 <CDDefinition>
-<Name> gravitational_constant </Name>
+<Name>gravitational_constant</Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the constant of proportionality in Newtons law
@@ -248,7 +248,7 @@ square metres per kilogramme squared
 </CDDefinition>
 
 <CDDefinition>
-<Name> Avogadros_constant </Name>
+<Name>Avogadros_constant</Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the number of atoms in 12 grammes of pure
@@ -295,7 +295,7 @@ Avogadros constant is 6.0221367*10^(23) +/- 3.6*10^(17).
 </CDDefinition>
 
 <CDDefinition>
-<Name> Faradays_constant </Name>
+<Name>Faradays_constant</Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the electric charge carried by one mole of
@@ -343,7 +343,7 @@ Faradays constant is 96485.309 +/- 0.029 Coulombs per mole.
 </CDDefinition>
 
 <CDDefinition>
-<Name> gas_constant </Name>
+<Name>gas_constant</Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the constant which is equal to the ratio of the
@@ -357,7 +357,7 @@ mole per Kelvin.
 </CDDefinition>
 
 <CDDefinition>
-<Name> Loschmidt_constant </Name>
+<Name>Loschmidt_constant</Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the number of particles per unit volume of an
@@ -425,7 +425,7 @@ The Loschmidt constant is 2.686763 * 10^(25) +/- 2.3 *
 </CDDefinition>
 
 <CDDefinition>
-<Name> magnetic_constant </Name>
+<Name>magnetic_constant</Name>
 <Role>constant</Role>
 <Description>
 This symbol represents the ratio of the magnetic flux density in a
@@ -457,7 +457,7 @@ The magnetic constant is equal to 4 pi x 10^(-7) H/m.
 </CDDefinition>
 
 <CDDefinition>
-<Name> Boltzmann_constant </Name>
+<Name>Boltzmann_constant</Name>
 <Role>constant</Role>
 <Description>
 A constant which describes the relationship between temperature and kinetic energy for

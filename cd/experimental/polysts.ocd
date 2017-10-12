@@ -44,7 +44,7 @@
   Author: OpenMath Consortium
   SourceURL: https://github.com/OpenMath/CDs
 </CDComment>
-<CDStatus> experimental </CDStatus>
+<CDStatus>experimental</CDStatus>
 <Description> 
   This CD holds the polynomial symbols used by the OpenMath Small Type System.
   PolynomialRing is the equivalent of an Axiom category, whereas 
@@ -58,7 +58,7 @@ Written 1999-11-20 JHD
 </CDComment>
 
 <CDDefinition>
-  <Name> polynomial_ring </Name>
+  <Name>polynomial_ring</Name>
 <Role>constant</Role>
   <Description> 
     The type of all polynomial rings, e.g. from polyr or polyd OCDs

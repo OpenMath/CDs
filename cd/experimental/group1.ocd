@@ -1,12 +1,12 @@
 <CD xmlns="http://www.openmath.org/OpenMathCD">
-<CDName> group1 </CDName>
+<CDName>group1</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/group1.ocd</CDURL>
-<CDReviewDate> 2003-04-01 </CDReviewDate>
-<CDDate> 1999-05-10 </CDDate>
-<CDVersion> 3 </CDVersion>
-<CDRevision> 0 </CDRevision>
-<CDStatus> experimental </CDStatus>
+<CDReviewDate>2003-04-01</CDReviewDate>
+<CDDate>1999-05-10</CDDate>
+<CDVersion>3</CDVersion>
+<CDRevision>0</CDRevision>
+<CDStatus>experimental</CDStatus>
 
 <Description> A CD of basic functions for group theory   </Description>
 
@@ -17,7 +17,7 @@ Severely edited by Arjeh M. Cohen in 2003
 </CDComment>
 
 <CDDefinition>
-<Name> group </Name>
+<Name>group</Name>
 <Description>
 This symbol is a constructor for groups. It takes four arguments in
 the following order: a set to specify the elements in the group, a
@@ -209,7 +209,7 @@ element.
 </CDDefinition>
 
 <CDDefinition>
-<Name> carrier </Name>
+<Name>carrier</Name>
 <Description>
 This symbol represents a unary function, whose argument should be a
 group G (for instance constructed by group).
@@ -236,7 +236,7 @@ The carrier of group(G,*,e,inverse) is G.
 
 </CDDefinition>
 
-<CDDefinition> <Name> multiplication </Name> 
+<CDDefinition><Name> multiplication </Name> 
 
 <Description> This symbol
 represents a unary function, whose argument should be a group G.  It returns
@@ -265,7 +265,7 @@ The multiplication of group(G,*,inverse,e) is *.
 
 
 <CDDefinition>
-<Name> inversion </Name>
+<Name>inversion</Name>
 <Description>
 This symbol represents a unary function, whose argument should be a
 group G.  It returns the map sending an element of G to its inverse.
@@ -293,7 +293,7 @@ The inversion of group(G,*,e,inverse) is inverse.
 
 
 <CDDefinition>
-<Name> identity </Name>
+<Name>identity</Name>
 <Description>
 This symbols represents a unary function, whose argument should be a
 group.  It returns the identity element of the group.
@@ -320,7 +320,7 @@ The identity of group(G,*,e,inverse) is e.
 
 
 <CDDefinition>
-<Name> is_commutative </Name>
+<Name>is_commutative</Name>
 <Description>
 The unary boolean function whose value is true iff the argument is a
 commutative group.
@@ -390,7 +390,7 @@ If is_commutative(G) then for all a,b in carrier(G) a*b = b*a
 </CDDefinition>
 
 <CDDefinition>
-<Name> is_subgroup </Name>
+<Name>is_subgroup</Name>
 <Description>
 The binary boolean function whose value is true iff the second
 argument is a subgroup of the second.
@@ -404,7 +404,7 @@ is closed under multiplication and taking inverses.
 
 
 <CDDefinition>
-<Name> monoid </Name>
+<Name>monoid</Name>
 <Description>
 This symbol is a unary function, whose argument should be a group G.
 When applied to G its value is the monoid underlying G.
@@ -423,7 +423,7 @@ When applied to G its value is the monoid underlying G.
 
 
 <CDDefinition>
-<Name> subgroup </Name>
+<Name>subgroup</Name>
 <Description>
 This symbol is a constructor symbol with one or two arguments. The
 first argument is a list or set, D, of group elements. The optional
@@ -543,7 +543,7 @@ the identity of G.
 
 
 <CDDefinition>
-<Name> normal_closure </Name>
+<Name>normal_closure</Name>
 <Description>
 The binary function whose value is the set of conjugates of 
 the elements of the second group by elements of the first,
@@ -619,7 +619,7 @@ there exists a in A and b in B s.t. n = b^(-1) a b
 </CDDefinition>
 
 <CDDefinition>
-<Name> is_normal </Name>
+<Name>is_normal</Name>
 <Description>
 If G, H are the group arguments, then IsNormal(G,H) returns true precisely when
 H is normal in G. That is, inverse(g)*h*g is defined and contained in H for

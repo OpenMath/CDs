@@ -13,7 +13,7 @@
 
 
 <CDDefinition>
-<Name>  where </Name>
+<Name>where</Name>
 <Description>
   The word "where" is often used in mathematical expressions
   to set variables or to say side conditions.

@@ -1,12 +1,12 @@
 <CD xmlns="http://www.openmath.org/OpenMathCD">
-<CDName> polynomial3 </CDName>
+<CDName>polynomial3</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/polynomial3.ocd</CDURL>
-<CDReviewDate>  2006-07-12  </CDReviewDate>
-<CDDate> 2004-07-12   </CDDate>
-<CDVersion> 0 </CDVersion>
-<CDRevision> 0 </CDRevision>
-<CDStatus> experimental </CDStatus>
+<CDReviewDate>2006-07-12</CDReviewDate>
+<CDDate>2004-07-12</CDDate>
+<CDVersion>0</CDVersion>
+<CDRevision>0</CDRevision>
+<CDStatus>experimental</CDStatus>
 
 <Description>
 This CD holds a collection of basic modular arithmetic for polynomials over fields.
@@ -16,7 +16,7 @@ in the CD polyd1.
 </Description>
 
 <CDDefinition>
-    <Name> gcd </Name>
+    <Name>gcd</Name>
     <Description> 
      The n-ary greatest common divisor for univariate polynomials over fields.
     </Description>
@@ -33,7 +33,7 @@ in the CD polyd1.
 </CDDefinition>
 
     <CDDefinition>
-       <Name> lcm </Name>
+       <Name>lcm</Name>
 <Role>application</Role>
        <Description> 
           The least common multiple of its polynomial arguments.
@@ -82,7 +82,7 @@ in the CD polyd1.
 
 
 <CDDefinition>
-    <Name> factors </Name>
+    <Name>factors</Name>
     <Description> 
 This symbol is a unary function, whose argument should be a polynomial f.
 When applied to f, it represents a complete list of irreducible factors of f.
@@ -119,7 +119,7 @@ The following expression represents the list [X+1,X+1] of rational polynomials.
 
 
 <CDDefinition>
-<Name> quotient </Name>
+<Name>quotient</Name>
 <Role>application</Role>
 <Description>
 This symbol represents the binary division operator on univariate polynomials
@@ -179,7 +179,7 @@ For all a,b with a,b univariate polynomials over a field F we have
 </CDDefinition>
 
 <CDDefinition>
-<Name> remainder </Name>
+<Name>remainder</Name>
 <Role>application</Role>
 <Description> 
 The symbol represents a binary function, whose arguments should be univariate

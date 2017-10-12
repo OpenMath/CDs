@@ -1,12 +1,12 @@
 <CD xmlns="http://www.openmath.org/OpenMathCD">
-<CDName> list3 </CDName>
+<CDName>list3</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/list3.ocd</CDURL>
-<CDReviewDate> 2004-11-01 </CDReviewDate>
-<CDDate> 2004-11-02 </CDDate>
-<CDVersion> 3 </CDVersion>
-<CDRevision> 1 </CDRevision>
-<CDStatus> experimental </CDStatus>
+<CDReviewDate>2004-11-01</CDReviewDate>
+<CDDate>2004-11-02</CDDate>
+<CDVersion>3</CDVersion>
+<CDRevision>1</CDRevision>
+<CDStatus>experimental</CDStatus>
 
 <Description> 
 Several standard operations on lists, such as length and append, are given in
@@ -20,7 +20,7 @@ Initiated by Arjeh M. Cohen 2004-03-02
 
 
 <CDDefinition>
-<Name> length </Name>
+<Name>length</Name>
 <Role>application</Role>
 <Description> 
 This symbol represents a function whose argument should be a list.
@@ -46,7 +46,7 @@ The length of the list [1,2,3] is 3.
 </CDDefinition>
 
 <CDDefinition>
-<Name> list_of_lengthn </Name>
+<Name>list_of_lengthn</Name>
 <Description> 
 This symbol represents a function with two arguments,
 the first of which is a natural number and the second of which is a list.
@@ -68,7 +68,7 @@ A list L of length 3:
 
 
 <CDDefinition>
-<Name> entry </Name>
+<Name>entry</Name>
 <Description> 
 This symbol represents a binary function whose first argument should be a list
 L and whose second argument should be a positive integer i such that
@@ -117,7 +117,7 @@ counted from the end.
 </CDDefinition>
 
 <CDDefinition>
-<Name> difference </Name>
+<Name>difference</Name>
 <Description> 
 This symbol takes two arguments both a list. It represents a function which returns a list made up of all
 the elements of the first list which are not in the second.
@@ -146,7 +146,7 @@ Specification of the list [1,..,6], apart from the first 3 elements.
 </CDDefinition>
 
 <CDDefinition>
-<Name> select </Name>
+<Name>select</Name>
 <Description> 
 This symbol takes two lists as arguments, L and M say. The second argument is a
  list containing only entries from [1..n], where n is the length of

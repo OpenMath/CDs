@@ -1,12 +1,12 @@
 <CD xmlns="http://www.openmath.org/OpenMathCD">
-<CDName> list4 </CDName>
+<CDName>list4</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/list2.ocd</CDURL>
 <CDReviewDate>2006-03-30</CDReviewDate>
 <CDDate>2004-11-30</CDDate>
 <CDVersion>5</CDVersion>
 <CDRevision>1</CDRevision>
-<CDStatus> experimental </CDStatus>
+<CDStatus>experimental</CDStatus>
 
 <Description>
     Several convenient but not basic list functions are given in this CD.
@@ -19,7 +19,7 @@ Arjeh M. Cohen  2004-11-30
 
 
 <CDDefinition>
-<Name> entry </Name>
+<Name>entry</Name>
 <Description> 
 This symbol represents a binary function whose first argument should be a list
 L and whose second argument should be a positive integer i such that
@@ -93,7 +93,7 @@ counted from the end.
 
 
 <CDDefinition>
-<Name> reverse </Name>
+<Name>reverse</Name>
 <Role>application</Role>
 <Description>
 The reverse of a list 
@@ -142,7 +142,7 @@ The reverse of a list
 </CDDefinition>
 
 <CDDefinition>
-<Name> difference </Name>
+<Name>difference</Name>
 <Description> 
 This symbol represents a function with two arguments,
 both lists. 
@@ -174,7 +174,7 @@ Specification of the list [6,6,12], apart from the first 2 elements.
 </CDDefinition>
 
 <CDDefinition>
-<Name> remove </Name>
+<Name>remove</Name>
 <Description> 
 This symbol represents a function with two arguments,
 both lists. 
@@ -209,7 +209,7 @@ Specification of the list [6,5,6] with the second entry removed.
 
 
 <CDDefinition>
-<Name> list_of_lengthn </Name>
+<Name>list_of_lengthn</Name>
 <Description> 
 This symbol represents a function with two arguments,
 the first of which is a natural number and the second of which is a list.

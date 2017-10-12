@@ -1,12 +1,12 @@
 <CD xmlns="http://www.openmath.org/OpenMathCD">
-<CDName> monoid1 </CDName>
+<CDName>monoid1</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/monoid1.ocd</CDURL>
-<CDReviewDate> 2006-06-01 </CDReviewDate>
-<CDDate> 2004-06-01 </CDDate>
-<CDVersion> 3 </CDVersion>
-<CDRevision> 2 </CDRevision>
-<CDStatus> experimental </CDStatus>
+<CDReviewDate>2006-06-01</CDReviewDate>
+<CDDate>2004-06-01</CDDate>
+<CDVersion>3</CDVersion>
+<CDRevision>2</CDRevision>
+<CDStatus>experimental</CDStatus>
 
 <Description> Basic functions for monoid theory   </Description>
 
@@ -16,7 +16,7 @@ Edited by AMC 2004-03-02
 </CDComment>
 
 <CDDefinition>
-<Name> monoid </Name>
+<Name>monoid</Name>
 <Description>
 This symbol is a constructor for monoids. It takes three arguments in
 the following order: a set to specify the elements in the monoid, a
@@ -170,7 +170,7 @@ element.
 </CDDefinition>
 
 <CDDefinition>
-<Name> carrier </Name>
+<Name>carrier</Name>
 <Description>
 This symbol represents a unary function, whose argument should be a
 monoid M (for instance constructed by monoid).
@@ -195,7 +195,7 @@ The carrier of monoid(M,*,e) is M.
 </CDDefinition>
 
 <CDDefinition>
-<Name> multiplication </Name>
+<Name>multiplication</Name>
 <Description>
 This symbol represents a unary function, whose argument should be a
 monoid M.  It returns the multiplication map on M. 
@@ -240,7 +240,7 @@ of M can be expressed as follows.
 
 
 <CDDefinition>
-<Name> identity </Name>
+<Name>identity</Name>
 <Description>
 This symbols represents a unary function, whose argument should be a
 monoid.  It returns the identity element of the monoid.
@@ -264,7 +264,7 @@ The identity of monoid(M,*,e) is e.
 
 
 <CDDefinition>
-<Name> is_commutative </Name>
+<Name>is_commutative</Name>
 <Description>
 The unary boolean function whose value is true iff the argument is a
 commutative monoid.
@@ -334,7 +334,7 @@ If is_commutative(M) then for all a,b in carrier(M) a*b = b*a
 </CDDefinition>
 
 <CDDefinition>
-<Name> is_invertible </Name>
+<Name>is_invertible</Name>
 <Description>
 This symbol represents a binary function, whose first argument is a monoid M
 and whose second argument is an element x of M.
@@ -392,7 +392,7 @@ with  a*x = x*a = 1.
 </CDDefinition>
 
 <CDDefinition>
-<Name> is_submonoid </Name>
+<Name>is_submonoid</Name>
 <Description>
 The binary boolean function whose value is true iff the second
 argument is a submonoid of the second.
@@ -406,7 +406,7 @@ is closed under multiplication and taking inverses.
 
 
 <CDDefinition>
-<Name> semigroup </Name>
+<Name>semigroup</Name>
 <Description>
 This symbol is a unary function, whose argument should be a monoid M.
 When applied to M its value is the semigroup underlying M.
@@ -426,7 +426,7 @@ When applied to M its value is the semigroup underlying M.
 
 
 <CDDefinition>
-<Name> submonoid </Name>
+<Name>submonoid</Name>
 <Description>
 This symbol is a constructor symbol with two arguments.  The first
 argument is a monoid M, the second a list or set, D, of elements of M.

@@ -2,11 +2,11 @@
    <CDName>directives1 </CDName> 
    <CDBase>http://www.openmath.org/cd</CDBase>
    <CDURL>http://www.riaca.win.tue.nl/cds/directives/directives1.ocd</CDURL>
-   <CDReviewDate> 2006-06-01 </CDReviewDate> 
-   <CDDate> 2004-06-01 </CDDate> 
-   <CDStatus> experimental </CDStatus>
-   <CDVersion> 1 </CDVersion>
-   <CDRevision> 3 </CDRevision>
+   <CDReviewDate>2006-06-01</CDReviewDate> 
+   <CDDate>2004-06-01</CDDate> 
+   <CDStatus>experimental</CDStatus>
+   <CDVersion>1</CDVersion>
+   <CDRevision>3</CDRevision>
 
    
 <Description> 
@@ -53,7 +53,7 @@ a service receiving the object is supposed to return zero.
 
 
 <CDDefinition>
-<Name> evaluate_to_type </Name>
+<Name>evaluate_to_type</Name>
 <Description>      
 This symbol is a function with two arguments, which should be
 a mathematical expression and a type.
@@ -132,7 +132,7 @@ argument instead of the single one.
 
 
 <CDDefinition>
-<Name> response </Name>
+<Name>response</Name>
 <Description> 
 This symbol is a function of one argument, which should be a query.
 When applied to a query, it refers to the response a service might
@@ -145,7 +145,7 @@ of queries.
 
 
 <CDDefinition>
-<Name> prove </Name>
+<Name>prove</Name>
 <Description> 
 This symbol is a function with one argument, which should be a clause.
 When applied to a clause C, it asks for a
@@ -155,7 +155,7 @@ proof of C.
 
 
 <CDDefinition>
-<Name> disprove </Name>
+<Name>disprove</Name>
 <Description> 
 This symbol is a function with one argument, which should be a clause.
 When applied to a clause C, it asks for a
@@ -189,7 +189,7 @@ even in multi-valued logic.***)
 
 
 <CDDefinition>
-<Name> prove_in_theory </Name>
+<Name>prove_in_theory</Name>
 <Description> 
 This symbol is a function with two arguments, the first of which
 should be a clause and the second of which should be a symbol
@@ -201,7 +201,7 @@ proof of C in theory T.
 
 
 <CDDefinition>
-<Name> find </Name>
+<Name>find</Name>
 <Description> 
 This symbol is a binder, whose body should be a clause.
 When bound to a variable (or list of variables) x with body P(x), it asks for a
@@ -261,7 +261,7 @@ be a true statement.
 </CDDefinition>
 
 <CDDefinition>
-<Name> decide </Name>
+<Name>decide</Name>
 <Description> 
 This symbol is a function with one argument, which should be a clause.
 When applied to a clause, it asks whether
@@ -307,7 +307,7 @@ The response to the decide query is logically equivalent to the truth of the arg
 
 
 <CDDefinition>
-<Name> explore </Name>
+<Name>explore</Name>
 <Description>      
 This symbol is a unary function whose argument should be
 a mathematical assertion.

@@ -32,12 +32,12 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName> gen_hyperbolic1 </CDName>
+<CDName>gen_hyperbolic1</CDName>
 <CDURL>http://www.openmath.org/cd/gen_hyperbolic1.ocd</CDURL>
 <CDReviewDate>2017-12-31</CDReviewDate>
-<CDStatus> experimental </CDStatus>
-<CDDate> 2002-11-11 </CDDate>
-<CDVersion> 0 </CDVersion>
+<CDStatus>experimental</CDStatus>
+<CDDate>2002-11-11</CDDate>
+<CDVersion>0</CDVersion>
 <CDRevision>1</CDRevision>
 <CDComment>
   Author: Bill Naylor
@@ -49,7 +49,7 @@ function, and facts relating it to other functions.
 </Description>
 
 <CDDefinition>
-  <Name> generalised_hyperbolic </Name>
+  <Name>generalised_hyperbolic</Name>
   <Description>
 This symbol represents the generalised hyperbolic function as recorded
 by Riccati. It is intended to be applied in the curried form, that is,

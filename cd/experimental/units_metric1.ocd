@@ -32,12 +32,12 @@
      society at http://www.openmath.org.
 </CDComment>
 
-<CDName> units_metric1 </CDName>
+<CDName>units_metric1</CDName>
 <CDURL>http://www.openmath.org/cd/units_metric1.ocd</CDURL>
 <CDReviewDate>2017-12-31</CDReviewDate>
-<CDStatus> experimental </CDStatus>
-<CDDate> 2004-08-27 </CDDate>
-<CDVersion> 3 </CDVersion>
+<CDStatus>experimental</CDStatus>
+<CDDate>2004-08-27</CDDate>
+<CDVersion>3</CDVersion>
 <CDRevision>1</CDRevision>
 <CDComment>
   Author: OpenMath Consortium (James Davenport)
@@ -51,7 +51,7 @@ units_si.
 </Description>
 
 <CDDefinition>
-<Name> metre </Name>
+<Name>metre</Name>
 <Description>
 This symbol represents the measure of one metre. This is the standard
 SI unit measure for physical distance.
@@ -60,7 +60,7 @@ SI unit measure for physical distance.
 </CDDefinition>
 
 <CDDefinition>
-<Name> metre_sqrd </Name>
+<Name>metre_sqrd</Name>
 <Description>
 This symbol represents the measure of one metre squared. This is the
 standard SI measure for physical area.
@@ -81,7 +81,7 @@ standard SI measure for physical area.
 </CDDefinition>
 
 <CDDefinition>
-<Name> litre </Name>
+<Name>litre</Name>
 <Description>
 This symbol represents the measure of one litre. This is a standard
 metric measure for physical volume.
@@ -112,7 +112,7 @@ metric measure for physical volume.
 </CDDefinition>
 
 <CDDefinition>
-<Name> litre_pre1964 </Name>
+<Name>litre_pre1964</Name>
 <Description>
 This symbol represents the previous (1901-1964) measure of one litre. This 
 used to be a standard metric measure for physical volume.
@@ -140,7 +140,7 @@ used to be a standard metric measure for physical volume.
 </CDDefinition>
 
 <CDDefinition>
-<Name> metres_per_second </Name>
+<Name>metres_per_second</Name>
 <Description>
 This symbol represents the measure of one metre per second. This is
 the standard SI measure for speed.
@@ -163,7 +163,7 @@ the standard SI measure for speed.
 </CDDefinition>
 
 <CDDefinition>
-<Name> metres_per_second_sqrd </Name>
+<Name>metres_per_second_sqrd</Name>
 <Description>
 This symbol represents the measure of one metre per second
 squared. This is the standard SI measure for acceleration.
@@ -186,7 +186,7 @@ squared. This is the standard SI measure for acceleration.
 </CDDefinition>
 
 <CDDefinition>
-<Name> second </Name>
+<Name>second</Name>
 <Description>
 This symbol represents the measure of one second. This is the standard
 SI measure for time.
@@ -204,7 +204,7 @@ SI measure for time.
 </CDDefinition>
 
 <CDDefinition>
-<Name> gramme </Name>
+<Name>gramme</Name>
 <Description>
   This symbol represents the measure of one gramme. This is not quite the
   standard SI measure for mass, which is the kilogramme, but OpenMath 
@@ -217,7 +217,7 @@ SI measure for time.
 </CDDefinition>
 
 <CDDefinition>
-<Name> Newton </Name>
+<Name>Newton</Name>
 <Description>
 This symbol represents the measure of one Newton. This is the standard
 SI measure for force.
@@ -225,7 +225,7 @@ SI measure for force.
 </CDDefinition>
 
 <CDDefinition>
-<Name> Joule </Name>
+<Name>Joule</Name>
 <Description>
 This symbol represents the measure of one Joule. This is the standard
 SI measure for energy.
@@ -233,7 +233,7 @@ SI measure for energy.
 </CDDefinition>
 
 <CDDefinition>
-<Name> Watt </Name>
+<Name>Watt</Name>
 <Description>
 This symbol represents the measure of one Watt. This is the standard
 SI measure for power.
@@ -241,7 +241,7 @@ SI measure for power.
 </CDDefinition>
 
 <CDDefinition>
-<Name> degree_Kelvin </Name>
+<Name>degree_Kelvin</Name>
 <Description>
 This symbol represents the measure of one degree Kelvin. This is a standard
 SI measure for temperature relative to absolute zero.
@@ -268,7 +268,7 @@ SI measure for temperature relative to absolute zero.
 </CDDefinition>
 
 <CDDefinition>
-<Name> degree_Celsius </Name>
+<Name>degree_Celsius</Name>
 <Description>
 This symbol represents the measure of one degree Celsius. This is a standard
 metric measure for temperature.
@@ -276,7 +276,7 @@ metric measure for temperature.
 </CDDefinition>
 
 <CDDefinition>
-<Name> Pascal </Name>
+<Name>Pascal</Name>
 <Description>
 This symbol represents the measure of one Newton per square metre.
 This is the standard SI measure for pressure.
@@ -284,7 +284,7 @@ This is the standard SI measure for pressure.
 </CDDefinition>
 
 <CDDefinition>
-<Name> Newton_per_sqr_metre </Name>
+<Name>Newton_per_sqr_metre</Name>
 <Description>
 This symbol represents the measure of one Newton per square metre.
 This is another (deprecated in OpenMath) name for the  standard SI measure
@@ -303,7 +303,7 @@ for pressure, the Pascal.
 </CDDefinition>
 
 <CDDefinition>
-<Name> Coulomb </Name>
+<Name>Coulomb</Name>
 <Description>
 This symbol represents the measure of one Coulomb. This is the standard
 SI measure for charge.
@@ -311,7 +311,7 @@ SI measure for charge.
 </CDDefinition>
 
 <CDDefinition>
-<Name> amp </Name>
+<Name>amp</Name>
 <Description>
 This symbol represents the measure of one amp. This is the standard
 SI measure for current.
@@ -319,7 +319,7 @@ SI measure for current.
 </CDDefinition>
 
 <CDDefinition>
-<Name> volt </Name>
+<Name>volt</Name>
 <Description>
 This symbol represents the measure of one volt. This is the standard
 SI measure for voltage.

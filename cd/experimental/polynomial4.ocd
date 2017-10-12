@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <CD xmlns="http://www.openmath.org/OpenMathCD">
-	<CDName> polynomial4 </CDName>
+	<CDName>polynomial4</CDName>
 	<CDURL>http://www.win.tue.nl/SCIEnce/cds/polynomial4.ocd</CDURL>
 	<CDReviewDate>2017-09-30</CDReviewDate>
-	<CDDate> 2009-06-22   </CDDate>
-	<CDVersion> 0 </CDVersion>
-	<CDRevision> 4 </CDRevision>
-	<CDStatus> experimental </CDStatus>
+	<CDDate>2009-06-22</CDDate>
+	<CDVersion>0</CDVersion>
+	<CDRevision>4</CDRevision>
+	<CDStatus>experimental</CDStatus>
 
 	<Description>
 	This CD holds a collection of for some operations of polynomials over rings.
@@ -15,7 +15,7 @@
 	in the CD polyd1.
 	</Description>
 	<CDDefinition>
-		<Name> factorise </Name>
+		<Name>factorise</Name>
 		<Description>
 		This symbol is a unary function, whose argument should be a polynomial f.
 		When applied to f, it represents a list of factors of f.
@@ -53,7 +53,7 @@
 		</Example>
 	</CDDefinition>
 	<CDDefinition>
-		<Name> factorisations </Name>
+		<Name>factorisations</Name>
 		<Description>
 		This symbol may be used in the reply of polynomial4.factorise and
 		takes at least 1 argument.
@@ -161,7 +161,7 @@
 		</Example>
 	</CDDefinition>
 	<CDDefinition>
-		<Name> factors </Name>
+		<Name>factors</Name>
 		<Description>
 		This symbol is used in the reply of polynomial4.factorise and takes
 		at least 2 arguments.  Note this symbol may also be used in a
@@ -275,7 +275,7 @@
 		</Example>
 	</CDDefinition>
 	<CDDefinition>
-		<Name> factor </Name>
+		<Name>factor</Name>
 		<Description>
 		A symbol which represents one factor of a factorisation, it takes at least
 		2 arguments, the first of which being the factor polynomial, e.g. a
@@ -294,42 +294,42 @@
 		</Description>
 	</CDDefinition>
 	<CDDefinition>
-		<Name> multiplicity </Name>
+		<Name>multiplicity</Name>
 		<Description>
 		A symbol which represents the multiplicity of a factor in a factorisation
 		and takes exactly one argument which must be a positive integer.
 		</Description>
 	</CDDefinition>
 	<CDDefinition>
-		<Name> factorisations_complete </Name>
+		<Name>factorisations_complete</Name>
 		<Description>
 		A symbol to indicate that a given list of factorisations of a polynomial
 		covers in fact all possible factorisations.
 		</Description>
 	</CDDefinition>
 	<CDDefinition>
-		<Name> factorisations_incomplete </Name>
+		<Name>factorisations_incomplete</Name>
 		<Description>
 		A symbol to indicate that a given list of factorisations is an
 		assortment of all possible factorisations.
 		</Description>
 	</CDDefinition>
 	<CDDefinition>
-		<Name> definitely_irreducible </Name>
+		<Name>definitely_irreducible</Name>
 		<Description>
 		A symbol which denotes that a factor of the factorisation is definitely
 		irreducible.
 		</Description>
 	</CDDefinition>
 	<CDDefinition>
-		<Name> possibly_reducible </Name>
+		<Name>possibly_reducible</Name>
 		<Description>
 		A symbol which denotes that the irreducibility of a factor of the
 		factorisation is not guaranteed.
 		</Description>
 	</CDDefinition>
 	<CDDefinition>
-		<Name> ground_ring_injected </Name>
+		<Name>ground_ring_injected</Name>
 		<Description>
 		A symbol which denotes that the ground ring of a polynomial algebra is
 		considered to be part of the latter.  This is used in the
@@ -338,7 +338,7 @@
 		</Description>
 	</CDDefinition>
 	<CDDefinition>
-		<Name> divide </Name>
+		<Name>divide</Name>
 		<Description>
 		This symbol is a binary function whose arguments are polynomials f and g
 		which must be defined over the same ground domain.
@@ -413,7 +413,7 @@
 		</Example>
 	</CDDefinition>
 	<CDDefinition>
-		<Name> quotient_remainder </Name>
+		<Name>quotient_remainder</Name>
 		<Description>
 		This symbol is a container for the result of polynomial4.divide.
 		It takes 2 arguments in unspecified order, polynomial4.quotient
@@ -480,7 +480,7 @@
 		</Example>
 	</CDDefinition>
 	<CDDefinition>
-		<Name> quotient </Name>
+		<Name>quotient</Name>
 		<Description>
 		This symbol contains the quotient of polynomial4.divide.
 
@@ -488,7 +488,7 @@
 		</Description>
 	</CDDefinition>
 	<CDDefinition>
-		<Name> remainder </Name>
+		<Name>remainder</Name>
 		<Description>
 		This symbol contains the remainder of polynomial4.divide.
 

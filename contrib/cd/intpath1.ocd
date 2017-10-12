@@ -2,12 +2,12 @@
 <!-- $Id: intpath1.tfb,v 1.5 2003/12/12 02:46:08 taka Exp $ -->
 
 <CD xmlns="http://www.openmath.org/OpenMathCD">
-<CDName> intpath1 </CDName>
+<CDName>intpath1</CDName>
 <CDURL>http://www.math.kobe-u.ac.jp/OCD/intpath1.ocd</CDURL>
 <CDReviewDate>2017-12-31</CDReviewDate>
-<CDStatus> experimental </CDStatus>
-<CDDate> 2004-12-12 </CDDate>
-<CDVersion> 1 </CDVersion>
+<CDStatus>experimental</CDStatus>
+<CDDate>2004-12-12</CDDate>
+<CDVersion>1</CDVersion>
 <CDRevision>3</CDRevision>
 <CDComment>
   Author: Nobuki Takayama
@@ -36,7 +36,7 @@ The details will be discussed in a separate paper.
 
 
 <CDDefinition>
-<Name> infty </Name>
+<Name>infty</Name>
 <Description>
   The infty on the Riemann sphere.  When the coordinate of the complex plane
   is z, we call t=1/z the standard coordinate around the infinity
@@ -47,7 +47,7 @@ The details will be discussed in a separate paper.
 
 
 <CDDefinition>
-<Name> segment </Name>
+<Name>segment</Name>
 <Description>
   The symbol segment(a,b) is the segment from the point a to the point b
   in the complex plane.
@@ -103,7 +103,7 @@ The details will be discussed in a separate paper.
 </CDDefinition>
 
 <CDDefinition>
-<Name> circle </Name>
+<Name>circle</Name>
 <Description>
   The symbol circle(c,r) is the circle in the Riemann sphere of which
   center is c and the radius is r.
@@ -155,7 +155,7 @@ The details will be discussed in a separate paper.
 </CDDefinition>
 
 <CDDefinition>
-<Name> circle_with_starting_point </Name>
+<Name>circle_with_starting_point</Name>
 <Description>
   The symbol circle_with_starting_point(c,r,z0) is the circle 
   in the Riemann sphere of which center is c and the radius is r.
@@ -299,7 +299,7 @@ The details will be discussed in a separate paper.
 
 
 <CDDefinition>
-<Name> path_in_sector </Name>
+<Name>path_in_sector</Name>
 <Description>
   The symbol path_in_sector(c,t1,t2) is an outgoing path
   in a sufficiently small sector with the center c and the angles t1 and t2.
@@ -394,7 +394,7 @@ The details will be discussed in a separate paper.
 </CDDefinition>
 
 <CDDefinition>
-<Name> path_in_sector2 </Name>
+<Name>path_in_sector2</Name>
 <Description>
   The symbol path_in_sector2(c,t1,t2,z0) is an outgoing path
   in the sector with the center c and the angles t1 and t2.
@@ -405,7 +405,7 @@ The details will be discussed in a separate paper.
 
 
 <CDDefinition>
-<Name> closed_path </Name>
+<Name>closed_path</Name>
 <Description>
   The symbol closed_path(start_end,points_in, points_out) is a closed
   path with  the starting point "start_end". 
