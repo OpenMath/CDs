@@ -42,8 +42,34 @@ Author: David Carlisle
 </OMOBJ>
 </Signature>
 
+<Signature name="nand" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+  <OMS name="mapsto" cd="sts" />
+   <OMA>
+    <OMS name="nassoc" cd="sts" />
+     <OMS cd="setname2" name="Boolean" />
+   </OMA>
+  <OMS cd="setname2" name="Boolean" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
 
 <Signature name="xor" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+  <OMS name="mapsto" cd="sts" />
+   <OMA>
+    <OMS name="nassoc" cd="sts" />
+     <OMS cd="setname2" name="Boolean" />
+    </OMA>
+  <OMS cd="setname2" name="Boolean" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="xnor" >
 <OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
  <OMA>
   <OMS name="mapsto" cd="sts" />
@@ -69,6 +95,18 @@ Author: David Carlisle
 </OMOBJ>
 </Signature>
 
+<Signature name="nor" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+  <OMS name="mapsto" cd="sts" />
+   <OMA>
+    <OMS name="nassoc" cd="sts" />
+     <OMS cd="setname2" name="Boolean" />
+    </OMA>
+  <OMS cd="setname2" name="Boolean" />
+ </OMA>
+</OMOBJ>
+</Signature>
 
 <Signature name="implies" >
 <OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
