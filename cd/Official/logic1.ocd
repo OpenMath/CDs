@@ -150,6 +150,37 @@ for all x | x and not(x) = false
 </CDDefinition>
 
 <CDDefinition>
+<Name>nand</Name>
+<Role>application</Role>
+<Description> 
+This symbol represents the logical nand function which is an n-ary
+function taking boolean arguments and returning a boolean value. It
+is false if all arguments are true or true otherwise.
+</Description>
+<CMP>
+for all x | x nand not(x) = true
+</CMP>
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMBIND>
+  <OMS cd="quant1" name="forall"/>
+  <OMBVAR>
+    <OMV name="x"/>
+  </OMBVAR>
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA><OMS cd="logic1" name="nand"/>
+      <OMV name="x"/>
+      <OMA><OMS cd="logic1" name="not"/>
+        <OMV name="x"/>
+      </OMA>
+    </OMA>
+    <OMS cd="logic1" name="true"/>
+  </OMA>
+</OMBIND>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
 <Name>xor</Name>
 <Role>application</Role>
 <Description> 
@@ -195,6 +226,57 @@ for all x | x xor not(x) = true
       </OMA>
     </OMA>
     <OMS cd="logic1" name="true"/>
+  </OMA>
+</OMBIND>
+</OMOBJ></FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name>xnor</Name>
+<Role>application</Role>
+<Description> 
+This symbol represents the logical xnor function which is an n-ary
+function taking boolean arguments and returning a boolean
+value. It is false if there are an odd number of true arguments or
+true otherwise.
+</Description>
+<CMP>
+for all x | x xnor x = true
+</CMP>
+<FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMBIND><OMS cd="quant1" name="forall"/>
+  <OMBVAR>
+    <OMV name="x"/>
+  </OMBVAR>
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA><OMS cd="logic1" name="xnor"/>
+      <OMV name="x"/>
+      <OMV name="x"/>
+    </OMA>
+    <OMS cd="logic1" name="true"/>
+  </OMA>
+</OMBIND>
+</OMOBJ></FMP>
+
+<CMP>
+for all x | x xnor not(x) = false
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd"><OMBIND><OMS cd="quant1" name="forall"/>
+  <OMBVAR>
+    <OMV name="x"/>
+  </OMBVAR>
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA><OMS cd="logic1" name="xnor"/>
+      <OMV name="x"/>
+      <OMA><OMS cd="logic1" name="not"/>
+        <OMV name="x"/>
+      </OMA>
+    </OMA>
+    <OMS cd="logic1" name="false"/>
   </OMA>
 </OMBIND>
 </OMOBJ></FMP>
@@ -254,6 +336,72 @@ for all a,b | not(a and b)= (not(a) or not(b))
     </OMA>
     <OMA>
       <OMS cd="logic1" name="or"/>
+      <OMA>
+        <OMS cd="logic1" name="not"/>
+        <OMV name="a"/>
+      </OMA>
+      <OMA>
+        <OMS cd="logic1" name="not"/>
+        <OMV name="b"/>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMBIND>
+</OMOBJ>
+</FMP>
+</CDDefinition>
+
+<CDDefinition>
+<Name>nor</Name>
+<Role>application</Role>
+<Description> 
+This symbol represents the logical nor function which is an n-ary
+function taking boolean arguments and returning a boolean value. It
+is false if any of the arguments are true or true otherwise.
+</Description>
+
+<CMP>
+for all x | x nor not(x) = false
+</CMP>
+
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd"><OMBIND><OMS cd="quant1" name="forall"/>
+  <OMBVAR>
+    <OMV name="x"/>
+  </OMBVAR>
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA><OMS cd="logic1" name="nor"/>
+      <OMV name="x"/>
+      <OMA><OMS cd="logic1" name="not"/>
+        <OMV name="x"/>
+      </OMA>
+    </OMA>
+    <OMS cd="logic1" name="false"/>
+  </OMA>
+</OMBIND>
+</OMOBJ></FMP>
+
+<CMP>
+for all a,b | a and b = (not(a) nor not(b))
+</CMP>
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMBIND>
+  <OMS cd="quant1" name="forall"/>
+  <OMBVAR>
+    <OMV name="a"/>
+    <OMV name="b"/>
+  </OMBVAR>
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMS cd="logic1" name="and"/>
+      <OMV name="a"/>
+      <OMV name="b"/>
+    </OMA>
+    <OMA>
+      <OMS cd="logic1" name="nor"/>
       <OMA>
         <OMS cd="logic1" name="not"/>
         <OMV name="a"/>
