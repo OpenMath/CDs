@@ -38,8 +38,8 @@
 <CDURL>http://www.openmath.org/cd/logic1.ocd</CDURL>
 <CDReviewDate>2006-03-30</CDReviewDate>
 <CDDate>2004-03-30</CDDate>
-<CDVersion>3</CDVersion>
-<CDRevision>1</CDRevision>
+<CDVersion>4</CDVersion>
+<CDRevision>0</CDRevision>
 <CDComment>
   Author: OpenMath Consortium
   SourceURL: https://github.com/OpenMath/CDs
