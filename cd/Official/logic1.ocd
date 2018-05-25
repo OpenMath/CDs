@@ -178,6 +178,29 @@ for all x | x nand not(x) = true
   </OMA>
 </OMBIND>
 </OMOBJ></FMP>
+
+<FMP type="defining"><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMBIND>
+  <OMS cd="quant1" name="forall"/>
+  <OMBVAR>
+    <OMV name="x"/>
+    <OMV name="y"/>
+  </OMBVAR>
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA><OMS cd="logic1" name="nand"/>
+      <OMV name="x"/>
+      <OMV name="y"/>
+    </OMA>
+    <OMA><OMS cd="logic1" name="not"/>
+      <OMA><OMS cd="logic1" name="and"/>
+        <OMV name="x"/>
+        <OMV name="y"/>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMBIND>
+</OMOBJ></FMP>
 </CDDefinition>
 
 <CDDefinition>
@@ -277,6 +300,29 @@ for all x | x xnor not(x) = false
       </OMA>
     </OMA>
     <OMS cd="logic1" name="false"/>
+  </OMA>
+</OMBIND>
+</OMOBJ></FMP>
+
+<FMP type="defining"><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMBIND>
+  <OMS cd="quant1" name="forall"/>
+  <OMBVAR>
+    <OMV name="x"/>
+    <OMV name="y"/>
+  </OMBVAR>
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA><OMS cd="logic1" name="xnor"/>
+      <OMV name="x"/>
+      <OMV name="y"/>
+    </OMA>
+    <OMA><OMS cd="logic1" name="not"/>
+      <OMA><OMS cd="logic1" name="xor"/>
+        <OMV name="x"/>
+        <OMV name="y"/>
+      </OMA>
+    </OMA>
   </OMA>
 </OMBIND>
 </OMOBJ></FMP>
@@ -415,6 +461,29 @@ for all a,b | a and b = (not(a) nor not(b))
 </OMBIND>
 </OMOBJ>
 </FMP>
+
+<FMP type="defining"><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMBIND>
+  <OMS cd="quant1" name="forall"/>
+  <OMBVAR>
+    <OMV name="x"/>
+    <OMV name="y"/>
+  </OMBVAR>
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA><OMS cd="logic1" name="nor"/>
+      <OMV name="x"/>
+      <OMV name="y"/>
+    </OMA>
+    <OMA><OMS cd="logic1" name="not"/>
+      <OMA><OMS cd="logic1" name="or"/>
+        <OMV name="x"/>
+        <OMV name="y"/>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMBIND>
+</OMOBJ></FMP>
 </CDDefinition>
 
 <CDDefinition>
