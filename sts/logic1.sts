@@ -1,5 +1,5 @@
 <CDSignatures xmlns="http://www.openmath.org/OpenMathCDS" type="sts" 
-   cd="logic1" cdurl="http://www.openmath.org/cd/logic1.ocd" version="2.0">
+   cd="logic1" cdurl="http://www.openmath.org/cd/logic1.ocd" version="3.0">
 <CDSStatus>official</CDSStatus>
 
 <CDSComment>
@@ -42,8 +42,34 @@ Author: David Carlisle
 </OMOBJ>
 </Signature>
 
+<Signature name="nand" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+  <OMS name="mapsto" cd="sts" />
+   <OMA>
+    <OMS name="nassoc" cd="sts" />
+     <OMS cd="setname2" name="Boolean" />
+   </OMA>
+  <OMS cd="setname2" name="Boolean" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
 
 <Signature name="xor" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+  <OMS name="mapsto" cd="sts" />
+   <OMA>
+    <OMS name="nassoc" cd="sts" />
+     <OMS cd="setname2" name="Boolean" />
+    </OMA>
+  <OMS cd="setname2" name="Boolean" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="xnor" >
 <OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
  <OMA>
   <OMS name="mapsto" cd="sts" />
@@ -69,6 +95,18 @@ Author: David Carlisle
 </OMOBJ>
 </Signature>
 
+<Signature name="nor" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+  <OMS name="mapsto" cd="sts" />
+   <OMA>
+    <OMS name="nassoc" cd="sts" />
+     <OMS cd="setname2" name="Boolean" />
+    </OMA>
+  <OMS cd="setname2" name="Boolean" />
+ </OMA>
+</OMOBJ>
+</Signature>
 
 <Signature name="implies" >
 <OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
