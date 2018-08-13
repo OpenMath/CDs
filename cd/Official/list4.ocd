@@ -1,0 +1,511 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDName>list4</CDName>
+<Description>This CD provides symbols that make it possible to state general FMPs about variadic application symbols, by treating a list of things as the list of children of an OMA element.</Description>
+<CDBase>http://www.openmath.org/cd</CDBase>
+<CDVersion>0</CDVersion> <CDRevision>2</CDRevision>
+<CDComment>
+  This document is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+  
+  The copyright holder grants you permission to redistribute this
+  document freely as a verbatim copy. Furthermore, the copyright
+  holder permits you to develop any derived work from this document
+  provided that the following conditions are met.
+    a) The derived work acknowledges the fact that it is derived from
+       this document, and maintains a prominent reference in the
+       work to the original source.
+    b) The fact that the derived work is not the original OpenMath
+       document is stated prominently in the derived work. Moreover if
+       both this document and the derived work are Content Dictionaries
+       then the derived work must include a different CDName element,
+       chosen so that it cannot be confused with any works adopted by
+       the OpenMath Society. In particular, if there is a Content
+       Dictionary Group whose name is, for example, `math' containing
+       Content Dictionaries named `math1', `math2' etc., then you should
+       not name a derived Content Dictionary `mathN' where N is an integer.
+       However you are free to name it `private_mathN' or some such. This
+       is because the names `mathN' may be used by the OpenMath Society
+       for future extensions.
+    c) The derived work is distributed under terms that allow the
+       compilation of derived works, but keep paragraphs a) and b)
+       intact. The simplest way to do this is to distribute the derived
+       work under the OpenMath license, but this is not a requirement.
+  If you have questions about this license please contact the OpenMath
+  society at http://www.openmath.org.
+</CDComment>
+<CDStatus>experimental</CDStatus> <!-- fallback -->
+<CDDate>2014-07-07</CDDate> <!-- Fallback: date of .ocd file generation -->
+<CDDefinition>
+  <Name>islist</Name>
+  <Role>application</Role>
+  <Description>This symbol is a predicate stating that something (the only argument) is a list. This is useful for making claims of the form &#x201C;for every list L, it holds that &#x2026;&#x201D; in FMPs. </Description>
+  <Example>
+    The list whose elements are the integers 3, 6, and 5 is a list: 
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA><OMS cd="list4" name="islist"/>
+        <OMA><OMS cd="list1" name="list"/>
+          <OMI>3</OMI>
+          <OMI>6</OMI>
+          <OMI>5</OMI>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </Example>
+  <FMP>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA><OMS cd="list4" name="islist"/>
+        <OMS cd="list2" name="nil"/>
+      </OMA>
+    </OMOBJ>
+  </FMP>
+  <FMP>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMBIND>
+        <OMS cd="quant1" name="forall"/>
+        <OMBVAR>
+          <OMV name="L"/>
+          <OMV name="x"/>
+        </OMBVAR>
+        <OMA><OMS cd="logic1" name="implies"/>
+          <OMA>
+            <OMS cd="list4" name="islist"/>
+            <OMV name="L"/>
+          </OMA>
+          <OMA><OMS cd="list4" name="islist"/>
+            <OMA><OMS cd="list2" name="cons"/>
+              <OMV name="x"/>
+              <OMV name="L"/>
+            </OMA>
+          </OMA>
+        </OMA>
+      </OMBIND>
+    </OMOBJ>
+  </FMP>
+</CDDefinition>
+<CDDefinition>
+  <Name>islistwhere</Name>
+  <Role>application</Role>
+  <Description>This symbol is a predicate of two arguments L and P, where P is a predicate of one argument. The claim expressed is first that L is a list, and second that every element of it satisfies P. </Description>
+  <FMP>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA><OMS cd="relation1" name="eq"/>
+        <OMS cd="list4" name="islistwhere"/>
+        <OMBIND>
+          <OMS cd="fns1" name="lambda"/>
+          <OMBVAR>
+            <OMV name="L"/>
+            <OMV name="P"/>
+          </OMBVAR>
+          <OMA><OMS cd="logic1" name="and"/>
+            <OMA>
+              <OMS cd="list4" name="islist"/>
+              <OMV name="L"/>
+            </OMA>
+            <OMBIND>
+              <OMS cd="quant1" name="forall"/>
+              <OMBVAR>
+                <OMV name="k"/>
+              </OMBVAR>
+              <OMA><OMS cd="logic1" name="implies"/>
+                <OMA><OMS cd="logic1" name="and"/>
+                  <OMA><OMS cd="set1" name="in"/>
+                    <OMV name="k"/>
+                    <OMS cd="setname1" name="Z"/>
+                  </OMA>
+                  <OMA><OMS cd="relation1" name="le"/>
+                    <OMI>1</OMI>
+                    <OMV name="k"/>
+                  </OMA>
+                  <OMA><OMS cd="relation1" name="le"/>
+                    <OMV name="k"/>
+                    <OMA><OMS cd="list3" name="length"/>
+                      <OMV name="L"/>
+                    </OMA>
+                  </OMA>
+                </OMA>
+                <OMA>
+                  <OMV name="P"/>
+                  <OMA><OMS cd="list3" name="entry"/>
+                    <OMV name="L"/>
+                    <OMV name="k"/>
+                  </OMA>
+                </OMA>
+              </OMA>
+            </OMBIND>
+          </OMA>
+        </OMBIND>
+      </OMA>
+    </OMOBJ>
+  </FMP>
+</CDDefinition>
+<CDDefinition>
+  <Name>eval</Name>
+  <Role>application</Role>
+  <Description>This is an application symbol which takes an arbitrary number of lists as arguments. The concatenation of those lists should be nonempty. To eval those lists produces the same result as an application (OMA element, in the XML encoding) having the concatenation of them as its list of children.</Description>
+  <FMP>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMBIND>
+        <OMS cd="quant1" name="forall"/>
+        <OMBVAR>
+          <OMV name="f"/>
+        </OMBVAR>
+        <OMA><OMS cd="relation1" name="eq"/>
+          <OMA>
+            <OMV name="f"/>
+          </OMA>
+          <OMA><OMS cd="list4" name="eval"/>
+            <OMA>
+              <OMS cd="list1" name="list"/>
+              <OMV name="f"/>
+            </OMA>
+          </OMA>
+        </OMA>
+      </OMBIND>
+    </OMOBJ>
+  </FMP>
+  <FMP>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMBIND>
+        <OMS cd="quant1" name="forall"/>
+        <OMBVAR>
+          <OMV name="f"/>
+          <OMV name="x"/>
+        </OMBVAR>
+        <OMA><OMS cd="relation1" name="eq"/>
+          <OMA>
+            <OMV name="f"/>
+            <OMV name="x"/>
+          </OMA>
+          <OMA><OMS cd="list4" name="eval"/>
+            <OMA>
+              <OMS cd="list1" name="list"/>
+              <OMV name="f"/>
+              <OMV name="x"/>
+            </OMA>
+          </OMA>
+        </OMA>
+      </OMBIND>
+    </OMOBJ>
+  </FMP>
+  <FMP>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMBIND>
+        <OMS cd="quant1" name="forall"/>
+        <OMBVAR>
+          <OMV name="f"/>
+          <OMV name="x"/>
+          <OMV name="y"/>
+        </OMBVAR>
+        <OMA><OMS cd="relation1" name="eq"/>
+          <OMA>
+            <OMV name="f"/>
+            <OMV name="x"/>
+            <OMV name="y"/>
+          </OMA>
+          <OMA><OMS cd="list4" name="eval"/>
+            <OMA>
+              <OMS cd="list1" name="list"/>
+              <OMV name="f"/>
+              <OMV name="x"/>
+              <OMV name="y"/>
+            </OMA>
+          </OMA>
+        </OMA>
+      </OMBIND>
+    </OMOBJ>
+  </FMP>
+  <FMP>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMBIND>
+        <OMS cd="quant1" name="forall"/>
+        <OMBVAR>
+          <OMV name="f"/>
+          <OMV name="x"/>
+          <OMV name="y"/>
+          <OMV name="z"/>
+        </OMBVAR>
+        <OMA><OMS cd="relation1" name="eq"/>
+          <OMA>
+            <OMV name="f"/>
+            <OMV name="x"/>
+            <OMV name="y"/>
+            <OMV name="z"/>
+          </OMA>
+          <OMA><OMS cd="list4" name="eval"/>
+            <OMA>
+              <OMS cd="list1" name="list"/>
+              <OMV name="f"/>
+              <OMV name="x"/>
+              <OMV name="y"/>
+              <OMV name="z"/>
+            </OMA>
+          </OMA>
+        </OMA>
+      </OMBIND>
+    </OMOBJ>
+  </FMP>
+  <CMP>
+    In general, if f is any application symbol, and x1, x2, ..., xN is any sequence of arguments, then f(x1,x2,...,xN) is equal to eval(list1.list(f,x1,x2,...,xN)). This infinite sequence of identities cannot be expressed as an FMP, even if every particular element in that sequence can be so expressed, but by accepting it to hold for the eval symbol in particular, it becomes possible to state similar infinite sequences of claims about other symbols as finite FMPs. 
+  </CMP>
+  <CMP>
+    The second thing one needs to know about eval is that an eval of two lists is the same as an eval of their concatenation. 
+  </CMP>
+  <FMP>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMBIND>
+        <OMS cd="quant1" name="forall"/>
+        <OMBVAR>
+          <OMV name="L"/>
+          <OMV name="M"/>
+        </OMBVAR>
+        <OMA><OMS cd="logic1" name="implies"/>
+          <OMA><OMS cd="logic1" name="and"/>
+            <OMA>
+              <OMS cd="list4" name="islist"/>
+              <OMV name="L"/>
+            </OMA>
+            <OMA>
+              <OMS cd="list4" name="islist"/>
+              <OMV name="M"/>
+            </OMA>
+          </OMA>
+          <OMA><OMS cd="relation1" name="eq"/>
+            <OMA><OMS cd="list4" name="eval"/>
+              <OMV name="L"/>
+              <OMV name="M"/>
+            </OMA>
+            <OMA><OMS cd="list4" name="eval"/>
+              <OMA>
+                <OMS cd="list2" name="append"/>
+                <OMV name="L"/>
+                <OMV name="M"/>
+              </OMA>
+            </OMA>
+          </OMA>
+        </OMA>
+      </OMBIND>
+    </OMOBJ>
+  </FMP>
+  <CMP>
+    Finally, to define eval for more than two arguments, we can use nested evaluation with a list-of-lists argument. 
+  </CMP>
+  <FMP>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMBIND>
+        <OMS cd="quant1" name="forall"/>
+        <OMBVAR>
+          <OMV name="LL"/>
+        </OMBVAR>
+        <OMA><OMS cd="logic1" name="implies"/>
+          <OMA><OMS cd="list4" name="islistwhere"/>
+            <OMV name="LL"/>
+            <OMS cd="list4" name="islist"/>
+          </OMA>
+          <OMA><OMS cd="relation1" name="eq"/>
+            <OMA><OMS cd="list4" name="eval"/>
+              <OMA><OMS cd="list1" name="list"/>
+                <OMS cd="list4" name="eval"/>
+                <OMS cd="list2" name="nil"/>
+              </OMA>
+              <OMV name="LL"/>
+            </OMA>
+            <OMA><OMS cd="list4" name="eval"/>
+              <OMA><OMS cd="list1" name="list"/>
+                <OMS cd="list4" name="eval"/>
+              </OMA>
+              <OMV name="LL"/>
+            </OMA>
+          </OMA>
+        </OMA>
+      </OMBIND>
+    </OMOBJ>
+  </FMP>
+  <FMP>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMBIND>
+        <OMS cd="quant1" name="forall"/>
+        <OMBVAR>
+          <OMV name="L"/>
+          <OMV name="M"/>
+          <OMV name="NN"/>
+        </OMBVAR>
+        <OMA><OMS cd="logic1" name="implies"/>
+          <OMA><OMS cd="logic1" name="and"/>
+            <OMA>
+              <OMS cd="list4" name="islist"/>
+              <OMV name="L"/>
+            </OMA>
+            <OMA>
+              <OMS cd="list4" name="islist"/>
+              <OMV name="M"/>
+            </OMA>
+            <OMA>
+              <OMS cd="list4" name="islistwhere"/>
+              <OMV name="NN"/>
+              <OMS cd="list4" name="islist"/>
+            </OMA>
+          </OMA>
+          <OMA><OMS cd="relation1" name="eq"/>
+            <OMA><OMS cd="list4" name="eval"/>
+              <OMA><OMS cd="list1" name="list"/>
+                <OMS cd="list4" name="eval"/>
+                <OMV name="L"/>
+              </OMA>
+              <OMA><OMS cd="list2" name="cons"/>
+                <OMV name="M"/>
+                <OMV name="NN"/>
+              </OMA>
+            </OMA>
+            <OMA><OMS cd="list4" name="eval"/>
+              <OMA><OMS cd="list1" name="list"/>
+                <OMS cd="list4" name="eval"/>
+                <OMA>
+                  <OMS cd="list2" name="append"/>
+                  <OMV name="L"/>
+                  <OMV name="M"/>
+                </OMA>
+              </OMA>
+              <OMV name="NN"/>
+            </OMA>
+          </OMA>
+        </OMA>
+      </OMBIND>
+    </OMOBJ>
+  </FMP>
+  <CMP>
+    It is a theorem following from the above that an eval of three lists is equal to a two-argument eval of the concatenation of the first two lists and the last list. 
+  </CMP>
+  <FMP>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMBIND>
+        <OMS cd="quant1" name="forall"/>
+        <OMBVAR>
+          <OMV name="L"/>
+          <OMV name="M"/>
+          <OMV name="N"/>
+        </OMBVAR>
+        <OMA><OMS cd="logic1" name="implies"/>
+          <OMA><OMS cd="logic1" name="and"/>
+            <OMA>
+              <OMS cd="list4" name="islist"/>
+              <OMV name="L"/>
+            </OMA>
+            <OMA>
+              <OMS cd="list4" name="islist"/>
+              <OMV name="M"/>
+            </OMA>
+            <OMA>
+              <OMS cd="list4" name="islist"/>
+              <OMV name="N"/>
+            </OMA>
+          </OMA>
+          <OMA><OMS cd="relation1" name="eq"/>
+            <OMA><OMS cd="list4" name="eval"/>
+              <OMV name="L"/>
+              <OMV name="M"/>
+              <OMV name="N"/>
+            </OMA>
+            <OMA><OMS cd="list4" name="eval"/>
+              <OMA><OMS cd="list2" name="append"/>
+                <OMV name="L"/>
+                <OMV name="M"/>
+              </OMA>
+              <OMV name="N"/>
+            </OMA>
+          </OMA>
+        </OMA>
+      </OMBIND>
+    </OMOBJ>
+  </FMP>
+</CDDefinition>
+<CDDefinition>
+  <Name>nassoc</Name>
+  <Role>application</Role>
+  <Description>This symbol is a predicate which takes one operation as argument. It expresses the claim that this operation is n-associative, i.e., that it is variadic, that the binary case of this operation is associative, that applying it to more than two arguments can be restated as repeated application of the binary form, and also that the unary and nullary cases of the operation follow suit.</Description>
+  <FMP>
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA><OMS cd="logic1" name="equivalent"/>
+        <OMA>
+          <OMS cd="list4" name="nassoc"/>
+          <OMV name="f"/>
+        </OMA>
+        <OMA><OMS cd="logic1" name="and"/>
+          <OMBIND>
+            <OMS cd="quant1" name="forall"/>
+            <OMBVAR>
+              <OMV name="x"/>
+            </OMBVAR>
+            <OMA><OMS cd="relation1" name="eq"/>
+              <OMA>
+                <OMV name="f"/>
+                <OMV name="x"/>
+              </OMA>
+              <OMV name="x"/>
+            </OMA>
+          </OMBIND>
+          <OMBIND>
+            <OMS cd="quant1" name="forall"/>
+            <OMBVAR>
+              <OMV name="L"/>
+              <OMV name="M"/>
+            </OMBVAR>
+            <OMA><OMS cd="relation1" name="implies"/>
+              <OMA><OMS cd="logic1" name="and"/>
+                <OMA>
+                  <OMS cd="list4" name="islist"/>
+                  <OMV name="L"/>
+                </OMA>
+                <OMA>
+                  <OMS cd="list4" name="islist"/>
+                  <OMV name="M"/>
+                </OMA>
+              </OMA>
+              <OMA><OMS cd="relation1" name="eq"/>
+                <OMA><OMS cd="list4" name="eval"/>
+                  <OMA>
+                    <OMS cd="list1" name="list"/>
+                    <OMV name="f"/>
+                  </OMA>
+                  <OMV name="L"/>
+                  <OMV name="M"/>
+                </OMA>
+                <OMA>
+                  <OMV name="f"/>
+                  <OMA>
+                    <OMS cd="list4" name="eval"/>
+                    <OMA>
+                      <OMS cd="list1" name="list"/>
+                      <OMV name="f"/>
+                    </OMA>
+                    <OMV name="L"/>
+                  </OMA>
+                  <OMA>
+                    <OMS cd="list4" name="eval"/>
+                    <OMA>
+                      <OMS cd="list1" name="list"/>
+                      <OMV name="f"/>
+                    </OMA>
+                    <OMV name="M"/>
+                  </OMA>
+                </OMA>
+              </OMA>
+            </OMA>
+          </OMBIND>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+  </FMP>
+  <Example>
+    The claim that the arith1&#x23;plus operation is n-associative: 
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath">
+      <OMA><OMS cd="list4" name="nassoc"/>
+        <OMS cd="arith1" name="plus"/>
+      </OMA>
+    </OMOBJ>
+  </Example>
+</CDDefinition>
+<CDComment>
+  This file was generated from list4u.tex.
+</CDComment>
+</CD>
