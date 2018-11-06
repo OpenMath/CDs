@@ -40,7 +40,12 @@
 <CDDate>2009-04-26</CDDate>
 <CDVersion>1</CDVersion>
 <CDRevision>0</CDRevision>
+<CDComment>
+  Author: OpenMath Consortium
+  SourceURL: https://github.com/OpenMath/CDs
+</CDComment>
 <CDStatus>official</CDStatus>
+
 <Description>
     This CD holds symbols denoting various types of numbers, vectors
     and similar constructs. Principally these are required for

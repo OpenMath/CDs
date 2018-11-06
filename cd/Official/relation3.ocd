@@ -6,6 +6,10 @@
 <CDDate>2001-03-12</CDDate>
 <CDVersion>2</CDVersion>
 <CDRevision>0</CDRevision>
+<CDComment>
+  Author: OpenMath Consortium
+  SourceURL: https://github.com/OpenMath/CDs
+</CDComment>
 <CDStatus>official</CDStatus>
 
 <Description>

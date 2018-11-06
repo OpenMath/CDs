@@ -40,7 +40,12 @@
 <CDDate>2009-04-01</CDDate>
 <CDVersion>4</CDVersion>
 <CDRevision>0</CDRevision>
+<CDComment>
+  Author: OpenMath Consortium
+  SourceURL: https://github.com/OpenMath/CDs
+</CDComment>
 <CDStatus>official</CDStatus>
+
 <Description>
     This CD is intended to be `compatible' with the MathML view of
     constructors for numbers (integers to an arbitrary base,
