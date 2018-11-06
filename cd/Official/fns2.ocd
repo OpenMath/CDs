@@ -36,14 +36,10 @@
 <CDName>fns2</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/fns2.ocd</CDURL>
-<CDReviewDate>2017-12-31</CDReviewDate>
-<CDDate>2004-03-30</CDDate>
-<CDVersion>3</CDVersion>
-<CDRevision>1</CDRevision>
-<CDComment>
-  Author: OpenMath Consortium
-  SourceURL: https://github.com/OpenMath/CDs
-</CDComment>
+<CDReviewDate>2014-04-01</CDReviewDate>
+<CDDate>2009-04-19</CDDate>
+<CDVersion>4</CDVersion>
+<CDRevision>0</CDRevision>
 <CDStatus>official</CDStatus>
 
 <Description>
@@ -60,7 +56,7 @@
 <CDDefinition>
 <Name>kernel</Name>
 <Role>application</Role>
-<Description> 
+<Description>
 This symbol denotes the kernel of a given function. This may be
 defined as the subset of the range of the given function which maps to
 the identity element of the image of the given function, however no
@@ -68,7 +64,7 @@ semantics are assumed. The kernel of a function is also known as the
 null space of the function.
 </Description>
 
-<CMP> x in the kernal of f implies that f(x) = 0 </CMP>
+<CMP>x in the kernal of f implies that f(x) = 0</CMP>
 
 <FMP>
 <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
@@ -98,7 +94,7 @@ null space of the function.
 <CDDefinition>
 <Name>apply_to_list</Name>
 <Role>application</Role>
-<Description> 
+<Description>
 This symbol is used to denote the repeated application of an n-ary
 function on the elements of a given list. For example when used with
 plus or times this can represent sums and products.
@@ -120,8 +116,8 @@ For all n 1 + 2 + ... + n = n(n+1)/2.
         <OMS cd="fns2" name="apply_to_list"/>
         <OMS cd="arith1" name="plus"/>
         <OMA>
-          <OMS cd="list1" name="make_list"/>
-          <OMI> 1 </OMI>
+          <OMS cd="list1" name="map"/>
+          <OMI>1</OMI>
           <OMV name="n"/>
           <OMS cd="fns1" name="identity"/>
         </OMA>
@@ -134,10 +130,10 @@ For all n 1 + 2 + ... + n = n(n+1)/2.
           <OMA>
             <OMS cd="arith1" name="plus"/>
             <OMV name="n"/>
-            <OMI> 1 </OMI>
+            <OMI>1</OMI>
           </OMA>
         </OMA>
-        <OMI> 2 </OMI>
+        <OMI>2</OMI>
       </OMA>
     </OMA>
   </OMBIND>
@@ -152,9 +148,9 @@ One may form a set in the following way. This gives the set {1^2, 2^2,
     <OMS cd="fns2" name="apply_to_list"/>
     <OMS cd="set1" name="set"/>
     <OMA>
-      <OMS cd="list1" name="make_list"/>
-      <OMI> 1 </OMI>
-      <OMI> 10 </OMI>
+      <OMS cd="list1" name="map"/>
+      <OMI>1</OMI>
+      <OMI>10</OMI>
       <OMBIND>
         <OMS cd="fns1" name="lambda"/>
         <OMBVAR>
@@ -163,7 +159,7 @@ One may form a set in the following way. This gives the set {1^2, 2^2,
         <OMA>
          <OMS cd="arith1" name="power"/>
           <OMV name="x"/>
-          <OMI> 2 </OMI>
+          <OMI>2</OMI>
         </OMA>
       </OMBIND>
     </OMA>
@@ -172,14 +168,114 @@ One may form a set in the following way. This gives the set {1^2, 2^2,
 </Example>
 </CDDefinition>
 
+
+<CDDefinition>
+<Name>predicate_on_list</Name>
+<Role>application</Role>
+<Description>
+This symbol is used to denote the chains of application
+or a binary predicate typified by a &lt; b &lt; c.
+In particular it is used to support the usage in MathML,
+where transative relations are classed as nary, but the underlying
+OpenMath symbols are binary.
+
+The symbol takes two arguments; the first of which is the binary
+predicate, the second a list. It is true if every application of
+the predicate on a pair of elements of the list, taken in order,
+returns true, otherwise it is false.
+</Description>
+<Example>
+a &lt; b &lt; c.
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+ <OMA>
+  <OMS cd="fns2" name="predicate_on_list"/>
+  <OMS cd="relation1" name="lt"/>
+  <OMA>
+    <OMS cd="list1" name="list"/>
+    <OMV name="a"/>
+    <OMV name="b"/>
+    <OMV name="c"/>
+  </OMA>
+ </OMA>
+</OMOBJ>
+</Example>
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMS cd="fns2" name="predicate_on_list"/>
+      <OMV name="p"/>
+      <OMS cd="list2" name="nil"/>
+    </OMA>
+    <OMS cd="logic1" name="true"/>
+  </OMA>
+</OMOBJ>
+</FMP>
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMS cd="fns2" name="predicate_on_list"/>
+      <OMV name="p"/>
+      <OMA>
+        <OMS cd="list2" name="append"/>
+        <OMV name="a"/>
+        <OMS cd="list2" name="nil"/>
+      </OMA>
+    </OMA>
+    <OMS cd="logic1" name="true"/>
+  </OMA>
+</OMOBJ>
+</FMP>
+<FMP>
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+  <OMA>
+    <OMS cd="relation1" name="eq"/>
+    <OMA>
+      <OMS cd="fns2" name="predicate_on_list"/>
+      <OMV name="p"/>
+      <OMA>
+        <OMS cd="list2" name="append"/>
+        <OMV name="a"/>
+        <OMA>
+          <OMS cd="list2" name="append"/>
+          <OMV name="b"/>
+          <OMV name="l"/>
+        </OMA>
+      </OMA>
+    </OMA>
+    <OMA>
+      <OMS cd="logic1" name="and"/>
+      <OMA>
+        <OMV name="p"/>
+        <OMV name="a"/>
+        <OMV name="b"/>
+      </OMA>
+      <OMA>
+        <OMS cd="fns2" name="predicate_on_list"/>
+        <OMV name="p"/>
+        <OMA>
+          <OMS cd="list2" name="append"/>
+          <OMV name="b"/>
+          <OMV name="l"/>
+        </OMA>
+      </OMA>
+    </OMA>
+  </OMA>
+</OMOBJ>
+</FMP>
+</CDDefinition>
+
 <CDDefinition>
 <Name>right_compose</Name>
 <Role>application</Role>
-<Description> 
+<Description>
 This symbol represents a function forming the right-composition of its
 two functional arguments.
 </Description>
-<CMP> right_compose(f,g)(x) = g(f(x)) </CMP>
+<CMP>right_compose(f,g)(x) = g(f(x)) </CMP>
 <FMP>
   <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
     <OMBIND>

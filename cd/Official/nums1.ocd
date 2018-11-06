@@ -36,14 +36,10 @@
 <CDName>nums1</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/nums1.ocd</CDURL>
-<CDReviewDate>2006-03-30</CDReviewDate>
-<CDDate>2004-03-30</CDDate>
-<CDVersion>3</CDVersion>
-<CDRevision>1</CDRevision>
-<CDComment>
-  Author: OpenMath Consortium
-  SourceURL: https://github.com/OpenMath/CDs
-</CDComment>
+<CDReviewDate>2014-04-01</CDReviewDate>
+<CDDate>2009-04-01</CDDate>
+<CDVersion>4</CDVersion>
+<CDRevision>0</CDRevision>
 <CDStatus>official</CDStatus>
 <Description>
     This CD is intended to be `compatible' with the MathML view of
@@ -57,33 +53,60 @@
 <CDDefinition>
 <Name>based_integer</Name>
 <Role>application</Role>
-<Description> 
+<Description>
 This symbol represents the constructor function for integers,
 specifying the base. It takes two arguments, the first is a positive 
 integer to denote the base to which the number is represented, the
 second argument is a string which contains an optional sign and the
 digits of the integer, using 0-9a-z (as a consequence of this no radix
-greater than 35 is supported). Base 16 and base 10 are already
+greater than 36 is supported). Base 16 and base 10 are already
 covered in the encodings of integers.
 </Description>
-<Example> A representation of 8 (radix 10) base 8
+<Example>A representation of 8 (radix 10) base 8
 <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd"><OMA>
   <OMS cd="relation1" name="eq"/>
-  <OMI> 8 </OMI>
+  <OMI>8</OMI>
   <OMA>
     <OMS cd="nums1" name="based_integer"/>
-    <OMI> 8 </OMI>
-    <OMSTR> 10 </OMSTR>
+    <OMI>8</OMI>
+    <OMSTR>10</OMSTR>
   </OMA>
 
 </OMA></OMOBJ>
 </Example>
 </CDDefinition>
 
+
+<CDDefinition>
+<Name>based_float</Name>
+<Role>application</Role>
+<Description>
+This symbol represents the constructor function for floating point numbers,
+specifying the base. It takes two arguments, the first is a positive 
+integer to denote the base to which the number is represented, the
+second argument is a string which contains an optional sign and the
+digits of the number, using 0-9a-z and optionally a "." 
+(as a consequence of this no radix greater than 36 is supported).
+</Description>
+<Example>A representation of 8.5 (radix 10) base 8
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd"><OMA>
+  <OMS cd="relation1" name="eq"/>
+  <OMF dec="8.5"/>
+  <OMA>
+    <OMS cd="nums1" name="based_float"/>
+    <OMI>8</OMI>
+    <OMSTR>10.4</OMSTR>
+  </OMA>
+
+</OMA></OMOBJ>
+</Example>
+</CDDefinition>
+
+
 <CDDefinition>
 <Name>rational</Name>
 <Role>application</Role>
-<Description> 
+<Description>
 This symbol represents the constructor function for rational numbers.
 It takes two arguments, the first is an integer p to denote the
 numerator and the second a nonzero integer q to denote the denominator
@@ -93,8 +116,8 @@ of the rational p/q.
 A representation of the rational number 1/2
 <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd"><OMA>
   <OMS cd="nums1" name="rational"/>
-  <OMI> 1 </OMI>
-  <OMI> 2 </OMI>
+  <OMI>1</OMI>
+  <OMI>2</OMI>
 </OMA></OMOBJ>
 </Example>
 </CDDefinition>
@@ -102,11 +125,11 @@ A representation of the rational number 1/2
 <CDDefinition>
 <Name>infinity</Name>
 <Role>constant</Role>
-<Description> 
+<Description>
 A symbol to represent the notion of infinity.
 </Description>
 
-<CMP> if x is a real number then x &lt; infinity </CMP>
+<CMP>if x is a real number then x &lt; infinity</CMP>
 
 <FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
 <OMA>
@@ -128,12 +151,12 @@ A symbol to represent the notion of infinity.
 <CDDefinition>
 <Name>e</Name>
 <Role>constant</Role>
-<Description> 
+<Description>
 This symbol represents the base of the natural logarithm, approximately 2.718.
 See Abramowitz and Stegun, Handbook of Mathematical Functions,
 section 4.1.
 </Description>
-<CMP> e = the sum as j ranges  from 0 to infinity of 1/(j!) </CMP>
+<CMP>e = the sum as j ranges  from 0 to infinity of 1/(j!) </CMP>
 
 <FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
 <OMA>
@@ -164,7 +187,7 @@ section 4.1.
 </OMA>
 </OMOBJ></FMP>
 
-<Example> 2.718 = The decimal approximation to 3 significant places of e
+<Example>2.718 = The decimal approximation to 3 significant places of e
   <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
     <OMA>
       <OMS cd="relation1" name="approx"/>
@@ -178,7 +201,7 @@ section 4.1.
 <CDDefinition>
 <Name>i</Name>
 <Role>constant</Role>
-<Description> 
+<Description>
 This symbol represents the square root of -1.
 </Description>
 <CMP>
@@ -191,7 +214,7 @@ i^2 = -1
       <OMA>
         <OMS cd="arith1" name="power"/>
         <OMS cd="nums1" name="i"/>
-        <OMI> 2 </OMI>
+        <OMI>2</OMI>
       </OMA>
       <OMA>
         <OMS cd="arith1" name="unary_minus"/>
@@ -205,12 +228,12 @@ i^2 = -1
 <CDDefinition>
 <Name>pi</Name>
 <Role>constant</Role>
-<Description> 
+<Description>
 A symbol to convey the notion of pi, approximately 3.142.
 The ratio of the circumference of a circle to its diameter.
 </Description>
 
-<CMP> 
+<CMP>
 pi = 4 * the sum as j ranges from 0 to infinity of ((1/(4j+1))-(1/(4j+3))) 
 </CMP>
 
@@ -220,7 +243,7 @@ pi = 4 * the sum as j ranges from 0 to infinity of ((1/(4j+1))-(1/(4j+3)))
   <OMS cd="nums1" name="pi"/>
   <OMA>
     <OMS cd="arith1" name="times"/>
-    <OMI> 4 </OMI>
+    <OMI>4</OMI>
     <OMA>
       <OMS cd="arith1" name="sum"/>
       <OMA>
@@ -242,7 +265,7 @@ pi = 4 * the sum as j ranges from 0 to infinity of ((1/(4j+1))-(1/(4j+3)))
 	      <OMS cd="arith1" name="plus"/>
 	      <OMA>
 	        <OMS cd="arith1" name="times"/>
-	        <OMI> 4 </OMI>
+	        <OMI>4</OMI>
 	        <OMV name="j"/>
 	      </OMA>
 	      <OMS cd="alg1" name="one"/>
@@ -255,10 +278,10 @@ pi = 4 * the sum as j ranges from 0 to infinity of ((1/(4j+1))-(1/(4j+3)))
 	      <OMS cd="arith1" name="plus"/>
 	      <OMA>
 	        <OMS cd="arith1" name="times"/>
-  	        <OMI> 4 </OMI>
+  	        <OMI>4</OMI>
 	        <OMV name="j"/>
 	      </OMA>
-	      <OMI> 3 </OMI>
+	      <OMI>3</OMI>
 	    </OMA>
 	  </OMA>
         </OMA>
@@ -268,7 +291,7 @@ pi = 4 * the sum as j ranges from 0 to infinity of ((1/(4j+1))-(1/(4j+3)))
 </OMA>
 </OMOBJ></FMP>
 
-<Example> 3.142 = The decimal approximation to 3 significant places of pi
+<Example>3.142 = The decimal approximation to 3 significant places of pi
   <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
     <OMA>
       <OMS cd="relation1" name="approx"/>
@@ -282,7 +305,7 @@ pi = 4 * the sum as j ranges from 0 to infinity of ((1/(4j+1))-(1/(4j+3)))
 <CDDefinition>
 <Name>gamma</Name>
 <Role>constant</Role>
-<Description> 
+<Description>
 A symbol to convey the notion of the gamma constant
 as defined in Abramowitz and Stegun, Handbook of Mathematical
 Functions, section 6.1.3. It is the limit of
@@ -290,7 +313,7 @@ Functions, section 6.1.3. It is the limit of
 as m tends to infinity, this is approximately 0.5772 15664.
 </Description>
 
-<CMP> 
+<CMP>
   gamma = limit_(m -&gt; infinity)(sum_(j ranges from 1 to m)(1/j) - ln m) 
 </CMP>
 
@@ -323,7 +346,7 @@ as m tends to infinity, this is approximately 0.5772 15664.
             </OMBVAR>
 	    <OMA>
               <OMS cd="arith1" name="divide"/>
-              <OMI> 1 </OMI>
+              <OMI>1</OMI>
               <OMV name="j"/>
 	    </OMA>
 	  </OMBIND>
@@ -338,7 +361,7 @@ as m tends to infinity, this is approximately 0.5772 15664.
 </OMA>
 </OMOBJ></FMP>
 
-<Example> 0.577 = The decimal approximation to 3 significant places of gamma
+<Example>0.577 = The decimal approximation to 3 significant places of gamma
   <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
     <OMA>
       <OMS cd="relation1" name="approx"/>
@@ -352,12 +375,12 @@ as m tends to infinity, this is approximately 0.5772 15664.
 <CDDefinition>
 <Name>NaN</Name>
 <Role>constant</Role>
-<Description> 
+<Description>
 A symbol to convey the notion of not-a-number.
 The result of an ill-posed floating computation.
 See IEEE standard for floating point representations.
 </Description>
-<CMP> NaN is not equal to NaN </CMP>
+<CMP>NaN is not equal to NaN</CMP>
 <FMP>
 <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
   <OMA>

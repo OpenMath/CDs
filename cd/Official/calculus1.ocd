@@ -36,15 +36,11 @@
 <CDName>calculus1</CDName>
 <CDBase>http://www.openmath.org/cd</CDBase>
 <CDURL>http://www.openmath.org/cd/calculus1.ocd</CDURL>
-<CDReviewDate>2006-03-30</CDReviewDate>
+<CDReviewDate>2014-04-01</CDReviewDate>
 <CDStatus>official</CDStatus>
-<CDDate>2004-06-01</CDDate>
-<CDVersion>4</CDVersion>
-<CDRevision>2</CDRevision>
-<CDComment>
-  Author: OpenMath Consortium
-  SourceURL: https://github.com/OpenMath/CDs
-</CDComment>
+<CDDate>2009-04-01</CDDate>
+<CDVersion>5</CDVersion>
+<CDRevision>0</CDRevision>
 <Description>
     This CD is intended to be compatible with the calculus operations
     in Content MathML.
@@ -61,7 +57,7 @@ This symbol is used to express ordinary differentiation of a unary
 function. The single argument is the unary function.
 </Description>
 
-<CMP> 
+<CMP>
 diff(lambda y:a(y) + b(y))(x) = diff(lambda y:a(y))(x) + diff(lambda y:b(y))(x)
 </CMP>
 
@@ -131,7 +127,7 @@ diff(lambda y:a(y) + b(y))(x) = diff(lambda y:a(y))(x) + diff(lambda y:b(y))(x)
 </OMOBJ>
 </FMP>
 
-<CMP> 
+<CMP>
 diff(lambda y:a(y) * b(y))(x) = diff(lambda y:a(y))(x) * b(x) + 
                                 a(x) * diff(lambda y:b(y))(x)
 </CMP>
@@ -313,8 +309,8 @@ An example to represent the equation:
       <OMS cd="calculus1" name="partialdiff"/>
       <OMA>
         <OMS cd="list1" name="list"/>
-        <OMI> 1 </OMI>
-        <OMI> 3 </OMI>
+        <OMI>1</OMI>
+        <OMI>3</OMI>
       </OMA>
       <OMBIND>
         <OMS cd="fns1" name="lambda"/>
@@ -331,7 +327,62 @@ An example to represent the equation:
         </OMA>
       </OMBIND>
     </OMA>
+    <OMV name="x"/>
     <OMV name="y"/>
+    <OMV name="z"/>
+  </OMA>
+  <OMV name="y"/>
+</OMA>
+</OMOBJ>
+</Example>
+</CDDefinition>
+
+
+<CDDefinition>
+<Name>partialdiffdegree</Name>
+<Role>application</Role>
+<Description>
+This symbol is used to express partial differentiation of a function
+of more than one variable. It has three arguments, the first is a list of 
+integers which give the degrees by which the function is differentiated
+by the corresponding variable. The second is the total degree (which should
+therefore be the sum of the values in the first list, but may be
+given symbolically). The third is the function.
+</Description>
+<Example>
+An example to represent the equation:
+ \partial^2{xyz}/ \partial{x}\partial{z} = y
+<OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
+<OMA>
+  <OMS cd="relation1" name="eq"/>
+  <OMA>
+    <OMA>
+      <OMS cd="calculus1" name="partialdiffdegree"/>
+      <OMA>
+        <OMS cd="list1" name="list"/>
+        <OMI>1</OMI>
+        <OMI>0</OMI>
+        <OMI>1</OMI>
+      </OMA>
+      <OMI>2</OMI>
+      <OMBIND>
+        <OMS cd="fns1" name="lambda"/>
+        <OMBVAR>
+          <OMV name="x"/>
+          <OMV name="y"/>
+          <OMV name="z"/>
+        </OMBVAR>
+        <OMA>
+          <OMS cd="arith1" name="times"/>
+          <OMV name="x"/>
+          <OMV name="y"/>
+          <OMV name="z"/>
+        </OMA>
+      </OMBIND>
+    </OMA>
+    <OMV name="x"/>
+    <OMV name="y"/>
+    <OMV name="z"/>
   </OMA>
   <OMV name="y"/>
 </OMA>
@@ -342,7 +393,7 @@ An example to represent the equation:
 <CDDefinition>
 <Name>int</Name>
 <Role>application</Role>
-<Description> 
+<Description>
 This symbol is used to represent indefinite integration of unary functions.
 The argument is the unary function.
 </Description>
@@ -427,13 +478,13 @@ integral(x +-&gt; sin(x)) w.r.t. x = x +-&gt; -cos(x)
 <CDDefinition>
 <Name>defint</Name>
 <Role>application</Role>
-<Description> 
+<Description>
 This symbol is used to represent definite integration of unary
 functions. It takes two arguments; the first being the range (e.g. a
 set) of integration, and the second the function.
 </Description>
 
-<CMP> for all a,b | integral from a to b = -integral from b to a </CMP>
+<CMP>for all a,b | integral from a to b = -integral from b to a</CMP>
 
 <FMP>
 <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
@@ -448,7 +499,7 @@ set) of integration, and the second the function.
       <OMA>
         <OMS cd="calculus1" name="defint"/>
         <OMA>
-          <OMS cd="interval1" name="interval"/>
+          <OMS cd="interval1" name="ordered_interval"/>
           <OMV name="a"/>
           <OMV name="b"/>
         </OMA>
@@ -468,7 +519,7 @@ set) of integration, and the second the function.
         <OMA>
           <OMS cd="calculus1" name="defint"/>
           <OMA>
-            <OMS cd="interval1" name="interval"/>
+            <OMS cd="interval1" name="ordered_interval"/>
             <OMV name="b"/>
             <OMV name="a"/>
           </OMA>
@@ -523,7 +574,7 @@ integral over [b,c]
 	<OMA>
 	  <OMS cd="calculus1" name="defint"/>
 	  <OMA>
-	    <OMS cd="interval1" name="interval"/>
+	    <OMS cd="interval1" name="ordered_interval"/>
 	    <OMV name="a"/>
 	    <OMV name="c"/>
 	  </OMA>
@@ -543,7 +594,7 @@ integral over [b,c]
 	  <OMA>
 	    <OMS cd="calculus1" name="defint"/>
 	    <OMA>
-	      <OMS cd="interval1" name="interval"/>
+	      <OMS cd="interval1" name="ordered_interval"/>
 	      <OMV name="a"/>
 	      <OMV name="b"/>
 	    </OMA>
@@ -561,7 +612,7 @@ integral over [b,c]
 	  <OMA>
 	    <OMS cd="calculus1" name="defint"/>
 	    <OMA>
-	      <OMS cd="interval1" name="interval"/>
+	      <OMS cd="interval1" name="ordered_interval"/>
 	      <OMV name="b"/>
 	      <OMV name="c"/>
 	    </OMA>
@@ -589,7 +640,7 @@ An example to represent the definite integration of sin(x) between the points
   <OMA>
     <OMS cd="calculus1" name="defint"/>
     <OMA>
-      <OMS cd="interval1" name="interval"/>
+      <OMS cd="interval1" name="ordered_interval"/>
       <OMF dec="-1.0"/>
       <OMF dec="1.0"/>
     </OMA>
