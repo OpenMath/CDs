@@ -3,7 +3,7 @@
 <CDSStatus>official</CDSStatus>
 
 <CDSComment>
-Date:  1999-07-02
+Date:  2009-04-01
 Author: David Carlisle
 </CDSComment>
 
@@ -18,6 +18,16 @@ Author: David Carlisle
 </OMOBJ>
 </Signature>
 
+<Signature name="based_double" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMV name="PositiveInteger" />
+    <OMV name="DigitString" />
+    <OMV name="BasedFloat" />
+ </OMA>
+</OMOBJ>
+</Signature>
 
 <Signature name="rational" >
 <OMOBJ xmlns="http://www.openmath.org/OpenMath"> 

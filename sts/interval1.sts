@@ -3,7 +3,7 @@
 <CDSStatus>official</CDSStatus>
 
 <CDSComment>
-Date:  1999-04-13
+Date:  2009-04-19
 Author: David Carlisle
 </CDSComment>
 
@@ -20,6 +20,17 @@ Author: David Carlisle
 
 
 <Signature name="interval" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
+ <OMA>
+   <OMS name="mapsto" cd="sts" />
+    <OMS name="R" cd="setname1" />
+    <OMS name="R" cd="setname1" />
+    <OMV name="RealInterval" />
+ </OMA>
+</OMOBJ>
+</Signature>
+
+<Signature name="oriented_interval" >
 <OMOBJ xmlns="http://www.openmath.org/OpenMath"> 
  <OMA>
    <OMS name="mapsto" cd="sts" />

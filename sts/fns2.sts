@@ -3,7 +3,7 @@
 <CDSStatus>official</CDSStatus>
 
 <CDSComment>
-Date:  1999-04-13
+Date:  2009-04-19
 Author: David Carlisle
 </CDSComment>
 
@@ -64,6 +64,22 @@ Author: David Carlisle
   </OMA>
   <OMV name="ObjectList" />  
   <OMS name="Object" cd="sts"/>
+ </OMA>                         
+</OMOBJ>
+</Signature>
+
+<Signature name="predicate_on_list" >
+<OMOBJ xmlns="http://www.openmath.org/OpenMath">                         
+ <OMA>                         
+  <OMS name="mapsto" cd="sts" />
+  <OMA>                         
+   <OMS name="mapsto" cd="sts" />
+   <OMS name="Object" cd="sts"/>
+   <OMS name="Object" cd="sts"/>
+   <OMS cd="setname2" name="Boolean" />
+  </OMA>
+  <OMV name="ObjectList" />  
+  <OMS cd="setname2" name="Boolean" />
  </OMA>                         
 </OMOBJ>
 </Signature>
