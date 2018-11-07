@@ -33,11 +33,13 @@
       <xsl:processing-instruction name="xml-stylesheet"
       > type="text/xsl"  href="<xsl:value-of select="$xsldir"/>/pmathml.xsl"</xsl:processing-instruction>
   -->
+<xsl:value-of disable-output-escaping="yes" select="'&lt;!DOCTYPE html&gt;'"/>
 <xsl:text>&#10;</xsl:text>
 <html>
  <head>
   <link rel="stylesheet" href="https://openmath.github.io/public/css/hyde.css"/>
   <link rel="stylesheet" href="https://openmath.github.io/public/css/main.css"/>
+  <link rel="shortcut icon" sizes="144x144" type="image/png" href="/public/favicon.png"/>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_SVG"><xsl:text> </xsl:text></script>
 
     <script type="text/javascript"> function divfold(_Id){
