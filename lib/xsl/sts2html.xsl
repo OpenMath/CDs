@@ -3,7 +3,9 @@
   xmlns:om="http://www.openmath.org/OpenMath"
   xmlns:sts="http://www.openmath.org/OpenMathCDS"
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-  xmlns="http://www.w3.org/1999/xhtml">
+  xmlns="http://www.w3.org/1999/xhtml"
+  exclude-result-prefixes="om sts"
+  >
 
 <!-- verb mode -->
 <xsl:import href="verb.xsl"/>
@@ -15,11 +17,14 @@
 
 
 <xsl:template match="sts:CDSignatures">
+ <xsl:value-of disable-output-escaping="yes" select="'&lt;!DOCTYPE html&gt;'"/>
+ <xsl:text>&#10;</xsl:text>
   <html>
   <head>
   <link rel="stylesheet" href="https://openmath.github.io/public/css/hyde.css"/>
   <link rel="stylesheet" href="https://openmath.github.io/public/css/main.css"/>
-    <title><xsl:value-of select="@cd"/></title>
+  <link rel="shortcut icon" sizes="144x144" type="image/png" href="/public/favicon.png"/>
+  <title><xsl:value-of select="@cd"/></title>
     <link rel="stylesheet" href="../cd/omcd.css" type="text/css"/>
   </head>
   <body class="theme-base-odk">

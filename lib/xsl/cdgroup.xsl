@@ -7,15 +7,18 @@
   exclude-result-prefixes="om cd">
 
 
-<xsl:output method="xhtml" indent="yes"/>
+<xsl:output method="xhtml" indent="yes" omit-xml-declaration="yes"/>
 
 
 <xsl:template match="cd:CDGroup">
+ <xsl:value-of disable-output-escaping="yes" select="'&lt;!DOCTYPE html&gt;'"/>
+ <xsl:text>&#10;</xsl:text>
   <html>
     <head>
   <link rel="stylesheet" href="https://openmath.github.io/public/css/hyde.css"/>
   <link rel="stylesheet" href="https://openmath.github.io/public/css/main.css"/>
-      <title><xsl:value-of select="cd:CDGroupName"/></title>
+  <link rel="shortcut icon" sizes="144x144" type="image/png" href="/public/favicon.png"/>
+  <title><xsl:value-of select="cd:CDGroupName"/></title>
     </head>
       <body class="theme-base-odk">
     <div class="sidebar">
