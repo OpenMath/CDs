@@ -19,7 +19,7 @@
     <Name>mixedgraph</Name>
     <Description>
       This symbol represents a mixed graph. It takes three arguments: the vertex set of the graph, the set of undirected edges, and the set of directed edges (a.k.a. arrows or arcs).
-   The vertices can be arbitrary OpenMath objects. Each edge should be a set consisting of two vertices.
+   The vertices can be arbitrary OpenMath objects. Each undirected edge should be a set consisting of two vertices; each directed edge should be a list consisting of two vertices.
     </Description>
     
     <Example>
@@ -30,31 +30,115 @@
         <OMS cd="graph3" name="mixedgraph"/>
         <OMA>
           <OMS cd="set1" name="set"/>
-          <OMI> 1 </OMI>
-          <OMI> 2 </OMI>
-          <OMI> 3 </OMI>
+          <OMI>1</OMI>
+          <OMI>2</OMI>
+          <OMI>3</OMI>
         </OMA>
         <OMA>
           <OMS cd="set1" name="set"/>
           <OMA>
     	    <OMS cd="set1" name="set"/>
-    	    <OMI> 1 </OMI>
-    	    <OMI> 2 </OMI>
+    	    <OMI>1</OMI>
+    	    <OMI>2</OMI>
           </OMA>
         </OMA>
         <OMA>
           <OMS cd="set1" name="set"/>
           <OMA>
     	    <OMS cd="list1" name="list"/>
-    	    <OMI> 2 </OMI>
-    	    <OMI> 3 </OMI>
+    	    <OMI>2</OMI>
+    	    <OMI>3</OMI>
           </OMA>
           <OMA>
     	    <OMS cd="list1" name="list"/>
-    	    <OMI> 3 </OMI>
-    	    <OMI> 1 </OMI>
+    	    <OMI>3</OMI>
+    	    <OMI>1</OMI>
           </OMA>
         </OMA>
+      </OMA>
+    </OMOBJ>
+    </Example>
+  </CDDefinition>
+  
+  <CDDefinition>
+    <Name>labelledgraph</Name>
+    <Description>
+      This symbol represents a labelled (mixed) graph. It takes three arguments: the vertex set of the graph, the set of labelled undirected edges, and the set of labelled directed edges (a.k.a. arrows or arcs). Both vertices and labels can be arbitrary OpenMath objects. Each undirected edge should be a set consisting of two vertices; each directed edge should be a list consisting of two vertices.
+    </Description>
+    
+    <Example>
+    The logical graph corresponding to a traditional Aristotelian square.
+    
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+      <OMA>
+        <OMS cd="graph3" name="labelledgraph"/>
+        <OMA>
+          <OMS cd="set1" name="set"/>
+          <OMSTR>A</OMSTR>
+          <OMSTR>E</OMSTR>
+          <OMSTR>I</OMSTR>
+          <OMSTR>O</OMSTR>
+        </OMA>
+        <OMA>
+	  <OMS cd="set1" name="set"/>
+          <OMA>
+            <OMS cd="ecc" name="Pair"/>
+            <OMA>
+    	      <OMS cd="set1" name="set"/>
+              <OMSTR>A</OMSTR>
+              <OMSTR>E</OMSTR>
+            </OMA>
+            <OMSTR>C</OMSTR>
+          </OMA>
+          <OMA>
+            <OMS cd="ecc" name="Pair"/>
+            <OMA>
+    	      <OMS cd="set1" name="set"/>
+              <OMSTR>A</OMSTR>
+              <OMSTR>O</OMSTR>
+            </OMA>
+            <OMSTR>CD</OMSTR>
+          </OMA>
+          <OMA>
+            <OMS cd="ecc" name="Pair"/>
+            <OMA>
+    	      <OMS cd="set1" name="set"/>
+              <OMSTR>E</OMSTR>
+              <OMSTR>I</OMSTR>
+            </OMA>
+            <OMSTR>CD</OMSTR>
+          </OMA>
+          <OMA>
+            <OMS cd="ecc" name="Pair"/>
+            <OMA>
+    	      <OMS cd="set1" name="set"/>
+              <OMSTR>I</OMSTR>
+              <OMSTR>O</OMSTR>
+            </OMA>
+            <OMSTR>SC</OMSTR>
+          </OMA>
+        </OMA>
+        <OMA>
+	  <OMS cd="set1" name="set"/>
+          <OMA>
+            <OMS cd="ecc" name="Pair"/>
+            <OMA>
+    	      <OMS cd="list1" name="list"/>
+              <OMSTR>A</OMSTR>
+              <OMSTR>I</OMSTR>
+            </OMA>
+            <OMSTR>SA</OMSTR>
+	  </OMA>
+	  <OMA>
+	    <OMS cd="ecc" name="Pair"/>
+            <OMA>
+    	      <OMS cd="list1" name="list"/>
+              <OMSTR>E</OMSTR>
+              <OMSTR>O</OMSTR>
+            </OMA>
+            <OMSTR>SA</OMSTR>
+          </OMA>
+	</OMA>
       </OMA>
     </OMOBJ>
     </Example>
