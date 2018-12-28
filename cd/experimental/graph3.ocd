@@ -1,0 +1,63 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+  <CDName>graph3</CDName>
+  <CDBase>http://www.openmath.org/cd</CDBase>
+  <CDURL>http://www.openmath.org/cd/graph3.ocd</CDURL>
+  <CDReviewDate>2018-12-28</CDReviewDate>
+  <CDStatus>experimental</CDStatus>
+  <CDDate>2018-12-28</CDDate>
+  <CDVersion>0</CDVersion>
+  <CDRevision>1</CDRevision>
+  
+  
+  <Description>
+    This CD defines symbols for handling mixed graphs, multigraphs and labeled graphs.
+    Authored by Wouter Termont.
+    May have to be merged with the graph1 and graph2 CDs.
+  </Description>
+  
+  <CDDefinition>
+    <Name>mixedgraph</Name>
+    <Description>
+      This symbol represents a mixed graph. It takes three arguments: the vertex set of the graph, the set of undirected edges, and the set of directed edges (a.k.a. arrows or arcs).
+   The vertices can be arbitrary OpenMath objects. Each edge should be a set consisting of two vertices.
+    </Description>
+    
+    <Example>
+    A simple chain graph.
+    
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+      <OMA>
+        <OMS cd="graph3" name="mixedgraph"/>
+        <OMA>
+          <OMS cd="set1" name="set"/>
+          <OMI> 1 </OMI>
+          <OMI> 2 </OMI>
+          <OMI> 3 </OMI>
+        </OMA>
+        <OMA>
+          <OMS cd="set1" name="set"/>
+          <OMA>
+    	    <OMS cd="set1" name="set"/>
+    	    <OMI> 1 </OMI>
+    	    <OMI> 2 </OMI>
+          </OMA>
+        </OMA>
+        <OMA>
+          <OMS cd="set1" name="set"/>
+          <OMA>
+    	    <OMS cd="list1" name="list"/>
+    	    <OMI> 2 </OMI>
+    	    <OMI> 3 </OMI>
+          </OMA>
+          <OMA>
+    	    <OMS cd="list1" name="list"/>
+    	    <OMI> 3 </OMI>
+    	    <OMI> 1 </OMI>
+          </OMA>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+    </Example>
+  </CDDefinition>
+
+</CD>
