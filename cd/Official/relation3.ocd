@@ -239,7 +239,7 @@ we have (b,a) in R. </CMP>
 <Name>is_equivalence</Name>
 <Description> 
 This symbol represents the boolean binary function which returns
-true if and only if the second argument is a symmetric relation on the first.
+true if and only if the second argument is an equivalence relation on the first.
 </Description>
 
 <CMP>
@@ -249,7 +249,7 @@ transitive relation on S.
 
 <FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
 <OMA><OMS cd="logic1" name="equivalent"/>
-     <OMA><OMS cd="relation3" name="is_symmetric"/>
+     <OMA><OMS cd="relation3" name="is_equivalence"/>
           <OMV name="S"/>    <OMV name="R"/>
      </OMA>
      <OMA><OMS cd="logic1" name="and"/>
