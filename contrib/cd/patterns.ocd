@@ -77,7 +77,7 @@
 
 <CDDefinition>
     <Name>any</Name>
-    <Role>application</Role>
+    <Role>constant</Role>
     <Description>
         This symbol represents a wild card for matching any
         expression.
