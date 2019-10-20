@@ -42,7 +42,8 @@
 <Description>
     This CD defines symbols for the representation of patterns
     that can be matched against mathematical expressions.
-    A typical application of such patterns can be formula search.
+    Possible applications of such patterns can be formula search
+    or the rule-based transformation of expressions.
     Author: Ken Wenzel, Fraunhofer IWU
 </Description>
 
@@ -52,23 +53,23 @@
     <Description>
         This symbol represents a pattern constructor for matching
         the conjunction of one or more patterns. The operator is most useful
-        for the order-independent matching of multiple function arguments as
-        well as in combination with the &quot;descendant&quot; and
-        &quot;selfOrDescendant&quot; operators.
+        for reusing multiple existing patterns.
     </Description>
 
     <Example>
-        An example that matches the plus function applied to
-        the variables $a and $b without considering their order.
+        An example for matching a set with exactly two elements.
         <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0"
             cdbase="http://www.openmath.org/cd">
             <OMA>
-                <OMS cd="arith1" name="plus" />
-                <OMA>
-                    <OMS cd="patterns" name="all_of" />
-                    <OMV name="a" />
-                    <OMV name="b" />
-                </OMA>
+            	<OMS cd="patterns" name="all_of" />
+	            <OMA>
+	                <OMS cd="set1" name="set" />
+	            </OMA>
+	            <OMA>
+	                <OMS cd="patterns" name="any" />
+	                <OMS cd="patterns" name="any" />
+	                <OMS cd="patterns" name="any" />
+	            </OMA>
             </OMA>
         </OMOBJ>
     </Example>
@@ -88,11 +89,11 @@
         <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0"
             cdbase="http://www.openmath.org/cd">
             <OMBIND>
-                <OMS cd="fns1" cdbase="http://www.openmath.org/cd" name="lambda" />
+                <OMS cd="fns1" name="lambda" />
                 <OMBVAR>
                     <OMV name="y" />
                 </OMBVAR>
-                <OMS cd="patterns" cdbase="http://www.openmath.org/cd" name="any" />
+                <OMS cd="patterns" name="any" />
             </OMBIND>
         </OMOBJ>
     </Example>
@@ -107,12 +108,12 @@
         <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0"
             cdbase="http://www.openmath.org/cd">
             <OMBIND>
-                <OMS cd="fns1" cdbase="http://www.openmath.org/cd" name="lambda" />
+                <OMS cd="fns1" name="lambda" />
                 <OMBVAR>
                     <OMV name="_" />
                     <OMV name="_" />
                 </OMBVAR>
-                <OMS cd="patterns" cdbase="http://www.openmath.org/cd" name="any" />
+                <OMS cd="patterns" name="any" />
             </OMBIND>
         </OMOBJ>
     </Example>
@@ -138,6 +139,31 @@
                 </OMA>
                 <OMA>
                     <OMS cd="transc1" name="cos" />
+                </OMA>
+            </OMA>
+        </OMOBJ>
+    </Example>
+</CDDefinition>
+
+<CDDefinition>
+    <Name>argument</Name>
+    <Role>application</Role>
+	<Description>
+		This symbol represents a pattern constructor for the
+		order-independent matching of multiple function arguments.
+	</Description>
+
+    <Example>
+        An example that matches the plus function applied to
+        the variables $a and $b without considering their order.
+        <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0"
+            cdbase="http://www.openmath.org/cd">
+            <OMA>
+                <OMS cd="arith1" name="plus" />
+                <OMA>
+                    <OMS cd="patterns" name="argument" />
+                    <OMV name="a" />
+                    <OMV name="b" />
                 </OMA>
             </OMA>
         </OMOBJ>
