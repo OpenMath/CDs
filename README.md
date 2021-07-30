@@ -13,7 +13,7 @@ All CD development of the OpenMath Society is channeled through this repository.
 
 # Contributing Content Dictionaries
 
-The [OpenMath Society](society) is actively soliciting CD submissions in all fields of mathematics. To submit a CD make a pull request:
+The [OpenMath Society](https://openmath.org/society/) is actively soliciting CD submissions in all fields of mathematics. To submit a CD make a pull request:
 
 1. [Fork this repository](https://github.com/OpenMath/CDs/compare#fork-destination-box)
 1. develop your CDs in the fork (i.e. a file with name `*.ocd` in the `cd/contrib` directory)
