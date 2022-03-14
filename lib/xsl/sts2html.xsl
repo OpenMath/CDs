@@ -21,8 +21,8 @@
  <xsl:text>&#10;</xsl:text>
   <html>
   <head>
-  <link rel="stylesheet" href="https://openmath.github.io/public/css/hyde.css"/>
-  <link rel="stylesheet" href="https://openmath.github.io/public/css/main.css"/>
+  <link rel="stylesheet" href="https://openmath.org/public/css/hyde.css"/>
+  <link rel="stylesheet" href="https://openmath.org/public/css/main.css"/>
   <link rel="shortcut icon" sizes="144x144" type="image/png" href="/public/favicon.png"/>
   <title><xsl:value-of select="@cd"/></title>
     <link rel="stylesheet" href="../cd/omcd.css" type="text/css"/>
@@ -33,47 +33,47 @@
     <div class="sidebar-about">
       <h1>
         <a href="/">
-            <img src="https://openmath.github.io/public/logo.png" alt="OpenMath" width="100%"/>
+            <img src="https://openmath.org/public/logo.png" alt="OpenMath" width="100%"/>
         </a>
       </h1>
       <p class="lead">OpenMath is an extensible standard for representing the semantics of mathematical objects.</p>
-      <p class="site-url lead"><a href="http://openmath.github.io/">http://openmath.github.io</a></p>
+      <p class="site-url lead"><a href="https://openmath.github.io/">https://openmath.github.io</a></p>
     </div>
 
 <nav class="sidebar-nav">
 <a class="sidebar-nav-item"
-   href="https://openmath.github.io/">Home</a> ,
+   href="https://openmath.org/">Home</a> ,
 <a class="sidebar-nav-item"
-   href="https://openmath.github.io//about/">OpenMath</a>
+   href="https://openmath.org/about/">OpenMath</a>
 <br/>
 <a class="sidebar-nav-item"
-   href="https://openmath.github.io//society/">OM Society</a> , 
+   href="https://openmath.org/society/">OM Society</a> , 
 <a class="sidebar-nav-item"
-   href="https://openmath.github.io//meetings/">Meetings</a>
+   href="https://openmath.org/meetings/">Meetings</a>
 <br/>
 <a class="sidebar-nav-item"
-   href="https://openmath.github.io//standard/">Standards</a> ,
+   href="https://openmath.org/standard/">Standards</a> ,
 <a class="sidebar-nav-item"
-   href="https://openmath.github.io//documents/">Documents</a> , 
+   href="https://openmath.org/documents/">Documents</a> , 
 <a class="sidebar-nav-item"
-   href="https://openmath.github.io//cd/">CDs</a>
+   href="https://openmath.org/cd/">CDs</a>
 <br/>
 <a class="sidebar-nav-item"
-   href="https://openmath.github.io/development/">Development</a> , 
+   href="https://openmath.org/development/">Development</a> , 
 <a class="sidebar-nav-item"
-   href="https://openmath.github.io/projects/">Projects</a> , 
+   href="https://openmath.org/projects/">Projects</a> , 
 <a class="sidebar-nav-item"
-   href="https://openmath.github.io/software/">Software &amp; Tools</a>
+   href="https://openmath.org/software/">Software &amp; Tools</a>
 <br/>
 <a class="sidebar-nav-item"
-   href="https://openmath.github.io/news/">News</a> ,
+   href="https://openmath.org/news/">News</a> ,
 <a class="sidebar-nav-item"
-   href="https://openmath.github.io/follow/">Follow &amp; Contact us</a>
+   href="https://openmath.org/follow/">Follow &amp; Contact us</a>
 &#160;&#160;
       <span class="sidebar-nav-item">
-        <a href="https://openmath.github.io/atom.xml"><img class="icon" src="https://openmath.github.io/public/feed_w.png" alt="atom feed"/></a>
-        <a href="https://twitter.com/openmath"><img class="icon" src="https://openmath.github.io/public/twitter_w.png" alt="twitter"/></a>
-        <a href="https://github.com/OpenMath"><img class="icon" src="https://openmath.github.io/public/github_w.png" alt="github"/></a>
+        <a href="https://openmath.org/atom.xml"><img class="icon" src="https://openmath.org/public/feed_w.png" alt="atom feed"/></a>
+        <a href="https://twitter.com/openmath"><img class="icon" src="https://openmath.org/public/twitter_w.png" alt="twitter"/></a>
+        <a href="https://github.com/OpenMath"><img class="icon" src="https://openmath.org/public/github_w.png" alt="github"/></a>
       </span><br/>
 
       

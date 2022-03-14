@@ -24,7 +24,7 @@ added later.
 
 It checks for each <OMS name= cd= /> that the name really is in the CD
 this involves an http connection to
- http://openmath.nag.co.uk/openmath/cd/internal/cd/
+ https://openmath.nag.co.uk/openmath/cd/internal/cd/
 giving a directory on the local disk which contains the CDs wil speed
 things up, the syntax for this is
 
@@ -48,7 +48,7 @@ David Carlisle
 <xsl:variable name="x">
 <xsl:if test="$om-nons">
 <p>
-OpenMath should be in the namespace http://www.openmath.org/OpenMath</p>
+OpenMath should be in the namespace https://www.openmath.org/OpenMath</p>
 </xsl:if>
 
  <xsl:if test="not($om)">

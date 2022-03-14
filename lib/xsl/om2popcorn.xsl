@@ -2,7 +2,7 @@
 <!--
 
 Use and distribution of this code are permitted under the terms of the <a
-href="http://www.w3.org/Consortium/Legal/copyright-software-19980720"
+href="https://www.w3.org/Consortium/Legal/copyright-software-19980720"
 >W3C Software Notice and License</a>.
 
 David Carlisle July 2009
