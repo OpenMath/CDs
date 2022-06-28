@@ -1,0 +1,184 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+  
+  <CDName>graph3</CDName>
+  <CDBase>http://www.openmath.org/cd</CDBase>
+  <CDURL>http://www.openmath.org/cd/graph3.ocd</CDURL>
+  <CDReviewDate>2019-01-05</CDReviewDate>
+  <CDStatus>experimental</CDStatus>
+  <CDDate>2018-12-28</CDDate>
+  <CDVersion>0</CDVersion>
+  <CDRevision>2</CDRevision>
+  
+  <CDComment>
+    Author: Wouter Termont
+    SourceURL: https://github.com/OpenMath/CDs
+  </CDComment>
+
+  <CDComment>
+     This document is distributed in the hope that it will be useful, 
+     but WITHOUT ANY WARRANTY; without even the implied warranty of 
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     The copyright holder grants you permission to redistribute this 
+     document freely as a verbatim copy. Furthermore, the copyright
+     holder permits you to develop any derived work from this document
+     provided that the following conditions are met.
+       a) The derived work acknowledges the fact that it is derived from
+          this document, and maintains a prominent reference in the 
+          work to the original source.
+       b) The fact that the derived work is not the original OpenMath 
+          document is stated prominently in the derived work.  Moreover if
+          both this document and the derived work are Content Dictionaries
+          then the derived work must include a different CDName element,
+          chosen so that it cannot be confused with any works adopted by
+          the OpenMath Society.  In particular, if there is a Content 
+          Dictionary Group whose name is, for example, `math' containing
+          Content Dictionaries named `math1', `math2' etc., then you should 
+          not name a derived Content Dictionary `mathN' where N is an integer.
+          However you are free to name it `private_mathN' or some such.  This
+          is because the names `mathN' may be used by the OpenMath Society
+          for future extensions.
+       c) The derived work is distributed under terms that allow the
+          compilation of derived works, but keep paragraphs a) and b)
+          intact.  The simplest way to do this is to distribute the derived
+          work under the OpenMath license, but this is not a requirement.
+     If you have questions about this license please contact the OpenMath
+     society at http://www.openmath.org.
+  </CDComment>
+  
+  <Description>
+    This CD defines symbols for handling mixed graphs, multigraphs and labeled graphs.
+    Authored by Wouter Termont.
+    May have to be merged with the graph1 and graph2 CDs.
+  </Description>
+  
+  <CDDefinition>
+    <Name>mixedgraph</Name>
+    <Description>
+      This symbol represents a mixed graph. It takes three arguments: the vertex set of the graph, the set of undirected edges, and the set of directed edges (a.k.a. arrows or arcs).
+   The vertices can be arbitrary OpenMath objects. Each undirected edge should be a set consisting of two vertices; each directed edge should be a list consisting of two vertices.
+    </Description>
+    
+    <Example>
+    A simple chain graph.
+    
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+      <OMA>
+        <OMS cd="graph3" name="mixedgraph"/>
+        <OMA>
+          <OMS cd="set1" name="set"/>
+          <OMI>1</OMI>
+          <OMI>2</OMI>
+          <OMI>3</OMI>
+        </OMA>
+        <OMA>
+          <OMS cd="set1" name="set"/>
+          <OMA>
+    	    <OMS cd="set1" name="set"/>
+    	    <OMI>1</OMI>
+    	    <OMI>2</OMI>
+          </OMA>
+        </OMA>
+        <OMA>
+          <OMS cd="set1" name="set"/>
+          <OMA>
+    	    <OMS cd="list1" name="list"/>
+    	    <OMI>2</OMI>
+    	    <OMI>3</OMI>
+          </OMA>
+          <OMA>
+    	    <OMS cd="list1" name="list"/>
+    	    <OMI>3</OMI>
+    	    <OMI>1</OMI>
+          </OMA>
+        </OMA>
+      </OMA>
+    </OMOBJ>
+    </Example>
+  </CDDefinition>
+  
+  <CDDefinition>
+    <Name>labelledgraph</Name>
+    <Description>
+      This symbol represents a labelled (mixed) graph. It takes three arguments: the vertex set of the graph, the set of labelled undirected edges, and the set of labelled directed edges (a.k.a. arrows or arcs). Both vertices and labels can be arbitrary OpenMath objects. Each undirected edge should be a set consisting of two vertices; each directed edge should be a list consisting of two vertices.
+    </Description>
+    
+    <Example>
+    The logical graph corresponding to a traditional Aristotelian square.
+    
+    <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
+      <OMA>
+        <OMS cd="graph3" name="labelledgraph"/>
+        <OMA>
+          <OMS cd="set1" name="set"/>
+          <OMSTR>A</OMSTR>
+          <OMSTR>E</OMSTR>
+          <OMSTR>I</OMSTR>
+          <OMSTR>O</OMSTR>
+        </OMA>
+        <OMA>
+	  <OMS cd="set1" name="set"/>
+          <OMA>
+            <OMS cd="ecc" name="Pair"/>
+            <OMA>
+    	      <OMS cd="set1" name="set"/>
+              <OMSTR>A</OMSTR>
+              <OMSTR>E</OMSTR>
+            </OMA>
+            <OMSTR>C</OMSTR>
+          </OMA>
+          <OMA>
+            <OMS cd="ecc" name="Pair"/>
+            <OMA>
+    	      <OMS cd="set1" name="set"/>
+              <OMSTR>A</OMSTR>
+              <OMSTR>O</OMSTR>
+            </OMA>
+            <OMSTR>CD</OMSTR>
+          </OMA>
+          <OMA>
+            <OMS cd="ecc" name="Pair"/>
+            <OMA>
+    	      <OMS cd="set1" name="set"/>
+              <OMSTR>E</OMSTR>
+              <OMSTR>I</OMSTR>
+            </OMA>
+            <OMSTR>CD</OMSTR>
+          </OMA>
+          <OMA>
+            <OMS cd="ecc" name="Pair"/>
+            <OMA>
+    	      <OMS cd="set1" name="set"/>
+              <OMSTR>I</OMSTR>
+              <OMSTR>O</OMSTR>
+            </OMA>
+            <OMSTR>SC</OMSTR>
+          </OMA>
+        </OMA>
+        <OMA>
+	  <OMS cd="set1" name="set"/>
+          <OMA>
+            <OMS cd="ecc" name="Pair"/>
+            <OMA>
+    	      <OMS cd="list1" name="list"/>
+              <OMSTR>A</OMSTR>
+              <OMSTR>I</OMSTR>
+            </OMA>
+            <OMSTR>SA</OMSTR>
+	  </OMA>
+	  <OMA>
+	    <OMS cd="ecc" name="Pair"/>
+            <OMA>
+    	      <OMS cd="list1" name="list"/>
+              <OMSTR>E</OMSTR>
+              <OMSTR>O</OMSTR>
+            </OMA>
+            <OMSTR>SA</OMSTR>
+          </OMA>
+	</OMA>
+      </OMA>
+    </OMOBJ>
+    </Example>
+  </CDDefinition>
+
+</CD>
