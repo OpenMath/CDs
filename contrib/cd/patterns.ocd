@@ -1,0 +1,272 @@
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+<CDComment>
+    This document is distributed in the hope that it will be useful, 
+    but WITHOUT ANY WARRANTY; without even the implied warranty of 
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    
+    The copyright holder grants you permission to redistribute this 
+    document freely as a verbatim copy. Furthermore, the copyright
+    holder permits you to develop any derived work from this document
+    provided that the following conditions are met.
+      a) The derived work acknowledges the fact that it is derived from
+         this document, and maintains a prominent reference in the 
+         work to the original source.
+      b) The fact that the derived work is not the original OpenMath 
+         document is stated prominently in the derived work.  Moreover if
+         both this document and the derived work are Content Dictionaries
+         then the derived work must include a different CDName element,
+         chosen so that it cannot be confused with any works adopted by
+         the OpenMath Society.  In particular, if there is a Content 
+         Dictionary Group whose name is, for example, `math' containing
+         Content Dictionaries named `math1', `math2' etc., then you should 
+         not name a derived Content Dictionary `mathN' where N is an integer.
+         However you are free to name it `private_mathN' or some such.  This
+         is because the names `mathN' may be used by the OpenMath Society
+         for future extensions.
+      c) The derived work is distributed under terms that allow the
+         compilation of derived works, but keep paragraphs a) and b)
+         intact.  The simplest way to do this is to distribute the derived
+         work under the OpenMath license, but this is not a requirement.
+    If you have questions about this license please contact the OpenMath
+    society at http://www.openmath.org.
+</CDComment>
+
+<CDName>patterns</CDName>
+<CDBase>http://www.openmath.org/cd</CDBase>
+<CDURL>http://www.openmath.org/cd/patterns.ocd</CDURL>
+<!-- CDReviewDate>not yet reviewed</CDReviewDate -->
+<CDDate>2019-09-23</CDDate>
+<CDVersion>1</CDVersion>
+<CDRevision>0</CDRevision>
+<CDStatus>experimental</CDStatus>
+<Description>
+    This CD defines symbols for the representation of patterns
+    that can be matched against mathematical expressions.
+    Possible applications of such patterns can be formula search
+    or the rule-based transformation of expressions.
+    Author: Ken Wenzel, Fraunhofer IWU
+</Description>
+
+<CDDefinition>
+    <Name>all_of</Name>
+    <Role>application</Role>
+    <Description>
+        This symbol represents a pattern constructor for matching
+        the conjunction of one or more patterns. The operator is most useful
+        for reusing multiple existing patterns.
+    </Description>
+
+    <Example>
+        An example for matching a set with exactly two elements.
+        <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0"
+            cdbase="http://www.openmath.org/cd">
+            <OMA>
+            	<OMS cd="patterns" name="all_of" />
+	            <OMA>
+	                <OMS cd="set1" name="set" />
+	            </OMA>
+	            <OMA>
+	                <OMS cd="patterns" name="any" />
+	                <OMS cd="patterns" name="any" />
+	                <OMS cd="patterns" name="any" />
+	            </OMA>
+            </OMA>
+        </OMOBJ>
+    </Example>
+</CDDefinition>
+
+<CDDefinition>
+    <Name>any</Name>
+    <Role>constant</Role>
+    <Description>
+        This symbol represents a wild card for matching any
+        expression.
+    </Description>
+
+    <Example>
+        An example for matching a lambda expression with parameter $y and
+        any body.
+        <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0"
+            cdbase="http://www.openmath.org/cd">
+            <OMBIND>
+                <OMS cd="fns1" name="lambda" />
+                <OMBVAR>
+                    <OMV name="y" />
+                </OMBVAR>
+                <OMS cd="patterns" name="any" />
+            </OMBIND>
+        </OMOBJ>
+    </Example>
+
+    <Example>
+        An example for matching lambda expressions with two parameters and
+        any body. In addition to the &quot;any&quot; symbol as defined by
+        this CD the example also uses a special variable named &quot;_&quot;
+        as a placeholder for any variable. This is required for matching
+        variables within &lt;OMBVAR&gt; that only allows variables as child
+        elements.
+        <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0"
+            cdbase="http://www.openmath.org/cd">
+            <OMBIND>
+                <OMS cd="fns1" name="lambda" />
+                <OMBVAR>
+                    <OMV name="_" />
+                    <OMV name="_" />
+                </OMBVAR>
+                <OMS cd="patterns" name="any" />
+            </OMBIND>
+        </OMOBJ>
+    </Example>
+</CDDefinition>
+
+<CDDefinition>
+    <Name>any_of</Name>
+    <Role>application</Role>
+    <Description>
+        This symbol represents a pattern constructor for matching
+        the disjunction of the given arguments.
+    </Description>
+
+    <Example>
+        An example for matching function applications of either sine or
+        cosine.
+        <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0"
+            cdbase="http://www.openmath.org/cd">
+            <OMA>
+                <OMS cd="patterns" name="any_of" />
+                <OMA>
+                    <OMS cd="transc1" name="sin" />
+                </OMA>
+                <OMA>
+                    <OMS cd="transc1" name="cos" />
+                </OMA>
+            </OMA>
+        </OMOBJ>
+    </Example>
+</CDDefinition>
+
+<CDDefinition>
+    <Name>argument</Name>
+    <Role>application</Role>
+	<Description>
+		This symbol represents a pattern constructor for the
+		order-independent matching of multiple function arguments.
+	</Description>
+
+    <Example>
+        An example that matches the plus function applied to
+        the variables $a and $b without considering their order.
+        <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0"
+            cdbase="http://www.openmath.org/cd">
+            <OMA>
+                <OMS cd="arith1" name="plus" />
+                <OMA>
+                    <OMS cd="patterns" name="argument" />
+                    <OMV name="a" />
+                    <OMV name="b" />
+                </OMA>
+            </OMA>
+        </OMOBJ>
+    </Example>
+</CDDefinition>
+
+<CDDefinition>
+    <Name>none_of</Name>
+    <Role>application</Role>
+    <Description>
+        This symbol represents a pattern constructor for matching
+        the complement of its arguments.
+    </Description>
+
+    <Example>
+        An example for matching any sine function unless it is applied to the
+        variables $x or $z.
+        <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0"
+            cdbase="http://www.openmath.org/cd">
+            <OMA>
+                <OMS cd="transc1" name="sin" />
+                <OMA>
+                    <OMS cd="patterns" name="none_of" />
+                    <OMV name="x" />
+                    <OMV name="z" />
+                </OMA>
+            </OMA>
+        </OMOBJ>
+    </Example>
+</CDDefinition>
+
+<CDDefinition>
+    <Name>root</Name>
+    <Role>application</Role>
+    <Description>
+        This symbol represents a pattern constructor for matching
+        the root element of an expression.
+    </Description>
+
+    <Example>
+        An example for matching any sine function application that is the
+        root of an expression.
+        <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0"
+            cdbase="http://www.openmath.org/cd">
+            <OMA>
+                <OMS cd="patterns" name="root" />
+                <OMA>
+                    <OMS cd="transc1" name="sin" />
+                </OMA>
+            </OMA>
+        </OMOBJ>
+    </Example>
+</CDDefinition>
+
+<CDDefinition>
+    <Name>descendant</Name>
+    <Role>application</Role>
+    <Description>
+        This symbol represents a pattern constructor for matching
+        any descendant of the current element.
+    </Description>
+
+    <Example>
+        An example for matching sum applications that contain the Pochhammer
+        symbol.
+        <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0"
+            cdbase="http://www.openmath.org/cd">
+            <OMA>
+                <OMS cd="arith1" name="sum" />
+                <OMS cd="patterns" name="any" />
+                <OMA>
+                    <OMS cd="patterns" name="descendant" />
+                    <OMA>
+                        <OMS cd="hypergeo0" name="pochhammer" />
+                    </OMA>
+                </OMA>
+            </OMA>
+        </OMOBJ>
+    </Example>
+</CDDefinition>
+
+<CDDefinition>
+    <Name>self_or_descendant</Name>
+    <Role>application</Role>
+    <Description>
+        This symbol represents a pattern constructor for matching
+        the current element itself or any of its descendants.
+    </Description>
+
+    <Example>
+        An example for matching a sum application itself or any expression
+        that contains a sum application.
+        <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0"
+            cdbase="http://www.openmath.org/cd">
+            <OMA>
+                <OMS cd="patterns" name="self_or_descendant" />
+                <OMA>
+                    <OMS cd="arith1" name="sum" />
+                    <OMS cd="patterns" name="any" />
+                    <OMS cd="patterns" name="any" />
+                </OMA>
+            </OMA>
+        </OMOBJ>
+    </Example>
+</CDDefinition>
+</CD>
